@@ -14,7 +14,7 @@ export const RANGES = ['1mo', '3mo', '1y'] as const;
 export type Range = (typeof RANGES)[number];
 
 /** Tabs of the company view, in display order. */
-export const COMPANY_VIEWS = ['overview', 'events', 'metrics', 'model', 'process'] as const;
+export const COMPANY_VIEWS = ['overview', 'events', 'forecast', 'metrics', 'model', 'process'] as const;
 export type CompanyView = (typeof COMPANY_VIEWS)[number];
 
 export const REGIONS = ['us', 'china', 'europe', 'israel', 'korea'] as const;

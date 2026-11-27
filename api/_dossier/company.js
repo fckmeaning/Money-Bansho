@@ -3,6 +3,7 @@ import companies from './companies.js';
 import { dedupeEvents, reputationScore } from './analyze.js';
 import { isShoppingNoise, selectEvents, toEvent, withReaction } from './events.js';
 import { editionsFor, LEADERSHIP_TERMS, mentionIndex, primaryCompany, searchNews, searchTerm } from './news.js';
+import { computeForecasts } from './math/forecast.js';
 import { computeMetrics } from './math/metrics.js';
 import { quantReport, withSignificance } from './math/report.js';
 import { companySignals } from './quant.js';
@@ -192,8 +193,16 @@ export async function buildDossier(symbol, range, nowMs = Date.now()) {
     errors.push({ source: 'model:metrics', message: errorMessage(error) });
   }
 
+  let forecast = null;
+  try {
+    forecast = chart ? computeForecasts(inputs, nowMs) : null;
+  } catch (error) {
+    errors.push({ source: 'model:forecast', message: errorMessage(error) });
+  }
+
   return {
     symbol,
+    forecast,
     quant,
     metrics,
     pipeline,

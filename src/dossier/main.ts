@@ -9,6 +9,7 @@ import type { Chart } from './chart';
 import { SYMBOL_RE, companies, createCompanyList } from './companies';
 import { h, tickAges } from './dom';
 import { eventsView, processView } from './events';
+import { forecastView } from './forecast';
 import { rangeName, setUiLang, t, uiLang } from './i18n';
 import {
   TIMELINE_PAGE,
@@ -261,6 +262,14 @@ function buildTab(data: Dossier): HTMLElement {
   switch (state.view) {
     case 'events':
       return eventsView(data.raw, {
+        lang,
+        selectedId: state.selectedId,
+        onSelect: (id) => {
+          state.selectedId = id;
+        },
+      });
+    case 'forecast':
+      return forecastView(data.raw, {
         lang,
         selectedId: state.selectedId,
         onSelect: (id) => {

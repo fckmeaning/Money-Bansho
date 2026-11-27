@@ -358,3 +358,21 @@ span.headline { color: inherit; }
 .sig { display: flex; flex-wrap: wrap; gap: 8px; font-size: 11px; }
 .sig.inline { display: inline-flex; }
 .sig-none, .sig-stats { color: var(--muted); }
+
+/* ---- forecast ----------------------------------------------------------- */
+
+.fc { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.fc-body { display: flex; flex-direction: column; gap: 6px; padding: 8px 10px; min-width: 0; }
+.fc-select { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--border); padding: 6px; font: inherit; }
+.fc-scroll { overflow-x: auto; }
+.fc-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.fc-table th, .fc-table td { text-align: left; padding: 4px 10px 4px 0; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.fc-table th { color: var(--muted); font-weight: 400; }
+.fc-fan { display: block; width: 100%; height: auto; max-height: 280px; }
+.fc-fan text { fill: var(--muted); font-size: 10px; font-family: var(--mono); }
+.fc-band { fill: color-mix(in srgb, var(--gold) 20%, transparent); }
+.fc-mid { fill: none; stroke: var(--gold); stroke-width: 1.5; }
+.fc-branches { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--border); }
+.fc-branches > div { background: var(--panel); padding: 6px; }
+.fc-branches dt { font-size: 11px; color: var(--muted); }
+.fc-branches dd { font-size: 22px; }

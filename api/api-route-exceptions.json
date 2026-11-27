@@ -1263,6 +1263,13 @@
       "removal_issue": null
     },
     {
+      "path": "api/_dossier/math/forecast.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
       "path": "api/_dossier/analyze.js",
       "category": "external-protocol",
       "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
