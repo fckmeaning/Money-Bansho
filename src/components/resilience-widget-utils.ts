@@ -185,8 +185,8 @@ export const LOCKED_PREVIEW: ResilienceScoreResponse = {
 export type ResilienceVisualLevel = 'very_high' | 'high' | 'moderate' | 'low' | 'very_low' | 'unknown';
 
 export const RESILIENCE_VISUAL_LEVEL_COLORS: Record<ResilienceVisualLevel, string> = {
-  very_high: '#22c55e',
-  high: '#84cc16',
+  very_high: '#d8d5cc',
+  high: '#a9a69c',
   moderate: '#eab308',
   low: '#f97316',
   very_low: '#ef4444',

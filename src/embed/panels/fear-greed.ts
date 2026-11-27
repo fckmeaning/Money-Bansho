@@ -6,8 +6,8 @@ function scoreColor(score: number): string {
   if (score <= 20) return '#e74c3c';
   if (score <= 40) return '#e67e22';
   if (score <= 60) return '#f1c40f';
-  if (score <= 80) return '#2ecc71';
-  return '#27ae60';
+  if (score <= 80) return '#4f9d69';
+  return '#4f9d69';
 }
 
 function getReferrerHost(): string | null {
@@ -42,8 +42,8 @@ function appendGauge(parent: HTMLElement, score: number, label: string, color: s
     { a1: 180, a2: 144, fill: '#c0392b' },
     { a1: 144, a2: 108, fill: '#e67e22' },
     { a1: 108, a2: 72, fill: '#f1c40f' },
-    { a1: 72, a2: 36, fill: '#2ecc71' },
-    { a1: 36, a2: 0, fill: '#27ae60' },
+    { a1: 72, a2: 36, fill: '#4f9d69' },
+    { a1: 36, a2: 0, fill: '#4f9d69' },
   ];
   for (const zone of zones) {
     const path = document.createElementNS(svgNs, 'path');

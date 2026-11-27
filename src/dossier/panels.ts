@@ -1,6 +1,7 @@
 // Company view panels: quote header, reputation, leadership, largest moves, timeline.
+import { currencyLabel } from './currency';
 import { DASH, barDate, compact, glyph, h, link, pct, price, signed, stamp, tone, updatedLabel } from './dom';
-import { regionName, scoreLabel, t, typeName } from './i18n';
+import { regionName, scoreLabel, t, typeName, uiLang } from './i18n';
 import { largestMoves } from './moves';
 import { EVENT_TYPES } from './types';
 import type { Dossier, DossierEvent, EventType, SourceError } from './types';
@@ -87,7 +88,7 @@ export function quoteHeader(data: Dossier): HTMLElement {
             'div',
             { class: 'quote-price mono' },
             h('b', {}, price(q.price)),
-            h('span', { class: 'muted' }, data.currency),
+            h('span', { class: 'muted' }, currencyLabel(data.currency, uiLang())),
             h('span', { class: `change ${tone(q.changePct)}` }, `${signed(q.change)}  ${pct(q.changePct)}`),
           )
         : h('div', { class: 'quote-price muted' }, t('noData')),

@@ -213,7 +213,10 @@ export function newsSurprise(times, nowMs = Date.now(), baselineDays = 14, minBa
 // Attention index
 // ---------------------------------------------------------------------------
 
-export const ATTENTION_WEIGHTS = { price: 0.4, news: 0.3, volume: 0.2, volatility: 0.1 };
+// Price, volume and volatility share 0.7 equally: on five years of real prices equal weights predicted the size of
+// the following moves better than the former 0.4/0.2/0.1, in and out of sample (docs/math/backtest-real.md, section 1).
+// The news weight 0.3 could not be tested without a historical headline archive and is unchanged.
+export const ATTENTION_WEIGHTS = { price: 0.7 / 3, news: 0.3, volume: 0.7 / 3, volatility: 0.7 / 3 };
 const CAP = 4;
 
 /**

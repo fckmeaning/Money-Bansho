@@ -129,7 +129,7 @@ async function executeIntent(intent: Intent): Promise<CommandResult> {
             // #3707: 'unknown' = no telemetry. Render desaturated grey + 'NO DATA'
             // suffix so users don't conflate uncovered airports with healthy ones.
             const sevColor = s.severity === 'unknown' ? '#7d7d8a'
-                : s.severity === 'normal' ? '#22c55e'
+                : s.severity === 'normal' ? '#8a877e'
                 : s.severity === 'minor' ? '#f59e0b'
                 : '#ef4444';
             const sevLabel = s.severity === 'unknown' ? 'NO DATA' : s.severity.toUpperCase();
@@ -187,7 +187,7 @@ async function executeIntent(intent: Intent): Promise<CommandResult> {
             const lbl = days === 1 ? 'Tomorrow' : `+${days}d`;
             const active = d === date;
             const cmd = `fly ${intent.origin} ${intent.destination} ${d}`;
-            return `<button data-rerun="${escapeHtml(cmd)}" style="background:${active ? 'rgba(68,255,136,.1)' : 'none'};border:1px solid ${active ? 'var(--green,#44ff88)' : 'var(--border,#2a2a2a)'};border-radius:3px;color:${active ? 'var(--green,#44ff88)' : 'var(--text-dim,#6b7280)'};cursor:pointer;font-size:calc(10px * var(--wm-panel-effective-scale, 1));padding:1px 6px">${lbl}</button>`;
+            return `<button data-rerun="${escapeHtml(cmd)}" style="background:${active ? 'rgba(200,164,92,.1)' : 'none'};border:1px solid ${active ? '#c8a45c' : 'var(--border,#2a2a2a)'};border-radius:3px;color:${active ? '#c8a45c' : 'var(--text-dim,#6b7280)'};cursor:pointer;font-size:calc(10px * var(--wm-panel-effective-scale, 1));padding:1px 6px">${lbl}</button>`;
         }).join('');
         const header = `<div style="margin-bottom:4px">
           <strong>💸 ${escapeHtml(intent.origin)} → ${escapeHtml(intent.destination)}</strong>
@@ -205,7 +205,7 @@ async function executeIntent(intent: Intent): Promise<CommandResult> {
                 const carrier = leg ? `${escapeHtml(leg.airlineCode)} ${escapeHtml(leg.flightNumber)}` : '';
                 const depTime = leg?.departureDatetime?.slice(11, 16) ?? '';
                 const arrTime = f.legs[f.legs.length - 1]?.arrivalDatetime?.slice(11, 16) ?? '';
-                const stopColor = f.stops === 0 ? 'var(--green,#44ff88)' : 'var(--text-dim,#9ca3af)';
+                const stopColor = f.stops === 0 ? '#c8a45c' : 'var(--text-dim,#9ca3af)';
                 const stopLabel = f.stops === 0 ? 'nonstop' : `${f.stops} stop${f.stops > 1 ? 's' : ''}`;
                 const safeDepTime = escapeHtml(depTime);
                 const safeArrTime = escapeHtml(arrTime);
@@ -216,7 +216,7 @@ async function executeIntent(intent: Intent): Promise<CommandResult> {
             <span style="color:${stopColor};font-size:calc(11px * var(--wm-panel-effective-scale, 1));margin-left:6px">${stopLabel}</span>
           </div>
           <div style="color:#9ca3af;font-size:calc(11px * var(--wm-panel-effective-scale, 1));margin:0 10px">${safeDepTime}${safeArrTime ? `–${safeArrTime}` : ''} · ${escapeHtml(fmtDur(f.durationMinutes))}</div>
-          <div style="color:var(--green,#44ff88);font-weight:600">$${Math.round(f.price).toLocaleString()}</div>
+          <div style="color:#c8a45c;font-weight:600">$${Math.round(f.price).toLocaleString()}</div>
         </a>`;
             }).join('');
             return {
@@ -253,11 +253,11 @@ async function executeIntent(intent: Intent): Promise<CommandResult> {
             return { html: `<div class="cmd-empty">${msg}</div>` };
         }
         const rows = [...quotes].sort((a, b) => a.stops !== b.stops ? a.stops - b.stops : a.priceAmount - b.priceAmount).slice(0, 5).map(q => {
-            const stopColor = q.stops === 0 ? 'var(--green,#44ff88)' : 'var(--text-dim,#9ca3af)';
+            const stopColor = q.stops === 0 ? '#c8a45c' : 'var(--text-dim,#9ca3af)';
             const stopLabel = q.stops === 0 ? 'nonstop' : `${q.stops} stop${q.stops > 1 ? 's' : ''}`;
             return `<a class="cmd-row" href="${gflLink}" target="_blank" rel="noopener" style="padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);text-decoration:none;cursor:pointer;color:var(--text,#e8e8e8)">
           <div style="flex:1">${escapeHtml(q.carrierName || q.carrierIata)}<span style="color:${stopColor};font-size:calc(11px * var(--wm-panel-effective-scale, 1));margin-left:6px">${stopLabel}</span></div>
-          <div style="color:var(--green,#44ff88);font-weight:600">$${Math.round(q.priceAmount)}</div>
+          <div style="color:#c8a45c;font-weight:600">$${Math.round(q.priceAmount)}</div>
         </a>`;
         }).join('');
         // Demo mode is opt-in only. When it fires, show an unmistakable
@@ -456,7 +456,7 @@ export class AviationCommandBar {
       #aviation-cmd-header { display:flex;justify-content:space-between;align-items:center;padding:12px 16px;font-size:calc(13px * var(--wm-panel-effective-scale, 1));font-weight:600;color:var(--text,#e8e8e8);border-bottom:1px solid var(--border,#2a2a2a); }
       #aviation-cmd-close { background:none;border:none;color:var(--text-dim,#6b7280);cursor:pointer;font-size:calc(16px * var(--wm-panel-effective-scale, 1));line-height:1; }
       #aviation-cmd-input { width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid var(--border,#2a2a2a);color:var(--text,#e8e8e8);font-family:inherit;font-size:calc(14px * var(--wm-panel-effective-scale, 1));padding:12px 16px;outline:none; }
-      #aviation-cmd-input:focus { border-bottom-color:var(--green,#44ff88); }
+      #aviation-cmd-input:focus { border-bottom-color:#c8a45c; }
       #aviation-cmd-input::placeholder { color:var(--text-dim,#6b7280); }
       #aviation-cmd-suggestions { padding:4px 16px; }
       #aviation-cmd-result { padding:8px 16px 12px;font-size:calc(13px * var(--wm-panel-effective-scale, 1)); }
@@ -466,7 +466,7 @@ export class AviationCommandBar {
       .cmd-empty { color:var(--text-dim,#6b7280);font-size:calc(12px * var(--wm-panel-effective-scale, 1));padding:8px 0; }
       .cmd-news-item { padding:4px 0; }
       .cmd-news-item a { color:var(--text,#e8e8e8);text-decoration:none;font-size:calc(12px * var(--wm-panel-effective-scale, 1)); }
-      .cmd-news-item a:hover { color:var(--green,#44ff88); }
+      .cmd-news-item a:hover { color:#c8a45c; }
       #aviation-cmd-hint { font-size:calc(11px * var(--wm-panel-effective-scale, 1));color:var(--text-dim,#6b7280);padding:10px 16px;text-align:right;border-top:1px solid var(--border,#2a2a2a); }
       #aviation-cmd-hint kbd { background:var(--border,#2a2a2a);border-radius:3px;padding:1px 5px;font-family:inherit; }
     `;

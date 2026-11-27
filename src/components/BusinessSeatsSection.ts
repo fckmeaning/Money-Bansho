@@ -103,7 +103,7 @@ export class BusinessSeatsSection {
       const statusLabel = t(seat.status === 'accepted'
         ? 'settings.account.businessSeats.statusAccepted'
         : seat.status === 'expired' ? 'settings.account.businessSeats.statusExpired' : 'settings.account.businessSeats.statusPending');
-      const statusColor = seat.status === 'accepted' ? '#22c55e' : seat.status === 'expired' ? '#666' : '#eab308';
+      const statusColor = seat.status === 'accepted' ? '#d8d5cc' : seat.status === 'expired' ? '#666' : '#eab308';
       const expires = seat.status === 'pending'
         ? `<div style="font-size:calc(11px * var(--wm-panel-effective-scale, 1));color:#666;">${escapeHtml(t('settings.account.businessSeats.expires', { date: new Date(seat.expiresAt).toLocaleDateString() }))}</div>`
         : '';

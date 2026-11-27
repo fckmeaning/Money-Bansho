@@ -29,8 +29,8 @@ function spreadColor(spread: number): string {
   if (spread <= -10) return '#e67e22';
   if (spread < 0) return '#f39c12';
   if (spread < 10) return '#95a5a6';
-  if (spread < 20) return '#27ae60';
-  return '#2ecc71';
+  if (spread < 20) return '#4f9d69';
+  return '#4f9d69';
 }
 
 function sentimentLabel(spread: number): string {
@@ -176,11 +176,11 @@ export class AAIISentimentPanel extends Panel {
     const prevSpread = previous?.spread;
     const spreadDelta = prevSpread != null ? latest.spread - prevSpread : null;
     const deltaStr = spreadDelta != null
-      ? `<span style="color:${spreadDelta >= 0 ? '#2ecc71' : '#e74c3c'};font-size:calc(10px * var(--wm-panel-effective-scale, 1));margin-left:4px">${spreadDelta >= 0 ? '+' : ''}${spreadDelta.toFixed(1)} vs prev</span>`
+      ? `<span style="color:${spreadDelta >= 0 ? '#4f9d69' : '#e74c3c'};font-size:calc(10px * var(--wm-panel-effective-scale, 1));margin-left:4px">${spreadDelta >= 0 ? '+' : ''}${spreadDelta.toFixed(1)} vs prev</span>`
       : '';
 
     const contrarianSignal = latest.spread <= -20
-      ? `<div style="display:flex;align-items:center;gap:6px;padding:6px 8px;margin:8px 0;border-radius:4px;border:1px solid #2ecc71;background:rgba(46,204,113,0.08);font-size:calc(10px * var(--wm-panel-effective-scale, 1));color:#2ecc71">
+      ? `<div style="display:flex;align-items:center;gap:6px;padding:6px 8px;margin:8px 0;border-radius:4px;border:1px solid #4f9d69;background:rgba(79,157,105,0.08);font-size:calc(10px * var(--wm-panel-effective-scale, 1));color:#4f9d69">
           &#9432; Contrarian buy signal active: spread at ${latest.spread.toFixed(1)}% (threshold: -20%)
         </div>`
       : latest.bearish >= 50
@@ -193,7 +193,7 @@ export class AAIISentimentPanel extends Panel {
       <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06)">
         <div style="font-size:calc(10px * var(--wm-panel-effective-scale, 1));color:var(--text-dim);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">8-Week Moving Average</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;text-align:center">
-          <div><div style="font-size:calc(14px * var(--wm-panel-effective-scale, 1));font-weight:600;color:#2ecc71">${avg8w.bullish}%</div><div style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">Bull</div></div>
+          <div><div style="font-size:calc(14px * var(--wm-panel-effective-scale, 1));font-weight:600;color:#4f9d69">${avg8w.bullish}%</div><div style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">Bull</div></div>
           <div><div style="font-size:calc(14px * var(--wm-panel-effective-scale, 1));font-weight:600;color:#95a5a6">${avg8w.neutral}%</div><div style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">Neutral</div></div>
           <div><div style="font-size:calc(14px * var(--wm-panel-effective-scale, 1));font-weight:600;color:#e74c3c">${avg8w.bearish}%</div><div style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">Bear</div></div>
         </div>
@@ -220,7 +220,7 @@ export class AAIISentimentPanel extends Panel {
 
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;text-align:center;padding:8px;background:rgba(255,255,255,0.03);border-radius:6px;margin-bottom:8px">
           <div>
-            <div style="font-size:calc(22px * var(--wm-panel-effective-scale, 1));font-weight:700;color:#2ecc71">${latest.bullish.toFixed(1)}%</div>
+            <div style="font-size:calc(22px * var(--wm-panel-effective-scale, 1));font-weight:700;color:#4f9d69">${latest.bullish.toFixed(1)}%</div>
             <div style="font-size:calc(10px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">Bullish</div>
             <div style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">avg ${historicalAvg.bullish}%</div>
           </div>
@@ -236,7 +236,7 @@ export class AAIISentimentPanel extends Panel {
           </div>
         </div>
 
-        ${renderBar(latest.bullish, '#2ecc71', 'Bullish', `${latest.bullish.toFixed(1)}%`)}
+        ${renderBar(latest.bullish, '#4f9d69', 'Bullish', `${latest.bullish.toFixed(1)}%`)}
         ${renderBar(latest.neutral, '#95a5a6', 'Neutral', `${latest.neutral.toFixed(1)}%`)}
         ${renderBar(latest.bearish, '#e74c3c', 'Bearish', `${latest.bearish.toFixed(1)}%`)}
 

@@ -14,7 +14,7 @@ import type { GetEconomicStressResponse, EconomicStressComponent } from '@/gener
 type TabId = 'indicators' | 'spending' | 'centralBanks' | 'labor' | 'stress';
 
 function stressScoreColor(score: number): string {
-  if (score < 20) return '#27ae60';
+  if (score < 20) return '#4f9d69';
   if (score < 40) return '#f1c40f';
   if (score < 60) return '#e67e22';
   if (score < 80) return '#e74c3c';
@@ -347,7 +347,7 @@ export class EconomicPanel extends Panel {
                 <span class="change ${getSeriesChangeClass(series.change)}">${escapeHtml(formatSeriesChange(series))}</span>
               </div>
               <div class="indicator-date">${escapeHtml(series.date)}</div>
-              ${sparkline(series.observations?.map(o => o.value) ?? [], series.change !== null && series.change >= 0 ? '#4caf50' : '#f44336', 120, 28, 'display:block;margin:2px 0')}
+              ${sparkline(series.observations?.map(o => o.value) ?? [], series.change !== null && series.change >= 0 ? '#4f9d69' : '#f44336', 120, 28, 'display:block;margin:2px 0')}
             </div>
           `).join('')}
         </div>
@@ -500,7 +500,7 @@ export class EconomicPanel extends Panel {
           <span class="change ${getSeriesChangeClass(series.change)}">${escapeHtml(formatSeriesChange(series))}</span>
         </div>
         <div class="indicator-date">${escapeHtml(series.date)}</div>
-        ${sparkline(series.observations?.map(o => o.value) ?? [], series.change !== null && series.change >= 0 ? '#4caf50' : '#f44336', 120, 28, 'display:block;margin:2px 0')}
+        ${sparkline(series.observations?.map(o => o.value) ?? [], series.change !== null && series.change >= 0 ? '#4f9d69' : '#f44336', 120, 28, 'display:block;margin:2px 0')}
       </div>`;
 
     return `
@@ -540,7 +540,7 @@ export class EconomicPanel extends Panel {
         <div style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:${color}22;border:1px solid ${color}66;font-size:calc(12px * var(--wm-panel-effective-scale, 1));font-weight:600;color:${color}">${escapeHtml(d.label)}</div>
       </div>
       <div style="margin-bottom:16px">
-        <div style="position:relative;height:12px;border-radius:6px;overflow:visible;background:linear-gradient(to right,#27ae60 0%,#f1c40f 20%,#e67e22 40%,#e74c3c 60%,#8e44ad 80%,#8e44ad 100%);margin-bottom:4px">
+        <div style="position:relative;height:12px;border-radius:6px;overflow:visible;background:linear-gradient(to right,#4f9d69 0%,#f1c40f 20%,#e67e22 40%,#e74c3c 60%,#8e44ad 80%,#8e44ad 100%);margin-bottom:4px">
           <div style="position:absolute;top:-4px;left:calc(${needlePct}% - 2px);width:4px;height:20px;background:#fff;border-radius:2px;box-shadow:0 0 4px rgba(0,0,0,0.6)"></div>
         </div>
         <div style="display:flex;justify-content:space-between;font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">

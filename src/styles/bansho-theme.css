@@ -825,7 +825,7 @@
 .re-route-card--active { box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2); }
 .re-help { box-shadow: none; }
 .mission-preset-popover { box-shadow: none; }
-.update-toast { box-shadow: 0 0 0 1px rgba(68, 255, 136, 0.08); }
+.update-toast { box-shadow: 0 0 0 1px rgba(200, 164, 92, 0.08); }
 .embed-modal { box-shadow: none; }
 .download-dropdown { box-shadow: none; }
 .dl-dd-btn.primary { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1); }
@@ -945,7 +945,7 @@
 #unifiedSettingsModal .unified-settings-modal { box-shadow: none; }
 }
 .tab-cap-notice { box-shadow: none; }
-.passkey-offer-prompt { box-shadow: 0 0 0 1px rgba(68, 255, 136, 0.08); }
+.passkey-offer-prompt { box-shadow: 0 0 0 1px rgba(200, 164, 92, 0.08); }
 .country-deep-dive { box-shadow: none; }
 .country-deep-dive.maximized { box-shadow: none; }
 .country-deep-dive.maximized .panel-content { box-shadow: none; }

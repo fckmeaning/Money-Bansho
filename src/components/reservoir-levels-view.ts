@@ -45,7 +45,7 @@ const TONE_FALLBACK_HEX: Readonly<Record<ReservoirTone, string>> = {
   normal: '#888888',
   muted: '#838383',
   beyond: '#ffaa00',
-  ok: '#44ff88',
+  ok: '#d8d5cc',
 };
 
 export const RESERVOIR_SOURCE_URL = 'https://nsidc.org/data/atl13';

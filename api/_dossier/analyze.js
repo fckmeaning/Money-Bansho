@@ -53,8 +53,8 @@ const EN_ROLE = '(?<!(?:police|fire|army|defen[cs]e|military|spy|AI|design|marke
 // Verbs/nouns that may FOLLOW the role: "CEO resigns", "founder arrested".
 const EN_AFTER = alt(
   'resign(?:s|ed|ing|ation)?', 'steps? down', 'stepped down', 'stepping down', 'stands? down', 'stood down',
-  'quit(?:s|ting)?', 'retir(?:es|ed|ing|ement)', 'to retire', 'will retire', 'to leave', 'to depart', 'leav(?:es|ing)(?! (?:the )?door| for\\b)', 'returns?(?= as\\b)',
-  'departs?', 'departing', 'departure', 'exits?', 'exiting', 'ouste(?:d|r)', 'fired(?! up)', 'firing', 'sacked', 'removed', 'forced out',
+  'quit(?:s|ting)?', 'retir(?:es|ed|ing|ement)', 'to retire', 'will retire', 'to leave(?! for\\b| behind)', 'to depart(?! for\\b)', 'leav(?:es|ing)(?! (?:the )?door| for\\b)', 'returns?(?= as\\b)',
+  'departs?(?! for\\b)', 'departing(?! for\\b)', 'departure', 'exits?', 'exiting', 'ouste(?:d|r)', 'fired(?! up| back)', 'firing(?! back| up)', 'sacked', 'removed', 'forced out',
   'dismiss(?:ed|al)', 'replaced', 'arrest(?:ed)?', 'detain(?:ed)?', 'detention', 'indict(?:ed|ment)', 'jailed', 'charged', 'sentenced',
   'taken into custody', 'appoint(?:ed|ment)', 'named(?! in\\b)', 'elected', 'promoted', 'hired', 'succession',
   'to step aside', 'steps? aside', 'is out',
@@ -84,7 +84,12 @@ const EN_NOUN = alt(
 const EN_NEGATION = new RegExp(
   "\\b(?:won't|will not|not (?:going to |planning to |to )?|no plans? to|never|den(?:y|ies|ied)|rejects?|refus\\w+ to|calls? (?:for|on)|urg\\w+|pressure[sd]? to|should|must)\\b[^;|]{0,45}?\\b(?:step(?:ping|s)? (?:down|aside)|resign\\w*|quit\\w*|leav\\w+|retir\\w+|exit\\w*|depart\\w+|ouster|replac\\w+|fired|sacked)\\b" +
   '|\\b(?:resignation|exit|departure|arrest)\\b[^;|]{0,20}\\b(?:denied|rumou?rs?|speculation)\\b' +
-  '|\\brumou?rs? (?:of|about)\\b[^;|]{0,30}\\b(?:resignation|exit|departure|arrest)\\b',
+  '|\\brumou?rs? (?:of|about)\\b[^;|]{0,30}\\b(?:resignation|exit|departure|arrest)\\b' +
+  // A question that opens with an auxiliary verb is speculation, not a report ("Is the CEO stepping down?").
+  '|^(?:will|could|would|might|may|is|are|was|were|does|do|did|has|have|should|can)\\b[^?;|]*\\?' +
+  // Awards and rankings name a person with a title; no one changes jobs.
+  '|\\b(?:ceo|cfo|chief executive|chairman|executive|boss|founder|leader|manager|person|businessperson|entrepreneur|man|woman) of the (?:year|decade)\\b' +
+  '|\\bnamed (?:to|among|one of)\\b[^;|]{0,40}\\b(?:list|ranking|ranked|index|100|500|most|best|top)\\b',
   'i',
 );
 
@@ -129,7 +134,7 @@ const OTHER_LEADERSHIP = {
       'geht in den Ruhestand', 'geht von Bord', 'verhaftet', 'festgenommen', 'Festnahme', 'Verhaftung', 'in Haft', 'angeklagt', 'Wechsel an der Spitze',
       'wird(?= (?:neue[rn]? )?[\\p{L}-]*(?:Chef|CEO|CFO|Vorstand))', 'neue[rn]?(?= [\\p{L}-]*(?:Chef|CEO|CFO|Finanzvorstand|Vorstandsvorsitz))',
     )),
-    negation: latin('nicht zurück(?:treten)?|tritt nicht [^;|]{0,20}?zurück|dementiert|schließt Rücktritt aus|lehnt Rücktritt ab|fordert[^;|]{0,40}Rücktritt|Rücktrittsforderung(?:en)?'),
+    negation: latin('nicht zurück(?:treten)?|kein(?:e|en|er)? Rücktritt\\p{L}*|tritt nicht [^;|]{0,20}?zurück|dementiert|schließt Rücktritt aus|lehnt Rücktritt ab|fordert[^;|]{0,40}Rücktritt|Rücktrittsforderung(?:en)?'),
   },
   fr: {
     role: latin(alt(

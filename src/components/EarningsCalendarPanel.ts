@@ -59,7 +59,7 @@ function dateLabel(dateStr: string): string {
 function renderEntry(e: EarningsEntry): string {
   const hourLabel = e.hour === 'bmo' ? 'BMO' : e.hour === 'amc' ? 'AMC' : e.hour ? e.hour.toUpperCase() : '';
   const hourStyle = e.hour === 'bmo'
-    ? 'background:rgba(46,204,113,0.15);color:#2ecc71'
+    ? 'background:rgba(79,157,105,0.15);color:#4f9d69'
     : e.hour === 'amc'
       ? 'background:rgba(52,152,219,0.15);color:#3498db'
       : 'background:rgba(255,255,255,0.08);color:var(--text-dim)';
@@ -73,7 +73,7 @@ function renderEntry(e: EarningsEntry): string {
   let epsHtml = '';
   if (e.hasActuals && epsActFmt) {
     const badgeStyle = e.surpriseDirection === 'beat'
-      ? 'background:rgba(46,204,113,0.2);color:#2ecc71'
+      ? 'background:rgba(79,157,105,0.2);color:#4f9d69'
       : e.surpriseDirection === 'miss'
         ? 'background:rgba(231,76,60,0.2);color:#e74c3c'
         : 'background:rgba(255,255,255,0.08);color:var(--text-dim)';

@@ -84,8 +84,8 @@ function gaugeColor(score: number, funding: number | null): string {
     if (score >= 40) return '#e67e22';
     return '#c0392b88';
   }
-  if (score >= 60) return '#2ecc71';
-  if (score >= 40) return '#27ae60';
+  if (score >= 60) return '#4f9d69';
+  if (score >= 40) return '#4f9d69';
   return '#2ecc7188';
 }
 

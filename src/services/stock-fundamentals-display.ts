@@ -26,7 +26,7 @@ export function buildFundamentalDisplayCells(
 
   const num = (value: number | undefined): value is number =>
     typeof value === 'number' && Number.isFinite(value);
-  const signColor = (value: number): string => (value >= 0 ? '#16a34a' : '#dc2626');
+  const signColor = (value: number): string => (value >= 0 ? '#4f9d69' : '#dc2626');
   const cells: FundamentalDisplayCell[] = [];
 
   if (num(fundamentals.profitMargin)) cells.push({ label: 'Profit Margin', value: `${(fundamentals.profitMargin * 100).toFixed(1)}%`, color: signColor(fundamentals.profitMargin) });

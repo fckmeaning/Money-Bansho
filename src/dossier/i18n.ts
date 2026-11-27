@@ -218,7 +218,8 @@ const RU: Record<Key, string> = {
 const initial = (): UiLang => {
   const param = new URLSearchParams(location.search).get('lang');
   const value = param ?? safeStorageGet(STORAGE_KEY);
-  return value === 'ru' ? 'ru' : 'en';
+  // Интерфейс по умолчанию русский; английский только по явному выбору (?lang=en или сохранённый).
+  return value === 'en' ? 'en' : 'ru';
 };
 
 let current: UiLang = initial();

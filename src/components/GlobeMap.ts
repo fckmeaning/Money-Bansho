@@ -1460,7 +1460,7 @@ export class GlobeMap {
       setTrustedHtml(el, trustedHtml(GlobeMap.wrapHit(`<div style="font-size:calc(11px * var(--wm-panel-effective-scale, 1));color:${sc};text-shadow:0 0 4px ${sc}88;">🔌</div>`), "legacy direct innerHTML migration"));
       el.title = `${d.title} (${d.severity})`;
     } else if (d._kind === 'repairShip') {
-      const sc = d.status === 'on-station' ? '#44ff88' : '#44aaff';
+      const sc = d.status === 'on-station' ? '#c8a45c' : '#44aaff';
       setTrustedHtml(el, trustedHtml(GlobeMap.wrapHit(`<div style="font-size:calc(11px * var(--wm-panel-effective-scale, 1));color:${sc};text-shadow:0 0 4px ${sc}88;">🚢</div>`), "legacy direct innerHTML migration"));
       el.title = d.name;
     } else if (d._kind === 'newsLocation') {
@@ -1788,7 +1788,7 @@ export class GlobeMap {
         + (d.usniActivityDescription ? `<br><span style="opacity:.6;font-size:calc(10px * var(--wm-panel-effective-scale, 1));white-space:normal;display:block;max-width:200px;">${esc(d.usniActivityDescription.slice(0, 120))}</span>` : '')
         + (d.usniSource
           ? `<br><span style="color:#ffaa44;font-size:calc(9px * var(--wm-panel-effective-scale, 1));">⚠ EST. POSITION — ${inPort ? 'In-port' : 'Approx.'} via USNI${articleDate}</span>`
-          : `<br><span style="color:#44ff88;font-size:calc(9px * var(--wm-panel-effective-scale, 1));">● AIS LIVE</span>`);
+          : `<br><span style="color:#c8a45c;font-size:calc(9px * var(--wm-panel-effective-scale, 1));">● AIS LIVE</span>`);
     } else if (d._kind === 'cluster') {
       const cc = GlobeMap.CLUSTER_ACTIVITY_COLORS[d.activityType ?? 'unknown'] ?? '#6688aa';
       const actLabel = d.activityType && d.activityType !== 'unknown'
@@ -1941,7 +1941,7 @@ export class GlobeMap {
              (d.impact ? `<br><span style="opacity:.7;white-space:normal;display:block;">${esc(d.impact.slice(0, 70))}</span>` : '') +
              (d.repairEta ? `<br><span style="opacity:.5;">ETA: ${esc(d.repairEta)}</span>` : '');
     } else if (d._kind === 'repairShip') {
-      const sc = d.status === 'on-station' ? '#44ff88' : '#44aaff';
+      const sc = d.status === 'on-station' ? '#c8a45c' : '#44aaff';
       html = `<span style="color:${sc};font-weight:bold;">🚢 ${esc(d.name)}</span>` +
              `<br><span style="opacity:.7;">${esc(d.status.replace(/-/g, ' '))}${d.operator ? ' · ' + esc(d.operator) : ''}</span>` +
              (d.eta ? `<br><span style="opacity:.5;">ETA: ${esc(d.eta)}</span>` : '');
@@ -2761,8 +2761,8 @@ export class GlobeMap {
   // Focus outline (#10453): the focus bar's accent. globe.gl draws polygon
   // strokes one pixel wide, so the two styles differ by opacity. Falsy cap
   // and side colours omit their meshes so focus cannot intercept CII hover.
-  private static readonly FOCUS_CHOSEN_STROKE = 'rgba(68,255,136,0.95)';
-  private static readonly FOCUS_NEIGHBOUR_STROKE = 'rgba(68,255,136,0.4)';
+  private static readonly FOCUS_CHOSEN_STROKE = 'rgba(200,164,92,0.95)';
+  private static readonly FOCUS_NEIGHBOUR_STROKE = 'rgba(200,164,92,0.4)';
 
   private getReversedRing(zoneId: string, countryIso: string, ringIdx: number, ring: number[][][]): number[][][] {
     const key = `${zoneId}:${countryIso}:${ringIdx}`;

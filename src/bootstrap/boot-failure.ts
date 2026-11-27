@@ -50,7 +50,7 @@ export function renderBootFailureScreen(error: unknown): void {
   const overlay = styled(
     'div',
     'position:fixed;inset:0;z-index:2147483000;overflow:auto;display:grid;place-items:center;' +
-      'padding:24px 20px;background:#050807;color:#eef8f0;color-scheme:dark;' +
+      'padding:24px 20px;background:#0d0f12;color:#d8d5cc;color-scheme:dark;' +
       `font-family:${FONT_STACK};line-height:1.55;`,
   );
   overlay.id = SCREEN_ID;
@@ -64,13 +64,13 @@ export function renderBootFailureScreen(error: unknown): void {
     'World Monitor',
   );
   brand.prepend(
-    styled('span', 'width:10px;height:10px;border-radius:2px;background:#4ade80;flex:none;'),
+    styled('span', 'width:10px;height:10px;border-radius:2px;background:#c8a45c;flex:none;'),
   );
   brand.firstElementChild?.setAttribute('aria-hidden', 'true');
 
   const eyebrow = styled(
     'p',
-    'margin:0 0 12px;color:#4ade80;text-transform:uppercase;letter-spacing:0.08em;font-size:12px;font-weight:700;',
+    'margin:0 0 12px;color:#c8a45c;text-transform:uppercase;letter-spacing:0.08em;font-size:12px;font-weight:700;',
     'Startup error',
   );
 
@@ -82,14 +82,14 @@ export function renderBootFailureScreen(error: unknown): void {
 
   const lede = styled(
     'p',
-    'margin:0;color:#a8b8ad;font-size:17px;',
+    'margin:0;color:#8a877e;font-size:17px;',
     'Something went wrong while World Monitor was loading. This is usually temporary — reloading fixes most cases.',
   );
 
   const detail = styled(
     'p',
-    'margin:20px 0 0;padding:10px 14px;border:1px solid #1b2b22;border-radius:8px;background:#0c1210;' +
-      'color:#a8b8ad;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;overflow-wrap:anywhere;',
+    'margin:20px 0 0;padding:10px 14px;border:1px solid #262a31;border-radius:8px;background:#14171c;' +
+      'color:#8a877e;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;overflow-wrap:anywhere;',
     describeBootError(error),
   );
 
@@ -101,7 +101,7 @@ export function renderBootFailureScreen(error: unknown): void {
   const reload = styled(
     'button',
     'display:inline-flex;align-items:center;min-height:44px;padding:12px 18px;border:0;border-radius:8px;' +
-      `background:#4ade80;color:#04170c;font-family:${FONT_STACK};font-weight:700;font-size:15px;cursor:pointer;outline-offset:3px;`,
+      `background:#c8a45c;color:#0d0f12;font-family:${FONT_STACK};font-weight:700;font-size:15px;cursor:pointer;outline-offset:3px;`,
     'Reload the dashboard',
   );
   reload.type = 'button';
@@ -114,7 +114,7 @@ export function renderBootFailureScreen(error: unknown): void {
 
   const home = styled(
     'a',
-    'display:inline-flex;align-items:center;min-height:44px;color:#4ade80;font-size:15px;text-decoration:none;outline-offset:3px;',
+    'display:inline-flex;align-items:center;min-height:44px;color:#c8a45c;font-size:15px;text-decoration:none;outline-offset:3px;',
     'World Monitor homepage',
   );
   home.href = '/';

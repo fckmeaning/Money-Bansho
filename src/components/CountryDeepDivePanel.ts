@@ -1673,7 +1673,7 @@ export class CountryDeepDivePanel implements CountryBriefPanel {
         labelText = importPct < 0 ? 'Net exporter' : `${Math.round(importPct)}%`;
         if (importPct > 60) color = '#ef4444';
         else if (importPct >= 30) color = '#f59e0b';
-        else if (importPct > 0) color = '#22c55e';
+        else if (importPct > 0) color = '#8a877e';
       }
       const row = this.el('div', '');
       row.style.cssText = 'display:flex;align-items:center;gap:6px;margin-top:6px';
@@ -1749,7 +1749,7 @@ export class CountryDeepDivePanel implements CountryBriefPanel {
       const totalBcmMonth = Math.round(data.gasTotalDemandTj / 36000);
       const lngShare = data.gasLngShare;
       const pipeShare = Math.max(0, 100 - lngShare);
-      const lngColor = lngShare > 80 ? '#ef4444' : lngShare >= 40 ? '#f59e0b' : '#22c55e';
+      const lngColor = lngShare > 80 ? '#ef4444' : lngShare >= 40 ? '#f59e0b' : '#8a877e';
 
       const section = this.el('div', '');
       section.style.cssText = 'margin-top:10px';
@@ -1776,7 +1776,7 @@ export class CountryDeepDivePanel implements CountryBriefPanel {
 
       if (data.ieaNetExporter) {
         const msg = this.el('div', '');
-        msg.style.cssText = 'color:#22c55e;font-size:calc(12px * var(--wm-panel-effective-scale, 1))';
+        msg.style.cssText = 'color:#8a877e;font-size:calc(12px * var(--wm-panel-effective-scale, 1))';
         msg.textContent = 'IEA oil stocks: Net Exporter';
         section.append(msg);
       } else {
@@ -1867,7 +1867,7 @@ export class CountryDeepDivePanel implements CountryBriefPanel {
 
       const segments: Array<{ label: string; color: string; value: number }> = [
         { label: 'Fossil', color: '#8B4513', value: data.emberFossilShare },
-        { label: 'Renewable', color: '#22c55e', value: data.emberRenewShare },
+        { label: 'Renewable', color: '#c8a45c', value: data.emberRenewShare },
         { label: 'Nuclear', color: '#6A0DAD', value: data.emberNuclearShare },
       ];
       const total = segments.reduce((acc, seg) => acc + seg.value, 0);
@@ -2409,7 +2409,7 @@ export class CountryDeepDivePanel implements CountryBriefPanel {
           const lvl = result.coverageLevel ?? '';
           if (lvl) {
             const colors: Record<string, string> = {
-              full: 'background:#15803d;color:#dcfce7',
+              full: 'background:#3a3f47;color:#d8d5cc',
               partial: 'background:#b45309;color:#fef3c7',
               unsupported: 'background:#b91c1c;color:#fee2e2',
             };
@@ -2563,7 +2563,7 @@ export class CountryDeepDivePanel implements CountryBriefPanel {
       const tbody = this.el('tbody', '');
       for (const p of result.products as ProductImpact[]) {
         const tr = this.el('tr', '');
-        const defColor = p.deficitPct > 30 ? '#ef4444' : p.deficitPct > 10 ? '#f59e0b' : '#22c55e';
+        const defColor = p.deficitPct > 30 ? '#ef4444' : p.deficitPct > 10 ? '#f59e0b' : '#8a877e';
         const cells = [
           p.product,
           `${p.demandKbd} kbd`,

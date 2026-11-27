@@ -299,7 +299,7 @@ const VIEWPORT_MOVEMENT_EVENT_KEY = 'worldMonitorViewportGeneration';
 const FOCUS_CHOSEN_FILL_LAYER = 'country-focus-chosen-fill';
 const FOCUS_CHOSEN_BORDER_LAYER = 'country-focus-chosen-border';
 const FOCUS_NEIGHBOUR_BORDER_LAYER = 'country-focus-neighbour-border';
-const FOCUS_OUTLINE_COLOR = { dark: '#44ff88', light: '#16a34a' } as const;
+const FOCUS_OUTLINE_COLOR = { dark: '#c8a45c', light: '#8a6a1f' } as const;
 const FOCUS_OUTLINE_STYLE = {
   chosen: { width: 2, opacity: 0.95, fillOpacity: 0.06 },
   neighbour: { width: 1, opacity: 0.45 },
@@ -5183,7 +5183,7 @@ export class DeckGLMap {
   }
 
   private static readonly CII_LEVEL_HEX: Record<string, string> = {
-    critical: '#b91c1c', high: '#dc2626', elevated: '#f59e0b', normal: '#eab308', low: '#22c55e',
+    critical: '#b91c1c', high: '#dc2626', elevated: '#f59e0b', normal: '#eab308', low: '#8a877e',
   };
 
   private createCIIChoroplethLayer(): GeoJsonLayer | null {

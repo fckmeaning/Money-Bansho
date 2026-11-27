@@ -1,4 +1,5 @@
 // The detail plate for one selected event.
+import { currencyLabel } from '../currency';
 import { h } from '../dom';
 import { priceWindow, typeGlyph } from './charts';
 import { dayZero } from './data';
@@ -64,7 +65,7 @@ function chartSection(ui: Ui, model: Model, event: Ev): HTMLElement[] {
       value(ui, ui.compact(bar.v)),
     ]);
   }
-  const title = `${ui.t('priceWindow')}${model.currency ? `, ${model.currency}` : ''}`;
+  const title = `${ui.t('priceWindow')}${model.currency ? `, ${currencyLabel(model.currency, ui.lang)}` : ''}`;
   return [
     section(
       title,

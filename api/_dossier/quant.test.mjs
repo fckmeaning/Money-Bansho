@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 import {
-  alignedReturns, attentionIndex, companySignals, corroborationWeight, eventStudy, evidenceWeight,
+  ATTENTION_WEIGHTS, alignedReturns, attentionIndex, companySignals, corroborationWeight, eventStudy, evidenceWeight,
   fitMarketModel, newsSurprise, scoreUncertainty, significance, sourceWeight, volatilityRegime,
 } from './quant.js';
 
@@ -119,7 +119,14 @@ test('attention index is bounded, monotonic and explainable', () => {
   assert.ok(high.score > 80 && high.score <= 100);
   assert.ok(Math.abs(high.parts.reduce((sum, p) => sum + p.share, 0) - 1) < 0.03);
   assert.equal(attentionIndex({ volumeRatio: 3 }), null); // not enough evidence
-  assert.equal(attentionIndex({ priceZ: 1, newsZ: 0 }).coverage, 0.7);
+  assert.equal(attentionIndex({ priceZ: 1, newsZ: 0 }).coverage, 0.53); // 0.7 / 3 + 0.3
+  // Price, volume and volatility carry equal weight (docs/math/backtest-real.md, section 1).
+  const shares = attentionIndex({ priceZ: 2, volumeRatio: 4, volatilityRatio: 2.25 }).parts;
+  assert.equal(shares.length, 3);
+  assert.ok(shares.every((p) => p.share > 0));
+  assert.ok(Math.abs(ATTENTION_WEIGHTS.price - ATTENTION_WEIGHTS.volume) < 1e-12);
+  assert.ok(Math.abs(ATTENTION_WEIGHTS.volume - ATTENTION_WEIGHTS.volatility) < 1e-12);
+  assert.ok(Math.abs(Object.values(ATTENTION_WEIGHTS).reduce((a, b) => a + b, 0) - 1) < 1e-12);
 });
 
 test('company signals ignore a stale price series', () => {

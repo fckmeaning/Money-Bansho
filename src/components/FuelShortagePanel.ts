@@ -420,11 +420,11 @@ export class FuelShortagePanel extends Panel {
         .fs-drawer .fs-kv-key { color: var(--text-dim, #888); text-transform: uppercase; letter-spacing: 0.04em; font-size: calc(9px * var(--wm-panel-effective-scale, 1)); padding-top: 2px; }
         .fs-source-list { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); }
         .fs-src-item { font-size: calc(10px * var(--wm-panel-effective-scale, 1)); color: var(--text, #eee); margin-bottom: 6px; }
-        .fs-src-item a { color: #4ade80; text-decoration: none; }
+        .fs-src-item a { color: #c8a45c; text-decoration: none; }
         .fs-src-item a:hover { text-decoration: underline; }
         .fs-src-type { display: inline-block; padding: 1px 6px; border-radius: 8px; font-size: calc(8px * var(--wm-panel-effective-scale, 1)); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; background: rgba(255,255,255,0.08); color: var(--text-dim, #aaa); margin-right: 4px; }
         .fs-src-type-regulator { background: #2980b9; color: #fff; }
-        .fs-src-type-operator { background: #27ae60; color: #fff; }
+        .fs-src-type-operator { background: #5f5c54; color: #fff; }
         .fs-src-type-press { background: #555; color: #ccc; }
       </style>
     `, 'legacy Panel.setContent() migration');

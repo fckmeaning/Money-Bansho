@@ -12,7 +12,7 @@ const GRID_LINES = 4;
 
 const VESSEL_KEYS: Array<keyof TransitDayCount & string> = ['container', 'dryBulk', 'generalCargo', 'roro', 'tanker'];
 const CAP_KEYS: Array<keyof TransitDayCount & string> = ['capContainer', 'capDryBulk', 'capGeneralCargo', 'capRoro', 'capTanker'];
-const VESSEL_COLORS = ['#dc2626', '#ea580c', '#ca8a04', '#0284c7', '#15803d'];
+const VESSEL_COLORS = ['#dc2626', '#ea580c', '#ca8a04', '#0284c7', '#64748b'];
 const VESSEL_LABELS = ['Container', 'Dry Bulk', 'Gen. Cargo', 'RoRo', 'Tanker'];
 const MA_COLOR = '#f59e0b';
 

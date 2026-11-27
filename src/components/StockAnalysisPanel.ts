@@ -372,8 +372,8 @@ export class StockAnalysisPanel extends Panel {
     const total = c.total || 1;
     const pct = (v: number) => ((v / total) * 100).toFixed(1);
     const segments = [
-      { label: 'Strong Buy', count: c.strongBuy, color: '#16a34a', pct: pct(c.strongBuy) },
-      { label: 'Buy', count: c.buy, color: '#4ade80', pct: pct(c.buy) },
+      { label: 'Strong Buy', count: c.strongBuy, color: '#4f9d69', pct: pct(c.strongBuy) },
+      { label: 'Buy', count: c.buy, color: '#7fae8f', pct: pct(c.buy) },
       { label: 'Hold', count: c.hold, color: '#facc15', pct: pct(c.hold) },
       { label: 'Sell', count: c.sell, color: '#f87171', pct: pct(c.sell) },
       { label: 'Strong Sell', count: c.strongSell, color: '#dc2626', pct: pct(c.strongSell) },

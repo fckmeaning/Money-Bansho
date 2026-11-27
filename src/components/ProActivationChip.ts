@@ -122,7 +122,7 @@ function renderChip(options: ProActivationFlowOptions): void {
   Object.assign(finishBtn.style, {
     flexShrink: '0',
     padding: '6px 12px',
-    background: 'var(--green, #22c55e)',
+    background: '#c8a45c',
     color: 'var(--bg, #0b0c0f)',
     border: 'none',
     borderRadius: '6px',

@@ -94,7 +94,7 @@ export const REFRESH_INTERVALS = {
 
 // Monitor colors - shared
 export const MONITOR_COLORS = [
-  '#44ff88',
+  '#c8a45c',
   '#ff8844',
   '#4488ff',
   '#ff44ff',

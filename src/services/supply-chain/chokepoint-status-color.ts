@@ -9,7 +9,7 @@ export function chokepointStatusColor(status: string | undefined): string {
   switch ((status || '').toLowerCase()) {
     case 'red': return '#e74c3c';
     case 'yellow': return '#f39c12';
-    case 'green': return '#2ecc71';
+    case 'green': return '#8a877e';
     default: return '#7f8c8d';
   }
 }

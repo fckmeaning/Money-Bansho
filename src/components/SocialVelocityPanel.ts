@@ -17,7 +17,7 @@ function velocityColor(score: number): string {
   if (score >= 80) return '#e74c3c';
   if (score >= 50) return '#e67e22';
   if (score >= 25) return '#f1c40f';
-  return '#27ae60';
+  return '#8a877e';
 }
 
 function formatScore(n: number): string {

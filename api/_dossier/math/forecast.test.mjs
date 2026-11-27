@@ -120,3 +120,13 @@ test('no peers at all: horizons carry peers null', () => {
   const out = computeForecasts({ history, events: [event(history, 300)], peers: [] }, NOW(history));
   assert.ok(out.events[0].horizons.every((h) => h.peers === null));
 });
+
+test('the analogue mean is shrunk harder than the spread (calibrated on real 8-K events)', () => {
+  const { history } = world();
+  const events = Array.from({ length: 9 }, (_, k) => event(history, 20 + k * 25, 'leadership', -0.6));
+  events.push(event(history, 300, 'leadership', -0.6));
+  const out = computeForecasts({ history, events }, NOW(history));
+  const h1 = out.events.find((e) => e.eventId === 'e300').horizons.find((x) => x.h === 1);
+  assert.ok(h1.n >= 5);
+  assert.equal(h1.weight, Number((h1.n / (h1.n + 30)).toFixed(3)));
+});

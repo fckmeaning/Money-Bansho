@@ -838,7 +838,7 @@ export class SupplyChainPanel extends Panel {
     const levelColor = stressLevel === 'critical' ? '#e74c3c'
       : stressLevel === 'elevated' ? '#e67e22'
       : stressLevel === 'moderate' ? '#f1c40f'
-      : '#27ae60';
+      : '#8a877e';
 
     const gaugeWidth = Math.round(Math.min(100, Math.max(0, stressScore)));
     const gaugeBg = stressLevel === 'critical' ? 'rgba(231,76,60,0.15)'

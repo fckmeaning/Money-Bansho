@@ -59,7 +59,7 @@ const HORMUZ_STATUS_COLOR: Record<HormuzTrackerData['status'], string> = {
   closed:     '#e74c3c', // red — passage closed
   disrupted:  '#e74c3c', // red — significant disruption
   restricted: '#f39c12', // amber — partial constraints
-  open:       '#27ae60', // green — flowing normally
+  open:       '#8a877e', // green — flowing normally
 };
 const HORMUZ_STATUS_LABEL: Record<HormuzTrackerData['status'], string> = {
   closed:     'Closed',
@@ -171,7 +171,7 @@ export class EnergyRiskOverviewPanel extends Panel {
     }
     const fill = t.value.fillPct.toFixed(0);
     // Below 30% during refill season is critical; below 50% is amber.
-    const color = t.value.fillPct < 30 ? '#e74c3c' : t.value.fillPct < 50 ? '#f39c12' : '#27ae60';
+    const color = t.value.fillPct < 30 ? '#e74c3c' : t.value.fillPct < 50 ? '#f39c12' : '#8a877e';
     return tileHtml('EU Gas', `${fill}%`, color);
   }
 
@@ -186,7 +186,7 @@ export class EnergyRiskOverviewPanel extends Panel {
     const deltaText = `${sign}${change.toFixed(2)}%`;
     // Oil price up = bad for energy importers (the dominant Atlas reader).
     // Up = red. Down = green. Inverted from a usual market panel.
-    const color = change >= 0 ? '#e74c3c' : '#27ae60';
+    const color = change >= 0 ? '#e74c3c' : '#8a877e';
     return tileHtml('Brent', price, color, '', deltaText, oilTapeObservationLabel(t.value));
   }
 
@@ -196,7 +196,7 @@ export class EnergyRiskOverviewPanel extends Panel {
       return tileHtml('Active disruptions', '—', '#7f8c8d', 'data-degraded="true"');
     }
     const n = t.value.count;
-    const color = n === 0 ? '#27ae60' : n < 5 ? '#f39c12' : '#e74c3c';
+    const color = n === 0 ? '#8a877e' : n < 5 ? '#f39c12' : '#e74c3c';
     return tileHtml('Active disruptions', String(n), color);
   }
 

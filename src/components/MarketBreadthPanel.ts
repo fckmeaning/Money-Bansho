@@ -79,7 +79,7 @@ type SeriesRun = Array<{ x: number; y: number }>;
 const SERIES: { key: NumericSeriesKey; color: string; label: string; fillOpacity: number }[] = [
   { key: 'pctAbove20d',  color: '#3b82f6', label: 'Stocks above 20-day moving average (%)', fillOpacity: 0.08 },
   { key: 'pctAbove50d',  color: '#f59e0b', label: 'Stocks above 50-day moving average (%)', fillOpacity: 0.06 },
-  { key: 'pctAbove200d', color: '#22c55e', label: 'Stocks above 200-day moving average (%)', fillOpacity: 0.04 },
+  { key: 'pctAbove200d', color: '#4f9d69', label: 'Stocks above 200-day moving average (%)', fillOpacity: 0.04 },
 ];
 
 function xPos(i: number, total: number): number {
@@ -178,8 +178,8 @@ function buildChart(points: BreadthSnapshot[]): string {
 }
 
 function readingBadge(val: number, color: string): string {
-  const bg = val >= 60 ? 'rgba(34,197,94,0.12)' : val >= 40 ? 'rgba(245,158,11,0.12)' : 'rgba(239,68,68,0.12)';
-  const fg = val >= 60 ? '#22c55e' : val >= 40 ? '#f59e0b' : '#ef4444';
+  const bg = val >= 60 ? 'rgba(79,157,105,0.12)' : val >= 40 ? 'rgba(245,158,11,0.12)' : 'rgba(239,68,68,0.12)';
+  const fg = val >= 60 ? '#4f9d69' : val >= 40 ? '#f59e0b' : '#ef4444';
   return `<span style="display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:4px;background:${bg}">
     <span style="width:6px;height:6px;border-radius:50%;background:${color}"></span>
     <span style="font-size:calc(14px * var(--wm-panel-effective-scale, 1));font-weight:600;color:${fg}">${val.toFixed(1)}%</span>

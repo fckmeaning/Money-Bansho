@@ -70,7 +70,7 @@ export class LlmStatusIndicator {
   }
 
   private setStatus(available: boolean, labelText: string, tooltip: string): void {
-    this.dot.style.background = available ? '#44ff88' : '#ff4444';
+    this.dot.style.background = available ? '#d8d5cc' : '#ff4444';
     this.label.textContent = labelText;
     this.element.title = tooltip;
   }

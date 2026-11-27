@@ -221,13 +221,21 @@ export function createPoller<T>(
     lastRun = Date.now();
     clearTimeout(timer);
     try {
-      const data = await load(controller.signal);
+      let data: T;
+      try {
+        data = await load(controller.signal);
+      } catch (err) {
+        if (!controller.signal.aborted) {
+          if (!(err instanceof ApiError)) console.error('[dossier] poll failed', err);
+          onError(err instanceof ApiError ? err : new ApiError(0, 'network'));
+        }
+        return;
+      }
       if (!controller.signal.aborted) onData(data);
     } catch (err) {
-      if (!controller.signal.aborted) {
-        if (!(err instanceof ApiError)) console.error('[dossier] poll failed', err);
-        onError(err instanceof ApiError ? err : new ApiError(0, 'network'));
-      }
+      // A view that fails to draw is a bug, not a network failure: log it instead of
+      // reporting "no connection" or leaving an unhandled rejection.
+      console.error('[dossier] update failed', err);
     } finally {
       busy = false;
       schedule(intervalMs);

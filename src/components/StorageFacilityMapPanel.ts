@@ -473,7 +473,7 @@ export class StorageFacilityMapPanel extends Panel {
         .sf-ev-stale { color: var(--text-dim, #888); font-style: italic; }
         .sf-evidence { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); }
         .sf-ev-item { font-size: calc(10px * var(--wm-panel-effective-scale, 1)); color: var(--text, #eee); margin-bottom: 6px; }
-        .sf-ev-item a { color: #4ade80; text-decoration: none; }
+        .sf-ev-item a { color: #c8a45c; text-decoration: none; }
         .sf-ev-item a:hover { text-decoration: underline; }
       </style>
     `, 'legacy Panel.setContent() migration');

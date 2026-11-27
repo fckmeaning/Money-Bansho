@@ -124,11 +124,13 @@ function gdeltPoints(json) {
 }
 
 async function fetchGdelt() {
-  const file = fileOf('gdelt-daily.json');
+  const part = args.find((a) => a.startsWith('--part='))?.slice(7); // k/n: several processes may share the work
+  const [k, n] = part ? part.split('/').map(Number) : [0, 1];
+  const file = fileOf(part ? `gdelt-daily-${k}.json` : 'gdelt-daily.json');
   const store = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : { series: {} };
   const range = (from, to) => `startdatetime=${from}000000&enddatetime=${to}235959`;
   const years = [['20211201', '20261126']]; // one request returns daily points for the whole span
-  for (const [symbol, name] of Object.entries(GDELT_NAMES)) {
+  for (const [symbol, name] of Object.entries(GDELT_NAMES).filter((_, i) => i % n === k)) {
     for (const mode of ['timelinevolraw', 'timelinetone']) {
       const key = `${symbol}|${mode}`;
       if (store.series[key]?.length > 1000) continue;

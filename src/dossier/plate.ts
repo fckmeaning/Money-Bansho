@@ -1,5 +1,5 @@
 // Overview signal plate: the headline model outputs, each labelled for what it is.
-import { fixed, h, pct, share, signed, signedText, tone } from './dom';
+import { fixed, h, pct, share, signed, tone } from './dom';
 import { scoreLabel, t } from './i18n';
 import { SIGNAL_PARTS } from './types';
 import type { Dossier, ImpactLevel, SignalPart, Signals } from './types';
@@ -54,16 +54,19 @@ function zScale(z: number | null, limit = 4): HTMLElement | null {
   );
 }
 
+/** A missing input reads "no data", not "z no data". */
 function partValue(signals: Signals, key: SignalPart): string {
+  const some = (value: number | null | undefined, format: (v: number) => string) =>
+    value === null || value === undefined ? t('noData') : format(value);
   switch (key) {
     case 'price':
-      return `z ${signedText(signals.price?.z)}`;
+      return some(signals.price?.z, (v) => `z ${signed(v)}`);
     case 'news':
-      return `z ${signedText(signals.news?.z)}`;
+      return some(signals.news?.z, (v) => `z ${signed(v)}`);
     case 'volume':
-      return `×${fixed(signals.volumeRatio)}`;
+      return some(signals.volumeRatio, (v) => `×${fixed(v)}`);
     case 'volatility':
-      return `ρ ${fixed(signals.volatility?.ratio)}`;
+      return some(signals.volatility?.ratio, (v) => `ρ ${fixed(v)}`);
   }
 }
 

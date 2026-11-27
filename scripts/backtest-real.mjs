@@ -2,11 +2,11 @@
 // Данные: docs/handoff/backtest-data (скачать: node scripts/backtest-fetch.mjs).
 // Запуск: node scripts/backtest-real.mjs [--quick]   (офлайн, детерминированно: seed фиксирован)
 // Это отчёт, а не ворота: код выхода всегда 0. Ничего не выдумывается: нет данных, значит строка пропускается.
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gunzipSync } from 'node:zlib';
-import { alignedReturns, attentionIndex, companySignals, fitMarketModel } from '../api/_dossier/quant.js';
+import { ATTENTION_WEIGHTS, alignedReturns, attentionIndex, companySignals, fitMarketModel } from '../api/_dossier/quant.js';
 import { computeForecasts } from '../api/_dossier/math/forecast.js';
 import { benjaminiHochberg } from '../api/_dossier/math/inference.js';
 import { detectJumps, valueAtRisk } from '../api/_dossier/math/risk.js';
@@ -51,7 +51,10 @@ function loadBars(symbol) {
 }
 const symbols = Object.keys(priceIndex.files).filter((s) => meta.has(s) && loadBars(s) && loadBars(meta.get(s).benchmark));
 const sec = existsSync(join(DATA, 'sec-8k.json')) ? JSON.parse(readFileSync(join(DATA, 'sec-8k.json'), 'utf8')).filings : {};
-const gdelt = existsSync(join(DATA, 'gdelt-daily.json')) ? JSON.parse(readFileSync(join(DATA, 'gdelt-daily.json'), 'utf8')).series : {};
+const gdelt = {};
+for (const name of readdirSync(DATA)) {
+  if (/^gdelt-daily.*.json$/.test(name)) Object.assign(gdelt, JSON.parse(readFileSync(join(DATA, name), 'utf8')).series);
+}
 const dayNum = (yyyymmdd) => Date.UTC(+yyyymmdd.slice(0, 4), +yyyymmdd.slice(4, 6) - 1, +yyyymmdd.slice(6, 8)) / DAY;
 function gdeltDaily(symbol, mode) {
   const rows = gdelt[`${symbol}|${mode}`];
@@ -77,6 +80,8 @@ function upper(bars, limit) {
 
 const KEYS = ['price', 'news', 'volume', 'volatility'];
 const CAP = 4;
+const OLD_W = [0.4, 0.3, 0.2, 0.1]; // веса до этой проверки
+const CURRENT_W = [ATTENTION_WEIGHTS.price, ATTENTION_WEIGHTS.news, ATTENTION_WEIGHTS.volume, ATTENTION_WEIGHTS.volatility]; // веса в коде сейчас
 
 function newsZ(counts, day) {
   // Вчерашний (полностью опубликованный) день против среднего за 14 дней до него, формула newsSurprise (Анском).
@@ -275,7 +280,7 @@ results.data = { symbols: features.map((x) => x.symbol), obs: nObs, from: iso(fi
     for (let i = 0; i < rows.length; i += 7) {
       const c = rows[i].check;
       if (!Number.isFinite(c.score)) continue;
-      const e = energy({ ...rows[i].raw, news: null }, [0.4, 0.3, 0.2, 0.1]);
+      const e = energy({ ...rows[i].raw, news: null }, CURRENT_W);
       const mine = Math.round(100 * (1 - Math.exp(-e)));
       n += 1;
       if (mine === c.score) same += 1;
@@ -294,23 +299,24 @@ results.data = { symbols: features.map((x) => x.symbol), obs: nObs, from: iso(fi
 // ---------------------------------------------------------------------------
 
 out('');
-out('1. Веса индекса внимания (цена 0.4, новости 0.3, объём 0.2, волатильность 0.1)');
+out('1. Веса индекса внимания: прежние цена 0.4 / новости 0.3 / объём 0.2 / волатильность 0.1; сейчас в коде 0.23 / 0.3 / 0.23 / 0.23');
 out('   Сигнал в конце сессии i (только прошлое), цель: |доходность| на i+1 (y1), средний |r| за 5 (y5) и 20 (y20) сессий.');
 out('   Контроль направления: знаковая избыточная доходность за 5/20 сессий (a5, a20): индекс не должен быть направленным.');
 out('   Показатель: средний по бумагам rho Спирмена; [95% блочный бутстрэп по календарю]; p перестановок; q по BH (FDR 10%).');
 
 const W3 = {
-  'по умолчанию без новостей (0.4/0.2/0.1)': [0.4, 0, 0.2, 0.1],
-  'равные веса без новостей': [1, 0, 1, 1],
+  'прежние 0.4/0.2/0.1 (без новостей)': [0.4, 0, 0.2, 0.1],
+  'равные 1/3 (сейчас в коде)': [1, 0, 1, 1],
   'только цена': [1, 0, 0, 0],
   'только объём': [0, 0, 1, 0],
   'только волатильность': [0, 0, 0, 1],
   'цена+объём (0.5/0.5)': [1, 0, 1, 0],
 };
 const W4 = {
-  'по умолчанию 0.4/0.3/0.2/0.1': [0.4, 0.3, 0.2, 0.1],
+  'прежние 0.4/0.3/0.2/0.1': OLD_W,
+  'сейчас в коде 0.23/0.3/0.23/0.23': CURRENT_W,
   'равные 0.25': [1, 1, 1, 1],
-  'без новостей (0.4/0.2/0.1)': [0.4, 0, 0.2, 0.1],
+  'без новостей (равные 1/3)': [1, 0, 1, 1],
   'только новости': [0, 1, 0, 0],
   'только цена ': [1, 0, 0, 0],
 };
@@ -343,14 +349,14 @@ function weightsBlock(title, variants, rowFilter, extraCols = {}) {
     out(`   ${name.padEnd(42)} ${cells.join('  ')}`);
   }
   out('   * значимо после BH (FDR 10%) против rho = 0');
-  // Разности с вариантом по умолчанию
+  // Разности с прежними весами
   const base = Object.keys(variants)[0];
   const diffs = [];
   for (const name of [...Object.keys(variants).slice(1), 'вчерашний |r| (база)', 'rv20 (база)']) {
     for (const t of TARGETS) diffs.push({ name, t, ...testDiff(engine, base, colOf[name] ?? name, t) });
   }
   withFdr(diffs);
-  out(`   Разность rho: «${base}» минус вариант (положительная: умолчание лучше), q по BH на ${diffs.length} сравнений`);
+  out(`   Разность rho: «${base}» минус вариант (положительная: прежние лучше), q по BH на ${diffs.length} сравнений`);
   for (const d of diffs) out(`     ${d.name.padEnd(42)} ${d.t}: ${f(d.diff)} [${f(d.lo)}; ${f(d.hi)}] q=${f(d.q)}${d.sig ? ' *' : ''}`);
   return { panel, engine, all, diffs, base };
 }
@@ -384,11 +390,11 @@ if (newsSymbols >= 5) {
   }));
   const fit = grid.map((w) => ({ w, s: score(trainPer, w, 'y5') })).sort((a, b) => b.s - a.s);
   const best = fit[0].w;
-  const dflt = [0.4, 0, 0.2, 0.1];
+  const dflt = [0.4, 0, 0.2, 0.1]; // прежние
   const normalised = (w) => { const t = w[0] + w[2] + w[3]; return w.map((x) => x / t); };
   out('');
   out(`   Walk-forward подбор (сетка шаг 0.1 по цена/объём/волатильность, цель y5): обучение до ${iso(cut)}, проверка после`);
-  out(`   лучшие веса на обучении (цена/объём/волат.): ${normalised(best).filter((_, i) => i !== 1).map((x) => x.toFixed(2)).join('/')}, rho на обучении ${f(fit[0].s)}; умолчание на обучении ${f(score(trainPer, dflt, 'y5'))}`);
+  out(`   лучшие веса на обучении (цена/объём/волат.): ${normalised(best).filter((_, i) => i !== 1).map((x) => x.toFixed(2)).join('/')}, rho на обучении ${f(fit[0].s)}; прежние на обучении ${f(score(trainPer, dflt, 'y5'))}`);
   const testPanel = makePanel(testPer, { y1: (r) => r.y1, y5: (r) => r.y5, y20: (r) => r.y20, fit: (r) => energy(r.raw, best) ?? -1, dflt: (r) => energy(r.raw, dflt) ?? -1, eq: (r) => energy(r.raw, [1, 0, 1, 1]) ?? -1 });
   const engine = makeEngine(testPanel, 11);
   const rowsOut = [];
@@ -396,7 +402,7 @@ if (newsSymbols >= 5) {
     const d = testDiff(engine, 'fit', 'dflt', t);
     const e = testDiff(engine, 'dflt', 'eq', t);
     rowsOut.push({ t, fit: engine.rho('fit', t), dflt: engine.rho('dflt', t), eq: engine.rho('eq', t), d, e });
-    out(`   проверка ${t}: подобранные ${f(engine.rho('fit', t))}, умолчание ${f(engine.rho('dflt', t))}, равные ${f(engine.rho('eq', t))}; подобранные минус умолчание ${f(d.diff)} [${f(d.lo)}; ${f(d.hi)}] p=${d.p.toFixed(3)}; умолчание минус равные ${f(e.diff)} [${f(e.lo)}; ${f(e.hi)}] p=${e.p.toFixed(3)}`);
+    out(`   проверка ${t}: подобранные ${f(engine.rho('fit', t))}, прежние ${f(engine.rho('dflt', t))}, равные ${f(engine.rho('eq', t))}; подобранные минус прежние ${f(d.diff)} [${f(d.lo)}; ${f(d.hi)}] p=${d.p.toFixed(3)}; прежние минус равные ${f(e.diff)} [${f(e.lo)}; ${f(e.hi)}] p=${e.p.toFixed(3)}`);
   }
   results.walkForwardWeights = { cut: iso(cut), best: normalised(best), trainBest: fit[0].s, rows: rowsOut.map((r) => ({ t: r.t, fit: r.fit, dflt: r.dflt, eq: r.eq, fitMinusDflt: r.d, dfltMinusEq: r.e })) };
 }
@@ -408,11 +414,11 @@ if (newsSymbols >= 5) {
 const HL = [1, 2, 3, 5, 7, 10, 14, 20, 30, 45];
 
 out('');
-out('2a. Затухание «необычности» дня: EMA индекса внимания (без новостей) с полураспадом H календарных дней');
+out('2a. Затухание «необычности» дня: EMA индекса внимания (без новостей, веса в коде сейчас) с полураспадом H календарных дней');
 out('    против |r| на i+1, средний |r| за 5 и 20 сессий. H=0: только сегодняшнее значение (как в коде досье).');
 {
   const per = features.map(({ symbol, rows }) => {
-    const e = rows.map((r) => energy(r.raw, [0.4, 0, 0.2, 0.1]));
+    const e = rows.map((r) => energy(r.raw, [CURRENT_W[0], 0, CURRENT_W[2], CURRENT_W[3]]));
     const out2 = [];
     for (let i = 0; i < rows.length; i += 1) {
       if (e[i] === null || i < 60) continue;
@@ -590,15 +596,18 @@ out('3. Прогноз «новость → сценарий»: веса сжа�
 const HORIZONS = [1, 5, 20];
 const Z80 = 1.2815515655;
 const MIN_ANALOGUES = 5;
-function replicaEstimate(values, sigma, h, prior) {
+// Копия estimate() из forecast.js; priorVar позволяет сжимать среднее и дисперсию по-разному (в коде досье они равны).
+function replicaEstimate(values, sigma, h, prior, priorVar = prior) {
   const n = values.length;
-  const weight = Number.isFinite(prior) ? n / (n + prior) : 0;
-  const mu = n ? weight * mean(values) : 0;
+  const wMu = Number.isFinite(prior) ? n / (n + prior) : 0;
+  const wVar = Number.isFinite(priorVar) ? n / (n + priorVar) : 0;
+  const mu = n ? wMu * mean(values) : 0;
   const base = sigma ** 2 * h;
-  const spread = n > 1 ? (1 - weight) * base + weight * (values.reduce((s, v) => s + (v - mean(values)) ** 2, 0) / (n - 1)) : base;
+  const spread = n > 1 ? (1 - wVar) * base + wVar * (values.reduce((s, v) => s + (v - mean(values)) ** 2, 0) / (n - 1)) : base;
   return { mu, sd: Math.sqrt(spread), n };
 }
-const PRIORS = [0, 2, 5, 10, 20, 50, Infinity];
+// [подпись, PRIOR среднего, PRIOR дисперсии]; (10, 10) = прежнее значение в коде, (30, 5) = текущее; (inf, inf) = нулевая модель mu=0, sigma*sqrt(h)
+const PRIORS = [['0/0', 0, 0], ['2/2', 2, 2], ['5/5', 5, 5], ['10/10 (прежнее)', 10, 10], ['20/20', 20, 20], ['50/50', 50, 50], ['mu=0, var 0', Infinity, 0], ['mu=0, var 2', Infinity, 2], ['mu=0, var 5', Infinity, 5], ['mu=0, var 10', Infinity, 10], ['mu 30, var 5 (сейчас)', 30, 5], ['mu 50, var 5', 50, 5], ['нулевая', Infinity, Infinity]];
 const forecastRows = []; // { symbol, type, h, x, byPrior: {prior: {mu, sd}}, n }
 {
   let replicaMax = 0;
@@ -631,7 +640,7 @@ const forecastRows = []; // { symbol, type, h, x, byPrior: {prior: {mu, sd}}, n 
         }
         if (sample.length < MIN_ANALOGUES) continue;
         const x = Math.log(closes[day0 - 1 + h] / closes[day0 - 1]);
-        const byPrior = Object.fromEntries(PRIORS.map((p) => [p, replicaEstimate(sample, sigma, h, p)]));
+        const byPrior = Object.fromEntries(PRIORS.map(([label, pm, pv]) => [label, replicaEstimate(sample, sigma, h, pm, pv)]));
         forecastRows.push({ symbol, type: ev.type, h, x, byPrior, n: sample.length, sigma });
         // сверка копии с computeForecasts на части событий
         if (h === 5 && replicaN < 30 && k % 3 === 0) {
@@ -641,7 +650,7 @@ const forecastRows = []; // { symbol, type, h, x, byPrior: {prior: {mu, sd}}, n 
           const outp = computeForecasts({ history: cut, events: [...evs.filter((e) => e.id !== ev.id), target] }, ev.time + 1000);
           const item = outp?.events.find((e) => e.eventId === 'target')?.horizons.find((q) => q.h === 5);
           if (item && item.rule === 'type+tone') {
-            const mine = byPrior[10];
+            const mine = byPrior['mu 30, var 5 (сейчас)'];
             const mid = Math.log(item.midPrice / outp.lastClose);
             replicaMax = Math.max(replicaMax, Math.abs(mid - mine.mu));
             replicaN += 1;
@@ -650,7 +659,7 @@ const forecastRows = []; // { symbol, type, h, x, byPrior: {prior: {mu, sd}}, n 
       }
     }
   }
-  out(`   сверка копии оценщика с computeForecasts (h=5, PRIOR=10): ${replicaN} событий, максимальное расхождение mu ${replicaMax.toExponential(2)}`);
+  out(`   сверка копии оценщика с computeForecasts (h=5, текущий код: mu 30, var 5): ${replicaN} событий, максимальное расхождение mu ${replicaMax.toExponential(2)}`);
   const logScore = (x, mu, sd) => -0.5 * Math.log(2 * Math.PI) - Math.log(sd) - 0.5 * ((x - mu) / sd) ** 2;
   const bootMean = (vals) => {
     const rnd = seededRandom(51);
@@ -666,19 +675,23 @@ const forecastRows = []; // { symbol, type, h, x, byPrior: {prior: {mu, sd}}, n 
   for (const h of HORIZONS) {
     const rows = forecastRows.filter((r) => r.h === h);
     if (rows.length < 30) { out(`   h=${h}: событий с n>=5 аналогов ${rows.length}: нет данных`); continue; }
-    out(`   h=${h} сессий, событий ${rows.length} (бумаги ${new Set(rows.map((r) => r.symbol)).size}; средний размер выборки аналогов ${f(mean(rows.map((r) => r.n)), 1)}):`);
-    const base = rows.map((r) => logScore(r.x, r.byPrior[Infinity].mu, r.byPrior[Infinity].sd));
+    const byType = ['earnings', 'leadership', 'deal'].map((t) => `${t} ${rows.filter((r) => r.type === t).length}`).join(', ');
+    out(`   h=${h} сессий, событий ${rows.length} (${byType}; бумаги ${new Set(rows.map((r) => r.symbol)).size}; средний размер выборки аналогов ${f(mean(rows.map((r) => r.n)), 1)}):`);
+    const base = rows.map((r) => logScore(r.x, r.byPrior['нулевая'].mu, r.byPrior['нулевая'].sd));
+    const dflt = rows.map((r) => logScore(r.x, r.byPrior['10/10 (прежнее)'].mu, r.byPrior['10/10 (прежнее)'].sd));
     forecastOut[h] = { n: rows.length, priors: {} };
-    for (const p of PRIORS) {
-      const ls = rows.map((r) => logScore(r.x, r.byPrior[p].mu, r.byPrior[p].sd));
+    for (const [label] of PRIORS) {
+      const ls = rows.map((r) => logScore(r.x, r.byPrior[label].mu, r.byPrior[label].sd));
       const diff = ls.map((v, i) => v - base[i]);
+      const vsDefault = ls.map((v, i) => v - dflt[i]);
       const [lo, hi] = bootMean(diff);
-      const cover = mean(rows.map((r) => (Math.abs(r.x - r.byPrior[p].mu) <= Z80 * r.byPrior[p].sd ? 1 : 0)));
-      const mse = mean(rows.map((r) => (r.x - r.byPrior[p].mu) ** 2));
+      const [dlo, dhi] = bootMean(vsDefault);
+      const cover = mean(rows.map((r) => (Math.abs(r.x - r.byPrior[label].mu) <= Z80 * r.byPrior[label].sd ? 1 : 0)));
+      const mse = mean(rows.map((r) => (r.x - r.byPrior[label].mu) ** 2));
       const mseBase = mean(rows.map((r) => r.x ** 2));
-      const upHit = mean(rows.map((r) => ((r.byPrior[p].mu >= 0) === (r.x >= 0) ? 1 : 0)));
-      out(`     PRIOR=${String(p).padEnd(8)} логскор против «mu=0, sigma*sqrt(h)» ${f(mean(diff), 4)} [${f(lo, 4)}; ${f(hi, 4)}], покрытие 80%: ${pct(cover)}, MSE/MSE(0): ${f(mse / mseBase, 3)}, знак: ${pct(upHit)}`);
-      forecastOut[h].priors[p] = { dLogScore: mean(diff), lo, hi, coverage80: cover, mseRatio: mse / mseBase, signHit: upHit };
+      const upHit = mean(rows.map((r) => ((r.byPrior[label].mu >= 0) === (r.x >= 0) ? 1 : 0)));
+      out(`     ${label.padEnd(15)} логскор против нулевой ${f(mean(diff), 3)} [${f(lo, 3)}; ${f(hi, 3)}], против прежнего ${f(mean(vsDefault), 3)} [${f(dlo, 3)}; ${f(dhi, 3)}], покрытие 80%: ${pct(cover)}, MSE/MSE(0): ${f(mse / mseBase, 3)}, знак: ${pct(upHit)}`);
+      forecastOut[h].priors[label] = { dLogScore: mean(diff), lo, hi, vsDefault: mean(vsDefault), vsDefaultCI: [dlo, dhi], coverage80: cover, mseRatio: mse / mseBase, signHit: upHit };
     }
   }
   results.forecastPrior = forecastOut;

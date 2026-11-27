@@ -42,7 +42,7 @@ export function showDesktopSignInWaiting(actions: DesktopSignInWaitingActions): 
     Object.assign(el.style, {
       background: 'none',
       border: 'none',
-      color: '#44ff88',
+      color: '#c8a45c',
       cursor: 'pointer',
       font: 'inherit',
       padding: '0',

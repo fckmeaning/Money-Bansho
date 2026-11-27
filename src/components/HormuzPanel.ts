@@ -9,7 +9,7 @@ import { hasPremiumAccess } from '@/services/panel-gating';
 import { getAuthState, subscribeAuthState } from '@/services/auth-state';
 import { onEntitlementChange } from '@/services/entitlements';
 
-const CHART_COLORS = ['#e67e22', '#1abc9c', '#9b59b6', '#27ae60'];
+const CHART_COLORS = ['#e67e22', '#1abc9c', '#9b59b6', '#c8a45c'];
 const ZERO_COLOR = 'rgba(231,76,60,0.5)';
 
 function statusColor(status: string): string {
@@ -17,7 +17,7 @@ function statusColor(status: string): string {
     case 'closed':     return '#e74c3c';
     case 'disrupted':  return '#e67e22';
     case 'restricted': return '#f39c12';
-    default:           return '#2ecc71';
+    default:           return '#8a877e';
   }
 }
 

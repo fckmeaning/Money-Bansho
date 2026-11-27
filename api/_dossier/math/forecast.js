@@ -1,61 +1,125 @@
-// News -> conditional scenario. Not a price promise: a shrunk summary of what
-// followed earlier headlines of the same kind for the same company.
+// News -> conditional scenario. Not a price promise: a kernel-weighted summary of what followed
+// earlier headlines that looked like this one (type, tone, significance, volatility regime, age),
+// shrunk to ordinary volatility in proportion to the effective sample size. See docs/math/forecast.md.
 import { reputationScore } from '../analyze.js';
 import { alignedReturns, withCloseTimes } from '../quant.js';
 import { normalCdf } from './special.js';
-import { mean, round, stdev, variance } from './stats.js';
+import { mean, round, stdev } from './stats.js';
 
 const HORIZONS = [1, 5, 20];
+const FAN_HORIZONS = [1, 2, 3, 5, 8, 12, 20];
 const PRIOR = 10; // pseudo-observations of "nothing special happens"
 const MIN_ANALOGUES = 5;
+const MIN_N_EFF = 3;
+const MAX_ANALOGUES = 80;
 const MAX_EVENTS = 15;
 const MAX_PEERS = 5;
 const MIN_PEER_PAIRS = 60; // common daily returns needed for beta
 const MIN_PEER_CORR = 0.3;
 const MIN_PEER_CASES = 3; // analogue windows with a peer price needed to show co-movement
-const Z80 = 1.2815515655;
 const DAY = 86_400_000;
+
+/** Gaussian kernel bandwidths of the similarity between two headlines. */
+export const KERNEL = {
+  tone: 0.5, // sentiment, -1..1
+  significance: 25, // ex-ante significance points, 0..100
+  volatility: 0.35, // ln of the 20/120-session volatility ratio
+  timeDays: 365, // older cases matter less
+  otherType: 0.15, // kernel factor for a different event type
+};
 
 const sign = (x) => (x > 0.05 ? 1 : x < -0.05 ? -1 : 0);
 const pct = (log) => round((Math.exp(log) - 1) * 100, 2);
+const gauss = (u) => Math.exp(-0.5 * u * u);
 
-/** Non-overlapping h-session returns after earlier matching days, oldest first. */
-function analogues(candidates, closes, h, before) {
-  const picked = [];
-  let free = 0;
+/** ln(20-session / 120-session volatility) before session `index`, or null. */
+function volRegime(rows, index) {
+  const past = rows.slice(Math.max(0, index - 120), index).map((r) => r.s).filter(Number.isFinite);
+  if (past.length < 40) return null;
+  const long = stdev(past);
+  const short = stdev(past.slice(-20));
+  return long > 0 && short > 0 ? Math.log(short / long) : null;
+}
+
+/** Kernel weight of an earlier case for a target: product of Gaussian kernels over the similarity axes. */
+export function kernelWeight(target, other) {
+  let w = target.type === other.type ? 1 : KERNEL.otherType;
+  w *= gauss(((target.tone ?? 0) - (other.tone ?? 0)) / KERNEL.tone);
+  if (Number.isFinite(target.sig) && Number.isFinite(other.sig)) w *= gauss((target.sig - other.sig) / KERNEL.significance);
+  if (Number.isFinite(target.vol) && Number.isFinite(other.vol)) w *= gauss((target.vol - other.vol) / KERNEL.volatility);
+  return w * gauss((target.time - other.time) / DAY / KERNEL.timeDays);
+}
+
+/**
+ * Earlier cases with a finished h-session window, weighted by the kernel; heaviest first, windows
+ * that overlap a heavier one are dropped so that the outcomes stay independent.
+ */
+function analogues(target, candidates, closes, h, before) {
+  const weighted = [];
   for (const c of candidates) {
     const end = c.day0 + h - 1;
-    // The whole window must be over before the target's first session.
-    if (c.day0 < free || end >= closes.length || end >= before) continue;
-    picked.push({ ...c, value: Math.log(closes[end] / closes[c.day0 - 1]) });
-    free = c.day0 + h;
+    if (end >= closes.length || end >= before) continue;
+    const w = kernelWeight(target, c);
+    if (w >= 1e-3) weighted.push({ ...c, w, value: Math.log(closes[end] / closes[c.day0 - 1]) });
   }
-  return picked;
+  weighted.sort((a, b) => b.w - a.w);
+  const picked = [];
+  for (const c of weighted) {
+    if (picked.length >= MAX_ANALOGUES) break;
+    if (picked.every((p) => c.day0 + h - 1 < p.day0 || c.day0 > p.day0 + h - 1)) picked.push(c);
+  }
+  return picked.sort((a, b) => a.day0 - b.day0);
 }
 
-/** Shrinks the analogue mean and variance towards zero drift and normal volatility. */
-function estimate(values, sigma, h) {
-  const n = values.length;
-  const weight = n / (n + PRIOR);
-  const mu = n ? weight * mean(values) : 0;
-  const base = sigma ** 2 * h;
-  const spread = n > 1 ? (1 - weight) * base + weight * variance(values) : base;
-  return { mu, sd: Math.sqrt(spread), weight };
+/**
+ * Mixture of the kernel-smoothed empirical distribution of outcomes and ordinary volatility:
+ * F(x) = lambda * sum w_j Phi((x - x_j)/b) / sum w + (1 - lambda) * Phi(x / (sigma sqrt h)),
+ * lambda = n_eff / (n_eff + PRIOR). Returns the CDF, quantile function and mean.
+ */
+export function mixture(values, weights, sigma, h) {
+  const base = sigma * Math.sqrt(h);
+  const total = weights.reduce((a, b) => a + b, 0);
+  const squares = weights.reduce((a, b) => a + b * b, 0);
+  const nEff = total > 0 ? (total * total) / squares : 0;
+  const enough = values.length >= MIN_ANALOGUES && nEff >= MIN_N_EFF;
+  const lambda = enough ? nEff / (nEff + PRIOR) : 0;
+  const centre = enough ? values.reduce((a, x, i) => a + weights[i] * x, 0) / total : 0;
+  const spread = enough ? Math.sqrt(values.reduce((a, x, i) => a + weights[i] * (x - centre) ** 2, 0) / total) : 0;
+  const bandwidth = enough ? Math.max(1.06 * spread * nEff ** -0.2, 0.15 * base) : base;
+  const cdf = (x) => {
+    let own = 0;
+    if (lambda > 0) for (let i = 0; i < values.length; i += 1) own += weights[i] * normalCdf((x - values[i]) / bandwidth);
+    return (lambda > 0 ? lambda * (own / total) : 0) + (1 - lambda) * normalCdf(x / base);
+  };
+  const scale = Math.max(base, spread) * 8;
+  const quantile = (p) => {
+    let lo = -scale;
+    let hi = scale;
+    for (let i = 0; i < 48; i += 1) {
+      const mid = (lo + hi) / 2;
+      if (cdf(mid) < p) lo = mid;
+      else hi = mid;
+    }
+    return (lo + hi) / 2;
+  };
+  return { cdf, quantile, mean: lambda * centre, lambda, nEff, enough };
 }
 
-/** Walk-forward: did the sign of earlier analogues match the next one? */
+/** Walk-forward over the picked analogues: weights and outcomes of earlier ones only. */
 function selfCheck(sample, sigma, h) {
   let tested = 0;
   let hits = 0;
   let covered = 0;
   let up = 0;
   for (let i = MIN_ANALOGUES; i < sample.length; i += 1) {
-    const { mu, sd } = estimate(sample.slice(0, i).map((s) => s.value), sigma, h);
-    const actual = sample[i].value;
+    const earlier = sample.slice(0, i);
+    const target = sample[i];
+    const m = mixture(earlier.map((s) => s.value), earlier.map((s) => kernelWeight(target, s)), sigma, h);
+    const actual = target.value;
     tested += 1;
-    if ((mu >= 0) === (actual >= 0)) hits += 1;
+    if ((m.mean >= 0) === (actual >= 0)) hits += 1;
     if (actual >= 0) up += 1;
-    if (Math.abs(actual - mu) <= Z80 * sd) covered += 1;
+    if (actual >= m.quantile(0.1) && actual <= m.quantile(0.9)) covered += 1;
   }
   if (!tested) return null;
   return {
@@ -128,7 +192,7 @@ export function peerImpact(rows, peers, sample, mu, h) {
       corr: round(fit.corr, 2),
       pairs: fit.n,
       betaPct: pct(fit.beta * mu),
-      analoguePct: enough ? pct((nCases / (nCases + PRIOR)) * mean(cases)) : null,
+      analoguePct: enough ? pct((nCases / (nCases + PRIOR_MEAN)) * mean(cases)) : null,
       cases: nCases,
     });
   }
@@ -149,6 +213,48 @@ function reputationBranches(events, event, nowMs) {
   };
 }
 
+/** One horizon for one target: kernel-weighted analogues -> mixture distribution -> corridor and scenarios. */
+function horizonEstimate({ target, candidates, closes, rows, sigma, last, before, h, peerList, withExtras }) {
+  const sample = analogues(target, candidates, closes, h, before);
+  const m = mixture(sample.map((x) => x.value), sample.map((x) => x.w), sigma, h);
+  const used = m.enough ? sample : [];
+  const threshold = 0.5 * sigma * Math.sqrt(h);
+  const adverse = m.cdf(-threshold);
+  const favourable = 1 - m.cdf(threshold);
+  const q = (p) => m.quantile(p);
+  const q10 = q(0.1);
+  const q90 = q(0.9);
+  const q50 = q(0.5);
+  const base = {
+    h,
+    rule: m.enough ? 'kernel' : 'baseline',
+    n: used.length,
+    nEff: round(m.enough ? m.nEff : 0, 1),
+    weight: round(m.lambda, 3),
+    expectedPct: pct(m.mean),
+    low80Pct: pct(q10),
+    high80Pct: pct(q90),
+    lowPrice: round(last * Math.exp(q10), 4),
+    midPrice: round(last * Math.exp(q50), 4),
+    highPrice: round(last * Math.exp(q90), 4),
+    quantilesPct: { q10: pct(q10), q25: pct(q(0.25)), q50: pct(q50), q75: pct(q(0.75)), q90: pct(q90) },
+    probUp: round(1 - m.cdf(0), 3),
+    thresholdPct: pct(threshold),
+    scenarios: {
+      adverse: round(adverse, 3),
+      base: round(1 - adverse - favourable, 3),
+      favourable: round(favourable, 3),
+    },
+  };
+  if (!withExtras) return base;
+  return {
+    ...base,
+    sameType: used.length ? round(used.filter((x) => x.type === target.type).length / used.length, 2) : null,
+    check: used.length ? selfCheck(used, sigma, h) : null,
+    peers: peerList.length && m.enough ? peerImpact(rows, peerList, used, m.mean, h) : null,
+  };
+}
+
 export function computeForecasts({ history, events, peers = [] }, nowMs = Date.now()) {
   const rows = alignedReturns(history, [], nowMs);
   const returns = rows.map((r) => r.s).filter(Number.isFinite);
@@ -159,80 +265,53 @@ export function computeForecasts({ history, events, peers = [] }, nowMs = Date.n
   const last = closes[closes.length - 1];
   const peerList = (peers || []).map((p) => peerSeries(p, nowMs)).filter(Boolean);
   const dayOf = (time) => rows.findIndex((r) => r.closeAt > time);
+  const featuresOf = (event, day0) => ({
+    event,
+    day0,
+    type: event.type,
+    tone: Number(event.sentiment) || 0,
+    sig: Number.isFinite(event.significance?.ex) ? event.significance.ex : null,
+    vol: volRegime(rows, day0 < 0 ? closes.length : day0),
+    time: event.time,
+  });
   const indexed = events
     .map((event) => ({ event, day0: dayOf(event.time) }))
     .filter((c) => c.day0 !== 0)
-    .sort((a, b) => a.event.time - b.event.time);
+    .sort((a, b) => a.event.time - b.event.time)
+    .map((c) => featuresOf(c.event, c.day0));
 
   const targets = indexed
-    .filter((c) => c.event.type !== 'other')
-    .sort((a, b) => b.event.time - a.event.time)
+    .filter((c) => c.type !== 'other')
+    .sort((a, b) => b.time - a.time)
     .slice(0, MAX_EVENTS);
 
-  const list = targets.map(({ event, day0 }) => {
+  const list = targets.map((target) => {
+    const { event, day0 } = target;
     // day0 = -1: no session has closed since the headline.
     const before = day0 < 0 ? closes.length : day0;
-    const tone = sign(event.sentiment);
-    const earlier = indexed.filter((c) => c.day0 > 0 && c.day0 < before && c.event.type === event.type);
-    const sameTone = earlier.filter((c) => sign(c.event.sentiment) === tone);
-    const sameToneAny = indexed.filter(
-      (c) => c.day0 > 0 && c.day0 < before && c.event.type !== 'other' && sign(c.event.sentiment) === tone,
-    );
-
-    const horizons = HORIZONS.map((h) => {
-      let rule = 'type+tone';
-      let sample = analogues(sameTone, closes, h, before);
-      if (sample.length < MIN_ANALOGUES) {
-        rule = 'type';
-        sample = analogues(earlier, closes, h, before);
-      }
-      if (sample.length < MIN_ANALOGUES && tone) {
-        // Widest pool: any classified headline of the same tone. Less alike, so
-        // it only fills in when the narrower pools are too thin.
-        rule = 'tone';
-        sample = analogues(sameToneAny, closes, h, before);
-      }
-      if (sample.length < MIN_ANALOGUES) {
-        rule = 'baseline';
-        sample = [];
-      }
-      const { mu, sd, weight } = estimate(sample.map((s) => s.value), sigma, h);
-      const threshold = 0.5 * sigma * Math.sqrt(h);
-      const adverse = normalCdf((-threshold - mu) / sd);
-      const favourable = 1 - normalCdf((threshold - mu) / sd);
-      return {
-        h,
-        rule,
-        n: sample.length,
-        weight: round(weight, 3),
-        expectedPct: pct(mu),
-        low80Pct: pct(mu - Z80 * sd),
-        high80Pct: pct(mu + Z80 * sd),
-        lowPrice: round(last * Math.exp(mu - Z80 * sd), 4),
-        midPrice: round(last * Math.exp(mu), 4),
-        highPrice: round(last * Math.exp(mu + Z80 * sd), 4),
-        probUp: round(normalCdf(mu / sd), 3),
-        thresholdPct: pct(threshold),
-        scenarios: {
-          adverse: round(adverse, 3),
-          base: round(1 - adverse - favourable, 3),
-          favourable: round(favourable, 3),
-        },
-        check: sample.length ? selfCheck(sample, sigma, h) : null,
-        peers: peerList.length && rule !== 'baseline' ? peerImpact(rows, peerList, sample, mu, h) : null,
-      };
-    });
-
+    const candidates = indexed.filter((c) => c.day0 > 0 && c.day0 < before && c.type !== 'other' && c.event !== event);
+    const common = { target, candidates, closes, rows, sigma, last, before, peerList };
     return {
       eventId: event.id,
       time: event.time,
       title: event.title,
       type: event.type,
-      tone,
-      horizons,
+      tone: sign(event.sentiment),
+      significance: event.significance ? { score: event.significance.score, ex: event.significance.ex } : null,
+      horizons: HORIZONS.map((h) => horizonEstimate({ ...common, h, withExtras: true })),
+      fan: FAN_HORIZONS.map((h) => {
+        const e = horizonEstimate({ ...common, h, withExtras: false });
+        return { h, ...e.quantilesPct, n: e.n, nEff: e.nEff };
+      }),
       reputation: reputationBranches(events, event, nowMs),
     };
   });
 
-  return { asOf: rows[rows.length - 1].closeAt, lastClose: last, dailySigmaPct: round(sigma * 100, 3), events: list };
+  return {
+    asOf: rows[rows.length - 1].closeAt,
+    lastClose: last,
+    dailySigmaPct: round(sigma * 100, 3),
+    model: { kernel: KERNEL, prior: PRIOR, minAnalogues: MIN_ANALOGUES, minNEff: MIN_N_EFF },
+    events: list,
+  };
 }

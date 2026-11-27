@@ -120,7 +120,7 @@ function buildEcbPolyline(ecbRates: Record<string, number>, yMin: number, yMax: 
     })
     .filter(Boolean);
   if (points.length < 2) return '';
-  return `<polyline points="${points.join(' ')}" fill="none" stroke="#2ecc71" stroke-width="1.5" stroke-dasharray="5,3" stroke-linecap="round" stroke-linejoin="round"/>`;
+  return `<polyline points="${points.join(' ')}" fill="none" stroke="#c8a45c" stroke-width="1.5" stroke-dasharray="5,3" stroke-linecap="round" stroke-linejoin="round"/>`;
 }
 
 function buildEcbCircles(ecbRates: Record<string, number>, yMin: number, yMax: number): string {
@@ -130,7 +130,7 @@ function buildEcbCircles(ecbRates: Record<string, number>, yMin: number, yMax: n
     const x = ecbXPos(tenor);
     if (x === null) return '';
     const y = yPos(rate, yMin, yMax);
-    return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="2.5" fill="#2ecc71" stroke="rgba(0,0,0,0.4)" stroke-width="1"/>`;
+    return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="2.5" fill="#c8a45c" stroke="rgba(0,0,0,0.4)" stroke-width="1"/>`;
   }).join('');
 }
 
@@ -214,7 +214,7 @@ function renderRatesTab(rows: RateRow[]): string {
     // toFixed drops float noise so an exact half basis point (2.44 - 2.435) rounds away from zero.
     const changeBps = diffBps === null ? null : Math.sign(diffBps) * Math.round(Number(Math.abs(diffBps).toFixed(6)));
     const changeStr = changeBps === null ? '' : `${changeBps > 0 ? '+' : ''}${changeBps}bps`;
-    const changeColor = changeBps === null || changeBps === 0 ? 'var(--text-dim)' : changeBps > 0 ? '#e74c3c' : '#27ae60';
+    const changeColor = changeBps === null || changeBps === 0 ? 'var(--text-dim)' : changeBps > 0 ? '#e74c3c' : '#4f9d69';
     return `<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04)">
       <div style="width:90px;font-size:calc(10px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">${escapeHtml(row.label)}</div>
       ${miniRateSparkline(row.obs.slice(-24), row.color)}
@@ -275,7 +275,7 @@ export class YieldCurvePanel extends Panel {
         : null;
 
       this._rateRows = [
-        { id: 'ESTR', label: 'Euro short-term rate', obs: results['ESTR']?.observations ?? [], color: '#2ecc71' },
+        { id: 'ESTR', label: 'Euro short-term rate', obs: results['ESTR']?.observations ?? [], color: '#c8a45c' },
         { id: 'EURIBOR3M', label: 'EURIBOR 3M', obs: results['EURIBOR3M']?.observations ?? [], color: '#3498db' },
         { id: 'EURIBOR6M', label: 'EURIBOR 6M', obs: results['EURIBOR6M']?.observations ?? [], color: '#9b59b6' },
         { id: 'EURIBOR1Y', label: 'EURIBOR 1Y', obs: results['EURIBOR1Y']?.observations ?? [], color: '#e67e22' },
@@ -315,10 +315,10 @@ export class YieldCurvePanel extends Panel {
 
     const statusBadge = isInverted
       ? `<span style="background:#e74c3c;color:#fff;font-size:calc(9px * var(--wm-panel-effective-scale, 1));font-weight:700;padding:2px 6px;border-radius:4px;letter-spacing:0.08em">INVERTED</span>`
-      : `<span style="background:#2ecc71;color:#000;font-size:calc(9px * var(--wm-panel-effective-scale, 1));font-weight:700;padding:2px 6px;border-radius:4px;letter-spacing:0.08em">NORMAL</span>`;
+      : `<span style="background:#8a877e;color:#000;font-size:calc(9px * var(--wm-panel-effective-scale, 1));font-weight:700;padding:2px 6px;border-radius:4px;letter-spacing:0.08em">NORMAL</span>`;
 
     const spreadHtml = spreadBps !== null
-      ? `<span style="font-size:calc(11px * var(--wm-panel-effective-scale, 1));color:var(--text-dim);margin-left:10px">2Y-10Y Spread: <span style="color:${isInverted ? '#e74c3c' : '#2ecc71'}">${escapeHtml(spreadSign + spreadBps)}bps</span></span>`
+      ? `<span style="font-size:calc(11px * var(--wm-panel-effective-scale, 1));color:var(--text-dim);margin-left:10px">2Y-10Y Spread: <span style="color:${isInverted ? '#e74c3c' : '#d8d5cc'}">${escapeHtml(spreadSign + spreadBps)}bps</span></span>`
       : '';
 
     const legendLabel = (series: string, points: YieldPoint[]): string => {
@@ -327,7 +327,7 @@ export class YieldCurvePanel extends Panel {
     };
 
     const ecbLegend = this._ecbRates
-      ? `<span><svg width="20" height="4" style="vertical-align:middle"><line x1="0" y1="2" x2="20" y2="2" stroke="#2ecc71" stroke-width="1.5" stroke-dasharray="5,3"/></svg> EU (ECB AAA)</span>`
+      ? `<span><svg width="20" height="4" style="vertical-align:middle"><line x1="0" y1="2" x2="20" y2="2" stroke="#c8a45c" stroke-width="1.5" stroke-dasharray="5,3"/></svg> EU (ECB AAA)</span>`
       : '';
 
     this.setSafeContent(unsafeRawHtml(`

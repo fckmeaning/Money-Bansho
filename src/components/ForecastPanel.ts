@@ -59,7 +59,7 @@ const DOMAIN_COLORS: Record<string, string> = {
   political:      '#bc8cff',
   military:       '#f85149',
   cyber:          '#bc8cff',
-  infrastructure: '#3fb950',
+  infrastructure: '#d8d5cc',
 };
 
 // Derived from stateKind — maps to a domain color bucket for the theater card accent
@@ -155,7 +155,7 @@ function injectStyles(): void {
     .fc-theater-path { font-size: calc(9px * var(--wm-panel-effective-scale, 1)); color: var(--text-secondary, #7d8590); line-height: 1.4; margin-top: 4px; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
     .fc-path-type { font-size: calc(8px * var(--wm-panel-effective-scale, 1)); padding: 1px 4px; border-radius: 2px; font-weight: 600; letter-spacing: 0.03em; opacity: 0.75; white-space: nowrap; }
     .fc-path-type-escalation    { background: rgba(224,82,82,0.2); color: #e05252; border: 1px solid rgba(224,82,82,0.3); }
-    .fc-path-type-containment   { background: rgba(63,185,80,0.15); color: #3fb950; border: 1px solid rgba(63,185,80,0.25); }
+    .fc-path-type-containment   { background: rgba(216,213,204,0.15); color: #d8d5cc; border: 1px solid rgba(216,213,204,0.25); }
     .fc-path-type-market_cascade { background: rgba(210,153,34,0.15); color: #d29922; border: 1px solid rgba(210,153,34,0.25); }
     .fc-cat-tag {
       font-size: calc(9px * var(--wm-panel-effective-scale, 1)); padding: 1px 5px; border-radius: 3px; white-space: nowrap;
@@ -186,7 +186,7 @@ function injectStyles(): void {
     .fc-footer-title { font-size: calc(9px * var(--wm-panel-effective-scale, 1)); color: var(--text-secondary, #7d8590); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
     .fc-footer-item { font-size: calc(9px * var(--wm-panel-effective-scale, 1)); color: var(--text-secondary, #7d8590); padding: 2px 0; line-height: 1.4; }
     .fc-footer-item::before { content: '›'; margin-right: 4px; }
-    .fc-stab-item::before { color: #3fb950; }
+    .fc-stab-item::before { color: #d8d5cc; }
     .fc-inval-item::before { color: #e05252; }
     .fc-react-item::before { color: #58a6ff; }
 
@@ -268,8 +268,8 @@ function injectStyles(): void {
     /* ── Simulation verdict chip ─────────────────────────────────────────── */
     .fc-sim-chip { display: inline-flex; align-items: center; gap: 3px; padding: 1px 6px; border-radius: 3px; font-size: calc(9px * var(--wm-panel-effective-scale, 1)); font-weight: 600; letter-spacing: 0.03em; white-space: nowrap; flex-shrink: 0; line-height: 1.6; }
     .fc-sim-chip::before { content: ''; display: inline-block; width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
-    .fc-sim-chip--backed   { background: rgba(63,185,80,0.12);  color: #3fb950; border: 1px solid rgba(63,185,80,0.28); }
-    .fc-sim-chip--backed::before   { background: #3fb950; }
+    .fc-sim-chip--backed   { background: rgba(216,213,204,0.12);  color: #d8d5cc; border: 1px solid rgba(216,213,204,0.28); }
+    .fc-sim-chip--backed::before   { background: #d8d5cc; }
     .fc-sim-chip--flagged  { background: rgba(210,153,34,0.12); color: #d29922; border: 1px solid rgba(210,153,34,0.28); }
     .fc-sim-chip--flagged::before  { background: #d29922; }
     .fc-sim-chip--skeptical { background: rgba(224,82,82,0.10); color: #e05252; border: 1px solid rgba(224,82,82,0.28); }
@@ -312,7 +312,7 @@ function injectStyles(): void {
       .fc-res-slot > *, .fc-res-void > summary > * { max-width: 100%; }
     }
     .fc-res-reasons { margin: 2px 0 0; font-size: calc(9px * var(--wm-panel-effective-scale, 1)); color: var(--text-secondary, #7d8590); white-space: normal; }
-    .fc-res-chip[data-outcome="YES"], .fc-res-mark[data-outcome="YES"] { color: #3fb950; }
+    .fc-res-chip[data-outcome="YES"], .fc-res-mark[data-outcome="YES"] { color: #d8d5cc; }
     .fc-res-chip[data-outcome="NO"], .fc-res-mark[data-outcome="NO"] { color: #e05252; }
     .fc-res-chip[data-outcome="VOID"], .fc-res-mark[data-outcome="VOID"] { color: var(--text-secondary, #7d8590); }
     .fc-res-slot[data-unverified] .fc-res-chip, .fc-res-slot[data-unverified] .fc-res-mark { color: var(--text-secondary, #7d8590); }
@@ -714,7 +714,7 @@ export class ForecastPanel extends Panel {
     const dominantPath = t.topPaths[0];
     const conf = dominantPath?.confidence ?? 0;
     const confPct = Math.round(conf * 100);
-    const confColor = conf >= 0.65 ? '#3fb950' : conf >= 0.45 ? '#d29922' : '#e05252';
+    const confColor = conf >= 0.65 ? '#d8d5cc' : conf >= 0.45 ? '#d29922' : '#e05252';
     const isSelected = this.expandedTheaterId === t.theaterId;
 
     // SVG gauge: circumference for r=15 is 94.25; stroke-dashoffset = circ * (1 - conf)
@@ -752,7 +752,7 @@ export class ForecastPanel extends Panel {
     const catLabel = DOMAIN_LABELS[domain] || domain;
 
     const pathsHtml = t.topPaths.map(p => {
-      const pctColor = p.confidence >= 0.65 ? '#3fb950' : p.confidence >= 0.45 ? '#d29922' : '#e05252';
+      const pctColor = p.confidence >= 0.65 ? '#d8d5cc' : p.confidence >= 0.45 ? '#d29922' : '#e05252';
       const actors = p.keyActors.map(a => `<span class="fc-actor-chip">${escapeHtml(a)}</span>`).join('');
       const typeTag = p.pathId ? `<span class="fc-path-type fc-path-type-${escapeHtml(p.pathId)}">${escapeHtml(PATH_ID_LABELS[p.pathId] ?? p.pathId)}</span>` : '';
       const confText = p.confidence > 0 ? `${Math.round(p.confidence * 100)}% confidence` : '—';
@@ -824,9 +824,9 @@ export class ForecastPanel extends Panel {
     const catLabel = DOMAIN_LABELS[domain] || domain;
     // An overridden audit needs no scorecard data (#8990); any other badge waits for the request.
     const badgePending = this.record.kind === 'loading' && !this.audit;
-    const probColor = pct >= 60 ? '#3fb950' : pct >= 40 ? '#d29922' : '#e05252';
+    const probColor = pct >= 60 ? '#d8d5cc' : pct >= 40 ? '#d29922' : '#e05252';
     const trendText  = f.trend === 'rising' ? '↑ rising' : f.trend === 'falling' ? '↓ falling' : '→ stable';
-    const trendColor = f.trend === 'rising' ? '#3fb950' : f.trend === 'falling' ? '#e05252' : '#7d8590';
+    const trendColor = f.trend === 'rising' ? '#d8d5cc' : f.trend === 'falling' ? '#e05252' : '#7d8590';
 
     const sigs = f.signals || [];
     const signalsHtml = sigs.length > 0
@@ -907,7 +907,7 @@ export class ForecastPanel extends Panel {
       barColor = '#e05252';
       labelText = `AI flag: dropped · −${adjPct}%`;
     } else if (adj > 0) {
-      barColor = conf >= 0.70 ? '#3fb950' : '#d29922';
+      barColor = conf >= 0.70 ? '#d8d5cc' : '#d29922';
       labelText = conf < 0.70 ? `AI signal (moderate) · +${adjPct}%` : `AI signal · +${adjPct}%`;
     } else {
       barColor = '#ea580c';

@@ -94,9 +94,9 @@ function fmtSignedInt(raw: string | number): string {
 function freshnessLabel(iso: string): { text: string; dot: string } {
   if (!iso) return { text: 'Updated —', dot: 'var(--text-dim)' };
   const diffMs = Date.now() - new Date(iso).getTime();
-  if (!Number.isFinite(diffMs) || diffMs < 0) return { text: 'Updated now', dot: '#2ecc71' };
+  if (!Number.isFinite(diffMs) || diffMs < 0) return { text: 'Updated now', dot: '#d8d5cc' };
   const mins = Math.floor(diffMs / 60000);
-  const dot = mins < 10 ? '#2ecc71' : mins < 30 ? '#f5a623' : '#e74c3c';
+  const dot = mins < 10 ? '#d8d5cc' : mins < 30 ? '#f5a623' : '#e74c3c';
   if (mins < 1) return { text: 'Updated just now', dot };
   if (mins < 60) return { text: `Updated ${mins}m ago`, dot };
   const hrs = Math.floor(mins / 60);
@@ -106,7 +106,7 @@ function freshnessLabel(iso: string): { text: string; dot: string } {
 function renderRangeBar(lo: number, hi: number, current: number, positionPct: number): string {
   const clamped = Math.max(0, Math.min(100, positionPct));
   return `
-    <div style="position:relative;height:8px;background:linear-gradient(90deg,rgba(231,76,60,0.25),rgba(245,166,35,0.25),rgba(46,204,113,0.25));border-radius:4px;margin:6px 0">
+    <div style="position:relative;height:8px;background:linear-gradient(90deg,rgba(231,76,60,0.25),rgba(245,166,35,0.25),rgba(79,157,105,0.25));border-radius:4px;margin:6px 0">
       <div style="position:absolute;top:-3px;bottom:-3px;left:${clamped.toFixed(1)}%;width:3px;background:#fff;border-radius:1px;box-shadow:0 0 4px rgba(255,255,255,0.8);transform:translateX(-50%)"></div>
     </div>
     <div style="display:flex;justify-content:space-between;font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">
@@ -119,11 +119,11 @@ function renderRangeBar(lo: number, hi: number, current: number, positionPct: nu
 function renderPositionBar(netPct: number, label: string, wow: string): string {
   const clamped = Math.max(-100, Math.min(100, netPct));
   const halfWidth = Math.abs(clamped) / 100 * 50;
-  const color = clamped >= 0 ? '#2ecc71' : '#e74c3c';
+  const color = clamped >= 0 ? '#4f9d69' : '#e74c3c';
   const leftPct = clamped >= 0 ? 50 : 50 - halfWidth;
   const sign = clamped >= 0 ? '+' : '';
   const wowN = parseInt(wow, 10);
-  const wowStr = Number.isFinite(wowN) && wowN !== 0 ? ` <span style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:${wowN >= 0 ? '#2ecc71' : '#e74c3c'};font-weight:500">Δ ${fmtSignedInt(wow)}</span>` : '';
+  const wowStr = Number.isFinite(wowN) && wowN !== 0 ? ` <span style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:${wowN >= 0 ? '#4f9d69' : '#e74c3c'};font-weight:500">Δ ${fmtSignedInt(wow)}</span>` : '';
   return `
     <div style="margin:4px 0">
       <div style="display:flex;justify-content:space-between;font-size:calc(10px * var(--wm-panel-effective-scale, 1));color:var(--text-dim);margin-bottom:2px">
@@ -144,7 +144,7 @@ function ratioLabel(ratio: number): { text: string; color: string } {
 }
 
 function returnChip(label: string, pct: number): string {
-  const color = pct >= 0 ? '#2ecc71' : '#e74c3c';
+  const color = pct >= 0 ? '#4f9d69' : '#e74c3c';
   return `<div style="flex:1;text-align:center;padding:4px;background:rgba(255,255,255,0.03);border-radius:4px">
     <div style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:var(--text-dim)">${escapeHtml(label)}</div>
     <div style="font-size:calc(11px * var(--wm-panel-effective-scale, 1));font-weight:600;color:${color}">${escapeHtml(fmtPct(pct, 1))}</div>
@@ -193,7 +193,7 @@ export class GoldIntelligencePanel extends Panel {
 
   private renderHeader(d: GoldIntelligenceData): string {
     const changePct = d.goldChangePct;
-    const changeColor = changePct >= 0 ? '#2ecc71' : '#e74c3c';
+    const changeColor = changePct >= 0 ? '#4f9d69' : '#e74c3c';
     const spark = miniSparkline(d.goldSparkline, changePct, 80, 20);
     const fresh = freshnessLabel(d.updatedAt);
     const span = sparklineSpanText({
@@ -338,7 +338,7 @@ export class GoldIntelligencePanel extends Panel {
       ${inTonnes ? `<span style="font-weight:600">${Number.isFinite(h.tonnes) && h.tonnes >= 0 ? `${h.tonnes.toFixed(1)}t` : '—'}</span>` : ''}
     </div>`;
     const moverRow = (m: CbMover) => {
-      const color = m.deltaTonnes12m >= 0 ? '#2ecc71' : '#e74c3c';
+      const color = m.deltaTonnes12m >= 0 ? '#4f9d69' : '#e74c3c';
       const sign = m.deltaTonnes12m >= 0 ? '+' : '';
       return `<div style="display:flex;justify-content:space-between;font-size:calc(10px * var(--wm-panel-effective-scale, 1));padding:1px 0">
         <span style="color:var(--text-dim)">${escapeHtml(m.name)}</span>
@@ -377,7 +377,7 @@ export class GoldIntelligencePanel extends Panel {
     if (!f || !Number.isFinite(f.tonnes) || f.tonnes <= 0) return '';
 
     const chip = (label: string, deltaT: number, deltaPct: number) => {
-      const color = deltaT >= 0 ? '#2ecc71' : '#e74c3c';
+      const color = deltaT >= 0 ? '#4f9d69' : '#e74c3c';
       const tSign = deltaT >= 0 ? '+' : '';
       const pSign = deltaPct >= 0 ? '+' : '';
       return `<div style="flex:1;text-align:center;padding:4px;background:rgba(255,255,255,0.03);border-radius:4px">
@@ -411,8 +411,8 @@ export class GoldIntelligencePanel extends Panel {
   private renderDrivers(d: GoldIntelligenceData): string {
     if (!d.drivers?.length) return '';
     const rows = d.drivers.map(dr => {
-      const color = dr.changePct >= 0 ? '#2ecc71' : '#e74c3c';
-      const corrColor = dr.correlation30d <= -0.3 ? '#2ecc71' : dr.correlation30d >= 0.3 ? '#e74c3c' : 'var(--text-dim)';
+      const color = dr.changePct >= 0 ? '#4f9d69' : '#e74c3c';
+      const corrColor = dr.correlation30d <= -0.3 ? '#d8d5cc' : dr.correlation30d >= 0.3 ? '#e74c3c' : 'var(--text-dim)';
       return `<div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0;font-size:calc(10px * var(--wm-panel-effective-scale, 1))">
         <span style="color:var(--text-dim)">${escapeHtml(dr.label)}</span>
         <span>

@@ -98,7 +98,7 @@ function donutGaugeSvg(value: number | null, size = 48): string {
   const circumference = 2 * Math.PI * r;
   const offset = circumference - (v / 100) * circumference;
   let color = '#f44336';
-  if (v >= 75) color = '#4caf50';
+  if (v >= 75) color = '#4f9d69';
   else if (v >= 50) color = '#ff9800';
   else if (v >= 25) color = '#ff5722';
   return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" class="fg-donut" role="img" aria-label="Fear and greed index: ${v}">
@@ -110,7 +110,7 @@ function donutGaugeSvg(value: number | null, size = 48): string {
 
 function fgSparklineColor(status: string): string {
   const s = status.toUpperCase();
-  if (['GREED', 'EXTREME GREED'].includes(s)) return '#4caf50';
+  if (['GREED', 'EXTREME GREED'].includes(s)) return '#4f9d69';
   if (['FEAR', 'EXTREME FEAR'].includes(s)) return '#f44336';
   return '#4fc3f7';
 }

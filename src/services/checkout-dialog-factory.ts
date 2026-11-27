@@ -125,7 +125,7 @@ export function showCheckoutConfirmDialog(options: CheckoutConfirmDialogOptions)
   confirmBtn.type = 'button';
   confirmBtn.textContent = options.confirmLabel;
   Object.assign(confirmBtn.style, {
-    background: '#44ff88',
+    background: '#c8a45c',
     color: '#0a0a0a',
     border: 'none',
     borderRadius: '4px',

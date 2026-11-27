@@ -153,7 +153,7 @@ function buildIeaBarChart(members: IeaMember[]): string {
     const d = m.daysOfCover ?? 0;
     const barW = Math.max(0, (d / maxDays) * plotW);
     const y = 15 + i * barH;
-    const color = m.netExporter ? '#6b7280' : m.belowObligation ? '#ef4444' : '#22c55e';
+    const color = m.netExporter ? '#6b7280' : m.belowObligation ? '#ef4444' : '#8a877e';
     const label = m.netExporter ? 'Exp' : d > 0 ? `${d.toFixed(0)}d` : 'N/A';
     return `<rect x="${ML}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${(barH - 2).toFixed(1)}" fill="${color}" opacity="0.6" rx="1"/>
       <text x="${ML - 3}" y="${(y + barH / 2).toFixed(1)}" text-anchor="end" fill="rgba(255,255,255,0.5)" style="font-size:calc(7px * var(--wm-panel-effective-scale, 1))" dominant-baseline="middle">${escapeHtml(m.iso2)}</text>
@@ -231,7 +231,7 @@ export class OilInventoriesPanel extends Panel {
     if (d.natGasWeeks?.length) {
       const reversed = [...d.natGasWeeks].reverse();
       const chartData = reversed.map(w => ({ x: w.period, y: w.storBcf }));
-      const chart = buildLineChart(chartData, '#22c55e', '', 120);
+      const chart = buildLineChart(chartData, '#c8a45c', '', 120);
       const latest = d.natGasWeeks[0];
       const meta = latest
         ? `Storage: ${escapeHtml(fmtNum(latest.storBcf, 0))} Bcf ${changeBadge(latest.weeklyChangeBcf, 'WoW')}`

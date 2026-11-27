@@ -32,6 +32,7 @@ import { moversPanel, radarPanel, wireFeed, wireKey } from './wire';
 const DOSSIER_MS = 20_000;
 const BOARD_MS = 30_000;
 const WIRE_MS = 30_000;
+const CACHE_LIMIT = 12;
 const SOURCE_URL = 'https://github.com/fckmeaning/Money-Bansho';
 const UPSTREAM_URL = 'https://github.com/koala73/worldmonitor';
 
@@ -595,7 +596,10 @@ function onDossier(data: Dossier, key: string, first: boolean): void {
   if (!first) for (const event of data.events) if (!known.has(event.id)) state.newIds.add(event.id);
   for (const event of data.events) known.add(event.id);
   seen.set(state.symbol ?? '', known);
+  // Each entry holds the whole response; keep only the most recently used few.
+  cache.delete(key);
   cache.set(key, data);
+  if (cache.size > CACHE_LIMIT) cache.delete(cache.keys().next().value as string);
   const recovered = state.dossierError !== null;
   state.dossier = data;
   state.dossierError = null;

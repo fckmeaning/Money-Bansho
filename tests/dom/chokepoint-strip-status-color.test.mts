@@ -34,7 +34,7 @@ const response = {
 
 const RED = '#e74c3c';
 const AMBER = '#f39c12';
-const GREEN = '#2ecc71';
+const GREEN = '#8a877e';
 const expected = { hormuz_strait: RED, bab_el_mandeb: AMBER, suez: GREEN };
 
 beforeAll(async () => {

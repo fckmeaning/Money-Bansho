@@ -1150,7 +1150,7 @@ export function showCheckoutSuccess(
     right: '0',
     zIndex: '99999',
     padding: '14px 20px',
-    background: 'linear-gradient(135deg, #16a34a, #22c55e)',
+    background: '#c8a45c',
     color: '#fff',
     fontWeight: '600',
     fontSize: '14px',
@@ -1324,7 +1324,7 @@ function setBannerText(
   refreshBtn.textContent = 'Refresh';
   Object.assign(refreshBtn.style, {
     background: '#fff',
-    color: '#16a34a',
+    color: '#c8a45c',
     border: 'none',
     borderRadius: '4px',
     padding: '4px 12px',

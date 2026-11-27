@@ -17,10 +17,10 @@ describe('stock analysis fundamentals panel formatting', () => {
     }, 'USD');
 
     assert.deepEqual(cells, [
-      { label: 'Profit Margin', value: '24.9%', color: '#16a34a' },
+      { label: 'Profit Margin', value: '24.9%', color: '#4f9d69' },
       { label: 'Oper. Margin', value: '-3.1%', color: '#dc2626' },
-      { label: 'ROE', value: '40.0%', color: '#16a34a' },
-      { label: 'Rev. Growth', value: '12.0%', color: '#16a34a' },
+      { label: 'ROE', value: '40.0%', color: '#4f9d69' },
+      { label: 'Rev. Growth', value: '12.0%', color: '#4f9d69' },
       { label: 'EPS Growth', value: '-3.0%', color: '#dc2626' },
       { label: 'Debt/Equity', value: '1.50' },
       { label: 'Free Cash Flow', value: 'CNY 49.0M', color: undefined },

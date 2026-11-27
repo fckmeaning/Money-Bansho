@@ -47,8 +47,8 @@ function scoreColor(score: number): string {
   if (score <= 20) return '#e74c3c';
   if (score <= 40) return '#e67e22';
   if (score <= 60) return '#f1c40f';
-  if (score <= 80) return '#2ecc71';
-  return '#27ae60';
+  if (score <= 80) return '#4f9d69';
+  return '#4f9d69';
 }
 
 function fmt(v: number | null | undefined, digits = 2): string {
@@ -60,8 +60,8 @@ function getRegimeState(score: number): { state: string; stance: string; color: 
   if (score <= 20) return { state: 'Crisis / Risk-Off',    stance: 'CASH',        color: '#c0392b' };
   if (score <= 35) return { state: 'Stressed / Defensive', stance: 'DEFENSIVE',   color: '#e67e22' };
   if (score <= 50) return { state: 'Fragile / Hedged',     stance: 'HEDGED',      color: '#f1c40f' };
-  if (score <= 65) return { state: 'Stable / Normal',      stance: 'NORMAL',      color: '#2ecc71' };
-  return               { state: 'Strong / Risk-On',       stance: 'AGGRESSIVE',  color: '#27ae60' };
+  if (score <= 65) return { state: 'Stable / Normal',      stance: 'NORMAL',      color: '#4f9d69' };
+  return               { state: 'Strong / Risk-On',       stance: 'AGGRESSIVE',  color: '#4f9d69' };
 }
 
 function getDivergenceWarnings(d: FearGreedData): string[] {
@@ -90,8 +90,8 @@ function renderGauge(score: number, label: string, delta: number | null, color: 
     { a1: 180, a2: 144, fill: '#c0392b' },
     { a1: 144, a2: 108, fill: '#e67e22' },
     { a1: 108, a2:  72, fill: '#f1c40f' },
-    { a1:  72, a2:  36, fill: '#2ecc71' },
-    { a1:  36, a2:   0, fill: '#27ae60' },
+    { a1:  72, a2:  36, fill: '#4f9d69' },
+    { a1:  36, a2:   0, fill: '#4f9d69' },
   ];
 
   const segs = zones.map(z =>
@@ -103,7 +103,7 @@ function renderGauge(score: number, label: string, delta: number | null, color: 
   const ny = (cy - 75 * Math.sin(na)).toFixed(1);
 
   const dStr = delta != null ? `${delta >= 0 ? '+' : ''}${delta.toFixed(1)} vs prev` : '';
-  const dFill = delta != null ? (delta >= 0 ? '#2ecc71' : '#e74c3c') : '';
+  const dFill = delta != null ? (delta >= 0 ? '#4f9d69' : '#e74c3c') : '';
   const deltaLine = dStr
     ? `<div data-gauge-role="delta" style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));line-height:1.25;color:${dFill}">${dStr}</div>`
     : '';

@@ -142,7 +142,7 @@ export class EnterpriseSeatsSection {
     const statusLabel = t(seat.status === 'active'
       ? 'settings.account.enterpriseSeats.statusActive'
       : seat.status === 'expired' ? 'settings.account.enterpriseSeats.statusExpired' : 'settings.account.enterpriseSeats.statusInvited');
-    const statusColor = seat.status === 'active' ? '#22c55e' : seat.status === 'expired' ? '#666' : '#eab308';
+    const statusColor = seat.status === 'active' ? '#d8d5cc' : seat.status === 'expired' ? '#666' : '#eab308';
     const detail = seat.status === 'pending' && seat.emailFailed
       ? t('settings.account.enterpriseSeats.emailFailed')
       : seat.status === 'pending' && seat.inviteExpiresAt

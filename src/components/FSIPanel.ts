@@ -11,7 +11,7 @@ const getMarketClient = createLazyClient(() => new MarketServiceClient(getRpcBas
 const getEconomicClient = createLazyClient(() => new EconomicServiceClient(getRpcBaseUrl(), { fetch: rpcFetch }));
 
 function fsiLabelColor(label: string): string {
-  if (label === 'Low Stress') return '#27ae60';
+  if (label === 'Low Stress') return '#8a877e';
   if (label === 'Moderate Stress') return '#f39c12';
   if (label === 'Elevated Stress') return '#e67e22';
   return '#c0392b';
@@ -43,7 +43,7 @@ function cissLabelDisplay(label: string): string {
 }
 
 function cissLabelColor(label: string): string {
-  if (label === 'Low') return '#27ae60';
+  if (label === 'Low') return '#8a877e';
   if (label === 'Moderate') return '#f39c12';
   if (label === 'Elevated') return '#e67e22';
   return '#c0392b';
@@ -169,7 +169,7 @@ export class FSIPanel extends Panel {
           </div>
           ${cissStale ? `<div style="font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:#e67e22;background:rgba(230,126,34,0.1);border-radius:4px;padding:4px 6px;margin-bottom:8px">⚠ ${escapeHtml(t('components.fsi.cissStale'))}</div>` : ''}
           <div style="background:rgba(255,255,255,0.07);border-radius:4px;height:6px;overflow:hidden">
-            <div style="height:100%;width:${(euFsi.latestValue * 100).toFixed(1)}%;background:linear-gradient(90deg,#27ae60,#f39c12,#c0392b);border-radius:4px"></div>
+            <div style="height:100%;width:${(euFsi.latestValue * 100).toFixed(1)}%;background:linear-gradient(90deg,#8a877e,#f39c12,#c0392b);border-radius:4px"></div>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:calc(9px * var(--wm-panel-effective-scale, 1));color:var(--text-dim);margin-top:3px">
             <span>${escapeHtml(t('components.fsi.scale.noStress'))}</span><span>${escapeHtml(t('components.fsi.scale.extremeStress'))}</span>
@@ -189,7 +189,7 @@ export class FSIPanel extends Panel {
           <span>${escapeHtml(t('components.fsi.scale.highStress'))}</span><span>${escapeHtml(t('components.fsi.scale.lowStress'))}</span>
         </div>
         <div style="background:rgba(255,255,255,0.07);border-radius:4px;height:8px;overflow:hidden">
-          <div style="height:100%;width:${fillPct.toFixed(1)}%;background:linear-gradient(90deg,#c0392b,#f39c12,#27ae60);border-radius:4px"></div>
+          <div style="height:100%;width:${fillPct.toFixed(1)}%;background:linear-gradient(90deg,#c0392b,#f39c12,#8a877e);border-radius:4px"></div>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px">
