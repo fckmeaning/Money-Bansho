@@ -1,0 +1,513 @@
+[
+ {
+  "name": "Apple Newsroom",
+  "url": "https://www.apple.com/newsroom/rss-feed.rss",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Microsoft Official Blog",
+  "url": "https://blogs.microsoft.com/feed/",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Google Company Blog",
+  "url": "https://blog.google/rss/",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Samsung Newsroom",
+  "url": "https://news.samsung.com/global/feed",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "AMD Press Releases",
+  "url": "https://ir.amd.com/news-events/press-releases/rss",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "IBM Newsroom",
+  "url": "https://newsroom.ibm.com/announcements?pagetemplate=rss",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "SAP News",
+  "url": "https://news.sap.com/feed/",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Salesforce News",
+  "url": "https://www.salesforce.com/news/feed/",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Baidu IR",
+  "url": "https://ir.baidu.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "JD.com IR",
+  "url": "https://ir.jd.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Oracle News",
+  "url": "https://www.oracle.com/corporate/press/rss/rss-pr.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Cisco Newsroom",
+  "url": "https://newsroom.cisco.com/c/services/i/servlets/newsroom/rssfeed.json?feed=press-releases",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Broadcom IR",
+  "url": "https://investors.broadcom.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Toyota Newsroom",
+  "url": "https://global.toyota/export/en/allnews_rss.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "FTC Press",
+  "url": "https://www.ftc.gov/feeds/press-release.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "CFTC Press",
+  "url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "HKEX News Releases",
+  "url": "https://www.hkex.com.hk/Services/RSS-Feeds/News-Releases?sc_lang=en",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "GlobeNewswire Directors",
+  "url": "https://www.globenewswire.com/RssFeed/subjectcode/22-Directors%20And%20Officers/feedTitle/GlobeNewswire%20-%20Directors%20And%20Officers",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "GlobeNewswire Mergers",
+  "url": "https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20And%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20And%20Acquisitions",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Meta IR",
+  "url": "https://investor.atmeta.com/rss/pressrelease.aspx",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "NVIDIA IR",
+  "url": "https://investor.nvidia.com/rss/pressrelease.aspx",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Mobileye IR",
+  "url": "https://ir.mobileye.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Arm Newsroom",
+  "url": "https://newsroom.arm.com/feed",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Tower Semiconductor IR",
+  "url": "https://ir.towersemi.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "NIO IR",
+  "url": "https://ir.nio.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "NetEase IR",
+  "url": "https://ir.netease.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "XPeng IR",
+  "url": "https://ir.xiaopeng.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Li Auto IR",
+  "url": "https://ir.lixiang.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "PDD IR",
+  "url": "https://investor.pddholdings.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "BioNTech IR",
+  "url": "https://investors.biontech.de/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Trip.com IR",
+  "url": "https://investors.trip.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "PayPal Newsroom",
+  "url": "https://newsroom.paypal-corp.com/news?pagetemplate=rss",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Boeing News",
+  "url": "https://boeing.mediaroom.com/news-releases-statements?pagetemplate=rss",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Lockheed Martin News",
+  "url": "https://news.lockheedmartin.com/news-releases?pagetemplate=rss",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Eli Lilly IR",
+  "url": "https://investor.lilly.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "RTX News",
+  "url": "https://www.rtx.com/rss-feeds/news",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "SK hynix Newsroom",
+  "url": "https://news.skhynix.com/en/feed/",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "CrowdStrike IR",
+  "url": "https://ir.crowdstrike.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Palo Alto Networks IR",
+  "url": "https://investors.paloaltonetworks.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ]
+ },
+ {
+  "name": "Global Times",
+  "url": "https://www.globaltimes.cn/rss/outbrain.xml",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "NYT Chinese",
+  "url": "https://cn.nytimes.com/rss/",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "UDN Money",
+  "url": "https://money.udn.com/rssfeed/news/1001/5591",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "SFC Hong Kong",
+  "url": "https://www.sfc.hk/en/RSS-Feeds/Press-releases",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "HKMA Press",
+  "url": "https://www.hkma.gov.hk/eng/other-information/rss/rss_press-release.xml",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "ChinaTalk",
+  "url": "https://www.chinatalk.media/feed",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "Sinocism",
+  "url": "https://sinocism.com/feed",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "China Banking News",
+  "url": "https://www.chinabankingnews.com/feed",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "Asia Financial",
+  "url": "https://www.asiafinancial.com/feed",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "CarNewsChina",
+  "url": "https://carnewschina.com/feed/",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "TMTPost",
+  "url": "https://www.tmtpost.com/rss.xml",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "Sixth Tone RSS",
+  "url": "https://api.sixthtone.com/cont/output/rssApi",
+  "cats": [
+   "china-media"
+  ]
+ },
+ {
+  "name": "UK Competition and Markets Authority",
+  "url": "https://www.gov.uk/government/organisations/competition-and-markets-authority.atom",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "UK Sanctions OFSI",
+  "url": "https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation.atom",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "EBA News",
+  "url": "https://www.eba.europa.eu/news-press/news/rss.xml",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "ECB Banking Supervision",
+  "url": "https://www.bankingsupervision.europa.eu/rss/press.html",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "SNB Press",
+  "url": "https://www.snb.ch/public/rss/en/pressrel",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "Riksbank Press",
+  "url": "https://www.riksbank.se/en-gb/rss/press-releases/",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "Norges Bank Press",
+  "url": "https://www.norges-bank.no/en/rss-feeds/Press-releases---Norges-Bank/",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "European Parliament Press",
+  "url": "https://www.europarl.europa.eu/rss/doc/press-releases/en.xml",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "CEPR VoxEU",
+  "url": "https://cepr.org/rss/vox-content",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "Euronews Business",
+  "url": "https://www.euronews.com/rss?level=vertical&name=business",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "The Local Germany",
+  "url": "https://feeds.thelocal.com/rss/de",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "El Pais Economia",
+  "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "ECB Blog",
+  "url": "https://www.ecb.europa.eu/rss/blog.html",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "Bundesbank News",
+  "url": "https://www.bundesbank.de/service/rss/en/633312/feed.rss",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "Bank of England Speeches",
+  "url": "https://www.bankofengland.co.uk/rss/speeches",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "Central Bank of Ireland",
+  "url": "https://www.centralbank.ie/feeds/news-media-feed",
+  "cats": [
+   "europe-business"
+  ]
+ },
+ {
+  "name": "Globes Israel News EN",
+  "url": "https://en.globes.co.il/WebService/Rss/RssFeeder.asmx/FeederNode?iID=942",
+  "cats": [
+   "israel"
+  ]
+ },
+ {
+  "name": "Israel Hayom English",
+  "url": "https://www.israelhayom.com/feed/",
+  "cats": [
+   "israel"
+  ]
+ },
+ {
+  "name": "Techtime Israel",
+  "url": "https://techtime.news/feed/",
+  "cats": [
+   "israel"
+  ]
+ },
+ {
+  "name": "Israel Hayom Hebrew",
+  "url": "https://www.israelhayom.co.il/rss.xml",
+  "cats": [
+   "israel"
+  ]
+ },
+ {
+  "name": "NK Chosun",
+  "url": "https://nk.chosun.com/rss/allArticle.xml",
+  "cats": [
+   "north-korea"
+  ]
+ },
+ {
+  "name": "The Diplomat North Korea",
+  "url": "https://thediplomat.com/tag/north-korea/feed/",
+  "cats": [
+   "north-korea"
+  ]
+ }
+]
