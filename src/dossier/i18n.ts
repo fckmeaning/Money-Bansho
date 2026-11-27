@@ -1,10 +1,12 @@
 import { safeStorageGet, safeStorageSet } from '../utils/safe-storage';
+import { EN_QUANT, RU_QUANT } from './i18n-quant';
 import type { EventType, Range } from './types';
 
 export type UiLang = 'en' | 'ru';
 const STORAGE_KEY = 'money-bansho-dossier-lang';
 
 const EN = {
+  ...EN_QUANT,
   subtitle: 'Company dossier',
   liveWire: 'Live wire',
   dashboard: 'Dashboard',
@@ -54,7 +56,7 @@ const EN = {
   chartAria: 'Closing price of {symbol} with event markers',
   reputation: 'Reputation score',
   repExplain:
-    'Automated score from headline sentiment over the last 90 days; 50 is neutral. Weight halves every 14 days; leadership, scandal and regulation items count for more.',
+    'Automated score from headline sentiment over the last 90 days; 50 is neutral. Recent items weigh more, with a half-life that depends on the event type; leadership, scandal and regulation items count for more.',
   repSample: 'Headlines scored',
   repTrend: 'vs 7 days ago',
   repNone: 'No data: no headlines to score.',
@@ -110,6 +112,7 @@ const EN = {
 export type Key = keyof typeof EN;
 
 const RU: Record<Key, string> = {
+  ...RU_QUANT,
   subtitle: 'Досье компании',
   liveWire: 'Лента',
   dashboard: 'Панель',
@@ -159,7 +162,7 @@ const RU: Record<Key, string> = {
   chartAria: 'Цена закрытия {symbol} с отметками событий',
   reputation: 'Оценка репутации',
   repExplain:
-    'Автоматическая оценка по тональности заголовков за 90 дней; 50 — нейтрально. Вес убывает вдвое каждые 14 дней; руководство, скандалы и регулирование учитываются сильнее.',
+    'Автоматическая оценка по тональности заголовков за 90 дней; 50 — нейтрально. Свежие новости весят больше, срок полураспада зависит от типа события; руководство, скандалы и регулирование учитываются сильнее.',
   repSample: 'Заголовков учтено',
   repTrend: 'к 7 дням назад',
   repNone: 'Нет данных: нечего оценивать.',

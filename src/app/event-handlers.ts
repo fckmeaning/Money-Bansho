@@ -145,6 +145,7 @@ import {
 import { createSettingsButton } from '@/components/settings-button';
 import { overlayHistory, type OverlayId } from '@/utils/overlay-history';
 import { MobilePrimaryNav } from '@/app/mobile-primary-nav';
+import { installBanshoSectionJumps } from '@/app/bansho-sections';
 import {
   SPLIT_LAYOUT_MIN_WIDTH,
   LEGACY_WEB_SPLIT_LAYOUT_MIN_WIDTH,
@@ -350,6 +351,7 @@ export interface EventHandlerCallbacks {
 
 export class EventHandlerManager implements AppModule {
   private stopInteractionAnalytics: (() => void) | null = null;
+  private stopSectionJumps: (() => void) | null = null;
   private ctx: AppContext;
   private callbacks: EventHandlerCallbacks;
 
@@ -439,6 +441,10 @@ export class EventHandlerManager implements AppModule {
     this.mobilePrimaryNav.init();
     this.setupIdleDetection();
     this.setupTvMode();
+    this.stopSectionJumps?.();
+    this.stopSectionJumps = installBanshoSectionJumps({
+      enablePanel: (panelId) => this.enablePanelById(panelId),
+    });
   }
 
   private performUndo(): void {
@@ -561,6 +567,8 @@ export class EventHandlerManager implements AppModule {
     this.closeEmbedDialog();
     this.stopInteractionAnalytics?.();
     this.stopInteractionAnalytics = null;
+    this.stopSectionJumps?.();
+    this.stopSectionJumps = null;
     this.debouncedUrlSync.cancel();
     this.debouncedWebcamReload.cancel();
     if (this.boundFullscreenHandler) {
@@ -1165,13 +1173,13 @@ export class EventHandlerManager implements AppModule {
       const rect = anchor.getBoundingClientRect();
       const width = 360;
       const left = Math.min(Math.max(12, rect.left), Math.max(12, window.innerWidth - width - 12));
-      const height = Math.min(popover.offsetHeight || 620, Math.max(120, window.innerHeight - 24));
-      const top = Math.min(
-        Math.max(12, rect.bottom + 8),
-        Math.max(12, window.innerHeight - height - 12),
-      );
+      // Always below the header: a list taller than the space left scrolls
+      // instead of sliding up over it. A hidden anchor has no rect of its own.
+      const headerBottom = this.ctx.container.querySelector('.header')?.getBoundingClientRect().bottom ?? 0;
+      const top = Math.max(12, headerBottom + 4, rect.bottom + 8);
       popover.style.left = `${left}px`;
       popover.style.top = `${top}px`;
+      popover.style.maxHeight = `${Math.max(120, window.innerHeight - top - 12)}px`;
     }
 
     popover.querySelector('[data-mission-close]')?.addEventListener('click', () => {

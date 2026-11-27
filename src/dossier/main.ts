@@ -1,10 +1,14 @@
 // Money Bansho company dossier: state, routing (?symbol=&range=), polling and
-// layout. With no symbol in the URL the live wire is shown.
+// layout. With no symbol in the URL the live wire (or ?view=screener) is shown;
+// a company has the tabs of COMPANY_VIEWS in ?view=.
+import { mountBanshoMenu } from '../shell/bansho-menu';
+import { metricsView, screenerView } from './analytics';
 import { ApiError, createPoller, fetchBoard, fetchDossier, fetchWire } from './api';
 import { renderChart } from './chart';
 import type { Chart } from './chart';
 import { SYMBOL_RE, companies, createCompanyList } from './companies';
 import { h, tickAges } from './dom';
+import { eventsView, processView } from './events';
 import { rangeName, setUiLang, t, uiLang } from './i18n';
 import {
   TIMELINE_PAGE,
@@ -18,8 +22,10 @@ import {
   sourceIssues,
   timelinePanel,
 } from './panels';
-import { RANGES } from './types';
-import type { Board, Dossier, EventType, Range, Wire, WireEvent } from './types';
+import { modelView } from './model';
+import { signalPlate } from './plate';
+import { COMPANY_VIEWS, RANGES } from './types';
+import type { Board, CompanyView, Dossier, EventType, Range, Wire, WireEvent } from './types';
 import { moversPanel, radarPanel, wireFeed, wireKey } from './wire';
 
 const DOSSIER_MS = 20_000;
@@ -30,6 +36,8 @@ const UPSTREAM_URL = 'https://github.com/koala73/worldmonitor';
 
 const state = {
   symbol: null as string | null,
+  view: 'overview' as CompanyView,
+  screener: false,
   range: '3mo' as Range,
   query: '',
   region: 'all',
@@ -70,7 +78,13 @@ const chartHead = h('header', { class: 'panel-head' });
 const chartBody = h('div', { class: 'chart-body' });
 const chartPanel = h('section', { class: 'panel slot slot-chart' }, chartHead, chartBody);
 const feed = h('div', { class: 'slot slot-feed' });
-const center = h('div', { class: 'center' }, status, head, chartPanel, feed);
+const tabs = h('nav', { class: 'tabs' });
+const viewSlot = h('div', { class: 'slot slot-view' });
+const center = h('div', { class: 'center' }, status, head, tabs, chartPanel, viewSlot, feed);
+/** What the tab slot currently shows; it is rebuilt only on request. */
+let shown: { key: string; data: string } | null = null;
+let disposeScreener: (() => void) | null = null;
+let menuButton: { key: string; node: HTMLElement } | null = null;
 const rail = h('aside', { class: 'rail' });
 const main = h('main', { class: 'main' }, center, rail);
 const footer = h('footer', { class: 'footer' });
@@ -100,8 +114,12 @@ const companyList = createCompanyList(
 
 function renderChrome(): void {
   document.documentElement.lang = uiLang();
-  document.title = `${state.symbol ?? t('liveWire')} · Money Bansho`;
+  document.title = `${state.symbol ?? t(state.screener ? 'screener' : 'liveWire')} · Money Bansho`;
+  const active = state.symbol ? 'dossier' : state.screener ? 'screener' : 'wire';
+  const menuKey = `${active}|${uiLang()}`;
+  if (menuButton?.key !== menuKey) menuButton = { key: menuKey, node: mountBanshoMenu({ active, lang: uiLang() }) };
   header.replaceChildren(
+    menuButton.node,
     h(
       'button',
       {
@@ -122,8 +140,13 @@ function renderChrome(): void {
       {},
       h(
         'a',
-        { href: location.pathname, 'aria-current': state.symbol ? null : 'page', onclick: internal(null) },
+        { href: location.pathname, 'aria-current': state.symbol || state.screener ? null : 'page', onclick: internal(null) },
         t('liveWire'),
+      ),
+      h(
+        'a',
+        { href: `${location.pathname}?view=screener`, 'aria-current': state.screener ? 'page' : null, onclick: internal(null, true) },
+        t('screener'),
       ),
       h('a', { href: '/dashboard' }, t('dashboard')),
       h(
@@ -158,11 +181,11 @@ function renderChrome(): void {
 }
 
 /** Plain left-clicks navigate in place; modified clicks keep browser behaviour. */
-function internal(symbol: string | null) {
+function internal(symbol: string | null, screener = false) {
   return (event: MouseEvent) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
     event.preventDefault();
-    navigate(symbol);
+    navigate(symbol, null, screener);
   };
 }
 
@@ -203,6 +226,94 @@ function swap(host: HTMLElement, ...children: (Node | null)[]): void {
   const key = host.contains(document.activeElement) ? (document.activeElement as HTMLElement).dataset.key : null;
   host.replaceChildren(...children.filter((c): c is Node => c !== null));
   if (key) host.querySelector<HTMLElement>(`[data-key="${CSS.escape(key)}"]`)?.focus({ preventScroll: true });
+}
+
+// ---- company tabs ---------------------------------------------------------
+
+function setView(view: CompanyView): void {
+  if (view === state.view) return;
+  state.view = view;
+  writeUrl(true);
+  renderView();
+}
+
+function renderTabs(): void {
+  tabs.hidden = !state.symbol;
+  swap(
+    tabs,
+    ...(state.symbol ? COMPANY_VIEWS : []).map((view) =>
+      h(
+        'button',
+        {
+          type: 'button',
+          'data-key': `tab-${view}`,
+          'aria-current': state.view === view ? 'page' : null,
+          onclick: () => setView(view),
+        },
+        t(`tab_${view}`),
+      ),
+    ),
+  );
+}
+
+function buildTab(data: Dossier): HTMLElement {
+  const lang = uiLang();
+  switch (state.view) {
+    case 'events':
+      return eventsView(data.raw, {
+        lang,
+        selectedId: state.selectedId,
+        onSelect: (id) => {
+          state.selectedId = id;
+        },
+      });
+    case 'metrics':
+      return metricsView(data.metrics, lang);
+    case 'process':
+      return processView(data.raw, { lang });
+    default:
+      return modelView(data, (id) => {
+        state.selectedId = id;
+        setView('events');
+      });
+  }
+}
+
+/**
+ * A tab is drawn once and then left alone, so filters, scroll position and open
+ * details survive polling. Newer data is offered, never forced on the reader.
+ */
+function renderTab(data: Dossier): void {
+  const key = `${data.symbol}|${state.view}|${uiLang()}`;
+  const version = JSON.stringify([data.events.map((e) => e.id), data.history[data.history.length - 1]?.t]);
+  if (shown?.key === key) {
+    const banner = viewSlot.querySelector<HTMLElement>(':scope > .newer');
+    if (banner) banner.hidden = shown.data === version;
+    return;
+  }
+  shown = { key, data: version };
+  let body: HTMLElement;
+  try {
+    body = buildTab(data);
+  } catch (error) {
+    console.error('[dossier] view failed', error);
+    body = panel(t(`tab_${state.view}`), null, empty(t('viewFailed')));
+  }
+  const update = h(
+    'button',
+    {
+      type: 'button',
+      class: 'retry',
+      onclick: () => {
+        shown = null;
+        renderView();
+      },
+    },
+    t('retry'),
+  );
+  const banner = h('div', { class: 'banner newer' }, h('span', {}, t('newData')), update);
+  banner.hidden = true;
+  viewSlot.replaceChildren(banner, body);
 }
 
 // ---- company view ---------------------------------------------------------
@@ -311,6 +422,24 @@ function renderChartPanel(): void {
 
 function renderCompany(): void {
   const data = state.dossier;
+  if (state.view !== 'overview') {
+    chartPanel.hidden = true;
+    chartBody.replaceChildren();
+    chart = null;
+    swap(feed);
+    swap(rail);
+    if (data) {
+      swap(head, quoteHeader(data));
+      renderTab(data);
+    } else {
+      shown = null;
+      viewSlot.replaceChildren();
+      swap(head, state.dossierError ? errorPanel(state.dossierError) : panel(state.symbol ?? '', null, empty(t('loading'))));
+    }
+    return;
+  }
+  shown = null;
+  viewSlot.replaceChildren();
   chartPanel.hidden = !data && state.dossierError !== null;
   renderChartPanel();
   if (!data) {
@@ -327,7 +456,12 @@ function renderCompany(): void {
     return;
   }
   const opened = state.opened;
-  swap(head, quoteHeader(data), opened && !findOpened(data, opened) ? openedPanel(opened) : null);
+  swap(
+    head,
+    quoteHeader(data),
+    signalPlate(data, () => setView('model')),
+    opened && !findOpened(data, opened) ? openedPanel(opened) : null,
+  );
   swap(
     feed,
     timelinePanel({
@@ -389,11 +523,41 @@ function renderWire(): void {
   swap(rail, radarPanel(options), renderMovers());
 }
 
+function renderScreener(): void {
+  chartPanel.hidden = true;
+  chartBody.replaceChildren();
+  chart = null;
+  swap(head);
+  swap(feed);
+  swap(rail);
+  const key = `screener|${uiLang()}`;
+  if (shown?.key === key) return;
+  disposeScreener?.();
+  shown = { key, data: '' };
+  const view = screenerView({ lang: uiLang(), onSelect: (symbol) => navigate(symbol) });
+  disposeScreener = view.dispose;
+  viewSlot.replaceChildren(view.el);
+}
+
 function renderView(): void {
-  main.classList.toggle('wire', !state.symbol);
+  const wide = state.screener || (state.symbol !== null && state.view !== 'overview');
+  main.classList.toggle('wire', !state.symbol && !state.screener);
+  main.classList.toggle('full', wide);
+  if (!state.screener && disposeScreener) {
+    disposeScreener();
+    disposeScreener = null;
+    shown = null;
+    viewSlot.replaceChildren();
+  }
+  renderTabs();
   renderStatus();
   if (state.symbol) renderCompany();
-  else renderWire();
+  else if (state.screener) renderScreener();
+  else {
+    shown = null;
+    viewSlot.replaceChildren();
+    renderWire();
+  }
 }
 
 function renderAll(): void {
@@ -405,7 +569,9 @@ function renderAll(): void {
 // ---- data -----------------------------------------------------------------
 
 /** Everything except the timestamp, to skip re-rendering unchanged data. */
-const signature = (data: Dossier | Wire) => JSON.stringify({ ...data, updatedAt: 0 });
+const signature = (data: Dossier | Wire) =>
+  // The raw response and the model blocks carry timings that differ on every poll.
+  JSON.stringify({ ...data, updatedAt: 0, raw: undefined, metrics: undefined, quant: undefined });
 
 function refreshUpdated(host: ParentNode, updatedAt: number): void {
   for (const node of host.querySelectorAll<HTMLElement>('[data-since]')) node.dataset.since = String(updatedAt);
@@ -509,6 +675,9 @@ function readUrl(): void {
   const range = params.get('range') as Range;
   state.symbol = SYMBOL_RE.test(symbol) ? symbol : null;
   state.range = RANGES.includes(range) ? range : '3mo';
+  const view = params.get('view') as CompanyView;
+  state.view = COMPANY_VIEWS.includes(view) ? view : 'overview';
+  state.screener = !state.symbol && params.get('view') === 'screener';
 }
 
 function writeUrl(push: boolean): void {
@@ -517,6 +686,9 @@ function writeUrl(push: boolean): void {
   else params.delete('symbol');
   if (state.symbol && state.range !== '3mo') params.set('range', state.range);
   else params.delete('range');
+  if (state.symbol && state.view !== 'overview') params.set('view', state.view);
+  else if (state.screener) params.set('view', 'screener');
+  else params.delete('view');
   const query = params.toString();
   const url = `${location.pathname}${query ? `?${query}` : ''}`;
   history[push ? 'pushState' : 'replaceState'](null, '', url);
@@ -539,15 +711,17 @@ function enterView(): void {
   startPolling();
 }
 
-function navigate(symbol: string | null, opened: WireEvent | null = null): void {
+function navigate(symbol: string | null, opened: WireEvent | null = null, screener = false): void {
   state.opened = opened;
   state.openedPending = opened !== null;
-  if (symbol === state.symbol) {
+  if (symbol === state.symbol && (symbol !== null || screener === state.screener)) {
     state.menuOpen = false;
     renderChrome();
     return;
   }
   state.symbol = symbol;
+  state.screener = screener && !symbol;
+  if (opened) state.view = 'overview';
   writeUrl(true);
   enterView();
 }

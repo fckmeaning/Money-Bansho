@@ -138,6 +138,37 @@ export function tone(value: number | null | undefined, deadzone = 0.005): string
   return value > 0 ? 'up' : 'down';
 }
 
+/** Unsigned number with a fixed number of decimals. */
+export function fixed(value: number | null | undefined, digits = 2, suffix = ''): string {
+  if (value === null || value === undefined) return t('noData');
+  const body = value.toLocaleString(locale(), { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  return `${body.replace('-', MINUS)}${suffix}`;
+}
+
+/** A share in 0..1 shown as a percentage. */
+export const share = (value: number | null | undefined, digits = 0): string =>
+  value === null || value === undefined ? t('noData') : fixed(value * 100, digits, '%');
+
+/** Signed value, or the "no data" text where a dash would be too terse. */
+export const signedText = (value: number | null | undefined, digits = 2, suffix = ''): string =>
+  value === null || value === undefined ? t('noData') : signed(value, digits, suffix);
+
+/** p- and q-values: three decimals, never rounded down to a misleading zero. */
+export function pValue(value: number | null | undefined): string {
+  if (value === null || value === undefined) return DASH;
+  return value < 0.001 ? `<${fixed(0.001, 3)}` : fixed(value, 3);
+}
+
+/** Small parameters such as GARCH omega, in scientific notation when needed. */
+export function precise(value: number | null | undefined): string {
+  if (value === null || value === undefined) return t('noData');
+  if (value !== 0 && Math.abs(value) < 0.001) {
+    const [mantissa = '', exponent = ''] = value.toExponential(2).split('e');
+    return `${fixed(Number(mantissa), 2)}·10^${exponent.replace('-', MINUS).replace('+', '')}`;
+  }
+  return fixed(value, 4);
+}
+
 export function compact(value: number | null | undefined): string {
   if (value === null || value === undefined) return DASH;
   return new Intl.NumberFormat(locale(), { notation: 'compact', maximumFractionDigits: 1 }).format(value);

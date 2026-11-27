@@ -12,7 +12,7 @@
   gap: 2px;
   padding: 2px;
   border: 1px solid var(--panel-border);
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 .grid-clock-selector button {
   background: transparent;

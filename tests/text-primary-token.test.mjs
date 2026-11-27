@@ -36,7 +36,7 @@ describe('--text-primary token', () => {
   it('Route Explorer pins a bright --text-primary on its always-dark modal', () => {
     const re = readFileSync(new URL('../src/styles/route-explorer.css', import.meta.url), 'utf8');
     const body = re.replace(/\/\*[\s\S]*?\*\//g, '').match(/(?:^|\})\s*\.re-modal\s*\{([^{}]*)\}/)?.[1] ?? '';
-    assert.match(body, /--text:\s*#e8e8e8\s*;/);
+    assert.match(body, /--text:\s*#d8d5cc\s*;/);
     assert.match(body, /--text-primary:\s*var\(--text\)\s*;/);
   });
 });

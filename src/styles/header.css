@@ -84,14 +84,9 @@ html.wm-pro-banner-reserved .pro-banner-slot {
 
 .auth-header-skeleton {
   background:
-    linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--text) 7%, transparent),
-      color-mix(in srgb, var(--text) 13%, transparent),
-      color-mix(in srgb, var(--text) 7%, transparent)
-    );
+    var(--surface-hover);
   border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
-  border-radius: 6px;
+  border-radius: var(--radius);
   display: block;
   height: 32px;
   pointer-events: none;

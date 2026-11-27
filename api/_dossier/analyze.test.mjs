@@ -164,7 +164,7 @@ test('abnormal move is null without a matching benchmark', () => {
 });
 
 test('reputation score is neutral without data', () => {
-  assert.deepEqual(reputationScore([], NOW), { score: 50, trend: 0, label: 'No data', drivers: [], sample: 0 });
+  assert.deepEqual(reputationScore([], NOW), { score: 50, trend: 0, label: 'No data', drivers: [], sample: 0, margin: null, confidence: 0 });
 });
 
 test('reputation score is recency and type weighted with explainable drivers', () => {

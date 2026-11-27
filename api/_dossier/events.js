@@ -1,4 +1,5 @@
 import { classifyEvent, priceReaction } from './analyze.js';
+import { eventStudy } from './quant.js';
 
 function hash(value) {
   let a = 0x811c9dc5;
@@ -29,13 +30,15 @@ export function toEvent(item) {
     people: filing ? [] : found.people,
     priceMovePct: null,
     abnormalMovePct: null,
+    impact: null,
   };
 }
 
 export function withReaction(event, history, benchmarkHistory) {
   if (!history?.length) return event;
   const { priceMovePct, abnormalMovePct } = priceReaction(history, benchmarkHistory ?? [], event.time);
-  return { ...event, priceMovePct, abnormalMovePct };
+  const impact = eventStudy(history, benchmarkHistory ?? [], event.time);
+  return { ...event, priceMovePct, abnormalMovePct, impact };
 }
 
 // Retail offers mention a company without saying anything about it as a business.

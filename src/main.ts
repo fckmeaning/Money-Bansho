@@ -1,4 +1,6 @@
 import './styles/base-layer.css';
+// Must stay ahead of every import that reads SITE_VARIANT.
+import './bootstrap/bansho-variant';
 import './bootstrap/zod-csp';
 import './bootstrap/abort-signal-fallbacks';
 import './bootstrap/dom-fallbacks';
@@ -853,7 +855,8 @@ if (!isDesktopRuntime() && swContainer) {
     });
   };
 
-  scheduleAfterFirstPaint(registerServiceWorker);
+  // The dev server has no /sw.js; registering there only logs a MIME error.
+  if (!import.meta.env.DEV) scheduleAfterFirstPaint(registerServiceWorker);
 }
 
 // --- SW/Cache Nuke Template ---

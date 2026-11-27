@@ -1,0 +1,5 @@
+/* A keyless build can never unlock paid features: hide their locked shells. */
+html.bansho-keyless .panel:has(> .panel-content > .panel-locked-state),
+html.bansho-keyless .panel-locked-cta,
+html.bansho-keyless .upgrade-pro-section,
+html.bansho-keyless .upgrade-to-business-btn { display: none !important; }

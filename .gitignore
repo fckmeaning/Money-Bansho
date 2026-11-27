@@ -169,3 +169,7 @@ src-tauri/notices/*
 !src-tauri/notices/.gitkeep
 
 !vendor/vercel-og/dist/
+
+# Money Bansho: the app imports these generated files, so they must be committed.
+!convex/_generated/api.js
+!convex/_generated/server.js

@@ -58,24 +58,72 @@ export function quoteFrom(meta, history, nowMs = Date.now()) {
 export function parseChart(body) {
   const result = body?.chart?.result?.[0];
   if (!result?.meta) throw new Error('No chart data');
-  const closes = result.indicators?.quote?.[0]?.close ?? [];
-  const volumes = result.indicators?.quote?.[0]?.volume ?? [];
+  const quote = result.indicators?.quote?.[0] ?? {};
+  const closes = quote.close ?? [];
+  const volumes = quote.volume ?? [];
   const offset = (result.meta.gmtoffset || 0) * 1000;
+  const price = (series, i) => {
+    const value = num(series?.[i]);
+    return value === null || value <= 0 ? null : round(value);
+  };
   const byDay = new Map();
   (result.timestamp ?? []).forEach((seconds, i) => {
     const c = num(closes[i]);
     if (c === null || c <= 0) return;
     const t = seconds * 1000;
-    byDay.set(new Date(t + offset).toISOString().slice(0, 10), { t, c: round(c), v: num(volumes[i]) });
+    byDay.set(new Date(t + offset).toISOString().slice(0, 10), {
+      t,
+      c: round(c),
+      v: num(volumes[i]),
+      o: price(quote.open, i),
+      h: price(quote.high, i),
+      l: price(quote.low, i),
+    });
   });
   return { meta: result.meta, history: [...byDay.values()].sort((a, b) => a.t - b.t) };
 }
 
-/** One year of daily bars plus live quote metadata. */
+/** Two years of daily bars plus live quote metadata. */
 export function loadChart(symbol, ttlMs = 15_000) {
   return cached(`chart:${symbol}`, ttlMs, async () => parseChart(
-    await yahooJson(`/v8/finance/chart/${encodeURIComponent(symbol)}?range=1y&interval=1d`, 9000),
+    await yahooJson(`/v8/finance/chart/${encodeURIComponent(symbol)}?range=2y&interval=1d`, 9000),
   ), 5 * 60_000);
+}
+
+/**
+ * One year of daily closes for many symbols (spark, 20 per request). Returns a
+ * Map symbol -> { meta, history } and one error per failed or stale request.
+ */
+export async function loadSparkSeries(symbols, ttlMs = 60_000) {
+  const chunks = [];
+  for (let i = 0; i < symbols.length; i += 20) chunks.push(symbols.slice(i, i + 20));
+  const errors = [];
+  const bySymbol = new Map();
+  await Promise.all(chunks.map(async (chunk, index) => {
+    const source = `yahoo:spark:${index + 1}`;
+    try {
+      const { value, staleError } = await cached(`spark1y:${chunk.join(',')}`, ttlMs, async () => {
+        const body = await yahooJson(
+          `/v7/finance/spark?symbols=${chunk.map(encodeURIComponent).join(',')}&range=1y&interval=1d`,
+          8000,
+        );
+        const rows = body?.spark?.result;
+        if (!Array.isArray(rows)) throw new Error('No spark data');
+        return rows.flatMap((row) => {
+          // A spark response entry has the same shape as a chart result.
+          const entry = row?.response?.[0];
+          if (!entry?.meta) return [];
+          const parsed = parseChart({ chart: { result: [entry] } });
+          return parsed.history.length ? [[row.symbol, parsed]] : [];
+        });
+      }, 10 * 60_000);
+      if (staleError) errors.push({ source, message: staleError });
+      for (const [symbol, series] of value) bySymbol.set(symbol, series);
+    } catch (error) {
+      errors.push({ source, message: `${errorMessage(error)} (${chunk.join(', ')})`.slice(0, 200) });
+    }
+  }));
+  return { series: bySymbol, errors };
 }
 
 /** Quotes for many symbols; spark accepts at most 20 per request. */

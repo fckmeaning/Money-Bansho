@@ -1,5 +1,7 @@
 // Fetching and defensive normalisation of /api/dossier responses. A malformed
 // field becomes "no data"; it is never replaced with an invented value.
+import { impactOf, isObj, list, num, quantOf, signalsOf, str, within } from './quant-parse';
+import type { Obj } from './quant-parse';
 import { EVENT_TYPES } from './types';
 import type {
   Bar,
@@ -29,12 +31,6 @@ export class ApiError extends Error {
   }
 }
 
-type Obj = Record<string, unknown>;
-const isObj = (v: unknown): v is Obj => typeof v === 'object' && v !== null && !Array.isArray(v);
-const str = (v: unknown): string => (typeof v === 'string' ? v : '');
-const num = (v: unknown): number | null => (typeof v === 'number' && Number.isFinite(v) ? v : null);
-const list = (v: unknown): unknown[] => (Array.isArray(v) ? v : []);
-
 function errorsOf(v: unknown): SourceError[] {
   return list(v)
     .filter(isObj)
@@ -60,6 +56,8 @@ function eventOf(v: unknown): DossierEvent | null {
     people: list(v.people).map(str).filter(Boolean),
     priceMovePct: num(v.priceMovePct),
     abnormalMovePct: num(v.abnormalMovePct),
+    impact: impactOf(v.impact),
+    outlets: within(v.outlets, 1),
   };
 }
 
@@ -89,7 +87,15 @@ function reputationOf(v: unknown): Reputation | null {
     const impact = num(d.impact);
     if (impact !== null && str(d.eventId)) drivers.push({ eventId: str(d.eventId), impact });
   }
-  return { score, trend: num(v.trend), label: str(v.label), drivers, sample: num(v.sample) ?? 0 };
+  return {
+    score,
+    trend: num(v.trend),
+    label: str(v.label),
+    drivers,
+    sample: num(v.sample) ?? 0,
+    margin: within(v.margin, 0, 100),
+    confidence: within(v.confidence, 0, 1),
+  };
 }
 
 async function getJson(query: Record<string, string>, signal: AbortSignal): Promise<Obj> {
@@ -126,7 +132,10 @@ async function getJson(query: Record<string, string>, signal: AbortSignal): Prom
 }
 
 export async function fetchDossier(symbol: string, range: Range, signal: AbortSignal): Promise<Dossier> {
-  const body = await getJson({ symbol, range }, signal);
+  return parseDossier(await getJson({ symbol, range }, signal), symbol);
+}
+
+export function parseDossier(body: Obj, symbol: string): Dossier {
   if (!Array.isArray(body.history) || !Array.isArray(body.events)) {
     throw new ApiError(200, 'invalid-response');
   }
@@ -152,6 +161,10 @@ export async function fetchDossier(symbol: string, range: Range, signal: AbortSi
       .filter((e): e is DossierEvent => e !== null)
       .sort(newestFirst),
     reputation: reputationOf(body.reputation),
+    signals: signalsOf(body.signals),
+    quant: quantOf(body.quant),
+    metrics: body.metrics,
+    raw: body,
     updatedAt: num(body.updatedAt) ?? Date.now(),
     errors: errorsOf(body.errors),
   };

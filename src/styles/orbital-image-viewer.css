@@ -33,10 +33,10 @@
 .oiv-stage { position: relative; width: var(--oiv-stage); aspect-ratio: 1 / 1; overflow: hidden; background: var(--bg-secondary); }
 .oiv-image { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; user-select: none; }
 .oiv-stage-empty, .oiv-skeleton { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px; text-align: center; color: var(--oiv-dim); }
-.oiv-skeleton { background: linear-gradient(100deg, var(--surface) 30%, var(--surface-hover) 50%, var(--surface) 70%) 0 0 / 300% 100%; animation: oiv-shimmer 1.6s linear infinite; }
+.oiv-skeleton { background: var(--surface-hover); }
 @keyframes oiv-shimmer { to { background-position: -150% 0; } }
-.oiv-reticle { position: absolute; z-index: 1; left: 50%; top: 50%; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 2px solid var(--green); border-radius: 50%; box-shadow: 0 0 0 1px var(--shadow-color), inset 0 0 0 1px var(--shadow-color); pointer-events: none; }
-.oiv-reticle::after { content: ''; position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: var(--green); }
+.oiv-reticle { position: absolute; z-index: 1; left: 50%; top: 50%; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 2px solid var(--accent); border-radius: 50%; box-shadow: 0 0 0 1px var(--shadow-color), inset 0 0 0 1px var(--shadow-color); pointer-events: none; }
+.oiv-reticle::after { content: ''; position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: var(--accent); }
 .oiv-counter, .oiv-chip { position: absolute; padding: 3px 7px; background: color-mix(in srgb, var(--bg) 82%, transparent); color: var(--oiv-text); }
 .oiv-counter { top: 12px; right: 12px; }
 .oiv-north { position: absolute; bottom: 12px; right: 12px; padding: 3px 7px; background: color-mix(in srgb, var(--bg) 82%, transparent); color: var(--oiv-text); font: 600 11px var(--font-mono); }
@@ -50,8 +50,8 @@
 .oiv-side { width: 260px; flex: none; display: flex; flex-direction: column; }
 .oiv-actions { display: flex; gap: 8px; margin-bottom: 16px; }
 .oiv-button, .oiv-tab, .oiv-toggle { background: none; border: 1px solid var(--oiv-line); color: var(--oiv-text); padding: 8px 14px; cursor: pointer; }
-.oiv-button:hover, .oiv-tab:hover, .oiv-toggle:hover, .oiv-date:hover { border-color: var(--green); color: var(--green-text, var(--green)); }
-.oiv-button-primary { border-color: var(--green); color: var(--green-text, var(--green)); }
+.oiv-button:hover, .oiv-tab:hover, .oiv-toggle:hover, .oiv-date:hover { border-color: var(--accent); color: var(--accent); }
+.oiv-button-primary { border-color: var(--accent); color: var(--accent); }
 .oiv-tabs { display: flex; margin-bottom: 16px; }
 .oiv-tab { flex: 1; color: var(--oiv-dim); }
 .oiv-tab + .oiv-tab { border-left: 0; }
@@ -64,15 +64,15 @@
 .oiv-image.oiv-pending { visibility: hidden; }
 .oiv-meta dd small { margin-left: 3px; color: var(--oiv-dim); font-size: 11px; }
 .oiv-slider .oiv-after { clip-path: inset(0 0 0 var(--oiv-divider, 50%)); }
-.oiv-slider::after { content: ''; position: absolute; top: 0; bottom: 0; left: var(--oiv-divider, 50%); width: 2px; margin-left: -1px; background: var(--green); pointer-events: none; }
+.oiv-slider::after { content: ''; position: absolute; top: 0; bottom: 0; left: var(--oiv-divider, 50%); width: 2px; margin-left: -1px; background: var(--accent); pointer-events: none; }
 .oiv-chip-before { top: 12px; left: 12px; }
 .oiv-chip-after { top: 12px; right: 12px; }
 .oiv-divider { display: block; width: 100%; height: 16px; margin: 12px 0 0; appearance: none; background: transparent; cursor: ew-resize; }
 /* A styled track, because the native one ignores the theme. */
 .oiv-divider::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: var(--border-strong); }
 .oiv-divider::-moz-range-track { height: 4px; border-radius: 2px; background: var(--border-strong); }
-.oiv-divider::-webkit-slider-thumb { appearance: none; width: 14px; height: 14px; margin-top: -5px; border: 0; border-radius: 50%; background: var(--green); }
-.oiv-divider::-moz-range-thumb { width: 14px; height: 14px; border: 0; border-radius: 50%; background: var(--green); }
+.oiv-divider::-webkit-slider-thumb { appearance: none; width: 14px; height: 14px; margin-top: -5px; border: 0; border-radius: 50%; background: var(--accent); }
+.oiv-divider::-moz-range-thumb { width: 14px; height: 14px; border: 0; border-radius: 50%; background: var(--accent); }
 .oiv-dates { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--oiv-line); }
 .oiv-date { display: flex; justify-content: space-between; width: 100%; padding: 9px 10px; background: none; border: 0; border-bottom: 1px solid var(--oiv-line-soft); color: var(--oiv-dim); cursor: pointer; text-align: left; }
 .oiv-date-cloud { color: var(--oiv-dim); }
@@ -80,8 +80,8 @@
 .oiv-event { margin: 8px 0 0; color: var(--oiv-text); }
 .oiv-toggle { margin-top: 12px; align-self: flex-start; }
 .oiv-side > .oiv-actions:last-child { margin: 16px 0 0; }
-.oiv-play { flex: none; width: 44px; height: 44px; background: none; border: 1px solid var(--oiv-line); color: var(--green-text, var(--green)); cursor: pointer; font-size: 13px; }
-.oiv-play:hover { border-color: var(--green); }
+.oiv-play { flex: none; width: 44px; height: 44px; background: none; border: 1px solid var(--oiv-line); color: var(--accent); cursor: pointer; font-size: 13px; }
+.oiv-play:hover { border-color: var(--accent); }
 
 @media (prefers-reduced-motion: reduce) {
   .oiv-skeleton { animation: none; }
@@ -96,9 +96,9 @@
 
 /* WM's active state (.time-btn.active): green fill, its #0a0a0a ink, bold. */
 .oiv-tab[aria-selected="true"], .oiv-date[aria-pressed="true"], .oiv-toggle[aria-pressed="true"] {
-  background: var(--green);
-  border-color: var(--green);
-  color: #0a0a0a;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
   font-weight: bold;
 }
 .oiv-date[aria-pressed="true"] .oiv-date-cloud { color: inherit; }

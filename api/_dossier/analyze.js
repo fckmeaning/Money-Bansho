@@ -1,10 +1,13 @@
 /**
  * Company Dossier analysis: headline classification, de-duplication, price reaction
- * and reputation scoring. Pure ESM without imports, safe for the edge runtime.
+ * and reputation scoring. Pure ESM, safe for the edge runtime.
+ * The numeric model lives in quant.js (see docs/bansho-math.md).
  *
  * Everything here is keyword based and deterministic. Where a signal is uncertain the
  * result is empty/null instead of a guess.
  */
+
+import { evidenceWeight, MAX_GAP, PRIOR_WEIGHT, scoreUncertainty, withCloseTimes } from './quant.js';
 
 const HOUR = 3_600_000;
 const DAY = 24 * HOUR;
@@ -547,47 +550,24 @@ export function dedupeEvents(events) {
   const urls = new Set();
   for (const item of items) {
     if (item.url && urls.has(item.url)) continue;
-    if (kept.some((other) => isNearDuplicate(item, other))) continue;
+    const original = kept.find((other) => isNearDuplicate(item, other));
+    if (original) {
+      if (item.event.source) original.outlets.add(item.event.source);
+      continue;
+    }
     if (item.url) urls.add(item.url);
+    item.outlets = new Set(item.event.source ? [item.event.source] : []);
     kept.push(item);
   }
-  return kept.sort((a, b) => a.index - b.index).map((item) => item.event);
+  return kept
+    .sort((a, b) => a.index - b.index)
+    // `outlets` is present only when several sources carried the same story.
+    .map(({ event, outlets }) => (outlets.size > 1 ? { ...event, outlets: outlets.size } : event));
 }
 
 // ---------------------------------------------------------------------------
 // Price reaction
 // ---------------------------------------------------------------------------
-
-const MAX_GAP = 10 * DAY;
-
-/** Regular session length, inferred from the UTC hour at which the daily bar opens. */
-function sessionLength(timeOfDay) {
-  const hour = timeOfDay / HOUR;
-  if (hour >= 6 && hour < 11) return 8.5 * HOUR; // Europe, Israel
-  return 6.5 * HOUR; // Americas, East Asia
-}
-
-/**
- * Daily bars are stamped with the session OPEN, so each close happens later than `t`.
- * The newest bar of a running session may instead be stamped with the last trade time;
- * it then takes the usual time of day of the previous bar.
- */
-function withCloseTimes(history) {
-  const bars = (history || [])
-    .filter((b) => b && Number.isFinite(b.t) && Number.isFinite(b.c) && b.c > 0)
-    .sort((a, b) => a.t - b.t);
-  return bars.map((bar, i) => {
-    const day = Math.floor(bar.t / DAY);
-    let open = bar.t - day * DAY;
-    if (i === bars.length - 1 && i > 0) {
-      const usual = bars[i - 1].t - Math.floor(bars[i - 1].t / DAY) * DAY;
-      // More than DST (1 h) away from the usual open: not an opening timestamp.
-      if (Math.abs(open - usual) > 1.5 * HOUR) open = usual;
-    }
-    const closeAt = Math.max(day * DAY + open + sessionLength(open), bar.t);
-    return { day, c: bar.c, closeAt };
-  });
-}
 
 /**
  * Move from the last close before the event to the first close after it.
@@ -624,27 +604,27 @@ export function priceReaction(history, benchmarkHistory, eventTimeMs, nowMs = Da
 // Reputation score
 // ---------------------------------------------------------------------------
 
-const TYPE_WEIGHT = { leadership: 2, scandal: 2, regulation: 1.75, earnings: 1.2, deal: 1, politics: 1, product: 0.8, other: 0.5 };
-const HALF_LIFE = 14 * DAY;
 const MAX_AGE = 90 * DAY;
-const PRIOR_WEIGHT = 3; // neutral evidence that keeps thin samples close to 50
 
 /**
  * score = 50 + 50 * sum(w * sentiment) / (sum(w) + PRIOR_WEIGHT)
- * w = type weight * 0.5 ^ (age / 14 days)
+ * w = type * source * corroboration * 0.5 ^ (age / half-life of the type)
  */
 function scoreAt(events, nowMs) {
   const used = [];
   events.forEach((event, index) => {
     const age = nowMs - event?.time;
     if (!(age >= 0 && age <= MAX_AGE)) return;
-    const weight = (TYPE_WEIGHT[event.type] ?? TYPE_WEIGHT.other) * 0.5 ** (age / HALF_LIFE);
-    used.push({ eventId: event.id ?? event.url ?? String(index), weight, sentiment: clamp(Number(event.sentiment) || 0, -1, 1) });
+    used.push({
+      eventId: event.id ?? event.url ?? String(index),
+      weight: evidenceWeight(event, age),
+      sentiment: clamp(Number(event.sentiment) || 0, -1, 1),
+    });
   });
   const total = used.reduce((sum, u) => sum + u.weight, PRIOR_WEIGHT);
   const impacts = used.map((u) => ({ eventId: u.eventId, impact: (50 * u.weight * u.sentiment) / total }));
   const score = clamp(50 + impacts.reduce((sum, i) => sum + i.impact, 0), 0, 100);
-  return { score: Math.round(score), impacts, sample: used.length };
+  return { score: Math.round(score), impacts, sample: used.length, ...scoreUncertainty(used) };
 }
 
 function labelFor(score) {
@@ -658,7 +638,7 @@ function labelFor(score) {
 /**
  * @param {{id?: string, time: number, type?: string, sentiment?: number}[]} events
  * @param {number} nowMs
- * @returns {{score: number, trend: number, label: string, drivers: {eventId: string, impact: number}[], sample: number}}
+ * @returns {{score: number, trend: number, label: string, drivers: {eventId: string, impact: number}[], sample: number, margin: number|null, confidence: number}}
  *   `impact` is in score points; `trend` is 0 when there is nothing to compare with.
  */
 export function reputationScore(events, nowMs) {
@@ -676,5 +656,7 @@ export function reputationScore(events, nowMs) {
     label: current.sample ? labelFor(current.score) : 'No data',
     drivers,
     sample: current.sample,
+    margin: current.sample ? current.margin : null,
+    confidence: current.sample ? current.confidence : 0,
   };
 }

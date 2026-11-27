@@ -8,10 +8,10 @@
   max-height: calc(100% - 120px);
   overflow: auto;
   padding: 12px;
-  border: 1px solid #f59e0b;
-  border-radius: 6px;
-  background: var(--panel-bg, #121820);
-  color: var(--text-primary, #eef2f7);
+  border: 1px solid var(--yellow);
+  border-radius: var(--radius);
+  background: var(--panel-bg);
+  color: var(--text-primary);
   font-size: 12px;
   line-height: 1.4;
   box-sizing: border-box;
@@ -35,14 +35,14 @@
   padding: 8px;
   color: inherit;
   background: transparent;
-  border: 1px solid #64748b;
-  border-radius: 4px;
+  border: 1px solid var(--text-dim);
+  border-radius: var(--radius);
   text-align: left;
   cursor: pointer;
 }
 .aircraft-emergency-details { padding: 8px 0; overflow-wrap: anywhere; }
 .aircraft-emergency-details dl { margin: 0; }
-.aircraft-emergency-details dt { color: #9ca3af; margin-top: 6px; }
+.aircraft-emergency-details dt { color: var(--text-dim); margin-top: 6px; }
 .aircraft-emergency-details dd { margin: 0; }
 .aircraft-emergency-marker {
   position: absolute;
@@ -50,9 +50,9 @@
   pointer-events: auto;
   cursor: pointer;
   padding: 3px 5px;
-  color: #111827;
-  background: #fbbf24;
-  border: 1px solid #111827;
-  border-radius: 4px;
+  color: var(--bg);
+  background: var(--yellow);
+  border: 1px solid var(--bg);
+  border-radius: var(--radius);
   font-size: 11px;
 }

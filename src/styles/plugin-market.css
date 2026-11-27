@@ -1,11 +1,11 @@
 :root {
-  color-scheme: dark; --bg:#141414; --fg:#eee; --muted:#a3a3a3; --border:#383838;
-  --green:#4ade80; --red:#fb7185; --text-dim:#a3a3a3;
+  color-scheme: dark; --bg:#14171c; --fg:#d8d5cc; --muted:#8a877e; --border:#262a31; --radius:2px;
+  --green:#4f9d69; --red:#d66a62; --text-dim:#8a877e;
   font:14px/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg);
 }
 :root[data-theme="light"] {
-  color-scheme:light; --bg:#fff; --fg:#171717; --muted:#555; --border:#d5d5d5;
-  --green:#15803d; --red:#be123c; --text-dim:#555;
+  color-scheme:light; --bg:#fbfaf7; --fg:#1b1d21; --muted:#5f5c54; --border:#d3d0c7;
+  --green:#2f7349; --red:#a63d36; --text-dim:#5f5c54;
 }
 * { box-sizing:border-box; }
 body { margin:0; }
@@ -13,7 +13,7 @@ body { margin:0; }
 header { display:flex; flex-wrap:wrap; gap:8px; align-items:baseline; justify-content:space-between; }
 h1 { font-size:20px; margin:0; }
 header span, footer, .qname, .qcoverage { color:var(--muted); font-size:12px; }
-#marketUsage { padding:8px; border:1px solid var(--border); border-radius:4px; }
+#marketUsage { padding:8px; border:1px solid var(--border); border-radius:var(--radius); }
 #marketContent { max-height:560px; overflow:auto; overscroll-behavior:contain; padding-right:4px; }
 h2 { font-size:12px; letter-spacing:.05em; text-transform:uppercase; margin:16px 0 6px; }
 .quote { padding:8px 0; border-bottom:1px solid var(--border); min-width:0; }
@@ -24,8 +24,8 @@ h2 { font-size:12px; letter-spacing:.05em; text-transform:uppercase; margin:16px
 .qsym { font-weight:650; overflow-wrap:anywhere; }
 .qname { overflow-wrap:anywhere; }
 .qprice, .qchg { font-variant-numeric:tabular-nums; text-align:right; }
-.qchg.up { color:var(--green); }
-.qchg.down { color:var(--red); }
+.qchg.up { color:var(--green-text, var(--green)); }
+.qchg.down { color:var(--red-text, var(--red)); }
 .qcoverage { margin:4px 0; overflow-wrap:anywhere; }
 .market-chart { padding:10px 0; }
 .terminal-chart { width:100%; height:auto; display:block; max-width:600px; }
@@ -38,7 +38,7 @@ summary:focus-visible, #marketContent:focus-visible { outline:2px solid var(--gr
 .fg-meta { flex:1; }
 .fg-meta h2 { margin:0; }
 .fg-label { font-weight:600; }
-.fg-track { height:8px; border-radius:10px; background:var(--border); overflow:hidden; margin-top:6px; }
+.fg-track { height:8px; border-radius:var(--radius); background:var(--border); overflow:hidden; margin-top:6px; }
 .fg-track span { display:block; height:100%; }
 
 .etf-flow-row { padding:10px 0; border-bottom:1px solid var(--border); }

@@ -8,11 +8,11 @@
   max-width: min(320px, calc(100vw - 24px)) !important;
   max-height: calc(100% - 16px);
   overflow-y: auto;
-  box-shadow: 0 4px 16px var(--shadow-color);
+  box-shadow: none;
 }
 
 .osat-card .osat-name {
-  color: var(--green-text, var(--green));
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .osat-site-time {
-  color: var(--green-text, var(--green));
+  color: var(--accent);
 }
 
 .osat-site-detail {

@@ -4,6 +4,7 @@ import { getCorsHeaders, getPublicCorsHeaders, isDisallowedOrigin } from './_cor
 import { jsonResponse } from './_json-response.js';
 import companies from './_dossier/companies.js';
 import { buildDossier, RANGE_DAYS } from './_dossier/company.js';
+import { buildScreener } from './_dossier/math/market.js';
 import { buildWire } from './_dossier/wire.js';
 import { loadBoard } from './_dossier/yahoo.js';
 
@@ -43,6 +44,10 @@ export default async function handler(req) {
     if (view === 'wire') {
       const wire = await buildWire();
       return respond(wire, wire.events.length ? 60 : 0);
+    }
+    if (view === 'screener') {
+      const screener = await buildScreener();
+      return respond(screener, screener.rows.length ? 60 : 0);
     }
     if (view) return fail('Unknown view', 400);
 

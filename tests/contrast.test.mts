@@ -264,7 +264,9 @@ describe('Climate Anomalies delta colours', () => {
   const resolve = (expr: string, block: string): string => {
     const names = [...expr.matchAll(/var\(\s*(--[\w-]+)/g)].map((m) => m[1]!);
     for (const name of names) {
-      for (const scope of [block, ':root {']) {
+      // Dark red and green text shades live in their own dark-only rule.
+      const darkText = ':root:not([data-theme="light"]):not([data-variant="happy"]) {';
+      for (const scope of block === ':root {' ? [darkText, block] : [block, ':root {']) {
         const m = blocks(scope).match(new RegExp(`${name}:\\s*(#[0-9a-fA-F]{3,8})`));
         if (m) return m[1]!;
       }

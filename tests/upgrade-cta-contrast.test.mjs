@@ -166,6 +166,9 @@ function themeBlock(selector) {
 const dark = themeBlock(':root');
 const light = { ...dark, ...themeBlock('[data-theme="light"]') };
 
+/** Dark panels give small red and green text lighter shades in their own rule. */
+const darkText = themeBlock(':root:not([data-theme="light"]):not([data-variant="happy"])');
+
 function themesFor(file) {
   const scope = SCOPED_TOKENS[file];
   const pinned = scope ? tokens(rule(file, scope).body) : {};
@@ -235,7 +238,8 @@ describe('semantic status text is readable in both themes', () => {
       // Translucent tints sit on the panel surface; judge them against it.
       const background = ownBackground && !/transparent|rgba\(|hsla\(/.test(ownBackground) ? ownBackground : 'var(--surface)';
       const text = declaration(base.body, 'color');
-      for (const [name, theme] of themesFor(file)) {
+      for (const [name, base] of themesFor(file)) {
+        const theme = name === 'dark' ? { ...base, ...darkText } : base;
         const [fg] = colors(text, theme);
         for (const bg of colors(background, theme)) {
           const ratio = contrast(fg, bg);

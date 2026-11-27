@@ -7,11 +7,11 @@
   --settings-border-strong: var(--overlay-heavy);
   --settings-text: var(--text);
   --settings-text-secondary: var(--text-secondary);
-  --settings-accent: var(--semantic-info);
-  --settings-green: #34d399;
-  --settings-yellow: #fbbf24;
+  --settings-accent: var(--accent);
+  --settings-green: var(--green);
+  --settings-yellow: var(--yellow);
   --settings-red: var(--semantic-critical);
-  --settings-blue: #60a5fa;
+  --settings-blue: var(--accent);
   --font-mono: 'SF Mono', 'Monaco', 'Cascadia Code', 'Fira Code', 'DejaVu Sans Mono', 'Liberation Mono', monospace;
 
   height: 100vh;
@@ -47,7 +47,7 @@
 }
 
 .settings-header-icon {
-  color: var(--settings-green);
+  color: var(--accent);
   flex-shrink: 0;
 }
 
@@ -64,9 +64,9 @@
   font-size: calc(10px * var(--wm-panel-effective-scale, 1));
   font-weight: 600;
   padding: 2px 8px;
-  border-radius: 8px;
-  background: rgba(96, 165, 250, 0.12);
-  color: var(--settings-blue);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
   letter-spacing: 0.03em;
 }
 
@@ -95,7 +95,7 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid var(--settings-border);
-  border-radius: 6px;
+  border-radius: var(--radius);
   color: var(--settings-text);
   padding: 7px 10px;
   font: inherit;
@@ -106,8 +106,8 @@
 
 .settings-sidebar-search input:focus {
   outline: none;
-  border-color: var(--settings-accent);
-  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.15);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 .settings-sidebar-search input::placeholder {
@@ -129,7 +129,7 @@
   width: 100%;
   padding: 8px 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius);
   background: transparent;
   color: var(--settings-text-secondary);
   font: inherit;
@@ -146,7 +146,7 @@
 }
 
 .settings-nav-item.active {
-  background: rgba(96, 165, 250, 0.1);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
   color: var(--settings-text);
   font-weight: 500;
 }
@@ -159,7 +159,7 @@
   bottom: 6px;
   width: 3px;
   border-radius: 0 2px 2px 0;
-  background: var(--settings-accent);
+  background: var(--accent);
 }
 
 .settings-nav-item svg {
@@ -169,7 +169,7 @@
 
 .settings-nav-item.active svg {
   opacity: 1;
-  color: var(--settings-accent);
+  color: var(--accent);
 }
 
 .settings-nav-label {
@@ -215,8 +215,8 @@
 
 .settings-content::-webkit-scrollbar { width: 6px; }
 .settings-content::-webkit-scrollbar-track { background: transparent; }
-.settings-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
-.settings-content::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+.settings-content::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--text) 12%, transparent); border-radius: var(--radius); }
+.settings-content::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--text) 20%, transparent); }
 
 .settings-section-header {
   margin-bottom: 16px;
@@ -278,7 +278,7 @@
   gap: 4px;
   padding: 12px 14px;
   border: 1px solid var(--settings-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--settings-surface);
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
@@ -320,7 +320,7 @@
 
 .settings-feat {
   border: 1px solid var(--settings-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--settings-surface);
   border-left: 3px solid var(--settings-border);
   transition: border-color 0.2s;
@@ -328,7 +328,7 @@
 }
 
 .settings-feat.ready { border-left-color: var(--settings-green); }
-.settings-feat.staged { border-left-color: var(--settings-blue); }
+.settings-feat.staged { border-left-color: var(--accent); }
 .settings-feat.needs { border-left-color: var(--settings-yellow); }
 
 .settings-feat-header {
@@ -342,7 +342,7 @@
 }
 
 .settings-feat-header:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: color-mix(in srgb, var(--text) 2%, transparent);
 }
 
 .settings-feat-toggle-label {
@@ -367,8 +367,8 @@
   position: absolute;
   cursor: pointer;
   inset: 0;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
+  background: color-mix(in srgb, var(--text) 15%, transparent);
+  border-radius: var(--radius);
   transition: background 0.2s;
 }
 
@@ -385,7 +385,7 @@
 }
 
 .settings-feat-switch input:checked + .settings-feat-slider {
-  background: var(--settings-accent);
+  background: var(--accent);
 }
 
 .settings-feat-switch input:checked + .settings-feat-slider::before {
@@ -418,7 +418,7 @@
   font-size: calc(10px * var(--wm-panel-effective-scale, 1));
   font-weight: 600;
   padding: 3px 10px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -427,17 +427,17 @@
 
 .settings-feat-pill.ok {
   color: var(--settings-green);
-  background: rgba(52, 211, 153, 0.12);
+  background: color-mix(in srgb, var(--green) 12%, transparent);
 }
 
 .settings-feat-pill.warn {
   color: var(--settings-yellow);
-  background: rgba(251, 191, 36, 0.12);
+  background: color-mix(in srgb, var(--yellow) 12%, transparent);
 }
 
 .settings-feat-pill.staged {
-  color: var(--settings-blue);
-  background: rgba(96, 165, 250, 0.12);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .settings-feat-chevron {
@@ -494,7 +494,7 @@
 }
 
 .settings-secret-row + .settings-secret-row {
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid color-mix(in srgb, var(--text) 4%, transparent);
 }
 
 .settings-secret-label {
@@ -513,7 +513,7 @@
 
 .settings-secret-status.ok { color: var(--settings-green); }
 .settings-secret-status.warn { color: var(--settings-yellow); }
-.settings-secret-status.staged { color: var(--settings-blue); }
+.settings-secret-status.staged { color: var(--accent); }
 
 .settings-input-wrapper {
   grid-area: input;
@@ -529,7 +529,7 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid var(--settings-border-strong);
-  border-radius: 6px;
+  border-radius: var(--radius);
   color: var(--settings-text);
   padding: 7px 10px;
   font-size: calc(12px * var(--wm-panel-effective-scale, 1));
@@ -540,8 +540,8 @@
 
 .settings-secret-row input:focus {
   outline: none;
-  border-color: var(--settings-accent);
-  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .settings-secret-row input::placeholder {
@@ -549,7 +549,7 @@
 }
 
 .settings-secret-row input.valid-staged {
-  border-color: rgba(52, 211, 153, 0.5);
+  border-color: color-mix(in srgb, var(--green) 50%, transparent);
 }
 
 .settings-secret-row input.invalid {
@@ -561,7 +561,7 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid var(--settings-border-strong);
-  border-radius: 6px;
+  border-radius: var(--radius);
   color: var(--settings-text);
   padding: 7px 10px;
   font-size: calc(12px * var(--wm-panel-effective-scale, 1));
@@ -579,12 +579,12 @@
 
 .settings-secret-row select[data-model-select]:focus {
   outline: none;
-  border-color: var(--settings-accent);
-  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .settings-secret-row select[data-model-select].valid-staged {
-  border-color: rgba(52, 211, 153, 0.5);
+  border-color: color-mix(in srgb, var(--green) 50%, transparent);
 }
 
 .settings-secret-row select[data-model-select] option {
@@ -603,10 +603,10 @@
   transform: translateY(-50%);
   font-size: calc(11px * var(--wm-panel-effective-scale, 1));
   font-weight: 600;
-  color: var(--settings-accent);
-  background: rgba(96, 165, 250, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.25);
-  border-radius: 4px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: var(--radius);
   padding: 4px 10px;
   text-decoration: none;
   cursor: pointer;
@@ -614,8 +614,8 @@
 }
 
 .settings-secret-link:hover {
-  background: rgba(96, 165, 250, 0.2);
-  border-color: var(--settings-accent);
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  border-color: var(--accent);
 }
 
 .settings-secret-hint {
@@ -654,7 +654,7 @@
   font-size: calc(13px * var(--wm-panel-effective-scale, 1));
   font-weight: 600;
   padding: 8px 24px;
-  border-radius: 6px;
+  border-radius: var(--radius);
   cursor: pointer;
   min-width: 80px;
   text-align: center;
@@ -679,21 +679,21 @@
 }
 
 .settings-btn-primary {
-  background: var(--settings-accent);
-  border: 1px solid var(--settings-accent);
-  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--bg);
 }
 
 .settings-btn-primary:hover {
-  background: color-mix(in srgb, var(--settings-accent) 85%, white);
-  border-color: color-mix(in srgb, var(--settings-accent) 85%, white);
+  background: color-mix(in srgb, var(--accent) 85%, white);
+  border-color: color-mix(in srgb, var(--accent) 85%, white);
 }
 
 /* ── Debug section ── */
 .debug-data-section {
   border: 1px solid var(--settings-border);
   background: var(--settings-surface);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 14px 16px;
   margin-bottom: 16px;
 }
@@ -725,7 +725,7 @@
   font: inherit;
   font-size: calc(13px * var(--wm-panel-effective-scale, 1));
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: var(--radius);
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -741,7 +741,7 @@
   min-height: 240px;
   border: 1px solid var(--settings-border);
   background: var(--settings-surface);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 14px 16px;
 }
 
@@ -789,7 +789,7 @@
 }
 
 .diag-toggles input[type="checkbox"] {
-  accent-color: var(--settings-accent);
+  accent-color: var(--accent);
 }
 
 .diag-traffic-bar {
@@ -835,7 +835,7 @@
   font: inherit;
   font-size: calc(12px * var(--wm-panel-effective-scale, 1));
   padding: 4px 12px;
-  border-radius: 4px;
+  border-radius: var(--radius);
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
@@ -856,7 +856,7 @@
 
 .diag-traffic-log::-webkit-scrollbar { width: 5px; }
 .diag-traffic-log::-webkit-scrollbar-track { background: transparent; }
-.diag-traffic-log::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+.diag-traffic-log::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--text) 12%, transparent); border-radius: var(--radius); }
 
 .diag-empty {
   color: var(--settings-text-secondary);
@@ -911,9 +911,9 @@ tr.diag-err td { color: var(--settings-red); }
   text-align: center;
   padding: 18px 20px;
   margin-bottom: 16px;
-  border: 1px solid rgba(52, 211, 153, 0.15);
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(52, 211, 153, 0.04) 0%, transparent 100%);
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+  border-radius: var(--radius);
+  background: transparent;
 }
 
 .wm-hero-title {
@@ -954,7 +954,7 @@ tr.diag-err td { color: var(--settings-red); }
   margin-top: 14px;
   padding: 12px 16px;
   background: var(--settings-surface);
-  border-radius: 8px;
+  border-radius: var(--radius);
   border: 1px solid var(--settings-border);
 }
 
@@ -1005,7 +1005,7 @@ tr.diag-err td { color: var(--settings-red); }
   width: 100%;
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid var(--settings-border-strong);
-  border-radius: 6px;
+  border-radius: var(--radius);
   color: var(--settings-text);
   padding: 8px 36px 8px 12px;
   font-size: calc(13px * var(--wm-panel-effective-scale, 1));
@@ -1016,8 +1016,8 @@ tr.diag-err td { color: var(--settings-red); }
 
 .wm-input:focus {
   outline: none;
-  border-color: var(--settings-accent);
-  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .wm-input::placeholder {
@@ -1045,7 +1045,7 @@ tr.diag-err td { color: var(--settings-red); }
   font-size: calc(10px * var(--wm-panel-effective-scale, 1));
   font-weight: 600;
   padding: 3px 10px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -1053,12 +1053,12 @@ tr.diag-err td { color: var(--settings-red); }
 
 .wm-badge.ok {
   color: var(--settings-green);
-  background: rgba(52, 211, 153, 0.12);
+  background: color-mix(in srgb, var(--green) 12%, transparent);
 }
 
 .wm-badge.warn {
   color: var(--settings-yellow);
-  background: rgba(251, 191, 36, 0.12);
+  background: color-mix(in srgb, var(--yellow) 12%, transparent);
 }
 
 .wm-badge.neutral {
@@ -1078,21 +1078,21 @@ tr.diag-err td { color: var(--settings-red); }
 .wm-email { flex: 1; }
 
 .wm-submit-btn {
-  background: var(--settings-accent);
-  border: 1px solid var(--settings-accent);
-  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--bg);
   font: inherit;
   font-size: calc(13px * var(--wm-panel-effective-scale, 1));
   font-weight: 600;
   padding: 8px 20px;
-  border-radius: 6px;
+  border-radius: var(--radius);
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.15s;
 }
 
 .wm-submit-btn:hover {
-  background: color-mix(in srgb, var(--settings-accent) 85%, white);
+  background: color-mix(in srgb, var(--accent) 85%, white);
 }
 
 .wm-submit-btn:disabled {
@@ -1115,7 +1115,7 @@ tr.diag-err td { color: var(--settings-red); }
 
 /* ── Search highlight ── */
 .settings-content mark {
-  background: rgba(251, 191, 36, 0.25);
+  background: color-mix(in srgb, var(--yellow) 25%, transparent);
   color: inherit;
   border-radius: 2px;
   padding: 0 1px;

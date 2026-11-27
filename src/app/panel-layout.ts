@@ -56,7 +56,11 @@ import {
   enforceFreePanelLimit,
 } from '@/config';
 import { NQ_PULSE_DISCLOSURE } from '@/config/nq-context';
-import { t } from '@/services/i18n';
+import { getCurrentLanguage, t } from '@/services/i18n';
+import { isClerkAuthEnabled } from '@/services/clerk';
+import { installKeylessChrome } from '@/app/keyless-chrome';
+import { mountBanshoMenu, unmountBanshoMenu } from '@/shell/bansho-menu';
+import '@/shell/dashboard-fixes.css';
 import { getPanelDisplayName } from '@/services/panel-display-name';
 import { getCurrentTheme } from '@/utils';
 import { trackCriticalBannerAction, trackCheckoutSuccess, trackCheckoutFailed, trackGateHit, trackMapViewChange, trackLayoutCustomized, replayPendingCheckoutSuccess, replayPendingProFunnelEvents, replayPendingConversionEvents, replayPendingMissionReturn } from '@/services/analytics';
@@ -542,7 +546,7 @@ export class PanelLayoutManager implements AppModule {
   private ctx: AppContext;
   private callbacks: PanelLayoutManagerCallbacks;
   private panelDragCleanupHandlers: Array<() => void> = [];
-  private variantPlacementCleanup: (() => void) | null = null;
+  private keylessChromeCleanup: (() => void) | null = null;
   private deferredPanelMounts: Map<string, DeferredPanelMount> = new Map();
   private lazyPanelRegistrations: Map<string, LazyPanelRegistration> = new Map();
   private observedHydrationPanels = new WeakSet<Panel>();
@@ -972,8 +976,9 @@ export class PanelLayoutManager implements AppModule {
 
   /** Retire panel resources and watches, then settle pending entitlement verification. */
   destroy(): void {
-    this.variantPlacementCleanup?.();
-    this.variantPlacementCleanup = null;
+    this.keylessChromeCleanup?.();
+    this.keylessChromeCleanup = null;
+    unmountBanshoMenu();
     this.pendingStorageFacilityId = null;
     this.checkoutReturnFocusController.abort();
     clearAllPendingCalls();
@@ -1272,6 +1277,9 @@ export class PanelLayoutManager implements AppModule {
       `<a href="${href}" target="_blank" rel="noopener">${label}</a>`
     )).join('');
 
+    const banshoLang = getCurrentLanguage() === 'ru' ? 'ru' : 'en';
+    const authEnabled = isClerkAuthEnabled();
+
     markLcpDebug('wm:layout:render-start');
     document.documentElement.classList.add('wm-layout-hydrated');
     setTrustedHtml(this.ctx.container, trustedHtml(`
@@ -1279,61 +1287,7 @@ export class PanelLayoutManager implements AppModule {
       <div id="proBannerSlot" class="pro-banner-slot" aria-live="polite"></div>
       <div class="header" role="banner">
         <div class="header-left">
-          <div class="variant-switcher">${(() => {
-        const local = this.ctx.isDesktopApp || !/(^|\.)worldmonitor\.app$/.test(location.hostname);
-        const inIframe = window.self !== window.top;
-        const vHref = (v: keyof typeof VARIANT_SWITCHER_DASHBOARD_URLS) =>
-          variantSwitcherHref(v, SITE_VARIANT, local);
-        const vTarget = (v: string) => !local && SITE_VARIANT !== v && inIframe ? 'target="_blank" rel="noopener"' : '';
-        return `
-            <a href="${vHref('full')}"
-               class="variant-option ${SITE_VARIANT === 'full' ? 'active' : ''}"
-               data-variant="full"
-               ${vTarget('full')}
-               title="${t('header.world')}${SITE_VARIANT === 'full' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-label">${t('header.world')}</span>
-            </a>
-            <span class="variant-divider"></span>
-            <a href="${vHref('tech')}"
-               class="variant-option ${SITE_VARIANT === 'tech' ? 'active' : ''}"
-               data-variant="tech"
-               ${vTarget('tech')}
-               title="${t('header.tech')}${SITE_VARIANT === 'tech' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-label">${t('header.tech')}</span>
-            </a>
-            <span class="variant-divider"></span>
-            <a href="${vHref('finance')}"
-               class="variant-option ${SITE_VARIANT === 'finance' ? 'active' : ''}"
-               data-variant="finance"
-               ${vTarget('finance')}
-               title="${t('header.finance')}${SITE_VARIANT === 'finance' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-label">${t('header.finance')}</span>
-            </a>
-            <span class="variant-divider"></span>
-            <a href="${vHref('commodity')}"
-               class="variant-option ${SITE_VARIANT === 'commodity' ? 'active' : ''}"
-               data-variant="commodity"
-               ${vTarget('commodity')}
-               title="${t('header.commodity')}${SITE_VARIANT === 'commodity' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-label">${t('header.commodity')}</span>
-            </a>
-            <span class="variant-divider"></span>
-            <a href="${vHref('energy')}"
-               class="variant-option ${SITE_VARIANT === 'energy' ? 'active' : ''}"
-               data-variant="energy"
-               ${vTarget('energy')}
-               title="${t('header.energy')}${SITE_VARIANT === 'energy' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-label">${t('header.energy')}</span>
-            </a>
-            <span class="variant-divider"></span>
-            <a href="${vHref('happy')}"
-               class="variant-option ${SITE_VARIANT === 'happy' ? 'active' : ''}"
-               data-variant="happy"
-               ${vTarget('happy')}
-               title="Good News${SITE_VARIANT === 'happy' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-label">Good News</span>
-            </a>`;
-      })()}</div>
+          <span id="banshoMenuMount" class="bansho-menu-mount"></span>
           <span class="logo"><svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><rect x="1" y="1" width="30" height="30" rx="2" fill="#0d0f12" stroke="#c8a45c" stroke-width="2"/><path d="M7 24V9l9 10 9-10v15" fill="none" stroke="#c8a45c" stroke-width="3"/></svg>MONEY BANSHO</span><span class="logo-mobile"><svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><rect x="1" y="1" width="30" height="30" rx="2" fill="#0d0f12" stroke="#c8a45c" stroke-width="2"/><path d="M7 24V9l9 10 9-10v15" fill="none" stroke="#c8a45c" stroke-width="3"/></svg>Money Bansho</span><span class="version">v${__APP_VERSION__}</span>
           <button class="mobile-settings-btn" id="mobileSettingsBtn" title="${t('header.settings')}" aria-label="${t('header.settings')}">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -1360,14 +1314,14 @@ export class PanelLayoutManager implements AppModule {
           </button>
         </div>
         <div class="header-right">
-          <a class="dossier-link" href="/dossier.html" style="padding:4px 10px;border:1px solid #c8a45c;border-radius:2px;color:#c8a45c;font-size:11px;font-weight:700;text-decoration:none;white-space:nowrap">Company Dossier</a>
+          <a class="dossier-link" href="/dossier.html">${banshoLang === 'ru' ? 'Досье компаний' : 'Company Dossier'}</a>
           <button class="search-btn" id="searchBtn"><kbd>⌘K</kbd> ${t('header.search')}</button>
           ${this.ctx.isDesktopApp ? '' : `<button class="copy-link-btn" id="copyLinkBtn">${t('header.copyLink')}</button>`}
           ${this.ctx.isDesktopApp ? '' : `<button class="copy-link-btn embed-link-btn" id="embedLinkBtn">${t('header.embed')}</button>`}
           ${this.ctx.isDesktopApp ? '' : `<button class="fullscreen-btn" id="fullscreenBtn" title="${t('header.fullscreen')}" aria-label="${t('header.fullscreen')}">${renderExpandIconSvg(14)}</button>`}
           ${SITE_VARIANT === 'happy' ? `<button class="tv-mode-btn" id="tvModeBtn" title="TV Mode (Shift+T)" aria-label="TV Mode"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></button>` : ''}
           <span id="unifiedSettingsMount"></span>
-          <span id="authWidgetMount" class="auth-widget-mount"></span>
+          ${authEnabled ? '<span id="authWidgetMount" class="auth-widget-mount"></span>' : ''}
         </div>
       </div>
       <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
@@ -1379,33 +1333,16 @@ export class PanelLayoutManager implements AppModule {
           </button>
         </div>
         <div class="mobile-menu-divider"></div>
-        <a class="mobile-menu-item" href="/dossier.html" style="color:#c8a45c">
-          <span class="mobile-menu-item-label">Company Dossier</span>
+        <a class="mobile-menu-item mobile-menu-dossier" href="/dossier.html">
+          <span class="mobile-menu-item-label">${banshoLang === 'ru' ? 'Досье компаний' : 'Company Dossier'}</span>
         </a>
         <div class="mobile-menu-divider"></div>
-        <div class="mobile-menu-account" aria-label="Account">
+        ${authEnabled ? `<div class="mobile-menu-account" aria-label="Account">
           <span class="mobile-menu-account-icon" aria-hidden="true">◯</span>
           <div id="mobileAuthWidgetMount"></div>
           <button class="mobile-auth-fallback" id="mobileAuthFallback" type="button">Sign In</button>
         </div>
-        <div class="mobile-menu-divider"></div>
-        ${(() => {
-        const variants = [
-          { key: 'full', label: t('header.world') },
-          { key: 'tech', label: t('header.tech') },
-          { key: 'finance', label: t('header.finance') },
-          { key: 'commodity', label: t('header.commodity') },
-          { key: 'energy', label: t('header.energy') },
-          { key: 'happy', label: 'Good News' },
-        ];
-        return variants.map(v =>
-          `<button class="mobile-menu-item mobile-menu-variant ${v.key === SITE_VARIANT ? 'active' : ''}" data-variant="${v.key}">
-            <span class="mobile-menu-item-label">${v.label}</span>
-            ${v.key === SITE_VARIANT ? '<span class="mobile-menu-check">✓</span>' : ''}
-          </button>`
-        ).join('');
-      })()}
-        <div class="mobile-menu-divider"></div>
+        <div class="mobile-menu-divider"></div>` : ''}
         <button class="mobile-menu-item" id="mobileMenuRegion">
           <span class="mobile-menu-item-label">${t('components.deckgl.views.global')}</span>
           <span class="mobile-menu-chevron">▸</span>
@@ -1451,7 +1388,6 @@ export class PanelLayoutManager implements AppModule {
       </div>
       <div class="dashboard-navigation-row">
         <div class="dashboard-tabs-mount" id="panelTabsMount"></div>
-        <div class="tablet-variant-mount"></div>
       </div>
       <main id="main" tabindex="-1" class="main-content${mapRightClassActive ? ' map-right' : ''}"${mapColWidthStyle}>
         <div class="map-section${mapStartsCollapsed ? ' collapsed' : ''}" id="mapSection">
@@ -1512,20 +1448,11 @@ export class PanelLayoutManager implements AppModule {
         </span>
       </footer>
     `, "legacy direct innerHTML migration"));
-    // Move the same links so navigation, analytics and focus targets stay shared.
-    this.variantPlacementCleanup?.();
-    const switcher = this.ctx.container.querySelector('.variant-switcher');
-    const headerLeft = this.ctx.container.querySelector('.header-left');
-    const tabletMount = this.ctx.container.querySelector('.tablet-variant-mount');
-    const tabletWidth = window.matchMedia('(min-width: 768px) and (max-width: 980px)');
-    const placeSwitcher = () => {
-      if (!switcher || !headerLeft || !tabletMount) return;
-      if (tabletWidth.matches) tabletMount.append(switcher);
-      else headerLeft.prepend(switcher);
-    };
-    placeSwitcher();
-    tabletWidth.addEventListener('change', placeSwitcher);
-    this.variantPlacementCleanup = () => tabletWidth.removeEventListener('change', placeSwitcher);
+    document.getElementById('banshoMenuMount')?.replaceChildren(
+      mountBanshoMenu({ active: 'dashboard', lang: banshoLang }),
+    );
+    this.keylessChromeCleanup?.();
+    this.keylessChromeCleanup = installKeylessChrome();
     // Mark AFTER the innerHTML swap so the timestamp reflects when the new shell
     // DOM is actually live — placing it before setTrustedHtml recorded a time
     // earlier than any LCP candidate in the new shell, making it useless for
