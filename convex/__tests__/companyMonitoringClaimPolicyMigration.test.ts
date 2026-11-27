@@ -1,0 +1,446 @@
+import { convexTest } from "convex-test";
+import { internal } from "../_generated/api";
+import { describe, expect, test } from "vitest";
+import { COMPANY_MONITORING_CLAIM_POLICY_VERSION } from "../companyMonitoring/_shared";
+import { CLAIM_POLICY_MIGRATION_COMPANY_PAGE_SIZE } from "../companyMonitoring/claimPolicyMigration";
+import { COMPANY_MONITORING_LIMITS } from "../../shared/company-monitoring-contract";
+import {
+  accountFor,
+  CM,
+  company,
+  grantProvisioned,
+  installCompanyMonitoringTestEnvironment,
+  modules,
+  NOW,
+  OWNER_A,
+  schema,
+} from "./companyMonitoring.helpers";
+
+const MIGRATION = internal.companyMonitoring.claimPolicyMigration;
+
+installCompanyMonitoringTestEnvironment();
+
+async function seedLegacyAccount(
+  t: ReturnType<typeof convexTest>,
+  companyCount: number,
+) {
+  const ownerAccountId = "cm_account_claim_policy_legacy";
+  await t.run(async (ctx) => {
+    await ctx.db.insert("companyMonitoringAccounts", {
+      logicalAccountId: ownerAccountId,
+      ownerUserId: "legacy_claim_policy_owner",
+      ownerFenceHash: "legacy_claim_policy_fence",
+      lifecycle: "entitled",
+      lifecycleSequence: 1,
+      companyCount,
+      companyLimit: 500,
+      snapshotGeneration: 1,
+      purgeGeneration: 0,
+      purgePhase: "none",
+      destructivePurgeStarted: false,
+      pendingReactivation: false,
+      createdAt: NOW,
+      updatedAt: NOW,
+    });
+    for (let index = 0; index < companyCount; index += 1) {
+      const suffix = index.toString().padStart(3, "0");
+      const companyId = `cm_company_legacy_policy_${suffix}`;
+      await ctx.db.insert("companyMonitoringCompanies", {
+        ownerAccountId,
+        companyId,
+        name: `Legacy Company ${suffix}`,
+        sortName: `legacy company ${suffix}`,
+        domicileCountry: "US",
+        lifecycle: "active",
+        coverageState: "awaiting_first_scan",
+        observationState: "unknown",
+        snapshotGeneration: 1,
+        purgeGeneration: 0,
+        purgePhase: "none",
+        createdAt: NOW,
+        updatedAt: NOW,
+      });
+      await ctx.db.insert("companyMonitoringClaims", {
+        ownerAccountId,
+        companyId,
+        claimId: `cm_claim_legacy_policy_${suffix}`,
+        type: "domain",
+        value: `legacy-${suffix}.example`,
+        provenance: "customer",
+        trustState: "unverified",
+        createdAt: NOW,
+        updatedAt: NOW,
+      });
+    }
+  });
+  return ownerAccountId;
+}
+
+describe("Company Monitoring claim-policy migration", () => {
+  test("resumes across bounded company pages and stamps only after the final page", async () => {
+    const t = convexTest(schema, modules);
+    const companyCount = CLAIM_POLICY_MIGRATION_COMPANY_PAGE_SIZE + 1;
+    const ownerAccountId = await seedLegacyAccount(t, companyCount);
+
+    const first = await t.mutation(MIGRATION.migrateAccountClaimPolicy, {
+      ownerAccountId,
+      cursor: null,
+    });
+    expect(first).toMatchObject({
+      status: "in_progress",
+      companiesProcessed: CLAIM_POLICY_MIGRATION_COMPANY_PAGE_SIZE,
+      claimsPatched: CLAIM_POLICY_MIGRATION_COMPANY_PAGE_SIZE,
+      aliasesInserted: CLAIM_POLICY_MIGRATION_COMPANY_PAGE_SIZE,
+      claimPolicyVersion: null,
+    });
+    expect(first.nextCursor).toEqual(expect.any(String));
+
+    const afterFirstPage = await t.run(async (ctx) => ({
+      account: await ctx.db
+        .query("companyMonitoringAccounts")
+        .withIndex("by_logicalAccountId", (q) => q.eq("logicalAccountId", ownerAccountId))
+        .unique(),
+      firstClaims: await ctx.db
+        .query("companyMonitoringClaims")
+        .withIndex("by_account_company", (q) =>
+          q.eq("ownerAccountId", ownerAccountId).eq("companyId", "cm_company_legacy_policy_000")
+        )
+        .collect(),
+      lastClaims: await ctx.db
+        .query("companyMonitoringClaims")
+        .withIndex("by_account_company", (q) =>
+          q.eq("ownerAccountId", ownerAccountId).eq("companyId", "cm_company_legacy_policy_025")
+        )
+        .collect(),
+    }));
+    expect(afterFirstPage.account?.claimPolicyVersion).toBeUndefined();
+    expect(afterFirstPage.firstClaims).toEqual(expect.arrayContaining([
+      expect.objectContaining({ type: "domain", allowedUses: ["attribution", "discovery"] }),
+      expect.objectContaining({ type: "alias", value: "Legacy Company 000" }),
+    ]));
+    expect(afterFirstPage.lastClaims).toHaveLength(1);
+    expect(afterFirstPage.lastClaims[0]?.allowedUses).toBeUndefined();
+
+    const replay = await t.mutation(MIGRATION.migrateAccountClaimPolicy, {
+      ownerAccountId,
+      cursor: null,
+    });
+    expect(replay).toMatchObject({
+      status: "in_progress",
+      claimsPatched: 0,
+      aliasesInserted: 0,
+    });
+
+    const completed = await t.mutation(MIGRATION.migrateAccountClaimPolicy, {
+      ownerAccountId,
+      cursor: first.nextCursor,
+    });
+    expect(completed).toMatchObject({
+      status: "complete",
+      companiesProcessed: 1,
+      claimsPatched: 1,
+      aliasesInserted: 1,
+      nextCursor: null,
+      claimPolicyVersion: COMPANY_MONITORING_CLAIM_POLICY_VERSION,
+    });
+    const account = await t.run(async (ctx) =>
+      ctx.db
+        .query("companyMonitoringAccounts")
+        .withIndex("by_logicalAccountId", (q) => q.eq("logicalAccountId", ownerAccountId))
+        .unique()
+    );
+    expect(account?.claimPolicyVersion).toBe(COMPANY_MONITORING_CLAIM_POLICY_VERSION);
+  });
+
+  test("repairs customer allowed uses and the current-name alias without upgrading provider claims", async () => {
+    const t = convexTest(schema, modules);
+    const ownerAccountId = await seedLegacyAccount(t, 1);
+    const companyId = "cm_company_legacy_policy_000";
+    await t.run(async (ctx) => {
+      const domain = await ctx.db
+        .query("companyMonitoringClaims")
+        .withIndex("by_account_company", (q) =>
+          q.eq("ownerAccountId", ownerAccountId).eq("companyId", companyId)
+        )
+        .unique();
+      await ctx.db.delete(domain!._id);
+      const claimTypes = [
+        ["alias", "Historical Name"],
+        ["domain", "legacy.example"],
+        ["legal_identifier", "lei:legacy"],
+        ["x_account_id", "123456"],
+        ["x_handle", "legacy_company"],
+        ["location", "New York, US"],
+        ["customer_reference", "legacy-reference"],
+      ] as const;
+      for (const [index, [type, value]] of claimTypes.entries()) {
+        await ctx.db.insert("companyMonitoringClaims", {
+          ownerAccountId,
+          companyId,
+          claimId: `cm_claim_policy_type_${index}`,
+          type,
+          value,
+          provenance: "customer",
+          trustState: "unverified",
+          createdAt: NOW,
+          updatedAt: NOW,
+        });
+      }
+      await ctx.db.insert("companyMonitoringClaims", {
+        ownerAccountId,
+        companyId,
+        claimId: "cm_claim_policy_provider_alias",
+        type: "alias",
+        value: "Legacy Company 000",
+        provenance: "independent_provider",
+        trustState: "verified",
+        createdAt: NOW,
+        updatedAt: NOW,
+      });
+    });
+
+    const result = await t.mutation(MIGRATION.migrateAccountClaimPolicy, {
+      ownerAccountId,
+      cursor: null,
+    });
+    expect(result).toMatchObject({
+      status: "complete",
+      claimsPatched: 7,
+      aliasesInserted: 1,
+      claimPolicyVersion: COMPANY_MONITORING_CLAIM_POLICY_VERSION,
+    });
+
+    const claims = await t.run(async (ctx) =>
+      ctx.db
+        .query("companyMonitoringClaims")
+        .withIndex("by_account_company", (q) =>
+          q.eq("ownerAccountId", ownerAccountId).eq("companyId", companyId)
+        )
+        .collect()
+    );
+    const customerUses = Object.fromEntries(
+      claims
+        .filter((claim) => claim.provenance === "customer")
+        .map((claim) => [claim.type, claim.allowedUses]),
+    );
+    expect(customerUses).toMatchObject({
+      alias: ["attribution", "discovery"],
+      domain: ["attribution", "discovery"],
+      legal_identifier: ["attribution", "discovery"],
+      x_account_id: ["attribution", "discovery"],
+      x_handle: ["attribution", "discovery"],
+      location: ["discovery"],
+      customer_reference: ["discovery"],
+    });
+    const currentNameAliases = claims.filter((claim) =>
+      claim.type === "alias" && claim.value === "Legacy Company 000"
+    );
+    expect(currentNameAliases).toHaveLength(2);
+    expect(currentNameAliases.find((claim) => claim.provenance === "customer")?.allowedUses)
+      .toEqual(["attribution", "discovery"]);
+    expect(currentNameAliases.find((claim) => claim.provenance === "independent_provider")?.allowedUses)
+      .toBeUndefined();
+
+    const replay = await t.mutation(MIGRATION.migrateAccountClaimPolicy, {
+      ownerAccountId,
+      cursor: null,
+    });
+    expect(replay).toMatchObject({
+      status: "complete",
+      companiesProcessed: 0,
+      claimsPatched: 0,
+      aliasesInserted: 0,
+    });
+    const aliasesAfterReplay = await t.run(async (ctx) =>
+      (await ctx.db
+        .query("companyMonitoringClaims")
+        .withIndex("by_account_company", (q) =>
+          q.eq("ownerAccountId", ownerAccountId).eq("companyId", companyId)
+        )
+        .collect())
+        .filter((claim) =>
+          claim.provenance === "customer" &&
+          claim.type === "alias" &&
+          claim.value === "Legacy Company 000"
+        )
+    );
+    expect(aliasesAfterReplay).toHaveLength(1);
+  });
+
+  test.each([false, true])("purge leaves no claims after removal, legacy alias %s", async (legacyAlias) => {
+    const t = convexTest(schema, modules);
+    await grantProvisioned(t, OWNER_A);
+    const created = await t.mutation(CM.companies.createCompanyForOwner, {
+      ownerUserId: OWNER_A,
+      clientRequestId: "removed-policy-company",
+      company: company("Removed Policy Corp"),
+    });
+    const account = await accountFor(t, OWNER_A);
+    await t.run(async (ctx) => {
+      await ctx.db.patch(account!._id, { claimPolicyVersion: undefined });
+    });
+    await t.mutation(CM.companies.setCompanyStateForOwner, {
+      ownerUserId: OWNER_A,
+      companyId: created.companyId,
+      state: "removed",
+    });
+    if (legacyAlias) {
+      await t.run(async (ctx) => {
+        await ctx.db.insert("companyMonitoringClaims", {
+          ownerAccountId: account!.logicalAccountId,
+          companyId: created.companyId,
+          claimId: "legacy-resurrected-alias",
+          type: "alias",
+          value: "Removed Policy Corp",
+          provenance: "customer",
+          trustState: "unverified",
+          createdAt: NOW,
+          updatedAt: NOW,
+        });
+      });
+    } else {
+      const migration = await t.mutation(MIGRATION.migrateAccountClaimPolicy, {
+        ownerAccountId: account!.logicalAccountId,
+      });
+      expect(migration).toMatchObject({ status: "complete", aliasesInserted: 0, claimsPatched: 0 });
+    }
+    const purge = await t.mutation(CM.companies.advanceCompanyPurge, {
+      ownerAccountId: account!.logicalAccountId,
+      companyId: created.companyId,
+      purgeGeneration: 1,
+    });
+    expect(purge).toEqual({ status: "complete" });
+    const state = await t.run(async (ctx) => ({
+      company: await ctx.db.query("companyMonitoringCompanies")
+        .withIndex("by_account_companyId", (q) =>
+          q.eq("ownerAccountId", account!.logicalAccountId).eq("companyId", created.companyId))
+        .unique(),
+      claims: await ctx.db.query("companyMonitoringClaims")
+        .withIndex("by_account_company", (q) =>
+          q.eq("ownerAccountId", account!.logicalAccountId).eq("companyId", created.companyId))
+        .collect(),
+    }));
+    expect(state.company).toMatchObject({ lifecycle: "removed", purgePhase: "complete" });
+    expect(state.company?.name).toBeUndefined();
+    expect(state.claims).toEqual([]);
+  });
+
+  test("new entitled accounts start at the current claim-policy version", async () => {
+    const t = convexTest(schema, modules);
+    await grantProvisioned(t, OWNER_A);
+    expect(await accountFor(t, OWNER_A)).toMatchObject({
+      claimPolicyVersion: COMPANY_MONITORING_CLAIM_POLICY_VERSION,
+    });
+  });
+});
+
+// A company sitting exactly at `maxClaimsPerCompany` is a legal state —
+// `assertCompanyClaimBudget` accepts a resulting count of exactly the max, and
+// a customer can remove the alias claim whose value equals the company name
+// through `updateCompanyForOwner`. The migration treated that combination as
+// fatal and threw, rolling back the whole page: the `allowedUses` patches for
+// every other company on it were discarded, the account version was never
+// stamped, and every retry of the same cursor hit the same company and threw
+// again. The account's monitoring then stayed blocked behind
+// COMPANY_MONITORING_CLAIM_POLICY_MIGRATION_REQUIRED with no self-healing path.
+describe("a company at the claim cap does not wedge the migration", () => {
+  async function fillClaimsToCap(
+    t: ReturnType<typeof convexTest>,
+    ownerAccountId: string,
+    companyId: string,
+  ) {
+    await t.run(async (ctx) => {
+      const existing = await ctx.db
+        .query("companyMonitoringClaims")
+        .withIndex("by_account_company", (q) =>
+          q.eq("ownerAccountId", ownerAccountId).eq("companyId", companyId)
+        )
+        .collect();
+      for (let i = existing.length; i < COMPANY_MONITORING_LIMITS.maxClaimsPerCompany; i += 1) {
+        await ctx.db.insert("companyMonitoringClaims", {
+          ownerAccountId,
+          companyId,
+          claimId: `cm_claim_filler_${i}`,
+          type: "domain",
+          value: `filler-${i}.example`,
+          provenance: "customer",
+          trustState: "unverified",
+          allowedUses: ["attribution", "discovery"],
+          createdAt: NOW,
+          updatedAt: NOW,
+        });
+      }
+    });
+  }
+
+  test("the page still completes, the skip is reported, and the account migrates", async () => {
+    const t = convexTest(schema, modules);
+    const ownerAccountId = await seedLegacyAccount(t, 2);
+    // Company 000 has no current-name alias and is at the cap; 001 is ordinary.
+    await fillClaimsToCap(t, ownerAccountId, "cm_company_legacy_policy_000");
+
+    const result = await t.mutation(MIGRATION.migrateAccountClaimPolicy, {
+      ownerAccountId,
+      cursor: null,
+    });
+    expect(result).toMatchObject({
+      status: "complete",
+      companiesProcessed: 2,
+      aliasesSkippedAtCap: 1,
+      aliasesInserted: 1,
+      claimPolicyVersion: COMPANY_MONITORING_CLAIM_POLICY_VERSION,
+    });
+
+    const after = await t.run(async (ctx) => ({
+      account: await ctx.db
+        .query("companyMonitoringAccounts")
+        .withIndex("by_logicalAccountId", (q) => q.eq("logicalAccountId", ownerAccountId))
+        .unique(),
+      atCap: await ctx.db
+        .query("companyMonitoringClaims")
+        .withIndex("by_account_company", (q) =>
+          q.eq("ownerAccountId", ownerAccountId).eq("companyId", "cm_company_legacy_policy_000")
+        )
+        .collect(),
+      ordinary: await ctx.db
+        .query("companyMonitoringClaims")
+        .withIndex("by_account_company", (q) =>
+          q.eq("ownerAccountId", ownerAccountId).eq("companyId", "cm_company_legacy_policy_001")
+        )
+        .collect(),
+    }));
+    // The account finished migrating rather than staying blocked.
+    expect(after.account?.claimPolicyVersion).toBe(COMPANY_MONITORING_CLAIM_POLICY_VERSION);
+    // No claim was added past the cap, and the at-cap company's own claims
+    // still got their allowedUses.
+    expect(after.atCap).toHaveLength(COMPANY_MONITORING_LIMITS.maxClaimsPerCompany);
+    expect(after.atCap.every((claim) => claim.allowedUses !== undefined)).toBe(true);
+    // The other company on the same page was not rolled back.
+    expect(after.ordinary).toEqual(expect.arrayContaining([
+      expect.objectContaining({ type: "alias", value: "Legacy Company 001" }),
+    ]));
+  });
+
+  test("positive control: more claims than the cap is still an invariant failure", async () => {
+    const t = convexTest(schema, modules);
+    const ownerAccountId = await seedLegacyAccount(t, 1);
+    await fillClaimsToCap(t, ownerAccountId, "cm_company_legacy_policy_000");
+    await t.run(async (ctx) => {
+      await ctx.db.insert("companyMonitoringClaims", {
+        ownerAccountId,
+        companyId: "cm_company_legacy_policy_000",
+        claimId: "cm_claim_over_cap",
+        type: "domain",
+        value: "over-cap.example",
+        provenance: "customer",
+        trustState: "unverified",
+        allowedUses: ["attribution", "discovery"],
+        createdAt: NOW,
+        updatedAt: NOW,
+      });
+    });
+    await expect(
+      t.mutation(MIGRATION.migrateAccountClaimPolicy, { ownerAccountId, cursor: null }),
+    ).rejects.toThrow(/COMPANY_MONITORING_CLAIM_LIMIT_EXCEEDED/);
+  });
+});
