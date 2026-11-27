@@ -4668,7 +4668,7 @@
     "imageryEvidenceHere": "Доказательства из снимков здесь"
   },
   "shell": {
-    "documentTitle": "Money Bansho — панель реального времени глобальной разведки",
+    "documentTitle": "Money Bansho — дашборд",
     "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Вы не подключены к интернету",
     "offlineMessage": "Money Bansho требует подключение к интернету для получения данных разведки в реальном времени.",

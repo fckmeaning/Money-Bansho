@@ -1270,6 +1270,13 @@
       "removal_issue": null
     },
     {
+      "path": "api/_dossier/math/backtest.mjs",
+      "category": "external-protocol",
+      "reason": "Money Bansho: offline calibration script for the dossier models (node api/_dossier/math/backtest.mjs). No HTTP handler, never deployed as a route.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
       "path": "api/_dossier/analyze.js",
       "category": "external-protocol",
       "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",

@@ -63,12 +63,22 @@ function risk(returns, times, history, sigmaNext, nu) {
     varCornishFisherPct: percent(value.cornishFisher),
     expectedShortfallPct: percent(value.expectedShortfall),
     maxDrawdownPct: percent(drawdown?.depth),
-    jumps: detectJumps(returns).slice(-12).map((j) => ({
+    jumps: reportJumps(returns).slice(-12).map((j) => ({
       time: times[j.index],
       returnPct: percent(Math.expm1(j.return)),
       statistic: round(j.statistic, 2),
     })),
   };
+}
+
+/**
+ * Lee-Mykland with a 60-day local scale and nominal level 0.997. The Gumbel limit ignores the noise
+ * of the local sigma, so the nominal 0.99 on a 20-day window flagged a false jump in ~23 % of
+ * Gaussian series (backtest.mjs); this setting gives ~1 % per series on Gaussian noise. With fewer
+ * than 140 returns the old short window is the only one that can be tested.
+ */
+export function reportJumps(returns) {
+  return returns.length >= 140 ? detectJumps(returns, { window: 60, level: 0.997 }) : detectJumps(returns);
 }
 
 function timeVaryingBeta(rows) {

@@ -43,6 +43,8 @@ import {
 import { CachedFetchTimeoutError, cachedFetchJson, readCachedJson } from '../../../_shared/redis';
 
 import { markNoStoreFallbackResponse } from '../../../_shared/response-headers';
+import { fetchLiveQuotes, redisConfigured } from './_yahoo-live';
+import stocksConfig from '../../../../shared/stocks.json';
 
 const BOOTSTRAP_KEY = 'market:stocks-bootstrap:v1';
 
@@ -374,11 +376,61 @@ function withQuoteAsOf(
   return { ...response, asOf: asOf ?? '' };
 }
 
+const STOCK_META = new Map<string, { name: string; display: string }>(
+  [...stocksConfig.symbols, ...stocksConfig.auxiliarySymbols].map((s) => [s.symbol, { name: s.name, display: s.display }]),
+);
+
+/**
+ * No-Redis path (local dev, free demo hosting): there is no seed snapshot, so
+ * quotes come straight from the public Yahoo chart endpoint through the small
+ * per-process cache in `_yahoo-live`. Symbols Yahoo does not answer are
+ * reported as unavailable, never invented. With Redis configured this is not
+ * used and the seed-first behaviour above is unchanged.
+ */
+async function liveMarketQuotesResponse(
+  ctx: ServerContext,
+  accepted: string[],
+  dropped: string[],
+): Promise<ListMarketQuotesResponse> {
+  const wanted = accepted.length > 0 ? accepted : [...stocksConfig.defaultSymbols];
+  const live = await fetchLiveQuotes(wanted);
+  const quotes: MarketQuote[] = [];
+  const unavailable: MarketQuoteUnavailable[] = [];
+  for (const symbol of wanted) {
+    const q = live.get(symbol);
+    if (!q) {
+      unavailable.push({ symbol, reason: REASON.providerError });
+      continue;
+    }
+    const meta = STOCK_META.get(symbol);
+    quotes.push({
+      symbol,
+      name: meta?.name ?? symbol,
+      display: meta?.display ?? symbol,
+      price: q.price,
+      change: q.change,
+      sparkline: q.sparkline,
+    });
+  }
+  for (const symbol of dropped) unavailable.push({ symbol, reason: REASON.requestLimit });
+  const response: ListMarketQuotesResponse = {
+    quotes,
+    finnhubSkipped: false,
+    skipReason: '',
+    rateLimited: false,
+    unavailableSymbols: unavailable,
+    asOf: quotes.length > 0 ? new Date().toISOString() : '',
+  };
+  return quotes.length > 0 ? response : markNoStoreFallbackResponse(ctx.request, response);
+}
+
 export async function listMarketQuotes(
   ctx: ServerContext,
   req: ListMarketQuotesRequest,
 ): Promise<ListMarketQuotesResponse> {
   const { accepted, dropped } = normalizeRequestedSymbols(parseStringArray(req.symbols));
+
+  if (!redisConfigured()) return liveMarketQuotesResponse(ctx, accepted, dropped);
 
   const seed = await readCachedJson(BOOTSTRAP_KEY, true);
   if (seed.status === 'error') {

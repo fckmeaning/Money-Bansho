@@ -5588,10 +5588,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
           "url": "https://www.scmp.com/rss/36/feed"
         },
         {
-          "name": "Hong Kong Free Press",
-          "url": "https://hongkongfp.com/feed/"
-        },
-        {
           "name": "Xinhua English (news.cn) (Google News)",
           "url": "https://news.google.com/rss/search?q=site%3Aenglish.news.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
         },
@@ -5618,10 +5614,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
           "url": "https://news.google.com/rss/search?q=site%3Acaixin.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
           "lang": "zh",
           "fetchInAllLanguages": true
-        },
-        {
-          "name": "TechNode",
-          "url": "https://technode.com/feed/"
         },
         {
           "name": "Trivium China",
@@ -6214,12 +6206,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
           "fetchInAllLanguages": true
         },
         {
-          "name": "China Digital Times (ZH)",
-          "url": "https://chinadigitaltimes.net/chinese/feed/",
-          "lang": "zh",
-          "fetchInAllLanguages": true
-        },
-        {
           "name": "RFA English",
           "url": "https://www.rfa.org/arc/outboundfeeds/english/rss/?outputType=xml"
         },
@@ -6232,16 +6218,62 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "The Diplomat China",
           "url": "https://thediplomat.com/tag/china/feed/"
+        },
+        {
+          "name": "UDN Money",
+          "url": "https://money.udn.com/rssfeed/news/1001/5591",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ChinaTalk",
+          "url": "https://www.chinatalk.media/feed"
+        },
+        {
+          "name": "Sinocism",
+          "url": "https://sinocism.com/feed"
+        },
+        {
+          "name": "NYT Chinese",
+          "url": "https://cn.nytimes.com/rss/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Banking News",
+          "url": "https://www.chinabankingnews.com/feed"
+        },
+        {
+          "name": "SFC Hong Kong",
+          "url": "https://www.sfc.hk/en/RSS-Feeds/Press-releases"
+        },
+        {
+          "name": "CarNewsChina",
+          "url": "https://carnewschina.com/feed/"
+        },
+        {
+          "name": "Sixth Tone RSS",
+          "url": "https://api.sixthtone.com/cont/output/rssApi"
+        },
+        {
+          "name": "Asia Financial",
+          "url": "https://www.asiafinancial.com/feed"
+        },
+        {
+          "name": "HKMA Press",
+          "url": "https://www.hkma.gov.hk/eng/other-information/rss/rss_press-release.xml"
+        },
+        {
+          "name": "TMTPost",
+          "url": "https://www.tmtpost.com/rss.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
         }
       ],
       "europe-business": [
         {
           "name": "BBC Business",
           "url": "https://feeds.bbci.co.uk/news/business/rss.xml"
-        },
-        {
-          "name": "Guardian Business",
-          "url": "https://www.theguardian.com/uk/business/rss"
         },
         {
           "name": "FT UK Companies",
@@ -6677,7 +6709,7 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         },
         {
           "name": "Franceinfo Economie",
-          "url": "https://www.francetvinfo.fr/economie.rss",
+          "url": "https://www.franceinfo.fr/economie.rss",
           "lang": "fr",
           "fetchInAllLanguages": true
         },
@@ -6782,14 +6814,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "GOV.UK HM Treasury",
           "url": "https://www.gov.uk/government/organisations/hm-treasury.atom"
-        },
-        {
-          "name": "Guardian Economics",
-          "url": "https://www.theguardian.com/business/economics/rss"
-        },
-        {
-          "name": "Guardian Politics",
-          "url": "https://www.theguardian.com/politics/rss"
         },
         {
           "name": "Sky News Business",
@@ -7098,6 +7122,72 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "The Local Sweden",
           "url": "https://feeds.thelocal.com/rss/se"
+        },
+        {
+          "name": "UK Competition and Markets Authority",
+          "url": "https://www.gov.uk/government/organisations/competition-and-markets-authority.atom"
+        },
+        {
+          "name": "UK Sanctions OFSI",
+          "url": "https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation.atom"
+        },
+        {
+          "name": "EBA News",
+          "url": "https://www.eba.europa.eu/news-press/news/rss.xml"
+        },
+        {
+          "name": "SNB Press",
+          "url": "https://www.snb.ch/public/rss/en/pressrel"
+        },
+        {
+          "name": "ECB Banking Supervision",
+          "url": "https://www.bankingsupervision.europa.eu/rss/press.html"
+        },
+        {
+          "name": "Riksbank Press",
+          "url": "https://www.riksbank.se/en-gb/rss/press-releases/"
+        },
+        {
+          "name": "Euronews Business",
+          "url": "https://www.euronews.com/rss?level=vertical&name=business"
+        },
+        {
+          "name": "European Parliament Press",
+          "url": "https://www.europarl.europa.eu/rss/doc/press-releases/en.xml"
+        },
+        {
+          "name": "CEPR VoxEU",
+          "url": "https://cepr.org/rss/vox-content"
+        },
+        {
+          "name": "Norges Bank Press",
+          "url": "https://www.norges-bank.no/en/rss-feeds/Press-releases---Norges-Bank/"
+        },
+        {
+          "name": "ECB Blog",
+          "url": "https://www.ecb.europa.eu/rss/blog.html"
+        },
+        {
+          "name": "El Pais Economia",
+          "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Bundesbank News",
+          "url": "https://www.bundesbank.de/service/rss/en/633312/feed.rss"
+        },
+        {
+          "name": "Bank of England Speeches",
+          "url": "https://www.bankofengland.co.uk/rss/speeches"
+        },
+        {
+          "name": "The Local Germany",
+          "url": "https://feeds.thelocal.com/rss/de"
+        },
+        {
+          "name": "Central Bank of Ireland",
+          "url": "https://www.centralbank.ie/feeds/news-media-feed"
         }
       ],
       "israel": [
@@ -7428,6 +7518,24 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "Jewish News Israel (Google News)",
           "url": "https://news.google.com/rss/search?q=site%3Ajewishinsider.com%20Israel%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Globes Israel News EN",
+          "url": "https://en.globes.co.il/WebService/Rss/RssFeeder.asmx/FeederNode?iID=942"
+        },
+        {
+          "name": "Techtime Israel",
+          "url": "https://techtime.news/feed/"
+        },
+        {
+          "name": "Israel Hayom Hebrew",
+          "url": "https://www.israelhayom.co.il/rss.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Israel Hayom English",
+          "url": "https://www.israelhayom.com/feed/"
         }
       ],
       "north-korea": [
@@ -7558,6 +7666,16 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "Yonhap North Korea (Google News)",
           "url": "https://news.google.com/rss/search?q=site%3Aen.yna.co.kr%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "The Diplomat North Korea",
+          "url": "https://thediplomat.com/tag/north-korea/feed/"
+        },
+        {
+          "name": "NK Chosun",
+          "url": "https://nk.chosun.com/rss/allArticle.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
         }
       ],
       "corporate-leadership": [
@@ -7674,10 +7792,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
           "url": "https://boardagenda.com/feed/"
         },
         {
-          "name": "Guardian Executive Pay and Bonuses",
-          "url": "https://www.theguardian.com/business/executive-pay-bonuses/rss"
-        },
-        {
           "name": "Investegate RNS (Google News)",
           "url": "https://news.google.com/rss/search?q=site%3Ainvestegate.co.uk%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
         },
@@ -7724,6 +7838,162 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "PR Newswire General Business",
           "url": "https://www.prnewswire.com/rss/general-business-latest-news/general-business-latest-news-list.rss"
+        },
+        {
+          "name": "Apple Newsroom",
+          "url": "https://www.apple.com/newsroom/rss-feed.rss"
+        },
+        {
+          "name": "GlobeNewswire Directors",
+          "url": "https://www.globenewswire.com/RssFeed/subjectcode/22-Directors%20And%20Officers/feedTitle/GlobeNewswire%20-%20Directors%20And%20Officers"
+        },
+        {
+          "name": "GlobeNewswire Mergers",
+          "url": "https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20And%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20And%20Acquisitions"
+        },
+        {
+          "name": "Microsoft Official Blog",
+          "url": "https://blogs.microsoft.com/feed/"
+        },
+        {
+          "name": "AMD Press Releases",
+          "url": "https://ir.amd.com/news-events/press-releases/rss"
+        },
+        {
+          "name": "Samsung Newsroom",
+          "url": "https://news.samsung.com/global/feed"
+        },
+        {
+          "name": "IBM Newsroom",
+          "url": "https://newsroom.ibm.com/announcements?pagetemplate=rss"
+        },
+        {
+          "name": "Google Company Blog",
+          "url": "https://blog.google/rss/"
+        },
+        {
+          "name": "SAP News",
+          "url": "https://news.sap.com/feed/"
+        },
+        {
+          "name": "Baidu IR",
+          "url": "https://ir.baidu.com/rss/news-releases.xml"
+        },
+        {
+          "name": "JD.com IR",
+          "url": "https://ir.jd.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Salesforce News",
+          "url": "https://www.salesforce.com/news/feed/"
+        },
+        {
+          "name": "Oracle News",
+          "url": "https://www.oracle.com/corporate/press/rss/rss-pr.xml"
+        },
+        {
+          "name": "Cisco Newsroom",
+          "url": "https://newsroom.cisco.com/c/services/i/servlets/newsroom/rssfeed.json?feed=press-releases"
+        },
+        {
+          "name": "FTC Press",
+          "url": "https://www.ftc.gov/feeds/press-release.xml"
+        },
+        {
+          "name": "Broadcom IR",
+          "url": "https://investors.broadcom.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Toyota Newsroom",
+          "url": "https://global.toyota/export/en/allnews_rss.xml"
+        },
+        {
+          "name": "CFTC Press",
+          "url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml"
+        },
+        {
+          "name": "Meta IR",
+          "url": "https://investor.atmeta.com/rss/pressrelease.aspx"
+        },
+        {
+          "name": "NVIDIA IR",
+          "url": "https://investor.nvidia.com/rss/pressrelease.aspx"
+        },
+        {
+          "name": "Mobileye IR",
+          "url": "https://ir.mobileye.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Arm Newsroom",
+          "url": "https://newsroom.arm.com/feed"
+        },
+        {
+          "name": "NIO IR",
+          "url": "https://ir.nio.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Tower Semiconductor IR",
+          "url": "https://ir.towersemi.com/rss/news-releases.xml"
+        },
+        {
+          "name": "XPeng IR",
+          "url": "https://ir.xiaopeng.com/rss/news-releases.xml"
+        },
+        {
+          "name": "NetEase IR",
+          "url": "https://ir.netease.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Li Auto IR",
+          "url": "https://ir.lixiang.com/rss/news-releases.xml"
+        },
+        {
+          "name": "HKEX News Releases",
+          "url": "https://www.hkex.com.hk/Services/RSS-Feeds/News-Releases?sc_lang=en"
+        },
+        {
+          "name": "PayPal Newsroom",
+          "url": "https://newsroom.paypal-corp.com/news?pagetemplate=rss"
+        },
+        {
+          "name": "Boeing News",
+          "url": "https://boeing.mediaroom.com/news-releases-statements?pagetemplate=rss"
+        },
+        {
+          "name": "PDD IR",
+          "url": "https://investor.pddholdings.com/rss/news-releases.xml"
+        },
+        {
+          "name": "BioNTech IR",
+          "url": "https://investors.biontech.de/rss/news-releases.xml"
+        },
+        {
+          "name": "Trip.com IR",
+          "url": "https://investors.trip.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Lockheed Martin News",
+          "url": "https://news.lockheedmartin.com/news-releases?pagetemplate=rss"
+        },
+        {
+          "name": "Eli Lilly IR",
+          "url": "https://investor.lilly.com/rss/news-releases.xml"
+        },
+        {
+          "name": "SK hynix Newsroom",
+          "url": "https://news.skhynix.com/en/feed/"
+        },
+        {
+          "name": "CrowdStrike IR",
+          "url": "https://ir.crowdstrike.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Palo Alto Networks IR",
+          "url": "https://investors.paloaltonetworks.com/rss/news-releases.xml"
+        },
+        {
+          "name": "RTX News",
+          "url": "https://www.rtx.com/rss-feeds/news"
         }
       ],
       "science": [
@@ -8762,10 +9032,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
           "url": "https://www.scmp.com/rss/36/feed"
         },
         {
-          "name": "Hong Kong Free Press",
-          "url": "https://hongkongfp.com/feed/"
-        },
-        {
           "name": "Xinhua English (news.cn) (Google News)",
           "url": "https://news.google.com/rss/search?q=site%3Aenglish.news.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
         },
@@ -8792,10 +9058,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
           "url": "https://news.google.com/rss/search?q=site%3Acaixin.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
           "lang": "zh",
           "fetchInAllLanguages": true
-        },
-        {
-          "name": "TechNode",
-          "url": "https://technode.com/feed/"
         },
         {
           "name": "Trivium China",
@@ -9388,12 +9650,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
           "fetchInAllLanguages": true
         },
         {
-          "name": "China Digital Times (ZH)",
-          "url": "https://chinadigitaltimes.net/chinese/feed/",
-          "lang": "zh",
-          "fetchInAllLanguages": true
-        },
-        {
           "name": "RFA English",
           "url": "https://www.rfa.org/arc/outboundfeeds/english/rss/?outputType=xml"
         },
@@ -9406,16 +9662,62 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "The Diplomat China",
           "url": "https://thediplomat.com/tag/china/feed/"
+        },
+        {
+          "name": "UDN Money",
+          "url": "https://money.udn.com/rssfeed/news/1001/5591",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ChinaTalk",
+          "url": "https://www.chinatalk.media/feed"
+        },
+        {
+          "name": "Sinocism",
+          "url": "https://sinocism.com/feed"
+        },
+        {
+          "name": "NYT Chinese",
+          "url": "https://cn.nytimes.com/rss/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Banking News",
+          "url": "https://www.chinabankingnews.com/feed"
+        },
+        {
+          "name": "SFC Hong Kong",
+          "url": "https://www.sfc.hk/en/RSS-Feeds/Press-releases"
+        },
+        {
+          "name": "CarNewsChina",
+          "url": "https://carnewschina.com/feed/"
+        },
+        {
+          "name": "Sixth Tone RSS",
+          "url": "https://api.sixthtone.com/cont/output/rssApi"
+        },
+        {
+          "name": "Asia Financial",
+          "url": "https://www.asiafinancial.com/feed"
+        },
+        {
+          "name": "HKMA Press",
+          "url": "https://www.hkma.gov.hk/eng/other-information/rss/rss_press-release.xml"
+        },
+        {
+          "name": "TMTPost",
+          "url": "https://www.tmtpost.com/rss.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
         }
       ],
       "europe-business": [
         {
           "name": "BBC Business",
           "url": "https://feeds.bbci.co.uk/news/business/rss.xml"
-        },
-        {
-          "name": "Guardian Business",
-          "url": "https://www.theguardian.com/uk/business/rss"
         },
         {
           "name": "FT UK Companies",
@@ -9851,7 +10153,7 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         },
         {
           "name": "Franceinfo Economie",
-          "url": "https://www.francetvinfo.fr/economie.rss",
+          "url": "https://www.franceinfo.fr/economie.rss",
           "lang": "fr",
           "fetchInAllLanguages": true
         },
@@ -9956,14 +10258,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "GOV.UK HM Treasury",
           "url": "https://www.gov.uk/government/organisations/hm-treasury.atom"
-        },
-        {
-          "name": "Guardian Economics",
-          "url": "https://www.theguardian.com/business/economics/rss"
-        },
-        {
-          "name": "Guardian Politics",
-          "url": "https://www.theguardian.com/politics/rss"
         },
         {
           "name": "Sky News Business",
@@ -10272,6 +10566,72 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "The Local Sweden",
           "url": "https://feeds.thelocal.com/rss/se"
+        },
+        {
+          "name": "UK Competition and Markets Authority",
+          "url": "https://www.gov.uk/government/organisations/competition-and-markets-authority.atom"
+        },
+        {
+          "name": "UK Sanctions OFSI",
+          "url": "https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation.atom"
+        },
+        {
+          "name": "EBA News",
+          "url": "https://www.eba.europa.eu/news-press/news/rss.xml"
+        },
+        {
+          "name": "SNB Press",
+          "url": "https://www.snb.ch/public/rss/en/pressrel"
+        },
+        {
+          "name": "ECB Banking Supervision",
+          "url": "https://www.bankingsupervision.europa.eu/rss/press.html"
+        },
+        {
+          "name": "Riksbank Press",
+          "url": "https://www.riksbank.se/en-gb/rss/press-releases/"
+        },
+        {
+          "name": "Euronews Business",
+          "url": "https://www.euronews.com/rss?level=vertical&name=business"
+        },
+        {
+          "name": "European Parliament Press",
+          "url": "https://www.europarl.europa.eu/rss/doc/press-releases/en.xml"
+        },
+        {
+          "name": "CEPR VoxEU",
+          "url": "https://cepr.org/rss/vox-content"
+        },
+        {
+          "name": "Norges Bank Press",
+          "url": "https://www.norges-bank.no/en/rss-feeds/Press-releases---Norges-Bank/"
+        },
+        {
+          "name": "ECB Blog",
+          "url": "https://www.ecb.europa.eu/rss/blog.html"
+        },
+        {
+          "name": "El Pais Economia",
+          "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Bundesbank News",
+          "url": "https://www.bundesbank.de/service/rss/en/633312/feed.rss"
+        },
+        {
+          "name": "Bank of England Speeches",
+          "url": "https://www.bankofengland.co.uk/rss/speeches"
+        },
+        {
+          "name": "The Local Germany",
+          "url": "https://feeds.thelocal.com/rss/de"
+        },
+        {
+          "name": "Central Bank of Ireland",
+          "url": "https://www.centralbank.ie/feeds/news-media-feed"
         }
       ],
       "israel": [
@@ -10602,6 +10962,24 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "Jewish News Israel (Google News)",
           "url": "https://news.google.com/rss/search?q=site%3Ajewishinsider.com%20Israel%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Globes Israel News EN",
+          "url": "https://en.globes.co.il/WebService/Rss/RssFeeder.asmx/FeederNode?iID=942"
+        },
+        {
+          "name": "Techtime Israel",
+          "url": "https://techtime.news/feed/"
+        },
+        {
+          "name": "Israel Hayom Hebrew",
+          "url": "https://www.israelhayom.co.il/rss.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Israel Hayom English",
+          "url": "https://www.israelhayom.com/feed/"
         }
       ],
       "north-korea": [
@@ -10732,6 +11110,16 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "Yonhap North Korea (Google News)",
           "url": "https://news.google.com/rss/search?q=site%3Aen.yna.co.kr%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "The Diplomat North Korea",
+          "url": "https://thediplomat.com/tag/north-korea/feed/"
+        },
+        {
+          "name": "NK Chosun",
+          "url": "https://nk.chosun.com/rss/allArticle.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
         }
       ],
       "corporate-leadership": [
@@ -10848,10 +11236,6 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
           "url": "https://boardagenda.com/feed/"
         },
         {
-          "name": "Guardian Executive Pay and Bonuses",
-          "url": "https://www.theguardian.com/business/executive-pay-bonuses/rss"
-        },
-        {
           "name": "Investegate RNS (Google News)",
           "url": "https://news.google.com/rss/search?q=site%3Ainvestegate.co.uk%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
         },
@@ -10898,6 +11282,162 @@ export const BROWSER_NEWS_CATALOG: BrowserCatalog = {
         {
           "name": "PR Newswire General Business",
           "url": "https://www.prnewswire.com/rss/general-business-latest-news/general-business-latest-news-list.rss"
+        },
+        {
+          "name": "Apple Newsroom",
+          "url": "https://www.apple.com/newsroom/rss-feed.rss"
+        },
+        {
+          "name": "GlobeNewswire Directors",
+          "url": "https://www.globenewswire.com/RssFeed/subjectcode/22-Directors%20And%20Officers/feedTitle/GlobeNewswire%20-%20Directors%20And%20Officers"
+        },
+        {
+          "name": "GlobeNewswire Mergers",
+          "url": "https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20And%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20And%20Acquisitions"
+        },
+        {
+          "name": "Microsoft Official Blog",
+          "url": "https://blogs.microsoft.com/feed/"
+        },
+        {
+          "name": "AMD Press Releases",
+          "url": "https://ir.amd.com/news-events/press-releases/rss"
+        },
+        {
+          "name": "Samsung Newsroom",
+          "url": "https://news.samsung.com/global/feed"
+        },
+        {
+          "name": "IBM Newsroom",
+          "url": "https://newsroom.ibm.com/announcements?pagetemplate=rss"
+        },
+        {
+          "name": "Google Company Blog",
+          "url": "https://blog.google/rss/"
+        },
+        {
+          "name": "SAP News",
+          "url": "https://news.sap.com/feed/"
+        },
+        {
+          "name": "Baidu IR",
+          "url": "https://ir.baidu.com/rss/news-releases.xml"
+        },
+        {
+          "name": "JD.com IR",
+          "url": "https://ir.jd.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Salesforce News",
+          "url": "https://www.salesforce.com/news/feed/"
+        },
+        {
+          "name": "Oracle News",
+          "url": "https://www.oracle.com/corporate/press/rss/rss-pr.xml"
+        },
+        {
+          "name": "Cisco Newsroom",
+          "url": "https://newsroom.cisco.com/c/services/i/servlets/newsroom/rssfeed.json?feed=press-releases"
+        },
+        {
+          "name": "FTC Press",
+          "url": "https://www.ftc.gov/feeds/press-release.xml"
+        },
+        {
+          "name": "Broadcom IR",
+          "url": "https://investors.broadcom.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Toyota Newsroom",
+          "url": "https://global.toyota/export/en/allnews_rss.xml"
+        },
+        {
+          "name": "CFTC Press",
+          "url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml"
+        },
+        {
+          "name": "Meta IR",
+          "url": "https://investor.atmeta.com/rss/pressrelease.aspx"
+        },
+        {
+          "name": "NVIDIA IR",
+          "url": "https://investor.nvidia.com/rss/pressrelease.aspx"
+        },
+        {
+          "name": "Mobileye IR",
+          "url": "https://ir.mobileye.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Arm Newsroom",
+          "url": "https://newsroom.arm.com/feed"
+        },
+        {
+          "name": "NIO IR",
+          "url": "https://ir.nio.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Tower Semiconductor IR",
+          "url": "https://ir.towersemi.com/rss/news-releases.xml"
+        },
+        {
+          "name": "XPeng IR",
+          "url": "https://ir.xiaopeng.com/rss/news-releases.xml"
+        },
+        {
+          "name": "NetEase IR",
+          "url": "https://ir.netease.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Li Auto IR",
+          "url": "https://ir.lixiang.com/rss/news-releases.xml"
+        },
+        {
+          "name": "HKEX News Releases",
+          "url": "https://www.hkex.com.hk/Services/RSS-Feeds/News-Releases?sc_lang=en"
+        },
+        {
+          "name": "PayPal Newsroom",
+          "url": "https://newsroom.paypal-corp.com/news?pagetemplate=rss"
+        },
+        {
+          "name": "Boeing News",
+          "url": "https://boeing.mediaroom.com/news-releases-statements?pagetemplate=rss"
+        },
+        {
+          "name": "PDD IR",
+          "url": "https://investor.pddholdings.com/rss/news-releases.xml"
+        },
+        {
+          "name": "BioNTech IR",
+          "url": "https://investors.biontech.de/rss/news-releases.xml"
+        },
+        {
+          "name": "Trip.com IR",
+          "url": "https://investors.trip.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Lockheed Martin News",
+          "url": "https://news.lockheedmartin.com/news-releases?pagetemplate=rss"
+        },
+        {
+          "name": "Eli Lilly IR",
+          "url": "https://investor.lilly.com/rss/news-releases.xml"
+        },
+        {
+          "name": "SK hynix Newsroom",
+          "url": "https://news.skhynix.com/en/feed/"
+        },
+        {
+          "name": "CrowdStrike IR",
+          "url": "https://ir.crowdstrike.com/rss/news-releases.xml"
+        },
+        {
+          "name": "Palo Alto Networks IR",
+          "url": "https://investors.paloaltonetworks.com/rss/news-releases.xml"
+        },
+        {
+          "name": "RTX News",
+          "url": "https://www.rtx.com/rss-feeds/news"
         }
       ]
     },

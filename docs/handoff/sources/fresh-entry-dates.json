@@ -1,0 +1,2222 @@
+[
+ {
+  "name": "Walla Finance",
+  "url": "https://rss.walla.co.il/feed/3",
+  "http": 200,
+  "items": 29,
+  "dated": 29,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Focus Taiwan (CNA English)",
+  "url": "https://feeds.feedburner.com/rsscna/engnews",
+  "http": 200,
+  "items": 39,
+  "dated": 39,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RTHK Finance (EN)",
+  "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_efinance.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "PR Newswire Personnel",
+  "url": "https://www.prnewswire.com/rss/general-business-latest-news/personnel-announcements-list.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "China News Service Finance",
+  "url": "https://www.chinanews.com.cn/rss/finance.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Globes Hebrew Main",
+  "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=2",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "CNA Finance",
+  "url": "https://feeds.feedburner.com/rsscna/finance",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Liberty Times All",
+  "url": "https://news.ltn.com.tw/rss/all.xml",
+  "http": 200,
+  "items": 40,
+  "dated": 40,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "PR Newswire Acquisitions",
+  "url": "https://www.prnewswire.com/rss/financial-services-latest-news/acquisitions-mergers-and-takeovers-list.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "FT UK Companies",
+  "url": "https://www.ft.com/companies?format=rss",
+  "http": 200,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Liberty Times Business",
+  "url": "https://news.ltn.com.tw/rss/business.xml",
+  "http": 200,
+  "items": 40,
+  "dated": 40,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "China News Service China",
+  "url": "https://www.chinanews.com.cn/rss/china.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Globes Capital Market",
+  "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=585",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "PR Newswire All",
+  "url": "https://www.prnewswire.com/rss/news-releases-list.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "CNA International",
+  "url": "https://feeds.feedburner.com/rsscna/intworld",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Liberty Times Politics",
+  "url": "https://news.ltn.com.tw/rss/politics.xml",
+  "http": 200,
+  "items": 40,
+  "dated": 40,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/economia_rss.xml",
+  "http": 200,
+  "items": 62,
+  "dated": 62,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Globes Global Markets",
+  "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=1225",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Ming Pao China",
+  "url": "https://news.mingpao.com/rss/pns/s00013.xml",
+  "http": 200,
+  "items": 27,
+  "dated": 27,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "Ynetnews News",
+  "url": "https://www.ynetnews.com/Integration/StoryRss3082.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-23"
+ },
+ {
+  "name": "China News Service HK-Macao-Taiwan",
+  "url": "https://www.chinanews.com.cn/rss/dwq.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "PR Newswire Earnings",
+  "url": "https://www.prnewswire.com/rss/financial-services-latest-news/earnings-list.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SCMP China",
+  "url": "https://www.scmp.com/rss/4/feed",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Liberty Times World",
+  "url": "https://news.ltn.com.tw/rss/world.xml",
+  "http": 200,
+  "items": 40,
+  "dated": 40,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "CNA Mainland China",
+  "url": "https://feeds.feedburner.com/rsscna/mainland",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Ynetnews Business",
+  "url": "https://www.ynetnews.com/Integration/StoryRss3085.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-25"
+ },
+ {
+  "name": "ANSA English",
+  "url": "https://www.ansa.it/english/news/english_nr_rss.xml",
+  "http": 200,
+  "items": 100,
+  "dated": 100,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "RTHK Finance (ZH)",
+  "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_cfinance.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Le Figaro Bourse",
+  "url": "https://www.lefigaro.fr/rss/figaro_societes.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "China News Service Scroll",
+  "url": "https://www.chinanews.com.cn/rss/scroll-news.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "PR Newswire Financial Services",
+  "url": "https://www.prnewswire.com/rss/financial-services-latest-news/financial-services-latest-news-list.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Ynetnews Culture",
+  "url": "https://www.ynetnews.com/Integration/StoryRss3086.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-21"
+ },
+ {
+  "name": "FT Europe",
+  "url": "https://www.ft.com/world/europe?format=rss",
+  "http": 200,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "ANSA Mondo",
+  "url": "https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml",
+  "http": 200,
+  "items": 58,
+  "dated": 58,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Ming Pao Economy",
+  "url": "https://news.mingpao.com/rss/pns/s00004.xml",
+  "http": 200,
+  "items": 92,
+  "dated": 92,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "Le Figaro Economie",
+  "url": "https://www.lefigaro.fr/rss/figaro_economie.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SCMP China Economy",
+  "url": "https://www.scmp.com/rss/318421/feed",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "CNA Politics",
+  "url": "https://feeds.feedburner.com/rsscna/politics",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Ynetnews Opinion",
+  "url": "https://www.ynetnews.com/Integration/StoryRss3084.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-25"
+ },
+ {
+  "name": "Ynet Economy",
+  "url": "https://www.ynet.co.il/Integration/StoryRss6.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "PR Newswire General Business",
+  "url": "https://www.prnewswire.com/rss/general-business-latest-news/general-business-latest-news-list.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "ANSA Politica",
+  "url": "https://www.ansa.it/sito/notizie/politica/politica_rss.xml",
+  "http": 200,
+  "items": 22,
+  "dated": 22,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "China News Service Top",
+  "url": "https://www.chinanews.com.cn/rss/importnews.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "FT Markets",
+  "url": "https://www.ft.com/markets?format=rss",
+  "http": 200,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Le Figaro International",
+  "url": "https://www.lefigaro.fr/rss/figaro_international.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Ming Pao Headlines",
+  "url": "https://news.mingpao.com/rss/pns/s00001.xml",
+  "http": 200,
+  "items": 26,
+  "dated": 26,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "RTHK Greater China (EN)",
+  "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_egreaterchina.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Ynet Breaking",
+  "url": "https://www.ynet.co.il/Integration/StoryRss1854.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "CNA Technology",
+  "url": "https://feeds.feedburner.com/rsscna/technology",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Walla Flash",
+  "url": "https://rss.walla.co.il/feed/22",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SCMP Companies",
+  "url": "https://www.scmp.com/rss/10/feed",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "China News Service World",
+  "url": "https://www.chinanews.com.cn/rss/world.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Le Figaro Politique",
+  "url": "https://www.lefigaro.fr/rss/figaro_politique.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Ynet Digital",
+  "url": "https://www.ynet.co.il/Integration/StoryRss544.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "N12 Mako News",
+  "url": "https://rcs.mako.co.il/rss/news-israel.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-25"
+ },
+ {
+  "name": "CGTN China",
+  "url": "https://www.cgtn.com/subscribe/rss/section/china.xml",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Ming Pao Instant Finance",
+  "url": "https://news.mingpao.com/rss/ins/s00002.xml",
+  "http": 200,
+  "items": 110,
+  "dated": 110,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "FT Management",
+  "url": "https://www.ft.com/management?format=rss",
+  "http": 200,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-25"
+ },
+ {
+  "name": "Ynet News Hebrew",
+  "url": "https://www.ynet.co.il/Integration/StoryRss2.xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "ETtoday",
+  "url": "https://feeds.feedburner.com/ettoday/realtime",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Mako Money",
+  "url": "https://rcs.mako.co.il/rss/news-money.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "CGTN Business",
+  "url": "https://www.cgtn.com/subscribe/rss/section/business.xml",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RTHK Greater China (ZH)",
+  "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_greaterchina.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Il Sole 24 Ore Economia",
+  "url": "https://www.ilsole24ore.com/rss/economia.xml",
+  "http": 200,
+  "items": 12,
+  "dated": 12,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Expansion Economia",
+  "url": "https://e00-expansion.uecdn.es/rss/economia.xml",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Mako World",
+  "url": "https://rcs.mako.co.il/rss/news-world.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Walla Military and Security",
+  "url": "https://rss.walla.co.il/feed/2689",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SCMP Diplomacy",
+  "url": "https://www.scmp.com/rss/318199/feed",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "CGTN World",
+  "url": "https://www.cgtn.com/subscribe/rss/section/world.xml",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "ETtoday Finance",
+  "url": "https://feeds.feedburner.com/ettoday/finance",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Expansion Empresas",
+  "url": "https://e00-expansion.uecdn.es/rss/empresas.xml",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "N12 Politics and Security",
+  "url": "https://rcs.mako.co.il/rss/news-military.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Il Sole 24 Ore Finanza",
+  "url": "https://www.ilsole24ore.com/rss/finanza.xml",
+  "http": 200,
+  "items": 9,
+  "dated": 9,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Expansion Mercados",
+  "url": "https://e00-expansion.uecdn.es/rss/mercados.xml",
+  "http": 200,
+  "items": 52,
+  "dated": 52,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SCMP Tech",
+  "url": "https://www.scmp.com/rss/36/feed",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "The News Lens",
+  "url": "https://feeds.feedburner.com/TheNewsLens",
+  "http": 200,
+  "items": 18,
+  "dated": 18,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Il Sole 24 Ore Italia",
+  "url": "https://www.ilsole24ore.com/rss/italia.xml",
+  "http": 200,
+  "items": 12,
+  "dated": 12,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Le Monde Economie",
+  "url": "https://www.lemonde.fr/economie/rss_full.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RFA English",
+  "url": "https://www.rfa.org/arc/outboundfeeds/english/rss/?outputType=xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-25"
+ },
+ {
+  "name": "SCMP Business",
+  "url": "https://www.scmp.com/rss/92/feed",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Publico Economia",
+  "url": "https://feeds.feedburner.com/PublicoEconomia",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Walla News",
+  "url": "https://rss.walla.co.il/feed/1",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Le Monde Entreprises",
+  "url": "https://www.lemonde.fr/entreprises/rss_full.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Il Sole 24 Ore Mondo",
+  "url": "https://www.ilsole24ore.com/rss/mondo.xml",
+  "http": 200,
+  "items": 9,
+  "dated": 9,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Le Monde Politique",
+  "url": "https://www.lemonde.fr/politique/rss_full.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "FAZ Finanzen",
+  "url": "https://www.faz.net/rss/aktuell/finanzen/",
+  "http": 200,
+  "items": 29,
+  "dated": 29,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RFA Mandarin",
+  "url": "https://www.rfa.org/arc/outboundfeeds/mandarin/rss/?outputType=xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RTHK Local (EN)",
+  "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_elocal.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SCMP Hong Kong",
+  "url": "https://www.scmp.com/rss/2/feed",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "BBC Chinese",
+  "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml",
+  "http": 200,
+  "items": 42,
+  "dated": 42,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Spiegel International",
+  "url": "https://www.spiegel.de/international/index.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-19"
+ },
+ {
+  "name": "FAZ Politik",
+  "url": "https://www.faz.net/rss/aktuell/politik/",
+  "http": 200,
+  "items": 46,
+  "dated": 46,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "China Digital Times (EN)",
+  "url": "https://chinadigitaltimes.net/feed/",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "BBC Business",
+  "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+  "http": 200,
+  "items": 53,
+  "dated": 53,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "NZZ Finanzen",
+  "url": "https://www.nzz.ch/finanzen.rss",
+  "http": 200,
+  "items": 21,
+  "dated": 21,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Spiegel Politik",
+  "url": "https://www.spiegel.de/politik/index.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SCMP Property",
+  "url": "https://www.scmp.com/rss/96/feed/",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "FAZ Wirtschaft",
+  "url": "https://www.faz.net/rss/aktuell/wirtschaft/",
+  "http": 200,
+  "items": 52,
+  "dated": 52,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Handelsblatt Unternehmen",
+  "url": "https://www.handelsblatt.com/contentexport/feed/unternehmen",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RFI Chinese",
+  "url": "https://www.rfi.fr/cn/rss",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "BBC Politics",
+  "url": "https://feeds.bbci.co.uk/news/politics/rss.xml",
+  "http": 200,
+  "items": 61,
+  "dated": 61,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Spiegel Wirtschaft",
+  "url": "https://www.spiegel.de/wirtschaft/index.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Walla Politics and Government",
+  "url": "https://rss.walla.co.il/feed/9",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Jerusalem Post Israel",
+  "url": "https://www.jpost.com/rss/rssfeedsisraelnews.aspx",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "NZZ International",
+  "url": "https://www.nzz.ch/international.rss",
+  "http": 200,
+  "items": 68,
+  "dated": 68,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "DW Chinese",
+  "url": "https://rss.dw.com/rdf/rss-chi-all",
+  "http": 200,
+  "items": 57,
+  "dated": 57,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RFI Economie",
+  "url": "https://www.rfi.fr/fr/%C3%A9conomie/rss",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RTHK Local (ZH)",
+  "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_clocal.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RFA Korean",
+  "url": "https://www.rfa.org/arc/outboundfeeds/korean/rss/?outputType=xml",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Handelsblatt Finanzen",
+  "url": "https://www.handelsblatt.com/contentexport/feed/finanzen",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "DW English Business",
+  "url": "https://rss.dw.com/rdf/rss-en-bus",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "France 24 Business (EN)",
+  "url": "https://www.france24.com/en/business-tech/rss",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "De Tijd",
+  "url": "https://www.tijd.be/rss/nieuws.xml",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Jerusalem Post Iran",
+  "url": "https://www.jpost.com/rss/rssfeedsiran",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Maariv Business",
+  "url": "https://www.maariv.co.il/Rss/RssFeedsAsakim",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SCMP World",
+  "url": "https://www.scmp.com/rss/5/feed",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Walla Tech",
+  "url": "https://rss.walla.co.il/feed/4",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "Handelsblatt Politik",
+  "url": "https://www.handelsblatt.com/contentexport/feed/politik",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "France 24 Europe (EN)",
+  "url": "https://www.france24.com/en/europe/rss",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "manager magazin",
+  "url": "https://www.manager-magazin.de/news/index.rss",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "De Tijd Ondernemen",
+  "url": "https://www.tijd.be/rss/ondernemen.xml",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "NZZ Wirtschaft",
+  "url": "https://www.nzz.ch/wirtschaft.rss",
+  "http": 200,
+  "items": 32,
+  "dated": 32,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Sueddeutsche Politik",
+  "url": "https://rss.sueddeutsche.de/rss/Politik",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Maariv",
+  "url": "https://www.maariv.co.il/Rss/RssChadashot",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Welt Politik",
+  "url": "https://www.welt.de/feeds/section/politik.rss",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "manager magazin Unternehmen",
+  "url": "https://www.manager-magazin.de/unternehmen/index.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Jerusalem Post Middle East",
+  "url": "https://www.jpost.com/rss/rssfeedsmiddleeastnews.aspx",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RTHK World (EN)",
+  "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_einternational.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "FT Chinese",
+  "url": "https://www.ftchinese.com/rss/news",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-16"
+ },
+ {
+  "name": "Sueddeutsche Wirtschaft",
+  "url": "https://rss.sueddeutsche.de/rss/Wirtschaft",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Welt Wirtschaft",
+  "url": "https://www.welt.de/feeds/section/wirtschaft.rss",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Walla World",
+  "url": "https://rss.walla.co.il/feed/2",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "El Confidencial Economia",
+  "url": "https://rss.elconfidencial.com/economia/",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Maariv Politics",
+  "url": "https://www.maariv.co.il/Rss/RssFeedsMivzakiChadashot",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "FT Chinese Full",
+  "url": "https://www.ftchinese.com/rss/feed",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "El Confidencial Empresas",
+  "url": "https://rss.elconfidencial.com/empresas/",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "BFM Business",
+  "url": "https://www.bfmtv.com/rss/economie/",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "DR Penge",
+  "url": "https://www.dr.dk/nyheder/service/feeds/penge",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "DR Politik",
+  "url": "https://www.dr.dk/nyheder/service/feeds/politik",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "BFM Entreprises",
+  "url": "https://www.bfmtv.com/rss/economie/entreprises/",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Repubblica Economia",
+  "url": "https://www.repubblica.it/rss/economia/rss2.0.xml",
+  "http": 200,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Repubblica Politica",
+  "url": "https://www.repubblica.it/rss/politica/rss2.0.xml",
+  "http": 200,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "This is Money",
+  "url": "https://www.thisismoney.co.uk/money/index.rss",
+  "http": 200,
+  "items": 150,
+  "dated": 150,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RTHK World (ZH)",
+  "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_cinternational.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Bankier Firma",
+  "url": "https://www.bankier.pl/rss/firma.xml",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "This is Money Markets",
+  "url": "https://www.thisismoney.co.uk/money/markets/index.rss",
+  "http": 200,
+  "items": 150,
+  "dated": 150,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Bankier.pl",
+  "url": "https://www.bankier.pl/rss/wiadomosci.xml",
+  "http": 200,
+  "items": 48,
+  "dated": 48,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Haaretz English",
+  "url": "https://www.haaretz.com/srv/haaretz-latest-headlines",
+  "http": 200,
+  "items": 100,
+  "dated": 100,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "ECNS China News Service (EN)",
+  "url": "http://www.ecns.cn/rss/rss.xml",
+  "http": 200,
+  "items": 100,
+  "dated": 100,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "WirtschaftsWoche",
+  "url": "https://www.wiwo.de/contentexport/feed/rss/schlagzeilen",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Haaretz English Israel News",
+  "url": "https://www.haaretz.com/srv/israel-news-rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Yle News English",
+  "url": "https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_NEWS",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "La Tribune",
+  "url": "https://www.latribune.fr/feed.xml",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Chosun Sinbo",
+  "url": "https://chosonsinbo.com/feed/",
+  "http": 200,
+  "items": 5,
+  "dated": 5,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "IT Home",
+  "url": "https://www.ithome.com/rss/",
+  "http": 200,
+  "items": 60,
+  "dated": 60,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "WiWo Unternehmen",
+  "url": "https://www.wiwo.de/contentexport/feed/rss/unternehmen",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "CnEVPost",
+  "url": "https://cnevpost.com/feed/",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Yonhap North Korea",
+  "url": "https://en.yna.co.kr/RSS/nk.xml",
+  "http": 200,
+  "items": 79,
+  "dated": 79,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Chosun Sinbo JP",
+  "url": "https://chosonsinbo.com/jp/feed/",
+  "http": 200,
+  "items": 5,
+  "dated": 5,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Yonhap News English",
+  "url": "https://en.yna.co.kr/RSS/news.xml",
+  "http": 200,
+  "items": 92,
+  "dated": 92,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Yle Talous",
+  "url": "https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-19274",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "La Tribune RSS",
+  "url": "https://www.latribune.fr/rss/rubriques/actualite.html",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Trivium China",
+  "url": "https://triviumchina.com/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Daily NK Korean",
+  "url": "https://www.dailynk.com/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "iFanr",
+  "url": "https://www.ifanr.com/feed",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Economic Daily News TW",
+  "url": "https://money.udn.com/rssfeed/news/1001/5591?ch=money",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "What's on Weibo",
+  "url": "https://www.whatsonweibo.com/feed/",
+  "http": 200,
+  "items": 5,
+  "dated": 5,
+  "newest": "2026-11-14"
+ },
+ {
+  "name": "Globes Real Estate",
+  "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=607",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "Daily NK Chinese",
+  "url": "https://www.dailynk.com/chinese/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Digitimes (EN)",
+  "url": "https://www.digitimes.com/rss/daily.xml",
+  "http": 200,
+  "items": 35,
+  "dated": 35,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "HK Government News",
+  "url": "https://www.news.gov.hk/en/common/html/topstories.rss.xml",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "Finance TechNews TW",
+  "url": "https://finance.technews.tw/feed/",
+  "http": 200,
+  "items": 40,
+  "dated": 40,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Solidot",
+  "url": "https://www.solidot.org/index.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "PTS News",
+  "url": "https://news.pts.org.tw/xml/newsfeed.xml",
+  "http": 200,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "The Diplomat China",
+  "url": "https://thediplomat.com/tag/china/feed/",
+  "http": 200,
+  "items": 96,
+  "dated": 96,
+  "newest": "2026-11-16"
+ },
+ {
+  "name": "Globes Tech",
+  "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=594",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "INSIDE TW",
+  "url": "https://www.inside.com.tw/feed/rss",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Newtalk",
+  "url": "https://newtalk.tw/rss/all",
+  "http": 200,
+  "items": 100,
+  "dated": 100,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "City AM",
+  "url": "https://www.cityam.com/feed/",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "iThome TW",
+  "url": "https://www.ithome.com.tw/rss",
+  "http": 200,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "InMedia HK",
+  "url": "https://www.inmediahk.net/rss.xml",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "New Bloom",
+  "url": "https://newbloommag.net/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Taiwan Today",
+  "url": "https://api.taiwantoday.tw/en/rss.php",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "TechNews TW",
+  "url": "https://technews.tw/feed/",
+  "http": 200,
+  "items": 40,
+  "dated": 40,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "The Witness HK",
+  "url": "https://thewitnesshk.com/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Politico Europe",
+  "url": "https://www.politico.eu/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "ECB Press",
+  "url": "https://www.ecb.europa.eu/rss/press.html",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Bank of England News",
+  "url": "https://www.bankofengland.co.uk/rss/news",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "Initium Media",
+  "url": "https://theinitium.com/feed",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Der Standard Wirtschaft",
+  "url": "https://www.derstandard.at/rss/wirtschaft",
+  "http": 200,
+  "items": 37,
+  "dated": 37,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "RTS Info",
+  "url": "https://www.rts.ch/info/economie/?format=rss/news",
+  "http": 200,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Die Presse Wirtschaft",
+  "url": "https://www.diepresse.com/rss/Wirtschaft",
+  "http": 200,
+  "items": 52,
+  "dated": 52,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Le Temps Economie",
+  "url": "https://www.letemps.ch/economie.rss",
+  "http": 200,
+  "items": 21,
+  "dated": 21,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "L'Echo",
+  "url": "https://www.lecho.be/rss/actualite.xml",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SRF Wirtschaft",
+  "url": "https://www.srf.ch/news/bnf/rss/1926",
+  "http": 200,
+  "items": 60,
+  "dated": 60,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Merkur Wirtschaft",
+  "url": "https://www.merkur.de/wirtschaft/rssfeed.rdf",
+  "http": 200,
+  "items": 40,
+  "dated": 40,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Tagesschau Wirtschaft",
+  "url": "https://www.tagesschau.de/wirtschaft/index~rss2.xml",
+  "http": 200,
+  "items": 29,
+  "dated": 29,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "EUobserver",
+  "url": "https://euobserver.com/rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "European Commission Press",
+  "url": "https://ec.europa.eu/commission/presscorner/api/rss?language=en",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Borsen",
+  "url": "https://borsen.dk/rss",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Pandaily",
+  "url": "https://pandaily.com/feed/",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "ABC Economia",
+  "url": "https://www.abc.es/rss/2.0/economia/",
+  "http": 200,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Radio Prague English",
+  "url": "https://english.radio.cz/rcz-rss/en",
+  "http": 200,
+  "items": 720,
+  "dated": 720,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Leiphone",
+  "url": "https://www.leiphone.com/feed",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "La Vanguardia Economia",
+  "url": "https://www.lavanguardia.com/rss/economia.xml",
+  "http": 200,
+  "items": 100,
+  "dated": 100,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Kauppalehti",
+  "url": "https://feeds.kauppalehti.fi/rss/main",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Tagesspiegel Wirtschaft",
+  "url": "https://www.tagesspiegel.de/contentexport/feed/wirtschaft",
+  "http": 200,
+  "items": 100,
+  "dated": 100,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "El Diario Economia",
+  "url": "https://www.eldiario.es/rss/economia/",
+  "http": 200,
+  "items": 19,
+  "dated": 19,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "GOV.UK HM Treasury",
+  "url": "https://www.gov.uk/government/organisations/hm-treasury.atom",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Evening Standard Business",
+  "url": "https://www.standard.co.uk/business/rss",
+  "http": 200,
+  "items": 11,
+  "dated": 11,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Emerging Europe",
+  "url": "https://emerging-europe.com/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "Europa Press Economia",
+  "url": "https://www.europapress.es/rss/rss.aspx?ch=00136",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Sky News Business",
+  "url": "https://feeds.skynews.com/feeds/rss/business.xml",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "The Independent Business",
+  "url": "https://www.independent.co.uk/news/business/rss",
+  "http": 200,
+  "items": 13,
+  "dated": 13,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "taz",
+  "url": "https://taz.de/!p4608;rss/",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Challenges",
+  "url": "https://www.challenges.fr/rss.xml",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Telex English",
+  "url": "https://telex.hu/rss/english",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Politiken Okonomi",
+  "url": "https://politiken.dk/rss/oekonomi.rss",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Euractiv",
+  "url": "https://www.euractiv.com/feed/",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "Heise News",
+  "url": "https://www.heise.de/rss/heise-atom.xml",
+  "http": 200,
+  "items": 150,
+  "dated": 150,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Franceinfo Economie",
+  "url": "https://www.francetvinfo.fr/economie.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Hospodarske Noviny",
+  "url": "https://byznys.hn.cz/?m=rss",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "E15",
+  "url": "https://www.e15.cz/rss",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "Clean Energy Wire",
+  "url": "https://www.cleanenergywire.org/rss.xml",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "RTE Business",
+  "url": "https://www.rte.ie/feeds/rss/?index=/news/business/",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "AGI Economia",
+  "url": "https://www.agi.it/economia/rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "The Register",
+  "url": "https://www.theregister.com/headlines.atom",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Hungary Today",
+  "url": "https://hungarytoday.hu/feed/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "DutchNews.nl",
+  "url": "https://www.dutchnews.nl/feed/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "De Telegraaf Financieel",
+  "url": "https://www.telegraaf.nl/financieel/rss",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "FD",
+  "url": "https://fd.nl/?rss",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "NU.nl Economie",
+  "url": "https://www.nu.nl/rss/Economie",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Il Fatto Quotidiano Economia",
+  "url": "https://www.ilfattoquotidiano.it/category/economia-lobby/feed/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Liberation Economie",
+  "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/category/economie/?outputType=xml",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "UK Investor Magazine",
+  "url": "https://ukinvestormagazine.co.uk/feed/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Dagens Naeringsliv",
+  "url": "https://services.dn.no/api/feed/rss/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "NRK Toppsaker",
+  "url": "https://www.nrk.no/toppsaker.rss",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "News in English Norway",
+  "url": "https://www.newsinenglish.no/feed/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Business Insider Polska",
+  "url": "https://businessinsider.com.pl/.feed",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Money.pl",
+  "url": "https://www.money.pl/rss/rss.xml",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Notes from Poland",
+  "url": "https://notesfrompoland.com/feed/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "E24",
+  "url": "https://e24.no/rss2/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Parkiet",
+  "url": "https://www.parkiet.com/rss_main",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "VG",
+  "url": "https://www.vg.no/rss/feed/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "TVN24 Biznes",
+  "url": "https://tvn24.pl/biznes.xml",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Puls Biznesu",
+  "url": "https://www.pb.pl/rss/najnowsze.xml",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "ECO Portugal",
+  "url": "https://eco.sapo.pt/feed/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Jornal de Negocios",
+  "url": "https://www.jornaldenegocios.pt/rss",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Romania Insider",
+  "url": "https://www.romania-insider.com/feed",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Breakit",
+  "url": "https://www.breakit.se/feed/artiklar",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Dagens Industri",
+  "url": "https://www.di.se/rss",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Dagens Nyheter Ekonomi",
+  "url": "https://www.dn.se/rss/ekonomi/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "WNP.pl",
+  "url": "https://www.wnp.pl/rss/serwis_rss.xml",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Ziarul Financiar",
+  "url": "https://www.zf.ro/rss",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "SR Ekot",
+  "url": "https://api.sr.se/api/rss/program/83?format=145",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "SVT Ekonomi",
+  "url": "https://www.svt.se/nyheter/ekonomi/rss.xml",
+  "http": 200,
+  "items": 100,
+  "dated": 100,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Arutz Sheva English",
+  "url": "https://www.israelnationalnews.com/Rss.aspx",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Globes English",
+  "url": "https://en.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=1725",
+  "http": 200,
+  "items": 93,
+  "dated": 93,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "Davar",
+  "url": "https://www.davar1.co.il/feed/",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Arutz Sheva Hebrew",
+  "url": "https://www.inn.co.il/Rss.aspx",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "The Seventh Eye",
+  "url": "https://www.the7eye.org.il/feed",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Mekomit",
+  "url": "https://www.mekomit.co.il/feed/",
+  "http": 200,
+  "items": 14,
+  "dated": 14,
+  "newest": "2026-11-26"
+ },
+ {
+  "name": "The Local Sweden",
+  "url": "https://feeds.thelocal.com/rss/se",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Zman Israel",
+  "url": "https://www.zman.co.il/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Realtid",
+  "url": "https://www.realtid.se/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Haaretz Hebrew",
+  "url": "https://www.haaretz.co.il/srv/htz---all-articles",
+  "http": 200,
+  "items": 100,
+  "dated": 100,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Srugim",
+  "url": "https://www.srugim.co.il/feed",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "NK Pro",
+  "url": "https://www.nknews.org/pro/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "JNS",
+  "url": "https://www.jns.org/feed/",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "NK Insider",
+  "url": "https://www.nkinsider.org/feed/",
+  "http": 200,
+  "items": 14,
+  "dated": 14,
+  "newest": "2026-11-25"
+ },
+ {
+  "name": "Sino-NK",
+  "url": "https://sinonk.com/feed/",
+  "http": 403,
+  "items": 0,
+  "dated": 0,
+  "newest": null
+ },
+ {
+  "name": "CFO Dive",
+  "url": "https://www.cfodive.com/feeds/news/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-25"
+ },
+ {
+  "name": "Chief Executive Magazine",
+  "url": "https://chiefexecutive.net/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-25"
+ },
+ {
+  "name": "Ice",
+  "url": "https://www.ice.co.il/rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Corporate Board Member",
+  "url": "https://boardmember.com/feed/",
+  "http": 200,
+  "items": 6,
+  "dated": 6,
+  "newest": "2026-11-23"
+ },
+ {
+  "name": "NK Economy KR",
+  "url": "https://www.nkeconomy.com/rss/allArticle.xml",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Harvard Law Corporate Governance",
+  "url": "https://corpgov.law.harvard.edu/feed/",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Finews",
+  "url": "https://www.finews.ch/news?format=feed&type=rss",
+  "http": 200,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Finews.com English",
+  "url": "https://www.finews.com/news/english-news?format=feed&type=rss",
+  "http": 200,
+  "items": 19,
+  "dated": 19,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "HR Dive",
+  "url": "https://www.hrdive.com/feeds/news/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-25"
+ },
+ {
+  "name": "PR Newswire UK",
+  "url": "https://www.prnewswire.co.uk/rss/news-releases-list.rss",
+  "http": 200,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Board Agenda",
+  "url": "https://boardagenda.com/feed/",
+  "http": 200,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "NK Daily Tongil News",
+  "url": "https://www.tongilnews.com/rss/allArticle.xml",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "SPN Seoul Pyongyang News",
+  "url": "https://www.spnews.co.kr/rss/allArticle.xml",
+  "http": 0,
+  "err": "UND_ERR_CONNECT_TIMEOUT"
+ },
+ {
+  "name": "Shakuf",
+  "url": "https://shakuf.co.il/feed",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "Donga Politics",
+  "url": "https://rss.donga.com/politics.xml",
+  "http": 200,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27"
+ },
+ {
+  "name": "Daily NK Japanese",
+  "url": "https://dailynk.jp/feed",
+  "http": 0,
+  "err": "AbortError"
+ },
+ {
+  "name": "Yonhap NK Korean",
+  "url": "https://www.yna.co.kr/rss/northkorea.xml",
+  "http": 0,
+  "err": "AbortError"
+ }
+]

@@ -21,6 +21,7 @@ import { parseStringArray } from './_shared';
 import { getCachedJson } from '../../../_shared/redis';
 import { markNoStoreFallbackResponse } from '../../../_shared/response-headers';
 import commodityConfig from '../../../../shared/commodities.json';
+import { fetchLiveQuotes, redisConfigured } from './_yahoo-live';
 
 const BOOTSTRAP_KEY = 'market:commodities-bootstrap:v1';
 const MAX_SYMBOLS = 64;
@@ -113,6 +114,27 @@ export async function listCommodityQuotes(
   // masked (never a silent partial success). Empty symbols pass validation
   // and resolve to [] → filterCommoditySeed returns the full configured set.
   const { symbols } = resolveCommodityQuery(parsed);
+
+  // No Redis seed (local dev, free demo hosting): read Yahoo directly.
+  if (!redisConfigured()) {
+    const wanted = symbols.length > 0 ? symbols : commodityConfig.commodities.map((c) => c.symbol);
+    const live = await fetchLiveQuotes(wanted);
+    const meta = new Map(commodityConfig.commodities.map((c) => [c.symbol, c]));
+    const quotes: CommodityQuote[] = [];
+    for (const symbol of wanted) {
+      const q = live.get(symbol);
+      if (!q) continue;
+      quotes.push({
+        symbol,
+        name: meta.get(symbol)?.name ?? symbol,
+        display: meta.get(symbol)?.display ?? symbol,
+        price: q.price,
+        change: q.change,
+        sparkline: q.sparkline,
+      });
+    }
+    return quotes.length > 0 ? { quotes } : markNoStoreFallbackResponse(ctx.request, { quotes: [] });
+  }
 
   try {
     const bootstrap = await getCachedJson(BOOTSTRAP_KEY, true) as ListCommodityQuotesResponse | null;

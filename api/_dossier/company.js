@@ -9,7 +9,7 @@ import { quantReport, withSignificance } from './math/report.js';
 import { companySignals } from './quant.js';
 import { loadFilings } from './sec.js';
 import { errorMessage } from './util.js';
-import { loadChart, quoteFrom } from './yahoo.js';
+import { loadChart, loadSparkSeries, quoteFrom } from './yahoo.js';
 
 export const RANGE_DAYS = { '1mo': 31, '3mo': 93, '1y': 366 };
 
@@ -133,6 +133,20 @@ function demoteForeignChange(event, symbol) {
   return !first || first.symbol === symbol ? event : { ...event, type: 'other', people: [] };
 }
 
+const PEER_LIMIT = 8;
+
+/** One-year closes of other listed companies of the same country (no sector field exists in the data). */
+async function loadPeers(company, symbol) {
+  const peers = companies.filter((c) => c.country === company.country && c.symbol !== symbol).slice(0, PEER_LIMIT);
+  if (!peers.length) return [];
+  try {
+    const { series } = await loadSparkSeries(peers.map((c) => c.symbol));
+    return peers.flatMap((c) => (series.get(c.symbol) ? [{ symbol: c.symbol, name: c.name, history: series.get(c.symbol).history }] : []));
+  } catch {
+    return [];
+  }
+}
+
 /** Returns null when the symbol is neither listed nor known to Yahoo. */
 export async function buildDossier(symbol, range, nowMs = Date.now()) {
   const errors = [];
@@ -147,10 +161,11 @@ export async function buildDossier(symbol, range, nowMs = Date.now()) {
     company = chart ? unlistedCompany(symbol, chart.meta) : null;
   }
 
-  const [chartResult, benchmarkResult, items] = await Promise.all([
+  const [chartResult, benchmarkResult, items, peers] = await Promise.all([
     chartPromise,
     company ? chartOrNull(company.benchmark, 60_000, errors, trace) : null,
     company ? collectNews(company, errors, trace) : [],
+    company ? loadPeers(company, symbol) : [],
   ]);
   const chart = chartResult === 'unknown' ? null : chartResult;
   const benchmark = benchmarkResult === 'unknown' ? null : benchmarkResult;
@@ -195,7 +210,7 @@ export async function buildDossier(symbol, range, nowMs = Date.now()) {
 
   let forecast = null;
   try {
-    forecast = chart ? computeForecasts(inputs, nowMs) : null;
+    forecast = chart ? computeForecasts({ ...inputs, peers }, nowMs) : null;
   } catch (error) {
     errors.push({ source: 'model:forecast', message: errorMessage(error) });
   }

@@ -1131,7 +1131,9 @@ export class Panel {
     );
 
     const msgEl = h('div', { className: 'panel-error-msg' });
-    msgEl.textContent = message || t('common.failedToLoad');
+    // A missing backend (404/offline) is an honest "no data", not a scary failure text.
+    const generic = !message || /не удалось|ошибка загрузки|failed to load|unable to load|load failed|could not load|HTTP [45]\d\d/i.test(message);
+    msgEl.textContent = generic ? t('common.noDataShort') : message;
 
     const children: (HTMLElement | string)[] = [radarEl, msgEl];
 

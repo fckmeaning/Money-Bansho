@@ -62,7 +62,7 @@ describe('variant panel config resolution', () => {
   it('still falls back to the cross-variant registry for panels outside a variant default set', () => {
     const forecast = getEffectivePanelConfig('forecast', 'happy');
 
-    assert.equal(forecast.name, 'AI Forecasts');
+    assert.equal(forecast.name, 'Forecasts'); // Money Bansho drops the upstream 'AI' label
     assert.equal(forecast.enabled, true);
   });
 
@@ -168,7 +168,8 @@ describe('variant panel config resolution', () => {
     );
     assert.equal(enabledFinanceFree.length, FREE_MAX_PANELS);
     assert.equal(countFreePanelCapUsage(clampedFinance, 'finance'), FREE_MAX_PANELS);
-    assert.equal(clampedFinance['stock-analysis']?.enabled, true);
+    // The fork's finance profile keeps this locked teaser at its own default (off); the cap must not change it.
+    assert.equal(clampedFinance['stock-analysis']?.enabled, getEffectivePanelConfig('stock-analysis', 'finance').enabled);
     assert.equal(clampedFinance['stock-analysis']?.proGated, undefined);
   });
 

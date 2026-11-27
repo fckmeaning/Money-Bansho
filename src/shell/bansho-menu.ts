@@ -621,6 +621,24 @@ function installGlobalListeners(): void {
     if (current) current.close();
     else openDrawer(latestOptions);
   }, { signal });
+  // Arrow keys move between the dossier tab buttons (plain buttons in a nav).
+  document.addEventListener('keydown', (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    const target = event.target as HTMLElement | null;
+    const bar = target?.closest?.('nav.tabs');
+    if (!bar || target?.tagName !== 'BUTTON') return;
+    const buttons = [...bar.querySelectorAll<HTMLButtonElement>('button')];
+    const at = buttons.indexOf(target as HTMLButtonElement);
+    if (at < 0) return;
+    let next: number;
+    if (event.key === 'ArrowRight') next = (at + 1) % buttons.length;
+    else if (event.key === 'ArrowLeft') next = (at - 1 + buttons.length) % buttons.length;
+    else if (event.key === 'Home') next = 0;
+    else next = buttons.length - 1;
+    event.preventDefault();
+    buttons[next]?.focus();
+  }, { signal });
   window.addEventListener('popstate', () => {
     recordCurrentCompany();
     current?.close(false);

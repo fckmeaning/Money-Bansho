@@ -9414,12 +9414,6 @@
     "language": "zh",
     "ownershipClass": "private"
   },
-  "TechNode": {
-    "country": "CN",
-    "audience": "international",
-    "language": "en",
-    "ownershipClass": "private"
-  },
   "The Paper (Google News)": {
     "country": "CN",
     "audience": "domestic",
@@ -9527,12 +9521,6 @@
     "audience": "domestic",
     "language": "zh",
     "ownershipClass": "private"
-  },
-  "Hong Kong Free Press": {
-    "country": "HK",
-    "audience": "international",
-    "language": "en",
-    "ownershipClass": "nonprofit"
   },
   "InMedia HK": {
     "country": "HK",
@@ -9892,12 +9880,6 @@
     "country": "US",
     "audience": "domestic",
     "language": "en",
-    "ownershipClass": "nonprofit"
-  },
-  "China Digital Times (ZH)": {
-    "country": "US",
-    "audience": "domestic",
-    "language": "zh",
     "ownershipClass": "nonprofit"
   },
   "RFA English": {
@@ -10574,30 +10556,6 @@
     "audience": "domestic",
     "language": "en",
     "ownershipClass": "state"
-  },
-  "Guardian Business": {
-    "country": "GB",
-    "audience": "domestic",
-    "language": "en",
-    "ownershipClass": "unreviewed"
-  },
-  "Guardian Economics": {
-    "country": "GB",
-    "audience": "domestic",
-    "language": "en",
-    "ownershipClass": "unreviewed"
-  },
-  "Guardian Executive Pay and Bonuses": {
-    "country": "GB",
-    "audience": "domestic",
-    "language": "en",
-    "ownershipClass": "unreviewed"
-  },
-  "Guardian Politics": {
-    "country": "GB",
-    "audience": "domestic",
-    "language": "en",
-    "ownershipClass": "unreviewed"
   },
   "Investegate RNS (Google News)": {
     "country": "GB",
@@ -11634,5 +11592,440 @@
     "language": "en",
     "ownershipClass": "unreviewed",
     "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "UK Competition and Markets Authority": {
+    "country": "GB",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Apple Newsroom": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "GlobeNewswire Directors": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "UK Sanctions OFSI": {
+    "country": "GB",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "GlobeNewswire Mergers": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Microsoft Official Blog": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "AMD Press Releases": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Samsung Newsroom": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "IBM Newsroom": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Google Company Blog": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SAP News": {
+    "country": "DE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Baidu IR": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "JD.com IR": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Salesforce News": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Oracle News": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Cisco Newsroom": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "FTC Press": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Broadcom IR": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Toyota Newsroom": {
+    "country": "JP",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "CFTC Press": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Meta IR": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "NVIDIA IR": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Mobileye IR": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Arm Newsroom": {
+    "country": "GB",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "NIO IR": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Tower Semiconductor IR": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "XPeng IR": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "NetEase IR": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Li Auto IR": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "HKEX News Releases": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "PayPal Newsroom": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Boeing News": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "PDD IR": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "BioNTech IR": {
+    "country": "DE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Trip.com IR": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Lockheed Martin News": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Eli Lilly IR": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SK hynix Newsroom": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "CrowdStrike IR": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Palo Alto Networks IR": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "UDN Money": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "ChinaTalk": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Sinocism": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "NYT Chinese": {
+    "country": "US",
+    "audience": "international",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "China Banking News": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Publisher location and ownership not confirmed."
+  },
+  "SFC Hong Kong": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "EBA News": {
+    "country": "EU",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "intergovernmental"
+  },
+  "CarNewsChina": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Publisher location and ownership not confirmed."
+  },
+  "RTX News": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Sixth Tone RSS": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "SNB Press": {
+    "country": "CH",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Asia Financial": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Publisher location and ownership not confirmed."
+  },
+  "ECB Banking Supervision": {
+    "country": "EU",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "intergovernmental"
+  },
+  "HKMA Press": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Riksbank Press": {
+    "country": "SE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Euronews Business": {
+    "country": "FR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "European Parliament Press": {
+    "country": "EU",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "intergovernmental"
+  },
+  "CEPR VoxEU": {
+    "country": "GB",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "nonprofit"
+  },
+  "Norges Bank Press": {
+    "country": "NO",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "ECB Blog": {
+    "country": "BE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "intergovernmental"
+  },
+  "TMTPost": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "El Pais Economia": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "Bundesbank News": {
+    "country": "DE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Bank of England Speeches": {
+    "country": "GB",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Globes Israel News EN": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "The Local Germany": {
+    "country": "SE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Techtime Israel": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "The Diplomat North Korea": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Israel Hayom Hebrew": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Central Bank of Ireland": {
+    "country": "IE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Israel Hayom English": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "NK Chosun": {
+    "country": "KR",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "private"
   }
 }

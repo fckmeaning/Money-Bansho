@@ -13,7 +13,7 @@ export interface VariantMeta {
 
 export const VARIANT_META: { full: VariantMeta; [k: string]: VariantMeta } = {
   full: {
-    title: 'Money Bansho: Markets, Companies and Global Events',
+    title: 'Money Bansho — дашборд',
     description: 'Open dashboard for markets, macro data, company news and global events, built from free public data sources.',
     keywords: 'markets dashboard, stocks, company news, macro data, commodities, currencies, global events, open source',
     url: '/dashboard',

@@ -16,7 +16,8 @@ import { TIER_DOCS_HREF } from '../src/utils/tier-docs.ts';
 import { WEB_APP_ORIGIN } from '../src/config/web-origin.ts';
 import { publisherFamilyFor } from '../shared/publisher-families.js';
 
-const read = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
+// Normalise CRLF so a Windows checkout reads the same headings as CI.
+const read = (path: string) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8').replaceAll('\r\n', '\n');
 
 type TierRow = { tier: DeclaredTier; cells: string[] };
 

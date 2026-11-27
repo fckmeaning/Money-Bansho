@@ -115,6 +115,8 @@ describe('publisher-families map data', () => {
     // Cross-host families are legitimate but must be deliberate, so each one is
     // named with the reason it spans hosts.
     const CROSS_HOST_FAMILIES = {
+      euronews: 'Euronews publishes its language editions on one host per language (euronews.com, fr., de., it. ...) under one newsroom: https://www.euronews.com/about',
+      'israel-hayom': 'Hebrew edition on israelhayom.co.il, English edition on israelhayom.com, one publisher: https://www.israelhayom.com/about-us/',
       matichon: 'Khaosod and Matichon share Matichon Group: https://www.khaosod.co.th/about-us',
       "n1-danas": "Common publisher group across its news brands: https://n1info.rs/english/news/united-media-takes-over-belgarde-danas-daily/",
       "alpha-media-zimbabwe": "Common publisher group across its news brands: https://www.newsday.co.zw/theindependent/terms-and-conditions",
@@ -242,7 +244,6 @@ describe('publisher-families map data', () => {
       'die-zeit',
       'korea-times',
       'el-mundo',
-      'el-pais',
       'fast-company',
       'fox-business',
       'fox-news',

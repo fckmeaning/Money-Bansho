@@ -3,3 +3,13 @@ html.bansho-keyless .panel:has(> .panel-content > .panel-locked-state),
 html.bansho-keyless .panel-locked-cta,
 html.bansho-keyless .upgrade-pro-section,
 html.bansho-keyless .upgrade-to-business-btn { display: none !important; }
+
+/* Header link to the dossier: neutral terminal colour, not the browser's blue. */
+.header .dossier-link,
+.header .dossier-link:visited { color: var(--text-dim, var(--text-secondary, #9aa1ab)); text-decoration: none; font-size: 12px; padding: 4px 8px; border: 1px solid var(--border, #262a31); border-radius: 2px; }
+.header .dossier-link:hover { color: var(--text, #e6e8eb); border-color: var(--text-dim, #9aa1ab); text-decoration: none; }
+.header a:focus-visible, .header button:focus-visible, .header select:focus-visible { outline: 1px solid #c8a45c; outline-offset: 1px; }
+
+/* Map stays dark; nothing floats above the header. */
+.map-container, .map-container.map-renderer-shell { background: #0d0f12; }
+.header { position: relative; z-index: 1000; }

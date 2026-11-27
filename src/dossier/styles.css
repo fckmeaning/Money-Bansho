@@ -376,3 +376,15 @@ span.headline { color: inherit; }
 .fc-branches > div { background: var(--panel); padding: 6px; }
 .fc-branches dt { font-size: 11px; color: var(--muted); }
 .fc-branches dd { font-size: 22px; }
+
+/* ---- narrow phones (360-390px): no page-level horizontal scroll ----------- */
+@media (max-width: 480px) {
+  html, body { max-width: 100%; overflow-x: hidden; }
+  .main, .center, .slot-view, .slot-head, .slot-chart, .slot-feed, .rail { min-width: 0; max-width: 100%; }
+  .slot-view > *, .center > * { min-width: 0; max-width: 100%; }
+  .tabs { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: thin; }
+  .tabs button { flex: none; white-space: nowrap; padding: 8px 12px; }
+  .tiles { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .main { padding: 8px; }
+  img, svg, canvas, table { max-width: 100%; }
+}

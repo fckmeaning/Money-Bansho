@@ -3,11 +3,16 @@ import { h } from './dom';
 
 interface Check { n: number; hitRate: number; baseRate: number; coverage80: number }
 interface Horizon {
-  h: number; rule: 'type+tone' | 'type' | 'baseline'; n: number; weight: number;
+  h: number; rule: 'type+tone' | 'type' | 'tone' | 'baseline'; n: number; weight: number;
   expectedPct: number; low80Pct: number; high80Pct: number;
   lowPrice: number; midPrice: number; highPrice: number; probUp: number; thresholdPct: number;
   scenarios: { adverse: number; base: number; favourable: number };
   check: Check | null;
+  peers: Peer[] | null;
+}
+interface Peer {
+  symbol: string; name: string; beta: number; corr: number; pairs: number;
+  betaPct: number; analoguePct: number | null; cases: number;
 }
 interface Item {
   eventId: string; title: string; type: string; tone: number; horizons: Horizon[];
@@ -25,8 +30,10 @@ const TEXT = {
     check: 'Self-check on past cases', noCheck: 'too few cases to test',
     chance: 'No better than always guessing the common direction.', better: 'Above the naive guess on this small sample.',
     hit: 'direction hit rate', naive: 'naive guess', cover: '80% range covered',
-    rules: { 'type+tone': 'same type and tone', type: 'same type', baseline: 'too few: normal volatility only' },
+    rules: { 'type+tone': 'same type and tone', type: 'same type', tone: 'any type, same tone', baseline: 'too few: normal volatility only' },
     formula: 'Expected = n/(n+10) × mean of analogues. Variance = (1−w)·σ²·h + w·variance of analogues. Scenarios split at ±0.5·σ·√h.',
+    peers: 'Related companies (same country): estimate', peersNone: 'No data: no peer with enough history and correlation.',
+    peer: 'Company', byBeta: 'By beta', byCases: 'By own analogue windows', peersNote: 'Estimate, not a forecast: beta × expected move, and the peer’s mean return over the same windows (shrunk). Peers are chosen by country; the data has no sector field.',
   },
   ru: {
     title: 'Новость → условный сценарий', pick: 'Новость', none: 'Нет данных: мало истории цен или заголовков.',
@@ -37,8 +44,10 @@ const TEXT = {
     check: 'Самопроверка на прошлых случаях', noCheck: 'мало случаев для проверки',
     chance: 'Не лучше, чем всегда называть частое направление.', better: 'Выше наивной догадки на этой малой выборке.',
     hit: 'угадано направление', naive: 'наивная догадка', cover: 'интервал 80% накрыл',
-    rules: { 'type+tone': 'тот же тип и тон', type: 'тот же тип', baseline: 'мало: только обычная волатильность' },
+    rules: { 'type+tone': 'тот же тип и тон', type: 'тот же тип', tone: 'любой тип, тот же тон', baseline: 'мало: только обычная волатильность' },
     formula: 'Ожидание = n/(n+10) × среднее похожих случаев. Дисперсия = (1−w)·σ²·h + w·дисперсия похожих. Границы сценариев ±0.5·σ·√h.',
+    peers: 'Связанные компании (та же страна): оценка', peersNone: 'Нет данных: нет компаний с достаточной историей и корреляцией.',
+    peer: 'Компания', byBeta: 'По бете', byCases: 'По своим окнам аналогов', peersNote: 'Оценка, а не прогноз: бета × ожидаемое движение и средняя доходность компании на тех же окнах (со сжатием). Пары выбраны по стране: в данных нет поля отрасли.',
   },
 };
 type Words = (typeof TEXT)['en'];
@@ -107,6 +116,17 @@ function details(item: Item, data: Forecast, w: Words): Node[] {
       ),
     ),
   );
+  const peerRows = item.horizons.flatMap((p) =>
+    (p.peers ?? []).map((q) =>
+      row([
+        `${q.symbol} · ${p.h}`, `β ${q.beta.toFixed(2)}, ρ ${q.corr.toFixed(2)} (n=${q.pairs})`, percent(q.betaPct),
+        q.analoguePct === null ? '—' : `${percent(q.analoguePct)} (n=${q.cases})`,
+      ]),
+    ),
+  );
+  const peers = peerRows.length
+    ? h('div', { class: 'fc-scroll' }, h('table', { class: 'fc-table' }, row([w.peer, 'β, ρ', w.byBeta, w.byCases], true), ...peerRows), h('p', { class: 'muted mono' }, w.peersNote))
+    : h('p', { class: 'muted' }, w.peersNone);
   const rep = item.reputation;
   const branches = h(
     'dl',
@@ -129,6 +149,7 @@ function details(item: Item, data: Forecast, w: Words): Node[] {
     panelOf(w.expected, table),
     panelOf(w.fan, corridor(item, data.lastClose)),
     panelOf(w.scen, scenarios),
+    panelOf(w.peers, peers),
     panelOf(w.rep, branches),
     panelOf(w.check, ...checks, h('p', { class: 'muted mono' }, w.formula)),
   ];
