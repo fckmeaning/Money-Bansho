@@ -5473,6 +5473,2166 @@ export const SERVER_NEWS_CATALOG: ServerNewsCatalog = {
           "url": "https://news.google.com/rss/search?q=(layoffs%20OR%20%22job%20cuts%22%20OR%20%22workforce%20reduction%22)%20when%3A3d&hl=en-US&gl=US&ceid=US:en"
         }
       ],
+      "china-media": [
+        {
+          "name": "SCMP China",
+          "url": "https://www.scmp.com/rss/4/feed"
+        },
+        {
+          "name": "SCMP China Economy",
+          "url": "https://www.scmp.com/rss/318421/feed"
+        },
+        {
+          "name": "SCMP Companies",
+          "url": "https://www.scmp.com/rss/10/feed"
+        },
+        {
+          "name": "SCMP Diplomacy",
+          "url": "https://www.scmp.com/rss/318199/feed"
+        },
+        {
+          "name": "SCMP Tech",
+          "url": "https://www.scmp.com/rss/36/feed"
+        },
+        {
+          "name": "Hong Kong Free Press",
+          "url": "https://hongkongfp.com/feed/"
+        },
+        {
+          "name": "Xinhua English (news.cn) (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aenglish.news.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CGTN China",
+          "url": "https://www.cgtn.com/subscribe/rss/section/china.xml"
+        },
+        {
+          "name": "CGTN Business",
+          "url": "https://www.cgtn.com/subscribe/rss/section/business.xml"
+        },
+        {
+          "name": "ECNS China News Service (EN)",
+          "url": "http://www.ecns.cn/rss/rss.xml"
+        },
+        {
+          "name": "China News Service Finance",
+          "url": "https://www.chinanews.com.cn/rss/finance.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Caixin (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acaixin.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "TechNode",
+          "url": "https://technode.com/feed/"
+        },
+        {
+          "name": "Trivium China",
+          "url": "https://triviumchina.com/feed/"
+        },
+        {
+          "name": "Focus Taiwan (CNA English)",
+          "url": "https://feeds.feedburner.com/rsscna/engnews"
+        },
+        {
+          "name": "China Digital Times (EN)",
+          "url": "https://chinadigitaltimes.net/feed/"
+        },
+        {
+          "name": "BBC Chinese",
+          "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "21st Century Business Herald (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3A21jingji.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CCTV News (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anews.cctv.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CGTN World",
+          "url": "https://www.cgtn.com/subscribe/rss/section/world.xml"
+        },
+        {
+          "name": "China Briefing (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achina-briefing.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "China Business Journal (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acb.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achinadaily.com.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "China MFA (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afmprc.gov.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "China News Service China",
+          "url": "https://www.chinanews.com.cn/rss/china.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China News Service HK-Macao-Taiwan",
+          "url": "https://www.chinanews.com.cn/rss/dwq.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China News Service Scroll",
+          "url": "https://www.chinanews.com.cn/rss/scroll-news.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China News Service Top",
+          "url": "https://www.chinanews.com.cn/rss/importnews.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China News Service World",
+          "url": "https://www.chinanews.com.cn/rss/world.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Securities Journal (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acs.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China State Council (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aenglish.www.gov.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "China.org.cn (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achina.org.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CnEVPost",
+          "url": "https://cnevpost.com/feed/"
+        },
+        {
+          "name": "Eastmoney (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aeastmoney.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Economic Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ace.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Economic Observer (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aeeo.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Global Times (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aglobaltimes.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Guancha (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aguancha.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Huanqiu (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ahuanqiu.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Huxiu (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ahuxiu.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "iFanr",
+          "url": "https://www.ifanr.com/feed",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "IT Home",
+          "url": "https://www.ithome.com/rss/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Jiemian (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ajiemian.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Leiphone",
+          "url": "https://www.leiphone.com/feed",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "National Business Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anbd.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Pandaily",
+          "url": "https://pandaily.com/feed/"
+        },
+        {
+          "name": "People's Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aen.people.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Qiushi (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aqstheory.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Securities Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Azqrb.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Securities Times (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Astcn.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Shanghai Securities News (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acnstock.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Sina Finance (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afinance.sina.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Solidot",
+          "url": "https://www.solidot.org/index.rss",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Paper (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athepaper.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "TMTPost (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Atmtpost.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Wallstreetcn (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Awallstreetcn.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "What's on Weibo",
+          "url": "https://www.whatsonweibo.com/feed/"
+        },
+        {
+          "name": "Xinhua ZH (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anews.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yicai (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ayicai.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yicai Global (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ayicaiglobal.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "DW Chinese",
+          "url": "https://rss.dw.com/rdf/rss-chi-all",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RFI Chinese",
+          "url": "https://www.rfi.fr/cn/rss",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "FT Chinese",
+          "url": "https://www.ftchinese.com/rss/news",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "FT Chinese Full",
+          "url": "https://www.ftchinese.com/rss/feed",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "AAStocks (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aaastocks.com%20when%3A7d&hl=zh-HK&gl=HK&ceid=HK:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "HK Government News",
+          "url": "https://www.news.gov.hk/en/common/html/topstories.rss.xml"
+        },
+        {
+          "name": "HKEJ (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ahkej.com%20when%3A7d&hl=zh-HK&gl=HK&ceid=HK:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "HKET (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ahket.com%20when%3A7d&hl=zh-HK&gl=HK&ceid=HK:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "InMedia HK",
+          "url": "https://www.inmediahk.net/rss.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ming Pao China",
+          "url": "https://news.mingpao.com/rss/pns/s00013.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ming Pao Economy",
+          "url": "https://news.mingpao.com/rss/pns/s00004.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ming Pao Headlines",
+          "url": "https://news.mingpao.com/rss/pns/s00001.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ming Pao Instant Finance",
+          "url": "https://news.mingpao.com/rss/ins/s00002.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTHK Finance (EN)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_efinance.xml"
+        },
+        {
+          "name": "RTHK Finance (ZH)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_cfinance.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTHK Greater China (EN)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_egreaterchina.xml"
+        },
+        {
+          "name": "RTHK Greater China (ZH)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_greaterchina.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTHK Local (EN)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_elocal.xml"
+        },
+        {
+          "name": "RTHK Local (ZH)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_clocal.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTHK World (EN)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_einternational.xml"
+        },
+        {
+          "name": "RTHK World (ZH)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_cinternational.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SCMP Business",
+          "url": "https://www.scmp.com/rss/92/feed"
+        },
+        {
+          "name": "SCMP Hong Kong",
+          "url": "https://www.scmp.com/rss/2/feed"
+        },
+        {
+          "name": "SCMP Property",
+          "url": "https://www.scmp.com/rss/96/feed/"
+        },
+        {
+          "name": "SCMP World",
+          "url": "https://www.scmp.com/rss/5/feed"
+        },
+        {
+          "name": "The Standard HK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athestandard.com.hk%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "The Witness HK",
+          "url": "https://thewitnesshk.com/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Wen Wei Po (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Awenweipo.com%20when%3A7d&hl=zh-HK&gl=HK&ceid=HK:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Initium Media",
+          "url": "https://theinitium.com/feed",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Anue cnyes (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acnyes.com%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Business Next (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abnext.com.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Business Weekly TW (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abusinessweekly.com.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Times (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achinatimes.com%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA Finance",
+          "url": "https://feeds.feedburner.com/rsscna/finance",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA International",
+          "url": "https://feeds.feedburner.com/rsscna/intworld",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA Mainland China",
+          "url": "https://feeds.feedburner.com/rsscna/mainland",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA Politics",
+          "url": "https://feeds.feedburner.com/rsscna/politics",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA Technology",
+          "url": "https://feeds.feedburner.com/rsscna/technology",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Commercial Times TW (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Actee.com.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CommonWealth English (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aenglish.cw.com.tw%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CommonWealth Magazine (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acw.com.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Digitimes (EN)",
+          "url": "https://www.digitimes.com/rss/daily.xml"
+        },
+        {
+          "name": "Economic Daily News TW",
+          "url": "https://money.udn.com/rssfeed/news/1001/5591?ch=money",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ETtoday",
+          "url": "https://feeds.feedburner.com/ettoday/realtime",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ETtoday Finance",
+          "url": "https://feeds.feedburner.com/ettoday/finance",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finance TechNews TW",
+          "url": "https://finance.technews.tw/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "INSIDE TW",
+          "url": "https://www.inside.com.tw/feed/rss",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "iThome TW",
+          "url": "https://www.ithome.com.tw/rss",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberty Times All",
+          "url": "https://news.ltn.com.tw/rss/all.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberty Times Business",
+          "url": "https://news.ltn.com.tw/rss/business.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberty Times Politics",
+          "url": "https://news.ltn.com.tw/rss/politics.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberty Times World",
+          "url": "https://news.ltn.com.tw/rss/world.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "New Bloom",
+          "url": "https://newbloommag.net/feed/"
+        },
+        {
+          "name": "Newtalk",
+          "url": "https://newtalk.tw/rss/all",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "PTS (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anews.pts.org.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "PTS News",
+          "url": "https://news.pts.org.tw/xml/newsfeed.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Storm Media (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Astorm.mg%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Taiwan Today",
+          "url": "https://api.taiwantoday.tw/en/rss.php"
+        },
+        {
+          "name": "TechNews TW",
+          "url": "https://technews.tw/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The News Lens",
+          "url": "https://feeds.feedburner.com/TheNewsLens",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "UDN (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Audn.com%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Digital Times (ZH)",
+          "url": "https://chinadigitaltimes.net/chinese/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RFA English",
+          "url": "https://www.rfa.org/arc/outboundfeeds/english/rss/?outputType=xml"
+        },
+        {
+          "name": "RFA Mandarin",
+          "url": "https://www.rfa.org/arc/outboundfeeds/mandarin/rss/?outputType=xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Diplomat China",
+          "url": "https://thediplomat.com/tag/china/feed/"
+        }
+      ],
+      "europe-business": [
+        {
+          "name": "BBC Business",
+          "url": "https://feeds.bbci.co.uk/news/business/rss.xml"
+        },
+        {
+          "name": "Guardian Business",
+          "url": "https://www.theguardian.com/uk/business/rss"
+        },
+        {
+          "name": "FT UK Companies",
+          "url": "https://www.ft.com/companies?format=rss"
+        },
+        {
+          "name": "FT Europe",
+          "url": "https://www.ft.com/world/europe?format=rss"
+        },
+        {
+          "name": "City AM",
+          "url": "https://www.cityam.com/feed/"
+        },
+        {
+          "name": "Politico Europe",
+          "url": "https://www.politico.eu/feed/"
+        },
+        {
+          "name": "Euractiv",
+          "url": "https://www.euractiv.com/feed/"
+        },
+        {
+          "name": "ECB Press",
+          "url": "https://www.ecb.europa.eu/rss/press.html"
+        },
+        {
+          "name": "European Commission Press",
+          "url": "https://ec.europa.eu/commission/presscorner/api/rss?language=en"
+        },
+        {
+          "name": "Bank of England News",
+          "url": "https://www.bankofengland.co.uk/rss/news"
+        },
+        {
+          "name": "DW English Business",
+          "url": "https://rss.dw.com/rdf/rss-en-bus"
+        },
+        {
+          "name": "Expansion Economia",
+          "url": "https://e00-expansion.uecdn.es/rss/economia.xml",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "France 24 Business (EN)",
+          "url": "https://www.france24.com/en/business-tech/rss"
+        },
+        {
+          "name": "Handelsblatt Unternehmen",
+          "url": "https://www.handelsblatt.com/contentexport/feed/unternehmen",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Monde Economie",
+          "url": "https://www.lemonde.fr/economie/rss_full.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Sole 24 Ore Economia",
+          "url": "https://www.ilsole24ore.com/rss/economia.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Der Standard Wirtschaft",
+          "url": "https://www.derstandard.at/rss/wirtschaft",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Die Presse Wirtschaft",
+          "url": "https://www.diepresse.com/rss/Wirtschaft",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Brussels Times (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abrusselstimes.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "De Tijd",
+          "url": "https://www.tijd.be/rss/nieuws.xml",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "De Tijd Ondernemen",
+          "url": "https://www.tijd.be/rss/ondernemen.xml",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "EUobserver",
+          "url": "https://euobserver.com/rss"
+        },
+        {
+          "name": "L'Echo",
+          "url": "https://www.lecho.be/rss/actualite.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Cash.ch (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acash.ch%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finanz und Wirtschaft (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afuw.ch%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Temps Economie",
+          "url": "https://www.letemps.ch/economie.rss",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NZZ Finanzen",
+          "url": "https://www.nzz.ch/finanzen.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NZZ International",
+          "url": "https://www.nzz.ch/international.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NZZ Wirtschaft",
+          "url": "https://www.nzz.ch/wirtschaft.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTS Info",
+          "url": "https://www.rts.ch/info/economie/?format=rss/news",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SRF Wirtschaft",
+          "url": "https://www.srf.ch/news/bnf/rss/1926",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Swissinfo (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aswissinfo.ch%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "E15",
+          "url": "https://www.e15.cz/rss",
+          "lang": "cs",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Hospodarske Noviny",
+          "url": "https://byznys.hn.cz/?m=rss",
+          "lang": "cs",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Radio Prague English",
+          "url": "https://english.radio.cz/rcz-rss/en"
+        },
+        {
+          "name": "Boersen-Zeitung (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aboersen-zeitung.de%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Capital DE (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acapital.de%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Clean Energy Wire",
+          "url": "https://www.cleanenergywire.org/rss.xml"
+        },
+        {
+          "name": "FAZ Finanzen",
+          "url": "https://www.faz.net/rss/aktuell/finanzen/",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "FAZ Politik",
+          "url": "https://www.faz.net/rss/aktuell/politik/",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "FAZ Wirtschaft",
+          "url": "https://www.faz.net/rss/aktuell/wirtschaft/",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finanzen.net (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afinanzen.net%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Handelsblatt Finanzen",
+          "url": "https://www.handelsblatt.com/contentexport/feed/finanzen",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Handelsblatt Politik",
+          "url": "https://www.handelsblatt.com/contentexport/feed/politik",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Heise News",
+          "url": "https://www.heise.de/rss/heise-atom.xml",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "manager magazin",
+          "url": "https://www.manager-magazin.de/news/index.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Merkur Wirtschaft",
+          "url": "https://www.merkur.de/wirtschaft/rssfeed.rdf",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Spiegel International",
+          "url": "https://www.spiegel.de/international/index.rss"
+        },
+        {
+          "name": "Spiegel Politik",
+          "url": "https://www.spiegel.de/politik/index.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Spiegel Wirtschaft",
+          "url": "https://www.spiegel.de/wirtschaft/index.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Sueddeutsche Politik",
+          "url": "https://rss.sueddeutsche.de/rss/Politik",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Sueddeutsche Wirtschaft",
+          "url": "https://rss.sueddeutsche.de/rss/Wirtschaft",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Tagesschau Wirtschaft",
+          "url": "https://www.tagesschau.de/wirtschaft/index~rss2.xml",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Tagesspiegel Wirtschaft",
+          "url": "https://www.tagesspiegel.de/contentexport/feed/wirtschaft",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "taz",
+          "url": "https://taz.de/!p4608;rss/",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Welt Politik",
+          "url": "https://www.welt.de/feeds/section/politik.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Welt Wirtschaft",
+          "url": "https://www.welt.de/feeds/section/wirtschaft.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "WirtschaftsWoche",
+          "url": "https://www.wiwo.de/contentexport/feed/rss/schlagzeilen",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "WiWo Unternehmen",
+          "url": "https://www.wiwo.de/contentexport/feed/rss/unternehmen",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Borsen",
+          "url": "https://borsen.dk/rss",
+          "lang": "da",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "DR Penge",
+          "url": "https://www.dr.dk/nyheder/service/feeds/penge",
+          "lang": "da",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "DR Politik",
+          "url": "https://www.dr.dk/nyheder/service/feeds/politik",
+          "lang": "da",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Politiken Okonomi",
+          "url": "https://politiken.dk/rss/oekonomi.rss",
+          "lang": "da",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ABC Economia",
+          "url": "https://www.abc.es/rss/2.0/economia/",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "El Confidencial Economia",
+          "url": "https://rss.elconfidencial.com/economia/",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "El Confidencial Empresas",
+          "url": "https://rss.elconfidencial.com/empresas/",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "El Diario Economia",
+          "url": "https://www.eldiario.es/rss/economia/",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "El Economista (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aeleconomista.es%20when%3A7d&hl=es&gl=ES&ceid=ES:es",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Europa Press Economia",
+          "url": "https://www.europapress.es/rss/rss.aspx?ch=00136",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Expansion Empresas",
+          "url": "https://e00-expansion.uecdn.es/rss/empresas.xml",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Expansion Mercados",
+          "url": "https://e00-expansion.uecdn.es/rss/mercados.xml",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "La Vanguardia Economia",
+          "url": "https://www.lavanguardia.com/rss/economia.xml",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Kauppalehti",
+          "url": "https://feeds.kauppalehti.fi/rss/main",
+          "lang": "fi",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yle News English",
+          "url": "https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_NEWS"
+        },
+        {
+          "name": "Yle Talous",
+          "url": "https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-19274",
+          "lang": "fi",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "BFM Business",
+          "url": "https://www.bfmtv.com/rss/economie/",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "BFM Entreprises",
+          "url": "https://www.bfmtv.com/rss/economie/entreprises/",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Boursorama (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aboursorama.com%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Challenges",
+          "url": "https://www.challenges.fr/rss.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "France 24 Europe (EN)",
+          "url": "https://www.france24.com/en/europe/rss"
+        },
+        {
+          "name": "Franceinfo Economie",
+          "url": "https://www.francetvinfo.fr/economie.rss",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "L'Usine Nouvelle (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ausinenouvelle.com%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "La Tribune",
+          "url": "https://www.latribune.fr/feed.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "La Tribune RSS",
+          "url": "https://www.latribune.fr/rss/rubriques/actualite.html",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Figaro Bourse",
+          "url": "https://www.lefigaro.fr/rss/figaro_societes.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Figaro Economie",
+          "url": "https://www.lefigaro.fr/rss/figaro_economie.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Figaro International",
+          "url": "https://www.lefigaro.fr/rss/figaro_international.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Figaro Politique",
+          "url": "https://www.lefigaro.fr/rss/figaro_politique.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Monde Entreprises",
+          "url": "https://www.lemonde.fr/entreprises/rss_full.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Monde Politique",
+          "url": "https://www.lemonde.fr/politique/rss_full.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Les Echos (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Alesechos.fr%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberation Economie",
+          "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/category/economie/?outputType=xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RFI Economie",
+          "url": "https://www.rfi.fr/fr/%C3%A9conomie/rss",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Zonebourse (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Azonebourse.com%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "BBC Politics",
+          "url": "https://feeds.bbci.co.uk/news/politics/rss.xml"
+        },
+        {
+          "name": "CityWire (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acitywire.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Emerging Europe",
+          "url": "https://emerging-europe.com/feed/"
+        },
+        {
+          "name": "Evening Standard Business",
+          "url": "https://www.standard.co.uk/business/rss"
+        },
+        {
+          "name": "FT Markets",
+          "url": "https://www.ft.com/markets?format=rss"
+        },
+        {
+          "name": "GOV.UK HM Treasury",
+          "url": "https://www.gov.uk/government/organisations/hm-treasury.atom"
+        },
+        {
+          "name": "Guardian Economics",
+          "url": "https://www.theguardian.com/business/economics/rss"
+        },
+        {
+          "name": "Guardian Politics",
+          "url": "https://www.theguardian.com/politics/rss"
+        },
+        {
+          "name": "Sky News Business",
+          "url": "https://feeds.skynews.com/feeds/rss/business.xml"
+        },
+        {
+          "name": "The Independent Business",
+          "url": "https://www.independent.co.uk/news/business/rss"
+        },
+        {
+          "name": "The Register",
+          "url": "https://www.theregister.com/headlines.atom"
+        },
+        {
+          "name": "The Times Business (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athetimes.com%20business%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "This is Money",
+          "url": "https://www.thisismoney.co.uk/money/index.rss"
+        },
+        {
+          "name": "This is Money Markets",
+          "url": "https://www.thisismoney.co.uk/money/markets/index.rss"
+        },
+        {
+          "name": "UK Investor Magazine",
+          "url": "https://ukinvestormagazine.co.uk/feed/"
+        },
+        {
+          "name": "Kathimerini English (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aekathimerini.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Hungary Today",
+          "url": "https://hungarytoday.hu/feed/"
+        },
+        {
+          "name": "Telex English",
+          "url": "https://telex.hu/rss/english"
+        },
+        {
+          "name": "Business Post (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abusinesspost.ie%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "RTE Business",
+          "url": "https://www.rte.ie/feeds/rss/?index=/news/business/"
+        },
+        {
+          "name": "Iceland Monitor (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aicelandmonitor.mbl.is%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "mbl.is (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ambl.is%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "AGI Economia",
+          "url": "https://www.agi.it/economia/rss",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ANSA Economia",
+          "url": "https://www.ansa.it/sito/notizie/economia/economia_rss.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ANSA English",
+          "url": "https://www.ansa.it/english/news/english_nr_rss.xml"
+        },
+        {
+          "name": "ANSA Mondo",
+          "url": "https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ANSA Politica",
+          "url": "https://www.ansa.it/sito/notizie/politica/politica_rss.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Fatto Quotidiano Economia",
+          "url": "https://www.ilfattoquotidiano.it/category/economia-lobby/feed/",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Sole 24 Ore Finanza",
+          "url": "https://www.ilsole24ore.com/rss/finanza.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Sole 24 Ore Italia",
+          "url": "https://www.ilsole24ore.com/rss/italia.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Sole 24 Ore Mondo",
+          "url": "https://www.ilsole24ore.com/rss/mondo.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Milano Finanza (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Amilanofinanza.it%20when%3A7d&hl=it&gl=IT&ceid=IT:it",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Repubblica Economia",
+          "url": "https://www.repubblica.it/rss/economia/rss2.0.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Repubblica Politica",
+          "url": "https://www.repubblica.it/rss/politica/rss2.0.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "De Telegraaf Financieel",
+          "url": "https://www.telegraaf.nl/financieel/rss",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "DutchNews.nl",
+          "url": "https://www.dutchnews.nl/feed/"
+        },
+        {
+          "name": "FD",
+          "url": "https://fd.nl/?rss",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NU.nl Economie",
+          "url": "https://www.nu.nl/rss/Economie",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Dagens Naeringsliv",
+          "url": "https://services.dn.no/api/feed/rss/",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "E24",
+          "url": "https://e24.no/rss2/",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finansavisen (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afinansavisen.no%20when%3A7d&hl=no&gl=NO&ceid=NO:no",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "News in English Norway",
+          "url": "https://www.newsinenglish.no/feed/"
+        },
+        {
+          "name": "NRK Toppsaker",
+          "url": "https://www.nrk.no/toppsaker.rss",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "VG",
+          "url": "https://www.vg.no/rss/feed/",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Bankier Firma",
+          "url": "https://www.bankier.pl/rss/firma.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Bankier.pl",
+          "url": "https://www.bankier.pl/rss/wiadomosci.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Business Insider Polska",
+          "url": "https://businessinsider.com.pl/.feed",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Money.pl",
+          "url": "https://www.money.pl/rss/rss.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Notes from Poland",
+          "url": "https://notesfrompoland.com/feed/"
+        },
+        {
+          "name": "Parkiet",
+          "url": "https://www.parkiet.com/rss_main",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Puls Biznesu",
+          "url": "https://www.pb.pl/rss/najnowsze.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "TVN24 Biznes",
+          "url": "https://tvn24.pl/biznes.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "WNP.pl",
+          "url": "https://www.wnp.pl/rss/serwis_rss.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ECO Portugal",
+          "url": "https://eco.sapo.pt/feed/",
+          "lang": "pt",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Jornal de Negocios",
+          "url": "https://www.jornaldenegocios.pt/rss",
+          "lang": "pt",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Publico Economia",
+          "url": "https://feeds.feedburner.com/PublicoEconomia",
+          "lang": "pt",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Romania Insider",
+          "url": "https://www.romania-insider.com/feed"
+        },
+        {
+          "name": "Ziarul Financiar",
+          "url": "https://www.zf.ro/rss",
+          "lang": "ro",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Affarsvarlden (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aaffarsvarlden.se%20when%3A7d&hl=sv&gl=SE&ceid=SE:sv",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Breakit",
+          "url": "https://www.breakit.se/feed/artiklar",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Dagens Industri",
+          "url": "https://www.di.se/rss",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Dagens Nyheter Ekonomi",
+          "url": "https://www.dn.se/rss/ekonomi/",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Realtid",
+          "url": "https://www.realtid.se/feed/",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SR Ekot",
+          "url": "https://api.sr.se/api/rss/program/83?format=145",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SVT Ekonomi",
+          "url": "https://www.svt.se/nyheter/ekonomi/rss.xml",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Local Sweden",
+          "url": "https://feeds.thelocal.com/rss/se"
+        }
+      ],
+      "israel": [
+        {
+          "name": "Globes English",
+          "url": "https://en.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=1725"
+        },
+        {
+          "name": "Ynetnews News",
+          "url": "https://www.ynetnews.com/Integration/StoryRss3082.xml"
+        },
+        {
+          "name": "Ynetnews Business",
+          "url": "https://www.ynetnews.com/Integration/StoryRss3085.xml"
+        },
+        {
+          "name": "Haaretz English",
+          "url": "https://www.haaretz.com/srv/haaretz-latest-headlines"
+        },
+        {
+          "name": "Jerusalem Post Israel",
+          "url": "https://www.jpost.com/rss/rssfeedsisraelnews.aspx"
+        },
+        {
+          "name": "JNS",
+          "url": "https://www.jns.org/feed/"
+        },
+        {
+          "name": "Arutz Sheva English",
+          "url": "https://www.israelnationalnews.com/Rss.aspx"
+        },
+        {
+          "name": "Calcalistech (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acalcalistech.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Bank of Israel (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aboi.org.il%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Globes Hebrew Main",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=2",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynet Economy",
+          "url": "https://www.ynet.co.il/Integration/StoryRss6.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Finance",
+          "url": "https://rss.walla.co.il/feed/3",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "N12 Mako News",
+          "url": "https://rcs.mako.co.il/rss/news-israel.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Maariv Business",
+          "url": "https://www.maariv.co.il/Rss/RssFeedsAsakim",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Media Line (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athemedialine.org%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Arutz Sheva Hebrew",
+          "url": "https://www.inn.co.il/Rss.aspx",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Bizportal (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abizportal.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Calcalist (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acalcalist.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Channel 13 (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3A13tv.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Davar",
+          "url": "https://www.davar1.co.il/feed/",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Funder (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afunder.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Geektime (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ageektime.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Globes Capital Market",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=585",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Globes Global Markets",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=1225",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Globes Real Estate",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=607",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Globes Tech",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=594",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Haaretz English Israel News",
+          "url": "https://www.haaretz.com/srv/israel-news-rss"
+        },
+        {
+          "name": "Haaretz Hebrew",
+          "url": "https://www.haaretz.co.il/srv/htz---all-articles",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "i24 News (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ai24news.tv%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Ice",
+          "url": "https://www.ice.co.il/rss",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "INSS (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ainss.org.il%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Israel Hayom (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aisraelhayom.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Israel Hayom English (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aisraelhayom.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Jerusalem Post Iran",
+          "url": "https://www.jpost.com/rss/rssfeedsiran"
+        },
+        {
+          "name": "Jerusalem Post Middle East",
+          "url": "https://www.jpost.com/rss/rssfeedsmiddleeastnews.aspx"
+        },
+        {
+          "name": "Kan News (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Akan.org.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Maariv",
+          "url": "https://www.maariv.co.il/Rss/RssChadashot",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Maariv Politics",
+          "url": "https://www.maariv.co.il/Rss/RssFeedsMivzakiChadashot",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Mako Money",
+          "url": "https://rcs.mako.co.il/rss/news-money.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Mako World",
+          "url": "https://rcs.mako.co.il/rss/news-world.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Mekomit",
+          "url": "https://www.mekomit.co.il/feed/",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "N12 Politics and Security",
+          "url": "https://rcs.mako.co.il/rss/news-military.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Now14 (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ac14.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Shakuf",
+          "url": "https://shakuf.co.il/feed",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Sponser (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Asponser.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Srugim",
+          "url": "https://www.srugim.co.il/feed",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Seventh Eye",
+          "url": "https://www.the7eye.org.il/feed",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "TheMarker (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athemarker.com%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Flash",
+          "url": "https://rss.walla.co.il/feed/22",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Military and Security",
+          "url": "https://rss.walla.co.il/feed/2689",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla News",
+          "url": "https://rss.walla.co.il/feed/1",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Politics and Government",
+          "url": "https://rss.walla.co.il/feed/9",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Tech",
+          "url": "https://rss.walla.co.il/feed/4",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla World",
+          "url": "https://rss.walla.co.il/feed/2",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynet Breaking",
+          "url": "https://www.ynet.co.il/Integration/StoryRss1854.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynet Digital",
+          "url": "https://www.ynet.co.il/Integration/StoryRss544.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynet News Hebrew",
+          "url": "https://www.ynet.co.il/Integration/StoryRss2.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynetnews Culture",
+          "url": "https://www.ynetnews.com/Integration/StoryRss3086.xml"
+        },
+        {
+          "name": "Ynetnews Opinion",
+          "url": "https://www.ynetnews.com/Integration/StoryRss3084.xml"
+        },
+        {
+          "name": "Zman Israel",
+          "url": "https://www.zman.co.il/feed/",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Jewish News Israel (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ajewishinsider.com%20Israel%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        }
+      ],
+      "north-korea": [
+        {
+          "name": "Yonhap North Korea",
+          "url": "https://en.yna.co.kr/RSS/nk.xml"
+        },
+        {
+          "name": "Yonhap News English",
+          "url": "https://en.yna.co.kr/RSS/news.xml"
+        },
+        {
+          "name": "38 North (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3A38north.org%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "NK Pro",
+          "url": "https://www.nknews.org/pro/feed/"
+        },
+        {
+          "name": "NK Insider",
+          "url": "https://www.nkinsider.org/feed/"
+        },
+        {
+          "name": "Sino-NK",
+          "url": "https://sinonk.com/feed/"
+        },
+        {
+          "name": "Korea Herald NK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Akoreaherald.com%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Korea Times NK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Akoreatimes.co.kr%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "KBS World NK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aworld.kbs.co.kr%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Chosun English NK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achosun.com%2Fenglish%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "North Korea sanctions (Google News)",
+          "url": "https://news.google.com/rss/search?q=%22North%20Korea%22%20(sanctions%20OR%20hackers%20OR%20missile)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "NK News query KCNA (Google News)",
+          "url": "https://news.google.com/rss/search?q=%22KCNA%22%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Daily NK Korean",
+          "url": "https://www.dailynk.com/feed/",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yonhap NK Korean",
+          "url": "https://www.yna.co.kr/rss/northkorea.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RFA Korean",
+          "url": "https://www.rfa.org/arc/outboundfeeds/korean/rss/?outputType=xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Asia Press (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aasiapress.org%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Chosun Sinbo",
+          "url": "https://chosonsinbo.com/feed/",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Chosun Sinbo JP",
+          "url": "https://chosonsinbo.com/jp/feed/",
+          "lang": "ja",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Daily NK Japanese",
+          "url": "https://dailynk.jp/feed",
+          "lang": "ja",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Daily NK Chinese",
+          "url": "https://www.dailynk.com/chinese/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Donga Politics",
+          "url": "https://rss.donga.com/politics.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NK Daily Tongil News",
+          "url": "https://www.tongilnews.com/rss/allArticle.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NK Economy KR",
+          "url": "https://www.nkeconomy.com/rss/allArticle.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SPN Seoul Pyongyang News",
+          "url": "https://www.spnews.co.kr/rss/allArticle.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "VOA Korea (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Avoakorea.com%20when%3A7d&hl=ko&gl=KR&ceid=KR:ko",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yonhap North Korea (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aen.yna.co.kr%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        }
+      ],
+      "corporate-leadership": [
+        {
+          "name": "PR Newswire Personnel",
+          "url": "https://www.prnewswire.com/rss/general-business-latest-news/personnel-announcements-list.rss"
+        },
+        {
+          "name": "PR Newswire Acquisitions",
+          "url": "https://www.prnewswire.com/rss/financial-services-latest-news/acquisitions-mergers-and-takeovers-list.rss"
+        },
+        {
+          "name": "CEO changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22CEO%20steps%20down%22%20OR%20%22names%20new%20CEO%22%20OR%20%22appoints%20chief%20executive%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CFO changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22CFO%20resigns%22%20OR%20%22appoints%20chief%20financial%20officer%22%20OR%20%22CFO%20steps%20down%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Board changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22chairman%20resigns%22%20OR%20%22board%20shake-up%22%20OR%20%22activist%20investor%22%20board)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "SEC 8-K Item 5.02 (Google News)",
+          "url": "https://news.google.com/rss/search?q=%22Item%205.02%22%208-K%20(officer%20OR%20director)%20departure%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "GlobeNewswire Management Changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aglobenewswire.com%20(appoints%20OR%20%22chief%20executive%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Business Wire Personnel (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abusinesswire.com%20(appoints%20OR%20%22chief%20executive%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CFO Dive",
+          "url": "https://www.cfodive.com/feeds/news/"
+        },
+        {
+          "name": "Chief Executive Magazine",
+          "url": "https://chiefexecutive.net/feed/"
+        },
+        {
+          "name": "Corporate Board Member",
+          "url": "https://boardmember.com/feed/"
+        },
+        {
+          "name": "Harvard Law Corporate Governance",
+          "url": "https://corpgov.law.harvard.edu/feed/"
+        },
+        {
+          "name": "FT Management",
+          "url": "https://www.ft.com/management?format=rss"
+        },
+        {
+          "name": "UK Board Changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22appoints%20new%20chief%20executive%22%20OR%20%22CEO%20steps%20down%22%20OR%20%22chairman%20to%20step%20down%22)%20(FTSE%20OR%20plc)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Israel executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=Israel%20(CEO%20OR%20chairman)%20(appointed%20OR%20resigns)%20company%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Finews",
+          "url": "https://www.finews.ch/news?format=feed&type=rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finews.com English",
+          "url": "https://www.finews.com/news/english-news?format=feed&type=rss"
+        },
+        {
+          "name": "DGAP (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aeqs-news.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "German executive changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(Vorstandschef%20OR%20Vorstandsvorsitzender)%20(Nachfolger%20OR%20Ruecktritt%20OR%20ernannt)%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "manager magazin Unternehmen",
+          "url": "https://www.manager-magazin.de/unternehmen/index.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Spanish executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22nuevo%20consejero%20delegado%22%20OR%20%22nombrado%20presidente%22)%20empresa%20when%3A7d&hl=es&gl=ES&ceid=ES:es",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "French executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22nouveau%20directeur%20general%22%20OR%20%22nomme%20PDG%22)%20entreprise%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "La Lettre (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Alalettre.fr%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "MarketScreener Management (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Amarketscreener.com%20(CEO%20OR%20appoints%20OR%20resigns)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Board Agenda",
+          "url": "https://boardagenda.com/feed/"
+        },
+        {
+          "name": "Guardian Executive Pay and Bonuses",
+          "url": "https://www.theguardian.com/business/executive-pay-bonuses/rss"
+        },
+        {
+          "name": "Investegate RNS (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ainvestegate.co.uk%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Italian executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22nuovo%20amministratore%20delegato%22%20OR%20%22nominato%20AD%22)%20when%3A7d&hl=it&gl=IT&ceid=IT:it",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Hebrew executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=%D7%9E%D7%A0%D7%9B%22%D7%9C%20%D7%97%D7%93%D7%A9%20%D7%9E%D7%99%D7%A0%D7%95%D7%99%20%D7%97%D7%91%D7%A8%D7%94%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "PR Newswire UK",
+          "url": "https://www.prnewswire.co.uk/rss/news-releases-list.rss"
+        },
+        {
+          "name": "Cision News UK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anews.cision.com%20(appoints%20OR%20CEO)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "ACCESS Newswire (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aaccessnewswire.com%20appoints%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "HR Dive",
+          "url": "https://www.hrdive.com/feeds/news/"
+        },
+        {
+          "name": "PR Newswire All",
+          "url": "https://www.prnewswire.com/rss/news-releases-list.rss"
+        },
+        {
+          "name": "PR Newswire Earnings",
+          "url": "https://www.prnewswire.com/rss/financial-services-latest-news/earnings-list.rss"
+        },
+        {
+          "name": "PR Newswire Financial Services",
+          "url": "https://www.prnewswire.com/rss/financial-services-latest-news/financial-services-latest-news-list.rss"
+        },
+        {
+          "name": "PR Newswire General Business",
+          "url": "https://www.prnewswire.com/rss/general-business-latest-news/general-business-latest-news-list.rss"
+        }
+      ],
       "science": [
         {
           "name": "Reuters Science",
@@ -6491,6 +8651,2166 @@ export const SERVER_NEWS_CATALOG: ServerNewsCatalog = {
         {
           "name": "Vision 2030",
           "url": "https://news.google.com/rss/search?q=%22Vision%202030%22%20(project%20OR%20investment%20OR%20announced)%20when%3A14d&hl=en-US&gl=US&ceid=US:en"
+        }
+      ],
+      "china-media": [
+        {
+          "name": "SCMP China",
+          "url": "https://www.scmp.com/rss/4/feed"
+        },
+        {
+          "name": "SCMP China Economy",
+          "url": "https://www.scmp.com/rss/318421/feed"
+        },
+        {
+          "name": "SCMP Companies",
+          "url": "https://www.scmp.com/rss/10/feed"
+        },
+        {
+          "name": "SCMP Diplomacy",
+          "url": "https://www.scmp.com/rss/318199/feed"
+        },
+        {
+          "name": "SCMP Tech",
+          "url": "https://www.scmp.com/rss/36/feed"
+        },
+        {
+          "name": "Hong Kong Free Press",
+          "url": "https://hongkongfp.com/feed/"
+        },
+        {
+          "name": "Xinhua English (news.cn) (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aenglish.news.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CGTN China",
+          "url": "https://www.cgtn.com/subscribe/rss/section/china.xml"
+        },
+        {
+          "name": "CGTN Business",
+          "url": "https://www.cgtn.com/subscribe/rss/section/business.xml"
+        },
+        {
+          "name": "ECNS China News Service (EN)",
+          "url": "http://www.ecns.cn/rss/rss.xml"
+        },
+        {
+          "name": "China News Service Finance",
+          "url": "https://www.chinanews.com.cn/rss/finance.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Caixin (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acaixin.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "TechNode",
+          "url": "https://technode.com/feed/"
+        },
+        {
+          "name": "Trivium China",
+          "url": "https://triviumchina.com/feed/"
+        },
+        {
+          "name": "Focus Taiwan (CNA English)",
+          "url": "https://feeds.feedburner.com/rsscna/engnews"
+        },
+        {
+          "name": "China Digital Times (EN)",
+          "url": "https://chinadigitaltimes.net/feed/"
+        },
+        {
+          "name": "BBC Chinese",
+          "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "21st Century Business Herald (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3A21jingji.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CCTV News (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anews.cctv.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CGTN World",
+          "url": "https://www.cgtn.com/subscribe/rss/section/world.xml"
+        },
+        {
+          "name": "China Briefing (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achina-briefing.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "China Business Journal (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acb.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achinadaily.com.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "China MFA (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afmprc.gov.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "China News Service China",
+          "url": "https://www.chinanews.com.cn/rss/china.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China News Service HK-Macao-Taiwan",
+          "url": "https://www.chinanews.com.cn/rss/dwq.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China News Service Scroll",
+          "url": "https://www.chinanews.com.cn/rss/scroll-news.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China News Service Top",
+          "url": "https://www.chinanews.com.cn/rss/importnews.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China News Service World",
+          "url": "https://www.chinanews.com.cn/rss/world.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Securities Journal (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acs.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China State Council (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aenglish.www.gov.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "China.org.cn (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achina.org.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CnEVPost",
+          "url": "https://cnevpost.com/feed/"
+        },
+        {
+          "name": "Eastmoney (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aeastmoney.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Economic Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ace.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Economic Observer (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aeeo.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Global Times (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aglobaltimes.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Guancha (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aguancha.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Huanqiu (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ahuanqiu.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Huxiu (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ahuxiu.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "iFanr",
+          "url": "https://www.ifanr.com/feed",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "IT Home",
+          "url": "https://www.ithome.com/rss/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Jiemian (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ajiemian.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Leiphone",
+          "url": "https://www.leiphone.com/feed",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "National Business Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anbd.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Pandaily",
+          "url": "https://pandaily.com/feed/"
+        },
+        {
+          "name": "People's Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aen.people.cn%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Qiushi (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aqstheory.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Securities Daily (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Azqrb.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Securities Times (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Astcn.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Shanghai Securities News (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acnstock.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Sina Finance (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afinance.sina.com.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Solidot",
+          "url": "https://www.solidot.org/index.rss",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Paper (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athepaper.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "TMTPost (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Atmtpost.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Wallstreetcn (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Awallstreetcn.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "What's on Weibo",
+          "url": "https://www.whatsonweibo.com/feed/"
+        },
+        {
+          "name": "Xinhua ZH (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anews.cn%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yicai (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ayicai.com%20when%3A7d&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yicai Global (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ayicaiglobal.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "DW Chinese",
+          "url": "https://rss.dw.com/rdf/rss-chi-all",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RFI Chinese",
+          "url": "https://www.rfi.fr/cn/rss",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "FT Chinese",
+          "url": "https://www.ftchinese.com/rss/news",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "FT Chinese Full",
+          "url": "https://www.ftchinese.com/rss/feed",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "AAStocks (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aaastocks.com%20when%3A7d&hl=zh-HK&gl=HK&ceid=HK:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "HK Government News",
+          "url": "https://www.news.gov.hk/en/common/html/topstories.rss.xml"
+        },
+        {
+          "name": "HKEJ (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ahkej.com%20when%3A7d&hl=zh-HK&gl=HK&ceid=HK:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "HKET (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ahket.com%20when%3A7d&hl=zh-HK&gl=HK&ceid=HK:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "InMedia HK",
+          "url": "https://www.inmediahk.net/rss.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ming Pao China",
+          "url": "https://news.mingpao.com/rss/pns/s00013.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ming Pao Economy",
+          "url": "https://news.mingpao.com/rss/pns/s00004.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ming Pao Headlines",
+          "url": "https://news.mingpao.com/rss/pns/s00001.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ming Pao Instant Finance",
+          "url": "https://news.mingpao.com/rss/ins/s00002.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTHK Finance (EN)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_efinance.xml"
+        },
+        {
+          "name": "RTHK Finance (ZH)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_cfinance.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTHK Greater China (EN)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_egreaterchina.xml"
+        },
+        {
+          "name": "RTHK Greater China (ZH)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_greaterchina.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTHK Local (EN)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_elocal.xml"
+        },
+        {
+          "name": "RTHK Local (ZH)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_clocal.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTHK World (EN)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/e_expressnews_einternational.xml"
+        },
+        {
+          "name": "RTHK World (ZH)",
+          "url": "https://rthk9.rthk.hk/rthk/news/rss/c_expressnews_cinternational.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SCMP Business",
+          "url": "https://www.scmp.com/rss/92/feed"
+        },
+        {
+          "name": "SCMP Hong Kong",
+          "url": "https://www.scmp.com/rss/2/feed"
+        },
+        {
+          "name": "SCMP Property",
+          "url": "https://www.scmp.com/rss/96/feed/"
+        },
+        {
+          "name": "SCMP World",
+          "url": "https://www.scmp.com/rss/5/feed"
+        },
+        {
+          "name": "The Standard HK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athestandard.com.hk%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "The Witness HK",
+          "url": "https://thewitnesshk.com/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Wen Wei Po (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Awenweipo.com%20when%3A7d&hl=zh-HK&gl=HK&ceid=HK:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Initium Media",
+          "url": "https://theinitium.com/feed",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Anue cnyes (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acnyes.com%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Business Next (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abnext.com.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Business Weekly TW (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abusinessweekly.com.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Times (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achinatimes.com%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA Finance",
+          "url": "https://feeds.feedburner.com/rsscna/finance",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA International",
+          "url": "https://feeds.feedburner.com/rsscna/intworld",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA Mainland China",
+          "url": "https://feeds.feedburner.com/rsscna/mainland",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA Politics",
+          "url": "https://feeds.feedburner.com/rsscna/politics",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CNA Technology",
+          "url": "https://feeds.feedburner.com/rsscna/technology",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Commercial Times TW (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Actee.com.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "CommonWealth English (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aenglish.cw.com.tw%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CommonWealth Magazine (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acw.com.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Digitimes (EN)",
+          "url": "https://www.digitimes.com/rss/daily.xml"
+        },
+        {
+          "name": "Economic Daily News TW",
+          "url": "https://money.udn.com/rssfeed/news/1001/5591?ch=money",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ETtoday",
+          "url": "https://feeds.feedburner.com/ettoday/realtime",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ETtoday Finance",
+          "url": "https://feeds.feedburner.com/ettoday/finance",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finance TechNews TW",
+          "url": "https://finance.technews.tw/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "INSIDE TW",
+          "url": "https://www.inside.com.tw/feed/rss",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "iThome TW",
+          "url": "https://www.ithome.com.tw/rss",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberty Times All",
+          "url": "https://news.ltn.com.tw/rss/all.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberty Times Business",
+          "url": "https://news.ltn.com.tw/rss/business.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberty Times Politics",
+          "url": "https://news.ltn.com.tw/rss/politics.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberty Times World",
+          "url": "https://news.ltn.com.tw/rss/world.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "New Bloom",
+          "url": "https://newbloommag.net/feed/"
+        },
+        {
+          "name": "Newtalk",
+          "url": "https://newtalk.tw/rss/all",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "PTS (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anews.pts.org.tw%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "PTS News",
+          "url": "https://news.pts.org.tw/xml/newsfeed.xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Storm Media (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Astorm.mg%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Taiwan Today",
+          "url": "https://api.taiwantoday.tw/en/rss.php"
+        },
+        {
+          "name": "TechNews TW",
+          "url": "https://technews.tw/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The News Lens",
+          "url": "https://feeds.feedburner.com/TheNewsLens",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "UDN (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Audn.com%20when%3A7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "China Digital Times (ZH)",
+          "url": "https://chinadigitaltimes.net/chinese/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RFA English",
+          "url": "https://www.rfa.org/arc/outboundfeeds/english/rss/?outputType=xml"
+        },
+        {
+          "name": "RFA Mandarin",
+          "url": "https://www.rfa.org/arc/outboundfeeds/mandarin/rss/?outputType=xml",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Diplomat China",
+          "url": "https://thediplomat.com/tag/china/feed/"
+        }
+      ],
+      "europe-business": [
+        {
+          "name": "BBC Business",
+          "url": "https://feeds.bbci.co.uk/news/business/rss.xml"
+        },
+        {
+          "name": "Guardian Business",
+          "url": "https://www.theguardian.com/uk/business/rss"
+        },
+        {
+          "name": "FT UK Companies",
+          "url": "https://www.ft.com/companies?format=rss"
+        },
+        {
+          "name": "FT Europe",
+          "url": "https://www.ft.com/world/europe?format=rss"
+        },
+        {
+          "name": "City AM",
+          "url": "https://www.cityam.com/feed/"
+        },
+        {
+          "name": "Politico Europe",
+          "url": "https://www.politico.eu/feed/"
+        },
+        {
+          "name": "Euractiv",
+          "url": "https://www.euractiv.com/feed/"
+        },
+        {
+          "name": "ECB Press",
+          "url": "https://www.ecb.europa.eu/rss/press.html"
+        },
+        {
+          "name": "European Commission Press",
+          "url": "https://ec.europa.eu/commission/presscorner/api/rss?language=en"
+        },
+        {
+          "name": "Bank of England News",
+          "url": "https://www.bankofengland.co.uk/rss/news"
+        },
+        {
+          "name": "DW English Business",
+          "url": "https://rss.dw.com/rdf/rss-en-bus"
+        },
+        {
+          "name": "Expansion Economia",
+          "url": "https://e00-expansion.uecdn.es/rss/economia.xml",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "France 24 Business (EN)",
+          "url": "https://www.france24.com/en/business-tech/rss"
+        },
+        {
+          "name": "Handelsblatt Unternehmen",
+          "url": "https://www.handelsblatt.com/contentexport/feed/unternehmen",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Monde Economie",
+          "url": "https://www.lemonde.fr/economie/rss_full.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Sole 24 Ore Economia",
+          "url": "https://www.ilsole24ore.com/rss/economia.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Der Standard Wirtschaft",
+          "url": "https://www.derstandard.at/rss/wirtschaft",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Die Presse Wirtschaft",
+          "url": "https://www.diepresse.com/rss/Wirtschaft",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Brussels Times (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abrusselstimes.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "De Tijd",
+          "url": "https://www.tijd.be/rss/nieuws.xml",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "De Tijd Ondernemen",
+          "url": "https://www.tijd.be/rss/ondernemen.xml",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "EUobserver",
+          "url": "https://euobserver.com/rss"
+        },
+        {
+          "name": "L'Echo",
+          "url": "https://www.lecho.be/rss/actualite.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Cash.ch (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acash.ch%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finanz und Wirtschaft (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afuw.ch%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Temps Economie",
+          "url": "https://www.letemps.ch/economie.rss",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NZZ Finanzen",
+          "url": "https://www.nzz.ch/finanzen.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NZZ International",
+          "url": "https://www.nzz.ch/international.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NZZ Wirtschaft",
+          "url": "https://www.nzz.ch/wirtschaft.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RTS Info",
+          "url": "https://www.rts.ch/info/economie/?format=rss/news",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SRF Wirtschaft",
+          "url": "https://www.srf.ch/news/bnf/rss/1926",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Swissinfo (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aswissinfo.ch%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "E15",
+          "url": "https://www.e15.cz/rss",
+          "lang": "cs",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Hospodarske Noviny",
+          "url": "https://byznys.hn.cz/?m=rss",
+          "lang": "cs",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Radio Prague English",
+          "url": "https://english.radio.cz/rcz-rss/en"
+        },
+        {
+          "name": "Boersen-Zeitung (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aboersen-zeitung.de%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Capital DE (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acapital.de%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Clean Energy Wire",
+          "url": "https://www.cleanenergywire.org/rss.xml"
+        },
+        {
+          "name": "FAZ Finanzen",
+          "url": "https://www.faz.net/rss/aktuell/finanzen/",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "FAZ Politik",
+          "url": "https://www.faz.net/rss/aktuell/politik/",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "FAZ Wirtschaft",
+          "url": "https://www.faz.net/rss/aktuell/wirtschaft/",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finanzen.net (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afinanzen.net%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Handelsblatt Finanzen",
+          "url": "https://www.handelsblatt.com/contentexport/feed/finanzen",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Handelsblatt Politik",
+          "url": "https://www.handelsblatt.com/contentexport/feed/politik",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Heise News",
+          "url": "https://www.heise.de/rss/heise-atom.xml",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "manager magazin",
+          "url": "https://www.manager-magazin.de/news/index.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Merkur Wirtschaft",
+          "url": "https://www.merkur.de/wirtschaft/rssfeed.rdf",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Spiegel International",
+          "url": "https://www.spiegel.de/international/index.rss"
+        },
+        {
+          "name": "Spiegel Politik",
+          "url": "https://www.spiegel.de/politik/index.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Spiegel Wirtschaft",
+          "url": "https://www.spiegel.de/wirtschaft/index.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Sueddeutsche Politik",
+          "url": "https://rss.sueddeutsche.de/rss/Politik",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Sueddeutsche Wirtschaft",
+          "url": "https://rss.sueddeutsche.de/rss/Wirtschaft",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Tagesschau Wirtschaft",
+          "url": "https://www.tagesschau.de/wirtschaft/index~rss2.xml",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Tagesspiegel Wirtschaft",
+          "url": "https://www.tagesspiegel.de/contentexport/feed/wirtschaft",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "taz",
+          "url": "https://taz.de/!p4608;rss/",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Welt Politik",
+          "url": "https://www.welt.de/feeds/section/politik.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Welt Wirtschaft",
+          "url": "https://www.welt.de/feeds/section/wirtschaft.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "WirtschaftsWoche",
+          "url": "https://www.wiwo.de/contentexport/feed/rss/schlagzeilen",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "WiWo Unternehmen",
+          "url": "https://www.wiwo.de/contentexport/feed/rss/unternehmen",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Borsen",
+          "url": "https://borsen.dk/rss",
+          "lang": "da",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "DR Penge",
+          "url": "https://www.dr.dk/nyheder/service/feeds/penge",
+          "lang": "da",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "DR Politik",
+          "url": "https://www.dr.dk/nyheder/service/feeds/politik",
+          "lang": "da",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Politiken Okonomi",
+          "url": "https://politiken.dk/rss/oekonomi.rss",
+          "lang": "da",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ABC Economia",
+          "url": "https://www.abc.es/rss/2.0/economia/",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "El Confidencial Economia",
+          "url": "https://rss.elconfidencial.com/economia/",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "El Confidencial Empresas",
+          "url": "https://rss.elconfidencial.com/empresas/",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "El Diario Economia",
+          "url": "https://www.eldiario.es/rss/economia/",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "El Economista (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aeleconomista.es%20when%3A7d&hl=es&gl=ES&ceid=ES:es",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Europa Press Economia",
+          "url": "https://www.europapress.es/rss/rss.aspx?ch=00136",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Expansion Empresas",
+          "url": "https://e00-expansion.uecdn.es/rss/empresas.xml",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Expansion Mercados",
+          "url": "https://e00-expansion.uecdn.es/rss/mercados.xml",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "La Vanguardia Economia",
+          "url": "https://www.lavanguardia.com/rss/economia.xml",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Kauppalehti",
+          "url": "https://feeds.kauppalehti.fi/rss/main",
+          "lang": "fi",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yle News English",
+          "url": "https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_NEWS"
+        },
+        {
+          "name": "Yle Talous",
+          "url": "https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-19274",
+          "lang": "fi",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "BFM Business",
+          "url": "https://www.bfmtv.com/rss/economie/",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "BFM Entreprises",
+          "url": "https://www.bfmtv.com/rss/economie/entreprises/",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Boursorama (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aboursorama.com%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Challenges",
+          "url": "https://www.challenges.fr/rss.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "France 24 Europe (EN)",
+          "url": "https://www.france24.com/en/europe/rss"
+        },
+        {
+          "name": "Franceinfo Economie",
+          "url": "https://www.francetvinfo.fr/economie.rss",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "L'Usine Nouvelle (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ausinenouvelle.com%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "La Tribune",
+          "url": "https://www.latribune.fr/feed.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "La Tribune RSS",
+          "url": "https://www.latribune.fr/rss/rubriques/actualite.html",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Figaro Bourse",
+          "url": "https://www.lefigaro.fr/rss/figaro_societes.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Figaro Economie",
+          "url": "https://www.lefigaro.fr/rss/figaro_economie.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Figaro International",
+          "url": "https://www.lefigaro.fr/rss/figaro_international.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Figaro Politique",
+          "url": "https://www.lefigaro.fr/rss/figaro_politique.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Monde Entreprises",
+          "url": "https://www.lemonde.fr/entreprises/rss_full.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Le Monde Politique",
+          "url": "https://www.lemonde.fr/politique/rss_full.xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Les Echos (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Alesechos.fr%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Liberation Economie",
+          "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/category/economie/?outputType=xml",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RFI Economie",
+          "url": "https://www.rfi.fr/fr/%C3%A9conomie/rss",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Zonebourse (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Azonebourse.com%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "BBC Politics",
+          "url": "https://feeds.bbci.co.uk/news/politics/rss.xml"
+        },
+        {
+          "name": "CityWire (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acitywire.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Emerging Europe",
+          "url": "https://emerging-europe.com/feed/"
+        },
+        {
+          "name": "Evening Standard Business",
+          "url": "https://www.standard.co.uk/business/rss"
+        },
+        {
+          "name": "FT Markets",
+          "url": "https://www.ft.com/markets?format=rss"
+        },
+        {
+          "name": "GOV.UK HM Treasury",
+          "url": "https://www.gov.uk/government/organisations/hm-treasury.atom"
+        },
+        {
+          "name": "Guardian Economics",
+          "url": "https://www.theguardian.com/business/economics/rss"
+        },
+        {
+          "name": "Guardian Politics",
+          "url": "https://www.theguardian.com/politics/rss"
+        },
+        {
+          "name": "Sky News Business",
+          "url": "https://feeds.skynews.com/feeds/rss/business.xml"
+        },
+        {
+          "name": "The Independent Business",
+          "url": "https://www.independent.co.uk/news/business/rss"
+        },
+        {
+          "name": "The Register",
+          "url": "https://www.theregister.com/headlines.atom"
+        },
+        {
+          "name": "The Times Business (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athetimes.com%20business%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "This is Money",
+          "url": "https://www.thisismoney.co.uk/money/index.rss"
+        },
+        {
+          "name": "This is Money Markets",
+          "url": "https://www.thisismoney.co.uk/money/markets/index.rss"
+        },
+        {
+          "name": "UK Investor Magazine",
+          "url": "https://ukinvestormagazine.co.uk/feed/"
+        },
+        {
+          "name": "Kathimerini English (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aekathimerini.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Hungary Today",
+          "url": "https://hungarytoday.hu/feed/"
+        },
+        {
+          "name": "Telex English",
+          "url": "https://telex.hu/rss/english"
+        },
+        {
+          "name": "Business Post (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abusinesspost.ie%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "RTE Business",
+          "url": "https://www.rte.ie/feeds/rss/?index=/news/business/"
+        },
+        {
+          "name": "Iceland Monitor (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aicelandmonitor.mbl.is%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "mbl.is (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ambl.is%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "AGI Economia",
+          "url": "https://www.agi.it/economia/rss",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ANSA Economia",
+          "url": "https://www.ansa.it/sito/notizie/economia/economia_rss.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ANSA English",
+          "url": "https://www.ansa.it/english/news/english_nr_rss.xml"
+        },
+        {
+          "name": "ANSA Mondo",
+          "url": "https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ANSA Politica",
+          "url": "https://www.ansa.it/sito/notizie/politica/politica_rss.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Fatto Quotidiano Economia",
+          "url": "https://www.ilfattoquotidiano.it/category/economia-lobby/feed/",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Sole 24 Ore Finanza",
+          "url": "https://www.ilsole24ore.com/rss/finanza.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Sole 24 Ore Italia",
+          "url": "https://www.ilsole24ore.com/rss/italia.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Il Sole 24 Ore Mondo",
+          "url": "https://www.ilsole24ore.com/rss/mondo.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Milano Finanza (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Amilanofinanza.it%20when%3A7d&hl=it&gl=IT&ceid=IT:it",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Repubblica Economia",
+          "url": "https://www.repubblica.it/rss/economia/rss2.0.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Repubblica Politica",
+          "url": "https://www.repubblica.it/rss/politica/rss2.0.xml",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "De Telegraaf Financieel",
+          "url": "https://www.telegraaf.nl/financieel/rss",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "DutchNews.nl",
+          "url": "https://www.dutchnews.nl/feed/"
+        },
+        {
+          "name": "FD",
+          "url": "https://fd.nl/?rss",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NU.nl Economie",
+          "url": "https://www.nu.nl/rss/Economie",
+          "lang": "nl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Dagens Naeringsliv",
+          "url": "https://services.dn.no/api/feed/rss/",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "E24",
+          "url": "https://e24.no/rss2/",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finansavisen (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afinansavisen.no%20when%3A7d&hl=no&gl=NO&ceid=NO:no",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "News in English Norway",
+          "url": "https://www.newsinenglish.no/feed/"
+        },
+        {
+          "name": "NRK Toppsaker",
+          "url": "https://www.nrk.no/toppsaker.rss",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "VG",
+          "url": "https://www.vg.no/rss/feed/",
+          "lang": "no",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Bankier Firma",
+          "url": "https://www.bankier.pl/rss/firma.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Bankier.pl",
+          "url": "https://www.bankier.pl/rss/wiadomosci.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Business Insider Polska",
+          "url": "https://businessinsider.com.pl/.feed",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Money.pl",
+          "url": "https://www.money.pl/rss/rss.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Notes from Poland",
+          "url": "https://notesfrompoland.com/feed/"
+        },
+        {
+          "name": "Parkiet",
+          "url": "https://www.parkiet.com/rss_main",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Puls Biznesu",
+          "url": "https://www.pb.pl/rss/najnowsze.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "TVN24 Biznes",
+          "url": "https://tvn24.pl/biznes.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "WNP.pl",
+          "url": "https://www.wnp.pl/rss/serwis_rss.xml",
+          "lang": "pl",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "ECO Portugal",
+          "url": "https://eco.sapo.pt/feed/",
+          "lang": "pt",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Jornal de Negocios",
+          "url": "https://www.jornaldenegocios.pt/rss",
+          "lang": "pt",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Publico Economia",
+          "url": "https://feeds.feedburner.com/PublicoEconomia",
+          "lang": "pt",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Romania Insider",
+          "url": "https://www.romania-insider.com/feed"
+        },
+        {
+          "name": "Ziarul Financiar",
+          "url": "https://www.zf.ro/rss",
+          "lang": "ro",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Affarsvarlden (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aaffarsvarlden.se%20when%3A7d&hl=sv&gl=SE&ceid=SE:sv",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Breakit",
+          "url": "https://www.breakit.se/feed/artiklar",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Dagens Industri",
+          "url": "https://www.di.se/rss",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Dagens Nyheter Ekonomi",
+          "url": "https://www.dn.se/rss/ekonomi/",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Realtid",
+          "url": "https://www.realtid.se/feed/",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SR Ekot",
+          "url": "https://api.sr.se/api/rss/program/83?format=145",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SVT Ekonomi",
+          "url": "https://www.svt.se/nyheter/ekonomi/rss.xml",
+          "lang": "sv",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Local Sweden",
+          "url": "https://feeds.thelocal.com/rss/se"
+        }
+      ],
+      "israel": [
+        {
+          "name": "Globes English",
+          "url": "https://en.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=1725"
+        },
+        {
+          "name": "Ynetnews News",
+          "url": "https://www.ynetnews.com/Integration/StoryRss3082.xml"
+        },
+        {
+          "name": "Ynetnews Business",
+          "url": "https://www.ynetnews.com/Integration/StoryRss3085.xml"
+        },
+        {
+          "name": "Haaretz English",
+          "url": "https://www.haaretz.com/srv/haaretz-latest-headlines"
+        },
+        {
+          "name": "Jerusalem Post Israel",
+          "url": "https://www.jpost.com/rss/rssfeedsisraelnews.aspx"
+        },
+        {
+          "name": "JNS",
+          "url": "https://www.jns.org/feed/"
+        },
+        {
+          "name": "Arutz Sheva English",
+          "url": "https://www.israelnationalnews.com/Rss.aspx"
+        },
+        {
+          "name": "Calcalistech (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acalcalistech.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Bank of Israel (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aboi.org.il%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Globes Hebrew Main",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=2",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynet Economy",
+          "url": "https://www.ynet.co.il/Integration/StoryRss6.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Finance",
+          "url": "https://rss.walla.co.il/feed/3",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "N12 Mako News",
+          "url": "https://rcs.mako.co.il/rss/news-israel.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Maariv Business",
+          "url": "https://www.maariv.co.il/Rss/RssFeedsAsakim",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Media Line (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athemedialine.org%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Arutz Sheva Hebrew",
+          "url": "https://www.inn.co.il/Rss.aspx",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Bizportal (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abizportal.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Calcalist (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Acalcalist.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Channel 13 (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3A13tv.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Davar",
+          "url": "https://www.davar1.co.il/feed/",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Funder (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Afunder.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Geektime (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ageektime.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Globes Capital Market",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=585",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Globes Global Markets",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=1225",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Globes Real Estate",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=607",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Globes Tech",
+          "url": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=594",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Haaretz English Israel News",
+          "url": "https://www.haaretz.com/srv/israel-news-rss"
+        },
+        {
+          "name": "Haaretz Hebrew",
+          "url": "https://www.haaretz.co.il/srv/htz---all-articles",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "i24 News (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ai24news.tv%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Ice",
+          "url": "https://www.ice.co.il/rss",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "INSS (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ainss.org.il%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Israel Hayom (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aisraelhayom.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Israel Hayom English (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aisraelhayom.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Jerusalem Post Iran",
+          "url": "https://www.jpost.com/rss/rssfeedsiran"
+        },
+        {
+          "name": "Jerusalem Post Middle East",
+          "url": "https://www.jpost.com/rss/rssfeedsmiddleeastnews.aspx"
+        },
+        {
+          "name": "Kan News (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Akan.org.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Maariv",
+          "url": "https://www.maariv.co.il/Rss/RssChadashot",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Maariv Politics",
+          "url": "https://www.maariv.co.il/Rss/RssFeedsMivzakiChadashot",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Mako Money",
+          "url": "https://rcs.mako.co.il/rss/news-money.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Mako World",
+          "url": "https://rcs.mako.co.il/rss/news-world.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Mekomit",
+          "url": "https://www.mekomit.co.il/feed/",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "N12 Politics and Security",
+          "url": "https://rcs.mako.co.il/rss/news-military.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Now14 (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ac14.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Shakuf",
+          "url": "https://shakuf.co.il/feed",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Sponser (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Asponser.co.il%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Srugim",
+          "url": "https://www.srugim.co.il/feed",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "The Seventh Eye",
+          "url": "https://www.the7eye.org.il/feed",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "TheMarker (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Athemarker.com%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Flash",
+          "url": "https://rss.walla.co.il/feed/22",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Military and Security",
+          "url": "https://rss.walla.co.il/feed/2689",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla News",
+          "url": "https://rss.walla.co.il/feed/1",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Politics and Government",
+          "url": "https://rss.walla.co.il/feed/9",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla Tech",
+          "url": "https://rss.walla.co.il/feed/4",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Walla World",
+          "url": "https://rss.walla.co.il/feed/2",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynet Breaking",
+          "url": "https://www.ynet.co.il/Integration/StoryRss1854.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynet Digital",
+          "url": "https://www.ynet.co.il/Integration/StoryRss544.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynet News Hebrew",
+          "url": "https://www.ynet.co.il/Integration/StoryRss2.xml",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Ynetnews Culture",
+          "url": "https://www.ynetnews.com/Integration/StoryRss3086.xml"
+        },
+        {
+          "name": "Ynetnews Opinion",
+          "url": "https://www.ynetnews.com/Integration/StoryRss3084.xml"
+        },
+        {
+          "name": "Zman Israel",
+          "url": "https://www.zman.co.il/feed/",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Jewish News Israel (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ajewishinsider.com%20Israel%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        }
+      ],
+      "north-korea": [
+        {
+          "name": "Yonhap North Korea",
+          "url": "https://en.yna.co.kr/RSS/nk.xml"
+        },
+        {
+          "name": "Yonhap News English",
+          "url": "https://en.yna.co.kr/RSS/news.xml"
+        },
+        {
+          "name": "38 North (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3A38north.org%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "NK Pro",
+          "url": "https://www.nknews.org/pro/feed/"
+        },
+        {
+          "name": "NK Insider",
+          "url": "https://www.nkinsider.org/feed/"
+        },
+        {
+          "name": "Sino-NK",
+          "url": "https://sinonk.com/feed/"
+        },
+        {
+          "name": "Korea Herald NK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Akoreaherald.com%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Korea Times NK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Akoreatimes.co.kr%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "KBS World NK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aworld.kbs.co.kr%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Chosun English NK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Achosun.com%2Fenglish%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "North Korea sanctions (Google News)",
+          "url": "https://news.google.com/rss/search?q=%22North%20Korea%22%20(sanctions%20OR%20hackers%20OR%20missile)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "NK News query KCNA (Google News)",
+          "url": "https://news.google.com/rss/search?q=%22KCNA%22%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Daily NK Korean",
+          "url": "https://www.dailynk.com/feed/",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yonhap NK Korean",
+          "url": "https://www.yna.co.kr/rss/northkorea.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "RFA Korean",
+          "url": "https://www.rfa.org/arc/outboundfeeds/korean/rss/?outputType=xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Asia Press (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aasiapress.org%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Chosun Sinbo",
+          "url": "https://chosonsinbo.com/feed/",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Chosun Sinbo JP",
+          "url": "https://chosonsinbo.com/jp/feed/",
+          "lang": "ja",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Daily NK Japanese",
+          "url": "https://dailynk.jp/feed",
+          "lang": "ja",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Daily NK Chinese",
+          "url": "https://www.dailynk.com/chinese/feed/",
+          "lang": "zh",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Donga Politics",
+          "url": "https://rss.donga.com/politics.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NK Daily Tongil News",
+          "url": "https://www.tongilnews.com/rss/allArticle.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "NK Economy KR",
+          "url": "https://www.nkeconomy.com/rss/allArticle.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "SPN Seoul Pyongyang News",
+          "url": "https://www.spnews.co.kr/rss/allArticle.xml",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "VOA Korea (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Avoakorea.com%20when%3A7d&hl=ko&gl=KR&ceid=KR:ko",
+          "lang": "ko",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Yonhap North Korea (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aen.yna.co.kr%20North%20Korea%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        }
+      ],
+      "corporate-leadership": [
+        {
+          "name": "PR Newswire Personnel",
+          "url": "https://www.prnewswire.com/rss/general-business-latest-news/personnel-announcements-list.rss"
+        },
+        {
+          "name": "PR Newswire Acquisitions",
+          "url": "https://www.prnewswire.com/rss/financial-services-latest-news/acquisitions-mergers-and-takeovers-list.rss"
+        },
+        {
+          "name": "CEO changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22CEO%20steps%20down%22%20OR%20%22names%20new%20CEO%22%20OR%20%22appoints%20chief%20executive%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CFO changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22CFO%20resigns%22%20OR%20%22appoints%20chief%20financial%20officer%22%20OR%20%22CFO%20steps%20down%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Board changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22chairman%20resigns%22%20OR%20%22board%20shake-up%22%20OR%20%22activist%20investor%22%20board)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "SEC 8-K Item 5.02 (Google News)",
+          "url": "https://news.google.com/rss/search?q=%22Item%205.02%22%208-K%20(officer%20OR%20director)%20departure%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "GlobeNewswire Management Changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aglobenewswire.com%20(appoints%20OR%20%22chief%20executive%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Business Wire Personnel (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Abusinesswire.com%20(appoints%20OR%20%22chief%20executive%22)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "CFO Dive",
+          "url": "https://www.cfodive.com/feeds/news/"
+        },
+        {
+          "name": "Chief Executive Magazine",
+          "url": "https://chiefexecutive.net/feed/"
+        },
+        {
+          "name": "Corporate Board Member",
+          "url": "https://boardmember.com/feed/"
+        },
+        {
+          "name": "Harvard Law Corporate Governance",
+          "url": "https://corpgov.law.harvard.edu/feed/"
+        },
+        {
+          "name": "FT Management",
+          "url": "https://www.ft.com/management?format=rss"
+        },
+        {
+          "name": "UK Board Changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22appoints%20new%20chief%20executive%22%20OR%20%22CEO%20steps%20down%22%20OR%20%22chairman%20to%20step%20down%22)%20(FTSE%20OR%20plc)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Israel executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=Israel%20(CEO%20OR%20chairman)%20(appointed%20OR%20resigns)%20company%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Finews",
+          "url": "https://www.finews.ch/news?format=feed&type=rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Finews.com English",
+          "url": "https://www.finews.com/news/english-news?format=feed&type=rss"
+        },
+        {
+          "name": "DGAP (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aeqs-news.com%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "German executive changes (Google News)",
+          "url": "https://news.google.com/rss/search?q=(Vorstandschef%20OR%20Vorstandsvorsitzender)%20(Nachfolger%20OR%20Ruecktritt%20OR%20ernannt)%20when%3A7d&hl=de&gl=DE&ceid=DE:de",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "manager magazin Unternehmen",
+          "url": "https://www.manager-magazin.de/unternehmen/index.rss",
+          "lang": "de",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Spanish executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22nuevo%20consejero%20delegado%22%20OR%20%22nombrado%20presidente%22)%20empresa%20when%3A7d&hl=es&gl=ES&ceid=ES:es",
+          "lang": "es",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "French executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22nouveau%20directeur%20general%22%20OR%20%22nomme%20PDG%22)%20entreprise%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "La Lettre (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Alalettre.fr%20when%3A7d&hl=fr&gl=FR&ceid=FR:fr",
+          "lang": "fr",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "MarketScreener Management (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Amarketscreener.com%20(CEO%20OR%20appoints%20OR%20resigns)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Board Agenda",
+          "url": "https://boardagenda.com/feed/"
+        },
+        {
+          "name": "Guardian Executive Pay and Bonuses",
+          "url": "https://www.theguardian.com/business/executive-pay-bonuses/rss"
+        },
+        {
+          "name": "Investegate RNS (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Ainvestegate.co.uk%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "Italian executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=(%22nuovo%20amministratore%20delegato%22%20OR%20%22nominato%20AD%22)%20when%3A7d&hl=it&gl=IT&ceid=IT:it",
+          "lang": "it",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "Hebrew executive appointments (Google News)",
+          "url": "https://news.google.com/rss/search?q=%D7%9E%D7%A0%D7%9B%22%D7%9C%20%D7%97%D7%93%D7%A9%20%D7%9E%D7%99%D7%A0%D7%95%D7%99%20%D7%97%D7%91%D7%A8%D7%94%20when%3A7d&hl=he&gl=IL&ceid=IL:he",
+          "lang": "he",
+          "fetchInAllLanguages": true
+        },
+        {
+          "name": "PR Newswire UK",
+          "url": "https://www.prnewswire.co.uk/rss/news-releases-list.rss"
+        },
+        {
+          "name": "Cision News UK (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Anews.cision.com%20(appoints%20OR%20CEO)%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "ACCESS Newswire (Google News)",
+          "url": "https://news.google.com/rss/search?q=site%3Aaccessnewswire.com%20appoints%20when%3A7d&hl=en-US&gl=US&ceid=US:en"
+        },
+        {
+          "name": "HR Dive",
+          "url": "https://www.hrdive.com/feeds/news/"
+        },
+        {
+          "name": "PR Newswire All",
+          "url": "https://www.prnewswire.com/rss/news-releases-list.rss"
+        },
+        {
+          "name": "PR Newswire Earnings",
+          "url": "https://www.prnewswire.com/rss/financial-services-latest-news/earnings-list.rss"
+        },
+        {
+          "name": "PR Newswire Financial Services",
+          "url": "https://www.prnewswire.com/rss/financial-services-latest-news/financial-services-latest-news-list.rss"
+        },
+        {
+          "name": "PR Newswire General Business",
+          "url": "https://www.prnewswire.com/rss/general-business-latest-news/general-business-latest-news-list.rss"
         }
       ],
       "nq-news": [

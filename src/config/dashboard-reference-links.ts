@@ -31,9 +31,6 @@ export function resolveDashboardSiteOrigin(options: {
 }
 
 export const DASHBOARD_EXTERNAL_SITE_LINKS = [
-  { label: 'Blog', href: 'https://www.worldmonitor.app/blog/' },
-  { label: 'Docs', href: 'https://www.worldmonitor.app/docs/documentation' },
-  { label: 'Status', href: 'https://status.worldmonitor.app/' },
-  { label: 'GitHub', href: 'https://github.com/koala73/worldmonitor' },
-  { label: 'X', href: 'https://x.com/worldmonitorai' },
+  { label: 'Source', href: 'https://github.com/fckmeaning/Money-Bansho' },
+  { label: 'World Monitor (upstream)', href: 'https://github.com/koala73/worldmonitor' },
 ] as const;

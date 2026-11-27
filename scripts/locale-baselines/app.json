@@ -4755,5 +4755,10 @@
   "widgets.saveFailed": "Widget could not be saved. Please try again.",
   "widgets.send": "Send",
   "widgets.serverError": "Server error: {{status}}",
-  "widgets.unknownError": "Unknown error"
+  "widgets.unknownError": "Unknown error",
+  "panels.chinaMedia": "China Media",
+  "panels.europeBusiness": "Europe Business",
+  "panels.israel": "Israel",
+  "panels.northKorea": "North Korea Watch",
+  "panels.corporateLeadership": "Corporate Leadership Wires"
 }

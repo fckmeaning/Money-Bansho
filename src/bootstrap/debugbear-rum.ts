@@ -19,15 +19,8 @@ const DEBUGBEAR_RUM_SCRIPT_PATHNAMES = [
 /** Every production host the RUM script loads on. Exported so
  * `tests/sentry-allow-urls.test.mts` can assert the Sentry ingest allowlist
  * covers the same population instead of restating it (#6545). */
-export const DEBUGBEAR_RUM_HOSTS = new Set([
-  'worldmonitor.app',
-  'www.worldmonitor.app',
-  'tech.worldmonitor.app',
-  'finance.worldmonitor.app',
-  'commodity.worldmonitor.app',
-  'happy.worldmonitor.app',
-  'energy.worldmonitor.app',
-]);
+// Money Bansho: RUM is disabled, so no host is eligible.
+export const DEBUGBEAR_RUM_HOSTS = new Set<string>();
 
 import type { BootstrapTransferRumSample } from './bootstrap-transfer-rum';
 import { whenUrlFreeOfSensitiveParams } from '../../shared/sensitive-url-params';

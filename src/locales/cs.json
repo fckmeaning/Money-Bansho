@@ -427,8 +427,8 @@
     "map": "Globální situace",
     "techHubs": "Horká Tech centra",
     "status": "Stav systému",
-    "insights": "AI postřehy",
-    "strategicPosture": "AI strategický postoj",
+    "insights": "Postřehy",
+    "strategicPosture": "Strategický postoj",
     "cii": "Nestabilita zemí",
     "strategicRisk": "Přehled strategických rizik",
     "intel": "Zpravodajský kanál",
@@ -497,7 +497,7 @@
     "gulfCurrencies": "Měny Perského zálivu",
     "gulfOil": "Ropa Perského zálivu",
     "bigmac": "Skutečný index Big Mac",
-    "marketImplications": "AI implikace na trhu",
+    "marketImplications": "Implikace na trhu",
     "energyComplex": "Energetický komplex",
     "oilInventories": "Zásoby ropy",
     "energyCrisis": "Sledovač energetické krize",
@@ -524,7 +524,7 @@
     "fuelPricesDiesel": "Nafta",
     "fuelPricesSource": "Zdroj",
     "groceryBasketDesc": "Porovnání cen nákupního košíku v 24 zemích po celém světě",
-    "airlineIntel": "✈️ Letecké zpravodajství",
+    "airlineIntel": "Letecké zpravodajství",
     "consumerPrices": "Ceny pro spotřebitele",
     "fearGreed": "Strach a chamtivost",
     "marketBreadth": "Šíře trhu",
@@ -532,7 +532,12 @@
     "fx": "Kurzy zahraniční měny",
     "ukmtoIncidents": "Incidenty UKMTO",
     "reservoirLevels": "Strategické vodní hladiny",
-    "gridDisruptionClock": "Časomíra výpadků elektřiny ve státech USA"
+    "gridDisruptionClock": "Časomíra výpadků elektřiny ve státech USA",
+    "chinaMedia": "Čínská média",
+    "europeBusiness": "Evropský byznys",
+    "israel": "Izrael",
+    "northKorea": "Sledování Severní Koreje",
+    "corporateLeadership": "Zprávy o vedení firem"
   },
   "commands": {
     "prefixes": {
@@ -758,7 +763,7 @@
         "configured": "Nastavení desktopu nakonfigurováno",
         "needsKeys": "Pro odemknutí funkcí nakonfigurujte klíče API",
         "some": "Některé funkce vyžadují klíče API",
-        "pro": "World Monitor Pro je aktivní"
+        "pro": "Money Bansho Pro je aktivní"
       },
       "summary": {
         "desktop": "Desktopový režim",
@@ -788,9 +793,9 @@
         "OLLAMA_API_URL": "např. http://127.0.0.1:11434 (Ollama) nebo http://127.0.0.1:1234/v1 (LM Studio) — koncový bod kompatibilní s OpenAI.",
         "OLLAMA_MODEL": "např. llama3.1:8b — značka modelu k použití pro sumarizaci."
       },
-      "proCloud": "Funkce bez místního API klíče používají data z cloudu World Monitor.",
-      "skipSetupPro": "Přeskočit nastavení: přihlaste se k World Monitor Pro a používejte cloudová data místo vlastních API klíčů.",
-      "getPro": "Získat World Monitor Pro"
+      "proCloud": "Funkce bez místního API klíče používají data z cloudu Money Bansho.",
+      "skipSetupPro": "Přeskočit nastavení: přihlaste se k Money Bansho Pro a používejte cloudová data místo vlastních API klíčů.",
+      "getPro": "Získat Money Bansho Pro"
     },
     "settingsWindow": {
       "validating": "Ověřování klíčů API...",
@@ -828,7 +833,7 @@
         "status": "Stav",
         "duration": "Trvání"
       },
-      "shellTitle": "Nastavení World Monitor",
+      "shellTitle": "Nastavení Money Bansho",
       "shellSearchPlaceholder": "Hledání v nastavení...",
       "shellCancel": "Zrušit",
       "shellSaveClose": "Uložit a zavřít",
@@ -1135,7 +1140,7 @@
       "storageUnavailable": "Přehrávání není dostupné, protože tento prohlížeč blokuje ukládání dat na webu. Povolte ukládání dat na webu pro tuto stránku a začněte ukládat snímky."
     },
     "pizzint": {
-      "indexSource": "Index: World Monitor",
+      "indexSource": "Index: Money Bansho",
       "venueSource": "data podniků:",
       "statusNormal": "NORMÁLNÍ",
       "statusNoData": "BEZ DAT",
@@ -1145,7 +1150,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "Aktualizováno před {{timeAgo}}",
       "tensionsTitle": "Geopolitické napětí",
-      "tensionsSource": "Napětí: World Monitor na základě událostí GDELT",
+      "tensionsSource": "Napětí: Money Bansho na základě událostí GDELT",
       "insufficientData": "Nedostatek dat",
       "evidenceStrikes": "Hlášené údery za 3 dny ({{countries}}): {{value}}",
       "evidenceAirports": "Narušená letiště: {{value}}",
@@ -1858,7 +1863,7 @@
       "staleReport": "Zastaralá zpráva",
       "reported": "Počet",
       "period": "Období",
-      "movementNote": "Každý řádek zachovává zdroj, datum zprávy a druh měření. Stavové počty, příjezdy a události hraničních kontrol jsou různá měření. Zdroje se mohou překrývat; jejich počty nesčítejte. WorldMonitor tento přehled odvozuje z odkazovaných zdrojů; neznamená to podporu ze strany poskytovatelů.",
+      "movementNote": "Každý řádek zachovává zdroj, datum zprávy a druh měření. Stavové počty, příjezdy a události hraničních kontrol jsou různá měření. Zdroje se mohou překrývat; jejich počty nesčítejte. Money Bansho tento přehled odvozuje z odkazovaných zdrojů; neznamená to podporu ze strany poskytovatelů.",
       "recent": "Nedávné",
       "last30Days": "Posledních 30 dní",
       "newThisWeek": "Nové tento týden",
@@ -2283,7 +2288,7 @@
       "tripDays": "Dny cesty"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>WM Analytik</strong> AI analytik s živým kontextem napříč geopolitickou, tržní, vojenskou a ekonomickou doménou. Poháněn systémem Claude s daty v reálném čase z aktivních kanálů WorldMonitor."
+      "infoTooltip": "<strong>WM Analytik</strong> AI analytik s živým kontextem napříč geopolitickou, tržní, vojenskou a ekonomickou doménou. Poháněn systémem Claude s daty v reálném čase z aktivních kanálů Money Bansho."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures positioning</strong> Týdenní čisté pozice komerčních obchodníků, velkých spekulantů a malých obchodníků v komoditních a finančních futures. Zdroj: Commitments of Traders zpráva od Commodity Futures Trading Commission, zveřejněna v pátek."
@@ -2356,7 +2361,7 @@
       "infoTooltip": "<strong>Economic Calendar</strong> Naplánované makroekonomické uvolňování dat: index spotřebitelských cen, nezaměstnanost mimo zemědělství, hrubý domácí produkt, index nákupních manažerů a rozhodnutí centrální banky. Ukazuje prognózu versus skutečnost versus předchozí. Vysoce dopadové události jsou zvýrazněny. Zdroj: poskytovatelé ekonomických dat."
     },
     "fsi": {
-      "infoTooltip": "<strong>Financial Stress Indicator</strong> World Monitor poměr vysokovýnosových kreditů k dlouhodobým dluhopisům, upraven o volatilitu akcií a vysokovýnosový spread: (HYG / TLT) / (VIX × High-yield spread / 100). Toto není Kansas City Fed Financial Stress Index. Hodnota 1,5 nebo vyšší značí nízkou zátěž; pod 0,3 vysokou zátěž.",
+      "infoTooltip": "<strong>Financial Stress Indicator</strong> Money Bansho poměr vysokovýnosových kreditů k dlouhodobým dluhopisům, upraven o volatilitu akcií a vysokovýnosový spread: (HYG / TLT) / (VIX × High-yield spread / 100). Toto není Kansas City Fed Financial Stress Index. Hodnota 1,5 nebo vyšší značí nízkou zátěž; pod 0,3 vysokou zátěž.",
       "title": "Indikátor finanční stability",
       "usFsiValue": "Hodnota US Financial Stress Indicator",
       "asOf": "k {{date}}",
@@ -2444,7 +2449,7 @@
       "infoTooltip": "<strong>Macro indicators</strong> Ceny, aktivita, politika a ukazatele měn pro USA, eurozónu a Čínu. Čína vyžaduje aktuální pokrytí. Každá dlaždice zobrazuje svůj zdroj a datum pozorování."
     },
     "monitors": {
-      "infoTooltip": "<strong>Monitory klíčových slov</strong> Přidejte libovolný výraz pro sledování zmínek ve zprávách v reálném čase ze všech zdrojů WorldMonitor. Výsledky se aktualizují při příjmu odpovídajících článků."
+      "infoTooltip": "<strong>Monitory klíčových slov</strong> Přidejte libovolný výraz pro sledování zmínek ve zprávách v reálném čase ze všech zdrojů Money Bansho. Výsledky se aktualizují při příjmu odpovídajících článků."
     },
     "renewable": {
       "infoTooltip": "<strong>Renewable Energy</strong> Podíl elektřiny z obnovitelných zdrojů dle regionu a roku, plus nainstalovaná kapacita v USA pro slunečníenergie, větrnou energii a uhlí (MW). Zdroje: Světová banka (EG.ELC.RNEW.ZS) a US Energy Information Administration."
@@ -2510,7 +2515,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>AI tržní důsledky</strong> Obchodní signály generované LLM odvozené z live geopolitických, komoditních a makroekonomických stavů po každém cyklu prognózy.<ul><li><strong>Směr</strong>: LONG / SHORT / HEDGE</li><li><strong>Časový horizont</strong>: 1W, 2W, 1M nebo 3M horizont</li><li><strong>Katalyzátor</strong>: Klíčový katalyzátor signálu</li><li><strong>Riziko</strong>: Výhrada nebo podmínka zneplatnění</li></ul><em>Pouze pro informační účely. Není investičním poradenstvím.</em>",
-      "title": "Implikace AI na trh",
+      "title": "Implikace na trh",
       "directions": {
         "long": "Koupit",
         "short": "KRÁTKÁ POZICE",
@@ -2772,7 +2777,7 @@
           }
         },
         "about": {
-          "heading": "Poslední věc: k čemu budete World Monitor používat?",
+          "heading": "Poslední věc: k čemu budete Money Bansho používat?",
           "body": "Tři rychlé odpovědi nám pomohou vytvořit správné nástroje pro vás. Přeskočte jakékoliv, které chcete.",
           "confirmCta": "Uložit moje odpovědi",
           "confirming": "Ukládám…",
@@ -3209,7 +3214,7 @@
       "global": "Globální měsíční index FAO"
     },
     "aboutYou": {
-      "title": "Pomozte nám vytvořit World Monitor pro vás",
+      "title": "Pomozte nám vytvořit Money Bansho pro vás",
       "ariaLabel": "O vás",
       "progress": "{{current}} z {{total}}",
       "skip": "Přeskočit",
@@ -3221,7 +3226,7 @@
       "thanks": "Děkujeme. Pomáhá nám to rozhodovat se, co budeme vyvíjet dál.",
       "questions": {
         "primaryUse": {
-          "label": "K čemu World Monitor především používáte?",
+          "label": "K čemu Money Bansho především používáte?",
           "options": {
             "news": "Zprávy a světové události",
             "markets": "Trhy a obchodování",
@@ -3263,13 +3268,13 @@
           }
         },
         "alternative": {
-          "label": "Co byste používali, kdyby World Monitor neexistoval?",
+          "label": "Co byste používali, kdyby Money Bansho neexistoval?",
           "placeholder": "Volitelné"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Máte rádi World Monitor?",
+      "title": "Máte rádi Money Bansho?",
       "body": "Hvězda na GitHubu pomůže ostatním lidi ji najít.",
       "star": "Dát hvězdu na GitHubu",
       "dismiss": "Skrýt a neptat se znovu"
@@ -3531,7 +3536,7 @@
         "copied": "Zkopírováno.",
         "copyFailed": "Kopírování se nezdařilo. Vyberte text, abyste ho mohli zkopírovat."
       },
-      "firstSeenNote": "Toto je nejstarší dostupné datum indikátoru napříč zprávami nebo pozorováními World Monitor; může se lišit od data uvedeného zdroje."
+      "firstSeenNote": "Toto je nejstarší dostupné datum indikátoru napříč zprávami nebo pozorováními Money Bansho; může se lišit od data uvedeného zdroje."
     },
     "nuclear": {
       "types": {
@@ -4663,10 +4668,10 @@
     "imageryEvidenceHere": "Důkazy ze snímků zde"
   },
   "shell": {
-    "documentTitle": "World Monitor — Přehled reálných globálních informací",
-    "metaDescription": "Platforma globální operační analýzy v reálném čase. Publikováno ve WIRED. Používáno 2M+ lidmi ve 190 zemích. Konflikty, trhy, vojenství a veřejné informace na jednom místě.",
+    "documentTitle": "Money Bansho — Přehled reálných globálních informací",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Jste offline",
-    "offlineMessage": "World Monitor vyžaduje internetové připojení pro data zpravodajství v reálném čase.",
+    "offlineMessage": "Money Bansho vyžaduje internetové připojení pro data zpravodajství v reálném čase.",
     "offlineRetry": "Zkusit znovu"
   },
   "widgets": {
@@ -4704,12 +4709,12 @@
     "phaseError": "Chyba",
     "previewCheckingHeading": "Připojování tvůrce widgetů",
     "previewReadyHeading": "Popište widget, který chcete",
-    "previewFetchingHeading": "Načítání živých dat WorldMonitor",
+    "previewFetchingHeading": "Načítání živých dat Money Bansho",
     "previewComposingHeading": "Skládání rozvržení widgetu",
     "previewErrorHeading": "Náhled vyžaduje pozornost",
     "previewCheckingCopy": "Ověřujeme váš klíč widgetu a dostupnost backendu před povolením generování.",
     "previewReadyCopy": "Použijte příklad dotazu nebo popište přesný živý pohled, který chcete. Náhled se zde aktualizuje před uložením.",
-    "previewFetchingCopy": "Agent volá schválené koncové body WorldMonitor a upravuje datovou sadu pro widget.",
+    "previewFetchingCopy": "Agent volá schválené koncové body Money Bansho a upravuje datovou sadu pro widget.",
     "previewComposingCopy": "Náhled se vykresluje s nejnovějšími živými daty a stylem nástěnky.",
     "previewErrorCopy": "Vyřešte problém a zkuste znovu. Vaše stávající widgety nejsou ovlivněny.",
     "createInteractive": "Vytvořit interaktivní widget",
@@ -4738,7 +4743,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "Vyžaduje licenční klíč World Monitor",
+    "lockedDesc": "Vyžaduje licenční klíč Money Bansho",
     "signInToUnlock": "Přihlaste se a odemkněte prémiové funkce",
     "signIn": "Přihlášení pro odemčení",
     "upgradeDesc": "Upgradujte na Pro a získejte plný přístup k prémiové analýze",
@@ -4877,7 +4882,7 @@
       "hotspots": {
         "category": "Zprávy / hotspoty",
         "purpose": "Zvýrazňuje sledované geopolitické hotspoty a zvyšuje jejich stupeň, když se sejdou související zprávy a signály eskalace.",
-        "source": "Registr hotspotů WorldMonitor, zpravodajství RSS/GDELT, hodnocení eskalace hotspotů, vojenská aktivita a kontext nestability zemí.",
+        "source": "Registr hotspotů Money Bansho, zpravodajství RSS/GDELT, hodnocení eskalace hotspotů, vojenská aktivita a kontext nestability zemí.",
         "freshness": "Polohy hotspotů jsou kurátorované a statické. Aktuálnost zpravodajských kanálů se sleduje zvlášť. Stupně hotspotů se přepočítají, když se obnoví zpravodajské kanály nástěnky, zhruba každých 10 minut. Zpravodajství GDELT má delší rozpočet naplňování a mezipaměti.",
         "confidence": "Hodí se jako vodítko k prvnímu třídění. Bez otevření podkladových zpráv a kontextu země to není tvrzení vhodné k citaci.",
         "limitations": {
@@ -4924,7 +4929,7 @@
       "conflicts": {
         "category": "Konflikt",
         "purpose": "Ukazuje kurátorované zóny konfliktu a překryvy geopolitických hranic, aby se živé signály daly zasadit do známých bojišť.",
-        "source": "Registr zón konfliktu WorldMonitor, kontext konfliktu UCDP/ACLED a doložená metadata hranic, například korejská DMZ.",
+        "source": "Registr zón konfliktu Money Bansho, kontext konfliktu UCDP/ACLED a doložená metadata hranic, například korejská DMZ.",
         "freshness": "Základní zóny jsou kurátorované a statické. Dynamické konfliktní události se sledují zvlášť přes kanály ACLED/UCDP a signály stavu.",
         "confidence": "Dobré pro geografickou orientaci. Samo o sobě nepotvrzuje incident v reálném čase.",
         "limitations": {
@@ -4957,7 +4962,7 @@
       "ais": {
         "category": "Námořní",
         "purpose": "Ukazuje hustotu plavidel a signály narušení AIS kolem strategických vod a kritických průlivů.",
-        "source": "Snímky relé AISStream, námořní služba WorldMonitor a klasifikátory narušení průlivů.",
+        "source": "Snímky relé AISStream, námořní služba Money Bansho a klasifikátory narušení průlivů.",
         "freshness": "Snímky relé AIS se ve výchozím stavu skládají znovu každých 5 sekund. Server může základní snímek hustoty držet v mezipaměti 5 minut. Vrstva je vypnutá nebo zastaralá, když chybí přihlašovací údaje relé nebo spojení.",
         "confidence": "Hodí se k vyhledávání námořních anomálií. AIS hlásí sama plavidla a lodě mohou zmizet z příjmu.",
         "limitations": {
@@ -4974,7 +4979,7 @@
       "tradeRoutes": {
         "category": "Námořní",
         "purpose": "Kreslí hlavní kontejnerové, energetické a hromadné trasy přes strategické průlivy, aby šlo sledovat cesty narušení.",
-        "source": "Registr obchodních cest WorldMonitor, stav průlivů dodavatelského řetězce a souhrny tranzitu.",
+        "source": "Registr obchodních cest Money Bansho, stav průlivů dodavatelského řetězce a souhrny tranzitu.",
         "freshness": "Geometrie tras je statická. Stav průlivů se udržuje dotazem každých 6 minut. Souhrny tranzitu se obnovují každých 10 minut přes mezipaměť dodavatelského řetězce a cesty relé.",
         "confidence": "Dobré jako kontext expozice na úrovni trasy. Není to směrovací kanál jednotlivých lodí.",
         "limitations": {
@@ -5028,7 +5033,7 @@
       "weather": {
         "category": "Počasí",
         "purpose": "Ukazuje aktivní úřední výstrahy před nebezpečným počasím od národních meteorologických služeb, sloučené do jednoho kanálu weather:alerts:v1.",
-        "source": "National Weather Service Spojených států (NWS), Environment and Climate Change Canada (ECCC) a agregace CAP střediska WMO Severe Weather Information Centre (SWIC), naplňované přes relé WorldMonitor.",
+        "source": "National Weather Service Spojených států (NWS), Environment and Climate Change Canada (ECCC) a agregace CAP střediska WMO Severe Weather Information Centre (SWIC), naplňované přes relé Money Bansho.",
         "freshness": "Výstrahy NWS, ECCC a SWIC naplňuje relé každých 15 minut a hlídá je vůči rozpočtu aktuálnosti 45 minut.",
         "confidence": "Závazné pro výstrahy vydané zúčastněnými národními službami, s výhradou času publikace u zdroje. NWS a ECCC se kreslí jako polygony. Geokódované výstrahy SWIC se kreslí v centroidu země vydávající služby, s výslovnou značkou přesnosti.",
         "limitations": {
@@ -5045,7 +5050,7 @@
       "canadaRoads": {
         "category": "Doprava",
         "purpose": "Ukazuje úřední silniční události, výstrahy, stavy, uzavírky, stavby a nebezpečí v podporovaných kanadských jurisdikcích.",
-        "source": "Provinční kanály Ontario 511, Alberta 511 a Manitoba 511, City of Toronto Road Restrictions a DriveBC Open511, naplňované přes WorldMonitor.",
+        "source": "Provinční kanály Ontario 511, Alberta 511 a Manitoba 511, City of Toronto Road Restrictions a DriveBC Open511, naplňované přes Money Bansho.",
         "freshness": "Ontario 511, Alberta 511 a Manitoba 511 se naplňují každých 15 minut a hlídají se vůči rozpočtu aktuálnosti 45 minut. Omezení v Torontu se naplňují každé 2 hodiny. DriveBC Open511 se naplňuje každých 30 minut.",
         "confidence": "Závazné pro podporované provinční a městské vydavatele, s výhradou času publikace u zdroje a mapované geometrie.",
         "limitations": {
@@ -5110,7 +5115,7 @@
       "waterways": {
         "category": "Námořní",
         "purpose": "Označuje strategické vodní cesty a průlivy, aby se signály narušení daly číst na pozadí pevné námořní geografie.",
-        "source": "Registr strategických vodních cest WorldMonitor s překryvy stavu průlivů dodavatelského řetězce z AIS, varování NGA a kanálů odvozených z PortWatch.",
+        "source": "Registr strategických vodních cest Money Bansho s překryvy stavu průlivů dodavatelského řetězce z AIS, varování NGA a kanálů odvozených z PortWatch.",
         "freshness": "Polohy vodních cest jsou statické. Živý stav průlivů se udržuje dotazem každých 6 minut. Souhrny tranzitu se obnovují každých 10 minut, když je cesta relé a PortWatch v pořádku.",
         "confidence": "Vysoká u pevné geografie. Jistota živého narušení závisí na doprovodných kanálech AIS, NGA a PortWatch.",
         "limitations": {
@@ -5127,7 +5132,7 @@
       "ciiChoropleth": {
         "category": "Riziko země",
         "purpose": "Barví země podle aktuálního skóre Country Instability Index pro široké první třídění strategického rizika.",
-        "source": "Služba bodování Country Instability Index ve WorldMonitor používá signály konfliktu, nepokojů, upozornění, kyber, sledování lodí, letectví, přírodních událostí a zpráv.",
+        "source": "Služba bodování Country Instability Index ve Money Bansho používá signály konfliktu, nepokojů, upozornění, kyber, sledování lodí, letectví, přírodních událostí a zpráv.",
         "freshness": "Mezipaměť skóre rizika se udržuje dotazem každých 8 minut. seed-meta a health.riskScores ukazují stav živý, zastaralý, částečný nebo zhoršený vůči rozpočtu aktuálnosti 30 minut.",
         "confidence": "Jde o složený signál modelu. Není to úřední hodnocení země ani pravděpodobnostní předpověď.",
         "limitations": {
@@ -5171,7 +5176,7 @@
     "finance": {
       "map": "Mapa globálních trhů",
       "liveNews": "Zprávy z trhů",
-      "insights": "AI postřehy o trzích"
+      "insights": "Postřehy o trzích"
     },
     "tech": {
       "map": "Mapa globálních technologií",
@@ -5180,12 +5185,12 @@
     "commodity": {
       "map": "Mapa komodit",
       "liveNews": "Zprávy z komodit",
-      "insights": "AI postřehy o komoditách"
+      "insights": "Postřehy o komoditách"
     },
     "energy": {
       "map": "Mapa energetiky",
       "liveNews": "Zprávy z energetiky",
-      "insights": "AI postřehy o energetice"
+      "insights": "Postřehy o energetice"
     },
     "happy": {
       "map": "Mapa dobrých zpráv"
@@ -5195,9 +5200,9 @@
     "title": "Nainstalovat aplikaci",
     "share": "V Safari klepněte na Sdílet (čtverec se šipkou nahoru). Možná budete muset nejprve otevřít nabídku Více.",
     "add": "Vyberte Přidat na plochu.",
-    "confirm": "Klepněte na Přidat a otevřete World Monitor z plochy.",
+    "confirm": "Klepněte na Přidat a otevřete Money Bansho z plochy.",
     "close": "Zavřít",
-    "alertsHint": "Nainstalujte World Monitor na plochu, abyste na tomto iPhonu nebo iPadu dostávali upozornění.",
+    "alertsHint": "Nainstalujte Money Bansho na plochu, abyste na tomto iPhonu nebo iPadu dostávali upozornění.",
     "how": "Jak nainstalovat"
   },
   "teamDashboards": {
@@ -5460,7 +5465,7 @@
       "placeholder": "Místo nebo 25.11, 55.14",
       "submit": "Hledat",
       "locate": "Moje poloha",
-      "hint": "Zadané souřadnice a vaše poloha se nikdy neodesílají do WorldMonitoru. Zadané názvy míst se odesílají do WorldMonitoru a OpenStreetMap Nominatim.",
+      "hint": "Zadané souřadnice a vaše poloha se nikdy neodesílají do Money Banshou. Zadané názvy míst se odesílají do Money Banshou a OpenStreetMap Nominatim.",
       "results": "Místa",
       "searching": "Hledání…",
       "tooShort": "Zadejte nejméně dva znaky nebo souřadnice jako 25.11, 55.14.",
@@ -5670,7 +5675,7 @@
     "privacy": {
       "line": "Váš bod se odešle pouze do archivů obrázků.",
       "more": "Podrobnosti",
-      "body": "Průchody se počítají na tomto zařízení. Při hledání obrázků váš prohlížeč odesílá bod přímo do Earth Search, Planetary Computer, NASA GIBS a EUMETSAT; WorldMonitor jej neobdrží. U sledovaného místa se WorldMonitor žádá o denní záznam tohoto místa podle jeho ID, ne podle vašeho bodu. Zadaný název místa se odesílá do WorldMonitor a OpenStreetMap Nominatim k vyhledání. Sdílené odkazy mají dvě desetinná místa (0,01°)."
+      "body": "Průchody se počítají na tomto zařízení. Při hledání obrázků váš prohlížeč odesílá bod přímo do Earth Search, Planetary Computer, NASA GIBS a EUMETSAT; Money Bansho jej neobdrží. U sledovaného místa se Money Bansho žádá o denní záznam tohoto místa podle jeho ID, ne podle vašeho bodu. Zadaný název místa se odesílá do Money Bansho a OpenStreetMap Nominatim k vyhledání. Sdílené odkazy mají dvě desetinná místa (0,01°)."
     },
     "sources": {
       "heading": "Zdroje ({{count}})",
@@ -5790,7 +5795,7 @@
       "map": "Poskytovatel, vzhled a glóbus",
       "ai": "Modely, paměť a rámce",
       "video": "Kvalita a automatické přehrávání",
-      "apiKeys": "Klíče pro World Monitor API",
+      "apiKeys": "Klíče pro Money Bansho API",
       "embeds": "Widgety pro tvůj web",
       "aiAgents": "Připojení MCP klienti",
       "about": "Odkazy webu, podmínky a ochrana soukromí"
@@ -5806,7 +5811,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Přístup Premium",
-        "desc": "Tento přístup se neúčtuje prostřednictvím vašeho účtu WorldMonitor. Platební metoda ani faktury zde nejsou k dispozici."
+        "desc": "Tento přístup se neúčtuje prostřednictvím vašeho účtu Money Bansho. Platební metoda ani faktury zde nejsou k dispozici."
       },
       "checking": {
         "heading": "Ověřování vašeho plánu…",
@@ -5827,7 +5832,7 @@
         "desc": "Nepodařilo se nám ověřit váš aktuální plán. Zkuste znovu nebo si zobrazte plány na nové kartě."
       },
       "free": {
-        "heading": "WorldMonitor Zdarma",
+        "heading": "Money Bansho Zdarma",
         "desc": "Váš aktuální plán je Zdarma. Přejděte na vyšší plán a získejte všechny panely, analýzu AI a prioritní aktualizaci dat."
       },
       "portal": {
@@ -5836,7 +5841,7 @@
       },
       "deletion": {
         "heading": "Smazat účet",
-        "desc": "Trvale smaže tento účet World Monitor. Předplatné se okamžitě zruší bez vrácení peněz za zbývající předplacené období. Klíče API, klíče pro vkládání a tokeny MCP přestanou fungovat. Fakturační záznamy potřebné pro účetnictví, spory a zákonné požadavky se uchovávají spolu s kontaktními údaji zákazníka, které obsahují; přestanou však uvádět váš přihlašovací účet, ačkoli protokoly webhooků poskytovatele plateb zapsané před smazáním si ponechají identifikátory, se kterými byly doručeny. Předvolby dashboardu a tajné údaje desktopové aplikace v systémové klíčence (Keychain) na tomto zařízení se na dálku nevymažou.",
+        "desc": "Trvale smaže tento účet Money Bansho. Předplatné se okamžitě zruší bez vrácení peněz za zbývající předplacené období. Klíče API, klíče pro vkládání a tokeny MCP přestanou fungovat. Fakturační záznamy potřebné pro účetnictví, spory a zákonné požadavky se uchovávají spolu s kontaktními údaji zákazníka, které obsahují; přestanou však uvádět váš přihlašovací účet, ačkoli protokoly webhooků poskytovatele plateb zapsané před smazáním si ponechají identifikátory, se kterými byly doručeny. Předvolby dashboardu a tajné údaje desktopové aplikace v systémové klíčence (Keychain) na tomto zařízení se na dálku nevymažou.",
         "dialogTitle": "Smazat tento účet?",
         "dialogCopy": "Tuto akci nelze vrátit zpět. Předplatné se zruší, klíče okamžitě přestanou fungovat a fakturační záznamy se uchovají pro účetnictví, spory a zákonné požadavky — včetně kontaktních údajů, které obsahují. Poté se odhlaste na ostatních zařízeních a vymažte data webu na tomto zařízení — k nim server nemá přístup.",
         "phraseLabel": "Zadejte {{phrase}} pro potvrzení",

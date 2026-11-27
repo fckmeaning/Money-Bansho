@@ -292,7 +292,7 @@ export class NewsPanel extends Panel {
     // Create summarize button
     this.summaryBtn = document.createElement('button');
     this.summaryBtn.className = 'panel-summarize-btn';
-    setTrustedHtml(this.summaryBtn, trustedHtml('✨', "legacy direct innerHTML migration"));
+    setTrustedHtml(this.summaryBtn, trustedHtml('≡', "legacy direct innerHTML migration"));
     this.summaryBtn.title = t('components.newsPanel.summarize');
     this.summaryBtn.addEventListener('click', () => {
       track('news-summarize', { panelId: this.panelId });
@@ -361,7 +361,7 @@ export class NewsPanel extends Panel {
     } finally {
       this.isSummarizing = false;
       if (this.summaryBtn) {
-        setTrustedHtml(this.summaryBtn, trustedHtml('✨', "legacy direct innerHTML migration"));
+        setTrustedHtml(this.summaryBtn, trustedHtml('≡', "legacy direct innerHTML migration"));
         this.summaryBtn.disabled = false;
       }
     }

@@ -9167,5 +9167,2472 @@
     "audience": "domestic",
     "language": "uk",
     "ownershipClass": "private"
+  },
+  "21st Century Business Herald (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Caixin (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "CCTV News (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "CGTN Business": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "CGTN China": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "CGTN World": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "China Briefing (Google News)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "China Business Journal (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "China Daily (Google News)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "China MFA (Google News)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "China News Service China": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "China News Service Finance": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "China News Service HK-Macao-Taiwan": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "China News Service Scroll": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "China News Service Top": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "China News Service World": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "China Securities Journal (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "China State Council (Google News)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "China.org.cn (Google News)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "CnEVPost": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Eastmoney (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "ECNS China News Service (EN)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Economic Daily (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Economic Observer (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Global Times (Google News)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Guancha (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Huanqiu (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Huxiu (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "iFanr": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "IT Home": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Jiemian (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Leiphone": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "National Business Daily (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Pandaily": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "People's Daily (Google News)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Qiushi (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Securities Daily (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Securities Times (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Shanghai Securities News (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Sina Finance (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Solidot": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "TechNode": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "The Paper (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "TMTPost (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Trivium China": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Wallstreetcn (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "What's on Weibo": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Xinhua English (news.cn) (Google News)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Xinhua ZH (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Yicai (Google News)": {
+    "country": "CN",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Yicai Global (Google News)": {
+    "country": "CN",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "DW Chinese": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "RFI Chinese": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "BBC Chinese": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "FT Chinese": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "FT Chinese Full": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "AAStocks (Google News)": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "HK Government News": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "HKEJ (Google News)": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "HKET (Google News)": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Hong Kong Free Press": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "nonprofit"
+  },
+  "InMedia HK": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "nonprofit"
+  },
+  "Ming Pao China": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Ming Pao Economy": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Ming Pao Headlines": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Ming Pao Instant Finance": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "RTHK Finance (EN)": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "RTHK Finance (ZH)": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "RTHK Greater China (EN)": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "RTHK Greater China (ZH)": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "RTHK Local (EN)": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "RTHK Local (ZH)": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "RTHK World (EN)": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "RTHK World (ZH)": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "SCMP Business": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SCMP China": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SCMP China Economy": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SCMP Companies": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SCMP Diplomacy": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SCMP Hong Kong": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SCMP Property": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SCMP Tech": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SCMP World": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "The Standard HK (Google News)": {
+    "country": "HK",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "The Witness HK": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "nonprofit"
+  },
+  "Wen Wei Po (Google News)": {
+    "country": "HK",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "state"
+  },
+  "Initium Media": {
+    "country": "SG",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "unreviewed"
+  },
+  "Anue cnyes (Google News)": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Business Next (Google News)": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Business Weekly TW (Google News)": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "China Times (Google News)": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "CNA Finance": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "CNA International": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "CNA Mainland China": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "CNA Politics": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "CNA Technology": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "Commercial Times TW (Google News)": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "CommonWealth English (Google News)": {
+    "country": "TW",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "CommonWealth Magazine (Google News)": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Digitimes (EN)": {
+    "country": "TW",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Economic Daily News TW": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "ETtoday": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "ETtoday Finance": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Finance TechNews TW": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Focus Taiwan (CNA English)": {
+    "country": "TW",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "INSIDE TW": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "iThome TW": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Liberty Times All": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Liberty Times Business": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Liberty Times Politics": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Liberty Times World": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "New Bloom": {
+    "country": "TW",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Newtalk": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "PTS (Google News)": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "PTS News": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "Storm Media (Google News)": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "Taiwan Today": {
+    "country": "TW",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "TechNews TW": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "The News Lens": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "nonprofit"
+  },
+  "UDN (Google News)": {
+    "country": "TW",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "private"
+  },
+  "China Digital Times (EN)": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "nonprofit"
+  },
+  "China Digital Times (ZH)": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "nonprofit"
+  },
+  "RFA English": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "RFA Mandarin": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "public-service"
+  },
+  "The Diplomat China": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Der Standard Wirtschaft": {
+    "country": "AT",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Die Presse Wirtschaft": {
+    "country": "AT",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Brussels Times (Google News)": {
+    "country": "BE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "De Tijd": {
+    "country": "BE",
+    "audience": "domestic",
+    "language": "nl",
+    "ownershipClass": "private"
+  },
+  "De Tijd Ondernemen": {
+    "country": "BE",
+    "audience": "domestic",
+    "language": "nl",
+    "ownershipClass": "private"
+  },
+  "ECB Press": {
+    "country": "BE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "intergovernmental"
+  },
+  "EUobserver": {
+    "country": "BE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "nonprofit"
+  },
+  "Euractiv": {
+    "country": "BE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "European Commission Press": {
+    "country": "BE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "intergovernmental"
+  },
+  "L'Echo": {
+    "country": "BE",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Politico Europe": {
+    "country": "BE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Cash.ch (Google News)": {
+    "country": "CH",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Finanz und Wirtschaft (Google News)": {
+    "country": "CH",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Finews": {
+    "country": "CH",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Finews.com English": {
+    "country": "CH",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Le Temps Economie": {
+    "country": "CH",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "NZZ Finanzen": {
+    "country": "CH",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "NZZ International": {
+    "country": "CH",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "NZZ Wirtschaft": {
+    "country": "CH",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "RTS Info": {
+    "country": "CH",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "public-service"
+  },
+  "SRF Wirtschaft": {
+    "country": "CH",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "public-service"
+  },
+  "Swissinfo (Google News)": {
+    "country": "CH",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "E15": {
+    "country": "CZ",
+    "audience": "domestic",
+    "language": "cs",
+    "ownershipClass": "private"
+  },
+  "Hospodarske Noviny": {
+    "country": "CZ",
+    "audience": "domestic",
+    "language": "cs",
+    "ownershipClass": "private"
+  },
+  "Radio Prague English": {
+    "country": "CZ",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "Boersen-Zeitung (Google News)": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Capital DE (Google News)": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Clean Energy Wire": {
+    "country": "DE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "nonprofit"
+  },
+  "DGAP (Google News)": {
+    "country": "DE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "DW English Business": {
+    "country": "DE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "FAZ Finanzen": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "FAZ Politik": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "FAZ Wirtschaft": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Finanzen.net (Google News)": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "German executive changes (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "de",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "Handelsblatt Finanzen": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Handelsblatt Politik": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Handelsblatt Unternehmen": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Heise News": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "manager magazin": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "manager magazin Unternehmen": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Merkur Wirtschaft": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Spiegel International": {
+    "country": "DE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Spiegel Politik": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Spiegel Wirtschaft": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Sueddeutsche Politik": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Sueddeutsche Wirtschaft": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Tagesschau Wirtschaft": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "public-service"
+  },
+  "Tagesspiegel Wirtschaft": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "taz": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "unreviewed"
+  },
+  "Welt Politik": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Welt Wirtschaft": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "WirtschaftsWoche": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "WiWo Unternehmen": {
+    "country": "DE",
+    "audience": "domestic",
+    "language": "de",
+    "ownershipClass": "private"
+  },
+  "Borsen": {
+    "country": "DK",
+    "audience": "domestic",
+    "language": "da",
+    "ownershipClass": "private"
+  },
+  "DR Penge": {
+    "country": "DK",
+    "audience": "domestic",
+    "language": "da",
+    "ownershipClass": "public-service"
+  },
+  "DR Politik": {
+    "country": "DK",
+    "audience": "domestic",
+    "language": "da",
+    "ownershipClass": "public-service"
+  },
+  "Politiken Okonomi": {
+    "country": "DK",
+    "audience": "domestic",
+    "language": "da",
+    "ownershipClass": "private"
+  },
+  "ABC Economia": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "El Confidencial Economia": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "El Confidencial Empresas": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "El Diario Economia": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "unreviewed"
+  },
+  "El Economista (Google News)": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "Europa Press Economia": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "Expansion Economia": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "Expansion Empresas": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "Expansion Mercados": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "La Vanguardia Economia": {
+    "country": "ES",
+    "audience": "domestic",
+    "language": "es",
+    "ownershipClass": "private"
+  },
+  "Spanish executive appointments (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "es",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "Kauppalehti": {
+    "country": "FI",
+    "audience": "domestic",
+    "language": "fi",
+    "ownershipClass": "private"
+  },
+  "Yle News English": {
+    "country": "FI",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "Yle Talous": {
+    "country": "FI",
+    "audience": "domestic",
+    "language": "fi",
+    "ownershipClass": "public-service"
+  },
+  "BFM Business": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "BFM Entreprises": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Boursorama (Google News)": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Challenges": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "France 24 Business (EN)": {
+    "country": "FR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "France 24 Europe (EN)": {
+    "country": "FR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "Franceinfo Economie": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "public-service"
+  },
+  "French executive appointments (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "fr",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "L'Usine Nouvelle (Google News)": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "La Lettre (Google News)": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "La Tribune": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "La Tribune RSS": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Le Figaro Bourse": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Le Figaro Economie": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Le Figaro International": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Le Figaro Politique": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Le Monde Economie": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Le Monde Entreprises": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Le Monde Politique": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Les Echos (Google News)": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Liberation Economie": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "MarketScreener Management (Google News)": {
+    "country": "FR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "RFI Economie": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "public-service"
+  },
+  "Zonebourse (Google News)": {
+    "country": "FR",
+    "audience": "domestic",
+    "language": "fr",
+    "ownershipClass": "private"
+  },
+  "Bank of England News": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "BBC Business": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "BBC Politics": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "Board Agenda": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "City AM": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "CityWire (Google News)": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Emerging Europe": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Evening Standard Business": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "FT Europe": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "FT Management": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "FT Markets": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "FT UK Companies": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "GOV.UK HM Treasury": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Guardian Business": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Guardian Economics": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Guardian Executive Pay and Bonuses": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Guardian Politics": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Investegate RNS (Google News)": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Sky News Business": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "The Independent Business": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "The Register": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "The Times Business (Google News)": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "This is Money": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "This is Money Markets": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "UK Board Changes (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "UK Investor Magazine": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Kathimerini English (Google News)": {
+    "country": "GR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Hungary Today": {
+    "country": "HU",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Telex English": {
+    "country": "HU",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Business Post (Google News)": {
+    "country": "IE",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "RTE Business": {
+    "country": "IE",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "Iceland Monitor (Google News)": {
+    "country": "IS",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "mbl.is (Google News)": {
+    "country": "IS",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "AGI Economia": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "ANSA Economia": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "ANSA English": {
+    "country": "IT",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "ANSA Mondo": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "ANSA Politica": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "Il Fatto Quotidiano Economia": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "unreviewed"
+  },
+  "Il Sole 24 Ore Economia": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "Il Sole 24 Ore Finanza": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "Il Sole 24 Ore Italia": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "Il Sole 24 Ore Mondo": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "Italian executive appointments (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "it",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "Milano Finanza (Google News)": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "Repubblica Economia": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "Repubblica Politica": {
+    "country": "IT",
+    "audience": "domestic",
+    "language": "it",
+    "ownershipClass": "private"
+  },
+  "De Telegraaf Financieel": {
+    "country": "NL",
+    "audience": "domestic",
+    "language": "nl",
+    "ownershipClass": "private"
+  },
+  "DutchNews.nl": {
+    "country": "NL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "FD": {
+    "country": "NL",
+    "audience": "domestic",
+    "language": "nl",
+    "ownershipClass": "private"
+  },
+  "NU.nl Economie": {
+    "country": "NL",
+    "audience": "domestic",
+    "language": "nl",
+    "ownershipClass": "private"
+  },
+  "Dagens Naeringsliv": {
+    "country": "NO",
+    "audience": "domestic",
+    "language": "no",
+    "ownershipClass": "private"
+  },
+  "E24": {
+    "country": "NO",
+    "audience": "domestic",
+    "language": "no",
+    "ownershipClass": "private"
+  },
+  "Finansavisen (Google News)": {
+    "country": "NO",
+    "audience": "domestic",
+    "language": "no",
+    "ownershipClass": "private"
+  },
+  "News in English Norway": {
+    "country": "NO",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "NRK Toppsaker": {
+    "country": "NO",
+    "audience": "domestic",
+    "language": "no",
+    "ownershipClass": "public-service"
+  },
+  "VG": {
+    "country": "NO",
+    "audience": "domestic",
+    "language": "no",
+    "ownershipClass": "private"
+  },
+  "Bankier Firma": {
+    "country": "PL",
+    "audience": "domestic",
+    "language": "pl",
+    "ownershipClass": "private"
+  },
+  "Bankier.pl": {
+    "country": "PL",
+    "audience": "domestic",
+    "language": "pl",
+    "ownershipClass": "private"
+  },
+  "Business Insider Polska": {
+    "country": "PL",
+    "audience": "domestic",
+    "language": "pl",
+    "ownershipClass": "private"
+  },
+  "Money.pl": {
+    "country": "PL",
+    "audience": "domestic",
+    "language": "pl",
+    "ownershipClass": "private"
+  },
+  "Notes from Poland": {
+    "country": "PL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Parkiet": {
+    "country": "PL",
+    "audience": "domestic",
+    "language": "pl",
+    "ownershipClass": "private"
+  },
+  "Puls Biznesu": {
+    "country": "PL",
+    "audience": "domestic",
+    "language": "pl",
+    "ownershipClass": "private"
+  },
+  "TVN24 Biznes": {
+    "country": "PL",
+    "audience": "domestic",
+    "language": "pl",
+    "ownershipClass": "private"
+  },
+  "WNP.pl": {
+    "country": "PL",
+    "audience": "domestic",
+    "language": "pl",
+    "ownershipClass": "private"
+  },
+  "ECO Portugal": {
+    "country": "PT",
+    "audience": "domestic",
+    "language": "pt",
+    "ownershipClass": "private"
+  },
+  "Jornal de Negocios": {
+    "country": "PT",
+    "audience": "domestic",
+    "language": "pt",
+    "ownershipClass": "private"
+  },
+  "Publico Economia": {
+    "country": "PT",
+    "audience": "domestic",
+    "language": "pt",
+    "ownershipClass": "private"
+  },
+  "Romania Insider": {
+    "country": "RO",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Ziarul Financiar": {
+    "country": "RO",
+    "audience": "domestic",
+    "language": "ro",
+    "ownershipClass": "private"
+  },
+  "Affarsvarlden (Google News)": {
+    "country": "SE",
+    "audience": "domestic",
+    "language": "sv",
+    "ownershipClass": "private"
+  },
+  "Breakit": {
+    "country": "SE",
+    "audience": "domestic",
+    "language": "sv",
+    "ownershipClass": "private"
+  },
+  "Dagens Industri": {
+    "country": "SE",
+    "audience": "domestic",
+    "language": "sv",
+    "ownershipClass": "private"
+  },
+  "Dagens Nyheter Ekonomi": {
+    "country": "SE",
+    "audience": "domestic",
+    "language": "sv",
+    "ownershipClass": "private"
+  },
+  "Realtid": {
+    "country": "SE",
+    "audience": "domestic",
+    "language": "sv",
+    "ownershipClass": "private"
+  },
+  "SR Ekot": {
+    "country": "SE",
+    "audience": "domestic",
+    "language": "sv",
+    "ownershipClass": "public-service"
+  },
+  "SVT Ekonomi": {
+    "country": "SE",
+    "audience": "domestic",
+    "language": "sv",
+    "ownershipClass": "public-service"
+  },
+  "The Local Sweden": {
+    "country": "SE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Arutz Sheva English": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Arutz Sheva Hebrew": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Bank of Israel (Google News)": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "state"
+  },
+  "Bizportal (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Calcalist (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Calcalistech (Google News)": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Channel 13 (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Davar": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "unreviewed"
+  },
+  "Funder (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Geektime (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Globes Capital Market": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Globes English": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Globes Global Markets": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Globes Hebrew Main": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Globes Real Estate": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Globes Tech": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Haaretz English": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Haaretz English Israel News": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Haaretz Hebrew": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Hebrew executive appointments (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "he",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "i24 News (Google News)": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Ice": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "INSS (Google News)": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "nonprofit"
+  },
+  "Israel executive appointments (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "Israel Hayom (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Israel Hayom English (Google News)": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Jerusalem Post Iran": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Jerusalem Post Israel": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Jerusalem Post Middle East": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "JNS": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Kan News (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "public-service"
+  },
+  "Maariv": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Maariv Business": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Maariv Politics": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Mako Money": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Mako World": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Mekomit": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "nonprofit"
+  },
+  "N12 Mako News": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "N12 Politics and Security": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Now14 (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Shakuf": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "nonprofit"
+  },
+  "Sponser (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Srugim": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "The Media Line (Google News)": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "The Seventh Eye": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "nonprofit"
+  },
+  "TheMarker (Google News)": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Walla Finance": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Walla Flash": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Walla Military and Security": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Walla News": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Walla Politics and Government": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Walla Tech": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Walla World": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Ynet Breaking": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Ynet Digital": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Ynet Economy": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Ynet News Hebrew": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Ynetnews Business": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Ynetnews Culture": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Ynetnews News": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Ynetnews Opinion": {
+    "country": "IL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Zman Israel": {
+    "country": "IL",
+    "audience": "domestic",
+    "language": "he",
+    "ownershipClass": "private"
+  },
+  "Jewish News Israel (Google News)": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Sino-NK": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "nonprofit"
+  },
+  "Asia Press (Google News)": {
+    "country": "JP",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "Chosun Sinbo": {
+    "country": "JP",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "state"
+  },
+  "Chosun Sinbo JP": {
+    "country": "JP",
+    "audience": "domestic",
+    "language": "ja",
+    "ownershipClass": "state"
+  },
+  "Daily NK Japanese": {
+    "country": "JP",
+    "audience": "domestic",
+    "language": "ja",
+    "ownershipClass": "unreviewed"
+  },
+  "Chosun English NK (Google News)": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Daily NK Chinese": {
+    "country": "KR",
+    "audience": "domestic",
+    "language": "zh",
+    "ownershipClass": "unreviewed"
+  },
+  "Daily NK Korean": {
+    "country": "KR",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "unreviewed"
+  },
+  "Donga Politics": {
+    "country": "KR",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "private"
+  },
+  "KBS World NK (Google News)": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "Korea Herald NK (Google News)": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Korea Times NK (Google News)": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "NK Daily Tongil News": {
+    "country": "KR",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "unreviewed"
+  },
+  "NK Economy KR": {
+    "country": "KR",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "private"
+  },
+  "NK Insider": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "NK News query KCNA (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "NK Pro": {
+    "country": "US",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed"
+  },
+  "North Korea sanctions (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "SPN Seoul Pyongyang News": {
+    "country": "KR",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "private"
+  },
+  "VOA Korea (Google News)": {
+    "country": "KR",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "public-service"
+  },
+  "Yonhap News English": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "Yonhap NK Korean": {
+    "country": "KR",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "public-service"
+  },
+  "Yonhap North Korea": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "Yonhap North Korea (Google News)": {
+    "country": "KR",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "public-service"
+  },
+  "38 North (Google News)": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "nonprofit"
+  },
+  "RFA Korean": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "ko",
+    "ownershipClass": "public-service"
+  },
+  "PR Newswire UK": {
+    "country": "GB",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Cision News UK (Google News)": {
+    "country": "SE",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "ACCESS Newswire (Google News)": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Board changes (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "Business Wire Personnel (Google News)": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "CEO changes (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "CFO changes (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
+  },
+  "CFO Dive": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Chief Executive Magazine": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Corporate Board Member": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "GlobeNewswire Management Changes (Google News)": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "Harvard Law Corporate Governance": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "nonprofit"
+  },
+  "HR Dive": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "PR Newswire Acquisitions": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "PR Newswire All": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "PR Newswire Earnings": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "PR Newswire Financial Services": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "PR Newswire General Business": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "PR Newswire Personnel": {
+    "country": "US",
+    "audience": "domestic",
+    "language": "en",
+    "ownershipClass": "private"
+  },
+  "SEC 8-K Item 5.02 (Google News)": {
+    "country": "INTL",
+    "audience": "international",
+    "language": "en",
+    "ownershipClass": "unreviewed",
+    "note": "Google News keyword search with no site: filter; its rows come from many publishers."
   }
 }

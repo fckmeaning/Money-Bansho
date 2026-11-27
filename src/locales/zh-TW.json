@@ -421,8 +421,8 @@
     "map": "全球態勢",
     "techHubs": "熱門科技中心",
     "status": "系統狀態",
-    "insights": "AI洞察",
-    "strategicPosture": "AI戰略態勢",
+    "insights": "洞察",
+    "strategicPosture": "戰略態勢",
     "cii": "國家不穩定性",
     "strategicRisk": "戰略風險概覽",
     "intel": "情報動態",
@@ -492,7 +492,7 @@
     "gulfOil": "海灣石油",
     "bigmac": "巨無霸指數",
     "fearGreed": "恐懼與貪婪指數",
-    "marketImplications": "AI 市場影響",
+    "marketImplications": "市場影響",
     "energyComplex": "能源綜合體",
     "oilInventories": "石油庫存",
     "energyCrisis": "能源危機追蹤器",
@@ -519,14 +519,19 @@
     "fuelPricesDiesel": "柴油",
     "fuelPricesSource": "來源",
     "groceryBasketDesc": "全球 24 個國家的食品雜貨籃子價格對比",
-    "airlineIntel": "✈️ 航空公司情報",
+    "airlineIntel": "航空公司情報",
     "consumerPrices": "消費者價格",
     "marketBreadth": "市場廣度",
     "climateNews": "氣候新聞",
     "fx": "外匯匯率",
     "ukmtoIncidents": "UKMTO事件",
     "reservoirLevels": "戰略水位",
-    "gridDisruptionClock": "美國各州電網停電時鐘"
+    "gridDisruptionClock": "美國各州電網停電時鐘",
+    "chinaMedia": "中國媒體",
+    "europeBusiness": "歐洲商業",
+    "israel": "以色列",
+    "northKorea": "北韓觀察",
+    "corporateLeadership": "企業高層動態"
   },
   "commands": {
     "prefixes": {
@@ -749,7 +754,7 @@
         "configured": "桌面端設定已配置",
         "needsKeys": "配置API金鑰以解鎖功能",
         "some": "部分功能需要API金鑰",
-        "pro": "World Monitor Pro 已啟用"
+        "pro": "Money Bansho Pro 已啟用"
       },
       "summary": {
         "desktop": "桌面模式",
@@ -779,9 +784,9 @@
         "OLLAMA_API_URL": "例如 http://127.0.0.1:11434 (Ollama) 或 http://127.0.0.1:1234/v1 (LM Studio) — OpenAI 相容端點。",
         "OLLAMA_MODEL": "例如 llama3.1:8b — 用於摘要的模型標籤。"
       },
-      "proCloud": "沒有本地 API 金鑰的功能使用 World Monitor 雲資料。",
-      "skipSetupPro": "跳過設定：使用 World Monitor Pro 登入以使用雲資料，而不是您自己的 API 金鑰。",
-      "getPro": "獲取 World Monitor Pro"
+      "proCloud": "沒有本地 API 金鑰的功能使用 Money Bansho 雲資料。",
+      "skipSetupPro": "跳過設定：使用 Money Bansho Pro 登入以使用雲資料，而不是您自己的 API 金鑰。",
+      "getPro": "獲取 Money Bansho Pro"
     },
     "settingsWindow": {
       "validating": "正在驗證API金鑰...",
@@ -819,7 +824,7 @@
         "status": "狀態",
         "duration": "耗時"
       },
-      "shellTitle": "World Monitor 設定",
+      "shellTitle": "Money Bansho 設定",
       "shellSearchPlaceholder": "搜尋設定...",
       "shellCancel": "取消",
       "shellSaveClose": "儲存並關閉",
@@ -1135,7 +1140,7 @@
       "storageUnavailable": "回放功能不可用，因為瀏覽器正在阻止網站儲存。請允許此網站的網站資料以開始儲存快照。"
     },
     "pizzint": {
-      "indexSource": "指數：World Monitor",
+      "indexSource": "指數：Money Bansho",
       "venueSource": "場所資料：",
       "statusNormal": "正常",
       "statusNoData": "無資料",
@@ -1145,7 +1150,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "更新於{{timeAgo}}",
       "tensionsTitle": "地緣政治緊張局勢",
-      "tensionsSource": "緊張局勢：World Monitor 根據 GDELT 事件計算",
+      "tensionsSource": "緊張局勢：Money Bansho 根據 GDELT 事件計算",
       "insufficientData": "資料不足",
       "evidenceStrikes": "3天內報告的打擊（{{countries}}）：{{value}}",
       "evidenceAirports": "受影響機場：{{value}}",
@@ -1861,7 +1866,7 @@
       "staleReport": "報告已過期",
       "reported": "數量",
       "period": "期間",
-      "movementNote": "每行保留其來源、報告日期和衡量指標。存量人口、抵達人數和邊境執法事件是不同指標。來源可能重疊，請勿將其計數相加。WorldMonitor 根據連結的來源生成此檢視，並不意味著獲得任何資料提供方的認可。",
+      "movementNote": "每行保留其來源、報告日期和衡量指標。存量人口、抵達人數和邊境執法事件是不同指標。來源可能重疊，請勿將其計數相加。Money Bansho 根據連結的來源生成此檢視，並不意味著獲得任何資料提供方的認可。",
       "recent": "最近",
       "last30Days": "過去30天",
       "newThisWeek": "本週新增",
@@ -2265,7 +2270,7 @@
       "tripDays": "行程天數"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>WM 分析師</strong> 具有地緣政治、市場、軍事和經濟領域即時上下文的AI分析師。由Claude驅動，注入WorldMonitor活躍資料來源的即時資料。"
+      "infoTooltip": "<strong>WM 分析師</strong> 具有地緣政治、市場、軍事和經濟領域即時上下文的AI分析師。由Claude驅動，注入Money Bansho活躍資料來源的即時資料。"
     },
     "cotPositioning": {
       "infoTooltip": "<strong>期貨定位</strong>商業交易者、大型投機者和小型交易者在商品及金融期貨中的周度淨頭寸。資料來源是商品期貨交易委員會交易者承諾報告，每週五發布。"
@@ -2323,7 +2328,7 @@
       "infoTooltip": "<strong>經濟日曆</strong>定期宏觀經濟資料釋出：消費者價格指數、非農就業人數、國內生產總值、採購經理指數和央行決議。顯示預期值與實際值與前值。高影響事件突出顯示。資料來源：經濟資料供應商。"
     },
     "fsi": {
-      "infoTooltip": "<strong>金融壓力指標</strong>World Monitor高收益債券與長期國債比率，根據股票波動率和高收益利差調整：（HYG / TLT）/（VIX × 高收益利差 / 100）。這不是堪薩斯城聯儲金融壓力指數。1.5或更高的讀數表示低壓力；低於0.3表示高壓力。",
+      "infoTooltip": "<strong>金融壓力指標</strong>Money Bansho高收益債券與長期國債比率，根據股票波動率和高收益利差調整：（HYG / TLT）/（VIX × 高收益利差 / 100）。這不是堪薩斯城聯儲金融壓力指數。1.5或更高的讀數表示低壓力；低於0.3表示高壓力。",
       "title": "金融壓力指標",
       "usFsiValue": "美國金融壓力指標值",
       "asOf": "截至 {{date}}",
@@ -2411,7 +2416,7 @@
       "infoTooltip": "<strong>宏觀指標</strong>美國、歐元區和中國價格、活動、政策和貨幣指標。中國需要當前新聞報道。每個區塊顯示其資料來源和觀測日期。"
     },
     "monitors": {
-      "infoTooltip": "<strong>關鍵詞監控</strong> 新增任何詞彙，即時追蹤WorldMonitor所有來源中的新聞提及。匹配文章被收錄時結果即時更新。"
+      "infoTooltip": "<strong>關鍵詞監控</strong> 新增任何詞彙，即時追蹤Money Bansho所有來源中的新聞提及。匹配文章被收錄時結果即時更新。"
     },
     "renewable": {
       "infoTooltip": "<strong>可再生能源</strong>各地區和年份可再生能源發電份額，以及美國太陽能、風能和煤炭的安裝容量（兆瓦）。資料來源：世界銀行（EG.ELC.RNEW.ZS）和美國能源資訊署。"
@@ -2477,7 +2482,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>AI市場影響分析</strong> LLM生成的交易訊號，基於每個預測週期後的即時地緣政治、商品和宏觀狀態。<ul><li><strong>方向</strong>：看多/看空/對沖</li><li><strong>時間框架</strong>：1周、2周、1月或3月</li><li><strong>驅動因素</strong>：訊號背後的關鍵催化劑</li><li><strong>風險</strong>：預警或失效條件</li></ul><em>僅供參考，不構成投資建議。</em>",
-      "title": "AI市場影響",
+      "title": "市場影響",
       "directions": {
         "long": "看多",
         "short": "看空",
@@ -2736,7 +2741,7 @@
           }
         },
         "about": {
-          "heading": "最後一件事：您將使用 World Monitor 做什麼？",
+          "heading": "最後一件事：您將使用 Money Bansho 做什麼？",
           "body": "三個快速問題能幫助我們為你打造合適的工具。你可以跳過任何問題。",
           "confirmCta": "儲存我的答案",
           "confirming": "儲存中…",
@@ -3143,7 +3148,7 @@
       "global": "糧農組織全球月度指數"
     },
     "aboutYou": {
-      "title": "幫助我們為您打造 World Monitor",
+      "title": "幫助我們為您打造 Money Bansho",
       "ariaLabel": "關於您",
       "progress": "第 {{current}} / {{total}}",
       "skip": "跳過",
@@ -3155,7 +3160,7 @@
       "thanks": "感謝。這有助於我們決定下一步要開發什麼。",
       "questions": {
         "primaryUse": {
-          "label": "您主要用 World Monitor 做什麼？",
+          "label": "您主要用 Money Bansho 做什麼？",
           "options": {
             "news": "新聞和世界事件",
             "markets": "市場和交易",
@@ -3197,13 +3202,13 @@
           }
         },
         "alternative": {
-          "label": "如果 World Monitor 不存在，您會使用什麼？",
+          "label": "如果 Money Bansho 不存在，您會使用什麼？",
           "placeholder": "可選"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "喜歡 World Monitor 嗎？",
+      "title": "喜歡 Money Bansho 嗎？",
       "body": "在 GitHub 上標星可以幫助其他人發現它。",
       "star": "在 GitHub 上標星",
       "dismiss": "關閉，不再提示"
@@ -3473,7 +3478,7 @@
         "copied": "已複製。",
         "copyFailed": "複製失敗。請選中文字後複製。"
       },
-      "firstSeenNote": "這是跨源和 World Monitor 觀察中最早可用的指標日期；可能與列出的源的日期不同。"
+      "firstSeenNote": "這是跨源和 Money Bansho 觀察中最早可用的指標日期；可能與列出的源的日期不同。"
     },
     "nuclear": {
       "types": {
@@ -4594,10 +4599,10 @@
     "imageryEvidenceHere": "此處的影像證據"
   },
   "shell": {
-    "documentTitle": "World Monitor — 即時全球情報儀表板",
-    "metaDescription": "使用 World Monitor 即時儀表盤瀏覽全球態勢，結合互動式地圖與資料面板檢視新聞、地緣政治、軍事、金融、能源和基礎設施資訊。按所選產品檢視探索相關圖層、地區與事件，比較資料來源、觀測時間和可用訊號，跟蹤變化並開啟詳情核查背景，為日常監測與研究提供可追溯的資訊入口，同時關注來源覆蓋及更新狀態。",
+    "documentTitle": "Money Bansho — 即時全球情報儀表板",
+    "metaDescription": "使用 Money Bansho 即時儀表盤瀏覽全球態勢，結合互動式地圖與資料面板檢視新聞、地緣政治、軍事、金融、能源和基礎設施資訊。按所選產品檢視探索相關圖層、地區與事件，比較資料來源、觀測時間和可用訊號，跟蹤變化並開啟詳情核查背景，為日常監測與研究提供可追溯的資訊入口，同時關注來源覆蓋及更新狀態。",
     "offlineTitle": "您已離線",
-    "offlineMessage": "World Monitor 需要網際網路連線來獲取即時情報資料。",
+    "offlineMessage": "Money Bansho 需要網際網路連線來獲取即時情報資料。",
     "offlineRetry": "重試"
   },
   "widgets": {
@@ -4635,12 +4640,12 @@
     "phaseError": "錯誤",
     "previewCheckingHeading": "連線小工具生成器中",
     "previewReadyHeading": "描述您想要的小工具",
-    "previewFetchingHeading": "正在獲取即時 WorldMonitor 資料",
+    "previewFetchingHeading": "正在獲取即時 Money Bansho 資料",
     "previewComposingHeading": "正在構建小工具佈局",
     "previewErrorHeading": "預覽需要處理",
     "previewCheckingCopy": "我們正在驗證您的小工具金鑰和後端可用性，然後啟用生成。",
     "previewReadyCopy": "使用提示示例或描述您想要的精確即時檢視。預覽將在此處更新，然後您可以儲存。",
-    "previewFetchingCopy": "代理正在呼叫已批准的 WorldMonitor 端點併為小工具塑形資料集。",
+    "previewFetchingCopy": "代理正在呼叫已批准的 Money Bansho 端點併為小工具塑形資料集。",
     "previewComposingCopy": "預覽正在使用最新的即時資料和儀表板樣式進行呈現。",
     "previewErrorCopy": "修復問題後重試。您現有的小工具不受影響。",
     "createInteractive": "建立互動式小工具",
@@ -4669,7 +4674,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "需要 World Monitor 許可證金鑰",
+    "lockedDesc": "需要 Money Bansho 許可證金鑰",
     "signInToUnlock": "登入以解鎖進階功能",
     "signIn": "登入以解鎖",
     "upgradeDesc": "升級到 Pro 以獲得完整的進階分析存取權限",
@@ -4808,7 +4813,7 @@
       "hotspots": {
         "category": "新聞 / 熱點",
         "purpose": "標出受監測的地緣政治熱點，並在相關新聞與升級訊號匯合時提高其等級。",
-        "source": "WorldMonitor熱點名錄、RSS/GDELT新聞情報、熱點升級評分、軍事活動，以及國家不穩定性背景。",
+        "source": "Money Bansho熱點名錄、RSS/GDELT新聞情報、熱點升級評分、軍事活動，以及國家不穩定性背景。",
         "freshness": "熱點位置經過精選，並且是靜態的。新聞源的新鮮度另行跟蹤。熱點等級在儀表板新聞源重新整理時重算，間隔大約10分鐘。GDELT情報的種子與快取時限更長。",
         "confidence": "可以用來分流優先順序。若不開啟底層新聞和國家背景，它不是可以引用的結論。",
         "limitations": {
@@ -4855,7 +4860,7 @@
       "conflicts": {
         "category": "衝突",
         "purpose": "顯示精選衝突區和地緣政治邊界疊加，便於把即時訊號放到已知戰區裡看。",
-        "source": "WorldMonitor衝突區名錄、UCDP/ACLED衝突背景，以及有文獻記錄的邊界後設資料，例如朝鮮半島DMZ。",
+        "source": "Money Bansho衝突區名錄、UCDP/ACLED衝突背景，以及有文獻記錄的邊界後設資料，例如朝鮮半島DMZ。",
         "freshness": "基礎區域經過精選，並且是靜態的。動態衝突事件輸入透過ACLED/UCDP源和健康狀態訊號另行跟蹤。",
         "confidence": "適合做地理定向。它本身不能確認事件正在即時發生。",
         "limitations": {
@@ -4888,7 +4893,7 @@
       "ais": {
         "category": "海事",
         "purpose": "顯示戰略水域和咽喉要道附近的船舶密度與AIS中斷訊號。",
-        "source": "AISStream中繼快照、WorldMonitor海事服務，以及咽喉要道中斷分類器。",
+        "source": "AISStream中繼快照、Money Bansho海事服務，以及咽喉要道中斷分類器。",
         "freshness": "AIS中繼快照預設每5秒重建一次。伺服器可能把基礎密度快照快取5分鐘。中繼憑據或連線不可用時，圖層會停用或過期。",
         "confidence": "可用於篩查海事異常。AIS由船舶自行報告，船舶可以關閉訊號。",
         "limitations": {
@@ -4905,7 +4910,7 @@
       "tradeRoutes": {
         "category": "海事",
         "purpose": "畫出經過戰略咽喉要道的主要集裝箱、能源和散貨航線，用來判斷中斷會沿哪條路徑傳遞。",
-        "source": "WorldMonitor貿易航線名錄，加上供應鏈咽喉要道狀態和過境摘要。",
+        "source": "Money Bansho貿易航線名錄，加上供應鏈咽喉要道狀態和過境摘要。",
         "freshness": "航線幾何是靜態的。咽喉要道狀態每6分鐘預熱拉取一次。過境摘要經供應鏈快取和中繼路徑每10分鐘重新整理一次。",
         "confidence": "適合看航線層面的暴露。它不是船舶層面的航線資料。",
         "limitations": {
@@ -4959,7 +4964,7 @@
       "weather": {
         "category": "天氣",
         "purpose": "顯示各國氣象機構釋出且仍然有效的惡劣天氣預警，合併為一條weather:alerts:v1資訊流。",
-        "source": "美國國家氣象局（NWS）、加拿大環境與氣候變化部（ECCC），以及WMO惡劣天氣資訊中心（SWIC）的CAP彙總。經由WorldMonitor中繼寫入種子。",
+        "source": "美國國家氣象局（NWS）、加拿大環境與氣候變化部（ECCC），以及WMO惡劣天氣資訊中心（SWIC）的CAP彙總。經由Money Bansho中繼寫入種子。",
         "freshness": "NWS、ECCC和SWIC預警由中繼每15分鐘寫入一次種子，並對照45分鐘的新鮮度時限進行監測。",
         "confidence": "對參與國機構釋出的預警具有權威性，取決於上游的釋出時間。NWS和ECCC繪製為多邊形。已做地理編碼的SWIC預警繪製在釋出機構所在國的質心，並帶有明確的精度標記。",
         "limitations": {
@@ -4976,7 +4981,7 @@
       "canadaRoads": {
         "category": "交通",
         "purpose": "顯示受支援的加拿大轄區的官方道路事件、警報、路況、封閉、施工和危險。",
-        "source": "安大略511、艾伯塔511和曼尼託巴511的省級資訊源、多倫多市道路限制，以及DriveBC Open511。經由WorldMonitor寫入種子。",
+        "source": "安大略511、艾伯塔511和曼尼託巴511的省級資訊源、多倫多市道路限制，以及DriveBC Open511。經由Money Bansho寫入種子。",
         "freshness": "安大略、艾伯塔和曼尼託巴511每15分鐘寫入一次種子，並對照45分鐘的新鮮度時限進行監測。多倫多限制每2小時寫入一次種子。DriveBC Open511每30分鐘寫入一次種子。",
         "confidence": "對受支援的省級和市級釋出方具有權威性，取決於上游釋出時間和已對映的幾何。",
         "limitations": {
@@ -5041,7 +5046,7 @@
       "waterways": {
         "category": "海事",
         "purpose": "標出戰略水道和咽喉要道，使中斷訊號可以對照固定的海事地理來讀。",
-        "source": "WorldMonitor戰略水道名錄，併疊加來自AIS、NGA警告和PortWatch衍生源的供應鏈咽喉要道狀態。",
+        "source": "Money Bansho戰略水道名錄，併疊加來自AIS、NGA警告和PortWatch衍生源的供應鏈咽喉要道狀態。",
         "freshness": "水道位置是靜態的。即時咽喉要道狀態每6分鐘預熱拉取一次。當中繼與PortWatch路徑健康時，過境摘要每10分鐘重新整理一次。",
         "confidence": "對固定地理的置信度高。即時中斷的置信度取決於配套的AIS、NGA和PortWatch源。",
         "limitations": {
@@ -5058,7 +5063,7 @@
       "ciiChoropleth": {
         "category": "國家風險",
         "purpose": "按國家不穩定指數的當前分數給國家著色，用於對戰略風險做粗分流。",
-        "source": "WorldMonitor國家不穩定指數評分服務，使用衝突、動盪、旅行提醒、網路、船舶追蹤、航空、自然事件和新聞訊號。",
+        "source": "Money Bansho國家不穩定指數評分服務，使用衝突、動盪、旅行提醒、網路、船舶追蹤、航空、自然事件和新聞訊號。",
         "freshness": "風險分數快取每8分鐘預熱拉取一次。seed-meta和health.riskScores對照30分鐘的新鮮度時限，暴露即時、過期、部分或降級狀態。",
         "confidence": "這是複合模型訊號，不是官方國家評級，也不是機率預測。",
         "limitations": {
@@ -5102,7 +5107,7 @@
     "finance": {
       "map": "全球市場地圖",
       "liveNews": "市場頭條",
-      "insights": "AI市場洞察"
+      "insights": "市場洞察"
     },
     "tech": {
       "map": "全球科技地圖",
@@ -5111,12 +5116,12 @@
     "commodity": {
       "map": "商品地圖",
       "liveNews": "商品頭條",
-      "insights": "AI商品洞察"
+      "insights": "商品洞察"
     },
     "energy": {
       "map": "能源地圖",
       "liveNews": "能源頭條",
-      "insights": "AI能源洞察"
+      "insights": "能源洞察"
     },
     "happy": {
       "map": "好訊息地圖"
@@ -5126,9 +5131,9 @@
     "title": "安裝應用",
     "share": "在 Safari 中輕點分享（帶向上箭頭的方框）。你可能需要先開啟更多選單。",
     "add": "選擇新增到主螢幕。",
-    "confirm": "輕點新增，然後從主螢幕開啟 World Monitor。",
+    "confirm": "輕點新增，然後從主螢幕開啟 Money Bansho。",
     "close": "關閉",
-    "alertsHint": "將 World Monitor 安裝到主螢幕，以便在此 iPhone 或 iPad 上接收提醒。",
+    "alertsHint": "將 Money Bansho 安裝到主螢幕，以便在此 iPhone 或 iPad 上接收提醒。",
     "how": "如何安裝"
   },
   "teamDashboards": {
@@ -5373,7 +5378,7 @@
       "placeholder": "地點或 25.11, 55.14",
       "submit": "搜尋",
       "locate": "我的位置",
-      "hint": "輸入的座標和您的位置永遠不會傳送到 WorldMonitor。輸入的地名會傳送到 WorldMonitor 和 OpenStreetMap Nominatim。",
+      "hint": "輸入的座標和您的位置永遠不會傳送到 Money Bansho。輸入的地名會傳送到 Money Bansho 和 OpenStreetMap Nominatim。",
       "results": "地點",
       "searching": "正在搜尋…",
       "tooShort": "輸入至少兩個字元，或輸入座標如 25.11, 55.14。",
@@ -5559,7 +5564,7 @@
     "privacy": {
       "line": "您的點位僅傳送到影象檔案庫。",
       "more": "詳情",
-      "body": "軌道過境時間在本裝置上計算。為了查詢影象，您的瀏覽器將該點位直接傳送到 Earth Search、Planetary Computer、NASA GIBS 和 EUMETSAT；WorldMonitor 不會收到它。在監測站點上，系統按站點 ID 向 WorldMonitor 請求該站點的每日記錄，而不是按您的點位。輸入的地名將傳送到 WorldMonitor 和 OpenStreetMap Nominatim 進行定位。共享連結保留兩位小數（0.01°）。"
+      "body": "軌道過境時間在本裝置上計算。為了查詢影象，您的瀏覽器將該點位直接傳送到 Earth Search、Planetary Computer、NASA GIBS 和 EUMETSAT；Money Bansho 不會收到它。在監測站點上，系統按站點 ID 向 Money Bansho 請求該站點的每日記錄，而不是按您的點位。輸入的地名將傳送到 Money Bansho 和 OpenStreetMap Nominatim 進行定位。共享連結保留兩位小數（0.01°）。"
     },
     "sources": {
       "heading": "資料來源 ({{count}})",
@@ -5679,7 +5684,7 @@
       "map": "提供商、主題和地球儀",
       "ai": "模型、記憶和框架",
       "video": "質量和自動播放",
-      "apiKeys": "World Monitor API 金鑰",
+      "apiKeys": "Money Bansho API 金鑰",
       "embeds": "用於您網站的 widget",
       "aiAgents": "已連線的 MCP 客戶端",
       "about": "網站連結、條款和隱私"
@@ -5695,7 +5700,7 @@
       "planPremium": "進階版",
       "external": {
         "heading": "進階版存取權限",
-        "desc": "此存取權限不透過您的 WorldMonitor 帳戶計費。此處無法使用支付方式或檢視發票。"
+        "desc": "此存取權限不透過您的 Money Bansho 帳戶計費。此處無法使用支付方式或檢視發票。"
       },
       "checking": {
         "heading": "正在檢查您的套餐…",
@@ -5716,7 +5721,7 @@
         "desc": "我們無法驗證您的當前套餐。請重試或在新標籤頁中檢視套餐。"
       },
       "free": {
-        "heading": "WorldMonitor 免費版",
+        "heading": "Money Bansho 免費版",
         "desc": "您當前的套餐是免費版。升級以獲取全部面板、AI 分析和優先順序資料重新整理。"
       },
       "portal": {
@@ -5725,7 +5730,7 @@
       },
       "deletion": {
         "heading": "刪除帳戶",
-        "desc": "永久刪除此 World Monitor 帳戶。訂閱立即取消，剩餘預付時長不予退款。API 金鑰、嵌入金鑰和 MCP 令牌將停止工作。會計、糾紛處理和依法請求所需的計費記錄將連同其中的客戶聯絡方式一併保留；這些記錄將不再關聯您的登入帳戶，但支付服務商在刪除前寫入的 webhook 日誌仍保留投遞時附帶的識別符號。此裝置上的儀表板偏好設定和桌面金鑰鏈（系統憑據儲存）中的機密資訊不會被遠端清除。",
+        "desc": "永久刪除此 Money Bansho 帳戶。訂閱立即取消，剩餘預付時長不予退款。API 金鑰、嵌入金鑰和 MCP 令牌將停止工作。會計、糾紛處理和依法請求所需的計費記錄將連同其中的客戶聯絡方式一併保留；這些記錄將不再關聯您的登入帳戶，但支付服務商在刪除前寫入的 webhook 日誌仍保留投遞時附帶的識別符號。此裝置上的儀表板偏好設定和桌面金鑰鏈（系統憑據儲存）中的機密資訊不會被遠端清除。",
         "dialogTitle": "刪除此帳戶?",
         "dialogCopy": "此操作無法撤銷。訂閱將取消，金鑰立即停止工作，計費記錄將為會計、糾紛處理和依法請求而保留——包括其中的聯絡方式。之後請在其他裝置上登出，並清除此裝置的網站資料——伺服器無法代為執行這些操作。",
         "phraseLabel": "輸入 {{phrase}} 以確認",

@@ -4,6 +4,7 @@ import type { Feed } from '@/types';
 import { SITE_VARIANT } from './variant';
 import { rssProxyUrl } from '@/utils';
 import { mergeCanonicalFeeds } from './feed-resolution';
+import { EXPANSION_FEED_CATEGORIES } from './expansion-categories';
 import {
   browserCategoryFeeds,
   browserIntelSources,
@@ -178,6 +179,13 @@ export const SOURCE_REGION_MAP: Record<string, { labelKey: string; feedKeys: str
   dealsCorpFin: { labelKey: 'header.sourceRegionDeals', feedKeys: ['institutional', 'derivatives'] },
   finRegulation: { labelKey: 'header.sourceRegionFinRegulation', feedKeys: ['fin-regulation'] },
   gulfMena: { labelKey: 'header.sourceRegionGulfMena', feedKeys: ['gccNews'] },
+
+  // Regional press panels (full and finance)
+  chinaMediaPress: { labelKey: 'panels.chinaMedia', feedKeys: ['china-media'] },
+  europeBusinessPress: { labelKey: 'panels.europeBusiness', feedKeys: ['europe-business'] },
+  israelPress: { labelKey: 'panels.israel', feedKeys: ['israel'] },
+  northKoreaPress: { labelKey: 'panels.northKorea', feedKeys: ['north-korea'] },
+  corporateLeadershipPress: { labelKey: 'panels.corporateLeadership', feedKeys: ['corporate-leadership'] },
 };
 
 export const INTEL_SOURCES: Feed[] = browserIntelSources(BROWSER_CATALOG).map(proxied);
@@ -433,6 +441,108 @@ export const SCIENCE_DEFAULT_SOURCES = [
   'ScienceDaily',
 ] as const;
 
+/** Curated default-on sources of the regional press panels; the rest are opt-in. */
+export const EXPANSION_DEFAULT_SOURCES: Record<(typeof EXPANSION_FEED_CATEGORIES)[number], string[]> = {
+  'china-media': [
+    'SCMP China',
+    'SCMP China Economy',
+    'SCMP Companies',
+    'SCMP Diplomacy',
+    'SCMP Tech',
+    'Hong Kong Free Press',
+    'Xinhua English (news.cn) (Google News)',
+    'CGTN China',
+    'CGTN Business',
+    'ECNS China News Service (EN)',
+    'China News Service Finance',
+    'Caixin (Google News)',
+    'TechNode',
+    'Trivium China',
+    'Focus Taiwan (CNA English)',
+    'China Digital Times (EN)',
+    'BBC Chinese',
+  ],
+  'europe-business': [
+    'BBC Business',
+    'Guardian Business',
+    'FT UK Companies',
+    'FT Europe',
+    'City AM',
+    'Politico Europe',
+    'Euractiv',
+    'ECB Press',
+    'European Commission Press',
+    'Bank of England News',
+    'DW English Business',
+    'Expansion Economia',
+    'France 24 Business (EN)',
+    'Handelsblatt Unternehmen',
+    'Le Monde Economie',
+    'Il Sole 24 Ore Economia',
+  ],
+  'israel': [
+    'Globes English',
+    'Ynetnews News',
+    'Ynetnews Business',
+    'Haaretz English',
+    'Jerusalem Post Israel',
+    'JNS',
+    'Arutz Sheva English',
+    'Calcalistech (Google News)',
+    'Bank of Israel (Google News)',
+    'Globes Hebrew Main',
+    'Ynet Economy',
+    'Walla Finance',
+    'N12 Mako News',
+    'Maariv Business',
+    'The Media Line (Google News)',
+  ],
+  'north-korea': [
+    'Yonhap North Korea',
+    'Yonhap News English',
+    '38 North (Google News)',
+    'NK Pro',
+    'NK Insider',
+    'Sino-NK',
+    'Korea Herald NK (Google News)',
+    'Korea Times NK (Google News)',
+    'KBS World NK (Google News)',
+    'Chosun English NK (Google News)',
+    'North Korea sanctions (Google News)',
+    'NK News query KCNA (Google News)',
+    'Daily NK Korean',
+    'Yonhap NK Korean',
+    'RFA Korean',
+  ],
+  'corporate-leadership': [
+    'PR Newswire Personnel',
+    'PR Newswire Acquisitions',
+    'CEO changes (Google News)',
+    'CFO changes (Google News)',
+    'Board changes (Google News)',
+    'SEC 8-K Item 5.02 (Google News)',
+    'GlobeNewswire Management Changes (Google News)',
+    'Business Wire Personnel (Google News)',
+    'CFO Dive',
+    'Chief Executive Magazine',
+    'Corporate Board Member',
+    'Harvard Law Corporate Governance',
+    'FT Management',
+    'UK Board Changes (Google News)',
+    'Israel executive appointments (Google News)',
+  ],
+};
+
+/** Every source of the regional press panels. */
+export const EXPANSION_SOURCES: readonly string[] = [
+  ...new Set(EXPANSION_FEED_CATEGORIES.flatMap((category) => (FULL_FEEDS[category] ?? []).map((feed) => feed.name))),
+];
+
+/** Opt-in in every interface language, including for returning denylist profiles. */
+export const EXPANSION_OPT_IN_SOURCES: readonly string[] = EXPANSION_SOURCES.filter(
+  (name) => !Object.values(EXPANSION_DEFAULT_SOURCES).some((names) => names.includes(name)),
+);
+
 /** Chronological feed introductions used to reconstruct untouched cap states. */
 export const REGIONAL_FEED_ROLLOUT_STAGES = [
   {
@@ -594,6 +704,16 @@ export const REGIONAL_FEED_ROLLOUT_STAGES = [
       ...CRISIS_FLOOR_STRATEGIC_DEFAULT_SOURCES,
     ],
   },
+  {
+    introducedNames: [...EXPANSION_SOURCES],
+    protectedNames: [
+      ...FRONTLINE_EUROPE_PROTECTED_SOURCES,
+      ...REGIONAL_FEED_ROLLOUT_DEFAULT_SOURCES,
+      ...CANADA_EN_DEFAULT_SOURCES,
+      ...CRISIS_FLOOR_EN_DEFAULT_SOURCES,
+      ...CRISIS_FLOOR_STRATEGIC_DEFAULT_SOURCES,
+    ],
+  },
 ] as const;
 
 /**
@@ -699,6 +819,11 @@ export const DEFAULT_ENABLED_SOURCES: Record<string, string[]> = {
   crisis: ['CrisisWatch', 'IAEA', 'WHO', 'UNHCR'],
   energy: ['Oil & Gas', 'Nuclear Energy', 'Reuters Energy', 'Mining & Resources'],
   science: [...SCIENCE_DEFAULT_SOURCES],
+  'china-media': EXPANSION_DEFAULT_SOURCES['china-media'],
+  'europe-business': EXPANSION_DEFAULT_SOURCES['europe-business'],
+  'israel': EXPANSION_DEFAULT_SOURCES['israel'],
+  'north-korea': EXPANSION_DEFAULT_SOURCES['north-korea'],
+  'corporate-leadership': EXPANSION_DEFAULT_SOURCES['corporate-leadership'],
 };
 
 export const DEFAULT_ENABLED_INTEL: string[] = [
@@ -741,7 +866,7 @@ export function getLanguageMatchedSources(locale: string): Set<string> {
 /** Sources boosted by locale (feeds tagged with matching `lang` or multi-URL key). */
 export function getLocaleBoostedSources(locale: string): Set<string> {
   const sources = getLanguageMatchedSources(locale);
-  for (const name of [...BRAZIL_OPT_IN_SOURCES, ...COUNTRY_COVERAGE_OPT_IN_SOURCES, ...PUBLISHER_DIRECT_OPT_IN_SOURCES]) {
+  for (const name of [...BRAZIL_OPT_IN_SOURCES, ...COUNTRY_COVERAGE_OPT_IN_SOURCES, ...PUBLISHER_DIRECT_OPT_IN_SOURCES, ...EXPANSION_OPT_IN_SOURCES]) {
     sources.delete(name);
   }
   return sources;
@@ -818,6 +943,13 @@ export function getTotalFeedCount(): number {
   for (const feeds of Object.values(FULL_FEEDS)) for (const f of feeds) all.add(f.name);
   for (const f of INTEL_SOURCES) all.add(f.name);
   return all.size;
+}
+
+let expansionSourceNames: Set<string> | null = null;
+/** False for regional press sources, which sit outside the free-tier source cap. */
+export function countsTowardSourceCap(name: string): boolean {
+  expansionSourceNames ??= new Set(EXPANSION_SOURCES);
+  return !expansionSourceNames.has(name);
 }
 
 if (import.meta.env.DEV) {

@@ -21,6 +21,11 @@ export const NEWS_POOL_LAYOUT: NewsPoolLayout = {
       "thinktanks",
       "crisis",
       "layoffs",
+      "china-media",
+      "europe-business",
+      "israel",
+      "north-korea",
+      "corporate-leadership",
       "science",
       "intel"
     ],
@@ -62,6 +67,11 @@ export const NEWS_POOL_LAYOUT: NewsPoolLayout = {
       "institutional",
       "analysis",
       "gccNews",
+      "china-media",
+      "europe-business",
+      "israel",
+      "north-korea",
+      "corporate-leadership",
       "nq-news"
     ],
     "commodity": [
@@ -112,6 +122,7 @@ export const NEWS_POOL_LAYOUT: NewsPoolLayout = {
     "fa",
     "fi",
     "fr",
+    "he",
     "hi",
     "hr",
     "hu",
@@ -307,6 +318,13 @@ export const NEWS_POOL_LAYOUT: NewsPoolLayout = {
       "lang": "fr",
       "contentLanguages": [
         "fr"
+      ]
+    },
+    {
+      "edition": "full",
+      "lang": "he",
+      "contentLanguages": [
+        "he"
       ]
     },
     {
@@ -610,6 +628,118 @@ export const NEWS_POOL_LAYOUT: NewsPoolLayout = {
       "lang": "en",
       "contentLanguages": [
         "en"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "cs",
+      "contentLanguages": [
+        "cs"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "da",
+      "contentLanguages": [
+        "da"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "de",
+      "contentLanguages": [
+        "de"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "es",
+      "contentLanguages": [
+        "es"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "fi",
+      "contentLanguages": [
+        "fi"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "fr",
+      "contentLanguages": [
+        "fr"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "he",
+      "contentLanguages": [
+        "he"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "it",
+      "contentLanguages": [
+        "it"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "ja",
+      "contentLanguages": [
+        "ja"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "ko",
+      "contentLanguages": [
+        "ko"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "nl",
+      "contentLanguages": [
+        "nl"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "no",
+      "contentLanguages": [
+        "no"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "pl",
+      "contentLanguages": [
+        "pl"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "pt",
+      "contentLanguages": [
+        "pt"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "ro",
+      "contentLanguages": [
+        "ro"
+      ]
+    },
+    {
+      "edition": "finance",
+      "lang": "sv",
+      "contentLanguages": [
+        "sv"
       ]
     },
     {

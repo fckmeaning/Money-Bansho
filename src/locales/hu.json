@@ -1,7 +1,7 @@
 {
   "shell": {
     "documentTitle": "Világfigyelő — Valós idejű globális intelligencia irányítópult",
-    "metaDescription": "Valós idejű globális hírszerzési platform. A WIRED-ben szerepelt. 2 millió+ felhasználó 190 országban. Konfliktusok, piacok, katonai ügyek, nyílt forrású hírszerzés egy helyen.",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Kapcsolat nélküli mód",
     "offlineMessage": "A Világfigyelő valós idejű intelligencia adatokhoz internetkapcsolatra van szüksége.",
     "offlineRetry": "Újra"
@@ -41,12 +41,12 @@
     "phaseError": "Hiba",
     "previewCheckingHeading": "Widget szerkesztő csatlakoztatása",
     "previewReadyHeading": "Írja le a kívánt widgetet",
-    "previewFetchingHeading": "Élő WorldMonitor adatok lekérése",
+    "previewFetchingHeading": "Élő Money Bansho adatok lekérése",
     "previewComposingHeading": "Widget elrendezés összeállítása",
     "previewErrorHeading": "Az előnézet figyelmet igényel",
     "previewCheckingCopy": "Widget kulcsát és backend rendelkezésre állását ellenőrizzük a generálás engedélyezése előtt.",
     "previewReadyCopy": "Használjon egy prompt példát vagy írja le a kívánt élő nézetet. Az előnézet frissül itt, mielőtt mentené.",
-    "previewFetchingCopy": "Az ügynök jóváhagyott WorldMonitor végpontokat hív meg és formálja az adathalmazt a widgethez.",
+    "previewFetchingCopy": "Az ügynök jóváhagyott Money Bansho végpontokat hív meg és formálja az adathalmazt a widgethez.",
     "previewComposingCopy": "Az előnézet a legújabb élő adatokkal és irányítópult stílust használva jelenik meg.",
     "previewErrorCopy": "Hárítsa el a problémát, majd próbálkozzon újra. Meglévő widgetjei érintetlen maradnak.",
     "createInteractive": "Interaktív widget létrehozása",
@@ -489,12 +489,12 @@
   "panels": {
     "liveNews": "Élő Hírek",
     "markets": "Piacok",
-    "marketImplications": "AI Piaci Hatások",
+    "marketImplications": "Piaci Hatások",
     "map": "Globális Helyzet",
     "techHubs": "Technológiai Központok",
     "status": "Rendszer Állapota",
-    "insights": "AI elemzések",
-    "strategicPosture": "AI Stratégiai Helyzet",
+    "insights": "Elemzések",
+    "strategicPosture": "Stratégiai Helyzet",
     "cii": "Ország Instabilitása",
     "strategicRisk": "Stratégiai Kockázat Áttekintés",
     "intel": "Hírszerzési hírfolyam",
@@ -589,7 +589,7 @@
     "gulfIndices": "Golf-öböl indexek",
     "gulfCurrencies": "Golf-öböl valuták",
     "gulfOil": "Golf-öböl olaj",
-    "airlineIntel": "✈️ Légitársasági intelligencia",
+    "airlineIntel": "Légitársasági intelligencia",
     "consumerPrices": "Fogyasztói árak",
     "fearGreed": "Félelem és mohóság",
     "marketBreadth": "Piaci szélesség",
@@ -597,7 +597,12 @@
     "fx": "Devizaárfolyamok",
     "ukmtoIncidents": "UKMTO-események",
     "reservoirLevels": "Stratégiai vízszintek",
-    "gridDisruptionClock": "Áramkimaradások időmérője az USA államaiban"
+    "gridDisruptionClock": "Áramkimaradások időmérője az USA államaiban",
+    "chinaMedia": "Kínai média",
+    "europeBusiness": "Európai üzleti hírek",
+    "israel": "Izrael",
+    "northKorea": "Észak-Korea-figyelő",
+    "corporateLeadership": "Vállalatvezetői hírek"
   },
   "commands": {
     "prefixes": {
@@ -821,7 +826,7 @@
         "configured": "Asztali beállítások konfigurálva",
         "needsKeys": "Konfiguráld az API-kulcsokat a funkciók feloldásához",
         "some": "Néhány funkció API-kulcsokat igényel",
-        "pro": "A World Monitor Pro aktív"
+        "pro": "A Money Bansho Pro aktív"
       },
       "summary": {
         "desktop": "Asztali mód",
@@ -851,12 +856,12 @@
         "OLLAMA_API_URL": "pl. http://127.0.0.1:11434 (Ollama) vagy http://127.0.0.1:1234/v1 (LM Studio) — OpenAI-kompatibilis végpont.",
         "OLLAMA_MODEL": "pl. llama3.1:8b — összegzéshez használandó modelltag."
       },
-      "proCloud": "Az API-kulcs nélküli funkciók a World Monitor felhőadatait használják.",
-      "skipSetupPro": "Hagyja ki a beállítást: jelentkezzen be a World Monitor Pro segítségével a felhőadatok használatához a saját API-kulcsok helyett.",
-      "getPro": "World Monitor Pro beszerzése"
+      "proCloud": "Az API-kulcs nélküli funkciók a Money Bansho felhőadatait használják.",
+      "skipSetupPro": "Hagyja ki a beállítást: jelentkezzen be a Money Bansho Pro segítségével a felhőadatok használatához a saját API-kulcsok helyett.",
+      "getPro": "Money Bansho Pro beszerzése"
     },
     "settingsWindow": {
-      "shellTitle": "World Monitor beállítások",
+      "shellTitle": "Money Bansho beállítások",
       "shellSearchPlaceholder": "Beállítások keresése...",
       "shellCancel": "Mégse",
       "shellSaveClose": "Mentés és bezárás",
@@ -1259,7 +1264,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>AI piaci következmények</strong> LLM által generált kereskedési jelek az élő geopolitikai, nyersanyag és makro állapotból az egyes előrejelzési ciklus után.<ul><li><strong>Irány</strong>: LONG / SHORT / HEDGE</li><li><strong>Időkeret</strong>: 1W, 2W, 1M vagy 3M horizont</li><li><strong>Katalizátor</strong>: A jel mögötti kulcs katalizátor</li><li><strong>Kockázat</strong>: Figyelmeztetés vagy érvénytelenítési feltétel</li></ul><em>Csak tájékoztató célokra. Nem befektetési tanács.</em>",
-      "title": "AI piaci következmények",
+      "title": "Piaci következmények",
       "directions": {
         "long": "Vétel",
         "short": "SHORT POZÍCIÓ",
@@ -1289,7 +1294,7 @@
       "storageUnavailable": "A lejátszás nem érhető el, mert a böngésző letiltja a webhelyadatok tárolását. Engedélyezze a webhelyadatokat ennél a webhelynél a pillanatképek mentéséhez."
     },
     "pizzint": {
-      "indexSource": "Index: World Monitor",
+      "indexSource": "Index: Money Bansho",
       "venueSource": "helyadatok:",
       "statusNormal": "NORMÁL",
       "statusNoData": "NINCS ADAT",
@@ -1299,7 +1304,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "Frissítve: {{timeAgo}}",
       "tensionsTitle": "Geopolitikai feszültségek",
-      "tensionsSource": "Feszültségek: World Monitor a GDELT eseményei alapján",
+      "tensionsSource": "Feszültségek: Money Bansho a GDELT eseményei alapján",
       "insufficientData": "Nincs elegendő adat",
       "evidenceStrikes": "Jelentett csapások 3 nap alatt ({{countries}}): {{value}}",
       "evidenceAirports": "Zavart repülőterek: {{value}}",
@@ -2017,7 +2022,7 @@
       "staleReport": "Elavult jelentés",
       "reported": "Létszám",
       "period": "Időszak",
-      "movementNote": "Minden sor megőrzi a forrását, a jelentés dátumát és a mérőszámát. Az állomány, az érkezések és a határellenőrzési események különböző mérőszámok. A források átfedhetik egymást; ne adja össze az értékeiket. A WorldMonitor ezt a nézetet a hivatkozott forrásokból állítja elő; ez nem jelent szolgáltatói jóváhagyást.",
+      "movementNote": "Minden sor megőrzi a forrását, a jelentés dátumát és a mérőszámát. Az állomány, az érkezések és a határellenőrzési események különböző mérőszámok. A források átfedhetik egymást; ne adja össze az értékeiket. A Money Bansho ezt a nézetet a hivatkozott forrásokból állítja elő; ez nem jelent szolgáltatói jóváhagyást.",
       "recent": "Közelmúlt",
       "last30Days": "Utolsó 30 nap",
       "newThisWeek": "Ezen a héten új",
@@ -2534,7 +2539,7 @@
       "translate": "Fordítás"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>WM Analyst</strong> AI-elemző élő kontextussal a geopolitikai, piaci, katonai és gazdasági területeken. A Claude által működtetett, valós idejű adatok az aktív WorldMonitor feedekből."
+      "infoTooltip": "<strong>WM Analyst</strong> AI-elemző élő kontextussal a geopolitikai, piaci, katonai és gazdasági területeken. A Claude által működtetett, valós idejű adatok az aktív Money Bansho feedekből."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures pozicionálás</strong> Kereskedelmi kereskedők, nagy spekulánsok és kis kereskedők heti nettó pozíciói a nyersanyag- és pénzügyi futures piacokon. Forrás: a Commodity Futures Trading Commission Commitments of Traders jelentése, pénteken közzétéve."
@@ -2622,7 +2627,7 @@
       "infoTooltip": "<strong>Gazdasági naptár</strong> Ütemezett makrogazdasági kiadások: fogyasztói árindex, nem mezőgazdasági munkahelyek, bruttó hazai termék, felvásárlási menedzserek index és központi banki döntések. A prognózist az aktualokkal és az előzővel szemben mutatja. A magas hatású eseményeket kiemelik. Forrás: gazdasági adatszolgáltatók."
     },
     "fsi": {
-      "infoTooltip": "<strong>Pénzügyi stressz mutató</strong> WorldMonitor magas hozamú hitel-Treasury hosszú arány, tőzsdei volatilitásra és magas hozamú spread-re korrigálva: (HYG / TLT) / (VIX × magas hozamú spread / 100). Ez nem a Kansas City Fed pénzügyi stressz indexe. Az 1,5 vagy magasabb érték alacsony stresszt jelent; 0,3 alatt magas stresszt.",
+      "infoTooltip": "<strong>Pénzügyi stressz mutató</strong> Money Bansho magas hozamú hitel-Treasury hosszú arány, tőzsdei volatilitásra és magas hozamú spread-re korrigálva: (HYG / TLT) / (VIX × magas hozamú spread / 100). Ez nem a Kansas City Fed pénzügyi stressz indexe. Az 1,5 vagy magasabb érték alacsony stresszt jelent; 0,3 alatt magas stresszt.",
       "title": "Pénzügyi stresszmutató",
       "usFsiValue": "US pénzügyi stressz mutató érték",
       "asOf": "{{date}} állapot szerint",
@@ -2710,7 +2715,7 @@
       "infoTooltip": "<strong>Makro mutatók</strong> Az Egyesült Államok, euróövezet és Kína árak, aktivitás, politika és valuta mutatók. Kína aktuális lefedettséget igényel. Minden csempe megjeleníti a forrást és megfigyelési dátumát."
     },
     "monitors": {
-      "infoTooltip": "<strong>Keyword Monitors</strong> Adjon hozzá bármilyen kifejezést az összes WorldMonitor forrásban való élő hírerwähnungen nyomon követéséhez. Az eredmények valós időben frissülnek, miközben a megfelelő cikkeket feldolgozzák."
+      "infoTooltip": "<strong>Keyword Monitors</strong> Adjon hozzá bármilyen kifejezést az összes Money Bansho forrásban való élő hírerwähnungen nyomon követéséhez. Az eredmények valós időben frissülnek, miközben a megfelelő cikkeket feldolgozzák."
     },
     "renewable": {
       "infoTooltip": "<strong>Megújuló energia</strong> A megújuló forrásokból származó villamos energia részesedése régió és év szerint, valamint az Egyesült Államok telepített kapacitása a napelemes, szél és szén energiához (MW). Források: Világbank (EG.ELC.RNEW.ZS) és az Egyesült Államok Energiainformációs Adminisztrációja."
@@ -2817,7 +2822,7 @@
           }
         },
         "about": {
-          "heading": "Utolsó dolog: mire fogod használni a World Monitor-t?",
+          "heading": "Utolsó dolog: mire fogod használni a Money Bansho-t?",
           "body": "Három rövid kérdés segít nekünk megépíteni az ideális eszközöket számodra. Kihagyhatod, amit szeretnél.",
           "confirmCta": "Válaszaim mentése",
           "confirming": "Mentés…",
@@ -3234,7 +3239,7 @@
       "global": "A FAO globális havi indexe"
     },
     "aboutYou": {
-      "title": "Segíts nekünk a World Monitort neked építeni",
+      "title": "Segíts nekünk a Money Banshot neked építeni",
       "ariaLabel": "Rólad",
       "progress": "{{current}} / {{total}}",
       "skip": "Kihagyás",
@@ -3246,7 +3251,7 @@
       "thanks": "Köszönjük. Ez segít dönteni, mit építsünk majd.",
       "questions": {
         "primaryUse": {
-          "label": "Mire használod elsősorban a World Monitor-t?",
+          "label": "Mire használod elsősorban a Money Bansho-t?",
           "options": {
             "news": "Hírek és világesemények",
             "markets": "Piacok és kereskedés",
@@ -3288,13 +3293,13 @@
           }
         },
         "alternative": {
-          "label": "Mit használnál, ha a World Monitor nem lenne?",
+          "label": "Mit használnál, ha a Money Bansho nem lenne?",
           "placeholder": "Opcionális"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Tetszik a World Monitor?",
+      "title": "Tetszik a Money Bansho?",
       "body": "A GitHub-on adott csillag segít másoknak megtalálni.",
       "star": "Csillagozás a GitHubon",
       "dismiss": "Bezárás és többé ne kérdezz rá"
@@ -3564,7 +3569,7 @@
         "copied": "Másolva.",
         "copyFailed": "A másolás sikertelen volt. Jelölje ki a szöveget a másoláshoz."
       },
-      "firstSeenNote": "Ez a legkorábbi elérhető indikátor dátum a feedek vagy World Monitor megfigyelések között; eltérhet a felsorolt forrás dátumától."
+      "firstSeenNote": "Ez a legkorábbi elérhető indikátor dátum a feedek vagy Money Bansho megfigyelések között; eltérhet a felsorolt forrás dátumától."
     },
     "nuclear": {
       "types": {
@@ -4686,7 +4691,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "World Monitor licenckulcs szükséges",
+    "lockedDesc": "Money Bansho licenckulcs szükséges",
     "signInToUnlock": "Jelentkezzen be a prémium funkciók feloldásához",
     "signIn": "Jelentkezzen be a feloldáshoz",
     "upgradeDesc": "Frissítsen Pro verzióra a teljes hozzáféréshez a prémium elemzésekhez",
@@ -4831,7 +4836,7 @@
       "hotspots": {
         "category": "Hírek / gócpontok",
         "purpose": "Kiemeli a figyelt geopolitikai gócpontokat, és emeli a szintjüket, amikor az érintett hírek és az eszkalációs jelek összetalálkoznak.",
-        "source": "A WorldMonitor gócpont-nyilvántartása, RSS/GDELT hírszerzés, a gócpontok eszkalációs értékelése, katonai tevékenység és az ország instabilitásának kontextusa.",
+        "source": "A Money Bansho gócpont-nyilvántartása, RSS/GDELT hírszerzés, a gócpontok eszkalációs értékelése, katonai tevékenység és az ország instabilitásának kontextusa.",
         "freshness": "A gócpontok helye gondozott és statikus. A hírfolyamok frissességét külön követjük. A gócpontszintek újraszámolódnak, amikor az irányítópult hírfolyamai frissülnek, körülbelül 10 percenként. A GDELT hírszerzésnek hosszabb a feltöltési és gyorsítótár-kerete.",
         "confidence": "Első szűréshez hasznos jel. A mögöttes hírek és az ország kontextusa nélkül nem hivatkozható állítás.",
         "limitations": {
@@ -4878,7 +4883,7 @@
       "conflicts": {
         "category": "Konfliktus",
         "purpose": "Gondozott konfliktuszónákat és geopolitikai határfedvényeket mutat, hogy az élő jelek ismert hadszínterekhez illeszkedjenek.",
-        "source": "A WorldMonitor konfliktuszóna-nyilvántartása, UCDP/ACLED konfliktuskontextus, valamint dokumentált határ-metaadatok, például a koreai DMZ.",
+        "source": "A Money Bansho konfliktuszóna-nyilvántartása, UCDP/ACLED konfliktuskontextus, valamint dokumentált határ-metaadatok, például a koreai DMZ.",
         "freshness": "Az alapzónák gondozottak és statikusak. A dinamikus konfliktuseseményeket külön követik az ACLED/UCDP folyamok és az állapotjelek.",
         "confidence": "Jó a földrajzi tájékozódáshoz. Önmagában nem erősíti meg az incidenst valós időben.",
         "limitations": {
@@ -4911,7 +4916,7 @@
       "ais": {
         "category": "Tengeri",
         "purpose": "Hajósűrűséget és AIS-zavarjeleket mutat a stratégiai vizek és a szűk átjárók körül.",
-        "source": "AISStream relé pillanatképek, a WorldMonitor tengeri szolgáltatása és a szűk átjárók zavarosztályozói.",
+        "source": "AISStream relé pillanatképek, a Money Bansho tengeri szolgáltatása és a szűk átjárók zavarosztályozói.",
         "freshness": "Az AIS relé pillanatképei alapértelmezés szerint 5 másodpercenként épülnek újra. A kiszolgáló az alapsűrűség pillanatképét 5 percig tarthatja gyorsítótárban. A réteg kikapcsol vagy elavul, ha a relé belépési adatai vagy a kapcsolat hiányzik.",
         "confidence": "Hasznos a tengeri rendellenességek szűrésére. Az AIS-t a hajók maguk jelentik, és a hajók el is némulhatnak.",
         "limitations": {
@@ -4928,7 +4933,7 @@
       "tradeRoutes": {
         "category": "Tengeri",
         "purpose": "A fő konténer-, energia- és ömlesztett útvonalakat rajzolja a stratégiai szűk átjárókon át, hogy a zavarok útja követhető legyen.",
-        "source": "A WorldMonitor kereskedelmiútvonal-nyilvántartása, valamint az ellátási lánc szűk átjáróinak állapota és a tranzitösszesítők.",
+        "source": "A Money Bansho kereskedelmiútvonal-nyilvántartása, valamint az ellátási lánc szűk átjáróinak állapota és a tranzitösszesítők.",
         "freshness": "Az útvonal geometriája statikus. A szűk átjárók állapotát 6 percenként karbantartó lekérdezés tartja frissen. A tranzitösszesítők 10 percenként frissülnek az ellátási lánc gyorsítótárán és a relé útjain.",
         "confidence": "Jó kontextus az útvonalszintű kitettséghez. Nem hajószintű útvonalcsatorna.",
         "limitations": {
@@ -4982,7 +4987,7 @@
       "weather": {
         "category": "Időjárás",
         "purpose": "Aktív hivatalos súlyos időjárási riasztásokat mutat a nemzeti meteorológiai szolgálatoktól, egy weather:alerts:v1 folyamba összevonva.",
-        "source": "Az Egyesült Államok National Weather Service szolgálata (NWS), az Environment and Climate Change Canada (ECCC) és a WMO Severe Weather Information Centre (SWIC) CAP-összesítése, a WorldMonitor relén keresztül feltöltve.",
+        "source": "Az Egyesült Államok National Weather Service szolgálata (NWS), az Environment and Climate Change Canada (ECCC) és a WMO Severe Weather Information Centre (SWIC) CAP-összesítése, a Money Bansho relén keresztül feltöltve.",
         "freshness": "Az NWS, az ECCC és a SWIC riasztásait a relé 15 percenként tölti fel, és 45 perces frissességi kerethez méri.",
         "confidence": "Mérvadó a részt vevő nemzeti szolgálatok riasztásaira, a forrás közlési idejének függvényében. Az NWS és az ECCC poligonként rajzolódik. A geokódolt SWIC-riasztások a kiadó szolgálat országsúlypontján jelennek meg, kifejezett pontossági jelölővel.",
         "limitations": {
@@ -4999,7 +5004,7 @@
       "canadaRoads": {
         "category": "Közlekedés",
         "purpose": "Hivatalos közúti eseményeket, riasztásokat, állapotokat, lezárásokat, építkezéseket és veszélyeket mutat a támogatott kanadai illetékességi területeken.",
-        "source": "Ontario 511, Alberta 511 és Manitoba 511 tartományi folyamok, a City of Toronto Road Restrictions és a DriveBC Open511, a WorldMonitoron keresztül feltöltve.",
+        "source": "Ontario 511, Alberta 511 és Manitoba 511 tartományi folyamok, a City of Toronto Road Restrictions és a DriveBC Open511, a Money Banshoon keresztül feltöltve.",
         "freshness": "Az Ontario 511, az Alberta 511 és a Manitoba 511 15 percenként töltődik fel, és 45 perces frissességi kerethez mérik. A Toronto korlátozásai 2 óránként töltődnek fel. A DriveBC Open511 30 percenként töltődik fel.",
         "confidence": "Mérvadó a támogatott tartományi és önkormányzati közlőkre, a forrás közlési idejének és a térképezett geometriának a függvényében.",
         "limitations": {
@@ -5064,7 +5069,7 @@
       "waterways": {
         "category": "Tengeri",
         "purpose": "Stratégiai vízi utakat és szűk átjárókat jelöl, hogy a zavarjelek a rögzített tengeri földrajzhoz képest legyenek olvashatók.",
-        "source": "A WorldMonitor stratégiai víziút-nyilvántartása, az ellátási lánc szűk átjáróinak állapotfedvényeivel az AIS-ből, az NGA figyelmeztetéseiből és a PortWatchból származó folyamokból.",
+        "source": "A Money Bansho stratégiai víziút-nyilvántartása, az ellátási lánc szűk átjáróinak állapotfedvényeivel az AIS-ből, az NGA figyelmeztetéseiből és a PortWatchból származó folyamokból.",
         "freshness": "A vízi utak helye statikus. Az élő szűkátjáró-állapotot 6 percenként karbantartó lekérdezés frissíti. A tranzitösszesítők 10 percenként frissülnek, ha a relé és a PortWatch útja rendben van.",
         "confidence": "A rögzített földrajzra magas. Az élő zavar megbízhatósága a kísérő AIS, NGA és PortWatch folyamoktól függ.",
         "limitations": {
@@ -5081,7 +5086,7 @@
       "ciiChoropleth": {
         "category": "Országkockázat",
         "purpose": "Az országokat az Ország instabilitási index aktuális pontszáma szerint színezi, a stratégiai kockázat széles első szűréséhez.",
-        "source": "A WorldMonitor Ország instabilitási index pontozó szolgáltatása konfliktus, zavargás, figyelmeztetés, kiber, hajókövetés, légi, természeti esemény és hírjeleket használ.",
+        "source": "A Money Bansho Ország instabilitási index pontozó szolgáltatása konfliktus, zavargás, figyelmeztetés, kiber, hajókövetés, légi, természeti esemény és hírjeleket használ.",
         "freshness": "A kockázati pontszám gyorsítótárát 8 percenként karbantartó lekérdezés frissíti. A seed-meta és a health.riskScores élő, elavult, részleges vagy leromlott állapotot mutat egy 30 perces frissességi kerethez képest.",
         "confidence": "Összetett modelljel. Nem hivatalos országminősítés és nem valószínűségi előrejelzés.",
         "limitations": {
@@ -5125,7 +5130,7 @@
     "finance": {
       "map": "Globális Piacok Térképe",
       "liveNews": "Piaci Hírek",
-      "insights": "AI Piaci Elemzések"
+      "insights": "Piaci Elemzések"
     },
     "tech": {
       "map": "Globális Technológiai Térkép",
@@ -5134,12 +5139,12 @@
     "commodity": {
       "map": "Árucikkek Térképe",
       "liveNews": "Árucikkek Hírek",
-      "insights": "AI Árucikkek Elemzések"
+      "insights": "Árucikkek Elemzések"
     },
     "energy": {
       "map": "Energia Atlasz Térképe",
       "liveNews": "Energia Hírek",
-      "insights": "AI Energia Elemzések"
+      "insights": "Energia Elemzések"
     },
     "happy": {
       "map": "Jó Hírek Térképe"
@@ -5149,9 +5154,9 @@
     "title": "Alkalmazás telepítése",
     "share": "A Safariban koppintson a Megosztás ikonra (négyzet felfelé mutató nyíllal). Előfordulhat, hogy előbb a Továbbiak menüt kell megnyitnia.",
     "add": "Válassza a Főképernyőhöz adás lehetőséget.",
-    "confirm": "Koppintson a Hozzáadás gombra, majd nyissa meg a World Monitort a főképernyőről.",
+    "confirm": "Koppintson a Hozzáadás gombra, majd nyissa meg a Money Banshot a főképernyőről.",
     "close": "Bezárás",
-    "alertsHint": "Telepítse a World Monitort a főképernyőre, hogy értesítéseket kapjon ezen az iPhone-on vagy iPaden.",
+    "alertsHint": "Telepítse a Money Banshot a főképernyőre, hogy értesítéseket kapjon ezen az iPhone-on vagy iPaden.",
     "how": "Telepítési útmutató"
   },
   "teamDashboards": {
@@ -5402,7 +5407,7 @@
       "placeholder": "Hely vagy 25.11, 55.14",
       "submit": "Keresés",
       "locate": "Saját hely",
-      "hint": "A beírt koordináták és az Ön tartózkodási helye soha nem kerülnek a WorldMonitorhoz. A beírt helynevek a WorldMonitorhoz és az OpenStreetMap Nominatimhez kerülnek.",
+      "hint": "A beírt koordináták és az Ön tartózkodási helye soha nem kerülnek a Money Banshohoz. A beírt helynevek a Money Banshohoz és az OpenStreetMap Nominatimhez kerülnek.",
       "results": "Helyek",
       "searching": "Keresés…",
       "tooShort": "Adjon meg legalább két karaktert, vagy koordinátákat, például 25.11, 55.14.",
@@ -5596,7 +5601,7 @@
     "privacy": {
       "line": "A pont csak a képarchívumokba kerül.",
       "more": "Részletek",
-      "body": "Az áthaladásokat ez az eszköz számítja ki. A képek megkereséséhez a böngésző közvetlenül az Earth Search, a Planetary Computer, a NASA GIBS és az EUMETSAT felé küldi a pontot; a WorldMonitor nem kapja meg. Megfigyelt helyszínen a WorldMonitor a helyszín napi rekordját a helyszín azonosítója alapján kapja kérésként, nem az Ön pontja alapján. A beírt helynév a WorldMonitorhoz és az OpenStreetMap Nominatimhez kerül a megtalálásához. A megosztott hivatkozások két tizedesjegyet őriznek meg (0,01°)."
+      "body": "Az áthaladásokat ez az eszköz számítja ki. A képek megkereséséhez a böngésző közvetlenül az Earth Search, a Planetary Computer, a NASA GIBS és az EUMETSAT felé küldi a pontot; a Money Bansho nem kapja meg. Megfigyelt helyszínen a Money Bansho a helyszín napi rekordját a helyszín azonosítója alapján kapja kérésként, nem az Ön pontja alapján. A beírt helynév a Money Banshohoz és az OpenStreetMap Nominatimhez kerül a megtalálásához. A megosztott hivatkozások két tizedesjegyet őriznek meg (0,01°)."
     },
     "sources": {
       "heading": "Források ({{count}})",
@@ -5716,7 +5721,7 @@
       "map": "Szolgáltató, téma és földgömb",
       "ai": "Modellek, memória és keretrendszerek",
       "video": "Minőség és automatikus lejátszás",
-      "apiKeys": "World Monitor API-kulcsok",
+      "apiKeys": "Money Bansho API-kulcsok",
       "embeds": "Widgetek saját webhelyhez",
       "aiAgents": "Csatlakoztatott MCP-kliensek",
       "about": "Webhely-hivatkozások, feltételek és adatvédelem"
@@ -5732,7 +5737,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Premium hozzáférés",
-        "desc": "Ez a hozzáférés nem a WorldMonitor-fiókjának számlázásán keresztül működik. Itt nem érhetők el fizetési módok vagy számlák."
+        "desc": "Ez a hozzáférés nem a Money Bansho-fiókjának számlázásán keresztül működik. Itt nem érhetők el fizetési módok vagy számlák."
       },
       "checking": {
         "heading": "Csomag ellenőrzése…",
@@ -5753,7 +5758,7 @@
         "desc": "Nem sikerült ellenőrizni aktuális csomagját. Próbálja újra, vagy tekintse meg a csomagokat új lapon."
       },
       "free": {
-        "heading": "WorldMonitor Ingyenes",
+        "heading": "Money Bansho Ingyenes",
         "desc": "Jelenlegi csomagja: Ingyenes. Váltson nagyobb csomagra az összes panelért, az AI-elemzésért és az elsőbbségi adatfrissítésért."
       },
       "portal": {
@@ -5762,7 +5767,7 @@
       },
       "deletion": {
         "heading": "Fiók törlése",
-        "desc": "A World Monitor-fiók végleges törlése. Az előfizetések azonnal megszűnnek, a hátralévő előre kifizetett időszakért nincs visszatérítés. Az API-kulcsok, a beágyazási kulcsok és az MCP-tokenek nem működnek tovább. A számvitelhez, vitarendezéshez és jogszerű megkeresésekhez szükséges számlázási nyilvántartásokat megőrizzük a bennük szereplő ügyfél-kapcsolattartási adatokkal együtt; ezek a továbbiakban nem nevezik meg a bejelentkezési fiókját, a fizetési szolgáltató törlés előtt rögzített webhook-naplói azonban megtartják azokat az azonosítókat, amelyekkel kézbesítették őket. Az irányítópult-beállításokat és az asztali alkalmazás rendszerkulcstartójában (Keychain) tárolt titkokat ezen az eszközön nem töröljük távolról.",
+        "desc": "A Money Bansho-fiók végleges törlése. Az előfizetések azonnal megszűnnek, a hátralévő előre kifizetett időszakért nincs visszatérítés. Az API-kulcsok, a beágyazási kulcsok és az MCP-tokenek nem működnek tovább. A számvitelhez, vitarendezéshez és jogszerű megkeresésekhez szükséges számlázási nyilvántartásokat megőrizzük a bennük szereplő ügyfél-kapcsolattartási adatokkal együtt; ezek a továbbiakban nem nevezik meg a bejelentkezési fiókját, a fizetési szolgáltató törlés előtt rögzített webhook-naplói azonban megtartják azokat az azonosítókat, amelyekkel kézbesítették őket. Az irányítópult-beállításokat és az asztali alkalmazás rendszerkulcstartójában (Keychain) tárolt titkokat ezen az eszközön nem töröljük távolról.",
         "dialogTitle": "Törli ezt a fiókot?",
         "dialogCopy": "Ez a művelet nem vonható vissza. Az előfizetések megszűnnek, a kulcsok azonnal leállnak, a számlázási nyilvántartásokat pedig megőrizzük számviteli, vitarendezési és jogszerű megkeresési célokra – a bennük szereplő kapcsolattartási adatokkal együtt. Ezután jelentkezzen ki a többi eszközön, és törölje a webhelyadatokat ezen az eszközön – ezeket a szerver nem éri el.",
         "phraseLabel": "A megerősítéshez írja be: {{phrase}}",

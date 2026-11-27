@@ -421,8 +421,8 @@
     "map": "グローバル情勢",
     "techHubs": "注目テックハブ",
     "status": "システム状態",
-    "insights": "AIインサイト",
-    "strategicPosture": "AI戦略態勢",
+    "insights": "インサイト",
+    "strategicPosture": "戦略態勢",
     "cii": "国家不安定性",
     "strategicRisk": "戦略リスク概観",
     "intel": "インテルフィード",
@@ -491,7 +491,7 @@
     "gulfCurrencies": "湾岸通貨",
     "gulfOil": "湾岸石油",
     "bigmac": "実質ビッグマック指数",
-    "marketImplications": "AI 市場への影響",
+    "marketImplications": "市場への影響",
     "energyComplex": "エネルギー複合体",
     "oilInventories": "石油在庫",
     "energyCrisis": "エネルギー危機トラッカー",
@@ -518,7 +518,7 @@
     "fuelPricesDiesel": "ディーゼル",
     "fuelPricesSource": "ソース",
     "groceryBasketDesc": "世界 24 か国の食料品バスケット価格比較",
-    "airlineIntel": "✈️ エアライン インテリジェンス",
+    "airlineIntel": "エアライン インテリジェンス",
     "consumerPrices": "消費者物価",
     "fearGreed": "恐怖と貪欲",
     "marketBreadth": "市場の広がり",
@@ -526,7 +526,12 @@
     "fx": "外国為替レート",
     "ukmtoIncidents": "UKMTO事案",
     "reservoirLevels": "戦略的水位",
-    "gridDisruptionClock": "米国各州の停電時計"
+    "gridDisruptionClock": "米国各州の停電時計",
+    "chinaMedia": "中国メディア",
+    "europeBusiness": "欧州ビジネス",
+    "israel": "イスラエル",
+    "northKorea": "北朝鮮ウォッチ",
+    "corporateLeadership": "企業経営層ニュース"
   },
   "commands": {
     "prefixes": {
@@ -749,7 +754,7 @@
         "configured": "デスクトップ設定が構成済",
         "needsKeys": "機能を有効にするためAPIキーを設定してください",
         "some": "一部の機能にAPIキーが必要",
-        "pro": "World Monitor Pro がアクティブです"
+        "pro": "Money Bansho Pro がアクティブです"
       },
       "summary": {
         "desktop": "デスクトップモード",
@@ -779,9 +784,9 @@
         "OLLAMA_API_URL": "e.g. http://127.0.0.1:11434 (Ollama) or http://127.0.0.1:1234/v1 (LM Studio) — OpenAI-compatible endpoint.",
         "OLLAMA_MODEL": "例: llama3.1:8b — 要約に使用するモデルタグ。"
       },
-      "proCloud": "ローカル API キーがないフィーチャーは World Monitor クラウドデータを使用します。",
-      "skipSetupPro": "セットアップをスキップ: World Monitor Pro でサインインして、独自の API キーの代わりにクラウドデータを使用します。",
-      "getPro": "World Monitor Pro を入手"
+      "proCloud": "ローカル API キーがないフィーチャーは Money Bansho クラウドデータを使用します。",
+      "skipSetupPro": "セットアップをスキップ: Money Bansho Pro でサインインして、独自の API キーの代わりにクラウドデータを使用します。",
+      "getPro": "Money Bansho Pro を入手"
     },
     "settingsWindow": {
       "validating": "APIキーを検証中...",
@@ -1135,7 +1140,7 @@
       "storageUnavailable": "このブラウザがサイトストレージをブロックしているため、再生機能が利用できません。このサイトのサイトデータを許可して、スナップショットの保存を開始してください。"
     },
     "pizzint": {
-      "indexSource": "指数: World Monitor",
+      "indexSource": "指数: Money Bansho",
       "venueSource": "店舗データ:",
       "statusNormal": "通常",
       "statusNoData": "データなし",
@@ -1145,7 +1150,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "{{timeAgo}}に更新",
       "tensionsTitle": "地政学的緊張",
-      "tensionsSource": "緊張度：GDELTのイベントに基づくWorld Monitorの算出値",
+      "tensionsSource": "緊張度：GDELTのイベントに基づくMoney Banshoの算出値",
       "insufficientData": "データ不足",
       "evidenceStrikes": "3日間に報告された攻撃（{{countries}}）：{{value}}",
       "evidenceAirports": "影響を受けた空港：{{value}}",
@@ -1861,7 +1866,7 @@
       "staleReport": "古い報告",
       "reported": "件数",
       "period": "期間",
-      "movementNote": "各行は出典、報告日、指標を保持します。ある時点の人口、到着者数、国境取締りの事案数は異なる指標です。出典の対象が重複する場合があるため、数値を合計しないでください。WorldMonitorはリンク先の出典からこの表示を作成しており、提供元による支持を意味しません。",
+      "movementNote": "各行は出典、報告日、指標を保持します。ある時点の人口、到着者数、国境取締りの事案数は異なる指標です。出典の対象が重複する場合があるため、数値を合計しないでください。Money Banshoはリンク先の出典からこの表示を作成しており、提供元による支持を意味しません。",
       "recent": "最近",
       "last30Days": "過去30日間",
       "newThisWeek": "今週の新規",
@@ -2265,7 +2270,7 @@
       "tripDays": "移動日数"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>WM アナリスト</strong> 地政学、市場、軍事、経済分野のライブコンテキストを持つAIアナリスト。WorldMonitorのアクティブフィードからリアルタイムデータを注入したClaudeで稼働。"
+      "infoTooltip": "<strong>WM アナリスト</strong> 地政学、市場、軍事、経済分野のライブコンテキストを持つAIアナリスト。Money Banshoのアクティブフィードからリアルタイムデータを注入したClaudeで稼働。"
     },
     "cotPositioning": {
       "infoTooltip": "<strong>先物ポジショニング</strong> 商品先物および金融先物における商業トレーダー、大規模投機家、小規模トレーダーの週単位のネットポジション。出典は商品先物取引委員会（CFTC）の「Commitments of Traders」レポート（金曜日公表）。"
@@ -2323,7 +2328,7 @@
       "infoTooltip": "<strong>経済カレンダー</strong> 予定された経済指標発表：消費者物価指数、非農業部門雇用者数、国内総生産、購買担当者指数、中央銀行決定。予測値、実績値、前回値を表示。高インパクトイベントはハイライト。出典：経済データプロバイダー。"
     },
     "fsi": {
-      "infoTooltip": "<strong>金融ストレス指標</strong> World Monitorの高利回り格付債からロング米国債への比率を株式ボラティリティとハイイールドスプレッドで調整：(HYG / TLT) / (VIX × ハイイールドスプレッド / 100)。これはカンザスシティ連邦準備銀行の金融ストレス指数ではありません。1.5以上は低ストレス、0.3未満は高ストレスです。",
+      "infoTooltip": "<strong>金融ストレス指標</strong> Money Banshoの高利回り格付債からロング米国債への比率を株式ボラティリティとハイイールドスプレッドで調整：(HYG / TLT) / (VIX × ハイイールドスプレッド / 100)。これはカンザスシティ連邦準備銀行の金融ストレス指数ではありません。1.5以上は低ストレス、0.3未満は高ストレスです。",
       "title": "金融ストレス指数",
       "usFsiValue": "米国金融ストレス指標値",
       "asOf": "{{date}} 時点",
@@ -2411,7 +2416,7 @@
       "infoTooltip": "<strong>マクロ指標</strong> 米国、ユーロ圏、中国の物価、経済活動、政策および通貨指標。中国の現在の報道が必要です。各タイルにはその出典と観察日が表示されます。"
     },
     "monitors": {
-      "infoTooltip": "<strong>キーワードモニター</strong> 任意の用語を追加してWorldMonitorの全ソースからリアルタイムのニュース言及を追跡。マッチする記事が取り込まれると結果がリアルタイムで更新。"
+      "infoTooltip": "<strong>キーワードモニター</strong> 任意の用語を追加してMoney Banshoの全ソースからリアルタイムのニュース言及を追跡。マッチする記事が取り込まれると結果がリアルタイムで更新。"
     },
     "renewable": {
       "infoTooltip": "<strong>再生可能エネルギー</strong> 地域および年別の再生可能エネルギーからの発電シェア、および米国の太陽光、風力、石炭の設置済み容量（MW）。出典：世界銀行（EG.ELC.RNEW.ZS）およびUS Energy Information Administration。"
@@ -2477,7 +2482,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>AI市場インプリケーション</strong> 各フォアキャストサイクル後のライブ地政学、商品、マクロ状態から導出されるLLM生成トレードシグナル。<ul><li><strong>方向性</strong>: LONG / SHORT / HEDGE</li><li><strong>時間軸</strong>: 1W、2W、1M、または3M</li><li><strong>ドライバー</strong>: シグナルの主要な触媒</li><li><strong>リスク</strong>: 注意事項または無効化条件</li></ul><em>情報提供のみを目的としています。投資アドバイスではありません。</em>",
-      "title": "AI市場への影響",
+      "title": "市場への影響",
       "directions": {
         "long": "ロング",
         "short": "ショート",
@@ -2736,7 +2741,7 @@
           }
         },
         "about": {
-          "heading": "最後に1つ: World Monitor をどのようにご利用いただきますか?",
+          "heading": "最後に1つ: Money Bansho をどのようにご利用いただきますか?",
           "body": "3つの簡単な質問にお答えいただくと、より適切なツール開発に役立ちます。スキップしても大丈夫です。",
           "confirmCta": "回答を保存",
           "confirming": "保存中…",
@@ -3143,7 +3148,7 @@
       "global": "FAO世界月次指数"
     },
     "aboutYou": {
-      "title": "World Monitorをあなた向けに改善するお手伝い",
+      "title": "Money Banshoをあなた向けに改善するお手伝い",
       "ariaLabel": "あなたについて",
       "progress": "{{current}}/{{total}}",
       "skip": "スキップ",
@@ -3155,7 +3160,7 @@
       "thanks": "ありがとうございます。今後の開発方針の参考にさせていただきます。",
       "questions": {
         "primaryUse": {
-          "label": "World Monitorの主な用途は何ですか?",
+          "label": "Money Banshoの主な用途は何ですか?",
           "options": {
             "news": "ニュースと世界情勢",
             "markets": "市場とトレーディング",
@@ -3197,13 +3202,13 @@
           }
         },
         "alternative": {
-          "label": "World Monitorがなかった場合、何を使いますか?",
+          "label": "Money Banshoがなかった場合、何を使いますか?",
           "placeholder": "オプション"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "World Monitor を気に入っていただけましたか？",
+      "title": "Money Bansho を気に入っていただけましたか？",
       "body": "GitHub でスターをつけると、他のユーザーが見つけやすくなります。",
       "star": "GitHub でスターをつける",
       "dismiss": "非表示にして二度と表示しない"
@@ -3473,7 +3478,7 @@
         "copied": "コピーしました。",
         "copyFailed": "コピーに失敗しました。テキストを選択してコピーしてください。"
       },
-      "firstSeenNote": "これは、フィードまたはWorld Monitorの観測データから得られる最も古い指標日付です。リストされたソースの日付と異なる場合があります。"
+      "firstSeenNote": "これは、フィードまたはMoney Banshoの観測データから得られる最も古い指標日付です。リストされたソースの日付と異なる場合があります。"
     },
     "nuclear": {
       "types": {
@@ -4595,9 +4600,9 @@
   },
   "shell": {
     "documentTitle": "ワールドモニター — リアルタイム グローバルインテリジェンスダッシュボード",
-    "metaDescription": "リアルタイム世界情報プラットフォーム。WIREDで紹介。190カ国、200万人以上が利用。紛争、市場、軍事、オープンソース・インテリジェンスを一つのビューで。",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "オフラインです",
-    "offlineMessage": "World Monitorはリアルタイムインテリジェンスデータのためにインターネット接続が必要です。",
+    "offlineMessage": "Money Banshoはリアルタイムインテリジェンスデータのためにインターネット接続が必要です。",
     "offlineRetry": "再試行"
   },
   "widgets": {
@@ -4635,12 +4640,12 @@
     "phaseError": "エラー",
     "previewCheckingHeading": "ウィジェットビルダーを接続中",
     "previewReadyHeading": "作成したいウィジェットを説明してください",
-    "previewFetchingHeading": "ライブWorldMonitorデータを取得中",
+    "previewFetchingHeading": "ライブMoney Banshoデータを取得中",
     "previewComposingHeading": "ウィジェットレイアウトを構成中",
     "previewErrorHeading": "プレビューに注意が必要です",
     "previewCheckingCopy": "生成を有効にする前に、ウィジェットキーとバックエンド可用性を検証しています。",
     "previewReadyCopy": "プロンプト例を使用するか、希望するライブビューを正確に説明してください。プレビューは保存前にここで更新されます。",
-    "previewFetchingCopy": "エージェントが承認されたWorldMonitorエンドポイントを呼び出し、ウィジェット用にデータセットを整形しています。",
+    "previewFetchingCopy": "エージェントが承認されたMoney Banshoエンドポイントを呼び出し、ウィジェット用にデータセットを整形しています。",
     "previewComposingCopy": "プレビューが最新のライブデータとダッシュボードスタイルでレンダリングされています。",
     "previewErrorCopy": "問題を修正して再試行してください。既存のウィジェットは影響を受けません。",
     "createInteractive": "インタラクティブウィジェットを作成",
@@ -4669,7 +4674,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "World Monitor ライセンスキーが必要です",
+    "lockedDesc": "Money Bansho ライセンスキーが必要です",
     "signInToUnlock": "サインインしてプレミアム機能を利用",
     "signIn": "サインインして利用",
     "upgradeDesc": "Proにアップグレードしてプレミアム分析に完全アクセス",
@@ -4808,7 +4813,7 @@
       "hotspots": {
         "category": "ニュース / ホットスポット",
         "purpose": "監視している地政学上のホットスポットを示し、関連するニュースとエスカレーションのシグナルが重なるとそのレベルを上げます。",
-        "source": "WorldMonitorのホットスポット台帳、RSS/GDELTのニュースインテリジェンス、ホットスポットのエスカレーション評価、軍事活動、国家不安定性の文脈。",
+        "source": "Money Banshoのホットスポット台帳、RSS/GDELTのニュースインテリジェンス、ホットスポットのエスカレーション評価、軍事活動、国家不安定性の文脈。",
         "freshness": "ホットスポットの位置はキュレート済みで、静的です。ニュースフィードの鮮度は別に追跡します。ホットスポットのレベルは、ダッシュボードのニュースフィードが更新されるとき、およそ10分間隔で再計算されます。GDELTインテリジェンスのシードとキャッシュの許容時間は、それより長くなります。",
         "confidence": "優先度の切り分けに使えます。基になるニュースと国の文脈を開かなければ、引用できる主張にはなりません。",
         "limitations": {
@@ -4855,7 +4860,7 @@
       "conflicts": {
         "category": "紛争",
         "purpose": "キュレート済みの紛争地帯と、地政学上の境界の重ね合わせを示します。既知の戦域に照らして、ライブのシグナルを置けます。",
-        "source": "WorldMonitorの紛争地帯台帳、UCDP/ACLEDの紛争文脈、朝鮮半島のDMZのような文書化された境界のメタデータ。",
+        "source": "Money Banshoの紛争地帯台帳、UCDP/ACLEDの紛争文脈、朝鮮半島のDMZのような文書化された境界のメタデータ。",
         "freshness": "基本のゾーンはキュレート済みで、静的です。動的な紛争イベントの入力は、ACLED/UCDPのフィードと健全性のシグナルで別に追跡します。",
         "confidence": "地理的な見当づけに向きます。これだけでは、事象が今起きていることの確認にはなりません。",
         "limitations": {
@@ -4888,7 +4893,7 @@
       "ais": {
         "category": "海事",
         "purpose": "戦略上の水域とチョークポイントの周辺で、船舶の密度とAISの途絶シグナルを示します。",
-        "source": "AISStreamのリレースナップショット、WorldMonitorの海事サービス、チョークポイントの混乱を分ける分類器。",
+        "source": "AISStreamのリレースナップショット、Money Banshoの海事サービス、チョークポイントの混乱を分ける分類器。",
         "freshness": "AISのリレースナップショットは、既定では5秒ごとに作り直します。サーバは、基本の密度スナップショットを5分キャッシュすることがあります。リレーの認証情報または接続が使えないとき、レイヤーは無効になるか、古くなります。",
         "confidence": "海事の異常を調べるのに使えます。AISは自己申告であり、船舶は信号を切ることがあります。",
         "limitations": {
@@ -4905,7 +4910,7 @@
       "tradeRoutes": {
         "category": "海事",
         "purpose": "混乱がどの経路を伝わるかを考えるため、戦略上のチョークポイントを通る主要なコンテナ、エネルギー、ばら積みの航路を描きます。",
-        "source": "WorldMonitorの貿易ルート台帳に、サプライチェーンのチョークポイント状態と通過の要約を加えたものです。",
+        "source": "Money Banshoの貿易ルート台帳に、サプライチェーンのチョークポイント状態と通過の要約を加えたものです。",
         "freshness": "航路の形状は静的です。チョークポイントの状態は6分ごとに事前取得します。通過の要約は、サプライチェーンのキャッシュとリレーの経路を通じて10分ごとに更新します。",
         "confidence": "航路単位の曝露を見る文脈に向きます。船舶単位の航路フィードではありません。",
         "limitations": {
@@ -4959,7 +4964,7 @@
       "weather": {
         "category": "気象",
         "purpose": "各国の気象機関が出している有効な重大気象警報を示します。weather:alerts:v1という1本のフィードにまとめています。",
-        "source": "米国国立気象局（NWS）、カナダ環境・気候変動省（ECCC）、WMO悪天候情報センター（SWIC）のCAP集約です。WorldMonitorのリレーを通じてシードします。",
+        "source": "米国国立気象局（NWS）、カナダ環境・気候変動省（ECCC）、WMO悪天候情報センター（SWIC）のCAP集約です。Money Banshoのリレーを通じてシードします。",
         "freshness": "NWS、ECCC、SWICの警報は、リレーが15分ごとにシードします。45分の鮮度許容時間に照らして監視します。",
         "confidence": "参加する各国機関が出した警報については正規です。上流がいつ公開したかに左右されます。NWSとECCCはポリゴンで描きます。ジオコード済みのSWIC警報は、発表機関がある国の重心に、精度を明示したマーカーで描きます。",
         "limitations": {
@@ -4976,7 +4981,7 @@
       "canadaRoads": {
         "category": "交通",
         "purpose": "対応しているカナダの管轄について、公式の道路事象、警報、路面状況、通行止め、工事、危険を示します。",
-        "source": "オンタリオ511、アルバータ511、マニトバ511の州フィード、トロント市の道路規制、DriveBC Open511です。WorldMonitorを通じてシードします。",
+        "source": "オンタリオ511、アルバータ511、マニトバ511の州フィード、トロント市の道路規制、DriveBC Open511です。Money Banshoを通じてシードします。",
         "freshness": "オンタリオ、アルバータ、マニトバの511は15分ごとにシードし、45分の鮮度許容時間に照らして監視します。トロントの規制は2時間ごとにシードします。DriveBC Open511は30分ごとにシードします。",
         "confidence": "対応している州と自治体の発行者については正規です。上流がいつ公開したかと、地図に載る形状に左右されます。",
         "limitations": {
@@ -5041,7 +5046,7 @@
       "waterways": {
         "category": "海事",
         "purpose": "戦略的水路とチョークポイントを示します。固定された海事の地理に照らして、混乱のシグナルを読めます。",
-        "source": "WorldMonitorの戦略的水路台帳です。AIS、NGAの警告、PortWatch由来のフィードから、サプライチェーンのチョークポイント状態を重ねます。",
+        "source": "Money Banshoの戦略的水路台帳です。AIS、NGAの警告、PortWatch由来のフィードから、サプライチェーンのチョークポイント状態を重ねます。",
         "freshness": "水路の位置は静的です。ライブのチョークポイント状態は6分ごとに事前取得します。リレーとPortWatchの経路が健全なとき、通過の要約は10分ごとに更新します。",
         "confidence": "固定された地理については高いです。ライブの混乱についての信頼度は、併せて使うAIS、NGA、PortWatchのフィードに依存します。",
         "limitations": {
@@ -5058,7 +5063,7 @@
       "ciiChoropleth": {
         "category": "国リスク",
         "purpose": "戦略リスクを大づかみに切り分けるため、国家不安定性指数の現在のスコアで国を色分けします。",
-        "source": "WorldMonitorの国家不安定性指数の評価サービスです。紛争、騒乱、渡航勧告、サイバー、船舶追跡、航空、自然イベント、ニュースのシグナルを使います。",
+        "source": "Money Banshoの国家不安定性指数の評価サービスです。紛争、騒乱、渡航勧告、サイバー、船舶追跡、航空、自然イベント、ニュースのシグナルを使います。",
         "freshness": "リスクスコアのキャッシュは8分ごとに事前取得します。seed-metaとhealth.riskScoresは、30分の鮮度許容時間に対して、ライブ、古い、部分的、低下の状態を出します。",
         "confidence": "複合モデルのシグナルです。公式の国別評価でも、確率の予測でもありません。",
         "limitations": {
@@ -5102,7 +5107,7 @@
     "finance": {
       "map": "グローバルマーケットマップ",
       "liveNews": "マーケットヘッドライン",
-      "insights": "AI マーケットインサイト"
+      "insights": "マーケットインサイト"
     },
     "tech": {
       "map": "グローバルテックマップ",
@@ -5111,12 +5116,12 @@
     "commodity": {
       "map": "コモディティマップ",
       "liveNews": "コモディティヘッドライン",
-      "insights": "AIコモディティインサイト"
+      "insights": "コモディティインサイト"
     },
     "energy": {
       "map": "エネルギーアトラスマップ",
       "liveNews": "エネルギーヘッドライン",
-      "insights": "AIエネルギーインサイト"
+      "insights": "エネルギーインサイト"
     },
     "happy": {
       "map": "グッドニュースマップ"
@@ -5126,9 +5131,9 @@
     "title": "アプリをインストール",
     "share": "Safariで共有（上向き矢印のある四角）をタップします。先にその他のメニューを開く必要がある場合があります。",
     "add": "ホーム画面に追加を選びます。",
-    "confirm": "追加をタップし、ホーム画面からWorld Monitorを開きます。",
+    "confirm": "追加をタップし、ホーム画面からMoney Banshoを開きます。",
     "close": "閉じる",
-    "alertsHint": "このiPhoneまたはiPadで通知を受け取るには、World Monitorをホーム画面にインストールしてください。",
+    "alertsHint": "このiPhoneまたはiPadで通知を受け取るには、Money Banshoをホーム画面にインストールしてください。",
     "how": "インストール方法"
   },
   "teamDashboards": {
@@ -5373,7 +5378,7 @@
       "placeholder": "場所または 25.11, 55.14",
       "submit": "検索",
       "locate": "現在地",
-      "hint": "入力した座標と現在地はWorldMonitorに送信されません。入力した地名はWorldMonitorとOpenStreetMap Nominatimに送信されます。",
+      "hint": "入力した座標と現在地はMoney Banshoに送信されません。入力した地名はMoney BanshoとOpenStreetMap Nominatimに送信されます。",
       "results": "場所",
       "searching": "検索中…",
       "tooShort": "2文字以上入力するか、25.11, 55.14のような座標を入力してください。",
@@ -5559,7 +5564,7 @@
     "privacy": {
       "line": "ご指定のポイントはイメージアーカイブのみに送信されます。",
       "more": "詳細",
-      "body": "パスはこのデバイス上で計算されます。イメージを検索するとき、ブラウザはそのポイントを Earth Search、Planetary Computer、NASA GIBS、EUMETSAT に直接送信します。WorldMonitor は受信しません。監視対象サイトでは、WorldMonitor にはそのサイトの日次記録をサイト ID で問い合わせ、ポイントは送信しません。入力された地名は WorldMonitor と OpenStreetMap Nominatim に送信され、検索されます。共有リンクは小数点以下2桁（0.01°）を保持します。"
+      "body": "パスはこのデバイス上で計算されます。イメージを検索するとき、ブラウザはそのポイントを Earth Search、Planetary Computer、NASA GIBS、EUMETSAT に直接送信します。Money Bansho は受信しません。監視対象サイトでは、Money Bansho にはそのサイトの日次記録をサイト ID で問い合わせ、ポイントは送信しません。入力された地名は Money Bansho と OpenStreetMap Nominatim に送信され、検索されます。共有リンクは小数点以下2桁（0.01°）を保持します。"
     },
     "sources": {
       "heading": "ソース ({{count}})",
@@ -5679,7 +5684,7 @@
       "map": "プロバイダー、テーマ、グローブ",
       "ai": "モデル、メモリ、フレームワーク",
       "video": "品質と自動再生",
-      "apiKeys": "World Monitor APIのキー",
+      "apiKeys": "Money Bansho APIのキー",
       "embeds": "自分のサイト用widget",
       "aiAgents": "接続されたMCPクライアント",
       "about": "サイトリンク、利用規約、プライバシー"
@@ -5695,7 +5700,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Premium アクセス",
-        "desc": "このアクセスは WorldMonitor アカウントを通じて課金されません。お支払い方法および請求書はここでは利用できません。"
+        "desc": "このアクセスは Money Bansho アカウントを通じて課金されません。お支払い方法および請求書はここでは利用できません。"
       },
       "checking": {
         "heading": "プランを確認中…",
@@ -5716,7 +5721,7 @@
         "desc": "現在のプランを確認できませんでした。もう一度お試しになるか、新しいタブでプランを表示してください。"
       },
       "free": {
-        "heading": "WorldMonitor 無料プラン",
+        "heading": "Money Bansho 無料プラン",
         "desc": "現在のプランは無料プランです。アップグレードすると、すべてのパネル、AI 分析、優先データ更新をご利用いただけます。"
       },
       "portal": {
@@ -5725,7 +5730,7 @@
       },
       "deletion": {
         "heading": "アカウントの削除",
-        "desc": "この World Monitor アカウントを完全に削除します。サブスクリプションは直ちにキャンセルされ、残りの前払い期間の返金はありません。API キー、埋め込みキー、MCP トークンは機能しなくなります。会計、紛争対応、法的な要請に必要な請求記録は、そこに含まれる顧客の連絡先情報とともに保持されます。これらの記録はあなたのログインアカウントと紐付かなくなりますが、削除前に書き込まれた決済プロバイダーの Webhook ログには、配信時の識別子が残ります。このデバイス上のダッシュボード設定と、デスクトップのキーチェーン（OS の認証情報ストア）に保存されたシークレットは、リモートでは消去されません。",
+        "desc": "この Money Bansho アカウントを完全に削除します。サブスクリプションは直ちにキャンセルされ、残りの前払い期間の返金はありません。API キー、埋め込みキー、MCP トークンは機能しなくなります。会計、紛争対応、法的な要請に必要な請求記録は、そこに含まれる顧客の連絡先情報とともに保持されます。これらの記録はあなたのログインアカウントと紐付かなくなりますが、削除前に書き込まれた決済プロバイダーの Webhook ログには、配信時の識別子が残ります。このデバイス上のダッシュボード設定と、デスクトップのキーチェーン（OS の認証情報ストア）に保存されたシークレットは、リモートでは消去されません。",
         "dialogTitle": "このアカウントを削除しますか?",
         "dialogCopy": "この操作は取り消せません。サブスクリプションはキャンセルされ、キーは直ちに機能しなくなります。請求記録は、そこに含まれる連絡先情報も含め、会計、紛争対応、法的な要請のために保持されます。削除後、他のデバイスでサインアウトし、このデバイスのサイトデータを消去してください。これらはサーバー側からは操作できません。",
         "phraseLabel": "{{phrase}} と入力して確認",

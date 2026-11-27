@@ -5,7 +5,6 @@ import { type DomChild, h, replaceChildren, safeHtml as sanitizeHtmlFragment, se
 import { safeHtmlToString, type SafeHtml } from '@/utils/sanitize';
 import { trackGateHit, trackLayoutCustomized, trackPanelGateClick } from '@/services/analytics';
 import { getAiFlowSettings } from '@/services/ai-flow-settings';
-import { getSecretState } from '@/services/runtime-config';
 import { PanelGateReason } from '@/services/panel-gating';
 import { lockSvg, upgradeSvg } from '@/components/gate-icons';
 import { dataFreshness, type PanelFreshnessSummary } from '@/services/data-freshness';
@@ -293,18 +292,6 @@ export class Panel {
       headerLeft.appendChild(infoWrapper);
     }
 
-    // Add "new" badge element (hidden by default)
-    if (options.trackActivity !== false) {
-      this.newBadgeEl = document.createElement('span');
-      this.newBadgeEl.className = 'panel-new-badge';
-      this.newBadgeEl.style.display = 'none';
-      headerLeft.appendChild(this.newBadgeEl);
-    }
-
-    if (options.premium && !getSecretState('WORLDMONITOR_API_KEY').present) {
-      const proBadge = h('span', { className: 'panel-pro-badge' }, t('premium.pro'));
-      headerLeft.appendChild(proBadge);
-    }
 
     this.header.appendChild(headerLeft);
 
@@ -1237,17 +1224,6 @@ export class Panel {
       lockedChildren.push(featureList);
     }
 
-    // The CTA opens the /pro plan picker, which shows the Terms above every
-    // plan button (#6976), so no assent line is needed here.
-    const ctaBtn = h('button', { type: 'button', className: 'panel-locked-cta' }, 'Upgrade to Pro');
-    ctaBtn.dataset.dashboardInteraction = 'upgrade';
-    ctaBtn.addEventListener('click', () => {
-      import('@/services/upgrade-flow').then((m) => m.openUpgradePlans()).catch(() => {
-        window.open('https://worldmonitor.app/pro', '_blank', 'noopener,noreferrer');
-      });
-    });
-    lockedChildren.push(ctaBtn);
-
     this.replaceContent(h('div', { className: 'panel-locked-state' }, ...lockedChildren));
   }
 
@@ -1346,7 +1322,9 @@ export class Panel {
       onAction();
     });
 
-    this.replaceContent(h('div', { className: 'panel-locked-state' }, iconEl, descEl, ctaBtn));
+    // No purchase prompts: only sign-in and billing-repair states get a button.
+    const offersPurchase = reason === PanelGateReason.FREE_TIER || reason === PanelGateReason.LAPSED;
+    this.replaceContent(h('div', { className: 'panel-locked-state' }, iconEl, descEl, ...(offersPurchase ? [] : [ctaBtn])));
     if (tracksAcquisition && !Panel.viewedGatedPanels.has(this.panelId)
       && !this.destroyed && typeof IntersectionObserver !== 'undefined') {
       const observer = new IntersectionObserver((entries) => {

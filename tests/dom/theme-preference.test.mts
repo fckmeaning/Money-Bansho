@@ -62,13 +62,14 @@ describe('Auto theme preference', () => {
     expect(listeners.size).toBe(0);
   });
 
-  it('follows the system theme on a first visit, when settings shows Auto', () => {
+  it('stays dark on a first visit, whatever the system theme', () => {
+    light = true;
     applyStoredTheme();
-    expect(getThemePreference()).toBe('auto');
+    expect(getThemePreference()).toBe('dark');
     expect(getCurrentTheme()).toBe('dark');
-    expect(listeners.size).toBe(1);
+    expect(listeners.size).toBe(0);
     changeSystemTheme(true);
-    expect(getCurrentTheme()).toBe('light');
+    expect(getCurrentTheme()).toBe('dark');
     expect(localStorage.getItem('worldmonitor-theme')).toBeNull();
   });
 });
@@ -93,10 +94,12 @@ describe('Dashboard pre-paint theme', () => {
     expect(runPrepaint('www.worldmonitor.app')).toBe('light');
   });
 
-  it('defaults the happy variant to light and other variants to the system theme', () => {
+  it('defaults the happy variant to light and other variants to dark', () => {
     expect(runPrepaint('happy.worldmonitor.app')).toBe('light');
     expect(runPrepaint('www.worldmonitor.app')).toBeUndefined();
     light = true;
+    expect(runPrepaint('www.worldmonitor.app')).toBeUndefined();
+    localStorage.setItem('worldmonitor-theme', 'auto');
     expect(runPrepaint('www.worldmonitor.app')).toBe('light');
   });
 });

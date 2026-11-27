@@ -12,8 +12,9 @@ interface StoryMeta {
 }
 
 const variantMeta = VARIANT_META[SITE_VARIANT] ?? VARIANT_META.full;
-const CANONICAL_URL = variantMeta.url;
-const PUBLIC_ORIGIN = new URL(variantMeta.url).origin;
+const SITE_BASE = typeof window === 'undefined' ? 'http://localhost' : window.location.origin;
+const CANONICAL_URL = new URL(variantMeta.url, SITE_BASE).href;
+const PUBLIC_ORIGIN = new URL(CANONICAL_URL).origin;
 const API_ORIGIN = getCanonicalApiOrigin();
 const DEFAULT_IMAGE = `${PUBLIC_ORIGIN}/favico/${SITE_VARIANT === 'full' ? '' : SITE_VARIANT + '/'}og-image.png`;
 
@@ -99,7 +100,7 @@ function generateDescription(
     parts.push(typeDescriptions[type]);
   }
 
-  return `${variantMeta.siteName} ${parts.join('. ')}. Free, open-source geopolitical intelligence.`;
+  return `${variantMeta.siteName} ${parts.join('. ')}. Open-source market and event monitoring.`;
 }
 
 function setMetaTag(property: string, content: string): void {

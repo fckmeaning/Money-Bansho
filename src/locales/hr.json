@@ -1,7 +1,7 @@
 {
   "shell": {
     "documentTitle": "Svjetski Monitor — Nadzorna Ploča Globalne Obavještajne Informacije u Realnom Vremenu",
-    "metaDescription": "Globalna platforma za praćenje u realnom vremenu. Predstavljena u WIRED-u. Koristi je 2M+ ljudi u 190 zemalja. Sukobi, tržišta, vojska, OSINT na jednom mjestu.",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Niste Mrežom Povezani",
     "offlineMessage": "Svjetski Monitor zahtijeva internetsku vezu za podatke obavještajne informacije u realnom vremenu.",
     "offlineRetry": "Pokušaj Ponovno"
@@ -41,12 +41,12 @@
     "phaseError": "Greška",
     "previewCheckingHeading": "Povezivanje graditelja widgeta",
     "previewReadyHeading": "Opiši widget koji želiš",
-    "previewFetchingHeading": "Preuzimanje uživo WorldMonitor podataka",
+    "previewFetchingHeading": "Preuzimanje uživo Money Bansho podataka",
     "previewComposingHeading": "Sastavljanje rasporeda widgeta",
     "previewErrorHeading": "Prikaz treba pažnju",
     "previewCheckingCopy": "Provjeravamo tvoj ključ widgeta i dostupnost pozadine prije omogućavanja generiranja.",
     "previewReadyCopy": "Koristi primjer upita ili opiši točan direktan prikaz koji želiš. Prikaz će se ažurirati ovdje prije nego što ga spremiš.",
-    "previewFetchingCopy": "Agent poziva odobrene WorldMonitor krajnje točke i oblikuje skup podataka za widget.",
+    "previewFetchingCopy": "Agent poziva odobrene Money Bansho krajnje točke i oblikuje skup podataka za widget.",
     "previewComposingCopy": "Prikaz se prikazuje s najnovijim uživo podacima i stilizacijom nadzorne ploče.",
     "previewErrorCopy": "Ispravi problem, zatim pokušaj ponovno. Tvoji postojeći widgeti nisu na udaru.",
     "createInteractive": "Kreiraj interaktivni widget",
@@ -491,12 +491,12 @@
   "panels": {
     "liveNews": "Vijesti uživo",
     "markets": "Tržišta",
-    "marketImplications": "Implikacije AI na tržištu",
+    "marketImplications": "Implikacije na tržištu",
     "map": "Globalna situacija",
     "techHubs": "Vruća tehnološka središta",
     "status": "Stanje sustava",
-    "insights": "AI uvidi",
-    "strategicPosture": "AI strateška pozicija",
+    "insights": "Uvidi",
+    "strategicPosture": "Strateška pozicija",
     "cii": "Nestabilnost država",
     "strategicRisk": "Pregled strateškog rizika",
     "intel": "Intel feed",
@@ -591,7 +591,7 @@
     "gulfIndices": "Indeksi Zaliva",
     "gulfCurrencies": "Valute Zaliva",
     "gulfOil": "Nafta Zaliva",
-    "airlineIntel": "✈️ Obavještenja o Zrakoplovnim Kompanijama",
+    "airlineIntel": "Obavještenja o Zrakoplovnim Kompanijama",
     "consumerPrices": "Cijene za Potrošače",
     "fearGreed": "Strah & Pohlepa",
     "marketBreadth": "Širina Tržišta",
@@ -599,7 +599,12 @@
     "fx": "Tečajevi deviza",
     "ukmtoIncidents": "Incidenti UKMTO-a",
     "reservoirLevels": "Strateški vodostaji",
-    "gridDisruptionClock": "Sat prekida opskrbe električnom energijom u saveznim državama SAD-a"
+    "gridDisruptionClock": "Sat prekida opskrbe električnom energijom u saveznim državama SAD-a",
+    "chinaMedia": "Kineski mediji",
+    "europeBusiness": "Europsko gospodarstvo",
+    "israel": "Izrael",
+    "northKorea": "Praćenje Sjeverne Koreje",
+    "corporateLeadership": "Vijesti o vodstvu tvrtki"
   },
   "commands": {
     "prefixes": {
@@ -824,7 +829,7 @@
         "configured": "Desktop postavke konfigurisane",
         "needsKeys": "Konfiguriši API ključeve da otključaš funkcije",
         "some": "Neke funkcije trebaju API ključeve",
-        "pro": "World Monitor Pro je aktivan"
+        "pro": "Money Bansho Pro je aktivan"
       },
       "summary": {
         "desktop": "Desktop režim",
@@ -854,9 +859,9 @@
         "OLLAMA_API_URL": "npr. http://127.0.0.1:11434 (Ollama) ili http://127.0.0.1:1234/v1 (LM Studio) — OpenAI-kompatibilan endpoint.",
         "OLLAMA_MODEL": "npr. llama3.1:8b — tag modela za summarizaciju."
       },
-      "proCloud": "Značajke bez lokalnog API ključa koriste World Monitor cloud podatke.",
-      "skipSetupPro": "Preskoči postavu: prijavite se s World Monitor Pro za korištenje cloud podataka umjesto svojih API ključeva.",
-      "getPro": "Uzmi World Monitor Pro"
+      "proCloud": "Značajke bez lokalnog API ključa koriste Money Bansho cloud podatke.",
+      "skipSetupPro": "Preskoči postavu: prijavite se s Money Bansho Pro za korištenje cloud podataka umjesto svojih API ključeva.",
+      "getPro": "Uzmi Money Bansho Pro"
     },
     "settingsWindow": {
       "shellTitle": "Postavke Svjetskog monitoringa",
@@ -1266,7 +1271,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>AI implikacije na tržištu</strong> LLM-generirani trgovinski signali izvedeni iz živog geopolitičkog, commodityja i makro stanja nakon svakog ciklusa prognoziranja.<ul><li><strong>Smjer</strong>: LONG / SHORT / HEDGE</li><li><strong>Vremenski okvir</strong>: 1T, 2T, 1M ili 3M horizont</li><li><strong>Pokretač</strong>: Ključni katalizator iza signala</li><li><strong>Rizik</strong>: Napomena ili uvjet poništavanja</li></ul><em>Samo u informativne svrhe. Nije investicijski savjet.</em>",
-      "title": "AI implikacije na tržištu",
+      "title": "Implikacije na tržištu",
       "directions": {
         "long": "Kupi",
         "short": "KRATKA POZICIJA",
@@ -1297,7 +1302,7 @@
       "storageUnavailable": "Reprodukcija nije dostupna jer ovaj preglednik blokira pohranu podataka web-mjesta. Dopustite podatke za ovu stranicu kako biste počeli spremati snimke stanja."
     },
     "pizzint": {
-      "indexSource": "Indeks: World Monitor",
+      "indexSource": "Indeks: Money Bansho",
       "venueSource": "podaci o objektima:",
       "statusNormal": "NORMALNO",
       "statusNoData": "NEMA PODATAKA",
@@ -1307,7 +1312,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "Ažurirano {{timeAgo}}",
       "tensionsTitle": "Geopolitička napetost",
-      "tensionsSource": "Napetosti: World Monitor na temelju događaja GDELT-a",
+      "tensionsSource": "Napetosti: Money Bansho na temelju događaja GDELT-a",
       "insufficientData": "Nedovoljno podataka",
       "evidenceStrikes": "Prijavljeni napadi u 3 dana ({{countries}}): {{value}}",
       "evidenceAirports": "Pogođene zračne luke: {{value}}",
@@ -2027,7 +2032,7 @@
       "staleReport": "Zastarjelo izvješće",
       "reported": "Broj",
       "period": "Razdoblje",
-      "movementNote": "Svaki redak zadržava svoj izvor, datum izvješća i mjeru. Broj prisutnih osoba, dolasci i događaji granične kontrole različite su mjere. Izvori se mogu preklapati; ne zbrajajte njihove brojeve. WorldMonitor izvodi ovaj prikaz iz povezanih izvora; to ne podrazumijeva odobrenje pružatelja.",
+      "movementNote": "Svaki redak zadržava svoj izvor, datum izvješća i mjeru. Broj prisutnih osoba, dolasci i događaji granične kontrole različite su mjere. Izvori se mogu preklapati; ne zbrajajte njihove brojeve. Money Bansho izvodi ovaj prikaz iz povezanih izvora; to ne podrazumijeva odobrenje pružatelja.",
       "recent": "Nedavno",
       "last30Days": "Posljednjih 30 dana",
       "newThisWeek": "Novo ovaj tjedan",
@@ -2544,7 +2549,7 @@
       "translate": "Prevedi"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>WM Analyst</strong> AI analitičar sa živim kontekstom kroz geopolitičke, tržišne, vojne i ekonomske domene. Pogonjen s Claude-om sa podacima u realnom vremenu ubrizganim iz aktivnih WorldMonitor feedova."
+      "infoTooltip": "<strong>WM Analyst</strong> AI analitičar sa živim kontekstom kroz geopolitičke, tržišne, vojne i ekonomske domene. Pogonjen s Claude-om sa podacima u realnom vremenu ubrizganim iz aktivnih Money Bansho feedova."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Pozicioniranje futures ugovora</strong> Tjedne neto pozicije komercijalnih trgovaca, velikih spekulanata i malih trgovaca za robe i financijske futures ugovore. Izvor je izvješće Komisije za trgovinu roba futures o obvezama trgovaca, objavljeno petkom."
@@ -2637,7 +2642,7 @@
       "infoTooltip": "<strong>Ekonomski kalendar</strong> Zakazana makroekonomska objavljivanja: indeks cijena potrošačkih dobara, plaće izvan poljoprivrede, bruto domaći proizvod, indeks upravitelja nabave i odluke centralnih banaka. Prikazuje prognozu u odnosu na stvarne vrijednosti u odnosu na prethodnje. Događaji visoke važnosti su istaknutí. Izvor: pružatelji ekonomskih podataka."
     },
     "fsi": {
-      "infoTooltip": "<strong>Indikator financijskog stresa</strong> World Monitor omjer visokorentabilnog kredita i dugoročnih trezorskih obveznica, prilagođen za volatilnost dionica i raspon visokorentabilnog kredita: (HYG / TLT) / (VIX × raspon visokorentabilnog kredita / 100). Ovo nije indeks financijskog stresa Kansas City Feda. Vrijednost od 1,5 ili viša označava nizak stress; ispod 0,3 je visok stress.",
+      "infoTooltip": "<strong>Indikator financijskog stresa</strong> Money Bansho omjer visokorentabilnog kredita i dugoročnih trezorskih obveznica, prilagođen za volatilnost dionica i raspon visokorentabilnog kredita: (HYG / TLT) / (VIX × raspon visokorentabilnog kredita / 100). Ovo nije indeks financijskog stresa Kansas City Feda. Vrijednost od 1,5 ili viša označava nizak stress; ispod 0,3 je visok stress.",
       "title": "Indikator financijskog stresa",
       "usFsiValue": "Vrijednost indeksa financijskog stresa SAD-a",
       "asOf": "na dan {{date}}",
@@ -2725,7 +2730,7 @@
       "infoTooltip": "<strong>Makroekonomski indikatori</strong> SAD, eurozona i kineski indikatori cijena, aktivnosti, politike i valuta. Kina zahtijeva trenutnu pokrivenost. Svaki prikaz pokazuje svoj izvor i datum promatranja."
     },
     "monitors": {
-      "infoTooltip": "<strong>Keyword Monitors</strong> Dodajte bilo koji pojam kako biste pratili živu spomenuću vijesti na svim WorldMonitor izvorima. Rezultati se ažuriraju u realnom vremenu dok se upareni članci primaju."
+      "infoTooltip": "<strong>Keyword Monitors</strong> Dodajte bilo koji pojam kako biste pratili živu spomenuću vijesti na svim Money Bansho izvorima. Rezultati se ažuriraju u realnom vremenu dok se upareni članci primaju."
     },
     "renewable": {
       "infoTooltip": "<strong>Obnovljiva energija</strong> Udio proizvodnje električne energije iz obnovljivih izvora po regiji i godini, te instalirani kapacitet SAD-a za solarnu energiju, vjetar i ugljen (MW). Izvori: Svjetska banka (EG.ELC.RNEW.ZS) i Američka administracija za energetske informacije."
@@ -2832,7 +2837,7 @@
           }
         },
         "about": {
-          "heading": "Još jedno: čemu ćete koristiti World Monitor?",
+          "heading": "Još jedno: čemu ćete koristiti Money Bansho?",
           "body": "Tri brza odgovora pomoći će nam da gradimo prave alate za vas. Preskočite sve koje želite.",
           "confirmCta": "Spremi moje odgovore",
           "confirming": "Spremanje…",
@@ -3259,7 +3264,7 @@
       "global": "Globalni mjesečni indeks FAO-a"
     },
     "aboutYou": {
-      "title": "Pomozite nam graditi World Monitor za vas",
+      "title": "Pomozite nam graditi Money Bansho za vas",
       "ariaLabel": "O vama",
       "progress": "{{current}} od {{total}}",
       "skip": "Preskoči",
@@ -3271,7 +3276,7 @@
       "thanks": "Hvala. Ovo nam pomaže odlučiti što dalje graditi.",
       "questions": {
         "primaryUse": {
-          "label": "Za što primarno koristite World Monitor?",
+          "label": "Za što primarno koristite Money Bansho?",
           "options": {
             "news": "Vijesti i svjetski eventi",
             "markets": "Tržišta i trgovanje",
@@ -3313,13 +3318,13 @@
           }
         },
         "alternative": {
-          "label": "Što biste koristili da World Monitor ne postoji?",
+          "label": "Što biste koristili da Money Bansho ne postoji?",
           "placeholder": "Opcionalno"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Vam se sviđa World Monitor?",
+      "title": "Vam se sviđa Money Bansho?",
       "body": "Zvijezda na GitHubu pomaže drugim ljudima da ga pronađu.",
       "star": "Daj zvijezdu na GitHubu",
       "dismiss": "Odbaci i ne pitaj ponovno"
@@ -3592,7 +3597,7 @@
         "copied": "Kopirano.",
         "copyFailed": "Kopiranje neuspješno. Odaberi tekst da ga kopiraš."
       },
-      "firstSeenNote": "Ovo je najraniji dostupan datum indikatora dostupan kroz feedove ili World Monitor promatranja; može se razlikovati od datuma navedenog izvora."
+      "firstSeenNote": "Ovo je najraniji dostupan datum indikatora dostupan kroz feedove ili Money Bansho promatranja; može se razlikovati od datuma navedenog izvora."
     },
     "nuclear": {
       "types": {
@@ -4719,7 +4724,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "Zahtijeva ključ World Monitor licence",
+    "lockedDesc": "Zahtijeva ključ Money Bansho licence",
     "signInToUnlock": "Prijavite se da biste otključali premium značajke",
     "signIn": "Prijavite se za Otključavanje",
     "upgradeDesc": "Nadogradite se na Pro za potpun pristup premium analitici",
@@ -4864,7 +4869,7 @@
       "hotspots": {
         "category": "Vijesti / žarišta",
         "purpose": "Ističe praćena geopolitička žarišta i podiže im razinu kad se poklope povezane vijesti i signali eskalacije.",
-        "source": "Registar žarišta WorldMonitor, obavještajni podaci vijesti RSS/GDELT, ocjena eskalacije žarišta, vojna aktivnost i kontekst nestabilnosti države.",
+        "source": "Registar žarišta Money Bansho, obavještajni podaci vijesti RSS/GDELT, ocjena eskalacije žarišta, vojna aktivnost i kontekst nestabilnosti države.",
         "freshness": "Položaji žarišta su kurirani i statični. Ažurnost kanala vijesti prati se zasebno. Razine žarišta ponovno se računaju kad se osvježe kanali vijesti nadzorne ploče, otprilike svakih 10 minuta. Obavještajni podaci GDELT imaju dulji proračun punjenja i predmemorije.",
         "confidence": "Korisno kao znak za prvo razvrstavanje. Bez otvaranja temeljnih vijesti i konteksta države to nije tvrdnja za citiranje.",
         "limitations": {
@@ -4911,7 +4916,7 @@
       "conflicts": {
         "category": "Konflikt",
         "purpose": "Prikazuje kurirane zone sukoba i prekrivanja geopolitičkih granica, da se živi signali smjeste u poznata bojišta.",
-        "source": "Registar zona sukoba WorldMonitor, kontekst sukoba UCDP/ACLED i dokumentirani metapodaci granica, poput korejske DMZ.",
+        "source": "Registar zona sukoba Money Bansho, kontekst sukoba UCDP/ACLED i dokumentirani metapodaci granica, poput korejske DMZ.",
         "freshness": "Osnovne zone su kurirane i statične. Dinamični događaji sukoba prate se zasebno kroz kanale ACLED/UCDP i signale ispravnosti.",
         "confidence": "Dobro za geografsku orijentaciju. Samo po sebi ne potvrđuje incident u stvarnom vremenu.",
         "limitations": {
@@ -4944,7 +4949,7 @@
       "ais": {
         "category": "Pomorstvo",
         "purpose": "Prikazuje gustoću plovila i signale poremećaja AIS oko strateških voda i uskih grla.",
-        "source": "Snimke releja AISStream, pomorska usluga WorldMonitor i klasifikatori poremećaja uskih grla.",
+        "source": "Snimke releja AISStream, pomorska usluga Money Bansho i klasifikatori poremećaja uskih grla.",
         "freshness": "Snimke releja AIS ponovno se grade svakih 5 sekundi prema zadanim postavkama. Poslužitelj može držati osnovnu snimku gustoće 5 minuta. Sloj je isključen ili zastario kad nema vjerodajnica releja ili veze.",
         "confidence": "Korisno za prosijavanje pomorskih anomalija. AIS prijavljuju sama plovila i brodovi mogu ugasiti odašiljanje.",
         "limitations": {
@@ -4961,7 +4966,7 @@
       "tradeRoutes": {
         "category": "Pomorstvo",
         "purpose": "Crta glavne kontejnerske, energetske i rasute rute kroz strateška uska grla, da se mogu pratiti putovi poremećaja.",
-        "source": "Registar trgovačkih ruta WorldMonitor te status uskih grla opskrbnog lanca i sažeci tranzita.",
+        "source": "Registar trgovačkih ruta Money Bansho te status uskih grla opskrbnog lanca i sažeci tranzita.",
         "freshness": "Geometrija ruta je statična. Status uskih grla održava se upitom svakih 6 minuta. Sažeci tranzita osvježavaju se svakih 10 minuta kroz predmemoriju opskrbnog lanca i putove releja.",
         "confidence": "Dobro kao kontekst izloženosti na razini rute. To nije kanal usmjeravanja pojedinog broda.",
         "limitations": {
@@ -5015,7 +5020,7 @@
       "weather": {
         "category": "Vrijeme",
         "purpose": "Prikazuje aktivna službena upozorenja na opasne vremenske prilike nacionalnih meteoroloških službi, spojena u jedan kanal weather:alerts:v1.",
-        "source": "National Weather Service Sjedinjenih Država (NWS), Environment and Climate Change Canada (ECCC) i agregacija CAP središta WMO Severe Weather Information Centre (SWIC), punjeni preko releja WorldMonitor.",
+        "source": "National Weather Service Sjedinjenih Država (NWS), Environment and Climate Change Canada (ECCC) i agregacija CAP središta WMO Severe Weather Information Centre (SWIC), punjeni preko releja Money Bansho.",
         "freshness": "Upozorenja NWS, ECCC i SWIC relej puni svakih 15 minuta i prati ih prema proračunu ažurnosti od 45 minuta.",
         "confidence": "Mjerodavno za upozorenja koja izdaju uključene nacionalne službe, uz ogradu vremena objave na izvoru. NWS i ECCC crtaju se kao poligoni. Geokodirana upozorenja SWIC crtaju se u centroidu države službe koja ih izdaje, s izričitom oznakom preciznosti.",
         "limitations": {
@@ -5032,7 +5037,7 @@
       "canadaRoads": {
         "category": "Promet",
         "purpose": "Prikazuje službene cestovne događaje, upozorenja, stanja, zatvaranja, radove i opasnosti u podržanim kanadskim nadležnostima.",
-        "source": "Pokrajinski kanali Ontario 511, Alberta 511 i Manitoba 511, City of Toronto Road Restrictions i DriveBC Open511, punjeni preko WorldMonitor.",
+        "source": "Pokrajinski kanali Ontario 511, Alberta 511 i Manitoba 511, City of Toronto Road Restrictions i DriveBC Open511, punjeni preko Money Bansho.",
         "freshness": "Ontario 511, Alberta 511 i Manitoba 511 pune se svakih 15 minuta i prate se prema proračunu ažurnosti od 45 minuta. Ograničenja u Torontu pune se svaka 2 sata. DriveBC Open511 puni se svakih 30 minuta.",
         "confidence": "Mjerodavno za podržane pokrajinske i gradske izdavače, uz ogradu vremena objave na izvoru i mapirane geometrije.",
         "limitations": {
@@ -5097,7 +5102,7 @@
       "waterways": {
         "category": "Pomorstvo",
         "purpose": "Označuje strateške plovne putove i uska grla, da se signali poremećaja čitaju na pozadini fiksne pomorske geografije.",
-        "source": "Registar strateških plovnih putova WorldMonitor s prekrivanjima statusa uskih grla opskrbnog lanca iz AIS, upozorenja NGA i kanala izvedenih iz PortWatch.",
+        "source": "Registar strateških plovnih putova Money Bansho s prekrivanjima statusa uskih grla opskrbnog lanca iz AIS, upozorenja NGA i kanala izvedenih iz PortWatch.",
         "freshness": "Položaji plovnih putova su statični. Živi status uskih grla održava se upitom svakih 6 minuta. Sažeci tranzita osvježavaju se svakih 10 minuta kad je put releja i PortWatch ispravan.",
         "confidence": "Visoka za fiksnu geografiju. Pouzdanost živog poremećaja ovisi o popratnim kanalima AIS, NGA i PortWatch.",
         "limitations": {
@@ -5114,7 +5119,7 @@
       "ciiChoropleth": {
         "category": "Rizik države",
         "purpose": "Boji države prema trenutačnom rezultatu Indeksa nestabilnosti zemlje, za široko prvo razvrstavanje strateškog rizika.",
-        "source": "Usluga bodovanja Indeksa nestabilnosti zemlje u WorldMonitoru koristi signale sukoba, nemira, upozorenja, kibera, praćenja brodova, zrakoplovstva, prirodnih događaja i vijesti.",
+        "source": "Usluga bodovanja Indeksa nestabilnosti zemlje u Money Banshou koristi signale sukoba, nemira, upozorenja, kibera, praćenja brodova, zrakoplovstva, prirodnih događaja i vijesti.",
         "freshness": "Predmemorija rezultata rizika održava se upitom svakih 8 minuta. seed-meta i health.riskScores pokazuju stanje uživo, zastarjelo, djelomično ili pogoršano prema proračunu ažurnosti od 30 minuta.",
         "confidence": "To je složeni signal modela. Nije službena ocjena države ni prognoza vjerojatnosti.",
         "limitations": {
@@ -5158,7 +5163,7 @@
     "finance": {
       "map": "Globalna mapa tržišta",
       "liveNews": "Vijesti s tržišta",
-      "insights": "AI uvidi o tržištu"
+      "insights": "Uvidi o tržištu"
     },
     "tech": {
       "map": "Globalna tehnološka mapa",
@@ -5167,12 +5172,12 @@
     "commodity": {
       "map": "Mapa sirovina",
       "liveNews": "Vijesti o sirovinama",
-      "insights": "AI uvidi o sirovinama"
+      "insights": "Uvidi o sirovinama"
     },
     "energy": {
       "map": "Energetski atlas",
       "liveNews": "Energetske vijesti",
-      "insights": "AI uvidi o energiji"
+      "insights": "Uvidi o energiji"
     },
     "happy": {
       "map": "Mapa dobrih vijesti"
@@ -5182,9 +5187,9 @@
     "title": "Instaliraj aplikaciju",
     "share": "U Safariju dodirnite Dijeli (kvadrat sa strelicom prema gore). Možda prvo trebate otvoriti izbornik Više.",
     "add": "Odaberite Dodaj na početni zaslon.",
-    "confirm": "Dodirnite Dodaj i otvorite World Monitor s početnog zaslona.",
+    "confirm": "Dodirnite Dodaj i otvorite Money Bansho s početnog zaslona.",
     "close": "Zatvori",
-    "alertsHint": "Instalirajte World Monitor na početni zaslon kako biste primali upozorenja na ovom iPhoneu ili iPadu.",
+    "alertsHint": "Instalirajte Money Bansho na početni zaslon kako biste primali upozorenja na ovom iPhoneu ili iPadu.",
     "how": "Kako instalirati"
   },
   "teamDashboards": {
@@ -5441,7 +5446,7 @@
       "placeholder": "Mjesto ili 25.11, 55.14",
       "submit": "Traži",
       "locate": "Moja lokacija",
-      "hint": "Upisane koordinate i vaša lokacija nikada se ne šalju na WorldMonitor. Upisana imena mjesta šalju se na WorldMonitor i OpenStreetMap Nominatim.",
+      "hint": "Upisane koordinate i vaša lokacija nikada se ne šalju na Money Bansho. Upisana imena mjesta šalju se na Money Bansho i OpenStreetMap Nominatim.",
       "results": "Mjesta",
       "searching": "Traženje…",
       "tooShort": "Unesite najmanje dva znaka ili koordinate poput 25.11, 55.14.",
@@ -5643,7 +5648,7 @@
     "privacy": {
       "line": "Vaša točka ide samo u arhive slika.",
       "more": "Pojedinosti",
-      "body": "Prolasci se izračunavaju na ovom uređaju. Za pronalaženje slika vaš preglednik šalje točku izravno servisima Earth Search, Planetary Computer, NASA GIBS i EUMETSAT; WorldMonitor je ne prima. Na praćenoj lokaciji WorldMonitor se traži dnevni zapis te lokacije prema njezinu ID-u, a ne prema vašoj točki. Upisani naziv mjesta šalje se servisima WorldMonitor i OpenStreetMap Nominatim radi pronalaženja. Dijeljene poveznice čuvaju dva decimalna mjesta (0,01°)."
+      "body": "Prolasci se izračunavaju na ovom uređaju. Za pronalaženje slika vaš preglednik šalje točku izravno servisima Earth Search, Planetary Computer, NASA GIBS i EUMETSAT; Money Bansho je ne prima. Na praćenoj lokaciji Money Bansho se traži dnevni zapis te lokacije prema njezinu ID-u, a ne prema vašoj točki. Upisani naziv mjesta šalje se servisima Money Bansho i OpenStreetMap Nominatim radi pronalaženja. Dijeljene poveznice čuvaju dva decimalna mjesta (0,01°)."
     },
     "sources": {
       "heading": "Izvori ({{count}})",
@@ -5763,7 +5768,7 @@
       "map": "Davatelj, tema i globus",
       "ai": "Modeli, memorija i okviri",
       "video": "Kvaliteta i automatska reprodukcija",
-      "apiKeys": "Ključevi za World Monitor API",
+      "apiKeys": "Ključevi za Money Bansho API",
       "embeds": "Widgeti za vašu stranicu",
       "aiAgents": "Povezani MCP klijenti",
       "about": "Veze stranica, uvjeti korištenja i privatnost"
@@ -5779,7 +5784,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Pristup Premium",
-        "desc": "Ovaj pristup ne naplaćuje se putem vašeg WorldMonitor računa. Ovdje nema načina plaćanja ni računa."
+        "desc": "Ovaj pristup ne naplaćuje se putem vašeg Money Bansho računa. Ovdje nema načina plaćanja ni računa."
       },
       "checking": {
         "heading": "Provjera vašeg plana…",
@@ -5800,7 +5805,7 @@
         "desc": "Nismo mogli provjeriti vaš trenutni plan. Pokušajte ponovno ili pogledajte planove u novoj kartici."
       },
       "free": {
-        "heading": "WorldMonitor Besplatno",
+        "heading": "Money Bansho Besplatno",
         "desc": "Vaš trenutni plan je Besplatno. Nadogradite za sve panele, AI analizu i prioritetno osvježavanje podataka."
       },
       "portal": {
@@ -5809,7 +5814,7 @@
       },
       "deletion": {
         "heading": "Brisanje računa",
-        "desc": "Trajno izbrišite ovaj World Monitor račun. Pretplate se odmah otkazuju bez povrata novca za preostalo unaprijed plaćeno razdoblje. API ključevi, ključevi za ugrađivanje i MCP tokeni prestaju raditi. Zapisi o naplati potrebni za računovodstvo, sporove i zakonite zahtjeve čuvaju se zajedno s kontaktnim podacima kupca koje sadrže; u njima se više ne navodi vaš račun za prijavu, no zapisnici webhookova pružatelja usluge plaćanja zapisani prije brisanja zadržavaju identifikatore s kojima su isporučeni. Postavke nadzorne ploče i tajne desktop aplikacije u sustavskom privjesku ključeva (Keychain) na ovom uređaju ne brišu se na daljinu.",
+        "desc": "Trajno izbrišite ovaj Money Bansho račun. Pretplate se odmah otkazuju bez povrata novca za preostalo unaprijed plaćeno razdoblje. API ključevi, ključevi za ugrađivanje i MCP tokeni prestaju raditi. Zapisi o naplati potrebni za računovodstvo, sporove i zakonite zahtjeve čuvaju se zajedno s kontaktnim podacima kupca koje sadrže; u njima se više ne navodi vaš račun za prijavu, no zapisnici webhookova pružatelja usluge plaćanja zapisani prije brisanja zadržavaju identifikatore s kojima su isporučeni. Postavke nadzorne ploče i tajne desktop aplikacije u sustavskom privjesku ključeva (Keychain) na ovom uređaju ne brišu se na daljinu.",
         "dialogTitle": "Obrisati ovaj račun?",
         "dialogCopy": "Ovo se ne može poništiti. Pretplate se otkazuju, ključevi odmah prestaju raditi, a zapisi o naplati čuvaju se za računovodstvo, sporove i zakonite zahtjeve — uključujući kontaktne podatke koje sadrže. Nakon toga se odjavite na drugim uređajima i izbrišite podatke web-mjesta na ovom uređaju — poslužitelj do njih ne može doći.",
         "phraseLabel": "Upišite {{phrase}} za potvrdu",

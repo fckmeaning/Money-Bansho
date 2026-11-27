@@ -1,7 +1,7 @@
 import { t } from '@/services/i18n';
 import { fetchCountryHistory, type GetCountryHistoryResponse, type CountryHistoryPoint } from '@/services/country-history';
 import { onEntitlementChange } from '@/services/entitlements';
-import { trackCountryHistoryAction, trackCountryHistoryUpsellClick } from '@/services/analytics';
+import { trackCountryHistoryAction } from '@/services/analytics';
 
 export class CountryHistory {
   private days = 7;
@@ -102,15 +102,6 @@ export class CountryHistory {
       this.mount.append(dates, detail);
       // The latest day opens by default; that is not the user choosing a date.
       selectDate(dates.lastElementChild as HTMLButtonElement, data.points[data.points.length - 1]!);
-    }
-    if (this.days >= data.allowedDays && data.allowedDays < 365) {
-      const upsell = this.element('a', t(data.allowedDays <= 7 ? 'countryHistory.unlock90' : 'countryHistory.unlock365'), 'panel-locked-cta');
-      upsell.href = '/pro#pricing';
-      const trackUpsell = (): void => trackCountryHistoryUpsellClick(data.allowedDays);
-      upsell.addEventListener('click', trackUpsell);
-      // Middle-click opens a new tab and fires auxclick, not click.
-      upsell.addEventListener('auxclick', (event) => { if (event.button === 1) trackUpsell(); });
-      this.mount.append(upsell);
     }
   }
 

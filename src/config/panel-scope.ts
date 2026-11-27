@@ -182,6 +182,11 @@ export const PANEL_SCOPE_BEHAVIOUR: Readonly<Record<string, PanelScopeBehaviour>
   thinktanks: 'unsupported', // Think Tanks
   'chat-analyst': 'unsupported', // WM Analyst
   science: 'unsupported', // Science
+  'china-media': 'unsupported', // China Media
+  'europe-business': 'unsupported', // Europe Business
+  israel: 'unsupported', // Israel
+  'north-korea': 'unsupported', // North Korea Watch
+  'corporate-leadership': 'unsupported', // Corporate Leadership Wires
   'satellite-fires': 'unsupported', // Fires
   'grocery-basket': 'unsupported', // Grocery Index
   bigmac: 'unsupported', // Big Mac Index

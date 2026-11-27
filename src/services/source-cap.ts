@@ -14,6 +14,8 @@
 // taken in `feeds.ts` declaration order — editorial team controls "primary"
 // by listing the most important source first.
 
+import { isExpansionFeedCategory } from '../config/expansion-categories';
+
 export interface FeedItem {
   name: string;
 }
@@ -288,7 +290,8 @@ export function selectSourcesUnderCap(
   // Each queue is a mutable array so we can shift() in round-robin order.
   const buckets: Array<{ category: string; remaining: string[] }> = [];
   for (const [category, feeds] of Object.entries(feedsByCategory)) {
-    if (!feeds) continue;
+    // Expansion categories sit outside the cap: neither counted nor disabled.
+    if (!feeds || isExpansionFeedCategory(category)) continue;
     const names = feeds.map((f) => f.name).filter((n) => !userDisabled.has(n));
     if (names.length > 0) buckets.push({ category, remaining: names });
   }

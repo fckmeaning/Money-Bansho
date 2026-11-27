@@ -1,9 +1,9 @@
 {
   "shell": {
-    "documentTitle": "World Monitor — Dashibodi ya Ujasusi ya Ulimwenguni ya Wakati Halisi",
-    "metaDescription": "Jukwaa la hekima halisi duniani kote. Linajulikana katika WIRED. Linalotumiwa na watu 2M+ katika nchi 190. Mizozo, soko, kijeshi, ujumbe halisi unaotoka kwa wenyeji katika mandhari moja.",
+    "documentTitle": "Money Bansho — Dashibodi ya Ujasusi ya Ulimwenguni ya Wakati Halisi",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Uko Nje ya Mtandao",
-    "offlineMessage": "World Monitor inahitaji muunganisho wa intaneti kwa data ya wakati halisi ya kijasusi.",
+    "offlineMessage": "Money Bansho inahitaji muunganisho wa intaneti kwa data ya wakati halisi ya kijasusi.",
     "offlineRetry": "Jaribu tena"
   },
   "widgets": {
@@ -41,12 +41,12 @@
     "phaseError": "Hitilafu",
     "previewCheckingHeading": "Kuunganisha kijenzi cha wijeti",
     "previewReadyHeading": "Eleza wijeti unayotaka",
-    "previewFetchingHeading": "Inaleta data ya moja kwa moja ya WorldMonitor",
+    "previewFetchingHeading": "Inaleta data ya moja kwa moja ya Money Bansho",
     "previewComposingHeading": "Kuunda mpangilio wa wijeti",
     "previewErrorHeading": "Onyesho la kuchungulia linahitaji umakini",
     "previewCheckingCopy": "Tunathibitisha ufunguo wako wa wijeti na upatikanaji wa mandharinyuma kabla ya kuwezesha utengenezaji.",
     "previewReadyCopy": "Tumia mfano wa papo hapo au ueleze mwonekano halisi wa moja kwa moja unaotaka. Onyesho la kuchungulia litasasishwa hapa kabla ya kulihifadhi.",
-    "previewFetchingCopy": "Wakala anapiga simu kwenye sehemu za mwisho za WorldMonitor zilizoidhinishwa na kuunda mkusanyiko wa data wa wijeti.",
+    "previewFetchingCopy": "Wakala anapiga simu kwenye sehemu za mwisho za Money Bansho zilizoidhinishwa na kuunda mkusanyiko wa data wa wijeti.",
     "previewComposingCopy": "Onyesho la kuchungulia linaonyesha data ya moja kwa moja na mitindo ya dashibodi ya hivi punde.",
     "previewErrorCopy": "Rekebisha suala hilo, kisha ujaribu tena. Wijeti zako zilizopo hazijaathiriwa.",
     "createInteractive": "Unda Wijeti inayoingiliana",
@@ -489,12 +489,12 @@
   "panels": {
     "liveNews": "Habari za Moja kwa Moja",
     "markets": "Masoko",
-    "marketImplications": "Athari za Soko la AI",
+    "marketImplications": "Athari za Soko",
     "map": "Hali ya Ulimwengu",
     "techHubs": "Vitovu vya teknolojia vinavyovuma",
     "status": "Hali ya Mfumo",
-    "insights": "Maarifa ya AI",
-    "strategicPosture": "Mkao wa kimkakati wa AI",
+    "insights": "Maarifa",
+    "strategicPosture": "Mkao wa kimkakati",
     "cii": "Kutokuwa na Uthabiti wa Nchi",
     "strategicRisk": "Muhtasari wa Hatari ya Kimkakati",
     "intel": "Mlisho wa Intel",
@@ -589,7 +589,7 @@
     "gulfIndices": "Fahirisi za Ghuba",
     "gulfCurrencies": "Sarafu za Ghuba",
     "gulfOil": "Mafuta ya Ghuba",
-    "airlineIntel": "✈️ Ujasusi wa Ndege",
+    "airlineIntel": "Ujasusi wa Ndege",
     "consumerPrices": "Bei za Watumiaji",
     "fearGreed": "Hofu & Uchoyo",
     "marketBreadth": "Upana wa Soko",
@@ -597,7 +597,12 @@
     "fx": "Kiwango cha ubadilishaji wa fedha za kigeni",
     "ukmtoIncidents": "Matukio ya UKMTO",
     "reservoirLevels": "Viwango vya Kimkakati vya Maji",
-    "gridDisruptionClock": "Saa ya kukatika kwa umeme katika majimbo ya Marekani"
+    "gridDisruptionClock": "Saa ya kukatika kwa umeme katika majimbo ya Marekani",
+    "chinaMedia": "Vyombo vya habari vya China",
+    "europeBusiness": "Biashara Ulaya",
+    "israel": "Israeli",
+    "northKorea": "Ufuatiliaji wa Korea Kaskazini",
+    "corporateLeadership": "Habari za uongozi wa kampuni"
   },
   "commands": {
     "prefixes": {
@@ -821,7 +826,7 @@
         "configured": "Mipangilio ya Eneo-kazi imesanidiwa",
         "needsKeys": "Sanidi vitufe vya API ili kufungua vipengele",
         "some": "Baadhi ya vipengele vinahitaji funguo za API",
-        "pro": "World Monitor Pro inatumika"
+        "pro": "Money Bansho Pro inatumika"
       },
       "summary": {
         "desktop": "Hali ya eneo-kazi",
@@ -851,9 +856,9 @@
         "OLLAMA_API_URL": "k.m. http://127.0.0.1:11434 (Ollama) au http://127.0.0.1:1234/v1 (LM Studio) - Mwisho unaoendana na OpenAI.",
         "OLLAMA_MODEL": "k.m. llama3.1:8b - lebo ya mfano ya kutumia kwa muhtasari."
       },
-      "proCloud": "Vipengele bila ufunguo wa API wa ndani hutumia data ya wingu la World Monitor.",
-      "skipSetupPro": "Ruka usanidi: ingia kwa World Monitor Pro ili kutumia data ya wingu badala ya ufunguo wako wa API.",
-      "getPro": "Pata World Monitor Pro"
+      "proCloud": "Vipengele bila ufunguo wa API wa ndani hutumia data ya wingu la Money Bansho.",
+      "skipSetupPro": "Ruka usanidi: ingia kwa Money Bansho Pro ili kutumia data ya wingu badala ya ufunguo wako wa API.",
+      "getPro": "Pata Money Bansho Pro"
     },
     "settingsWindow": {
       "shellTitle": "Mipangilio ya Ufuatiliaji Ulimwenguni",
@@ -1259,7 +1264,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>Athari za Soko la AI</strong> Ishara za biashara zinazozalishwa na LLM zinazotokana na hali ya jiografia, bidhaa, na hali ya jumla baada ya kila mzunguko wa utabiri.<ul><li><strong>Mwelekeo</strong>: NDEFU / MFUPI / HEDGE</li><li><strong>Muda wa Muda</strong>: 1W, 2M, 2W, au 3M, upeo wa macho</li><li><strong>Dereva</strong>: Kichocheo kikuu nyuma ya mawimbi</li><li><strong>Hatari</strong>: Pango au hali ya kubatilisha</li></ul><em>Kwa madhumuni ya habari pekee. Si ushauri wa uwekezaji.</em>",
-      "title": "Athari za Soko la AI",
+      "title": "Athari za Soko",
       "directions": {
         "long": "NDEFU",
         "short": "FUPI",
@@ -1289,7 +1294,7 @@
       "storageUnavailable": "Uchezaji upya haupatikani kwa sababu kivinjari hiki kinazuia hifadhi ya tovuti. Ruhusu data ya tovuti kwa tovuti hii ili kuanza kuhifadhi picha za hali."
     },
     "pizzint": {
-      "indexSource": "Faharasa: World Monitor",
+      "indexSource": "Faharasa: Money Bansho",
       "venueSource": "data za maeneo:",
       "statusNormal": "KAWAIDA",
       "statusNoData": "HAKUNA DATA",
@@ -1299,7 +1304,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "Ilisasishwa {{timeAgo}}",
       "tensionsTitle": "Mvutano wa Kijiografia",
-      "tensionsSource": "Mivutano: World Monitor kwa kutumia matukio ya GDELT",
+      "tensionsSource": "Mivutano: Money Bansho kwa kutumia matukio ya GDELT",
       "insufficientData": "Data haitoshi",
       "evidenceStrikes": "Mashambulizi yaliyoripotiwa ndani ya siku 3 ({{countries}}): {{value}}",
       "evidenceAirports": "Viwanja vya ndege vilivyoathirika: {{value}}",
@@ -2017,7 +2022,7 @@
       "staleReport": "Ripoti iliyopitwa na wakati",
       "reported": "Idadi",
       "period": "Kipindi",
-      "movementNote": "Kila safu huhifadhi chanzo chake, tarehe ya ripoti na kipimo. Idadi ya watu waliopo, waliowasili na matukio ya udhibiti wa mipaka ni vipimo tofauti. Vyanzo vinaweza kuhesabu watu wale wale; usijumlishe idadi zao. WorldMonitor huunda mwonekano huu kutoka vyanzo vilivyounganishwa; hii haimaanishi uidhinishaji na watoa data.",
+      "movementNote": "Kila safu huhifadhi chanzo chake, tarehe ya ripoti na kipimo. Idadi ya watu waliopo, waliowasili na matukio ya udhibiti wa mipaka ni vipimo tofauti. Vyanzo vinaweza kuhesabu watu wale wale; usijumlishe idadi zao. Money Bansho huunda mwonekano huu kutoka vyanzo vilivyounganishwa; hii haimaanishi uidhinishaji na watoa data.",
       "recent": "Hivi karibuni",
       "last30Days": "Siku 30 za mwisho",
       "newThisWeek": "Mpya wiki hii",
@@ -2537,7 +2542,7 @@
       "translate": "Tafsiri"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>Mchambuzi wa WM</strong> Mchambuzi wa AI aliye na muktadha wa moja kwa moja katika nyanja za jiografia, soko, kijeshi na kiuchumi. Inaendeshwa na Claude na data ya wakati halisi iliyoingizwa kutoka kwa milisho inayotumika ya WorldMonitor."
+      "infoTooltip": "<strong>Mchambuzi wa WM</strong> Mchambuzi wa AI aliye na muktadha wa moja kwa moja katika nyanja za jiografia, soko, kijeshi na kiuchumi. Inaendeshwa na Claude na data ya wakati halisi iliyoingizwa kutoka kwa milisho inayotumika ya Money Bansho."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures positioning</strong> Maamuzi ya sehemu halisi kwa wiki kwa wafanyabiashara wa biashara, wanamvua mikakati kubwa na wanamvua mikakati wadogo katika soko la bidhaa na soko la fedha. Chanzo ni ripoti ya Commodity Futures Trading Commission Commitments of Traders, inayochapishwa Ijumaa."
@@ -2625,7 +2630,7 @@
       "infoTooltip": "<strong>Economic Calendar</strong> Kutolewa kwa uchumi wa jumla kulingana na ratiba: fahirisi ya bei ya watumiaji, mapato yasiyo na shambani, jumla ya bidhaa za ndani, fahirisi ya wanajasama wa ununuzi, na maamuzi ya benki kuu. Inaonyesha mkutano wa makadirio na halisi na iliyopita. Matukio ya athari kuu yanazingatiwa. Chanzo: wanatolea data ya uchumi."
     },
     "fsi": {
-      "infoTooltip": "<strong>Financial Stress Indicator</strong> WorldMonitor uwiano wa mikakati ya juu-ya mavuno kwa Hazina za muda mrefu, iliyosasushwa kwa mabadiliko ya sehemu halisi na sehemu ya juu-ya mavuno: (HYG / TLT) / (VIX × Sehemu ya juu-ya mavuno / 100). Hii sio Kansas City Fed Financial Stress Index. Kusoma kwa 1.5 au zaidi ni mkazo mdogo; chini ya 0.3 ni mkazo mkubwa.",
+      "infoTooltip": "<strong>Financial Stress Indicator</strong> Money Bansho uwiano wa mikakati ya juu-ya mavuno kwa Hazina za muda mrefu, iliyosasushwa kwa mabadiliko ya sehemu halisi na sehemu ya juu-ya mavuno: (HYG / TLT) / (VIX × Sehemu ya juu-ya mavuno / 100). Hii sio Kansas City Fed Financial Stress Index. Kusoma kwa 1.5 au zaidi ni mkazo mdogo; chini ya 0.3 ni mkazo mkubwa.",
       "title": "Kiashiria cha Dhiki ya Kifedha",
       "usFsiValue": "Thamani ya US Financial Stress Indicator",
       "asOf": "kufikia {{date}}",
@@ -2713,7 +2718,7 @@
       "infoTooltip": "<strong>Macro indicators</strong> Wamarekani, eneo la euro na viashiria vya bei ya China, shughuli, sera na fedha. China inahitaji kufuatiliwa kwa sasa. Kila tile inaonyesha chanzo chake na tarehe ya uchunguzi."
     },
     "monitors": {
-      "infoTooltip": "<strong>Vichunguzi vya Neno Muhimu</strong> Ongeza neno lolote ili kufuatilia kutajwa kwa habari za moja kwa moja kwenye vyanzo vyote vya WorldMonitor. Matokeo husasishwa katika muda halisi huku makala yanayolingana yanapomezwa."
+      "infoTooltip": "<strong>Vichunguzi vya Neno Muhimu</strong> Ongeza neno lolote ili kufuatilia kutajwa kwa habari za moja kwa moja kwenye vyanzo vyote vya Money Bansho. Matokeo husasishwa katika muda halisi huku makala yanayolingana yanapomezwa."
     },
     "renewable": {
       "infoTooltip": "<strong>Renewable Energy</strong> Sehemu ya kuzalisha umeme kutoka kwa nishati inayoweza kubalika kwa eneo na mwaka, pamoja na uwezo uliowekwa wa Wamarekani kwa jua, upepo, na kola (MW). Vyanzo: World Bank (EG.ELC.RNEW.ZS) na US Energy Information Administration."
@@ -3070,7 +3075,7 @@
           }
         },
         "about": {
-          "heading": "Kitu kimoja tu: utatumia World Monitor kwa nini?",
+          "heading": "Kitu kimoja tu: utatumia Money Bansho kwa nini?",
           "body": "Majibu matatu ya haraka yatatusaidia kujenga zana sahihi kwako. Ruka yoyote unayotaka.",
           "confirmCta": "Hifadhi majibu yangu",
           "confirming": "Inakusubirisha…",
@@ -3234,7 +3239,7 @@
       "global": "Fahirisi ya mwezi ya FAO duniani"
     },
     "aboutYou": {
-      "title": "Tusaidie kujenga World Monitor kwa ajili yako",
+      "title": "Tusaidie kujenga Money Bansho kwa ajili yako",
       "ariaLabel": "Kuhusu wewe",
       "progress": "{{current}} ya {{total}}",
       "skip": "Ruka",
@@ -3246,7 +3251,7 @@
       "thanks": "Asante. Hii inasaidia sisi kuamua nini cha kujenga ijayo.",
       "questions": {
         "primaryUse": {
-          "label": "Kwa nini kwa kawaida unatumia World Monitor?",
+          "label": "Kwa nini kwa kawaida unatumia Money Bansho?",
           "options": {
             "news": "Habari na matukio ya dunia",
             "markets": "Soko na biashara",
@@ -3288,13 +3293,13 @@
           }
         },
         "alternative": {
-          "label": "Utakavyo tumia iwapo World Monitor haisogezwi?",
+          "label": "Utakavyo tumia iwapo Money Bansho haisogezwi?",
           "placeholder": "Sehemu inayochagua"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Unafurahia World Monitor?",
+      "title": "Unafurahia Money Bansho?",
       "body": "Nyota kwenye GitHub inasaidia watu wengine kuipata.",
       "star": "Weka nyota kwenye GitHub",
       "dismiss": "Funga na usiulize tena"
@@ -3564,7 +3569,7 @@
         "copied": "Ilinakiliwa.",
         "copyFailed": "Kunakili kumefeli. Chagua maandishi ili kuynakili."
       },
-      "firstSeenNote": "Hii ni tarehe ya mapema zaidi inayopatikana ya kiashiria kutoka kwa milisho au uchunguzi wa World Monitor; inaweza kutofautiana na tarehe ya chanzo kilichoorodheshwa."
+      "firstSeenNote": "Hii ni tarehe ya mapema zaidi inayopatikana ya kiashiria kutoka kwa milisho au uchunguzi wa Money Bansho; inaweza kutofautiana na tarehe ya chanzo kilichoorodheshwa."
     },
     "nuclear": {
       "types": {
@@ -4831,7 +4836,7 @@
       "hotspots": {
         "category": "Habari / maeneo moto ya ujasusi",
         "purpose": "Inaangazia maeneo moto ya jiografia ya kisiasa yanayofuatiliwa na kuinua kiwango chake wakati habari husika na ishara za kuongezeka zinapokutana.",
-        "source": "Rejista ya maeneo moto ya WorldMonitor, ujasusi wa habari wa RSS na GDELT, upigaji alama wa kuongezeka kwa maeneo moto, shughuli za kijeshi, na muktadha wa kutokuwa na uthabiti wa nchi.",
+        "source": "Rejista ya maeneo moto ya Money Bansho, ujasusi wa habari wa RSS na GDELT, upigaji alama wa kuongezeka kwa maeneo moto, shughuli za kijeshi, na muktadha wa kutokuwa na uthabiti wa nchi.",
         "freshness": "Mahali pa maeneo moto pamechaguliwa na pamesimama. Upya wa milisho ya habari hufuatiliwa kivyake. Viwango vya maeneo moto huhesabiwa upya milisho ya habari ya dashibodi inaposasishwa, kwa muda wa karibu dakika 10, wakati ujasusi wa GDELT una bajeti ndefu za mbegu na akiba.",
         "confidence": "Inafaa kama ishara ya uchambuzi wa kwanza, si dai linalofaa kunukuliwa bila kufungua habari za chini na muktadha wa nchi.",
         "limitations": {
@@ -4878,7 +4883,7 @@
       "conflicts": {
         "category": "Migogoro",
         "purpose": "Inaonyesha maeneo ya migogoro yaliyochaguliwa na mipako ya mipaka ya jiografia ya kisiasa ili wachambuzi waelekeze ishara za moja kwa moja dhidi ya maeneo ya mapigano yanayojulikana.",
-        "source": "Rejista ya maeneo ya migogoro ya WorldMonitor, muktadha wa migogoro wa UCDP na ACLED, na maelezo yaliyoandikwa ya mipaka kama DMZ ya Korea.",
+        "source": "Rejista ya maeneo ya migogoro ya Money Bansho, muktadha wa migogoro wa UCDP na ACLED, na maelezo yaliyoandikwa ya mipaka kama DMZ ya Korea.",
         "freshness": "Maeneo ya msingi yamechaguliwa na yamesimama. Ingizo zinazobadilika za matukio ya migogoro hufuatiliwa kivyake kupitia milisho ya ACLED na UCDP na ishara za afya ya huduma.",
         "confidence": "Inafaa kwa mwelekeo wa kijiografia. Peke yake si uthibitisho wa tukio kwa wakati halisi.",
         "limitations": {
@@ -4911,7 +4916,7 @@
       "ais": {
         "category": "Bahari",
         "purpose": "Inaonyesha msongamano wa meli na ishara za usumbufu wa AIS karibu na maji ya kimkakati na vichochoro.",
-        "source": "Picha za papo hapo za rele ya AISStream, huduma ya bahari ya WorldMonitor, na viainishi vya usumbufu wa vichochoro.",
+        "source": "Picha za papo hapo za rele ya AISStream, huduma ya bahari ya Money Bansho, na viainishi vya usumbufu wa vichochoro.",
         "freshness": "Picha za papo hapo za rele ya AIS hujengwa upya kila sekunde 5 kwa chaguo-msingi. Seva inaweza kuhifadhi picha ya msingi ya msongamano kwa dakika 5, na tabaka huzimwa au kuwa kuukuu wakati hati za rele hazipatikani au muunganisho haupatikani.",
         "confidence": "Inafaa kuchuja mambo yasiyo ya kawaida ya bahari, lakini AIS hujiripoti na meli zinaweza kunyamaza.",
         "limitations": {
@@ -4928,7 +4933,7 @@
       "tradeRoutes": {
         "category": "Bahari",
         "purpose": "Huchora njia kuu za kontena, nishati, na mizigo ya wingi kupitia vichochoro vya kimkakati ili kusoma njia ya usumbufu.",
-        "source": "Rejista ya njia za biashara ya WorldMonitor pamoja na hali ya vichochoro ya mnyororo wa ugavi na muhtasari wa kupita.",
+        "source": "Rejista ya njia za biashara ya Money Bansho pamoja na hali ya vichochoro ya mnyororo wa ugavi na muhtasari wa kupita.",
         "freshness": "Jiometri ya njia imesimama. Hali ya vichochoro huangaliwa kila dakika 6 ili data ibaki tayari, na muhtasari wa kupita husasishwa kila dakika 10 kupitia akiba ya mnyororo wa ugavi na njia za rele.",
         "confidence": "Inafaa kwa muktadha wa athari katika kiwango cha njia. Si mlisho wa uelekezaji katika kiwango cha meli.",
         "limitations": {
@@ -4982,7 +4987,7 @@
       "weather": {
         "category": "Hali ya hewa",
         "purpose": "Inaonyesha tahadhari rasmi zinazoendelea za hali mbaya ya hewa kutoka huduma za kitaifa za hali ya hewa, zilizounganishwa katika mlisho mmoja weather:alerts:v1.",
-        "source": "Huduma ya Kitaifa ya Hali ya Hewa ya Marekani (NWS), Environment and Climate Change Canada (ECCC), na mkusanyiko wa CAP wa Kituo cha Taarifa za Hali Mbaya ya Hewa cha WMO (SWIC), unaopandwa kupitia rele ya WorldMonitor.",
+        "source": "Huduma ya Kitaifa ya Hali ya Hewa ya Marekani (NWS), Environment and Climate Change Canada (ECCC), na mkusanyiko wa CAP wa Kituo cha Taarifa za Hali Mbaya ya Hewa cha WMO (SWIC), unaopandwa kupitia rele ya Money Bansho.",
         "freshness": "Tahadhari za NWS, ECCC, na SWIC hupandwa kila dakika 15 na rele na hufuatiliwa dhidi ya bajeti ya upya ya dakika 45.",
         "confidence": "Ina mamlaka kwa tahadhari zinazotolewa na huduma za kitaifa zinazochangia, kulingana na muda wa kuchapishwa kwa chanzo. NWS na ECCC huchorwa kama poligoni. Tahadhari za SWIC zilizo na mahali pa kijiografia huchorwa kwenye kitovu cha nchi cha huduma inayotoa, na alama wazi ya usahihi.",
         "limitations": {
@@ -4999,7 +5004,7 @@
       "canadaRoads": {
         "category": "Usafiri",
         "purpose": "Inaonyesha matukio rasmi ya barabara, arifa, hali, kufungwa, ujenzi, na hatari katika mamlaka za Kanada zinazoungwa mkono.",
-        "source": "Milisho ya mikoa ya Ontario 511, Alberta 511, na Manitoba 511, Vikwazo vya Barabara vya Jiji la Toronto, na DriveBC Open511, vinavyopandwa kupitia WorldMonitor.",
+        "source": "Milisho ya mikoa ya Ontario 511, Alberta 511, na Manitoba 511, Vikwazo vya Barabara vya Jiji la Toronto, na DriveBC Open511, vinavyopandwa kupitia Money Bansho.",
         "freshness": "Ontario, Alberta, na Manitoba 511 hupandwa kila dakika 15 na hufuatiliwa dhidi ya bajeti ya upya ya dakika 45. Vikwazo vya Toronto hupandwa kila saa 2. DriveBC Open511 kila dakika 30.",
         "confidence": "Ina mamlaka kwa wachapishaji wa mikoa na manispaa wanaoungwa mkono, kulingana na muda wa kuchapishwa kwa chanzo na jiometri iliyochorwa.",
         "limitations": {
@@ -5064,7 +5069,7 @@
       "waterways": {
         "category": "Bahari",
         "purpose": "Huweka alama kwenye njia za maji za kimkakati na vichochoro ili ishara za usumbufu zisomwe dhidi ya jiografia thabiti ya bahari.",
-        "source": "Rejista ya njia za maji za kimkakati ya WorldMonitor na mipako ya hali ya vichochoro ya mnyororo wa ugavi kutoka AIS, maonyo ya NGA, na milisho inayotokana na PortWatch.",
+        "source": "Rejista ya njia za maji za kimkakati ya Money Bansho na mipako ya hali ya vichochoro ya mnyororo wa ugavi kutoka AIS, maonyo ya NGA, na milisho inayotokana na PortWatch.",
         "freshness": "Mahali pa njia za maji pamesimama. Hali ya moja kwa moja ya vichochoro huangaliwa kila dakika 6 ili data ibaki tayari, na muhtasari wa kupita husasishwa kila dakika 10 njia ya rele na PortWatch ikiwa nzima.",
         "confidence": "Juu kwa jiografia thabiti. Uhakika wa usumbufu wa moja kwa moja hutegemea milisho saidizi ya AIS, NGA, na PortWatch.",
         "limitations": {
@@ -5081,7 +5086,7 @@
       "ciiChoropleth": {
         "category": "Hatari ya nchi",
         "purpose": "Hupaka nchi kwa alama ya sasa ya Fahirisi ya Kutokuwa na Uthabiti wa Nchi kwa uchambuzi mpana wa hatari ya kimkakati.",
-        "source": "Huduma ya upigaji alama ya Fahirisi ya Kutokuwa na Uthabiti wa Nchi ya WorldMonitor ikitumia ishara za migogoro, machafuko, tahadhari, mtandao, ufuatiliaji wa meli, usafiri wa anga, matukio ya asili, na habari.",
+        "source": "Huduma ya upigaji alama ya Fahirisi ya Kutokuwa na Uthabiti wa Nchi ya Money Bansho ikitumia ishara za migogoro, machafuko, tahadhari, mtandao, ufuatiliaji wa meli, usafiri wa anga, matukio ya asili, na habari.",
         "freshness": "Akiba ya alama za hatari huangaliwa kila dakika 8 ili data ibaki tayari. seed-meta na health.riskScores huonyesha hali hai, iliyopitwa, ya sehemu, au iliyoharibika dhidi ya bajeti ya upya ya dakika 30.",
         "confidence": "Ishara ya modeli iliyounganishwa, si kiwango rasmi cha nchi wala utabiri wa uwezekano.",
         "limitations": {
@@ -5125,7 +5130,7 @@
     "finance": {
       "map": "Ramani ya Soko la Kimataifa",
       "liveNews": "Habari za Soko",
-      "insights": "Maarifa ya AI ya Soko"
+      "insights": "Maarifa ya Soko"
     },
     "tech": {
       "map": "Ramani ya Teknolojia ya Kimataifa",
@@ -5134,12 +5139,12 @@
     "commodity": {
       "map": "Ramani ya Bidhaa",
       "liveNews": "Habari za Bidhaa",
-      "insights": "Maarifa ya AI ya Bidhaa"
+      "insights": "Maarifa ya Bidhaa"
     },
     "energy": {
       "map": "Ramani ya Nishati",
       "liveNews": "Habari za Nishati",
-      "insights": "Maarifa ya AI ya Nishati"
+      "insights": "Maarifa ya Nishati"
     },
     "happy": {
       "map": "Ramani ya Habari Nzuri"
@@ -5149,9 +5154,9 @@
     "title": "Sakinisha programu",
     "share": "Katika Safari, gusa Shiriki (mraba wenye mshale unaoelekea juu). Huenda ukahitaji kufungua menyu ya Zaidi kwanza.",
     "add": "Chagua Ongeza kwenye Skrini ya Mwanzo.",
-    "confirm": "Gusa Ongeza, kisha ufungue World Monitor kutoka kwenye Skrini ya Mwanzo.",
+    "confirm": "Gusa Ongeza, kisha ufungue Money Bansho kutoka kwenye Skrini ya Mwanzo.",
     "close": "Funga",
-    "alertsHint": "Sakinisha World Monitor kwenye Skrini ya Mwanzo ili kupata arifa kwenye iPhone au iPad hii.",
+    "alertsHint": "Sakinisha Money Bansho kwenye Skrini ya Mwanzo ili kupata arifa kwenye iPhone au iPad hii.",
     "how": "Jinsi ya kusakinisha"
   },
   "teamDashboards": {
@@ -5402,7 +5407,7 @@
       "placeholder": "Mahali au 25.11, 55.14",
       "submit": "Tafuta",
       "locate": "Eneo langu",
-      "hint": "Viwianishi unavyoandika na eneo lako havitumwi kamwe kwa WorldMonitor. Majina ya mahali unayoandika hutumwa kwa WorldMonitor na OpenStreetMap Nominatim.",
+      "hint": "Viwianishi unavyoandika na eneo lako havitumwi kamwe kwa Money Bansho. Majina ya mahali unayoandika hutumwa kwa Money Bansho na OpenStreetMap Nominatim.",
       "results": "Maeneo",
       "searching": "Inatafuta…",
       "tooShort": "Ingiza angalau herufi mbili, au viwianishi kama 25.11, 55.14.",
@@ -5596,7 +5601,7 @@
     "privacy": {
       "line": "Eneo lako hutumwa kwa hifadhi za picha tu.",
       "more": "Maelezo",
-      "body": "Kupita kwa satelaiti kunakokotolewa kwenye kifaa hiki. Ili kupata picha, kivinjari chako hutuma eneo hilo moja kwa moja kwa Earth Search, Planetary Computer, NASA GIBS na EUMETSAT; WorldMonitor haipokei. Katika eneo linalofuatiliwa, WorldMonitor huombwa rekodi ya kila siku ya eneo hilo kwa kitambulisho cha eneo, si kwa kituo chako. Jina la mahali unaloandika hutumwa kwa WorldMonitor na OpenStreetMap Nominatim ili lipatikane. Viungo vinavyoshirikiwa huhifadhi desimali mbili (0.01°)."
+      "body": "Kupita kwa satelaiti kunakokotolewa kwenye kifaa hiki. Ili kupata picha, kivinjari chako hutuma eneo hilo moja kwa moja kwa Earth Search, Planetary Computer, NASA GIBS na EUMETSAT; Money Bansho haipokei. Katika eneo linalofuatiliwa, Money Bansho huombwa rekodi ya kila siku ya eneo hilo kwa kitambulisho cha eneo, si kwa kituo chako. Jina la mahali unaloandika hutumwa kwa Money Bansho na OpenStreetMap Nominatim ili lipatikane. Viungo vinavyoshirikiwa huhifadhi desimali mbili (0.01°)."
     },
     "sources": {
       "heading": "Vyanzo ({{count}})",
@@ -5716,7 +5721,7 @@
       "map": "Mtoa huduma, mandhari na ulimwengu",
       "ai": "Mifumo, kumbukumbu na muundo",
       "video": "Ubora na kucheza kiotomatiki",
-      "apiKeys": "Funguo za API ya World Monitor",
+      "apiKeys": "Funguo za API ya Money Bansho",
       "embeds": "Vipengele vya kurasa yako mwenyewe",
       "aiAgents": "Wateja wa MCP waliounganishwa",
       "about": "Kiungo cha tovuti, masharti na faragha"
@@ -5732,7 +5737,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Ufikiaji wa Premium",
-        "desc": "Ufikiaji huu haulipiwi kupitia akaunti yako ya WorldMonitor. Hakuna njia ya malipo wala ankara zinazopatikana hapa."
+        "desc": "Ufikiaji huu haulipiwi kupitia akaunti yako ya Money Bansho. Hakuna njia ya malipo wala ankara zinazopatikana hapa."
       },
       "checking": {
         "heading": "Inakagua mpango wako…",
@@ -5753,7 +5758,7 @@
         "desc": "Hatukuweza kuthibitisha mpango wako wa sasa. Jaribu tena au angalia mipango katika kichupo kipya."
       },
       "free": {
-        "heading": "WorldMonitor Bure",
+        "heading": "Money Bansho Bure",
         "desc": "Mpango wako wa sasa ni Bure. Pandisha daraja upate paneli zote, uchanganuzi wa AI na usasishaji wa data wa kipaumbele."
       },
       "portal": {
@@ -5762,7 +5767,7 @@
       },
       "deletion": {
         "heading": "Futa akaunti",
-        "desc": "Futa kabisa akaunti hii ya World Monitor. Usajili unaghairiwa mara moja bila kurejeshewa pesa za muda uliosalia uliolipiwa mapema. Funguo za API, funguo za kupachika na tokeni za MCP zinaacha kufanya kazi. Rekodi za malipo zinazohitajika kwa uhasibu, mizozo na maombi ya kisheria huhifadhiwa pamoja na maelezo ya mawasiliano ya mteja yaliyomo; hazitaitaja tena akaunti yako ya kuingia, ingawa kumbukumbu za webhook za mtoa huduma wa malipo zilizoandikwa kabla ya kufutwa huhifadhi vitambulisho zilivyowasilishwa navyo. Mapendeleo ya dashibodi na siri zilizo kwenye keychain ya kompyuta (hifadhi ya siri ya mfumo) kwenye kifaa hiki hazifutwi kwa mbali.",
+        "desc": "Futa kabisa akaunti hii ya Money Bansho. Usajili unaghairiwa mara moja bila kurejeshewa pesa za muda uliosalia uliolipiwa mapema. Funguo za API, funguo za kupachika na tokeni za MCP zinaacha kufanya kazi. Rekodi za malipo zinazohitajika kwa uhasibu, mizozo na maombi ya kisheria huhifadhiwa pamoja na maelezo ya mawasiliano ya mteja yaliyomo; hazitaitaja tena akaunti yako ya kuingia, ingawa kumbukumbu za webhook za mtoa huduma wa malipo zilizoandikwa kabla ya kufutwa huhifadhi vitambulisho zilivyowasilishwa navyo. Mapendeleo ya dashibodi na siri zilizo kwenye keychain ya kompyuta (hifadhi ya siri ya mfumo) kwenye kifaa hiki hazifutwi kwa mbali.",
         "dialogTitle": "Futa akaunti hii?",
         "dialogCopy": "Hatua hii haiwezi kutenduliwa. Usajili unaghairiwa, funguo zinaacha kufanya kazi mara moja, na rekodi za malipo huhifadhiwa kwa uhasibu, mizozo na maombi ya kisheria — pamoja na maelezo ya mawasiliano yaliyomo. Baadaye, toka kwenye vifaa vingine na ufute data ya tovuti kwenye kifaa hiki — hayo yako nje ya uwezo wa seva.",
         "phraseLabel": "Andika {{phrase}} kuthibitisha",

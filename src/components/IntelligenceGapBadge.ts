@@ -86,7 +86,7 @@ export class IntelligenceFindingsBadge {
     this.badge = document.createElement('button');
     this.badge.className = 'intel-findings-badge';
     this.badge.title = t('components.intelligenceFindings.badgeTitle');
-    setTrustedHtml(this.badge, trustedHtml('<span class="findings-icon">🎯</span><span class="findings-count">0</span>', "legacy direct innerHTML migration"));
+    setTrustedHtml(this.badge, trustedHtml('<span class="findings-icon">◎</span><span class="findings-count">0</span>', "legacy direct innerHTML migration"));
 
     this.dropdown = document.createElement('div');
     this.dropdown.className = 'intel-findings-dropdown';
@@ -376,11 +376,11 @@ export class IntelligenceFindingsBadge {
     const breakingSettings = getAlertSettings();
     const breakingLabel = t('components.intelligenceFindings.breakingAlerts');
     return `<div class="popup-toggle-row" data-toggle="popup">
-        <span class="popup-toggle-label">🔔 ${escapeHtml(label)}</span>
+        <span class="popup-toggle-label">${escapeHtml(label)}</span>
         <span class="popup-toggle-switch${checked ? ' on' : ''}"><span class="popup-toggle-knob"></span></span>
       </div>
       <div class="popup-toggle-row" data-toggle="breaking-alerts">
-        <span class="popup-toggle-label">🚨 ${escapeHtml(breakingLabel)}</span>
+        <span class="popup-toggle-label">${escapeHtml(breakingLabel)}</span>
         <span class="popup-toggle-switch${breakingSettings.enabled ? ' on' : ''}"><span class="popup-toggle-knob"></span></span>
       </div>${this.breakingAlertsSaveFailed
         ? `<div class="popup-toggle-error" role="alert" data-breaking-alerts-save-error>${escapeHtml(t('components.intelligenceFindings.breakingAlertsNotSaved'))}</div>`

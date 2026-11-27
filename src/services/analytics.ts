@@ -760,8 +760,11 @@ export function trackContentHandoff(): void {
   track('content-handoff', getContentAttributionAnalyticsFields(attribution));
 }
 
+// Money Bansho: the upstream analytics collector is never loaded.
+const ANALYTICS_ENABLED: boolean = false;
+
 export function initAnalytics(): void {
-  if (umamiLoadScheduled || typeof window === 'undefined' || typeof document === 'undefined') return;
+  if (!ANALYTICS_ENABLED || umamiLoadScheduled || typeof window === 'undefined' || typeof document === 'undefined') return;
   umamiLoadScheduled = true;
   scheduleAfterFirstPaint(loadUmamiScript, 3000);
 }

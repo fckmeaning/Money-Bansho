@@ -795,16 +795,17 @@ export class InsightsPanel extends Panel {
 
   private renderWorldBrief(brief: string, sources: BriefSource[], scope: BriefScope, extrasHtml = ''): string {
     const heading =
-      scope === 'tech'      ? `🚀 ${t('components.insights.briefTech')}`
-    : scope === 'commodity' ? `⛏️ ${t('components.insights.briefCommodity')}`
-    : scope === 'energy'    ? `⚡ ${t('components.insights.briefEnergy')}`
-    :                         `🌍 ${t('components.insights.briefWorld')}`;
+      scope === 'tech'      ? `${t('components.insights.briefTech')}`
+    : scope === 'commodity' ? `${t('components.insights.briefCommodity')}`
+    : scope === 'energy'    ? `${t('components.insights.briefEnergy')}`
+    :                         `${t('components.insights.briefWorld')}`;
     return `
       <div class="insights-brief">
         <div class="insights-section-title">${heading}</div>
         <div class="insights-brief-text">${formatIntelBrief(brief, { sources })}</div>
         ${extrasHtml}
         ${renderBriefSourcesFooter(sources, { className: 'insights-brief-sources', maxSources: Math.max(6, sources.length) })}
+        <div style="font-size:10px;opacity:.6;margin-top:6px">Automated summary. Not investment advice.</div>
       </div>
     `;
   }

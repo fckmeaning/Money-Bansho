@@ -25,6 +25,34 @@
       ]
     },
     {
+      "host": "13tv.co.il",
+      "provider": "13tv.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit 13tv.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "21jingji.com",
+      "provider": "21jingji.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit 21jingji.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "24.hu",
       "provider": "24.hu",
       "kind": "feed",
@@ -95,6 +123,20 @@
       ]
     },
     {
+      "host": "38north.org",
+      "provider": "38north.org",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit 38north.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "444.hu",
       "provider": "444.hu",
       "kind": "feed",
@@ -143,6 +185,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit a16z.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "aastocks.com",
+      "provider": "aastocks.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit aastocks.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -228,6 +284,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "ABS TV Radio Antigua & Barbuda — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "accessnewswire.com",
+      "provider": "accessnewswire.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit accessnewswire.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -387,6 +457,20 @@
         },
         {
           "path": "server/worldmonitor/aviation/v1/list-aviation-news.ts"
+        }
+      ]
+    },
+    {
+      "host": "affarsvarlden.se",
+      "provider": "affarsvarlden.se",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit affarsvarlden.se and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -1590,6 +1674,20 @@
       ]
     },
     {
+      "host": "api.sr.se",
+      "provider": "api.sr.se",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit api.sr.se and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "api.statistiken.bundesbank.de",
       "provider": "api.statistiken.bundesbank.de",
       "kind": "structured",
@@ -1623,6 +1721,20 @@
         },
         {
           "path": "scripts/seed-us-interest-rates.mjs"
+        }
+      ]
+    },
+    {
+      "host": "api.taiwantoday.tw",
+      "provider": "api.taiwantoday.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit api.taiwantoday.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -2271,6 +2383,20 @@
       "status": "excluded"
     },
     {
+      "host": "asiapress.org",
+      "provider": "asiapress.org",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit asiapress.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "assets.applytosupply.digitalmarketplace.service.gov.uk",
       "provider": "assets.applytosupply.digitalmarketplace.service.gov.uk",
       "kind": "structured",
@@ -2700,12 +2826,96 @@
       ]
     },
     {
+      "host": "bizportal.co.il",
+      "provider": "bizportal.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit bizportal.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "bloomberg.com",
       "provider": "bloomberg.com",
       "kind": "feed",
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit bloomberg.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "bnext.com.tw",
+      "provider": "bnext.com.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit bnext.com.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "boardagenda.com",
+      "provider": "boardagenda.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit boardagenda.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "boardmember.com",
+      "provider": "boardmember.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit boardmember.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "boersen-zeitung.de",
+      "provider": "boersen-zeitung.de",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit boersen-zeitung.de and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "boi.org.il",
+      "provider": "boi.org.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit boi.org.il and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -2728,6 +2938,20 @@
       ]
     },
     {
+      "host": "borsen.dk",
+      "provider": "borsen.dk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit borsen.dk and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "bothsidesofthetable.com",
       "provider": "bothsidesofthetable.com",
       "kind": "structured",
@@ -2735,6 +2959,20 @@
       "license": "Provider terms for this upstream API/dataset; verify before redistribution",
       "attribution": "Credit bothsidesofthetable.com and link to the original upstream API/dataset.",
       "status": "excluded"
+    },
+    {
+      "host": "boursorama.com",
+      "provider": "boursorama.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit boursorama.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
     },
     {
       "host": "brazilreports.com",
@@ -2821,6 +3059,20 @@
       ]
     },
     {
+      "host": "brusselstimes.com",
+      "provider": "brusselstimes.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit brusselstimes.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "budgetlab.yale.edu",
       "provider": "budgetlab.yale.edu",
       "kind": "structured",
@@ -2849,12 +3101,138 @@
       ]
     },
     {
+      "host": "businessinsider.com.pl",
+      "provider": "businessinsider.com.pl",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit businessinsider.com.pl and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "businesspost.ie",
+      "provider": "businesspost.ie",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit businesspost.ie and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "businessweekly.com.tw",
+      "provider": "businessweekly.com.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit businessweekly.com.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "businesswire.com",
+      "provider": "businesswire.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit businesswire.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "byznys.hn.cz",
+      "provider": "byznys.hn.cz",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit byznys.hn.cz and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "c14.co.il",
+      "provider": "c14.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit c14.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "caixin.com",
+      "provider": "caixin.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit caixin.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "caixinglobal.com",
       "provider": "caixinglobal.com",
       "kind": "feed",
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Caixin Global — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "calcalist.co.il",
+      "provider": "calcalist.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit calcalist.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "calcalistech.com",
+      "provider": "calcalistech.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit calcalistech.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -2891,6 +3269,20 @@
       ]
     },
     {
+      "host": "capital.de",
+      "provider": "capital.de",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit capital.de and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "carnegieendowment.org",
       "provider": "carnegieendowment.org",
       "kind": "feed",
@@ -2911,6 +3303,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Carta de Moçambique — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "cash.ch",
+      "provider": "cash.ch",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit cash.ch and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -2953,6 +3359,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Catholic Radio Network — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "cb.com.cn",
+      "provider": "cb.com.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit cb.com.cn and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -3075,6 +3495,20 @@
       "status": "excluded"
     },
     {
+      "host": "ce.cn",
+      "provider": "ce.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit ce.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "celestrak.org",
       "provider": "CelesTrak",
       "kind": "structured",
@@ -3165,6 +3599,118 @@
       ]
     },
     {
+      "host": "chiefexecutive.net",
+      "provider": "chiefexecutive.net",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit chiefexecutive.net and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "china-briefing.com",
+      "provider": "china-briefing.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit china-briefing.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "china.org.cn",
+      "provider": "china.org.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit china.org.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "chinadaily.com.cn",
+      "provider": "chinadaily.com.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit chinadaily.com.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "chinadigitaltimes.net",
+      "provider": "chinadigitaltimes.net",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit chinadigitaltimes.net and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "chinatimes.com",
+      "provider": "chinatimes.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit chinatimes.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "chosonsinbo.com",
+      "provider": "chosonsinbo.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit chosonsinbo.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "chosun.com",
+      "provider": "chosun.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit chosun.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "citinewsroom.com",
       "provider": "citinewsroom.com",
       "kind": "feed",
@@ -3185,6 +3731,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Citizen TV — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "citywire.com",
+      "provider": "citywire.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit citywire.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -3359,6 +3919,20 @@
       ]
     },
     {
+      "host": "cnevpost.com",
+      "provider": "cnevpost.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit cnevpost.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "cnn.com",
       "provider": "CNN",
       "kind": "feed",
@@ -3379,6 +3953,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit cnn.gr and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "cnstock.com",
+      "provider": "cnstock.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit cnstock.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "cnyes.com",
+      "provider": "cnyes.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit cnyes.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -3448,9 +4050,6 @@
       "references": [
         {
           "path": "src/app/panel-layout.ts"
-        },
-        {
-          "path": "src/config/variant-meta.ts"
         }
       ]
     },
@@ -3572,6 +4171,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Corbeau News Centrafrique — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "corpgov.law.harvard.edu",
+      "provider": "corpgov.law.harvard.edu",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit corpgov.law.harvard.edu and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -3715,6 +4328,20 @@
       ]
     },
     {
+      "host": "cs.com.cn",
+      "provider": "cs.com.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit cs.com.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "csis.org",
       "provider": "csis.org",
       "kind": "feed",
@@ -3735,6 +4362,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "ČT24 — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "ctee.com.tw",
+      "provider": "ctee.com.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit ctee.com.tw and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -3815,6 +4456,20 @@
       "references": [
         {
           "path": "src/services/billing.ts"
+        }
+      ]
+    },
+    {
+      "host": "cw.com.tw",
+      "provider": "cw.com.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit cw.com.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -3904,6 +4559,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Daily News — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "dailynk.jp",
+      "provider": "dailynk.jp",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit dailynk.jp and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -4106,6 +4775,9 @@
       "attribution": "U.S. Securities and Exchange Commission (SEC) EDGAR.",
       "status": "reviewed",
       "references": [
+        {
+          "path": "api/_dossier/sec.js"
+        },
         {
           "path": "server/_shared/sec-edgar.ts"
         }
@@ -4847,6 +5519,34 @@
       ]
     },
     {
+      "host": "e00-expansion.uecdn.es",
+      "provider": "e00-expansion.uecdn.es",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit e00-expansion.uecdn.es and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "e24.no",
+      "provider": "e24.no",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit e24.no and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "earth-search.aws.element84.com",
       "provider": "Element84 Earth Search STAC",
       "kind": "structured",
@@ -4895,9 +5595,23 @@
       ]
     },
     {
+      "host": "eastmoney.com",
+      "provider": "eastmoney.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit eastmoney.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "ec.europa.eu",
       "provider": "ec.europa.eu",
-      "kind": "structured",
+      "kind": "feed+structured",
       "observed": true,
       "license": "Provider terms for this upstream API/dataset; verify before redistribution",
       "attribution": "Credit ec.europa.eu and link to the original upstream API/dataset.",
@@ -4917,6 +5631,9 @@
         },
         {
           "path": "server/worldmonitor/resilience/v1/_indicator-source-policy.ts"
+        },
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -4927,6 +5644,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit ecfr.eu and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "eco.sapo.pt",
+      "provider": "eco.sapo.pt",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit eco.sapo.pt and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -5005,6 +5736,20 @@
       ]
     },
     {
+      "host": "eeo.com.cn",
+      "provider": "eeo.com.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit eeo.com.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "efectococuyo.com",
       "provider": "Efecto Cocuyo",
       "kind": "feed",
@@ -5061,6 +5806,20 @@
       ]
     },
     {
+      "host": "ekathimerini.com",
+      "provider": "ekathimerini.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit ekathimerini.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "elcomercio.pe",
       "provider": "elcomercio.pe",
       "kind": "feed",
@@ -5095,6 +5854,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "El Día — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "eleconomista.es",
+      "provider": "eleconomista.es",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit eleconomista.es and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -5176,6 +5949,20 @@
       ]
     },
     {
+      "host": "emerging-europe.com",
+      "provider": "emerging-europe.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit emerging-europe.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "emonewsdm.com",
       "provider": "emonewsdm.com",
       "kind": "feed",
@@ -5196,6 +5983,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "EMTV Online — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "en.globes.co.il",
+      "provider": "en.globes.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit en.globes.co.il and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -5238,6 +6039,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "MercoPress — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "en.people.cn",
+      "provider": "en.people.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit en.people.cn and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -5291,6 +6106,20 @@
       ]
     },
     {
+      "host": "en.yna.co.kr",
+      "provider": "en.yna.co.kr",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit en.yna.co.kr and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "energy.ec.europa.eu",
       "provider": "energy.ec.europa.eu",
       "kind": "structured",
@@ -5315,9 +6144,6 @@
       "references": [
         {
           "path": "src/app/panel-layout.ts"
-        },
-        {
-          "path": "src/config/variant-meta.ts"
         }
       ]
     },
@@ -5392,6 +6218,20 @@
       ]
     },
     {
+      "host": "english.cw.com.tw",
+      "provider": "english.cw.com.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit english.cw.com.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "english.enabbaladi.net",
       "provider": "Enab Baladi English",
       "kind": "feed",
@@ -5412,6 +6252,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Japan Wire by Kyodo News — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "english.news.cn",
+      "provider": "english.news.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit english.news.cn and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -5476,6 +6330,20 @@
       ]
     },
     {
+      "host": "english.www.gov.cn",
+      "provider": "english.www.gov.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit english.www.gov.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "eonet.gsfc.nasa.gov",
       "provider": "eonet.gsfc.nasa.gov",
       "kind": "structured",
@@ -5514,6 +6382,20 @@
       "references": [
         {
           "path": "scripts/_global-tender-feeds.mjs"
+        }
+      ]
+    },
+    {
+      "host": "eqs-news.com",
+      "provider": "eqs-news.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit eqs-news.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -5589,6 +6471,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit eu-startups.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "euobserver.com",
+      "provider": "euobserver.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit euobserver.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -5837,6 +6733,20 @@
       ]
     },
     {
+      "host": "fd.nl",
+      "provider": "fd.nl",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit fd.nl and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "fdw.fews.net",
       "provider": "fdw.fews.net",
       "kind": "structured",
@@ -6006,6 +6916,20 @@
       ]
     },
     {
+      "host": "feeds.kauppalehti.fi",
+      "provider": "feeds.kauppalehti.fi",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit feeds.kauppalehti.fi and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "feeds.megaphone.fm",
       "provider": "feeds.megaphone.fm",
       "kind": "feed",
@@ -6090,6 +7014,20 @@
       ]
     },
     {
+      "host": "feeds.thelocal.com",
+      "provider": "feeds.thelocal.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit feeds.thelocal.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "feeds.washingtonpost.com",
       "provider": "The Washington Post",
       "kind": "feed",
@@ -6097,6 +7035,20 @@
       "license": "Publisher-provided feed or Google News link metadata; ingest is limited to headlines, summaries, timestamps, publisher credit, and link-out",
       "attribution": "Credit The Washington Post and link to the original publisher item.",
       "status": "reviewed",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "feeds.yle.fi",
+      "provider": "feeds.yle.fi",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit feeds.yle.fi and link to the original feed publisher.",
+      "status": "terms-review",
       "references": [
         {
           "path": "shared/news-catalog.json"
@@ -6169,6 +7121,34 @@
       ]
     },
     {
+      "host": "finance.sina.com.cn",
+      "provider": "finance.sina.com.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit finance.sina.com.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "finance.technews.tw",
+      "provider": "finance.technews.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit finance.technews.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "finance.worldmonitor.app",
       "provider": "finance.worldmonitor.app",
       "kind": "structured",
@@ -6179,9 +7159,6 @@
       "references": [
         {
           "path": "src/app/panel-layout.ts"
-        },
-        {
-          "path": "src/config/variant-meta.ts"
         }
       ]
     },
@@ -6206,6 +7183,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit financialpost.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "finansavisen.no",
+      "provider": "finansavisen.no",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit finansavisen.no and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "finanzen.net",
+      "provider": "finanzen.net",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit finanzen.net and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -6284,6 +7289,20 @@
       "license": "NASA FIRMS provider terms apply; redistribution terms require review",
       "attribution": "Credit NASA FIRMS and link to the original upstream API or dataset.",
       "status": "excluded"
+    },
+    {
+      "host": "fmprc.gov.cn",
+      "provider": "fmprc.gov.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit fmprc.gov.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
     },
     {
       "host": "focustaiwan.tw",
@@ -6432,6 +7451,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit ft.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "funder.co.il",
+      "provider": "funder.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit funder.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "fuw.ch",
+      "provider": "fuw.ch",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit fuw.ch and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -6600,6 +7647,20 @@
       ]
     },
     {
+      "host": "geektime.co.il",
+      "provider": "geektime.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit geektime.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "geo.tv",
       "provider": "geo.tv",
       "kind": "feed",
@@ -6746,13 +7807,13 @@
           "path": "src/app/desktop-updater.ts"
         },
         {
+          "path": "src/dossier/main.ts"
+        },
+        {
           "path": "src/services/analytics.ts"
         },
         {
           "path": "src/services/github-star-prompt-state.ts"
-        },
-        {
-          "path": "src/services/preferences-content.ts"
         }
       ]
     },
@@ -6797,6 +7858,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit globalnews.ca and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "globaltimes.cn",
+      "provider": "globaltimes.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit globaltimes.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "globenewswire.com",
+      "provider": "globenewswire.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit globenewswire.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -6988,6 +8077,20 @@
       ]
     },
     {
+      "host": "guancha.cn",
+      "provider": "guancha.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit guancha.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "guardian.co.tt",
       "provider": "guardian.co.tt",
       "kind": "feed",
@@ -7131,15 +8234,10 @@
       "host": "happy.worldmonitor.app",
       "provider": "happy.worldmonitor.app",
       "kind": "structured",
-      "observed": true,
+      "observed": false,
       "license": "Excluded: first-party, control-plane, UI, or rendering transport",
       "attribution": "Excluded from the external-provider count: not an ingested upstream dataset.",
-      "status": "excluded",
-      "references": [
-        {
-          "path": "src/config/variant-meta.ts"
-        }
-      ]
+      "status": "excluded"
     },
     {
       "host": "havanatimes.org",
@@ -7226,6 +8324,34 @@
       ]
     },
     {
+      "host": "hkej.com",
+      "provider": "hkej.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit hkej.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "hket.com",
+      "provider": "hket.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit hket.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "hn.cz",
       "provider": "hn.cz",
       "kind": "feed",
@@ -7264,6 +8390,20 @@
       "references": [
         {
           "path": "scripts/seed-us-treasury-par-yield.mjs"
+        }
+      ]
+    },
+    {
+      "host": "hongkongfp.com",
+      "provider": "hongkongfp.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit hongkongfp.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -7330,6 +8470,20 @@
       ]
     },
     {
+      "host": "huanqiu.com",
+      "provider": "huanqiu.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit huanqiu.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "hub.arcgis.com",
       "provider": "hub.arcgis.com",
       "kind": "structured",
@@ -7358,12 +8512,54 @@
       ]
     },
     {
+      "host": "hungarytoday.hu",
+      "provider": "hungarytoday.hu",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit hungarytoday.hu and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "huxiu.com",
+      "provider": "huxiu.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit huxiu.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "hvg.hu",
       "provider": "hvg.hu",
       "kind": "feed",
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit hvg.hu and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "i24news.tv",
+      "provider": "i24news.tv",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit i24news.tv and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -7399,6 +8595,20 @@
         },
         {
           "path": "scripts/shared/regional-energy-feeds.json"
+        }
+      ]
+    },
+    {
+      "host": "icelandmonitor.mbl.is",
+      "provider": "icelandmonitor.mbl.is",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit icelandmonitor.mbl.is and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -7650,6 +8860,20 @@
       ]
     },
     {
+      "host": "inss.org.il",
+      "provider": "inss.org.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit inss.org.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "interfax.com",
       "provider": "Interfax",
       "kind": "feed",
@@ -7671,6 +8895,20 @@
       "license": "Excluded: documentation/test placeholder",
       "attribution": "Excluded from the provider count: placeholder URL.",
       "status": "excluded"
+    },
+    {
+      "host": "investegate.co.uk",
+      "provider": "investegate.co.uk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit investegate.co.uk and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
     },
     {
       "host": "investing.com",
@@ -7777,6 +9015,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit islandtimes.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "israelhayom.co.il",
+      "provider": "israelhayom.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit israelhayom.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "israelhayom.com",
+      "provider": "israelhayom.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit israelhayom.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -7917,6 +9183,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit japantoday.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "jewishinsider.com",
+      "provider": "jewishinsider.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit jewishinsider.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "jiemian.com",
+      "provider": "jiemian.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit jiemian.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -8085,6 +9379,20 @@
       ]
     },
     {
+      "host": "kan.org.il",
+      "provider": "kan.org.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit kan.org.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "kan11.media.kan.org.il",
       "provider": "kan11.media.kan.org.il",
       "kind": "feed",
@@ -8248,6 +9556,34 @@
       ]
     },
     {
+      "host": "koreaherald.com",
+      "provider": "koreaherald.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit koreaherald.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "koreatimes.co.kr",
+      "provider": "koreatimes.co.kr",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit koreatimes.co.kr and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "kosovotwopointzero.com",
       "provider": "kosovotwopointzero.com",
       "kind": "feed",
@@ -8380,6 +9716,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "La Hora — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "lalettre.fr",
+      "provider": "lalettre.fr",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit lalettre.fr and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -8599,6 +9949,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit lequotidien.sn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "lesechos.fr",
+      "provider": "lesechos.fr",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit lesechos.fr and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -9000,6 +10364,9 @@
           "path": "src/config/desktop-runtime.ts"
         },
         {
+          "path": "src/services/meta-tags.ts"
+        },
+        {
           "path": "src/services/wm-session.ts"
         }
       ]
@@ -9243,6 +10610,20 @@
       ]
     },
     {
+      "host": "marketscreener.com",
+      "provider": "marketscreener.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit marketscreener.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "marketwatch.com",
       "provider": "marketwatch.com",
       "kind": "feed",
@@ -9340,6 +10721,20 @@
         },
         {
           "path": "src/app/data-loader.ts"
+        }
+      ]
+    },
+    {
+      "host": "mbl.is",
+      "provider": "mbl.is",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit mbl.is and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -9549,6 +10944,20 @@
       "status": "excluded"
     },
     {
+      "host": "milanofinanza.it",
+      "provider": "milanofinanza.it",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit milanofinanza.it and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "mining-journal.com",
       "provider": "mining-journal.com",
       "kind": "feed",
@@ -9653,6 +11062,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Monaco Life — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "money.udn.com",
+      "provider": "money.udn.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit money.udn.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -9969,6 +11392,20 @@
       ]
     },
     {
+      "host": "nbd.com.cn",
+      "provider": "nbd.com.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit nbd.com.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "ndtvindiaelemarchana.akamaized.net",
       "provider": "ndtvindiaelemarchana.akamaized.net",
       "kind": "feed",
@@ -10011,12 +11448,40 @@
       ]
     },
     {
+      "host": "newbloommag.net",
+      "provider": "newbloommag.net",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit newbloommag.net and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "neweralive.na",
       "provider": "neweralive.na",
       "kind": "feed",
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "New Era — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "news.cctv.com",
+      "provider": "news.cctv.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit news.cctv.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -10032,6 +11497,34 @@
       "license": "Excluded: live-video playback transport; channel/provider terms apply separately",
       "attribution": "Excluded from the external-provider count: presentation-only HLS stream, not an ingested dataset.",
       "status": "excluded"
+    },
+    {
+      "host": "news.cision.com",
+      "provider": "news.cision.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit news.cision.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "news.cn",
+      "provider": "news.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit news.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
     },
     {
       "host": "news.crunchbase.com",
@@ -10071,6 +11564,9 @@
       "status": "terms-review",
       "references": [
         {
+          "path": "api/_dossier/news.js"
+        },
+        {
           "path": "scripts/source-catalog-identity.mjs"
         },
         {
@@ -10087,6 +11583,34 @@
         }
       ],
       "role": "transport"
+    },
+    {
+      "host": "news.ltn.com.tw",
+      "provider": "news.ltn.com.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit news.ltn.com.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "news.mingpao.com",
+      "provider": "news.mingpao.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit news.mingpao.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
     },
     {
       "host": "news.mit.edu",
@@ -10123,6 +11647,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit news.mongabay.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "news.pts.org.tw",
+      "provider": "news.pts.org.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit news.pts.org.tw and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -10325,6 +11863,20 @@
       ]
     },
     {
+      "host": "newtalk.tw",
+      "provider": "newtalk.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit newtalk.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "newtimes.co.rw",
       "provider": "newtimes.co.rw",
       "kind": "feed",
@@ -10416,6 +11968,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit northernminer.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "notesfrompoland.com",
+      "provider": "notesfrompoland.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit notesfrompoland.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -11041,6 +12607,20 @@
       ]
     },
     {
+      "host": "pandaily.com",
+      "provider": "pandaily.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit pandaily.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "pap.pl",
       "provider": "PAP",
       "kind": "feed",
@@ -11259,6 +12839,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Podrobno.uz — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "politiken.dk",
+      "provider": "politiken.dk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit politiken.dk and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -11635,6 +13229,20 @@
       ]
     },
     {
+      "host": "qstheory.cn",
+      "provider": "qstheory.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit qstheory.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "query.sse.com.cn",
       "provider": "query.sse.com.cn",
       "kind": "structured",
@@ -11674,6 +13282,9 @@
       "attribution": "Credit query1.finance.yahoo.com and link to the original upstream API/dataset.",
       "status": "terms-review",
       "references": [
+        {
+          "path": "api/_dossier/yahoo.js"
+        },
         {
           "path": "scripts/_seed-utils.mjs"
         },
@@ -11718,6 +13329,20 @@
         },
         {
           "path": "server/worldmonitor/market/v1/get-price-history.ts"
+        }
+      ]
+    },
+    {
+      "host": "query2.finance.yahoo.com",
+      "provider": "query2.finance.yahoo.com",
+      "kind": "structured",
+      "observed": true,
+      "license": "Provider terms for this upstream API/dataset; verify before redistribution",
+      "attribution": "Credit query2.finance.yahoo.com and link to the original upstream API/dataset.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "api/_dossier/yahoo.js"
         }
       ]
     },
@@ -11860,6 +13485,20 @@
         },
         {
           "path": "scripts/seed-fuel-prices.mjs"
+        }
+      ]
+    },
+    {
+      "host": "rcs.mako.co.il",
+      "provider": "rcs.mako.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit rcs.mako.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -12126,12 +13765,40 @@
       ]
     },
     {
+      "host": "rss.donga.com",
+      "provider": "rss.donga.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit rss.donga.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "rss.dw.com",
       "provider": "rss.dw.com",
       "kind": "feed",
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit rss.dw.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "rss.elconfidencial.com",
+      "provider": "rss.elconfidencial.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit rss.elconfidencial.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -12224,12 +13891,40 @@
       ]
     },
     {
+      "host": "rss.sueddeutsche.de",
+      "provider": "rss.sueddeutsche.de",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit rss.sueddeutsche.de and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "rss.timesofmalta.com",
       "provider": "rss.timesofmalta.com",
       "kind": "feed",
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Times of Malta — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "rss.walla.co.il",
+      "provider": "rss.walla.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit rss.walla.co.il and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -12328,6 +14023,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "RTÉ News — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "rthk9.rthk.hk",
+      "provider": "rthk9.rthk.hk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit rthk9.rthk.hk and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -12866,6 +14575,20 @@
       ]
     },
     {
+      "host": "services.dn.no",
+      "provider": "services.dn.no",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit services.dn.no and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "services.nvd.nist.gov",
       "provider": "NVD (NIST)",
       "kind": "structured",
@@ -13021,6 +14744,20 @@
       ]
     },
     {
+      "host": "shakuf.co.il",
+      "provider": "shakuf.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit shakuf.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "sibconline.com.sb",
       "provider": "sibconline.com.sb",
       "kind": "feed",
@@ -13100,6 +14837,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit singularityhub.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "sinonk.com",
+      "provider": "sinonk.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit sinonk.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -13235,6 +14986,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit spglobal.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "sponser.co.il",
+      "provider": "sponser.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit sponser.co.il and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -13606,6 +15371,20 @@
       ]
     },
     {
+      "host": "stcn.com",
+      "provider": "stcn.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit stcn.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "stluciastar.com",
       "provider": "stluciastar.com",
       "kind": "feed",
@@ -13689,6 +15468,20 @@
         },
         {
           "path": "scripts/_gdelt-bulk-materializer.mjs"
+        }
+      ]
+    },
+    {
+      "host": "storm.mg",
+      "provider": "storm.mg",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit storm.mg and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -13815,6 +15608,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Swaziland News — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "swissinfo.ch",
+      "provider": "swissinfo.ch",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit swissinfo.ch and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -14017,6 +15824,20 @@
       ]
     },
     {
+      "host": "taz.de",
+      "provider": "taz.de",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit taz.de and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "tcb.gov.bd",
       "provider": "tcb.gov.bd",
       "kind": "structured",
@@ -14069,9 +15890,6 @@
       "references": [
         {
           "path": "src/app/panel-layout.ts"
-        },
-        {
-          "path": "src/config/variant-meta.ts"
         }
       ]
     },
@@ -14110,6 +15928,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit techinasia.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "technews.tw",
+      "provider": "technews.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit technews.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "technode.com",
+      "provider": "technode.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit technode.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -14499,6 +16345,20 @@
       ]
     },
     {
+      "host": "theinitium.com",
+      "provider": "theinitium.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit theinitium.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "theins.ru",
       "provider": "theins.ru",
       "kind": "feed",
@@ -14533,6 +16393,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit thejakartapost.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "themarker.com",
+      "provider": "themarker.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit themarker.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "themedialine.org",
+      "provider": "themedialine.org",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit themedialine.org and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -14645,6 +16533,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "The Online Citizen — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "thepaper.cn",
+      "provider": "thepaper.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit thepaper.cn and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -14768,12 +16670,40 @@
       ]
     },
     {
+      "host": "thestandard.com.hk",
+      "provider": "thestandard.com.hk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit thestandard.com.hk and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "thestar.com.my",
       "provider": "thestar.com.my",
       "kind": "feed",
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit thestar.com.my and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "thetimes.com",
+      "provider": "thetimes.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit thetimes.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -14816,6 +16746,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "The Voice of Saint Lucia — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "thewitnesshk.com",
+      "provider": "thewitnesshk.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit thewitnesshk.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -14967,6 +16911,20 @@
       ]
     },
     {
+      "host": "tmtpost.com",
+      "provider": "tmtpost.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit tmtpost.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "togopresse.tg",
       "provider": "togopresse.tg",
       "kind": "feed",
@@ -15074,6 +17032,20 @@
       "observed": true,
       "license": "Publisher terms apply; verify before redistribution.",
       "attribution": "Trinidad Express — headlines and publisher links.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "triviumchina.com",
+      "provider": "triviumchina.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit triviumchina.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -15299,6 +17271,20 @@
       ]
     },
     {
+      "host": "udn.com",
+      "provider": "udn.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit udn.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "ugandacoffee.go.ug",
       "provider": "ugandacoffee.go.ug",
       "kind": "structured",
@@ -15337,6 +17323,20 @@
       "references": [
         {
           "path": "server/worldmonitor/resilience/v1/_indicator-source-policy.ts"
+        }
+      ]
+    },
+    {
+      "host": "ukinvestormagazine.co.uk",
+      "provider": "ukinvestormagazine.co.uk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit ukinvestormagazine.co.uk and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -15486,6 +17486,20 @@
         },
         {
           "path": "scripts/ais-relay.cjs"
+        }
+      ]
+    },
+    {
+      "host": "usinenouvelle.com",
+      "provider": "usinenouvelle.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit usinenouvelle.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -15650,6 +17664,20 @@
       ]
     },
     {
+      "host": "voakorea.com",
+      "provider": "voakorea.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit voakorea.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "vrt.be",
       "provider": "vrt.be",
       "kind": "feed",
@@ -15733,6 +17761,20 @@
       "references": [
         {
           "path": "scripts/seed-hormuz.mjs"
+        }
+      ]
+    },
+    {
+      "host": "wallstreetcn.com",
+      "provider": "wallstreetcn.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit wallstreetcn.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -15828,6 +17870,20 @@
       "license": "Provider terms for this upstream API/dataset; verify before redistribution",
       "attribution": "Credit websummit.com and link to the original upstream API/dataset.",
       "status": "excluded"
+    },
+    {
+      "host": "wenweipo.com",
+      "provider": "wenweipo.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit wenweipo.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
     },
     {
       "host": "whitehouse.gov",
@@ -15928,6 +17984,20 @@
       "references": [
         {
           "path": "api/oauth-authorization-server.ts"
+        }
+      ]
+    },
+    {
+      "host": "world.kbs.co.kr",
+      "provider": "world.kbs.co.kr",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit world.kbs.co.kr and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -16289,6 +18359,20 @@
       "status": "excluded"
     },
     {
+      "host": "www.abc.es",
+      "provider": "www.abc.es",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.abc.es and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.abc.net.au",
       "provider": "www.abc.net.au",
       "kind": "feed",
@@ -16346,6 +18430,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.aftenposten.no and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.agi.it",
+      "provider": "www.agi.it",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.agi.it and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -16742,6 +18840,20 @@
       ]
     },
     {
+      "host": "www.bankier.pl",
+      "provider": "www.bankier.pl",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.bankier.pl and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.bankofcanada.ca",
       "provider": "Bank of Canada",
       "kind": "structured",
@@ -16761,7 +18873,7 @@
     {
       "host": "www.bankofengland.co.uk",
       "provider": "www.bankofengland.co.uk",
-      "kind": "structured",
+      "kind": "feed+structured",
       "observed": true,
       "license": "Provider terms for this upstream API/dataset; verify before redistribution",
       "attribution": "Credit www.bankofengland.co.uk and link to the original upstream API/dataset.",
@@ -16769,6 +18881,9 @@
       "references": [
         {
           "path": "scripts/seed-yield-curve-gb.mjs"
+        },
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -16807,6 +18922,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.bbs.bt and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.bfmtv.com",
+      "provider": "www.bfmtv.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.bfmtv.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -16914,6 +19043,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.brasilparalelo.com.br and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.breakit.se",
+      "provider": "www.breakit.se",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.breakit.se and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -17121,6 +19264,20 @@
       ]
     },
     {
+      "host": "www.cfodive.com",
+      "provider": "www.cfodive.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.cfodive.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.cftc.gov",
       "provider": "CFTC public notices",
       "kind": "structured",
@@ -17131,6 +19288,34 @@
       "references": [
         {
           "path": "scripts/seed-regulatory-actions.mjs"
+        }
+      ]
+    },
+    {
+      "host": "www.cgtn.com",
+      "provider": "www.cgtn.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.cgtn.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.challenges.fr",
+      "provider": "www.challenges.fr",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.challenges.fr and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -17191,6 +19376,20 @@
       ]
     },
     {
+      "host": "www.chinanews.com.cn",
+      "provider": "www.chinanews.com.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.chinanews.com.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.chosun.com",
       "provider": "www.chosun.com",
       "kind": "feed",
@@ -17247,12 +19446,40 @@
       ]
     },
     {
+      "host": "www.cityam.com",
+      "provider": "www.cityam.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.cityam.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.clarin.com",
       "provider": "www.clarin.com",
       "kind": "feed",
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.clarin.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.cleanenergywire.org",
+      "provider": "www.cleanenergywire.org",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.cleanenergywire.org and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -17632,6 +19859,20 @@
       ]
     },
     {
+      "host": "www.davar1.co.il",
+      "provider": "www.davar1.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.davar1.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.dawn.com",
       "provider": "www.dawn.com",
       "kind": "feed",
@@ -17708,6 +19949,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.deutschlandfunk.de and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.di.se",
+      "provider": "www.di.se",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.di.se and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -17800,6 +20055,20 @@
       ]
     },
     {
+      "host": "www.digitimes.com",
+      "provider": "www.digitimes.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.digitimes.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.divergentes.com",
       "provider": "www.divergentes.com",
       "kind": "feed",
@@ -17870,6 +20139,34 @@
       ]
     },
     {
+      "host": "www.dutchnews.nl",
+      "provider": "www.dutchnews.nl",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.dutchnews.nl and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.e15.cz",
+      "provider": "www.e15.cz",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.e15.cz and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.earthquakescanada.nrcan.gc.ca",
       "provider": "Earthquakes Canada (NRCan)",
       "kind": "structured",
@@ -17886,7 +20183,7 @@
     {
       "host": "www.ecb.europa.eu",
       "provider": "www.ecb.europa.eu",
-      "kind": "structured",
+      "kind": "feed+structured",
       "observed": true,
       "license": "Provider terms for this upstream API/dataset; verify before redistribution",
       "attribution": "Credit www.ecb.europa.eu and link to the original upstream API/dataset.",
@@ -17894,6 +20191,9 @@
       "references": [
         {
           "path": "scripts/seed-economic-calendar.mjs"
+        },
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -17911,6 +20211,20 @@
         },
         {
           "path": "scripts/seed-security-advisories.mjs"
+        }
+      ]
+    },
+    {
+      "host": "www.ecns.cn",
+      "provider": "www.ecns.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.ecns.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -18173,6 +20487,20 @@
       ]
     },
     {
+      "host": "www.euractiv.com",
+      "provider": "www.euractiv.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.euractiv.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.euronews.com",
       "provider": "www.euronews.com",
       "kind": "feed+structured",
@@ -18186,6 +20514,20 @@
         },
         {
           "path": "src/main.ts"
+        }
+      ]
+    },
+    {
+      "host": "www.europapress.es",
+      "provider": "www.europapress.es",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.europapress.es and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -18311,6 +20653,20 @@
       ]
     },
     {
+      "host": "www.faz.net",
+      "provider": "www.faz.net",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.faz.net and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.fbcnews.com.fj",
       "provider": "www.fbcnews.com.fj",
       "kind": "feed",
@@ -18351,6 +20707,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.fijitimes.com.fj and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.finews.ch",
+      "provider": "www.finews.ch",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.finews.ch and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.finews.com",
+      "provider": "www.finews.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.finews.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -18430,10 +20814,15 @@
       "host": "www.francetvinfo.fr",
       "provider": "www.francetvinfo.fr",
       "kind": "feed",
-      "observed": false,
+      "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.francetvinfo.fr and link to the original feed publisher.",
-      "status": "excluded"
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
     },
     {
       "host": "www.frontex.europa.eu",
@@ -18459,6 +20848,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.ft.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.ftchinese.com",
+      "provider": "www.ftchinese.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.ftchinese.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -18610,6 +21013,20 @@
       "license": "Licensed publisher content; redistribution governed by the World Monitor agreement",
       "attribution": "Credit GlobeNewswire and link to the original item.",
       "status": "reviewed",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.globes.co.il",
+      "provider": "www.globes.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.globes.co.il and link to the original feed publisher.",
+      "status": "terms-review",
       "references": [
         {
           "path": "shared/news-catalog.json"
@@ -18806,6 +21223,34 @@
       ]
     },
     {
+      "host": "www.haaretz.co.il",
+      "provider": "www.haaretz.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.haaretz.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.haaretz.com",
+      "provider": "www.haaretz.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.haaretz.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.habarizacomores.com",
       "provider": "www.habarizacomores.com",
       "kind": "feed",
@@ -18876,6 +21321,20 @@
       ]
     },
     {
+      "host": "www.heise.de",
+      "provider": "www.heise.de",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.heise.de and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.hespress.com",
       "provider": "www.hespress.com",
       "kind": "feed",
@@ -18896,6 +21355,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.hotnews.ro and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.hrdive.com",
+      "provider": "www.hrdive.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.hrdive.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -18952,6 +21425,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.iaea.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.ice.co.il",
+      "provider": "www.ice.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.ice.co.il and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -19019,6 +21506,20 @@
       ]
     },
     {
+      "host": "www.ifanr.com",
+      "provider": "www.ifanr.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.ifanr.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.ifswf.org",
       "provider": "International Forum of Sovereign Wealth Funds",
       "kind": "structured",
@@ -19033,12 +21534,40 @@
       ]
     },
     {
+      "host": "www.ilfattoquotidiano.it",
+      "provider": "www.ilfattoquotidiano.it",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.ilfattoquotidiano.it and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.ilpost.it",
       "provider": "www.ilpost.it",
       "kind": "feed",
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.ilpost.it and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.ilsole24ore.com",
+      "provider": "www.ilsole24ore.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.ilsole24ore.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -19131,12 +21660,54 @@
       ]
     },
     {
+      "host": "www.inmediahk.net",
+      "provider": "www.inmediahk.net",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.inmediahk.net and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.inn.co.il",
+      "provider": "www.inn.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.inn.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.inquirer.net",
       "provider": "www.inquirer.net",
       "kind": "feed",
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.inquirer.net and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.inside.com.tw",
+      "provider": "www.inside.com.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.inside.com.tw and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -19215,6 +21786,48 @@
       ]
     },
     {
+      "host": "www.israelnationalnews.com",
+      "provider": "www.israelnationalnews.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.israelnationalnews.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.ithome.com",
+      "provider": "www.ithome.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.ithome.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.ithome.com.tw",
+      "provider": "www.ithome.com.tw",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.ithome.com.tw and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.itv.co.tz",
       "provider": "www.itv.co.tz",
       "kind": "feed",
@@ -19285,6 +21898,20 @@
       ]
     },
     {
+      "host": "www.jns.org",
+      "provider": "www.jns.org",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.jns.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.jodidata.org",
       "provider": "www.jodidata.org",
       "kind": "structured",
@@ -19311,6 +21938,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.jordannews.jo and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.jornaldenegocios.pt",
+      "provider": "www.jornaldenegocios.pt",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.jornaldenegocios.pt and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -19552,6 +22193,48 @@
       ]
     },
     {
+      "host": "www.latribune.fr",
+      "provider": "www.latribune.fr",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.latribune.fr and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.lavanguardia.com",
+      "provider": "www.lavanguardia.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.lavanguardia.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.lecho.be",
+      "provider": "www.lecho.be",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.lecho.be and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.ledevoir.com",
       "provider": "www.ledevoir.com",
       "kind": "feed",
@@ -19572,6 +22255,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.lefigaro.fr and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.leiphone.com",
+      "provider": "www.leiphone.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.leiphone.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -19805,6 +22502,20 @@
       ]
     },
     {
+      "host": "www.maariv.co.il",
+      "provider": "www.maariv.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.maariv.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.madagascar-tribune.com",
       "provider": "www.madagascar-tribune.com",
       "kind": "feed",
@@ -19839,6 +22550,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.malaysiakini.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.manager-magazin.de",
+      "provider": "www.manager-magazin.de",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.manager-magazin.de and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -19898,6 +22623,20 @@
       ]
     },
     {
+      "host": "www.mekomit.co.il",
+      "provider": "www.mekomit.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.mekomit.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.mepso.com.mk",
       "provider": "www.mepso.com.mk",
       "kind": "structured",
@@ -19908,6 +22647,20 @@
       "references": [
         {
           "path": "scripts/shared/regional-energy-feeds.json"
+        }
+      ]
+    },
+    {
+      "host": "www.merkur.de",
+      "provider": "www.merkur.de",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.merkur.de and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -20046,6 +22799,20 @@
       "references": [
         {
           "path": "scripts/seed-yield-curve-jp.mjs"
+        }
+      ]
+    },
+    {
+      "host": "www.money.pl",
+      "provider": "www.money.pl",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.money.pl and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -20280,6 +23047,20 @@
       ]
     },
     {
+      "host": "www.news.gov.hk",
+      "provider": "www.news.gov.hk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.news.gov.hk and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.newscientist.com",
       "provider": "www.newscientist.com",
       "kind": "feed",
@@ -20287,6 +23068,20 @@
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.newscientist.com and link to the original feed publisher.",
       "status": "excluded"
+    },
+    {
+      "host": "www.newsinenglish.no",
+      "provider": "www.newsinenglish.no",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.newsinenglish.no and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
     },
     {
       "host": "www.newyorkfed.org",
@@ -20350,6 +23145,34 @@
       "references": [
         {
           "path": "scripts/shared/regional-energy-feeds.json"
+        }
+      ]
+    },
+    {
+      "host": "www.nkeconomy.com",
+      "provider": "www.nkeconomy.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.nkeconomy.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.nkinsider.org",
+      "provider": "www.nkinsider.org",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.nkinsider.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -20461,6 +23284,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.nrk.no and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.nu.nl",
+      "provider": "www.nu.nl",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.nu.nl and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -20665,6 +23502,34 @@
       ]
     },
     {
+      "host": "www.parkiet.com",
+      "provider": "www.parkiet.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.parkiet.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.pb.pl",
+      "provider": "www.pb.pl",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.pb.pl and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.pbc.gov.cn",
       "provider": "www.pbc.gov.cn",
       "kind": "structured",
@@ -20734,6 +23599,20 @@
         },
         {
           "path": "scripts/seed-conflict-intel.mjs"
+        }
+      ]
+    },
+    {
+      "host": "www.politico.eu",
+      "provider": "www.politico.eu",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.politico.eu and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -20856,6 +23735,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.primicias.ec and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.prnewswire.co.uk",
+      "provider": "www.prnewswire.co.uk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.prnewswire.co.uk and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.prnewswire.com",
+      "provider": "www.prnewswire.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.prnewswire.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -21016,6 +23923,20 @@
       ]
     },
     {
+      "host": "www.realtid.se",
+      "provider": "www.realtid.se",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.realtid.se and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.reddit.com",
       "provider": "www.reddit.com",
       "kind": "structured",
@@ -21086,6 +24007,20 @@
       ]
     },
     {
+      "host": "www.rfa.org",
+      "provider": "www.rfa.org",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.rfa.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.rfi.fr",
       "provider": "www.rfi.fr",
       "kind": "feed",
@@ -21128,6 +24063,20 @@
       ]
     },
     {
+      "host": "www.romania-insider.com",
+      "provider": "www.romania-insider.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.romania-insider.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.rp.pl",
       "provider": "www.rp.pl",
       "kind": "feed",
@@ -21151,6 +24100,20 @@
       "status": "excluded"
     },
     {
+      "host": "www.rte.ie",
+      "provider": "www.rte.ie",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.rte.ie and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.rtl.nl",
       "provider": "www.rtl.nl",
       "kind": "feed",
@@ -21171,6 +24134,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.rtp.pt and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.rts.ch",
+      "provider": "www.rts.ch",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.rts.ch and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -21345,6 +24322,9 @@
       "status": "reviewed",
       "references": [
         {
+          "path": "api/_dossier/sec.js"
+        },
+        {
           "path": "scripts/openapi-inject-examples.mjs"
         },
         {
@@ -21483,6 +24463,20 @@
       ]
     },
     {
+      "host": "www.solidot.org",
+      "provider": "www.solidot.org",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.solidot.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.solomontimes.com",
       "provider": "www.solomontimes.com",
       "kind": "feed",
@@ -21553,6 +24547,20 @@
       ]
     },
     {
+      "host": "www.spnews.co.kr",
+      "provider": "www.spnews.co.kr",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.spnews.co.kr and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.srf.ch",
       "provider": "www.srf.ch",
       "kind": "feed",
@@ -21573,6 +24581,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.srherald.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.srugim.co.il",
+      "provider": "www.srugim.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.srugim.co.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.standard.co.uk",
+      "provider": "www.standard.co.uk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.standard.co.uk and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -21865,6 +24901,20 @@
       ]
     },
     {
+      "host": "www.tagesspiegel.de",
+      "provider": "www.tagesspiegel.de",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.tagesspiegel.de and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.tanea.gr",
       "provider": "www.tanea.gr",
       "kind": "feed",
@@ -21953,6 +25003,20 @@
       ]
     },
     {
+      "host": "www.telegraaf.nl",
+      "provider": "www.telegraaf.nl",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.telegraaf.nl and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.telegraph.co.uk",
       "provider": "The Telegraph",
       "kind": "feed",
@@ -21991,6 +25055,20 @@
       "references": [
         {
           "path": "scripts/seed-global-tenders.mjs"
+        }
+      ]
+    },
+    {
+      "host": "www.the7eye.org.il",
+      "provider": "www.the7eye.org.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.the7eye.org.il and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
         }
       ]
     },
@@ -22124,6 +25202,20 @@
       ]
     },
     {
+      "host": "www.theregister.com",
+      "provider": "www.theregister.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.theregister.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.thereporter.co.ls",
       "provider": "www.thereporter.co.ls",
       "kind": "feed",
@@ -22222,6 +25314,34 @@
       ]
     },
     {
+      "host": "www.thisismoney.co.uk",
+      "provider": "www.thisismoney.co.uk",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.thisismoney.co.uk and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.tijd.be",
+      "provider": "www.tijd.be",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.tijd.be and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.tiranatimes.com",
       "provider": "www.tiranatimes.com",
       "kind": "feed",
@@ -22251,6 +25371,20 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.tomshardware.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.tongilnews.com",
+      "provider": "www.tongilnews.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.tongilnews.com and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -22497,6 +25631,20 @@
       ]
     },
     {
+      "host": "www.vg.no",
+      "provider": "www.vg.no",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.vg.no and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.vijesti.me",
       "provider": "www.vijesti.me",
       "kind": "feed",
@@ -22640,6 +25788,20 @@
       ]
     },
     {
+      "host": "www.whatsonweibo.com",
+      "provider": "www.whatsonweibo.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.whatsonweibo.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.whitehouse.gov",
       "provider": "www.whitehouse.gov",
       "kind": "feed",
@@ -22718,6 +25880,34 @@
       "license": "Licensed publisher content; redistribution governed by the World Monitor agreement",
       "attribution": "Credit Wired and link to the original item.",
       "status": "reviewed",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.wiwo.de",
+      "provider": "www.wiwo.de",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.wiwo.de and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.wnp.pl",
+      "provider": "www.wnp.pl",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.wnp.pl and link to the original feed publisher.",
+      "status": "terms-review",
       "references": [
         {
           "path": "shared/news-catalog.json"
@@ -22928,9 +26118,6 @@
           "path": "src/config/schema-graph-ids.ts"
         },
         {
-          "path": "src/config/variant-meta.ts"
-        },
-        {
           "path": "src/embed/embed-url.ts"
         },
         {
@@ -23010,6 +26197,34 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.yesmagazine.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.yna.co.kr",
+      "provider": "www.yna.co.kr",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.yna.co.kr and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.ynet.co.il",
+      "provider": "www.ynet.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.ynet.co.il and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -23137,12 +26352,40 @@
       ]
     },
     {
+      "host": "www.zf.ro",
+      "provider": "www.zf.ro",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.zf.ro and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "www.zitamar.com",
       "provider": "www.zitamar.com",
       "kind": "feed",
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit www.zitamar.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "www.zman.co.il",
+      "provider": "www.zman.co.il",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.zman.co.il and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -23318,6 +26561,34 @@
       ]
     },
     {
+      "host": "yicai.com",
+      "provider": "yicai.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit yicai.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "yicaiglobal.com",
+      "provider": "yicaiglobal.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit yicaiglobal.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
       "host": "yle.fi",
       "provider": "yle.fi",
       "kind": "feed",
@@ -23428,6 +26699,34 @@
           "path": "shared/news-catalog.json"
         }
       ]
+    },
+    {
+      "host": "zonebourse.com",
+      "provider": "zonebourse.com",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit zonebourse.com and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
+    },
+    {
+      "host": "zqrb.cn",
+      "provider": "zqrb.cn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit zqrb.cn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "shared/news-catalog.json"
+        }
+      ]
     }
   ],
   "logicalEntries": [
@@ -23452,6 +26751,36 @@
       ],
       "editorialHosts": [],
       "originCountry": "CL",
+      "coveredCountries": []
+    },
+    {
+      "provider": "Central News Agency (Taiwan)",
+      "feedLabels": [
+        "CNA Finance",
+        "CNA International",
+        "CNA Mainland China",
+        "CNA Politics",
+        "CNA Technology",
+        "Focus Taiwan (CNA English)"
+      ],
+      "transportHosts": [
+        "feeds.feedburner.com"
+      ],
+      "editorialHosts": [],
+      "originCountry": "TW",
+      "coveredCountries": []
+    },
+    {
+      "provider": "ETtoday",
+      "feedLabels": [
+        "ETtoday",
+        "ETtoday Finance"
+      ],
+      "transportHosts": [
+        "feeds.feedburner.com"
+      ],
+      "editorialHosts": [],
+      "originCountry": "TW",
       "coveredCountries": []
     },
     {
@@ -23494,6 +26823,18 @@
       "coveredCountries": []
     },
     {
+      "provider": "Publico Economia",
+      "feedLabels": [
+        "Publico Economia"
+      ],
+      "transportHosts": [
+        "feeds.feedburner.com"
+      ],
+      "editorialHosts": [],
+      "originCountry": "PT",
+      "coveredCountries": []
+    },
+    {
       "provider": "Scroll.in",
       "feedLabels": [
         "Scroll.in"
@@ -23515,6 +26856,18 @@
       ],
       "editorialHosts": [],
       "originCountry": "IN",
+      "coveredCountries": []
+    },
+    {
+      "provider": "The News Lens",
+      "feedLabels": [
+        "The News Lens"
+      ],
+      "transportHosts": [
+        "feeds.feedburner.com"
+      ],
+      "editorialHosts": [],
+      "originCountry": "TW",
       "coveredCountries": []
     },
     {

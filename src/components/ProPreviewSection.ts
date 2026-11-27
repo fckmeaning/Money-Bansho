@@ -202,7 +202,6 @@ export class ProPreviewSection {
   private renderPreviewBody(anonymous: boolean): HTMLElement[] {
     const sampleEl = this.props.renderSample();
     const badge = h('div', { className: 'pro-preview__badge' },
-      h('span', { className: 'pro-preview__badge-tag' }, 'PRO'),
       h('span', { className: 'pro-preview__badge-sample' }, 'Sample'),
       this.renderDismissButton(),
     );
@@ -213,14 +212,14 @@ export class ProPreviewSection {
       type: 'button',
       className: 'panel-locked-cta pro-preview__cta',
       onclick: () => void this.onCtaClick(anonymous),
-    }, anonymous ? 'Sign In' : 'Upgrade to Pro') as HTMLButtonElement;
+    }, 'Sign In') as HTMLButtonElement;
     cta.dataset.dashboardInteraction = anonymous ? 'signin' : 'upgrade';
 
     return [
       badge,
       sampleEl,
       copy,
-      cta,
+      ...(anonymous ? [cta] : []),
     ];
   }
 
@@ -228,7 +227,7 @@ export class ProPreviewSection {
     return h('button', {
       type: 'button',
       className: 'pro-preview__dismiss',
-      'aria-label': 'Dismiss Pro preview',
+      'aria-label': 'Dismiss preview',
       title: 'Dismiss',
       onclick: () => {
         setPreviewDismissed(this.props.previewId, true);
@@ -244,12 +243,12 @@ export class ProPreviewSection {
     return h('button', {
       type: 'button',
       className: 'pro-preview__reopen',
-      'aria-label': `Show Pro preview: ${this.props.unlockCopy}`,
+      'aria-label': `Show preview: ${this.props.unlockCopy}`,
       onclick: () => {
         setPreviewDismissed(this.props.previewId, false);
         this.render();
       },
-    }, 'Pro preview');
+    }, 'Preview');
   }
 
   private async onCtaClick(anonymous: boolean): Promise<void> {

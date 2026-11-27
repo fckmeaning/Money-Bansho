@@ -45,6 +45,7 @@ export const NEWS_LANGUAGES = new Set([
   'en', 'bg', 'cs', 'fr', 'de', 'el', 'es', 'hr', 'hu', 'it', 'pl', 'pt', 'nl',
   'sv', 'sw', 'ru', 'uk', 'ar', 'fa', 'zh', 'ja', 'ko', 'ro', 'tr', 'th', 'vi', 'hi',
   'az',
+  'he',
   'be',
   'bi',
   'bn',

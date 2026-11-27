@@ -243,7 +243,7 @@ function stepFrameCopy(id: ActivationStepId): StepFrameCopy {
     case 'about':
       return {
         heading: t('components.proActivation.steps.about.heading', {
-          defaultValue: 'One last thing: what will you use World Monitor for?',
+          defaultValue: 'One last thing: what will you use Money Bansho for?',
         }),
         body: t('components.proActivation.steps.about.body', {
           defaultValue: 'Three quick answers help us build the right tools for you. Skip any you like.',

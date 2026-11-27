@@ -1,26 +1,64 @@
-# Exclude local desktop build artifacts and sidecar binaries from deployments
-# These files are large and not needed by the Vercel-hosted frontend/API
+# Money Bansho: demo deployment on the Vercel Hobby (free) plan.
 
-# Tauri build outputs
-src-tauri/target/
-src-tauri/bundle/
+# ---------------------------------------------------------------------------
+# 1. Serverless functions. Hobby allows 12 per deployment, and every file under
+#    api/ whose path has no leading underscore becomes one. Keep exactly these
+#    (11 endpoints + 1 helper module that two of them import).
+# ---------------------------------------------------------------------------
+/api/*
+!/api/_*
+!/api/dossier.js
+!/api/wm-session.js
+!/api/bootstrap.js
+!/api/rss-proxy.js
+!/api/news
+!/api/market
+!/api/seismology
+!/api/natural
+!/api/conflict
+!/api/infrastructure
+!/api/economic
+!/api/mcp
+/api/mcp/*
+!/api/mcp/bounded-body.ts
+api/**/*.test.mjs
 
-# Sidecar and bundled node binaries
-src-tauri/sidecar/
-src-tauri/**/node
+# Upstream routing middleware (worldmonitor.app hosts, docs proxy, bot gate).
+# Its allowlist of pages would 404 new routes such as /dossier.
+/middleware.ts
 
-# macOS disk images and app bundles
+# ---------------------------------------------------------------------------
+# 2. Folders the web build never reads. The CLI upload limit is 100 MB.
+# ---------------------------------------------------------------------------
+/tests/
+/e2e/
+/demos/
+/blog-site/
+/pro-test/
+/src-tauri/
+/cli/
+/sdk/
+/skills/
+/claude-plugin/
+/consumer-prices-core/
+/integrations/
+/docker/
+/.agents/
+/convex/__tests__/
+/server/__tests__/
+# src/config/docs-root-redirects.ts imports docs/docs.json.
+/docs/*
+!/docs/docs.json
+
+# ---------------------------------------------------------------------------
+# 3. Local artifacts and secrets.
+# ---------------------------------------------------------------------------
+/node_modules/
+/dist/
+.env
+.env.*
+!.env.example
 **/*.dmg
 **/*.app
-
-# Rust/Cargo build artifacts (safety)
 target/
-
-# Common local artifacts
 .DS_Store
-
-# Never deploy api test files: every non-underscore file under api/ becomes a
-# live serverless function, and a deployed *.test.mjs executes its whole
-# node:test suite (production env + Sentry) on every request (WORLDMONITOR-VD).
-# Guarded by tests/deploy-config.test.mjs.
-api/**/*.test.mjs

@@ -7,7 +7,7 @@ const STORAGE_KEY = 'worldmonitor-theme';
 const DEFAULT_THEME: Theme = 'dark';
 
 function resolveThemeColor(theme: Theme, variant: string | undefined): string {
-  if (theme === 'dark') return variant === 'happy' ? '#1A2332' : '#0a0f0a';
+  if (theme === 'dark') return variant === 'happy' ? '#1A2332' : '#0d0f12';
   return variant === 'happy' ? '#FAFAF5' : '#f8f9fa';
 }
 
@@ -21,7 +21,8 @@ export function getThemePreference(): ThemePreference {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === 'auto' || stored === 'dark' || stored === 'light') return stored;
   } catch { /* noop */ }
-  return 'auto';
+  // Money Bansho is a dark terminal: first visits are dark (Happy stays light).
+  return typeof document !== 'undefined' && document.documentElement.dataset.variant === 'happy' ? 'auto' : 'dark';
 }
 
 function resolveAutoTheme(): Theme {
@@ -103,16 +104,13 @@ export function applyStoredTheme(): void {
   } else if (hasExplicitPreference) {
     effective = raw as Theme;
   } else {
-    // No stored preference: match index.html prepaint and stored `'auto'`.
-    // Happy stays light; every other variant follows prefers-color-scheme
-    // instead of snapping first-visit light OS users back to DEFAULT_THEME (dark).
-    effective = variant === 'happy' ? 'light' : resolveAutoTheme();
+    // No stored preference: match index.html prepaint. Happy stays light;
+    // every other variant is dark regardless of the OS colour scheme.
+    effective = variant === 'happy' ? 'light' : DEFAULT_THEME;
   }
 
-  // No stored preference reads as Auto in settings, so it follows the system
-  // theme too, except on Happy, which stays light.
-  const followsSystem = raw === 'auto' || (!hasExplicitPreference && variant !== 'happy');
-  updateAutoListener(followsSystem ? 'auto' : effective);
+  // Only an explicit Auto choice follows the system theme.
+  updateAutoListener(raw === 'auto' ? 'auto' : effective);
   document.documentElement.dataset.theme = effective;
   updateThemeMetaColor(effective, variant);
 }

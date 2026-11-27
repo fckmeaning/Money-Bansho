@@ -54,7 +54,8 @@ export const SITE_VARIANT: string = (() => {
   if (h.startsWith('commodity.')) return 'commodity';
   if (h.startsWith('energy.')) return 'energy';
 
-  if (h === 'localhost' || h === '127.0.0.1') {
+  // Any host outside the upstream domain switches variants in place.
+  if (!/(^|\.)worldmonitor\.app$/.test(h)) {
     const stored = loadStoredVariant();
     if (isSiteVariant(stored)) return stored;
     return buildVariant;

@@ -1156,6 +1156,76 @@
       "reason": "Migrating to analyst/v1.ListAgentSkills in commit 9 of #3207. Blocked on sebuf#150.",
       "owner": "@SebastienMelki",
       "removal_issue": "#3207"
+    },
+    {
+      "path": "api/dossier.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/analyze.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/companies.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/company.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/events.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/news.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/sec.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/util.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/wire.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/yahoo.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
     }
   ]
 }

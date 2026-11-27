@@ -2,6 +2,7 @@ import {
   COUNTRY_COVERAGE_OPT_IN_SOURCES,
   computePreRegionalFeedRolloutDefaultDisabledSources,
   computePreStrategicDefaultDisabledSources,
+  EXPANSION_SOURCES,
   FEEDS,
   FREE_CAP_PROTECTED_SOURCES,
   FRONTLINE_EUROPE_PROTECTED_SOURCES,
@@ -29,6 +30,8 @@ const REGIONAL_FEED_ROLLOUT_NAMES = new Set(
 );
 const STRATEGIC_DEFAULT_SOURCES = getStrategicDefaultSources();
 const COUNTRY_COVERAGE_OPT_INS = new Set(COUNTRY_COVERAGE_OPT_IN_SOURCES);
+// Regional press sources are never reconciled locale defaults.
+const EXPANSION_OPT_INS = new Set(EXPANSION_SOURCES);
 const PRE_STRATEGIC_FREE_CAP_PROTECTED_SOURCES = new Set(FREE_CAP_PROTECTED_SOURCES);
 
 // Frozen chronology immediately before the regional wave. These names cannot
@@ -150,7 +153,8 @@ export function buildRegionalFeedRolloutMigrationTargets(
     const localeProtected = legacyLocaleProtectedNames(language);
     const localeDefaults = new Set(
       [...getLanguageMatchedSources(language)]
-        .filter((name) => RECONCILED_ROLLOUT_NAMES.has(name) && !COUNTRY_COVERAGE_OPT_INS.has(name)),
+        .filter((name) => RECONCILED_ROLLOUT_NAMES.has(name)
+          && !COUNTRY_COVERAGE_OPT_INS.has(name) && !EXPANSION_OPT_INS.has(name)),
     );
     const defaultNames = new Set([
       ...FRONTLINE_EUROPE_PROTECTED_SOURCES,

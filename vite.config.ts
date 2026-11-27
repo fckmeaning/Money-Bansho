@@ -15,11 +15,6 @@ import { removeSourceMaps, shouldEmitPublicSourceMaps, viteSourcemapSetting } fr
 import { appendChunkOwnership, chunkHasFirstPartyModule } from './shared/chunk-ownership';
 import { VARIANT_META, type VariantMeta } from './src/config/variant-meta';
 import { CLIENT_COMPAT } from './src/bootstrap/client-compat';
-import {
-  WEB_DASHBOARD_VARIANTS,
-  renderVariantDashboardHtml,
-  variantDashboardFileName,
-} from './src/config/variant-dashboard-html';
 // Single source of truth for the RSS proxy allowlist — the dev-server proxy
 // below reuses the SAME www-tolerant predicate the Edge handler enforces
 // (api/rss-proxy.js) so dev and prod agree on allow/deny. Previously a
@@ -259,7 +254,7 @@ function stripPrivateSourceMapsPlugin(): Plugin {
 // Pages whose title, description and canonical are their own; the dashboard
 // brand meta below would otherwise mark them duplicates of /dashboard, or title
 // the desktop sign-in tab as the dashboard.
-const PAGES_WITH_OWN_HEAD_META = new Set(['verify.html', 'desktop-sign-in.html']);
+const PAGES_WITH_OWN_HEAD_META = new Set(['verify.html', 'desktop-sign-in.html', 'dossier.html']);
 
 function htmlVariantPlugin(activeMeta: VariantMeta, activeVariant: string, isDesktopBuild: boolean): Plugin {
   return {
@@ -405,38 +400,6 @@ function chunkSizeWarningPolicyPlugin(): Plugin {
           sizeBytes: Buffer.byteLength(output.code),
         });
         if (warning) this.warn(warning);
-      }
-    },
-  };
-}
-
-// Emit dashboard-<variant>.html siblings of dashboard.html for the variant
-// subdomains (#4996). The web deployment serves the 'full' build to every
-// host, so tech/finance/commodity/happy/energy.worldmonitor.app/dashboard
-// shipped full-brand meta and a cross-host canonical pointing at www —
-// crawlers saw five duplicate pages that all declared themselves NOT to be
-// the sitemap URL they were fetched from. vercel.json host-based rewrites
-// map each variant host's /dashboard to its generated file. Runs in
-// generateBundle AFTER dashboardHtmlOutputPlugin (both enforce: 'post',
-// registered later in the plugins array) so it reads the final renamed +
-// stylesheet-deferred dashboard.html; emitted via emitFile so
-// brotliPrecompressPlugin picks the files up like any other asset.
-function variantDashboardHtmlPlugin(): Plugin {
-  return {
-    name: 'wm-variant-dashboard-html',
-    apply: 'build',
-    enforce: 'post',
-    generateBundle(_options, bundle) {
-      const dashboard = bundle['dashboard.html'];
-      if (!dashboard || dashboard.type !== 'asset' || typeof dashboard.source !== 'string') {
-        throw new Error('[vite] wm-variant-dashboard-html expected dashboard.html asset (must run after wm-dashboard-html-output)');
-      }
-      for (const variant of WEB_DASHBOARD_VARIANTS) {
-        this.emitFile({
-          type: 'asset',
-          fileName: variantDashboardFileName(variant),
-          source: renderVariantDashboardHtml(dashboard.source, variant),
-        });
       }
     },
   };
@@ -927,6 +890,31 @@ function miitNewsPlugin(): Plugin {
   };
 }
 
+function dossierApiPlugin(): Plugin {
+  return {
+    name: 'dossier-api',
+    configureServer(server) {
+      server.middlewares.use(async (req, res, next) => {
+        if (req.url?.split('?')[0] !== '/api/dossier') return next();
+        try {
+          const { default: handler } = await server.ssrLoadModule('/api/dossier.js');
+          const headers = new Headers();
+          if (typeof req.headers.origin === 'string') headers.set('Origin', req.headers.origin);
+          const response: Response = await handler(new Request(`http://localhost${req.url}`, { method: req.method, headers }));
+          res.statusCode = response.status;
+          response.headers.forEach((value, key) => res.setHeader(key, value));
+          res.end(req.method === 'HEAD' ? undefined : await response.text());
+        } catch (error) {
+          console.error('[dossier-api]', error);
+          res.statusCode = 502;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ error: 'Dossier unavailable' }));
+        }
+      });
+    },
+  };
+}
+
 function rssProxyPlugin(): Plugin {
   return {
     name: 'rss-proxy',
@@ -1175,11 +1163,12 @@ export default defineConfig(({ mode, command }) => {
       // Variant subdomain SEO pages only make sense on the web deployment,
       // which is always the 'full' build (variant selection is runtime by
       // hostname). Desktop and dedicated VITE_VARIANT builds skip it.
-      !isDesktopBuild && activeVariant === 'full' && variantDashboardHtmlPlugin(),
+      // Money Bansho: no per-subdomain dashboard pages.
       webMcpDevSecurityHeadersPlugin(),
       polymarketPlugin(),
       rssProxyPlugin(),
       miitNewsPlugin(),
+      dossierApiPlugin(),
       gpsjamDevPlugin(),
       sebufApiPlugin(),
       // Must stay after every plugin that serves /api/* in dev.
@@ -1209,29 +1198,13 @@ export default defineConfig(({ mode, command }) => {
           scope: '/',
           display: 'standalone',
           orientation: 'any',
-          theme_color: '#0a0f0a',
-          background_color: '#0a0f0a',
+          theme_color: '#0d0f12',
+          background_color: '#0d0f12',
           categories: activeMeta.categories,
-          screenshots: [
-            {
-              src: '/pwa/dashboard-wide.jpg',
-              sizes: '1440x900',
-              type: 'image/jpeg',
-              form_factor: 'wide',
-              label: 'World Monitor desktop dashboard with conflict zones, intelligence hotspots, and live news',
-            },
-            {
-              src: '/pwa/dashboard-narrow.jpg',
-              sizes: '390x844',
-              type: 'image/jpeg',
-              form_factor: 'narrow',
-              label: 'World Monitor mobile map with conflict zones and intelligence hotspots',
-            },
-          ],
           shortcuts: [
             {
               name: 'Dashboard',
-              description: 'Open the live global intelligence dashboard',
+              description: 'Open the dashboard',
               url: '/dashboard',
               icons: [{ src: '/favico/android-chrome-96x96.png', sizes: '96x96', type: 'image/png' }],
             },
@@ -1416,6 +1389,7 @@ export default defineConfig(({ mode, command }) => {
           mcpGrant: resolve(__dirname, 'mcp-grant.html'),
           verify: resolve(__dirname, 'verify.html'),
           desktopSignIn: resolve(__dirname, 'desktop-sign-in.html'),
+          dossier: resolve(__dirname, 'dossier.html'),
         },
         output: {
           // onlyExplicitManualChunks keeps the panel clusters from forming

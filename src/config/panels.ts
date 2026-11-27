@@ -26,10 +26,10 @@ const FULL_PANELS: Record<string, PanelConfig> = {
   'live-news': { name: 'Live News', enabled: true, priority: 1 },
   'live-webcams': { name: 'Live Webcams', enabled: true, priority: 1 },
   'windy-webcams': { name: 'Windy Live Webcam', enabled: false, priority: 2 },
-  insights: { name: 'AI Insights', enabled: true, priority: 1 },
+  insights: { name: 'Insights', enabled: true, priority: 1 },
   'threat-timeline': { name: 'Threat Timeline', enabled: true, priority: 1 },
-  'strategic-posture': { name: 'AI Strategic Posture', enabled: true, priority: 1 },
-  forecast: { name: 'AI Forecasts', enabled: true, priority: 1, ...(_desktop && { premium: 'locked' as const }) }, // trial: unlocked on web, locked on desktop
+  'strategic-posture': { name: 'Strategic Posture', enabled: true, priority: 1 },
+  forecast: { name: 'Forecasts', enabled: true, priority: 1, ...(_desktop && { premium: 'locked' as const }) }, // trial: unlocked on web, locked on desktop
   cii: { name: 'Country Instability', enabled: true, priority: 1, ...(_desktop && { premium: 'enhanced' as const }) },
   'strategic-risk': { name: 'Strategic Risk Overview', enabled: true, priority: 1, ...(_desktop && { premium: 'enhanced' as const }) },
   intel: { name: 'Intel Feed', enabled: true, priority: 1 },
@@ -46,6 +46,11 @@ const FULL_PANELS: Record<string, PanelConfig> = {
   africa: { name: 'Africa', enabled: true, priority: 1 },
   latam: { name: 'Latin America', enabled: true, priority: 1 },
   asia: { name: 'Asia-Pacific', enabled: true, priority: 1 },
+  'china-media': { name: 'China Media', enabled: true, priority: 1 },
+  'europe-business': { name: 'Europe Business', enabled: true, priority: 1 },
+  israel: { name: 'Israel', enabled: true, priority: 1 },
+  'north-korea': { name: 'North Korea Watch', enabled: true, priority: 1 },
+  'corporate-leadership': { name: 'Corporate Leadership Wires', enabled: true, priority: 1 },
   energy: { name: 'Energy & Resources', enabled: true, priority: 1 },
   gov: { name: 'Government', enabled: true, priority: 1 },
   thinktanks: { name: 'Think Tanks', enabled: true, priority: 1 },
@@ -135,7 +140,7 @@ const FULL_PANELS: Record<string, PanelConfig> = {
   'world-clock': { name: 'World Clock', enabled: true, priority: 2 },
   'national-debt': { name: 'Global Debt Clock', enabled: true, priority: 2 },
   'cross-source-signals': { name: 'Cross-Source Signals', enabled: true, priority: 2 },
-  'market-implications': { name: 'AI Market Implications', enabled: true, priority: 1, premium: 'locked' as const },
+  'market-implications': { name: 'Market Implications', enabled: true, priority: 1, premium: 'locked' as const },
   'regional-intelligence': { name: 'Regional Intelligence', enabled: false, priority: 1, premium: 'locked' as const },
   'deduction': { name: 'Deduct Situation', enabled: false, priority: 1, premium: 'locked' as const },
   'geo-hubs': { name: 'Geopolitical Hubs', enabled: false, priority: 2 },
@@ -290,7 +295,7 @@ const TECH_PANELS: Record<string, PanelConfig> = {
   'live-news': { name: 'Tech Headlines', enabled: true, priority: 1 },
   'live-webcams': { name: 'Live Webcams', enabled: true, priority: 2 },
   'windy-webcams': { name: 'Windy Live Webcam', enabled: false, priority: 2 },
-  insights: { name: 'AI Insights', enabled: true, priority: 1 },
+  insights: { name: 'Insights', enabled: true, priority: 1 },
   ai: { name: 'AI/ML News', enabled: true, priority: 1 },
   tech: { name: 'Technology', enabled: true, priority: 1 },
   startups: { name: 'Startups & VC', enabled: true, priority: 1 },
@@ -465,7 +470,7 @@ const FINANCE_PANELS: Record<string, PanelConfig> = {
   'live-news': { name: 'Market Headlines', enabled: true, priority: 1 },
   'live-webcams': { name: 'Live Webcams', enabled: true, priority: 2 },
   'windy-webcams': { name: 'Windy Live Webcam', enabled: false, priority: 2 },
-  insights: { name: 'AI Market Insights', enabled: true, priority: 1 },
+  insights: { name: 'Market Insights', enabled: true, priority: 1 },
   markets: { name: 'Live Markets', enabled: true, priority: 1 },
   'stock-analysis': { name: 'Premium Stock Analysis', enabled: true, priority: 1, premium: 'locked' },
   'stock-backtest': { name: 'Premium Backtesting', enabled: true, priority: 1, premium: 'locked' },
@@ -527,6 +532,11 @@ const FINANCE_PANELS: Record<string, PanelConfig> = {
   stablecoins: { name: 'Stablecoins', enabled: true, priority: 2 },
   'gcc-investments': { name: 'GCC Investments', enabled: true, priority: 2 },
   gccNews: { name: 'GCC Business News', enabled: true, priority: 2 },
+  'china-media': { name: 'China Media', enabled: true, priority: 1 },
+  'europe-business': { name: 'Europe Business', enabled: true, priority: 1 },
+  israel: { name: 'Israel', enabled: true, priority: 1 },
+  'north-korea': { name: 'North Korea Watch', enabled: true, priority: 1 },
+  'corporate-leadership': { name: 'Corporate Leadership Wires', enabled: true, priority: 1 },
   'gulf-economies': { name: 'Gulf Economies', enabled: true, priority: 1 },
   'consumer-prices': { name: 'Consumer Prices', enabled: true, priority: 1 },
   polymarket: { name: 'Predictions', enabled: true, priority: 2 },
@@ -818,7 +828,7 @@ const HAPPY_MOBILE_MAP_LAYERS: MapLayers = {
 const COMMODITY_PANELS: Record<string, PanelConfig> = {
   map: { name: 'Commodity Map', enabled: true, priority: 1 },
   'live-news': { name: 'Commodity Headlines', enabled: true, priority: 1 },
-  insights: { name: 'AI Commodity Insights', enabled: true, priority: 1 },
+  insights: { name: 'Commodity Insights', enabled: true, priority: 1 },
   'commodity-news': { name: 'Commodity News', enabled: true, priority: 1 },
   'liquidity-shifts': { name: 'Liquidity Shifts', enabled: true, priority: 1 },
   'news-market-correlation': { name: 'News ↔ Markets', enabled: true, priority: 1 },
@@ -1001,7 +1011,7 @@ const ENERGY_PANELS: Record<string, PanelConfig> = {
   'fuel-shortages': { name: 'Global Fuel Shortage Registry', enabled: true, priority: 1 },
   'energy-disruptions': { name: 'Energy Disruptions Log', enabled: true, priority: 1 },
   'live-news': { name: 'Energy Headlines', enabled: true, priority: 1 },
-  insights: { name: 'AI Energy Insights', enabled: true, priority: 1 },
+  insights: { name: 'Energy Insights', enabled: true, priority: 1 },
   // Energy complex — existing panels reused at launch
   'energy-complex': { name: 'Oil & Gas Complex', enabled: true, priority: 1 },
   'oil-inventories': { name: 'Oil & Gas Inventories', enabled: true, priority: 1 },
@@ -1214,7 +1224,7 @@ export const VARIANT_PANEL_OVERRIDES: Partial<Record<string, Partial<Record<stri
   finance: {
     map:         { name: 'Global Markets Map' },
     'live-news': { name: 'Market Headlines' },
-    insights:    { name: 'AI Market Insights' },
+    insights:    { name: 'Market Insights' },
   },
   tech: {
     map:         { name: 'Global Tech Map' },
@@ -1223,12 +1233,12 @@ export const VARIANT_PANEL_OVERRIDES: Partial<Record<string, Partial<Record<stri
   commodity: {
     map:         { name: 'Commodity Map' },
     'live-news': { name: 'Commodity Headlines' },
-    insights:    { name: 'AI Commodity Insights' },
+    insights:    { name: 'Commodity Insights' },
   },
   energy: {
     map:         { name: 'Energy Atlas Map' },
     'live-news': { name: 'Energy Headlines' },
-    insights:    { name: 'AI Energy Insights' },
+    insights:    { name: 'Energy Insights' },
   },
   happy: {
     map:         { name: 'Good News Map' },
@@ -1551,7 +1561,7 @@ export const PANEL_CATEGORY_MAP: Record<string, { labelKey: string; panelKeys: s
   },
   regionalNews: {
     labelKey: 'header.panelCatRegionalNews',
-    panelKeys: ['politics', 'us', 'europe', 'middleeast', 'africa', 'latam', 'asia'],
+    panelKeys: ['politics', 'us', 'europe', 'middleeast', 'africa', 'latam', 'asia', 'china-media', 'europe-business', 'israel', 'north-korea', 'corporate-leadership'],
     variants: ['full'],
   },
   marketsFinance: {
@@ -1596,6 +1606,11 @@ export const PANEL_CATEGORY_MAP: Record<string, { labelKey: string; panelKeys: s
   finMarkets: {
     labelKey: 'header.panelCatMarkets',
     panelKeys: ['markets', 'stock-analysis', 'stock-backtest', 'daily-market-brief', 'markets-news', 'heatmap', 'macro-signals', 'analysis', 'polymarket', 'nq-pulse', 'nq-catalysts', 'nq-news'],
+    variants: ['finance'],
+  },
+  regionalPress: {
+    labelKey: 'header.panelCatRegionalNews',
+    panelKeys: ['china-media', 'europe-business', 'israel', 'north-korea', 'corporate-leadership'],
     variants: ['finance'],
   },
   fixedIncomeFx: {

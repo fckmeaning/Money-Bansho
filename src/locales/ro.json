@@ -425,8 +425,8 @@
     "map": "Situația globală",
     "techHubs": "Hub-uri Tech",
     "status": "Stare sistem",
-    "insights": "Analiză AI",
-    "strategicPosture": "Postura strategică AI",
+    "insights": "Analiză",
+    "strategicPosture": "Postura strategică",
     "cii": "Instabilitate Națională",
     "strategicRisk": "Prezentare generală a riscurilor strategice",
     "intel": "Flux informații",
@@ -495,7 +495,7 @@
     "gulfCurrencies": "Monede din Golf",
     "gulfOil": "Petrolul din Golf",
     "bigmac": "Indicele Big Mac real",
-    "marketImplications": "Implicații pe piață AI",
+    "marketImplications": "Implicații pe piață",
     "energyComplex": "Complex energetic",
     "oilInventories": "Stocuri de petrol",
     "energyCrisis": "Tracker criză energetică",
@@ -522,7 +522,7 @@
     "fuelPricesDiesel": "Motorină",
     "fuelPricesSource": "Sursă",
     "groceryBasketDesc": "Comparație de prețuri cărucior în 24 de țări din întreaga lume",
-    "airlineIntel": "✈️ Informații privind liniile aeriene",
+    "airlineIntel": "Informații privind liniile aeriene",
     "consumerPrices": "Prețuri pentru consumatori",
     "fearGreed": "Frică și lacómie",
     "marketBreadth": "Amploarea pieței",
@@ -530,7 +530,12 @@
     "fx": "Cursuri de schimb valutar",
     "ukmtoIncidents": "Incidente UKMTO",
     "reservoirLevels": "Niveluri strategice ale apei",
-    "gridDisruptionClock": "Cronometrul întreruperilor de curent în statele SUA"
+    "gridDisruptionClock": "Cronometrul întreruperilor de curent în statele SUA",
+    "chinaMedia": "Presa din China",
+    "europeBusiness": "Afaceri europene",
+    "israel": "Israel (țară)",
+    "northKorea": "Monitor Coreea de Nord",
+    "corporateLeadership": "Știri despre conducerea companiilor"
   },
   "commands": {
     "prefixes": {
@@ -755,7 +760,7 @@
         "configured": "Setări desktop configurate",
         "needsKeys": "Configurați cheile API pentru a debloca funcțiile",
         "some": "Unele funcții necesită chei API",
-        "pro": "World Monitor Pro este activ"
+        "pro": "Money Bansho Pro este activ"
       },
       "summary": {
         "desktop": "Modul desktop",
@@ -785,9 +790,9 @@
         "OLLAMA_API_URL": "de ex. http://127.0.0.1:11434 (Ollama) sau http://127.0.0.1:1234/v1 (LM Studio) — punct final compatibil cu OpenAI.",
         "OLLAMA_MODEL": "de ex. llama3.1:8b — etichetă model de utilizat pentru rezumat."
       },
-      "proCloud": "Funcțiile fără o cheie API locală utilizează datele cloud World Monitor.",
-      "skipSetupPro": "Omiteți configurarea: conectați-vă cu World Monitor Pro pentru a utiliza datele cloud în loc de propriile chei API.",
-      "getPro": "Obțineți World Monitor Pro"
+      "proCloud": "Funcțiile fără o cheie API locală utilizează datele cloud Money Bansho.",
+      "skipSetupPro": "Omiteți configurarea: conectați-vă cu Money Bansho Pro pentru a utiliza datele cloud în loc de propriile chei API.",
+      "getPro": "Obțineți Money Bansho Pro"
     },
     "settingsWindow": {
       "validating": "Se validează cheile API...",
@@ -825,7 +830,7 @@
         "status": "Stare",
         "duration": "Durata"
       },
-      "shellTitle": "Setări World Monitor",
+      "shellTitle": "Setări Money Bansho",
       "shellSearchPlaceholder": "Căutați setări...",
       "shellCancel": "Anulare",
       "shellSaveClose": "Salvare & Închidere",
@@ -1143,7 +1148,7 @@
       "storageUnavailable": "Redarea nu este disponibilă deoarece acest browser blochează stocarea datelor site-ului. Permiteți datele site-ului pentru acest site pentru a începe salvarea instantaneelor."
     },
     "pizzint": {
-      "indexSource": "Indice: World Monitor",
+      "indexSource": "Indice: Money Bansho",
       "venueSource": "date despre localuri:",
       "statusNormal": "NORMAL",
       "statusNoData": "FĂRĂ DATE",
@@ -1153,7 +1158,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "Actualizat {{timeAgo}}",
       "tensionsTitle": "Tensiuni geopolitice",
-      "tensionsSource": "Tensiuni: World Monitor pe baza evenimentelor GDELT",
+      "tensionsSource": "Tensiuni: Money Bansho pe baza evenimentelor GDELT",
       "insufficientData": "Date insuficiente",
       "evidenceStrikes": "Atacuri raportate în 3 zile ({{countries}}): {{value}}",
       "evidenceAirports": "Aeroporturi afectate: {{value}}",
@@ -1873,7 +1878,7 @@
       "staleReport": "Raport învechit",
       "reported": "Număr",
       "period": "Perioadă",
-      "movementNote": "Fiecare rând păstrează sursa, data raportului și măsura. Populațiile, sosirile și evenimentele de control la frontieră sunt măsuri diferite. Sursele se pot suprapune; nu adunați numerele lor. WorldMonitor derivă această vizualizare din sursele indicate; aceasta nu implică susținerea furnizorilor.",
+      "movementNote": "Fiecare rând păstrează sursa, data raportului și măsura. Populațiile, sosirile și evenimentele de control la frontieră sunt măsuri diferite. Sursele se pot suprapune; nu adunați numerele lor. Money Bansho derivă această vizualizare din sursele indicate; aceasta nu implică susținerea furnizorilor.",
       "recent": "Recente",
       "last30Days": "Ultimele 30 de zile",
       "newThisWeek": "Nou această săptămână",
@@ -2277,7 +2282,7 @@
       "tripDays": "Zile de călătorie"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>Analist WM</strong> Analist AI cu context în timp real în domeniile geopolitic, piețe, militar și economic. Alimentat de Claude cu date în timp real injectate din fluxurile active WorldMonitor."
+      "infoTooltip": "<strong>Analist WM</strong> Analist AI cu context în timp real în domeniile geopolitic, piețe, militar și economic. Alimentat de Claude cu date în timp real injectate din fluxurile active Money Bansho."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures positioning</strong> Poziții nete săptămânale pentru comercianți comerciali, speculatori mari și comercianți mici în futures pe mărfuri și futures financiare. Sursa este raportul Commitments of Traders al Comisiei pentru Comerțul cu Futures pe Mărfuri, publicat vineri."
@@ -2345,7 +2350,7 @@
       "infoTooltip": "<strong>Economic Calendar</strong> Lansări macroeconomice programate: indicele prețurilor de consum, salarii nefarmiere, produsul intern brut, indicele managerilor de achiziții și decizii ale băncilor centrale. Arată prognoză versus actual versus anterior. Evenimente cu impact ridicat sunt evidențiate. Sursă: furnizori de date economice."
     },
     "fsi": {
-      "infoTooltip": "<strong>Financial Stress Indicator</strong> Raport World Monitor dintre creditele cu randament ridicat și obligațiuni pe termen lung, ajustat pentru volatilitatea acțiunilor și spread-ul randamentului ridicat: (HYG / TLT) / (VIX × spread randament ridicat / 100). Aceasta nu este Indicele de Stres Financiar al Bancii Federale din Kansas City. O citire de 1,5 sau mai mare indică stres redus; sub 0,3 indică stres ridicat.",
+      "infoTooltip": "<strong>Financial Stress Indicator</strong> Raport Money Bansho dintre creditele cu randament ridicat și obligațiuni pe termen lung, ajustat pentru volatilitatea acțiunilor și spread-ul randamentului ridicat: (HYG / TLT) / (VIX × spread randament ridicat / 100). Aceasta nu este Indicele de Stres Financiar al Bancii Federale din Kansas City. O citire de 1,5 sau mai mare indică stres redus; sub 0,3 indică stres ridicat.",
       "title": "Indicatorul de Stres Financiar",
       "usFsiValue": "Valoarea indicatorului de stres financiar al SUA",
       "asOf": "la {{date}}",
@@ -2433,7 +2438,7 @@
       "infoTooltip": "<strong>Macro indicators</strong> Indicatori de prețuri, activitate, politică și valută pentru SUA, zona euro și China. China necesită cobertura curentă. Fiecare țiglă arată sursa și data observației."
     },
     "monitors": {
-      "infoTooltip": "<strong>Monitoare de cuvinte cheie</strong> Adăugați orice termen pentru a urmări mențiunile în știri în timp real din toate sursele WorldMonitor. Rezultatele se actualizează în timp real pe măsură ce articolele corespunzătoare sunt ingerate."
+      "infoTooltip": "<strong>Monitoare de cuvinte cheie</strong> Adăugați orice termen pentru a urmări mențiunile în știri în timp real din toate sursele Money Bansho. Rezultatele se actualizează în timp real pe măsură ce articolele corespunzătoare sunt ingerate."
     },
     "renewable": {
       "infoTooltip": "<strong>Renewable Energy</strong> Ponderea generării de electricitate din surse regenerabile pe regiune și an, plus capacitate instalată în SUA pentru energie solară, vânt și cărbune (MW). Surse: Banca Mondială (EG.ELC.RNEW.ZS) și Administrația pentru Informații Energetice a SUA."
@@ -2499,7 +2504,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>Implicații AI pe Piață</strong> Semnale de tranzacționare generate de LLM derivate din starea geopoiitică, a mărfurilor și macro în timp real după fiecare ciclu de prognoză.<ul><li><strong>Direcție</strong>: LONG / SHORT / HEDGE</li><li><strong>Interval de timp</strong>: orizont de 1S, 2S, 1L sau 3L</li><li><strong>Catalizator</strong>: Catalizatorul cheie din spatele semnalului</li><li><strong>Risc</strong>: Avertisment sau condiție de invalidare</li></ul><em>Doar în scopuri informative. Nu constituie sfat de investiții.</em>",
-      "title": "Implicații AI pe Piață",
+      "title": "Implicații pe Piață",
       "directions": {
         "long": "Cumpără",
         "short": "POZIȚIE SCURTĂ",
@@ -2760,7 +2765,7 @@
           }
         },
         "about": {
-          "heading": "Ultimul lucru: pentru ce vei folosi World Monitor?",
+          "heading": "Ultimul lucru: pentru ce vei folosi Money Bansho?",
           "body": "Trei răspunsuri rapide ne ajută să construim instrumentele potrivite pentru tine. Poți sări peste orice dintre ele.",
           "confirmCta": "Salvează răspunsurile",
           "confirming": "Se salvează…",
@@ -3187,7 +3192,7 @@
       "global": "Indicele lunar global FAO"
     },
     "aboutYou": {
-      "title": "Ajută-ne să construim World Monitor pentru tine",
+      "title": "Ajută-ne să construim Money Bansho pentru tine",
       "ariaLabel": "Despre tine",
       "progress": "{{current}} din {{total}}",
       "skip": "Omite",
@@ -3199,7 +3204,7 @@
       "thanks": "Mulțumim. Asta ne ajută să decidem ce să construim în continuare.",
       "questions": {
         "primaryUse": {
-          "label": "Pentru ce folosești în principal World Monitor?",
+          "label": "Pentru ce folosești în principal Money Bansho?",
           "options": {
             "news": "Știri și evenimente mondiale",
             "markets": "Piețe și tranzacționare",
@@ -3241,13 +3246,13 @@
           }
         },
         "alternative": {
-          "label": "Ce ai folosi dacă World Monitor nu ar exista?",
+          "label": "Ce ai folosi dacă Money Bansho nu ar exista?",
           "placeholder": "Opțional"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Îți place World Monitor?",
+      "title": "Îți place Money Bansho?",
       "body": "O stea pe GitHub ajută alte persoane să o găsească.",
       "star": "Adaugă stea pe GitHub",
       "dismiss": "Închide și nu mai întreba"
@@ -3517,7 +3522,7 @@
         "copied": "Copiat.",
         "copyFailed": "Copierea a eșuat. Selectați textul pentru a-l copia."
       },
-      "firstSeenNote": "Aceasta este cea mai veche dată indicator disponibilă din feed-uri sau observații World Monitor; poate diferi de data sursei listate."
+      "firstSeenNote": "Aceasta este cea mai veche dată indicator disponibilă din feed-uri sau observații Money Bansho; poate diferi de data sursei listate."
     },
     "nuclear": {
       "types": {
@@ -4640,10 +4645,10 @@
     "imageryEvidenceHere": "Dovezi din imagini satelitare aici"
   },
   "shell": {
-    "documentTitle": "World Monitor — Tabloul de Bord al Inteligenței Globale în Timp Real",
-    "metaDescription": "Platformă globală de informații în timp real. Prezentată în WIRED. Utilizată de 2M+ persoane în 190 de țări. Conflicte, piețe, domeniu militar, informații din surse deschise — toate într-o singură vedere.",
+    "documentTitle": "Money Bansho — Tabloul de Bord al Inteligenței Globale în Timp Real",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Sunteți Offline",
-    "offlineMessage": "World Monitor necesită o conexiune la internet pentru date de informații în timp real.",
+    "offlineMessage": "Money Bansho necesită o conexiune la internet pentru date de informații în timp real.",
     "offlineRetry": "Încercați din nou"
   },
   "widgets": {
@@ -4681,12 +4686,12 @@
     "phaseError": "Eroare",
     "previewCheckingHeading": "Se conectează constructorul de widget",
     "previewReadyHeading": "Descrie widgetul pe care îl dorești",
-    "previewFetchingHeading": "Se preiau datele live WorldMonitor",
+    "previewFetchingHeading": "Se preiau datele live Money Bansho",
     "previewComposingHeading": "Se compune aspectul widgetului",
     "previewErrorHeading": "Previzualizarea necesită atenție",
     "previewCheckingCopy": "Validăm cheia widgetului și disponibilitatea backend-ului înainte de a activa generarea.",
     "previewReadyCopy": "Folosește un exemplu de prompt sau descrie exact vizualizarea live pe care o dorești. Previzualizarea se va actualiza aici înainte să o salvezi.",
-    "previewFetchingCopy": "Agentul apelează punctele finale WorldMonitor aprobate și modelează setul de date pentru widget.",
+    "previewFetchingCopy": "Agentul apelează punctele finale Money Bansho aprobate și modelează setul de date pentru widget.",
     "previewComposingCopy": "Previzualizarea se redă cu cele mai recente date live și stilul tabloului de bord.",
     "previewErrorCopy": "Remediază problema, apoi reîncearcă. Widgeturile existente nu sunt afectate.",
     "createInteractive": "Creează Widget Interactiv",
@@ -4715,7 +4720,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "Necesită o cheie de licență World Monitor",
+    "lockedDesc": "Necesită o cheie de licență Money Bansho",
     "signInToUnlock": "Conectați-vă pentru a debloca funcțiile premium",
     "signIn": "Conectați-vă pentru a debloca",
     "upgradeDesc": "Upgrade la Pro pentru acces deplin la analitica premium",
@@ -4854,7 +4859,7 @@
       "hotspots": {
         "category": "Știri / hotspot-uri",
         "purpose": "Evidențiază hotspot-urile geopolitice monitorizate și le ridică nivelul când se întâlnesc știrile legate și semnalele de escaladare.",
-        "source": "Registrul de hotspot-uri WorldMonitor, informațiile de știri RSS/GDELT, scorul de escaladare al hotspot-urilor, activitatea militară și contextul de instabilitate a țării.",
+        "source": "Registrul de hotspot-uri Money Bansho, informațiile de știri RSS/GDELT, scorul de escaladare al hotspot-urilor, activitatea militară și contextul de instabilitate a țării.",
         "freshness": "Pozițiile hotspot-urilor sunt curatoriate și statice. Actualitatea fluxurilor de știri este urmărită separat. Nivelurile hotspot-urilor se recalculează când se reîmprospătează fluxurile de știri ale tabloului, cam la 10 minute. Informațiile GDELT au un buget mai lung de alimentare și de cache.",
         "confidence": "Util ca indiciu pentru o primă triere. Fără deschiderea știrilor de bază și a contextului de țară, nu este o afirmație care poate fi citată.",
         "limitations": {
@@ -4901,7 +4906,7 @@
       "conflicts": {
         "category": "Conflict",
         "purpose": "Arată zone de conflict curatoriate și suprapuneri de granițe geopolitice, ca semnalele live să poată fi așezate în teatre cunoscute.",
-        "source": "Registrul de zone de conflict WorldMonitor, contextul de conflict UCDP/ACLED și metadate de graniță documentate, cum este DMZ coreeană.",
+        "source": "Registrul de zone de conflict Money Bansho, contextul de conflict UCDP/ACLED și metadate de graniță documentate, cum este DMZ coreeană.",
         "freshness": "Zonele de bază sunt curatoriate și statice. Evenimentele de conflict dinamice sunt urmărite separat prin fluxurile ACLED/UCDP și semnalele de stare.",
         "confidence": "Bun pentru orientare geografică. Singur, nu confirmă un incident în timp real.",
         "limitations": {
@@ -4934,7 +4939,7 @@
       "ais": {
         "category": "Maritim",
         "purpose": "Arată densitatea navelor și semnalele de întrerupere AIS în jurul apelor strategice și al punctelor de strangulare.",
-        "source": "Instantanee ale releului AISStream, serviciul maritim WorldMonitor și clasificatoarele de întrerupere a punctelor de strangulare.",
+        "source": "Instantanee ale releului AISStream, serviciul maritim Money Bansho și clasificatoarele de întrerupere a punctelor de strangulare.",
         "freshness": "Instantaneele releului AIS se reconstruiesc la fiecare 5 secunde în mod implicit. Serverul poate păstra în cache instantaneul de densitate de bază timp de 5 minute. Stratul este oprit sau învechit când lipsesc datele de acces ale releului sau conectivitatea.",
         "confidence": "Util pentru trierea anomaliilor maritime. AIS este raportat de nave, iar navele pot dispărea de pe recepție.",
         "limitations": {
@@ -4951,7 +4956,7 @@
       "tradeRoutes": {
         "category": "Maritim",
         "purpose": "Desenează rutele majore de containere, energie și vrac prin punctele de strangulare strategice, pentru a urmări căile de întrerupere.",
-        "source": "Registrul de rute comerciale WorldMonitor, plus starea punctelor de strangulare din lanțul de aprovizionare și rezumatele de tranzit.",
+        "source": "Registrul de rute comerciale Money Bansho, plus starea punctelor de strangulare din lanțul de aprovizionare și rezumatele de tranzit.",
         "freshness": "Geometria rutelor este statică. Starea punctelor de strangulare este menținută prin interogare la fiecare 6 minute. Rezumatele de tranzit se reîmprospătează la fiecare 10 minute prin cache-ul lanțului de aprovizionare și căile releului.",
         "confidence": "Bun ca context de expunere la nivel de rută. Nu este un flux de rutare la nivel de navă.",
         "limitations": {
@@ -5005,7 +5010,7 @@
       "weather": {
         "category": "Vreme",
         "purpose": "Arată alerte oficiale active de vreme severă de la serviciile meteorologice naționale, reunite într-un flux weather:alerts:v1.",
-        "source": "National Weather Service al Statelor Unite (NWS), Environment and Climate Change Canada (ECCC) și agregarea CAP a WMO Severe Weather Information Centre (SWIC), alimentate prin releul WorldMonitor.",
+        "source": "National Weather Service al Statelor Unite (NWS), Environment and Climate Change Canada (ECCC) și agregarea CAP a WMO Severe Weather Information Centre (SWIC), alimentate prin releul Money Bansho.",
         "freshness": "Alertele NWS, ECCC și SWIC sunt alimentate la fiecare 15 minute de releu și urmărite față de un buget de actualitate de 45 de minute.",
         "confidence": "Autoritativ pentru alertele emise de serviciile naționale participante, în funcție de momentul publicării la sursă. NWS și ECCC se desenează ca poligoane. Alertele SWIC geocodate se desenează la centroidul țării serviciului emitent, cu un marcaj explicit de precizie.",
         "limitations": {
@@ -5022,7 +5027,7 @@
       "canadaRoads": {
         "category": "Transport",
         "purpose": "Arată incidente rutiere oficiale, alerte, stări, închideri, lucrări și pericole în jurisdicțiile canadiene suportate.",
-        "source": "Fluxurile provinciale Ontario 511, Alberta 511 și Manitoba 511, City of Toronto Road Restrictions și DriveBC Open511, alimentate prin WorldMonitor.",
+        "source": "Fluxurile provinciale Ontario 511, Alberta 511 și Manitoba 511, City of Toronto Road Restrictions și DriveBC Open511, alimentate prin Money Bansho.",
         "freshness": "Ontario 511, Alberta 511 și Manitoba 511 se alimentează la fiecare 15 minute și sunt urmărite față de un buget de actualitate de 45 de minute. Restricțiile din Toronto se alimentează la fiecare 2 ore. DriveBC Open511 se alimentează la fiecare 30 de minute.",
         "confidence": "Autoritativ pentru editorii provinciali și municipali suportați, în funcție de momentul publicării la sursă și de geometria cartografiată.",
         "limitations": {
@@ -5087,7 +5092,7 @@
       "waterways": {
         "category": "Maritim",
         "purpose": "Marchează căile navigabile strategice și punctele de strangulare, ca semnalele de întrerupere să fie citite pe geografia maritimă fixă.",
-        "source": "Registrul de căi navigabile strategice WorldMonitor, cu suprapuneri de stare a punctelor de strangulare din lanțul de aprovizionare, din AIS, avertismente NGA și fluxuri derivate din PortWatch.",
+        "source": "Registrul de căi navigabile strategice Money Bansho, cu suprapuneri de stare a punctelor de strangulare din lanțul de aprovizionare, din AIS, avertismente NGA și fluxuri derivate din PortWatch.",
         "freshness": "Pozițiile căilor navigabile sunt statice. Starea live a punctelor de strangulare este menținută prin interogare la fiecare 6 minute. Rezumatele de tranzit se reîmprospătează la fiecare 10 minute când calea releului și PortWatch este în regulă.",
         "confidence": "Ridicată pentru geografia fixă. Încrederea în întreruperea live depinde de fluxurile însoțitoare AIS, NGA și PortWatch.",
         "limitations": {
@@ -5104,7 +5109,7 @@
       "ciiChoropleth": {
         "category": "Risc de țară",
         "purpose": "Colorează țările după scorul curent al Indicelui de instabilitate țării, pentru o triere largă a riscului strategic.",
-        "source": "Serviciul de scor al Indicelui de instabilitate țării din WorldMonitor folosește semnale de conflict, tulburări, avertismente, cibernetică, urmărire de nave, aviație, evenimente naturale și știri.",
+        "source": "Serviciul de scor al Indicelui de instabilitate țării din Money Bansho folosește semnale de conflict, tulburări, avertismente, cibernetică, urmărire de nave, aviație, evenimente naturale și știri.",
         "freshness": "Cache-ul scorurilor de risc este menținut prin interogare la fiecare 8 minute. seed-meta și health.riskScores arată starea live, învechită, parțială sau degradată față de un buget de actualitate de 30 de minute.",
         "confidence": "Semnal compus de model. Nu este un rating oficial de țară și nici o prognoză de probabilitate.",
         "limitations": {
@@ -5148,7 +5153,7 @@
     "finance": {
       "map": "Harta Piețelor Globale",
       "liveNews": "Titluri de Piață",
-      "insights": "Insight-uri AI pentru Piață"
+      "insights": "Insight-uri pentru Piață"
     },
     "tech": {
       "map": "Harta Tehnologiei Globale",
@@ -5157,12 +5162,12 @@
     "commodity": {
       "map": "Harta Mărfurilor",
       "liveNews": "Titluri Mărfuri",
-      "insights": "Insight-uri AI pentru Mărfuri"
+      "insights": "Insight-uri pentru Mărfuri"
     },
     "energy": {
       "map": "Atlasul Energetic",
       "liveNews": "Titluri Energetice",
-      "insights": "Insight-uri AI pentru Energie"
+      "insights": "Insight-uri pentru Energie"
     },
     "happy": {
       "map": "Harta Știrilor Bune"
@@ -5172,9 +5177,9 @@
     "title": "Instalează aplicația",
     "share": "În Safari, atinge Partajare (pătratul cu o săgeată în sus). Poate fi necesar să deschizi mai întâi meniul Mai multe.",
     "add": "Alege Adăugați pe ecranul principal.",
-    "confirm": "Atinge Adăugați, apoi deschide World Monitor de pe ecranul principal.",
+    "confirm": "Atinge Adăugați, apoi deschide Money Bansho de pe ecranul principal.",
     "close": "Închide",
-    "alertsHint": "Instalează World Monitor pe ecranul principal pentru a primi alerte pe acest iPhone sau iPad.",
+    "alertsHint": "Instalează Money Bansho pe ecranul principal pentru a primi alerte pe acest iPhone sau iPad.",
     "how": "Cum se instalează"
   },
   "teamDashboards": {
@@ -5431,7 +5436,7 @@
       "placeholder": "Loc sau 25.11, 55.14",
       "submit": "Caută",
       "locate": "Locația mea",
-      "hint": "Coordonatele introduse și locația ta nu sunt trimise niciodată la WorldMonitor. Numele de locuri introduse sunt trimise la WorldMonitor și OpenStreetMap Nominatim.",
+      "hint": "Coordonatele introduse și locația ta nu sunt trimise niciodată la Money Bansho. Numele de locuri introduse sunt trimise la Money Bansho și OpenStreetMap Nominatim.",
       "results": "Locuri",
       "searching": "Se caută…",
       "tooShort": "Introduceți cel puțin două caractere, sau coordonate precum 25.11, 55.14.",
@@ -5633,7 +5638,7 @@
     "privacy": {
       "line": "Punctul tău merge doar către arhivele de imagini.",
       "more": "Detalii",
-      "body": "Trecerile sunt calculate pe acest dispozitiv. Pentru a găsi imagini, browserul tău trimite punctul direct la Earth Search, Planetary Computer, NASA GIBS și EUMETSAT; WorldMonitor nu îl primește. Pentru un loc monitorizat, WorldMonitor este întrebat de înregistrarea zilnică a locului după ID-ul acestuia, nu după punctul dvs. Un nume de loc introdus este trimis la WorldMonitor și OpenStreetMap Nominatim pentru a fi găsit. Linkurile partajate păstrează două zecimale (0,01°)."
+      "body": "Trecerile sunt calculate pe acest dispozitiv. Pentru a găsi imagini, browserul tău trimite punctul direct la Earth Search, Planetary Computer, NASA GIBS și EUMETSAT; Money Bansho nu îl primește. Pentru un loc monitorizat, Money Bansho este întrebat de înregistrarea zilnică a locului după ID-ul acestuia, nu după punctul dvs. Un nume de loc introdus este trimis la Money Bansho și OpenStreetMap Nominatim pentru a fi găsit. Linkurile partajate păstrează două zecimale (0,01°)."
     },
     "sources": {
       "heading": "Surse ({{count}})",
@@ -5753,7 +5758,7 @@
       "map": "Furnizor, temă și glob",
       "ai": "Modele, memorie și framework-uri",
       "video": "Calitate și redare automată",
-      "apiKeys": "Chei pentru API-ul World Monitor",
+      "apiKeys": "Chei pentru API-ul Money Bansho",
       "embeds": "Widget-uri pentru site-ul dvs.",
       "aiAgents": "Clienți MCP conectați",
       "about": "Legături site, termeni și confidențialitate"
@@ -5769,7 +5774,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Acces Premium",
-        "desc": "Acest acces nu este facturat prin contul dvs. WorldMonitor. Nu sunt disponibile metode de plată sau facturi aici."
+        "desc": "Acest acces nu este facturat prin contul dvs. Money Bansho. Nu sunt disponibile metode de plată sau facturi aici."
       },
       "checking": {
         "heading": "Se verifică planul dvs.…",
@@ -5790,7 +5795,7 @@
         "desc": "Nu am putut verifica planul dvs. actual. Încercați din nou sau vizualizați planurile într-o filă nouă."
       },
       "free": {
-        "heading": "WorldMonitor Gratuit",
+        "heading": "Money Bansho Gratuit",
         "desc": "Planul dvs. actual este Gratuit. Faceți upgrade pentru toate panourile, analiza AI și reîmprospătarea prioritară a datelor."
       },
       "portal": {
@@ -5799,7 +5804,7 @@
       },
       "deletion": {
         "heading": "Ștergere cont",
-        "desc": "Ștergeți permanent acest cont World Monitor. Abonamentele se anulează imediat, fără rambursarea timpului preplătit rămas. Cheile API, cheile de încorporare și tokenurile MCP nu mai funcționează. Înregistrările de facturare necesare pentru contabilitate, litigii și solicitări legale sunt păstrate împreună cu datele de contact ale clientului pe care le conțin; acestea nu mai identifică contul dvs. de conectare, deși jurnalele webhook ale furnizorului de plăți scrise înainte de ștergere păstrează identificatorii cu care au fost livrate. Preferințele tabloului de bord și secretele aplicației desktop din depozitul de chei al sistemului (keychain) de pe acest dispozitiv nu sunt șterse de la distanță.",
+        "desc": "Ștergeți permanent acest cont Money Bansho. Abonamentele se anulează imediat, fără rambursarea timpului preplătit rămas. Cheile API, cheile de încorporare și tokenurile MCP nu mai funcționează. Înregistrările de facturare necesare pentru contabilitate, litigii și solicitări legale sunt păstrate împreună cu datele de contact ale clientului pe care le conțin; acestea nu mai identifică contul dvs. de conectare, deși jurnalele webhook ale furnizorului de plăți scrise înainte de ștergere păstrează identificatorii cu care au fost livrate. Preferințele tabloului de bord și secretele aplicației desktop din depozitul de chei al sistemului (keychain) de pe acest dispozitiv nu sunt șterse de la distanță.",
         "dialogTitle": "Ștergeți acest cont?",
         "dialogCopy": "Acțiunea nu poate fi anulată. Abonamentele se anulează, cheile nu mai funcționează imediat, iar înregistrările de facturare sunt păstrate pentru contabilitate, litigii și solicitări legale -- inclusiv datele de contact pe care le conțin. Apoi deconectați-vă pe alte dispozitive și ștergeți datele site-ului de pe acest dispozitiv -- acestea sunt în afara controlului serverului.",
         "phraseLabel": "Tastați {{phrase}} pentru a confirma",

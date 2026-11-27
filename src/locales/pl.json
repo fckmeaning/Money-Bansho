@@ -426,8 +426,8 @@
     "markets": "Rynki",
     "map": "Sytuacja globalna",
     "status": "Stan systemu",
-    "insights": "Spostrzeżenia AI",
-    "strategicPosture": "Strategiczna postawa AI",
+    "insights": "Spostrzeżenia",
+    "strategicPosture": "Strategiczna postawa",
     "cii": "Niestabilność kraju",
     "strategicRisk": "Przegląd ryzyka strategicznego",
     "intel": "Kanał wywiadowczy",
@@ -497,7 +497,7 @@
     "gulfCurrencies": "Waluty Zatoki",
     "gulfOil": "Ropa Zatoki",
     "bigmac": "Rzeczywisty indeks Big Mac",
-    "marketImplications": "Implikacje Rynkowe AI",
+    "marketImplications": "Implikacje Rynkowe",
     "energyComplex": "Kompleks Energetyczny",
     "oilInventories": "Zapasy Ropy",
     "energyCrisis": "Tracker Kryzysu Energetycznego",
@@ -524,7 +524,7 @@
     "fuelPricesDiesel": "Olej napędowy",
     "fuelPricesSource": "Źródło",
     "groceryBasketDesc": "Porównanie cen koszyka spożywczego w 24 krajach na całym świecie",
-    "airlineIntel": "✈️ Inteligencja Linii Lotniczych",
+    "airlineIntel": "Inteligencja Linii Lotniczych",
     "consumerPrices": "Ceny Konsumenckie",
     "fearGreed": "Strach i Chciwość",
     "marketBreadth": "Szerokość Rynku",
@@ -532,7 +532,12 @@
     "fx": "Kursy walutowe",
     "ukmtoIncidents": "Incydenty UKMTO",
     "reservoirLevels": "Strategiczne poziomy wód",
-    "gridDisruptionClock": "Zegar awarii sieci energetycznej w stanach USA"
+    "gridDisruptionClock": "Zegar awarii sieci energetycznej w stanach USA",
+    "chinaMedia": "Chińskie media",
+    "europeBusiness": "Biznes w Europie",
+    "israel": "Izrael",
+    "northKorea": "Obserwator Korei Północnej",
+    "corporateLeadership": "Depesze o władzach spółek"
   },
   "commands": {
     "prefixes": {
@@ -758,7 +763,7 @@
         "configured": "Skonfigurowano ustawienia pulpitu",
         "needsKeys": "Skonfiguruj klucze API, aby odblokować funkcje",
         "some": "Niektóre funkcje wymagają kluczy API",
-        "pro": "World Monitor Pro jest aktywny"
+        "pro": "Money Bansho Pro jest aktywny"
       },
       "summary": {
         "desktop": "Tryb pulpitu",
@@ -788,9 +793,9 @@
         "OLLAMA_API_URL": "np. http://127.0.0.1:11434 (Ollama) lub http://127.0.0.1:1234/v1 (LM Studio) — endpoint zgodny z OpenAI.",
         "OLLAMA_MODEL": "np. llama3.1:8b — tag modelu używanego do streszczeń."
       },
-      "proCloud": "Funkcje bez lokalnego klucza API korzystają z danych chmury World Monitor.",
-      "skipSetupPro": "Pomiń konfigurację: zaloguj się za pomocą World Monitor Pro, aby używać danych z chmury zamiast własnych kluczy API.",
-      "getPro": "Pobierz World Monitor Pro"
+      "proCloud": "Funkcje bez lokalnego klucza API korzystają z danych chmury Money Bansho.",
+      "skipSetupPro": "Pomiń konfigurację: zaloguj się za pomocą Money Bansho Pro, aby używać danych z chmury zamiast własnych kluczy API.",
+      "getPro": "Pobierz Money Bansho Pro"
     },
     "countryIntel": {
       "identifying": "Identyfikacja kraju...",
@@ -898,7 +903,7 @@
           "description": "Pro działa tutaj po zalogowaniu się z głównego okna. Klucz nie jest potrzebny."
         }
       },
-      "shellTitle": "Ustawienia World Monitor",
+      "shellTitle": "Ustawienia Money Bansho",
       "shellSearchPlaceholder": "Przeszukaj ustawienia…",
       "shellCancel": "Anuluj",
       "shellSaveClose": "Zapisz i zamknij",
@@ -1344,7 +1349,7 @@
       "info": "INFO"
     },
     "pizzint": {
-      "indexSource": "Indeks: World Monitor",
+      "indexSource": "Indeks: Money Bansho",
       "venueSource": "dane lokali:",
       "statusNormal": "NORMALNIE",
       "statusNoData": "BRAK DANYCH",
@@ -1352,7 +1357,7 @@
       "vsUsual": "względem normy",
       "title": "Indeks pizzy Pentagonu",
       "tensionsTitle": "Napięcia geopolityczne",
-      "tensionsSource": "Napięcia: World Monitor na podstawie zdarzeń GDELT",
+      "tensionsSource": "Napięcia: Money Bansho na podstawie zdarzeń GDELT",
       "insufficientData": "Niewystarczające dane",
       "evidenceStrikes": "Zgłoszone ataki w ciągu 3 dni ({{countries}}): {{value}}",
       "evidenceAirports": "Lotniska z utrudnieniami: {{value}}",
@@ -1629,7 +1634,7 @@
       "staleReport": "Nieaktualny raport",
       "reported": "Liczba",
       "period": "Okres",
-      "movementNote": "Każdy wiersz zachowuje źródło, datę raportu i rodzaj pomiaru. Stany ludności, przybycia i zdarzenia kontroli granicznej to różne miary. Źródła mogą się pokrywać; nie sumuj ich wartości. WorldMonitor opracowuje ten widok na podstawie podanych źródeł; nie oznacza to poparcia ze strony dostawców.",
+      "movementNote": "Każdy wiersz zachowuje źródło, datę raportu i rodzaj pomiaru. Stany ludności, przybycia i zdarzenia kontroli granicznej to różne miary. Źródła mogą się pokrywać; nie sumuj ich wartości. Money Bansho opracowuje ten widok na podstawie podanych źródeł; nie oznacza to poparcia ze strony dostawców.",
       "recent": "Ostatnie",
       "last30Days": "Ostatnie 30 dni",
       "newThisWeek": "Nowe w tym tygodniu",
@@ -2283,7 +2288,7 @@
       "tripDays": "Dni podróży"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>Analityk WM</strong> Analityk AI z kontekstem na żywo w domenach geopolitycznej, rynkowej, wojskowej i ekonomicznej. Zasilany przez Claude z danymi w czasie rzeczywistym z aktywnych kanałów WorldMonitor."
+      "infoTooltip": "<strong>Analityk WM</strong> Analityk AI z kontekstem na żywo w domenach geopolitycznej, rynkowej, wojskowej i ekonomicznej. Zasilany przez Claude z danymi w czasie rzeczywistym z aktywnych kanałów Money Bansho."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures positioning</strong> Tygodniowe pozycje netto dla handlowców komercyjnych, dużych spekulantów i małych handlowców na rynkach towarowych i finansowych. Źródło: raport Commitments of Traders Commodity Futures Trading Commission, publikowany w piątki."
@@ -2356,7 +2361,7 @@
       "infoTooltip": "<strong>Economic Calendar</strong> Zaplanowane publikacje makroekonomiczne: wskaźnik cen konsumpcyjnych, zatrudnienie poza rolnictwem, produkt krajowy brutto, wskaźnik menedżerów zakupów i decyzje banków centralnych. Wyświetla prognozę versus rzeczywistość versus poprzednia wartość. Zdarzenia o wysokim wpływie są wyróżnione. Źródło: dostawcy danych ekonomicznych."
     },
     "fsi": {
-      "infoTooltip": "<strong>Financial Stress Indicator</strong> WorldMonitor stosunek kredytów wysokodochodowych do długoterminowych obligacji skarbowych, skorygowany o zmienność akcji i spread wysokodochodowy: (HYG / TLT) / (VIX × High-yield spread / 100). To nie jest Financial Stress Index Kansas City Fed. Odczyt 1,5 lub wyższy oznacza niski stress; poniżej 0,3 oznacza wysoki stress.",
+      "infoTooltip": "<strong>Financial Stress Indicator</strong> Money Bansho stosunek kredytów wysokodochodowych do długoterminowych obligacji skarbowych, skorygowany o zmienność akcji i spread wysokodochodowy: (HYG / TLT) / (VIX × High-yield spread / 100). To nie jest Financial Stress Index Kansas City Fed. Odczyt 1,5 lub wyższy oznacza niski stress; poniżej 0,3 oznacza wysoki stress.",
       "title": "Wskaźnik Stresu Finansowego",
       "usFsiValue": "Wartość Financial Stress Indicator USA",
       "asOf": "Stan na {{date}}",
@@ -2444,7 +2449,7 @@
       "infoTooltip": "<strong>Macro indicators</strong> Wskaźniki cen, aktywności, polityki i walut dla USA, strefy euro i Chin. Chiny wymagają aktualnego pokrycia. Każdy kafelek pokazuje jego źródło i datę obserwacji."
     },
     "monitors": {
-      "infoTooltip": "<strong>Monitory słów kluczowych</strong> Dodaj dowolny termin, aby śledzić wzmianki w wiadomościach w czasie rzeczywistym ze wszystkich źródeł WorldMonitor. Wyniki aktualizują się w czasie rzeczywistym w miarę pozyskiwania pasujących artykułów."
+      "infoTooltip": "<strong>Monitory słów kluczowych</strong> Dodaj dowolny termin, aby śledzić wzmianki w wiadomościach w czasie rzeczywistym ze wszystkich źródeł Money Bansho. Wyniki aktualizują się w czasie rzeczywistym w miarę pozyskiwania pasujących artykułów."
     },
     "renewable": {
       "infoTooltip": "<strong>Renewable Energy</strong> Udział energii elektrycznej z odnawialnych źródeł energii według regionu i roku, plus zainstalowana pojemność USA dla energii słonecznej, wiatru i węgla (MW). Źródła: Bank Światowy (EG.ELC.RNEW.ZS) i US Energy Information Administration."
@@ -2510,7 +2515,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>Implikacje rynkowe AI</strong> Sygnały handlowe generowane przez LLM pochodzące ze stanu geopolitycznego, towarowego i makroekonomicznego w czasie rzeczywistym po każdym cyklu prognozy.<ul><li><strong>Kierunek</strong>: LONG / SHORT / HEDGE</li><li><strong>Horyzont czasowy</strong>: 1W, 2W, 1M lub 3M</li><li><strong>Katalizator</strong>: Kluczowy czynnik napędzający sygnał</li><li><strong>Ryzyko</strong>: Zastrzeżenie lub warunek unieważnienia</li></ul><em>Wyłącznie do celów informacyjnych. Nie stanowi porady inwestycyjnej.</em>",
-      "title": "Implikacje dla Rynku AI",
+      "title": "Implikacje dla Rynku",
       "directions": {
         "long": "DŁUGA",
         "short": "KRÓTKA",
@@ -2772,7 +2777,7 @@
           }
         },
         "about": {
-          "heading": "Ostatnia rzecz: do czego będziesz używać World Monitor?",
+          "heading": "Ostatnia rzecz: do czego będziesz używać Money Bansho?",
           "body": "Trzy szybkie odpowiedzi pomogą nam stworzyć dla Ciebie odpowiednie narzędzia. Możesz pominąć, które chcesz.",
           "confirmCta": "Zapisz moje odpowiedzi",
           "confirming": "Zapisywanie…",
@@ -3209,7 +3214,7 @@
       "global": "Globalny miesięczny indeks FAO"
     },
     "aboutYou": {
-      "title": "Pomóż nam budować World Monitor dla ciebie",
+      "title": "Pomóż nam budować Money Bansho dla ciebie",
       "ariaLabel": "O tobie",
       "progress": "{{current}} z {{total}}",
       "skip": "Pomiń",
@@ -3221,7 +3226,7 @@
       "thanks": "Dzięki. To pomaga nam zdecydować, co budować dalej.",
       "questions": {
         "primaryUse": {
-          "label": "Do czego głównie używasz World Monitor?",
+          "label": "Do czego głównie używasz Money Bansho?",
           "options": {
             "news": "Wiadomości i światowe wydarzenia",
             "markets": "Rynki i handel",
@@ -3263,13 +3268,13 @@
           }
         },
         "alternative": {
-          "label": "Co byś używał, gdyby World Monitor nie istniał?",
+          "label": "Co byś używał, gdyby Money Bansho nie istniał?",
           "placeholder": "Opcjonalnie"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Podoba Ci się World Monitor?",
+      "title": "Podoba Ci się Money Bansho?",
       "body": "Gwiazdka na GitHub-ie pomaga innym osobom je znaleźć.",
       "star": "Gwiazdka na GitHub-ie",
       "dismiss": "Ukryj i nie pytaj ponownie"
@@ -3530,7 +3535,7 @@
         "copied": "Skopiowano.",
         "copyFailed": "Kopiowanie nie powiodło się. Zaznacz tekst, aby go skopiować."
       },
-      "firstSeenNote": "Jest to najwcześniejsza dostępna data wskaźnika z feedów lub obserwacji World Monitor; może różnić się od daty podanego źródła."
+      "firstSeenNote": "Jest to najwcześniejsza dostępna data wskaźnika z feedów lub obserwacji Money Bansho; może różnić się od daty podanego źródła."
     },
     "nuclear": {
       "types": {
@@ -4663,10 +4668,10 @@
     "imageryEvidenceHere": "Dowody ze zdjęć satelitarnych tutaj"
   },
   "shell": {
-    "documentTitle": "World Monitor — Tablica bieżącej analizy globalnej",
-    "metaDescription": "Platforma inteligencji w czasie rzeczywistym. Polecana przez WIRED. Używana przez 2M+ osób w 190 krajach. Konflikty, rynki, wojskowość, wywiad open-source w jednym widoku.",
+    "documentTitle": "Money Bansho — Tablica bieżącej analizy globalnej",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Jesteś offline",
-    "offlineMessage": "World Monitor wymaga połączenia internetowego do otrzymywania danych wywiadowczych w czasie rzeczywistym.",
+    "offlineMessage": "Money Bansho wymaga połączenia internetowego do otrzymywania danych wywiadowczych w czasie rzeczywistym.",
     "offlineRetry": "Ponów próbę"
   },
   "widgets": {
@@ -4704,12 +4709,12 @@
     "phaseError": "Błąd",
     "previewCheckingHeading": "Łączenie konstruktora widgetów",
     "previewReadyHeading": "Opisz widget, który chcesz",
-    "previewFetchingHeading": "Pobieranie bieżących danych WorldMonitor",
+    "previewFetchingHeading": "Pobieranie bieżących danych Money Bansho",
     "previewComposingHeading": "Tworzenie układu widgetu",
     "previewErrorHeading": "Podgląd wymaga uwagi",
     "previewCheckingCopy": "Sprawdzamy Twój klucz widgetu i dostępność backendu przed włączeniem generowania.",
     "previewReadyCopy": "Użyj przykładu polecenia lub opisz dokładnie żywy widok, który chcesz. Podgląd zostanie tutaj zaktualizowany przed zapisaniem.",
-    "previewFetchingCopy": "Agent wywołuje zatwierdzone punkty końcowe WorldMonitor i formatuje zestaw danych dla widgetu.",
+    "previewFetchingCopy": "Agent wywołuje zatwierdzone punkty końcowe Money Bansho i formatuje zestaw danych dla widgetu.",
     "previewComposingCopy": "Podgląd jest renderowany z najnowszymi danymi na żywo i stylowaniem tablicy.",
     "previewErrorCopy": "Napraw problem, a następnie spróbuj ponownie. Twoje istniejące widgety nie zostaną zmienione.",
     "createInteractive": "Utwórz interaktywny widget",
@@ -4738,7 +4743,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "Wymaga klucza licencji World Monitor",
+    "lockedDesc": "Wymaga klucza licencji Money Bansho",
     "signInToUnlock": "Zaloguj się, aby odblokować funkcje premium",
     "signIn": "Zaloguj się, aby odblokować",
     "upgradeDesc": "Przejdź na Pro, aby uzyskać pełny dostęp do analityki premium",
@@ -4877,7 +4882,7 @@
       "hotspots": {
         "category": "Wiadomości / hotspoty",
         "purpose": "Wyróżnia monitorowane hotspoty geopolityczne i podnosi ich poziom, gdy zbiegają się powiązane wiadomości oraz sygnały eskalacji.",
-        "source": "Rejestr hotspotów WorldMonitor, wywiad wiadomości RSS/GDELT, ocena eskalacji hotspotów, działalność wojskowa i kontekst niestabilności kraju.",
+        "source": "Rejestr hotspotów Money Bansho, wywiad wiadomości RSS/GDELT, ocena eskalacji hotspotów, działalność wojskowa i kontekst niestabilności kraju.",
         "freshness": "Położenia hotspotów są opracowane i statyczne. Aktualność kanałów wiadomości jest śledzona osobno. Poziomy hotspotów są liczone od nowa, gdy odświeżają się kanały wiadomości pulpitu, mniej więcej co 10 minut. Wywiad GDELT ma dłuższy budżet zasilania i pamięci podręcznej.",
         "confidence": "Przydatne jako sygnał do wstępnej selekcji. Bez otwarcia wiadomości źródłowych i kontekstu kraju nie jest twierdzeniem do cytowania.",
         "limitations": {
@@ -4924,7 +4929,7 @@
       "conflicts": {
         "category": "Konflikt",
         "purpose": "Pokazuje opracowane strefy konfliktu i nakładki granic geopolitycznych, żeby sygnały na żywo dało się osadzić w znanych teatrach działań.",
-        "source": "Rejestr stref konfliktu WorldMonitor, kontekst konfliktu UCDP/ACLED oraz udokumentowane metadane granic, takie jak koreańska DMZ.",
+        "source": "Rejestr stref konfliktu Money Bansho, kontekst konfliktu UCDP/ACLED oraz udokumentowane metadane granic, takie jak koreańska DMZ.",
         "freshness": "Strefy bazowe są opracowane i statyczne. Dynamiczne zdarzenia konfliktowe są śledzone osobno przez kanały ACLED/UCDP i sygnały kondycji.",
         "confidence": "Dobre do orientacji geograficznej. Samo w sobie nie potwierdza incydentu w czasie rzeczywistym.",
         "limitations": {
@@ -4957,7 +4962,7 @@
       "ais": {
         "category": "Morskie",
         "purpose": "Pokazuje zagęszczenie statków i sygnały zakłóceń AIS wokół wód strategicznych i punktów krytycznych.",
-        "source": "Migawki przekaźnika AISStream, usługa morska WorldMonitor i klasyfikatory zakłóceń w punktach krytycznych.",
+        "source": "Migawki przekaźnika AISStream, usługa morska Money Bansho i klasyfikatory zakłóceń w punktach krytycznych.",
         "freshness": "Migawki przekaźnika AIS są domyślnie budowane od nowa co 5 sekund. Serwer może trzymać bazową migawkę zagęszczenia przez 5 minut. Warstwa jest wyłączona albo nieaktualna, gdy brakuje danych logowania przekaźnika albo łączności.",
         "confidence": "Przydatne do przesiewania anomalii morskich. AIS jest zgłaszany przez same statki i jednostki mogą zejść z nasłuchu.",
         "limitations": {
@@ -4974,7 +4979,7 @@
       "tradeRoutes": {
         "category": "Morskie",
         "purpose": "Rysuje główne trasy kontenerowe, energetyczne i masowe przez strategiczne punkty krytyczne, żeby dało się śledzić ścieżki zakłóceń.",
-        "source": "Rejestr szlaków handlowych WorldMonitor oraz status punktów krytycznych łańcucha dostaw i podsumowania tranzytu.",
+        "source": "Rejestr szlaków handlowych Money Bansho oraz status punktów krytycznych łańcucha dostaw i podsumowania tranzytu.",
         "freshness": "Geometria tras jest statyczna. Status punktów krytycznych jest podtrzymywany zapytaniem co 6 minut. Podsumowania tranzytu odświeżają się co 10 minut przez pamięć podręczną łańcucha dostaw i ścieżki przekaźnika.",
         "confidence": "Dobre jako kontekst ekspozycji na poziomie trasy. To nie jest kanał trasowania pojedynczych statków.",
         "limitations": {
@@ -5028,7 +5033,7 @@
       "weather": {
         "category": "Pogoda",
         "purpose": "Pokazuje aktywne oficjalne ostrzeżenia o groźnej pogodzie ze służb meteorologicznych, scalone w jeden kanał weather:alerts:v1.",
-        "source": "National Weather Service Stanów Zjednoczonych (NWS), Environment and Climate Change Canada (ECCC) oraz agregacja CAP z WMO Severe Weather Information Centre (SWIC), zasilane przez przekaźnik WorldMonitor.",
+        "source": "National Weather Service Stanów Zjednoczonych (NWS), Environment and Climate Change Canada (ECCC) oraz agregacja CAP z WMO Severe Weather Information Centre (SWIC), zasilane przez przekaźnik Money Bansho.",
         "freshness": "Ostrzeżenia NWS, ECCC i SWIC są zasilane co 15 minut przez przekaźnik i pilnowane względem budżetu aktualności 45 minut.",
         "confidence": "Wiążące dla ostrzeżeń wydanych przez uczestniczące służby krajowe, z zastrzeżeniem czasu publikacji u źródła. NWS i ECCC są rysowane jako poligony. Geokodowane ostrzeżenia SWIC są rysowane w centroidzie kraju służby wydającej, z jawnym znacznikiem precyzji.",
         "limitations": {
@@ -5045,7 +5050,7 @@
       "canadaRoads": {
         "category": "Transport",
         "purpose": "Pokazuje oficjalne zdarzenia drogowe, alerty, warunki, zamknięcia, roboty i zagrożenia w obsługiwanych jurysdykcjach kanadyjskich.",
-        "source": "Kanały prowincjonalne Ontario 511, Alberta 511 i Manitoba 511, City of Toronto Road Restrictions oraz DriveBC Open511, zasilane przez WorldMonitor.",
+        "source": "Kanały prowincjonalne Ontario 511, Alberta 511 i Manitoba 511, City of Toronto Road Restrictions oraz DriveBC Open511, zasilane przez Money Bansho.",
         "freshness": "Ontario 511, Alberta 511 i Manitoba 511 są zasilane co 15 minut i pilnowane względem budżetu aktualności 45 minut. Ograniczenia Toronto są zasilane co 2 godziny. DriveBC Open511 jest zasilane co 30 minut.",
         "confidence": "Wiążące dla obsługiwanych wydawców prowincjonalnych i miejskich, z zastrzeżeniem czasu publikacji u źródła i zmapowanej geometrii.",
         "limitations": {
@@ -5110,7 +5115,7 @@
       "waterways": {
         "category": "Morskie",
         "purpose": "Zaznacza strategiczne drogi wodne i punkty krytyczne, żeby sygnały zakłóceń dało się czytać na tle stałej geografii morskiej.",
-        "source": "Rejestr strategicznych dróg wodnych WorldMonitor z nakładkami statusu punktów krytycznych łańcucha dostaw z AIS, ostrzeżeń NGA i kanałów pochodzących z PortWatch.",
+        "source": "Rejestr strategicznych dróg wodnych Money Bansho z nakładkami statusu punktów krytycznych łańcucha dostaw z AIS, ostrzeżeń NGA i kanałów pochodzących z PortWatch.",
         "freshness": "Położenia dróg wodnych są statyczne. Status punktów krytycznych na żywo jest podtrzymywany zapytaniem co 6 minut. Podsumowania tranzytu odświeżają się co 10 minut, gdy ścieżka przekaźnika i PortWatch jest sprawna.",
         "confidence": "Wysoka dla stałej geografii. Pewność zakłócenia na żywo zależy od towarzyszących kanałów AIS, NGA i PortWatch.",
         "limitations": {
@@ -5127,7 +5132,7 @@
       "ciiChoropleth": {
         "category": "Ryzyko kraju",
         "purpose": "Koloruje kraje według bieżącego wyniku Country Instability Index, do szerokiej wstępnej selekcji ryzyka strategicznego.",
-        "source": "Usługa punktacji Country Instability Index w WorldMonitor korzysta z sygnałów konfliktu, niepokojów, ostrzeżeń, cyber, śledzenia statków, lotnictwa, zdarzeń naturalnych i wiadomości.",
+        "source": "Usługa punktacji Country Instability Index w Money Bansho korzysta z sygnałów konfliktu, niepokojów, ostrzeżeń, cyber, śledzenia statków, lotnictwa, zdarzeń naturalnych i wiadomości.",
         "freshness": "Pamięć podręczna wyników ryzyka jest podtrzymywana zapytaniem co 8 minut. seed-meta i health.riskScores pokazują stan na żywo, nieaktualny, częściowy albo zdegradowany względem budżetu aktualności 30 minut.",
         "confidence": "To złożony sygnał modelu. To nie jest oficjalna ocena kraju ani prognoza prawdopodobieństwa.",
         "limitations": {
@@ -5171,7 +5176,7 @@
     "finance": {
       "map": "Globalna Mapa Rynków",
       "liveNews": "Nagłówki Rynkowe",
-      "insights": "Spostrzeżenia AI o rynkach"
+      "insights": "Spostrzeżenia o rynkach"
     },
     "tech": {
       "map": "Globalna Mapa Technologii",
@@ -5180,12 +5185,12 @@
     "commodity": {
       "map": "Mapa Surowców",
       "liveNews": "Nagłówki Surowców",
-      "insights": "Spostrzeżenia AI o surowcach"
+      "insights": "Spostrzeżenia o surowcach"
     },
     "energy": {
       "map": "Atlas Energii",
       "liveNews": "Nagłówki Energetyczne",
-      "insights": "Spostrzeżenia AI o energii"
+      "insights": "Spostrzeżenia o energii"
     },
     "happy": {
       "map": "Mapa Dobrych Wiadomości"
@@ -5195,9 +5200,9 @@
     "title": "Zainstaluj aplikację",
     "share": "W Safari stuknij Udostępnij (kwadrat ze strzałką w górę). Może być konieczne wcześniejsze otwarcie menu Więcej.",
     "add": "Wybierz Do ekranu początkowego.",
-    "confirm": "Stuknij Dodaj, a następnie otwórz World Monitor z ekranu początkowego.",
+    "confirm": "Stuknij Dodaj, a następnie otwórz Money Bansho z ekranu początkowego.",
     "close": "Zamknij",
-    "alertsHint": "Zainstaluj World Monitor na ekranie początkowym, aby otrzymywać alerty na tym iPhonie lub iPadzie.",
+    "alertsHint": "Zainstaluj Money Bansho na ekranie początkowym, aby otrzymywać alerty na tym iPhonie lub iPadzie.",
     "how": "Jak zainstalować"
   },
   "teamDashboards": {
@@ -5460,7 +5465,7 @@
       "placeholder": "Miejsce lub 25.11, 55.14",
       "submit": "Szukaj",
       "locate": "Moja lokalizacja",
-      "hint": "Wpisane współrzędne i Twoja lokalizacja nigdy nie są wysyłane do WorldMonitor. Wpisane nazwy miejsc trafiają do WorldMonitor i OpenStreetMap Nominatim.",
+      "hint": "Wpisane współrzędne i Twoja lokalizacja nigdy nie są wysyłane do Money Bansho. Wpisane nazwy miejsc trafiają do Money Bansho i OpenStreetMap Nominatim.",
       "results": "Miejsca",
       "searching": "Wyszukiwanie…",
       "tooShort": "Wpisz co najmniej dwa znaki lub współrzędne takie jak 25.11, 55.14.",
@@ -5670,7 +5675,7 @@
     "privacy": {
       "line": "Twój punkt trafia tylko do archiwów obrazów.",
       "more": "Szczegóły",
-      "body": "Przejścia są obliczane na tym urządzeniu. Aby znaleźć obrazy, Twoja przeglądarka wysyła punkt bezpośrednio do Earth Search, Planetary Computer, NASA GIBS i EUMETSAT; WorldMonitor go nie otrzymuje. W monitorowanym miejscu WorldMonitor otrzymuje prośbę o dzienny zapis tego miejsca według jego identyfikatora, a nie Twojego punktu. Wpisana nazwa miejsca trafia do WorldMonitor i OpenStreetMap Nominatim w celu jej zlokalizowania. Udostępniane linki zachowują dwa miejsca dziesiętne (0,01°)."
+      "body": "Przejścia są obliczane na tym urządzeniu. Aby znaleźć obrazy, Twoja przeglądarka wysyła punkt bezpośrednio do Earth Search, Planetary Computer, NASA GIBS i EUMETSAT; Money Bansho go nie otrzymuje. W monitorowanym miejscu Money Bansho otrzymuje prośbę o dzienny zapis tego miejsca według jego identyfikatora, a nie Twojego punktu. Wpisana nazwa miejsca trafia do Money Bansho i OpenStreetMap Nominatim w celu jej zlokalizowania. Udostępniane linki zachowują dwa miejsca dziesiętne (0,01°)."
     },
     "sources": {
       "heading": "Źródła ({{count}})",
@@ -5790,7 +5795,7 @@
       "map": "Dostawca, motyw i globus",
       "ai": "Modele, pamięć i frameworki",
       "video": "Jakość i automatyczne odtwarzanie",
-      "apiKeys": "Klucze API World Monitor",
+      "apiKeys": "Klucze API Money Bansho",
       "embeds": "Widgety na własną stronę",
       "aiAgents": "Połączeni klienci MCP",
       "about": "Linki, warunki i prywatność"
@@ -5806,7 +5811,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Dostęp Premium",
-        "desc": "Ten dostęp nie jest rozliczany przez konto WorldMonitor. Brak dostępnych metod płatności ani faktur."
+        "desc": "Ten dostęp nie jest rozliczany przez konto Money Bansho. Brak dostępnych metod płatności ani faktur."
       },
       "checking": {
         "heading": "Sprawdzanie planu…",
@@ -5827,7 +5832,7 @@
         "desc": "Nie mogliśmy zweryfikować bieżącego planu. Spróbuj ponownie lub wyświetl plany w nowej karcie."
       },
       "free": {
-        "heading": "WorldMonitor Bezpłatny",
+        "heading": "Money Bansho Bezpłatny",
         "desc": "Twój obecny plan to Bezpłatny. Uaktualnij, aby uzyskać dostęp do wszystkich paneli, analizy AI i priorytetowego odświeżania danych."
       },
       "portal": {
@@ -5836,7 +5841,7 @@
       },
       "deletion": {
         "heading": "Usuń konto",
-        "desc": "Trwale usuń to konto World Monitor. Subskrypcje są anulowane natychmiast, bez zwrotu środków za pozostały opłacony z góry okres. Klucze API, klucze osadzania i tokeny MCP przestają działać. Dokumentacja rozliczeniowa potrzebna do celów księgowych, sporów i żądań wynikających z przepisów prawa jest przechowywana wraz z zawartymi w niej danymi kontaktowymi klienta; nie wskazuje już Twojego konta logowania, choć dzienniki webhooków dostawcy płatności zapisane przed usunięciem zachowują identyfikatory, z którymi zostały dostarczone. Preferencje pulpitu nawigacyjnego i sekrety aplikacji desktopowej w systemowym pęku kluczy (Keychain) na tym urządzeniu nie są usuwane zdalnie.",
+        "desc": "Trwale usuń to konto Money Bansho. Subskrypcje są anulowane natychmiast, bez zwrotu środków za pozostały opłacony z góry okres. Klucze API, klucze osadzania i tokeny MCP przestają działać. Dokumentacja rozliczeniowa potrzebna do celów księgowych, sporów i żądań wynikających z przepisów prawa jest przechowywana wraz z zawartymi w niej danymi kontaktowymi klienta; nie wskazuje już Twojego konta logowania, choć dzienniki webhooków dostawcy płatności zapisane przed usunięciem zachowują identyfikatory, z którymi zostały dostarczone. Preferencje pulpitu nawigacyjnego i sekrety aplikacji desktopowej w systemowym pęku kluczy (Keychain) na tym urządzeniu nie są usuwane zdalnie.",
         "dialogTitle": "Usunąć to konto?",
         "dialogCopy": "Tej operacji nie można cofnąć. Subskrypcje zostaną anulowane, klucze natychmiast przestaną działać, a dokumentacja rozliczeniowa zostanie zachowana do celów księgowych, sporów i żądań wynikających z przepisów prawa — wraz z zawartymi w niej danymi kontaktowymi. Następnie wyloguj się na innych urządzeniach i wyczyść dane witryny na tym urządzeniu — serwer nie ma do nich dostępu.",
         "phraseLabel": "Wpisz {{phrase}}, aby potwierdzić",

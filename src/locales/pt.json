@@ -7,7 +7,7 @@
     "strategicPosture": "Strategic Posture",
     "cii": "Country Instability Index",
     "status": "Status do sistema",
-    "insights": "Informações de IA",
+    "insights": "Informações",
     "map": "Interactive Map",
     "politics": "Notícias do mundo",
     "us": "Estados Unidos",
@@ -75,7 +75,7 @@
     "gulfCurrencies": "Moedas do Golfo",
     "gulfOil": "Petróleo do Golfo",
     "bigmac": "Índice Big Mac real",
-    "marketImplications": "Implicações de Mercado da IA",
+    "marketImplications": "Implicações de Mercado",
     "energyComplex": "Complexo Energético",
     "oilInventories": "Estoques de Petróleo",
     "energyCrisis": "Rastreador de Crise Energética",
@@ -102,7 +102,7 @@
     "fuelPricesDiesel": "Diesel",
     "fuelPricesSource": "Fonte",
     "groceryBasketDesc": "Comparação de preços de cesta de supermercado em 24 países em todo o mundo",
-    "airlineIntel": "✈️ Inteligência de Companhias Aéreas",
+    "airlineIntel": "Inteligência de Companhias Aéreas",
     "consumerPrices": "Preços ao Consumidor",
     "fearGreed": "Medo e Ganância",
     "marketBreadth": "Amplitude de Mercado",
@@ -110,7 +110,12 @@
     "fx": "Taxas de câmbio",
     "ukmtoIncidents": "Incidentes UKMTO",
     "reservoirLevels": "Níveis de água estratégicos",
-    "gridDisruptionClock": "Relógio de interrupções de energia nos estados dos EUA"
+    "gridDisruptionClock": "Relógio de interrupções de energia nos estados dos EUA",
+    "chinaMedia": "Mídia chinesa",
+    "europeBusiness": "Negócios na Europa",
+    "israel": "Israel (país)",
+    "northKorea": "Observatório da Coreia do Norte",
+    "corporateLeadership": "Notícias de liderança corporativa"
   },
   "commands": {
     "prefixes": {
@@ -321,7 +326,7 @@
         "configured": "Configurações da área de trabalho configuradas",
         "needsKeys": "Configure chaves de API para desbloquear recursos",
         "some": "Alguns recursos precisam de chaves de API",
-        "pro": "World Monitor Pro está ativo"
+        "pro": "Money Bansho Pro está ativo"
       },
       "summary": {
         "desktop": "Modo área de trabalho",
@@ -351,9 +356,9 @@
         "OLLAMA_API_URL": "ex.: http://127.0.0.1:11434 (Ollama) ou http://127.0.0.1:1234/v1 (LM Studio) — endpoint compatível com OpenAI.",
         "OLLAMA_MODEL": "ex.: llama3.1:8b — tag do modelo usado para resumos."
       },
-      "proCloud": "Recursos sem uma chave de API local usam dados da nuvem do World Monitor.",
-      "skipSetupPro": "Pule a configuração: faça login com World Monitor Pro para usar dados da nuvem em vez de suas próprias chaves de API.",
-      "getPro": "Obter World Monitor Pro"
+      "proCloud": "Recursos sem uma chave de API local usam dados da nuvem do Money Bansho.",
+      "skipSetupPro": "Pule a configuração: faça login com Money Bansho Pro para usar dados da nuvem em vez de suas próprias chaves de API.",
+      "getPro": "Obter Money Bansho Pro"
     },
     "countryIntel": {
       "identifying": "Identificando país...",
@@ -475,7 +480,7 @@
           "description": "Pro funciona aqui após você entrar pela janela principal. Nenhuma chave necessária."
         }
       },
-      "shellTitle": "Configurações do World Monitor",
+      "shellTitle": "Configurações do Money Bansho",
       "shellSearchPlaceholder": "Pesquisar configurações...",
       "shellCancel": "Cancelar",
       "shellSaveClose": "Salvar e Fechar",
@@ -798,7 +803,7 @@
       "info": "INFO"
     },
     "pizzint": {
-      "indexSource": "Índice: World Monitor",
+      "indexSource": "Índice: Money Bansho",
       "venueSource": "dados dos locais:",
       "statusNormal": "NORMAL",
       "statusNoData": "SEM DADOS",
@@ -806,7 +811,7 @@
       "vsUsual": "em relação ao habitual",
       "title": "Índice de Pizza do Pentágono",
       "tensionsTitle": "Tensões Geopolíticas",
-      "tensionsSource": "Tensões: World Monitor com base em eventos do GDELT",
+      "tensionsSource": "Tensões: Money Bansho com base em eventos do GDELT",
       "insufficientData": "Dados insuficientes",
       "evidenceStrikes": "Ataques relatados em 3 dias ({{countries}}): {{value}}",
       "evidenceAirports": "Aeroportos afetados: {{value}}",
@@ -1150,7 +1155,7 @@
       "staleReport": "Relatório desatualizado",
       "reported": "Quantidade",
       "period": "Período",
-      "movementNote": "Cada linha mantém a sua fonte, data do relatório e medida. Os totais populacionais, as chegadas e os eventos de controlo fronteiriço são medidas distintas. As fontes podem sobrepor-se; não some as suas contagens. O WorldMonitor produz esta vista a partir das fontes ligadas; isto não implica o apoio dos fornecedores.",
+      "movementNote": "Cada linha mantém a sua fonte, data do relatório e medida. Os totais populacionais, as chegadas e os eventos de controlo fronteiriço são medidas distintas. As fontes podem sobrepor-se; não some as suas contagens. O Money Bansho produz esta vista a partir das fontes ligadas; isto não implica o apoio dos fornecedores.",
       "recent": "Recente",
       "last30Days": "Últimos 30 dias",
       "newThisWeek": "Novo esta semana",
@@ -1857,7 +1862,7 @@
       "tripDays": "Dias de viagem"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>Analista WM</strong> Analista de IA com contexto em tempo real nos domínios geopolítico, de mercado, militar e económico. Alimentado pelo Claude com dados em tempo real injetados dos feeds ativos do WorldMonitor."
+      "infoTooltip": "<strong>Analista WM</strong> Analista de IA com contexto em tempo real nos domínios geopolítico, de mercado, militar e económico. Alimentado pelo Claude com dados em tempo real injetados dos feeds ativos do Money Bansho."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures positioning</strong> Posições líquidas semanais para operadores comerciais, grandes especuladores e pequenos operadores em futuros de commodities e financeiros. A fonte é o relatório Commitments of Traders da Commodity Futures Trading Commission, publicado às sextas-feiras."
@@ -1925,7 +1930,7 @@
       "infoTooltip": "<strong>Economic Calendar</strong> Lançamentos macroeconômicos programados: índice de preços ao consumidor, folha de pagamento não-agrícola, produto interno bruto, índice de gerentes de compras e decisões de bancos centrais. Mostra previsão vs real vs anterior. Eventos de alto impacto destacados. Fonte: fornecedores de dados econômicos."
     },
     "fsi": {
-      "infoTooltip": "<strong>Financial Stress Indicator</strong> World Monitor proporção de crédito de alto rendimento para Treasuries de longo prazo, ajustada pela volatilidade de ações e pelo spread de alto rendimento: (HYG / TLT) / (VIX × spread de alto rendimento / 100). Este não é o Índice de Estresse Financeiro do Federal Reserve de Kansas City. Uma leitura de 1,5 ou superior indica baixo estresse; abaixo de 0,3 é alto estresse.",
+      "infoTooltip": "<strong>Financial Stress Indicator</strong> Money Bansho proporção de crédito de alto rendimento para Treasuries de longo prazo, ajustada pela volatilidade de ações e pelo spread de alto rendimento: (HYG / TLT) / (VIX × spread de alto rendimento / 100). Este não é o Índice de Estresse Financeiro do Federal Reserve de Kansas City. Uma leitura de 1,5 ou superior indica baixo estresse; abaixo de 0,3 é alto estresse.",
       "title": "Indicador de Estresse Financeiro",
       "usFsiValue": "Valor do indicador de estresse financeiro dos EUA",
       "asOf": "Em {{date}}",
@@ -2013,7 +2018,7 @@
       "infoTooltip": "<strong>Macro indicators</strong> Indicadores de preços, atividade, política e moeda dos EUA, zona do euro e China. China requer cobertura atual. Cada bloco mostra sua fonte e data de observação."
     },
     "monitors": {
-      "infoTooltip": "<strong>Monitores de palavras-chave</strong> Adicione qualquer termo para rastrear menções em notícias em tempo real em todas as fontes do WorldMonitor. Os resultados atualizam-se em tempo real à medida que artigos correspondentes são ingeridos."
+      "infoTooltip": "<strong>Monitores de palavras-chave</strong> Adicione qualquer termo para rastrear menções em notícias em tempo real em todas as fontes do Money Bansho. Os resultados atualizam-se em tempo real à medida que artigos correspondentes são ingeridos."
     },
     "renewable": {
       "infoTooltip": "<strong>Renewable Energy</strong> Participação da geração de eletricidade a partir de fontes renováveis por região e ano, além da capacidade instalada dos EUA para solar, vento e carvão (MW). Fontes: Banco Mundial (EG.ELC.RNEW.ZS) e Administração de Informações de Energia dos EUA."
@@ -2079,7 +2084,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>Implicações de Mercado de IA</strong> Sinais de comércio gerados por LLM derivados do estado geopolítico, commodities e macro em tempo real após cada ciclo de previsão.<ul><li><strong>Direção</strong>: COMPRA / VENDA / PROTEÇÃO</li><li><strong>Prazo</strong>: Horizonte de 1S, 2S, 1M ou 3M</li><li><strong>Catalisador</strong>: Principal catalisador por trás do sinal</li><li><strong>Risco</strong>: Ressalva ou condição de invalidação</li></ul><em>Apenas para fins informativos. Não é aconselhamento de investimento.</em>",
-      "title": "Implicações de Mercado da IA",
+      "title": "Implicações de Mercado",
       "directions": {
         "long": "COMPRADO",
         "short": "VENDIDO",
@@ -2340,7 +2345,7 @@
           }
         },
         "about": {
-          "heading": "Uma última coisa: para que você usará o World Monitor?",
+          "heading": "Uma última coisa: para que você usará o Money Bansho?",
           "body": "Três respostas rápidas nos ajudam a criar as ferramentas certas para você. Pule as que quiser.",
           "confirmCta": "Salvar minhas respostas",
           "confirming": "Salvando…",
@@ -2767,7 +2772,7 @@
       "global": "Índice mensal global da FAO"
     },
     "aboutYou": {
-      "title": "Ajude-nos a criar World Monitor para você",
+      "title": "Ajude-nos a criar Money Bansho para você",
       "ariaLabel": "Sobre você",
       "progress": "{{current}} de {{total}}",
       "skip": "Pular",
@@ -2779,7 +2784,7 @@
       "thanks": "Obrigado. Isso nos ajuda a decidir o que construir a seguir.",
       "questions": {
         "primaryUse": {
-          "label": "Para que você usa principalmente World Monitor?",
+          "label": "Para que você usa principalmente Money Bansho?",
           "options": {
             "news": "Notícias e eventos mundiais",
             "markets": "Mercados e operações",
@@ -2821,13 +2826,13 @@
           }
         },
         "alternative": {
-          "label": "O que você usaria se World Monitor não existisse?",
+          "label": "O que você usaria se Money Bansho não existisse?",
           "placeholder": "Opcional"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Gostando do World Monitor?",
+      "title": "Gostando do Money Bansho?",
       "body": "Uma estrela no GitHub ajuda outras pessoas a encontrá-lo.",
       "star": "Dar estrela no GitHub",
       "dismiss": "Descartar e não perguntar novamente"
@@ -3088,7 +3093,7 @@
         "copied": "Copiado.",
         "copyFailed": "Falha ao copiar. Selecione o texto para copiá-lo."
       },
-      "firstSeenNote": "Esta é a data de indicador mais antiga disponível entre feeds ou observações do World Monitor; pode diferir da data listada da fonte."
+      "firstSeenNote": "Esta é a data de indicador mais antiga disponível entre feeds ou observações do Money Bansho; pode diferir da data listada da fonte."
     },
     "nuclear": {
       "types": {
@@ -4640,10 +4645,10 @@
     "imageryEvidenceHere": "Evidência de imagens de satélite aqui"
   },
   "shell": {
-    "documentTitle": "World Monitor — Painel de Inteligência Global em Tempo Real",
-    "metaDescription": "Plataforma global de inteligência em tempo real. Destaque em WIRED. Usada por 2M+ pessoas em 190 países. Conflitos, mercados, militares, inteligência de código aberto em uma única visão.",
+    "documentTitle": "Money Bansho — Painel de Inteligência Global em Tempo Real",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Você está offline",
-    "offlineMessage": "World Monitor requer uma conexão com a internet para dados de inteligência em tempo real.",
+    "offlineMessage": "Money Bansho requer uma conexão com a internet para dados de inteligência em tempo real.",
     "offlineRetry": "Tentar novamente"
   },
   "widgets": {
@@ -4681,12 +4686,12 @@
     "phaseError": "Erro",
     "previewCheckingHeading": "Conectando o construtor de widget",
     "previewReadyHeading": "Descreva o widget que você deseja",
-    "previewFetchingHeading": "Buscando dados ao vivo do WorldMonitor",
+    "previewFetchingHeading": "Buscando dados ao vivo do Money Bansho",
     "previewComposingHeading": "Compondo o layout do widget",
     "previewErrorHeading": "A visualização precisa de atenção",
     "previewCheckingCopy": "Estamos validando sua chave de widget e disponibilidade de backend antes de ativar a geração.",
     "previewReadyCopy": "Use um exemplo de prompt ou descreva a visualização ao vivo exata que você deseja. A visualização será atualizada aqui antes de você salvá-la.",
-    "previewFetchingCopy": "O agente está chamando endpoints aprovados do WorldMonitor e moldando o conjunto de dados para o widget.",
+    "previewFetchingCopy": "O agente está chamando endpoints aprovados do Money Bansho e moldando o conjunto de dados para o widget.",
     "previewComposingCopy": "A visualização está sendo renderizada com os dados ao vivo mais recentes e estilo do painel.",
     "previewErrorCopy": "Corrija o problema e tente novamente. Seus widgets existentes não serão afetados.",
     "createInteractive": "Criar Widget Interativo",
@@ -4715,7 +4720,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "Requer uma chave de licença World Monitor",
+    "lockedDesc": "Requer uma chave de licença Money Bansho",
     "signInToUnlock": "Entre para desbloquear recursos premium",
     "signIn": "Entre para Desbloquear",
     "upgradeDesc": "Atualize para Pro para ter acesso completo à análise premium",
@@ -4854,7 +4859,7 @@
       "hotspots": {
         "category": "Notícias / Pontos quentes",
         "purpose": "Destaca os pontos quentes geopolíticos monitorados e eleva o nível deles quando as notícias relacionadas e os sinais de escalada convergem.",
-        "source": "Registro de pontos quentes do WorldMonitor, inteligência de notícias RSS/GDELT, pontuação de escalada dos pontos quentes, atividade militar e contexto de instabilidade dos países.",
+        "source": "Registro de pontos quentes do Money Bansho, inteligência de notícias RSS/GDELT, pontuação de escalada dos pontos quentes, atividade militar e contexto de instabilidade dos países.",
         "freshness": "As localizações dos pontos quentes são selecionadas e estáticas. A atualidade dos fluxos de notícias é acompanhada à parte. Os níveis são recalculados quando os fluxos de notícias do painel são atualizados, com um intervalo de cerca de 10 minutos, enquanto a inteligência GDELT tem orçamentos de carga e de cache mais longos.",
         "confidence": "Serve para priorizar, não como uma afirmação citável sem abrir as notícias de base e o contexto do país.",
         "limitations": {
@@ -4901,7 +4906,7 @@
       "conflicts": {
         "category": "Conflito",
         "purpose": "Mostra zonas de conflito selecionadas e sobreposições de fronteiras geopolíticas, para que os analistas situem os sinais ao vivo em relação aos teatros conhecidos.",
-        "source": "Registro de zonas de conflito do WorldMonitor, contexto de conflito UCDP/ACLED e metadados de fronteiras documentadas, como a DMZ coreana.",
+        "source": "Registro de zonas de conflito do Money Bansho, contexto de conflito UCDP/ACLED e metadados de fronteiras documentadas, como a DMZ coreana.",
         "freshness": "As zonas de base são selecionadas e estáticas. Os eventos de conflito dinâmicos são acompanhados à parte pelos fluxos ACLED/UCDP e pelos sinais de estado.",
         "confidence": "Serve para a orientação geográfica. Sozinha, não confirma um incidente em tempo real.",
         "limitations": {
@@ -4934,7 +4939,7 @@
       "ais": {
         "category": "Marítimo",
         "purpose": "Mostra a densidade de embarcações e os sinais de perturbação AIS em torno de águas estratégicas e pontos de estrangulamento.",
-        "source": "Instantâneos do retransmissor AISStream, serviço marítimo do WorldMonitor e classificadores de perturbação dos pontos de estrangulamento.",
+        "source": "Instantâneos do retransmissor AISStream, serviço marítimo do Money Bansho e classificadores de perturbação dos pontos de estrangulamento.",
         "freshness": "Os instantâneos do retransmissor AIS são reconstruídos a cada 5 segundos por padrão. O servidor pode guardar em cache o instantâneo de densidade de base por 5 minutos, e a camada fica desativada ou desatualizada quando faltam as credenciais ou a conectividade do retransmissor.",
         "confidence": "Serve para triar anomalias marítimas, mas o AIS é declarado pelas próprias embarcações e elas podem desligá-lo.",
         "limitations": {
@@ -4951,7 +4956,7 @@
       "tradeRoutes": {
         "category": "Marítimo",
         "purpose": "Desenha as grandes rotas de contêineres, energia e granéis que passam por pontos de estrangulamento estratégicos, para raciocinar sobre os caminhos de perturbação.",
-        "source": "Registro de rotas comerciais do WorldMonitor, mais o estado dos pontos de estrangulamento da cadeia de suprimentos e os resumos de trânsito.",
+        "source": "Registro de rotas comerciais do Money Bansho, mais o estado dos pontos de estrangulamento da cadeia de suprimentos e os resumos de trânsito.",
         "freshness": "A geometria das rotas é estática. O estado dos pontos de estrangulamento é mantido por uma consulta leve a cada 6 minutos, e os resumos de trânsito são atualizados a cada 10 minutos pelos caches da cadeia de suprimentos e pelos caminhos do retransmissor.",
         "confidence": "Serve para o contexto de exposição no nível da rota. Não é um fluxo de roteamento embarcação por embarcação.",
         "limitations": {
@@ -5005,7 +5010,7 @@
       "weather": {
         "category": "Meteorologia",
         "purpose": "Mostra alertas oficiais de tempo severo em vigor, dos serviços meteorológicos nacionais, reunidos em um único fluxo weather:alerts:v1.",
-        "source": "National Weather Service dos Estados Unidos (NWS), Environment and Climate Change Canada (ECCC) e a agregação CAP do centro de informação da WMO sobre tempo severo (SWIC), carregados pelo retransmissor do WorldMonitor.",
+        "source": "National Weather Service dos Estados Unidos (NWS), Environment and Climate Change Canada (ECCC) e a agregação CAP do centro de informação da WMO sobre tempo severo (SWIC), carregados pelo retransmissor do Money Bansho.",
         "freshness": "Os alertas de NWS, ECCC e SWIC são carregados a cada 15 minutos pelo retransmissor e monitorados diante de um orçamento de atualidade de 45 minutos.",
         "confidence": "É a referência para os alertas emitidos pelos serviços nacionais que contribuem, sujeita ao momento da publicação na origem. NWS e ECCC são desenhados como polígonos. Os alertas SWIC geocodificados são desenhados no centroide do país do serviço emissor, com um marcador explícito de precisão.",
         "limitations": {
@@ -5022,7 +5027,7 @@
       "canadaRoads": {
         "category": "Transporte",
         "purpose": "Mostra incidentes rodoviários oficiais, alertas, condições, interdições, obras e perigos nas jurisdições canadenses atendidas.",
-        "source": "Fluxos provinciais Ontario 511, Alberta 511 e Manitoba 511, City of Toronto Road Restrictions e DriveBC Open511, carregados pelo WorldMonitor.",
+        "source": "Fluxos provinciais Ontario 511, Alberta 511 e Manitoba 511, City of Toronto Road Restrictions e DriveBC Open511, carregados pelo Money Bansho.",
         "freshness": "Ontario 511, Alberta 511 e Manitoba 511 são carregados a cada 15 minutos e monitorados diante de um orçamento de atualidade de 45 minutos. As restrições de Toronto são carregadas a cada 2 horas, e o DriveBC Open511 a cada 30 minutos.",
         "confidence": "É a referência para os publicadores provinciais e municipais atendidos, sujeita ao momento da publicação na origem e à geometria mapeada.",
         "limitations": {
@@ -5087,7 +5092,7 @@
       "waterways": {
         "category": "Marítimo",
         "purpose": "Marca hidrovias e pontos de estrangulamento estratégicos, para interpretar os sinais de perturbação sobre uma geografia marítima fixa.",
-        "source": "Registro de hidrovias estratégicas do WorldMonitor, com sobreposições do estado dos pontos de estrangulamento da cadeia de suprimentos a partir do AIS, de avisos NGA e de fluxos derivados do PortWatch.",
+        "source": "Registro de hidrovias estratégicas do Money Bansho, com sobreposições do estado dos pontos de estrangulamento da cadeia de suprimentos a partir do AIS, de avisos NGA e de fluxos derivados do PortWatch.",
         "freshness": "As localizações das hidrovias são estáticas. O estado ao vivo dos pontos de estrangulamento é mantido por uma consulta leve a cada 6 minutos, e os resumos de trânsito são atualizados a cada 10 minutos quando o caminho do retransmissor e do PortWatch está saudável.",
         "confidence": "Alta para a geografia fixa. A confiança na perturbação ao vivo depende dos fluxos associados AIS, NGA e PortWatch.",
         "limitations": {
@@ -5104,7 +5109,7 @@
       "ciiChoropleth": {
         "category": "Risco-país",
         "purpose": "Colore os países pela pontuação atual do Country Instability Index, para uma triagem ampla do risco estratégico.",
-        "source": "Serviço de pontuação do Country Instability Index do WorldMonitor, com sinais de conflito, agitação, avisos, cibernéticos, rastreamento de navios, aviação, eventos naturais e notícias.",
+        "source": "Serviço de pontuação do Country Instability Index do Money Bansho, com sinais de conflito, agitação, avisos, cibernéticos, rastreamento de navios, aviação, eventos naturais e notícias.",
         "freshness": "O cache das pontuações de risco é mantido por uma consulta leve a cada 8 minutos. seed-meta e health.riskScores expõem o estado ao vivo, desatualizado, parcial ou degradado, diante de um orçamento de atualidade de 30 minutos.",
         "confidence": "Sinal de um modelo composto, não uma classificação oficial de país nem uma previsão de probabilidade.",
         "limitations": {
@@ -5148,7 +5153,7 @@
     "finance": {
       "map": "Mapa de Mercados Globais",
       "liveNews": "Manchetes de Mercado",
-      "insights": "Insights de Mercado com IA"
+      "insights": "Insights de Mercado"
     },
     "tech": {
       "map": "Mapa Global de Tecnologia",
@@ -5157,12 +5162,12 @@
     "commodity": {
       "map": "Mapa de Commodities",
       "liveNews": "Manchetes de Commodities",
-      "insights": "Insights de Commodities com IA"
+      "insights": "Insights de Commodities"
     },
     "energy": {
       "map": "Mapa Atlas de Energia",
       "liveNews": "Manchetes de Energia",
-      "insights": "Insights de Energia com IA"
+      "insights": "Insights de Energia"
     },
     "happy": {
       "map": "Mapa de Boas Notícias"
@@ -5172,9 +5177,9 @@
     "title": "Instalar aplicativo",
     "share": "No Safari, toque em Compartilhar (o quadrado com uma seta para cima). Talvez seja necessário abrir primeiro o menu Mais.",
     "add": "Escolha Adicionar à Tela de Início.",
-    "confirm": "Toque em Adicionar e abra o World Monitor pela Tela de Início.",
+    "confirm": "Toque em Adicionar e abra o Money Bansho pela Tela de Início.",
     "close": "Fechar",
-    "alertsHint": "Instale o World Monitor na Tela de Início para receber alertas neste iPhone ou iPad.",
+    "alertsHint": "Instale o Money Bansho na Tela de Início para receber alertas neste iPhone ou iPad.",
     "how": "Como instalar"
   },
   "teamDashboards": {
@@ -5431,7 +5436,7 @@
       "placeholder": "Local ou 25.11, 55.14",
       "submit": "Buscar",
       "locate": "Minha localização",
-      "hint": "Coordenadas digitadas e sua localização nunca são enviadas para WorldMonitor. Nomes de lugares digitados vão para WorldMonitor e OpenStreetMap Nominatim.",
+      "hint": "Coordenadas digitadas e sua localização nunca são enviadas para Money Bansho. Nomes de lugares digitados vão para Money Bansho e OpenStreetMap Nominatim.",
       "results": "Locais",
       "searching": "Buscando…",
       "tooShort": "Digite pelo menos dois caracteres, ou coordenadas como 25.11, 55.14.",
@@ -5633,7 +5638,7 @@
     "privacy": {
       "line": "Seu ponto vai apenas para os arquivos de imagens.",
       "more": "Detalhes",
-      "body": "As passagens são calculadas neste dispositivo. Para encontrar imagens, seu navegador envia o ponto direto para Earth Search, Planetary Computer, NASA GIBS e EUMETSAT; o WorldMonitor não o recebe. Em um local monitorado, o WorldMonitor recebe o pedido do registro diário desse local pelo ID do local, não pelo seu ponto. Um nome de lugar digitado vai para WorldMonitor e OpenStreetMap Nominatim para ser localizado. Links compartilhados mantêm duas casas decimais (0,01°)."
+      "body": "As passagens são calculadas neste dispositivo. Para encontrar imagens, seu navegador envia o ponto direto para Earth Search, Planetary Computer, NASA GIBS e EUMETSAT; o Money Bansho não o recebe. Em um local monitorado, o Money Bansho recebe o pedido do registro diário desse local pelo ID do local, não pelo seu ponto. Um nome de lugar digitado vai para Money Bansho e OpenStreetMap Nominatim para ser localizado. Links compartilhados mantêm duas casas decimais (0,01°)."
     },
     "sources": {
       "heading": "Fontes ({{count}})",
@@ -5753,7 +5758,7 @@
       "map": "Provedor, tema e globo",
       "ai": "Modelos, memória e frameworks",
       "video": "Qualidade e reprodução automática",
-      "apiKeys": "Chaves para a API do World Monitor",
+      "apiKeys": "Chaves para a API do Money Bansho",
       "embeds": "Widgets para seu próprio site",
       "aiAgents": "Clientes MCP conectados",
       "about": "Links do site, termos e privacidade"
@@ -5769,7 +5774,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Acesso Premium",
-        "desc": "Este acesso não é cobrado através de sua conta WorldMonitor. Nenhum método de pagamento ou fatura está disponível aqui."
+        "desc": "Este acesso não é cobrado através de sua conta Money Bansho. Nenhum método de pagamento ou fatura está disponível aqui."
       },
       "checking": {
         "heading": "Verificando seu plano…",
@@ -5790,7 +5795,7 @@
         "desc": "Não foi possível verificar seu plano atual. Tente novamente ou visualize os planos em uma nova aba."
       },
       "free": {
-        "heading": "WorldMonitor Gratuito",
+        "heading": "Money Bansho Gratuito",
         "desc": "Seu plano atual é Gratuito. Atualize para acessar todos os painéis, análise com IA e atualização de dados prioritária."
       },
       "portal": {
@@ -5799,7 +5804,7 @@
       },
       "deletion": {
         "heading": "Excluir conta",
-        "desc": "Excluir permanentemente esta conta World Monitor. As assinaturas são canceladas imediatamente, sem reembolso do tempo pré-pago restante. Chaves de API, chaves de incorporação e tokens MCP deixam de funcionar. Os registros de faturamento necessários para contabilidade, disputas e solicitações legais são mantidos com os dados de contato do cliente que contêm; eles deixam de identificar sua conta de login, embora os logs de webhook do provedor de pagamento gravados antes da exclusão mantenham os identificadores com que foram entregues. As preferências do dashboard e os segredos do app para desktop guardados no chaveiro do sistema deste dispositivo não são apagados remotamente.",
+        "desc": "Excluir permanentemente esta conta Money Bansho. As assinaturas são canceladas imediatamente, sem reembolso do tempo pré-pago restante. Chaves de API, chaves de incorporação e tokens MCP deixam de funcionar. Os registros de faturamento necessários para contabilidade, disputas e solicitações legais são mantidos com os dados de contato do cliente que contêm; eles deixam de identificar sua conta de login, embora os logs de webhook do provedor de pagamento gravados antes da exclusão mantenham os identificadores com que foram entregues. As preferências do dashboard e os segredos do app para desktop guardados no chaveiro do sistema deste dispositivo não são apagados remotamente.",
         "dialogTitle": "Excluir esta conta?",
         "dialogCopy": "Isto não pode ser desfeito. As assinaturas são canceladas, as chaves deixam de funcionar imediatamente e os registros de faturamento são mantidos para contabilidade, disputas e solicitações legais -- incluindo os dados de contato que contêm. Depois, saia da conta nos outros dispositivos e limpe os dados do site deste dispositivo -- isso está fora do alcance do servidor.",
         "phraseLabel": "Digite {{phrase}} para confirmar",

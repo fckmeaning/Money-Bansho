@@ -2417,7 +2417,7 @@ export class GlobeMap {
       </div>
       <input type="text" class="layer-search" placeholder="${t('components.deckgl.layerSearch')}" autocomplete="off" spellcheck="false" />
       <div class="toggle-list" style="max-height:32vh;overflow-y:auto;scrollbar-width:thin;">
-        ${layers.map(({ key, label, icon, presentation }) => {
+        ${layers.map(({ key, label, icon }) => {
             const explainLabel = escapeHtml(`Explain ${label} layer`);
             const hasExplanation = hasCuratedLayerExplanation(key);
             return `
@@ -2425,7 +2425,7 @@ export class GlobeMap {
             <label class="layer-toggle" data-layer="${key}">
               <input type="checkbox" ${this.layers[key] ? 'checked' : ''}>
               <span class="toggle-icon">${icon}</span>
-              <span class="toggle-label">${label}${presentation.enhanced ? ' <span class="layer-pro-badge">PRO</span>' : ''}</span>
+              <span class="toggle-label">${label}</span>
             </label>
             <button type="button" class="layer-explain-btn${hasExplanation ? ' has-layer-explanation' : ''}" data-layer="${key}" aria-label="${explainLabel}" title="${explainLabel}">i</button>
           </div>`;

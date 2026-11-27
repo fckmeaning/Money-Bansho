@@ -940,8 +940,7 @@ export class OrbitalWatchPage {
       this.windowsSection(lookup, passes),
       this.slots.satellites,
       h('div', { className: 'ies-alert', dataset: { section: 'alert' } },
-        h('span', null, t('orbitalWatch.sheet.alert')),
-        h('a', { className: 'ies-alert-cta', href: '/pro#pricing', target: '_blank', rel: 'noopener' }, t('orbitalWatch.sheet.alertCta'))),
+        h('span', null, t('orbitalWatch.sheet.alert'))),
     ];
   }
 

@@ -3576,10 +3576,6 @@ export class CountryDeepDivePanel implements CountryBriefPanel {
             .catch(() => showToast(t('countryBrief.briefUnavailable')));
         });
         notice.append(button);
-      } else if (data.accessNotice === 'pro') {
-        const link = this.el('a', 'panel-locked-cta', t('premium.upgradeToPro'));
-        link.href = '/pro#pricing';
-        notice.append(link);
       }
       this.briefBody.append(notice);
     }

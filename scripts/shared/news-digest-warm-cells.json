@@ -85,6 +85,10 @@
   },
   {
     "edition": "full",
+    "lang": "he"
+  },
+  {
+    "edition": "full",
     "lang": "hi"
   },
   {
@@ -254,6 +258,70 @@
   {
     "edition": "finance",
     "lang": "en"
+  },
+  {
+    "edition": "finance",
+    "lang": "cs"
+  },
+  {
+    "edition": "finance",
+    "lang": "da"
+  },
+  {
+    "edition": "finance",
+    "lang": "de"
+  },
+  {
+    "edition": "finance",
+    "lang": "es"
+  },
+  {
+    "edition": "finance",
+    "lang": "fi"
+  },
+  {
+    "edition": "finance",
+    "lang": "fr"
+  },
+  {
+    "edition": "finance",
+    "lang": "he"
+  },
+  {
+    "edition": "finance",
+    "lang": "it"
+  },
+  {
+    "edition": "finance",
+    "lang": "ja"
+  },
+  {
+    "edition": "finance",
+    "lang": "ko"
+  },
+  {
+    "edition": "finance",
+    "lang": "nl"
+  },
+  {
+    "edition": "finance",
+    "lang": "no"
+  },
+  {
+    "edition": "finance",
+    "lang": "pl"
+  },
+  {
+    "edition": "finance",
+    "lang": "pt"
+  },
+  {
+    "edition": "finance",
+    "lang": "ro"
+  },
+  {
+    "edition": "finance",
+    "lang": "sv"
   },
   {
     "edition": "finance",

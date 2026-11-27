@@ -149,7 +149,7 @@ function renderEventCompare(access: EventCompareAccess | null): string {
       <span class="popup-imagery-status" data-orbital-event-status hidden></span>`;
   }
   if (access === 'locked') {
-    return `<a class="popup-imagery-compare-locked" href="/pro#pricing" target="_blank" rel="noopener" data-orbital-event-compare-locked>${label('compareEventLocked')}</a>`;
+    return `<span class="popup-imagery-compare-locked">${label('compareEventLocked')}</span>`;
   }
   return '';
 }

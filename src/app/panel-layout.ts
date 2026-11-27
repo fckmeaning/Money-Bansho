@@ -55,7 +55,6 @@ import {
   isPanelEntitled,
   enforceFreePanelLimit,
 } from '@/config';
-import { BETA_MODE } from '@/config/beta';
 import { NQ_PULSE_DISCLOSURE } from '@/config/nq-context';
 import { t } from '@/services/i18n';
 import { getPanelDisplayName } from '@/services/panel-display-name';
@@ -87,7 +86,6 @@ import {
   ProActivationController,
 } from '@/app/pro-activation-controller';
 import { PasskeyOfferBoot } from '@/app/passkey-offer-boot';
-import { bootGitHubStarPrompt } from '@/app/github-star-prompt-boot';
 import { showCheckoutFailureBanner } from '@/components/checkout-failure-banner';
 import { PanelTabBar, tabCapGateCopy } from '@/components/PanelTabBar';
 import type { FocusBar } from '@/components/FocusBar';
@@ -599,7 +597,6 @@ export class PanelLayoutManager implements AppModule {
   private responsiveZoneListener: ResponsiveZoneListener | null = null;
   private readonly proActivationController: ProActivationController;
   private readonly passkeyOfferController: PasskeyOfferBoot;
-  private destroyGitHubStarPrompt: (() => void) | null = null;
   private readonly checkoutReturnFocusController = new AbortController();
   private pendingStorageFacilityId: string | null = null;
 
@@ -875,7 +872,6 @@ export class PanelLayoutManager implements AppModule {
     // hides behind it and restores when it closes.
     this.passkeyOfferController.init();
     // Ask-once GitHub star toast: counts visit days, loads its chunk only when eligible.
-    this.destroyGitHubStarPrompt = bootGitHubStarPrompt().destroy;
   }
 
   /**
@@ -1114,8 +1110,6 @@ export class PanelLayoutManager implements AppModule {
 
     this.proActivationController.destroy();
     this.passkeyOfferController.destroy();
-    this.destroyGitHubStarPrompt?.();
-    this.destroyGitHubStarPrompt = null;
 
     removeResponsiveZoneListener(this.responsiveZoneListener);
     this.responsiveZoneListener = null;
@@ -1274,7 +1268,6 @@ export class PanelLayoutManager implements AppModule {
       hostname: window.location.hostname,
     });
     const referenceLinksHtml = dashboardReferenceAnchorsHtml(referenceOrigin);
-    const pricingHref = `${referenceOrigin}/pro#pricing`;
     const externalSiteLinksHtml = DASHBOARD_EXTERNAL_SITE_LINKS.map(({ label, href }) => (
       `<a href="${href}" target="_blank" rel="noopener">${label}</a>`
     )).join('');
@@ -1287,7 +1280,7 @@ export class PanelLayoutManager implements AppModule {
       <div class="header" role="banner">
         <div class="header-left">
           <div class="variant-switcher">${(() => {
-        const local = this.ctx.isDesktopApp || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        const local = this.ctx.isDesktopApp || !/(^|\.)worldmonitor\.app$/.test(location.hostname);
         const inIframe = window.self !== window.top;
         const vHref = (v: keyof typeof VARIANT_SWITCHER_DASHBOARD_URLS) =>
           variantSwitcherHref(v, SITE_VARIANT, local);
@@ -1298,7 +1291,6 @@ export class PanelLayoutManager implements AppModule {
                data-variant="full"
                ${vTarget('full')}
                title="${t('header.world')}${SITE_VARIANT === 'full' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-icon">🌍</span>
               <span class="variant-label">${t('header.world')}</span>
             </a>
             <span class="variant-divider"></span>
@@ -1307,7 +1299,6 @@ export class PanelLayoutManager implements AppModule {
                data-variant="tech"
                ${vTarget('tech')}
                title="${t('header.tech')}${SITE_VARIANT === 'tech' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-icon">💻</span>
               <span class="variant-label">${t('header.tech')}</span>
             </a>
             <span class="variant-divider"></span>
@@ -1316,7 +1307,6 @@ export class PanelLayoutManager implements AppModule {
                data-variant="finance"
                ${vTarget('finance')}
                title="${t('header.finance')}${SITE_VARIANT === 'finance' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-icon">📈</span>
               <span class="variant-label">${t('header.finance')}</span>
             </a>
             <span class="variant-divider"></span>
@@ -1325,7 +1315,6 @@ export class PanelLayoutManager implements AppModule {
                data-variant="commodity"
                ${vTarget('commodity')}
                title="${t('header.commodity')}${SITE_VARIANT === 'commodity' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-icon">⛏️</span>
               <span class="variant-label">${t('header.commodity')}</span>
             </a>
             <span class="variant-divider"></span>
@@ -1334,7 +1323,6 @@ export class PanelLayoutManager implements AppModule {
                data-variant="energy"
                ${vTarget('energy')}
                title="${t('header.energy')}${SITE_VARIANT === 'energy' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-icon">⚡</span>
               <span class="variant-label">${t('header.energy')}</span>
             </a>
             <span class="variant-divider"></span>
@@ -1343,18 +1331,10 @@ export class PanelLayoutManager implements AppModule {
                data-variant="happy"
                ${vTarget('happy')}
                title="Good News${SITE_VARIANT === 'happy' ? ` ${t('common.currentVariant')}` : ''}">
-              <span class="variant-icon">☀️</span>
               <span class="variant-label">Good News</span>
             </a>`;
       })()}</div>
-          <span class="logo">MONITOR</span><span class="logo-mobile">World Monitor</span><span class="version">v${__APP_VERSION__}</span>${BETA_MODE ? '<span class="beta-badge">BETA</span>' : ''}
-          <a href="https://x.com/eliehabib" target="_blank" rel="noopener" class="credit-link">
-            <svg class="x-logo" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            <span class="credit-text">@eliehabib</span>
-          </a>
-          <a href="https://github.com/koala73/worldmonitor" target="_blank" rel="noopener" class="github-link" title="${t('header.viewOnGitHub')}" aria-label="${t('header.viewOnGitHub')}">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          </a>
+          <span class="logo"><svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><rect x="1" y="1" width="30" height="30" rx="2" fill="#0d0f12" stroke="#c8a45c" stroke-width="2"/><path d="M7 24V9l9 10 9-10v15" fill="none" stroke="#c8a45c" stroke-width="3"/></svg>MONEY BANSHO</span><span class="logo-mobile"><svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><rect x="1" y="1" width="30" height="30" rx="2" fill="#0d0f12" stroke="#c8a45c" stroke-width="2"/><path d="M7 24V9l9 10 9-10v15" fill="none" stroke="#c8a45c" stroke-width="3"/></svg>Money Bansho</span><span class="version">v${__APP_VERSION__}</span>
           <button class="mobile-settings-btn" id="mobileSettingsBtn" title="${t('header.settings')}" aria-label="${t('header.settings')}">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </button>
@@ -1380,6 +1360,7 @@ export class PanelLayoutManager implements AppModule {
           </button>
         </div>
         <div class="header-right">
+          <a class="dossier-link" href="/dossier.html" style="padding:4px 10px;border:1px solid #c8a45c;border-radius:2px;color:#c8a45c;font-size:11px;font-weight:700;text-decoration:none;white-space:nowrap">Company Dossier</a>
           <button class="search-btn" id="searchBtn"><kbd>⌘K</kbd> ${t('header.search')}</button>
           ${this.ctx.isDesktopApp ? '' : `<button class="copy-link-btn" id="copyLinkBtn">${t('header.copyLink')}</button>`}
           ${this.ctx.isDesktopApp ? '' : `<button class="copy-link-btn embed-link-btn" id="embedLinkBtn">${t('header.embed')}</button>`}
@@ -1392,11 +1373,15 @@ export class PanelLayoutManager implements AppModule {
       <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
       <nav class="mobile-menu" id="mobileMenu" aria-label="Menu">
         <div class="mobile-menu-header">
-          <span class="mobile-menu-title">WORLD MONITOR</span>
+          <span class="mobile-menu-title">MONEY BANSHO</span>
           <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
+        <div class="mobile-menu-divider"></div>
+        <a class="mobile-menu-item" href="/dossier.html" style="color:#c8a45c">
+          <span class="mobile-menu-item-label">Company Dossier</span>
+        </a>
         <div class="mobile-menu-divider"></div>
         <div class="mobile-menu-account" aria-label="Account">
           <span class="mobile-menu-account-icon" aria-hidden="true">◯</span>
@@ -1406,16 +1391,15 @@ export class PanelLayoutManager implements AppModule {
         <div class="mobile-menu-divider"></div>
         ${(() => {
         const variants = [
-          { key: 'full', icon: '🌍', label: t('header.world') },
-          { key: 'tech', icon: '💻', label: t('header.tech') },
-          { key: 'finance', icon: '📈', label: t('header.finance') },
-          { key: 'commodity', icon: '⛏️', label: t('header.commodity') },
-          { key: 'energy', icon: '⚡', label: t('header.energy') },
-          { key: 'happy', icon: '☀️', label: 'Good News' },
+          { key: 'full', label: t('header.world') },
+          { key: 'tech', label: t('header.tech') },
+          { key: 'finance', label: t('header.finance') },
+          { key: 'commodity', label: t('header.commodity') },
+          { key: 'energy', label: t('header.energy') },
+          { key: 'happy', label: 'Good News' },
         ];
         return variants.map(v =>
           `<button class="mobile-menu-item mobile-menu-variant ${v.key === SITE_VARIANT ? 'active' : ''}" data-variant="${v.key}">
-            <span class="mobile-menu-item-icon">${v.icon}</span>
             <span class="mobile-menu-item-label">${v.label}</span>
             ${v.key === SITE_VARIANT ? '<span class="mobile-menu-check">✓</span>' : ''}
           </button>`
@@ -1423,7 +1407,6 @@ export class PanelLayoutManager implements AppModule {
       })()}
         <div class="mobile-menu-divider"></div>
         <button class="mobile-menu-item" id="mobileMenuRegion">
-          <span class="mobile-menu-item-icon">🌐</span>
           <span class="mobile-menu-item-label">${t('components.deckgl.views.global')}</span>
           <span class="mobile-menu-chevron">▸</span>
         </button>
@@ -1434,21 +1417,14 @@ export class PanelLayoutManager implements AppModule {
         </button>
         <div class="mobile-menu-divider"></div>
         <button class="mobile-menu-item" id="mobileMenuSettings">
-          <span class="mobile-menu-item-icon">⚙️</span>
           <span class="mobile-menu-item-label">${t('header.settings')}</span>
         </button>
         <button class="mobile-menu-item" id="mobileMenuTheme">
-          <span class="mobile-menu-item-icon">${getCurrentTheme() === 'dark' ? '☀️' : '🌙'}</span>
           <span class="mobile-menu-item-label">${getCurrentTheme() === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
         </button>
-        <a class="mobile-menu-item" href="https://x.com/eliehabib" target="_blank" rel="noopener">
-          <span class="mobile-menu-item-icon"><svg class="x-logo" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>
-          <span class="mobile-menu-item-label">@eliehabib</span>
-        </a>
         <div class="mobile-menu-divider"></div>
         <div class="mobile-menu-footer-links">
           ${referenceLinksHtml}
-          <a href="${pricingHref}" target="_blank" rel="noopener">Pricing</a>
           ${externalSiteLinksHtml}
         </div>
         <div class="mobile-menu-version">v${__APP_VERSION__}</div>
@@ -1527,11 +1503,12 @@ export class PanelLayoutManager implements AppModule {
           <span class="mobile-tab-icon" aria-hidden="true">•••</span><span>More</span>
         </button>
       </nav>
-      <footer class="site-footer" aria-label="World Monitor status">
+      <footer class="site-footer" aria-label="Money Bansho status">
         <span class="site-footer-meta">
           <span class="site-footer-version">v${__APP_VERSION__}</span>
-          <span class="site-footer-copy">&copy; ${new Date().getFullYear()} World Monitor</span>
-          ${this.ctx.isDesktopApp ? '' : `<span id="footerDownloadMount"></span>`}
+          <span class="site-footer-copy">Money Bansho</span>
+          <a href="https://github.com/fckmeaning/Money-Bansho" target="_blank" rel="noopener">Source</a>
+          <span>Based on <a href="https://github.com/koala73/worldmonitor" target="_blank" rel="noopener">World Monitor</a>, &copy; 2026 Elie Habib, AGPL-3.0</span>
         </span>
       </footer>
     `, "legacy direct innerHTML migration"));
@@ -3537,6 +3514,11 @@ export class PanelLayoutManager implements AppModule {
     this.createNewsPanel('ipo', 'panels.ipo');
     this.createNewsPanel('thinktanks', 'panels.thinktanks');
     this.createNewsPanel('science', 'panels.science');
+    this.createNewsPanel('china-media', 'panels.chinaMedia');
+    this.createNewsPanel('europe-business', 'panels.europeBusiness');
+    this.createNewsPanel('israel', 'panels.israel');
+    this.createNewsPanel('north-korea', 'panels.northKorea');
+    this.createNewsPanel('corporate-leadership', 'panels.corporateLeadership');
     this.lazyDefaultPanel('economic', () => import('@/components/EconomicPanel'), 'EconomicPanel');
     this.lazyDefaultPanel('global-procurement', () => import('@/components/GlobalProcurementPanel'), 'GlobalProcurementPanel');
     this.lazyDefaultPanel('consumer-prices', () => import('@/components/ConsumerPricesPanel'), 'ConsumerPricesPanel');
@@ -4152,16 +4134,12 @@ export class PanelLayoutManager implements AppModule {
     proBlock.setAttribute('aria-label', t('widgets.createInteractive'));
     const proIcon = document.createElement('span');
     proIcon.className = 'add-panel-block-icon';
-    proIcon.textContent = '\u26a1';
+    proIcon.textContent = '+';
     const proLabel = document.createElement('span');
     proLabel.className = 'add-panel-block-label';
     proLabel.textContent = t('widgets.createInteractive');
-    const proBadge = document.createElement('span');
-    proBadge.className = 'widget-pro-badge';
-    proBadge.textContent = t('widgets.proBadge');
     proBlock.appendChild(proIcon);
     proBlock.appendChild(proLabel);
-    proBlock.appendChild(proBadge);
     proBlock.addEventListener('click', () => {
       void readChunkModule(import('@/components/WidgetChatModal')).then((m) => m.openWidgetChatModal({
         mode: 'create',
@@ -4182,16 +4160,12 @@ export class PanelLayoutManager implements AppModule {
     mcpBlock.setAttribute('aria-label', t('mcp.connectPanel'));
     const mcpIcon = document.createElement('span');
     mcpIcon.className = 'add-panel-block-icon';
-    mcpIcon.textContent = '\u26a1';
+    mcpIcon.textContent = '+';
     const mcpLabel = document.createElement('span');
     mcpLabel.className = 'add-panel-block-label';
     mcpLabel.textContent = t('mcp.connectPanel');
-    const mcpBadge = document.createElement('span');
-    mcpBadge.className = 'widget-pro-badge';
-    mcpBadge.textContent = t('widgets.proBadge');
     mcpBlock.appendChild(mcpIcon);
     mcpBlock.appendChild(mcpLabel);
-    mcpBlock.appendChild(mcpBadge);
     mcpBlock.addEventListener('click', () => {
       void import('@/components/McpConnectModal').then((m) => m.openMcpConnectModal({
         onComplete: (spec) => this.addMcpPanel(spec),

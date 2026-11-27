@@ -7,7 +7,7 @@
     "strategicPosture": "Strategic Posture",
     "cii": "Country Instability Index",
     "status": "Systemstatus",
-    "insights": "AI-INSIKTER",
+    "insights": "INSIKTER",
     "map": "Interactive Map",
     "politics": "Världsnyheter",
     "us": "USA",
@@ -75,7 +75,7 @@
     "gulfCurrencies": "Gulfvalutor",
     "gulfOil": "Gulfolja",
     "bigmac": "Verkligt Big Mac-index",
-    "marketImplications": "AI-marknadskonsekvenser",
+    "marketImplications": "Marknadskonsekvenser",
     "energyComplex": "Energikomplex",
     "oilInventories": "Oljelagre",
     "energyCrisis": "Energikristöversikt",
@@ -102,7 +102,7 @@
     "fuelPricesDiesel": "Diesel",
     "fuelPricesSource": "Källa",
     "groceryBasketDesc": "Jämförelse av matvarukorgsspriser i 24 länder världen över",
-    "airlineIntel": "✈️ Luftfartsöversikt",
+    "airlineIntel": "Luftfartsöversikt",
     "consumerPrices": "Konsumentpriser",
     "fearGreed": "Rädsla & Girighet",
     "marketBreadth": "Marknadsbredd",
@@ -110,7 +110,12 @@
     "fx": "Valutakurser",
     "ukmtoIncidents": "UKMTO-incidenter",
     "reservoirLevels": "Strategiska vattennivåer",
-    "gridDisruptionClock": "Klocka för elavbrott i USA:s delstater"
+    "gridDisruptionClock": "Klocka för elavbrott i USA:s delstater",
+    "chinaMedia": "Kinesiska medier",
+    "europeBusiness": "Europeiskt näringsliv",
+    "israel": "Israel (landet)",
+    "northKorea": "Nordkoreabevakning",
+    "corporateLeadership": "Nyheter om företagsledningar"
   },
   "commands": {
     "prefixes": {
@@ -320,7 +325,7 @@
         "configured": "Skrivbordsinställningar konfigurerade",
         "needsKeys": "Konfigurera API-nycklar för att låsa upp funktioner",
         "some": "Vissa funktioner behöver API-nycklar",
-        "pro": "World Monitor Pro är aktivt"
+        "pro": "Money Bansho Pro är aktivt"
       },
       "summary": {
         "desktop": "Skrivbordsläge",
@@ -350,9 +355,9 @@
         "OLLAMA_API_URL": "t.ex. http://127.0.0.1:11434 (Ollama) eller http://127.0.0.1:1234/v1 (LM Studio) — OpenAI-kompatibel slutpunkt.",
         "OLLAMA_MODEL": "t.ex. llama3.1:8b — modelltagg för sammanfattningar."
       },
-      "proCloud": "Funktioner utan lokal API-nyckel använder World Monitor cloud-data.",
-      "skipSetupPro": "Hoppa över installationen: logga in med World Monitor Pro för att använda cloud-data istället för dina egna API-nycklar.",
-      "getPro": "Skaffa World Monitor Pro"
+      "proCloud": "Funktioner utan lokal API-nyckel använder Money Bansho cloud-data.",
+      "skipSetupPro": "Hoppa över installationen: logga in med Money Bansho Pro för att använda cloud-data istället för dina egna API-nycklar.",
+      "getPro": "Skaffa Money Bansho Pro"
     },
     "countryIntel": {
       "identifying": "Identifierar land...",
@@ -474,7 +479,7 @@
           "description": "Pro fungerar här när du loggar in från huvudfönstret. Ingen nyckel behövs."
         }
       },
-      "shellTitle": "World Monitor-inställningar",
+      "shellTitle": "Money Bansho-inställningar",
       "shellSearchPlaceholder": "Sök inställningar...",
       "shellCancel": "Avbryt",
       "shellSaveClose": "Spara & Stäng",
@@ -797,7 +802,7 @@
       "info": "INFO"
     },
     "pizzint": {
-      "indexSource": "Index: World Monitor",
+      "indexSource": "Index: Money Bansho",
       "venueSource": "platsdata:",
       "statusNormal": "NORMALT",
       "statusNoData": "INGA DATA",
@@ -805,7 +810,7 @@
       "vsUsual": "jämfört med normalt",
       "title": "Pentagons pizzaindex",
       "tensionsTitle": "Geopolitiska spänningar",
-      "tensionsSource": "Spänningar: World Monitor utifrån GDELT-händelser",
+      "tensionsSource": "Spänningar: Money Bansho utifrån GDELT-händelser",
       "insufficientData": "Otillräckliga data",
       "evidenceStrikes": "Rapporterade attacker på 3 dagar ({{countries}}): {{value}}",
       "evidenceAirports": "Störda flygplatser: {{value}}",
@@ -1149,7 +1154,7 @@
       "staleReport": "Inaktuell rapport",
       "reported": "Antal",
       "period": "Period",
-      "movementNote": "Varje rad behåller sin källa, sitt rapportdatum och sitt mått. Bestånd, ankomster och gränskontrollhändelser är olika mått. Källor kan överlappa; summera inte deras antal. WorldMonitor tar fram denna vy från de länkade källorna; det innebär inget stöd från leverantörerna.",
+      "movementNote": "Varje rad behåller sin källa, sitt rapportdatum och sitt mått. Bestånd, ankomster och gränskontrollhändelser är olika mått. Källor kan överlappa; summera inte deras antal. Money Bansho tar fram denna vy från de länkade källorna; det innebär inget stöd från leverantörerna.",
       "recent": "Nyligen",
       "last30Days": "Senaste 30 dagarna",
       "newThisWeek": "Nytt denna vecka",
@@ -1853,7 +1858,7 @@
       "tripDays": "Resedagar"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>WM Analytiker</strong> AI-analytiker med livekontext inom geopolitiska, marknads-, militära och ekonomiska domäner. Drivs av Claude med realtidsdata injicerade från aktiva WorldMonitor-flöden."
+      "infoTooltip": "<strong>WM Analytiker</strong> AI-analytiker med livekontext inom geopolitiska, marknads-, militära och ekonomiska domäner. Drivs av Claude med realtidsdata injicerade från aktiva Money Bansho-flöden."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures-positionering</strong> Veckovisa nettopositoner för kommersiella handlare, stora spekulanter och små handlare över råvaru- och finansfutures. Källan är Commodity Futures Trading Commission Commitments of Traders-rapport, publicerad på fredagar."
@@ -1916,7 +1921,7 @@
       "infoTooltip": "<strong>Economic Calendar</strong> Schemalagda makroekonomiska releaser: konsumentprisindex, icke-jordbruksanställning, bruttonationalprodukt, inköpschefindex och centralbanksbeslut. Visar prognos kontra faktisk kontra tidigare. Höggravitetsfall markerade. Källa: ekonomisk dataproviders."
     },
     "fsi": {
-      "infoTooltip": "<strong>Financial Stress Indicator</strong> WorldMonitor-kvoten av högavkastningskrediter till långa statsobligationer, justerad för aktievolatilitet och högavkastningsspread: (HYG / TLT) / (VIX × högavkastningsspread / 100). Detta är inte Kansas City Feds Financial Stress Index. En avläsning på 1,5 eller högre är låg stress; under 0,3 är hög stress.",
+      "infoTooltip": "<strong>Financial Stress Indicator</strong> Money Bansho-kvoten av högavkastningskrediter till långa statsobligationer, justerad för aktievolatilitet och högavkastningsspread: (HYG / TLT) / (VIX × högavkastningsspread / 100). Detta är inte Kansas City Feds Financial Stress Index. En avläsning på 1,5 eller högre är låg stress; under 0,3 är hög stress.",
       "title": "Finansiell stressindikator",
       "usFsiValue": "US Financial Stress Indicator-värde",
       "asOf": "Per {{date}}",
@@ -2004,7 +2009,7 @@
       "infoTooltip": "<strong>Makroindikatorer</strong> USA, euroområdet och Kina priser, aktivitet, politik och valutaindikatorer. Kina kräver aktuell bevakning. Varje ruta visar sin källa och observationsdatum."
     },
     "monitors": {
-      "infoTooltip": "<strong>Nyckelordsmonitorer</strong> Lägg till valfri term för att spåra omnämnanden i nyheter i realtid från alla WorldMonitor-källor. Resultaten uppdateras i realtid allt eftersom matchande artiklar importeras."
+      "infoTooltip": "<strong>Nyckelordsmonitorer</strong> Lägg till valfri term för att spåra omnämnanden i nyheter i realtid från alla Money Bansho-källor. Resultaten uppdateras i realtid allt eftersom matchande artiklar importeras."
     },
     "renewable": {
       "infoTooltip": "<strong>Renewable Energy</strong> Andel elproduktion från förnybar energi efter region och år, plus USA installerad kapacitet för sol, vind och kol (MW). Källor: World Bank (EG.ELC.RNEW.ZS) och US Energy Information Administration."
@@ -2070,7 +2075,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>AI-marknadsbetydelse</strong> LLM-genererade handelssignaler härledda från levande geopolitiska, råvaru- och makroläge efter varje prognosecykel.<ul><li><strong>Riktning</strong>: LÅNGSIKTIGT / KORTSIKTIGT / SÄKRING</li><li><strong>Tidsram</strong>: 1V, 2V, 1M eller 3M horisont</li><li><strong>Drivkraft</strong>: Nyckelkatalysator bakom signalen</li><li><strong>Risk</strong>: Reservation eller ogiltighetsvillkor</li></ul><em>Endast för informationsändamål. Inte investeringsråd.</em>",
-      "title": "AI-marknadspåverkan",
+      "title": "Marknadspåverkan",
       "directions": {
         "long": "LÅNGT",
         "short": "KORT",
@@ -2330,7 +2335,7 @@
           }
         },
         "about": {
-          "heading": "En sista sak: vad ska du använda World Monitor till?",
+          "heading": "En sista sak: vad ska du använda Money Bansho till?",
           "body": "Tre snabba svar hjälper oss att bygga rätt verktyg för dig. Hoppa över de du vill.",
           "confirmCta": "Spara mina svar",
           "confirming": "Sparar…",
@@ -2747,7 +2752,7 @@
       "global": "FAO:s globala månadsindex"
     },
     "aboutYou": {
-      "title": "Hjälp oss bygga World Monitor för dig",
+      "title": "Hjälp oss bygga Money Bansho för dig",
       "ariaLabel": "Om dig",
       "progress": "{{current}} av {{total}}",
       "skip": "Hoppa över",
@@ -2759,7 +2764,7 @@
       "thanks": "Tack. Det hjälper oss att bestämma vad vi ska bygga härnäst.",
       "questions": {
         "primaryUse": {
-          "label": "Vad använder du huvudsakligen World Monitor till?",
+          "label": "Vad använder du huvudsakligen Money Bansho till?",
           "options": {
             "news": "Nyheter och världshändelser",
             "markets": "Marknader och handel",
@@ -2801,13 +2806,13 @@
           }
         },
         "alternative": {
-          "label": "Vad skulle du använda om World Monitor inte fanns?",
+          "label": "Vad skulle du använda om Money Bansho inte fanns?",
           "placeholder": "Valfritt"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Gillar du World Monitor?",
+      "title": "Gillar du Money Bansho?",
       "body": "En stjärna på GitHub hjälper andra att hitta den.",
       "star": "Stjärnmärk på GitHub",
       "dismiss": "Dölj och fråga inte igen"
@@ -3068,7 +3073,7 @@
         "copied": "Kopierad.",
         "copyFailed": "Kopiering misslyckades. Markera texten för att kopiera den."
       },
-      "firstSeenNote": "Detta är det tidigaste tillgängliga indikatordatumet från feeds eller World Monitor observationer; det kan skilja sig från det angivna källdatumet."
+      "firstSeenNote": "Detta är det tidigaste tillgängliga indikatordatumet från feeds eller Money Bansho observationer; det kan skilja sig från det angivna källdatumet."
     },
     "nuclear": {
       "types": {
@@ -4617,10 +4622,10 @@
     "imageryEvidenceHere": "Bildbevis här"
   },
   "shell": {
-    "documentTitle": "World Monitor — Realtidsinstrumentpanel för global underrättelse",
-    "metaDescription": "Realtidsplattform för global underrättelseanalys. Presenterad i WIRED. Används av 2M+ människor i 190 länder. Konflikter, marknader, militär och öppen källkodsunderrättelser i en vy.",
+    "documentTitle": "Money Bansho — Realtidsinstrumentpanel för global underrättelse",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Du är offline",
-    "offlineMessage": "World Monitor kräver en internetanslutning för realtidsunderrättelsedata.",
+    "offlineMessage": "Money Bansho kräver en internetanslutning för realtidsunderrättelsedata.",
     "offlineRetry": "Försök igen"
   },
   "widgets": {
@@ -4658,12 +4663,12 @@
     "phaseError": "Fel",
     "previewCheckingHeading": "Ansluter widgetbyggaren",
     "previewReadyHeading": "Beskriv den widget du vill ha",
-    "previewFetchingHeading": "Hämtar live WorldMonitor-data",
+    "previewFetchingHeading": "Hämtar live Money Bansho-data",
     "previewComposingHeading": "Komponerar widgetlayouten",
     "previewErrorHeading": "Förhandsvisningen behöver uppmärksamhet",
     "previewCheckingCopy": "Vi validerar din widgetnyckel och servergränssnittsåtkomst innan vi aktiverar generering.",
     "previewReadyCopy": "Använd ett frågeexempel eller beskriv den exakta livevy du vill ha. Förhandsvisningen uppdateras här innan du sparar den.",
-    "previewFetchingCopy": "Agenten anropar godkända WorldMonitor-slutpunkter och formar datasetet för widgeten.",
+    "previewFetchingCopy": "Agenten anropar godkända Money Bansho-slutpunkter och formar datasetet för widgeten.",
     "previewComposingCopy": "Förhandsvisningen renderas med de senaste livedata och instrumentpanelsstilen.",
     "previewErrorCopy": "Åtgärda problemet och försök sedan igen. Dina befintliga widgetar påverkas inte.",
     "createInteractive": "Skapa interaktiv widget",
@@ -4692,7 +4697,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "Kräver en World Monitor-licensnyckel",
+    "lockedDesc": "Kräver en Money Bansho-licensnyckel",
     "signInToUnlock": "Logga in för att låsa upp premiumfunktioner",
     "signIn": "Logga in för att låsa upp",
     "upgradeDesc": "Uppgradera till Pro för fullständig åtkomst till premiumanalytik",
@@ -4831,7 +4836,7 @@
       "hotspots": {
         "category": "Nyheter / hotspots",
         "purpose": "Lyfter bevakade geopolitiska hotspots och höjer deras nivå när relaterade nyheter och eskaleringssignaler sammanfaller.",
-        "source": "WorldMonitors hotspotregister, RSS/GDELT-nyhetsunderrättelser, poängsättning av hotspot-eskalering, militär aktivitet och landets instabilitetskontext.",
+        "source": "Money Banshos hotspotregister, RSS/GDELT-nyhetsunderrättelser, poängsättning av hotspot-eskalering, militär aktivitet och landets instabilitetskontext.",
         "freshness": "Hotspot-positionerna är kuraterade och statiska. Nyhetsflödenas aktualitet följs separat. Hotspot-nivåerna räknas om när instrumentpanelens nyhetsflöden uppdateras, ungefär var 10:e minut. GDELT-underrättelser har en längre budget för inmatning och cache.",
         "confidence": "Användbart som signal för en första sortering. Utan de underliggande nyheterna och landets kontext är det inte ett påstående att citera.",
         "limitations": {
@@ -4878,7 +4883,7 @@
       "conflicts": {
         "category": "Konflikt",
         "purpose": "Visar kuraterade konfliktzoner och geopolitiska gränsöverlägg så att livesignaler kan läsas mot kända konfliktområden.",
-        "source": "WorldMonitors register över konfliktzoner, UCDP/ACLED-konfliktkontext och dokumenterade gränsmetadata, till exempel den koreanska DMZ.",
+        "source": "Money Banshos register över konfliktzoner, UCDP/ACLED-konfliktkontext och dokumenterade gränsmetadata, till exempel den koreanska DMZ.",
         "freshness": "Baszonerna är kuraterade och statiska. Dynamiska konflikthändelser följs separat via ACLED/UCDP-flöden och statussignaler.",
         "confidence": "Bra för geografisk orientering. Det bekräftar inte i sig en händelse i realtid.",
         "limitations": {
@@ -4911,7 +4916,7 @@
       "ais": {
         "category": "Maritim",
         "purpose": "Visar fartygsdensitet och AIS-störningssignaler kring strategiska vatten och flaskhalsar.",
-        "source": "Ögonblicksbilder från AISStream-reläet, WorldMonitors maritima tjänst och klassificerare för flaskhalsstörningar.",
+        "source": "Ögonblicksbilder från AISStream-reläet, Money Banshos maritima tjänst och klassificerare för flaskhalsstörningar.",
         "freshness": "AIS-reläets ögonblicksbilder byggs om var 5:e sekund som standard. Servern kan cacha basdensitetens ögonblicksbild i 5 minuter. Lagret är avstängt eller inaktuellt när reläets inloggning eller anslutning saknas.",
         "confidence": "Användbart för att sålla marina avvikelser. AIS rapporteras av fartygen själva, och fartyg kan släcka sändningen.",
         "limitations": {
@@ -4928,7 +4933,7 @@
       "tradeRoutes": {
         "category": "Maritim",
         "purpose": "Ritar större container-, energi- och bulkleder genom strategiska flaskhalsar, så att störningsvägar kan följas.",
-        "source": "WorldMonitors register över handelsrutter samt flaskhalsstatus och transitsammanfattningar i försörjningskedjan.",
+        "source": "Money Banshos register över handelsrutter samt flaskhalsstatus och transitsammanfattningar i försörjningskedjan.",
         "freshness": "Ruttgeometrin är statisk. Flaskhalsstatus hålls igång med en förfrågan var 6:e minut. Transitsammanfattningar uppdateras var 10:e minut via försörjningskedjans cache och relävägar.",
         "confidence": "Bra som exponering på ruttnivå. Det är inte ett flöde för dirigering av enskilda fartyg.",
         "limitations": {
@@ -4982,7 +4987,7 @@
       "weather": {
         "category": "Väder",
         "purpose": "Visar aktiva officiella varningar för svåra väderförhållanden från nationella vädertjänster, sammanslagna i ett flöde weather:alerts:v1.",
-        "source": "USA:s National Weather Service (NWS), Environment and Climate Change Canada (ECCC) och CAP-aggregering från WMO Severe Weather Information Centre (SWIC), inmatade via WorldMonitor-reläet.",
+        "source": "USA:s National Weather Service (NWS), Environment and Climate Change Canada (ECCC) och CAP-aggregering från WMO Severe Weather Information Centre (SWIC), inmatade via Money Bansho-reläet.",
         "freshness": "Varningar från NWS, ECCC och SWIC matas in var 15:e minut av reläet och bevakas mot en aktualitetsbudget på 45 minuter.",
         "confidence": "Auktoritativt för varningar som de deltagande nationella tjänsterna utfärdar, med förbehåll för källans publiceringstid. NWS och ECCC ritas som polygoner. Geokodade SWIC-varningar ritas vid den utfärdande tjänstens landscentroid, med en uttrycklig precisionsmarkör.",
         "limitations": {
@@ -4999,7 +5004,7 @@
       "canadaRoads": {
         "category": "Transport",
         "purpose": "Visar officiella väghändelser, varningar, tillstånd, avstängningar, vägarbeten och faror i de kanadensiska jurisdiktioner som stöds.",
-        "source": "Provinsflödena Ontario 511, Alberta 511 och Manitoba 511, City of Toronto Road Restrictions och DriveBC Open511, inmatade via WorldMonitor.",
+        "source": "Provinsflödena Ontario 511, Alberta 511 och Manitoba 511, City of Toronto Road Restrictions och DriveBC Open511, inmatade via Money Bansho.",
         "freshness": "Ontario 511, Alberta 511 och Manitoba 511 matas in var 15:e minut och bevakas mot en aktualitetsbudget på 45 minuter. Begränsningar i Toronto matas in var 2:e timme. DriveBC Open511 matas in var 30:e minut.",
         "confidence": "Auktoritativt för de provinsiella och kommunala utgivare som stöds, med förbehåll för källans publiceringstid och den karterade geometrin.",
         "limitations": {
@@ -5064,7 +5069,7 @@
       "waterways": {
         "category": "Maritim",
         "purpose": "Markerar strategiska vattenvägar och flaskhalsar så att störningssignaler kan läsas mot den fasta maritima geografin.",
-        "source": "WorldMonitors register över strategiska vattenvägar med statusöverlägg för försörjningskedjans flaskhalsar från AIS, NGA-varningar och flöden som härleds från PortWatch.",
+        "source": "Money Banshos register över strategiska vattenvägar med statusöverlägg för försörjningskedjans flaskhalsar från AIS, NGA-varningar och flöden som härleds från PortWatch.",
         "freshness": "Vattenvägarnas lägen är statiska. Live-status för flaskhalsar hålls igång med en förfrågan var 6:e minut. Transitsammanfattningar uppdateras var 10:e minut när vägen via relä och PortWatch fungerar.",
         "confidence": "Hög för den fasta geografin. Tillförlitligheten för en live-störning beror på de medföljande flödena AIS, NGA och PortWatch.",
         "limitations": {
@@ -5081,7 +5086,7 @@
       "ciiChoropleth": {
         "category": "Landsrisk",
         "purpose": "Färgar länder efter det aktuella värdet i Country Instability Index, för en bred första sortering av strategisk risk.",
-        "source": "WorldMonitors poängtjänst för Country Instability Index använder signaler från konflikt, oroligheter, råd, cyber, fartygsspårning, flyg, naturhändelser och nyheter.",
+        "source": "Money Banshos poängtjänst för Country Instability Index använder signaler från konflikt, oroligheter, råd, cyber, fartygsspårning, flyg, naturhändelser och nyheter.",
         "freshness": "Cachen för riskpoäng hålls igång med en förfrågan var 8:e minut. seed-meta och health.riskScores visar tillståndet live, inaktuellt, partiellt eller degraderat mot en aktualitetsbudget på 30 minuter.",
         "confidence": "En sammansatt modellsignal. Det är inte ett officiellt landsbetyg och inte en sannolikhetsprognos.",
         "limitations": {
@@ -5125,7 +5130,7 @@
     "finance": {
       "map": "Världsmarknadskarta",
       "liveNews": "Marknadsnyheter",
-      "insights": "AI-marknadsinsikter"
+      "insights": "Marknadsinsikter"
     },
     "tech": {
       "map": "Global teknikkarta",
@@ -5134,12 +5139,12 @@
     "commodity": {
       "map": "Råvarukarta",
       "liveNews": "Råvarunyheter",
-      "insights": "AI-råvaruinsikter"
+      "insights": "Råvaruinsikter"
     },
     "energy": {
       "map": "Energiatlas-karta",
       "liveNews": "Energinyheter",
-      "insights": "AI-energiinsikter"
+      "insights": "Energiinsikter"
     },
     "happy": {
       "map": "Karta över goda nyheter"
@@ -5149,9 +5154,9 @@
     "title": "Installera app",
     "share": "Tryck på Dela i Safari (fyrkanten med en uppåtpil). Du kan behöva öppna menyn Mer först.",
     "add": "Välj Lägg till på hemskärmen.",
-    "confirm": "Tryck på Lägg till och öppna World Monitor från hemskärmen.",
+    "confirm": "Tryck på Lägg till och öppna Money Bansho från hemskärmen.",
     "close": "Stäng",
-    "alertsHint": "Installera World Monitor på hemskärmen för att få aviseringar på denna iPhone eller iPad.",
+    "alertsHint": "Installera Money Bansho på hemskärmen för att få aviseringar på denna iPhone eller iPad.",
     "how": "Så installerar du"
   },
   "teamDashboards": {
@@ -5402,7 +5407,7 @@
       "placeholder": "Plats eller 25.11, 55.14",
       "submit": "Sök",
       "locate": "Min plats",
-      "hint": "Skrivna koordinater och din plats skickas aldrig till WorldMonitor. Skrivna ortnamn skickas till WorldMonitor och OpenStreetMap Nominatim.",
+      "hint": "Skrivna koordinater och din plats skickas aldrig till Money Bansho. Skrivna ortnamn skickas till Money Bansho och OpenStreetMap Nominatim.",
       "results": "Platser",
       "searching": "Söker…",
       "tooShort": "Ange minst två tecken, eller koordinater som 25.11, 55.14.",
@@ -5596,7 +5601,7 @@
     "privacy": {
       "line": "Din punkt skickas endast till bildarkiven.",
       "more": "Detaljer",
-      "body": "Passager beräknas på denna enhet. För att hitta bilder skickar din webbläsare punkten direkt till Earth Search, Planetary Computer, NASA GIBS och EUMETSAT; WorldMonitor tar inte emot den. På en övervakad plats tillfrågas WorldMonitor om platsens dagliga register via platsens ID, inte din punkt. Ett inskrivet ortnamn skickas till WorldMonitor och OpenStreetMap Nominatim för att hittas. Delade länkar behåller två decimaler (0,01°)."
+      "body": "Passager beräknas på denna enhet. För att hitta bilder skickar din webbläsare punkten direkt till Earth Search, Planetary Computer, NASA GIBS och EUMETSAT; Money Bansho tar inte emot den. På en övervakad plats tillfrågas Money Bansho om platsens dagliga register via platsens ID, inte din punkt. Ett inskrivet ortnamn skickas till Money Bansho och OpenStreetMap Nominatim för att hittas. Delade länkar behåller två decimaler (0,01°)."
     },
     "sources": {
       "heading": "Källor ({{count}})",
@@ -5716,7 +5721,7 @@
       "map": "Leverantör, tema och globus",
       "ai": "Modeller, minne och ramverk",
       "video": "Kvalitet och autoplay",
-      "apiKeys": "Nycklar för World Monitor API",
+      "apiKeys": "Nycklar för Money Bansho API",
       "embeds": "Widgets för din egen webbplats",
       "aiAgents": "Anslutna MCP-klienter",
       "about": "Webbplatslinks, villkor och sekretess"
@@ -5732,7 +5737,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Premiumåtkomst",
-        "desc": "Denna åtkomst faktureras inte via ditt WorldMonitor-konto. Ingen betalningsmetod eller fakturor är tillgängliga här."
+        "desc": "Denna åtkomst faktureras inte via ditt Money Bansho-konto. Ingen betalningsmetod eller fakturor är tillgängliga här."
       },
       "checking": {
         "heading": "Kontrollerar din plan…",
@@ -5753,7 +5758,7 @@
         "desc": "Vi kunde inte verifiera din aktuella plan. Försök igen eller visa planer i en ny flik."
       },
       "free": {
-        "heading": "WorldMonitor Gratis",
+        "heading": "Money Bansho Gratis",
         "desc": "Din aktuella plan är Gratis. Uppgradera för alla paneler, AI-analys och prioriterad datauppdatering."
       },
       "portal": {
@@ -5762,7 +5767,7 @@
       },
       "deletion": {
         "heading": "Radera konto",
-        "desc": "Radera detta World Monitor-konto permanent. Prenumerationer avslutas omedelbart utan återbetalning av återstående förbetald tid. API-nycklar, embed-nycklar och MCP-tokens slutar fungera. Faktureringsposter som krävs för bokföring, tvister och lagliga förfrågningar sparas tillsammans med de kundkontaktuppgifter de innehåller; de kopplas inte längre till ditt inloggningskonto, men webhook-loggar från betalningsleverantören som skrevs före raderingen behåller de identifierare de levererades med. Inställningar för instrumentpanelen och skrivbordsappens hemligheter i nyckelringen på den här enheten raderas inte på distans.",
+        "desc": "Radera detta Money Bansho-konto permanent. Prenumerationer avslutas omedelbart utan återbetalning av återstående förbetald tid. API-nycklar, embed-nycklar och MCP-tokens slutar fungera. Faktureringsposter som krävs för bokföring, tvister och lagliga förfrågningar sparas tillsammans med de kundkontaktuppgifter de innehåller; de kopplas inte längre till ditt inloggningskonto, men webhook-loggar från betalningsleverantören som skrevs före raderingen behåller de identifierare de levererades med. Inställningar för instrumentpanelen och skrivbordsappens hemligheter i nyckelringen på den här enheten raderas inte på distans.",
         "dialogTitle": "Radera det här kontot?",
         "dialogCopy": "Detta kan inte ångras. Prenumerationer avslutas, nycklar slutar fungera omedelbart och faktureringsposter sparas för bokföring, tvister och lagliga förfrågningar – inklusive de kontaktuppgifter de innehåller. Logga ut på andra enheter och rensa sedan den här enhetens webbplatsdata – det ligger utanför serverns räckvidd.",
         "phraseLabel": "Skriv {{phrase}} för att bekräfta",

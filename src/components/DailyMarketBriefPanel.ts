@@ -103,7 +103,7 @@ export class DailyMarketBriefPanel extends Panel {
             </div>
           `).join('')}
         </div>
-
+        <div style="font-size:10px;opacity:.6;margin-top:6px">Automated summary. Not investment advice.</div>
       </div>
     `;
 

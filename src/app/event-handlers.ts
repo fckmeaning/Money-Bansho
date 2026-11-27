@@ -1,3 +1,4 @@
+import { countsTowardSourceCap } from '@/config/feeds';
 import { observeDashboardFirstInteraction } from '@/components/dashboard-interaction-analytics';
 import type {
   AppContext,
@@ -72,7 +73,6 @@ import {
   clearMissionPreset,
   dismissMissionPresetPrompt,
   filterMissionLayersForRenderer,
-  isMissionPresetPromptDismissed,
   loadStoredMissionPreset,
   resetMissionPresetState,
   saveMissionPreset,
@@ -96,7 +96,6 @@ import {
   trackMapViewChange,
   trackMapLayerToggle,
   trackPanelToggled,
-  trackDownloadClicked,
   trackGateHit,
   trackLayoutCustomized,
 } from '@/services/analytics';
@@ -106,8 +105,6 @@ import {
   isPasskeyOfferPresent,
   waitForActivationPromptDecision,
 } from '@/services/onboarding-prompt';
-import { detectPlatform, allButtons, buttonsForPlatform } from '@/components/DownloadBanner';
-import type { Platform } from '@/components/DownloadBanner';
 import { isOpenableExternalUrl, openExternalUrl } from '@/services/external-navigation';
 import { getCachedGpsInterference } from '@/services/gps-interference';
 import { dataFreshness } from '@/services/data-freshness';
@@ -774,8 +771,6 @@ export class EventHandlerManager implements AppModule {
       this.openEmbedDialog();
     });
 
-    this.initDownloadDropdown();
-    this.initFooterDownload();
 
     this.boundStorageHandler = (e: StorageEvent) => {
       if (e.key === STORAGE_KEYS.panels && e.newValue) {
@@ -893,7 +888,7 @@ export class EventHandlerManager implements AppModule {
     };
     document.addEventListener('keydown', this.boundUndoHandler);
 
-    const isLocalDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    const isLocalDev = !/(^|\.)worldmonitor\.app$/.test(location.hostname);
     this.ctx.container.querySelectorAll<HTMLAnchorElement>('.variant-option').forEach(link => {
       link.addEventListener('click', (e) => {
         const variant = link.dataset.variant;
@@ -1003,39 +998,13 @@ export class EventHandlerManager implements AppModule {
   private setupMissionPresets(): void {
     this.renderMissionPresetControl();
 
-    const shouldPrompt =
-      !this.ctx.isMobile &&
-      !window.location.search &&
-      !loadStoredMissionPreset() &&
-      !isMissionPresetPromptDismissed();
-    if (shouldPrompt) {
-      // Defer the onboarding auto-open to browser idle after first paint so it
-      // never competes with load or first-interaction work. This replaced a
-      // fixed 700ms timeout that forced layout reads (getBoundingClientRect +
-      // offsetHeight) on the post-load path. Re-check state at fire time since
-      // the idle wait can outlast an early user choice.
-      //
-      // That includes a modal the user opened first. On a slow machine the
-      // idle period lands after it; the prompt then took focus and swallowed
-      // the modal's Escape (its keydown handler stops propagation), leaving the
-      // modal impossible to close from the keyboard. Skipping costs nothing:
-      // an undismissed prompt re-appears on the next load.
-      scheduleAfterFirstPaint(() => {
-        if (this.ctx.isDestroyed) return;
-        if (this.missionPresetPopover || loadStoredMissionPreset() || isMissionPresetPromptDismissed()) return;
-        if (isModalOpen(document)) return;
-        this.openMissionPresetPopover(document.getElementById('missionPresetBtn'), false, 'auto');
+    // The mission picker never opens by itself: it covered the header on first
+    // load. It stays available from the header button and the mobile menu.
+    scheduleAfterFirstPaint(() => {
+      this.maybeOpenAboutYouCard().catch((err) => {
+        console.warn('[about-you] could not open the card', err);
       });
-    }
-    // One onboarding prompt per load (KTD6): the mission picker owns a
-    // brand-new desktop visitor's first load; the About-you card waits.
-    if (!shouldPrompt) {
-      scheduleAfterFirstPaint(() => {
-        this.maybeOpenAboutYouCard().catch((err) => {
-          console.warn('[about-you] could not open the card', err);
-        });
-      });
-    }
+    });
   }
 
   /**
@@ -1091,12 +1060,11 @@ export class EventHandlerManager implements AppModule {
     const label = active?.shortLabel ?? 'Mission';
     const icon = active?.icon ?? '◎';
     const activeClass = active ? ' mission-preset-button--active' : '';
-    const suggestedClass = !active && !isMissionPresetPromptDismissed() ? ' mission-preset-button--suggested' : '';
 
     setTrustedHtml(mount, trustedHtml(`
       <button
         id="missionPresetBtn"
-        class="mission-preset-button${activeClass}${suggestedClass}"
+        class="mission-preset-button${activeClass}"
         type="button"
         aria-haspopup="dialog"
         aria-expanded="false"
@@ -1824,7 +1792,7 @@ export class EventHandlerManager implements AppModule {
 
     const preview = document.createElement('iframe');
     preview.className = 'embed-preview-frame';
-    preview.title = 'World Monitor live map preview';
+    preview.title = 'Money Bansho live map preview';
     preview.loading = 'lazy';
     preview.referrerPolicy = 'strict-origin-when-cross-origin';
     preview.src = embedUrl;
@@ -1965,120 +1933,6 @@ export class EventHandlerManager implements AppModule {
     if (!copied) throw new Error('Copy failed');
   }
 
-  private platformLabel(p: Platform): string {
-    switch (p) {
-      case 'macos-arm64': return '\uF8FF Silicon';
-      case 'macos-x64': return '\uF8FF Intel';
-      case 'macos': return '\uF8FF macOS';
-      case 'windows': return 'Windows';
-      case 'linux': return 'Linux';
-      default: return t('header.downloadApp');
-    }
-  }
-
-  private initDownloadDropdown(): void {
-    const btn = document.getElementById('downloadBtn');
-    const dropdown = document.getElementById('downloadDropdown');
-    const label = document.getElementById('downloadBtnLabel');
-    if (!btn || !dropdown) return;
-
-    const platform = detectPlatform();
-    if (label) label.textContent = this.platformLabel(platform);
-
-    const primary = buttonsForPlatform(platform);
-    const all = allButtons();
-    const others = all.filter(b => !primary.some(p => p.href === b.href));
-
-    const renderDropdown = () => {
-      const primaryHtml = primary.map(b =>
-        `<a class="dl-dd-btn ${b.cls} primary" href="${b.href}">${b.label}</a>`
-      ).join('');
-      const othersHtml = others.map(b =>
-        `<a class="dl-dd-btn ${b.cls}" href="${b.href}">${b.label}</a>`
-      ).join('');
-
-      setTrustedHtml(dropdown, trustedHtml(`
-        <div class="dl-dd-tagline">${t('modals.downloadBanner.description')}</div>
-        <div class="dl-dd-buttons">${primaryHtml}</div>
-        ${others.length ? `<button class="dl-dd-toggle" id="dlDdToggle">${t('modals.downloadBanner.showAllPlatforms')}</button>
-        <div class="dl-dd-others" id="dlDdOthers">${othersHtml}</div>` : ''}
-      `, "legacy direct innerHTML migration"));
-
-      dropdown.querySelectorAll<HTMLAnchorElement>('.dl-dd-btn').forEach(a => {
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          const plat = new URLSearchParams(a.search).get('platform') || 'unknown';
-          trackDownloadClicked(plat);
-          window.open(a.href, '_blank', 'noopener,noreferrer');
-          dropdown.classList.remove('open');
-        });
-      });
-
-      const toggle = dropdown.querySelector('#dlDdToggle');
-      const othersEl = dropdown.querySelector('#dlDdOthers') as HTMLElement | null;
-      if (toggle && othersEl) {
-        toggle.addEventListener('click', () => {
-          const showing = othersEl.classList.toggle('show');
-          toggle.textContent = showing
-            ? t('modals.downloadBanner.showLess')
-            : t('modals.downloadBanner.showAllPlatforms');
-        });
-      }
-    };
-
-    renderDropdown();
-
-    // Keep the trigger's aria-expanded in sync however the dropdown closes
-    // (toggle click, outside click, Escape).
-    btn.setAttribute('aria-haspopup', 'true');
-    btn.setAttribute('aria-expanded', 'false');
-    const syncExpanded = () => btn.setAttribute('aria-expanded', String(dropdown.classList.contains('open')));
-
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dropdown.classList.toggle('open');
-      syncExpanded();
-    });
-
-    this.boundDropdownClickHandler = (e: MouseEvent) => {
-      if (!dropdown.contains(e.target as Node) && !btn.contains(e.target as Node)) {
-        dropdown.classList.remove('open');
-        syncExpanded();
-      }
-    };
-    document.addEventListener('click', this.boundDropdownClickHandler);
-
-    this.boundDropdownKeydownHandler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        dropdown.classList.remove('open');
-        syncExpanded();
-      }
-    };
-    document.addEventListener('keydown', this.boundDropdownKeydownHandler);
-  }
-
-  private initFooterDownload(): void {
-    const mount = document.getElementById('footerDownloadMount');
-    if (!mount) return;
-    const platform = detectPlatform();
-    const primary = buttonsForPlatform(platform);
-    const btn = primary[0];
-    if (!btn) return;
-    const a = document.createElement('a');
-    a.href = btn.href;
-    a.textContent = t('header.downloadApp');
-    a.className = 'site-footer-download-link';
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      const plat = new URLSearchParams(a.search).get('platform') || 'unknown';
-      trackDownloadClicked(plat);
-      window.open(btn.href, '_blank', 'noopener,noreferrer');
-    });
-    mount.replaceWith(a);
-  }
-
   private setCopyLinkFeedback(button: HTMLElement | null, message: string): void {
     if (!button) return;
     const originalText = button.textContent ?? '';
@@ -2162,7 +2016,7 @@ export class EventHandlerManager implements AppModule {
       `.variant-option[data-variant="${variant}"]`,
     );
     if (!link) return 'unavailable';
-    const isLocalDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    const isLocalDev = !/(^|\.)worldmonitor\.app$/.test(location.hostname);
     return this.navigateToVariant(variant, {
       href: link.href,
       isLocalDev,
@@ -2428,9 +2282,9 @@ export class EventHandlerManager implements AppModule {
       getDisabledSources: () => this.ctx.disabledSources,
       toggleSource: (name: string) => {
         const reenabling = this.ctx.disabledSources.has(name);
-        if (reenabling && !isProUser()) {
+        if (reenabling && !isProUser() && countsTowardSourceCap(name)) {
           const allSources = this.getAllSourceNames();
-          const currentlyEnabled = allSources.filter(n => !this.ctx.disabledSources.has(n)).length;
+          const currentlyEnabled = allSources.filter(n => !this.ctx.disabledSources.has(n) && countsTowardSourceCap(n)).length;
           if (currentlyEnabled + 1 > FREE_MAX_SOURCES) {
             showToast(t('modals.settingsWindow.freeSourceLimit', { max: String(FREE_MAX_SOURCES) }), 3000);
             return;
@@ -2446,9 +2300,9 @@ export class EventHandlerManager implements AppModule {
       setSourcesEnabled: (names: string[], enabled: boolean) => {
         if (enabled && !isProUser()) {
           const allSources = this.getAllSourceNames();
-          const currentlyEnabled = allSources.filter(n => !this.ctx.disabledSources.has(n)).length;
-          const wouldEnable = names.filter(n => this.ctx.disabledSources.has(n) && allSources.includes(n)).length;
-          if (currentlyEnabled + wouldEnable > FREE_MAX_SOURCES) {
+          const currentlyEnabled = allSources.filter(n => !this.ctx.disabledSources.has(n) && countsTowardSourceCap(n)).length;
+          const wouldEnable = names.filter(n => this.ctx.disabledSources.has(n) && allSources.includes(n) && countsTowardSourceCap(n)).length;
+          if (wouldEnable > 0 && currentlyEnabled + wouldEnable > FREE_MAX_SOURCES) {
             showToast(t('modals.settingsWindow.freeSourceLimit', { max: String(FREE_MAX_SOURCES) }), 3000);
             return;
           }

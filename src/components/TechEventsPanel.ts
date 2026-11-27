@@ -213,7 +213,7 @@ export class TechEventsPanel extends Panel {
             : false,
           isDesktopRuntime() ? h('button', {
             className: 'event-deduce-link',
-            title: 'Deduce Situation with AI',
+            title: 'Deduce Situation',
             style: 'background: none; border: none; cursor: pointer; opacity: 0.7; font-size: 1.1em; transition: opacity 0.2s; margin-left: auto; padding-right: 4px;',
             onClick: (e: Event) => {
               e.preventDefault();

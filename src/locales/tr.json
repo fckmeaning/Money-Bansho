@@ -423,8 +423,8 @@
     "map": "Kuresel Durum",
     "techHubs": "Populer Teknoloji Merkezleri",
     "status": "Sistem Durumu",
-    "insights": "Yapay Zeka Analizleri",
-    "strategicPosture": "Yapay Zeka Stratejik Durum",
+    "insights": "Analizler",
+    "strategicPosture": "Stratejik Durum",
     "cii": "Ulke Istikrarsizligi",
     "strategicRisk": "Stratejik Risk Genel Gorunumu",
     "intel": "Istihbarat Akisi",
@@ -493,7 +493,7 @@
     "gulfCurrencies": "Körfez Para Birimleri",
     "gulfOil": "Körfez Petrolü",
     "bigmac": "Gerçek Big Mac Endeksi",
-    "marketImplications": "YZ Pazar Etkileri",
+    "marketImplications": "Pazar Etkileri",
     "energyComplex": "Enerji Kompleksi",
     "oilInventories": "Petrol Envanterleri",
     "energyCrisis": "Enerji Krizi İzleyicisi",
@@ -520,7 +520,7 @@
     "fuelPricesDiesel": "Dizel",
     "fuelPricesSource": "Kaynak",
     "groceryBasketDesc": "Dünya çapında 24 ülkede bakkal sepeti fiyat karşılaştırması",
-    "airlineIntel": "✈️ Havayolu İstihbaratı",
+    "airlineIntel": "Havayolu İstihbaratı",
     "consumerPrices": "Tüketici Fiyatları",
     "fearGreed": "Korku & Açgözlülük",
     "marketBreadth": "Pazar Genişliği",
@@ -528,7 +528,12 @@
     "fx": "Döviz kurları",
     "ukmtoIncidents": "UKMTO olayları",
     "reservoirLevels": "Stratejik Su Seviyeleri",
-    "gridDisruptionClock": "ABD eyaletlerinde elektrik kesintisi saati"
+    "gridDisruptionClock": "ABD eyaletlerinde elektrik kesintisi saati",
+    "chinaMedia": "Çin medyası",
+    "europeBusiness": "Avrupa iş dünyası",
+    "israel": "İsrail",
+    "northKorea": "Kuzey Kore takibi",
+    "corporateLeadership": "Şirket yönetimi haberleri"
   },
   "commands": {
     "prefixes": {
@@ -752,7 +757,7 @@
         "configured": "Masaustu ayarlari yapilandirildi",
         "needsKeys": "Ozellikleri etkinlestirmek icin API anahtarlarini yapilandiriniz",
         "some": "Bazi ozellikler API anahtari gerektiriyor",
-        "pro": "World Monitor Pro etkin"
+        "pro": "Money Bansho Pro etkin"
       },
       "summary": {
         "desktop": "Masaustu modu",
@@ -782,9 +787,9 @@
         "OLLAMA_API_URL": "ör. http://127.0.0.1:11434 (Ollama) veya http://127.0.0.1:1234/v1 (LM Studio) — OpenAI uyumlu uç nokta.",
         "OLLAMA_MODEL": "ör. llama3.1:8b — özetleme için kullanılacak model etiketi."
       },
-      "proCloud": "Yerel API anahtarı olmayan özellikler World Monitor bulut verilerini kullanır.",
-      "skipSetupPro": "Kurulumu atlayın: Kendi API anahtarlarınız yerine bulut verilerini kullanmak için World Monitor Pro ile oturum açın.",
-      "getPro": "World Monitor Pro'yu edinin"
+      "proCloud": "Yerel API anahtarı olmayan özellikler Money Bansho bulut verilerini kullanır.",
+      "skipSetupPro": "Kurulumu atlayın: Kendi API anahtarlarınız yerine bulut verilerini kullanmak için Money Bansho Pro ile oturum açın.",
+      "getPro": "Money Bansho Pro'yu edinin"
     },
     "settingsWindow": {
       "validating": "API anahtarlari dogrulaniyor...",
@@ -822,7 +827,7 @@
         "status": "Durum",
         "duration": "Sure"
       },
-      "shellTitle": "World Monitor Ayarları",
+      "shellTitle": "Money Bansho Ayarları",
       "shellSearchPlaceholder": "Ayarları ara...",
       "shellCancel": "İptal",
       "shellSaveClose": "Kaydet ve Kapat",
@@ -1139,7 +1144,7 @@
       "storageUnavailable": "Tarayıcı site depolamasını engellediği için oynatma kullanılamıyor. Anlık görüntüleri kaydetmeye başlamak için bu site için site verilerine izin verin."
     },
     "pizzint": {
-      "indexSource": "Endeks: World Monitor",
+      "indexSource": "Endeks: Money Bansho",
       "venueSource": "mekân verileri:",
       "statusNormal": "NORMAL",
       "statusNoData": "VERİ YOK",
@@ -1149,7 +1154,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "{{timeAgo}} guncellendi",
       "tensionsTitle": "Jeopolitik Gerilimler",
-      "tensionsSource": "Gerilimler: GDELT olaylarından World Monitor hesaplaması",
+      "tensionsSource": "Gerilimler: GDELT olaylarından Money Bansho hesaplaması",
       "insufficientData": "Yetersiz veri",
       "evidenceStrikes": "3 günde bildirilen saldırılar ({{countries}}): {{value}}",
       "evidenceAirports": "Aksayan havalimanları: {{value}}",
@@ -1867,7 +1872,7 @@
       "staleReport": "Güncelliğini yitirmiş rapor",
       "reported": "Sayı",
       "period": "Dönem",
-      "movementNote": "Her satır kaynağını, rapor tarihini ve ölçüsünü korur. Mevcut nüfus, varışlar ve sınır denetimi olayları farklı ölçülerdir. Kaynaklar örtüşebilir; sayılarını toplamayın. WorldMonitor bu görünümü bağlantılı kaynaklardan türetir; bu, sağlayıcıların onayını ima etmez.",
+      "movementNote": "Her satır kaynağını, rapor tarihini ve ölçüsünü korur. Mevcut nüfus, varışlar ve sınır denetimi olayları farklı ölçülerdir. Kaynaklar örtüşebilir; sayılarını toplamayın. Money Bansho bu görünümü bağlantılı kaynaklardan türetir; bu, sağlayıcıların onayını ima etmez.",
       "recent": "Yakın dönem",
       "last30Days": "Son 30 gün",
       "newThisWeek": "Bu haftanın yenileri",
@@ -2271,7 +2276,7 @@
       "tripDays": "Gezi günleri"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>WM Analist</strong> Jeopolitik, piyasa, askeri ve ekonomik alanlarda canlı bağlama sahip AI analisti. Aktif WorldMonitor beslemelerinden gerçek zamanlı veri enjekte edilen Claude tarafından desteklenmektedir."
+      "infoTooltip": "<strong>WM Analist</strong> Jeopolitik, piyasa, askeri ve ekonomik alanlarda canlı bağlama sahip AI analisti. Aktif Money Bansho beslemelerinden gerçek zamanlı veri enjekte edilen Claude tarafından desteklenmektedir."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Vadeli işlem konumlandırması</strong> Emtia ve finansal vadeli işlemler üzerinde ticari tüccarlar, büyük spekülatörler ve küçük tüccarlar için haftalık net pozisyonlar. Kaynak, Cuma günü yayınlanan Commodity Futures Trading Commission Traders Taahhütleri raporudur."
@@ -2334,7 +2339,7 @@
       "infoTooltip": "<strong>Ekonomik Takvim</strong> Planlanmış makroekonomik açıklamalar: tüketici fiyat endeksi, tarım dışı istihdam, gayri safi yurtiçi hasıla, satın alma müdürleri endeksi ve merkez bankası kararları. Tahmin vs gerçek vs önceki dönem gösterilir. Yüksek etkili olaylar vurgulanır. Kaynak: ekonomik veri sağlayıcıları."
     },
     "fsi": {
-      "infoTooltip": "<strong>Mali Stres Göstergesi</strong> WorldMonitor yüksek getirili kredi ile uzun dönem hazine bonolarının oranı, hisse senedi oynaklığı ve yüksek getirili spread'e göre ayarlanmış: (HYG / TLT) / (VIX × Yüksek getirili spread / 100). Bu Kansas City Fed Mali Stres Endeksi değildir. 1,5 ve üzeri bir ölçüm düşük strestir; 0,3'ün altı yüksek streştir.",
+      "infoTooltip": "<strong>Mali Stres Göstergesi</strong> Money Bansho yüksek getirili kredi ile uzun dönem hazine bonolarının oranı, hisse senedi oynaklığı ve yüksek getirili spread'e göre ayarlanmış: (HYG / TLT) / (VIX × Yüksek getirili spread / 100). Bu Kansas City Fed Mali Stres Endeksi değildir. 1,5 ve üzeri bir ölçüm düşük strestir; 0,3'ün altı yüksek streştir.",
       "title": "Finansal Stres Göstergesi",
       "usFsiValue": "ABD Mali Stres Göstergesi değeri",
       "asOf": "{{date}} itibarıyla",
@@ -2422,7 +2427,7 @@
       "infoTooltip": "<strong>Makro göstergeler</strong> ABD, euro alanı ve Çin fiyatları, aktivite, politika ve döviz göstergeleri. Çin mevcut haber kapsamı gerektirir. Her döşeme kaynağını ve gözlem tarihini gösterir."
     },
     "monitors": {
-      "infoTooltip": "<strong>Anahtar Kelime Monitörleri</strong> Tüm WorldMonitor kaynaklarından gerçek zamanlı haber söz takibi için herhangi bir terim ekleyin. Eşleşen makaleler alındıkça sonuçlar gerçek zamanlı güncellenir."
+      "infoTooltip": "<strong>Anahtar Kelime Monitörleri</strong> Tüm Money Bansho kaynaklarından gerçek zamanlı haber söz takibi için herhangi bir terim ekleyin. Eşleşen makaleler alındıkça sonuçlar gerçek zamanlı güncellenir."
     },
     "renewable": {
       "infoTooltip": "<strong>Yenilenebilir Enerji</strong> Bölge ve yıla göre yenilenebilir kaynaklardan elektrik üretimi payı, artı ABD güneş, rüzgar ve kömür için kurulu kapasitesi (MW). Kaynaklar: Dünya Bankası (EG.ELC.RNEW.ZS) ve ABD Enerji Bilgi İdaresi."
@@ -2488,7 +2493,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>AI Pazar Etkileri</strong> Her tahmin döngüsünün ardından canlı jeopolitik, emtia ve makro durumundan türetilen LLM tarafından oluşturulan ticaret sinyalleri.<ul><li><strong>Yön</strong>: LONG / SHORT / KORUMA</li><li><strong>Zaman Ufku</strong>: 1H, 2H, 1A veya 3A süresi</li><li><strong>Tetikleyici</strong>: Sinyalin arkasındaki ana katalizör</li><li><strong>Risk</strong>: Uyarı veya geçersizleştirme koşulu</li></ul><em>Yalnızca bilgilendirme amaçlıdır. Yatırım tavsiyesi değildir.</em>",
-      "title": "AI Pazar Çıkarımları",
+      "title": "Pazar Çıkarımları",
       "directions": {
         "long": "UZUN",
         "short": "KISA",
@@ -2748,7 +2753,7 @@
           }
         },
         "about": {
-          "heading": "Son bir şey: World Monitor'ü ne için kullanacaksınız?",
+          "heading": "Son bir şey: Money Bansho'ü ne için kullanacaksınız?",
           "body": "Üç hızlı cevap, sizin için doğru araçları geliştirmemize yardımcı olur. İstediğiniz soruları atlayabilirsiniz.",
           "confirmCta": "Cevaplarımı kaydet",
           "confirming": "Kaydediliyor…",
@@ -3165,7 +3170,7 @@
       "global": "FAO küresel aylık endeksi"
     },
     "aboutYou": {
-      "title": "World Monitor'ı sizin için geliştirmemize yardımcı olun",
+      "title": "Money Bansho'ı sizin için geliştirmemize yardımcı olun",
       "ariaLabel": "Sizin hakkınızda",
       "progress": "{{current}} / {{total}}",
       "skip": "Atla",
@@ -3177,7 +3182,7 @@
       "thanks": "Teşekkürler. Bu, neyi sonra geliştireceğimize karar vermemize yardımcı oluyor.",
       "questions": {
         "primaryUse": {
-          "label": "World Monitor'ı esas olarak ne için kullanıyorsunuz?",
+          "label": "Money Bansho'ı esas olarak ne için kullanıyorsunuz?",
           "options": {
             "news": "Haberler ve dünya olayları",
             "markets": "Piyasalar ve ticaret",
@@ -3219,13 +3224,13 @@
           }
         },
         "alternative": {
-          "label": "World Monitor olmasaydı ne kullanırdınız?",
+          "label": "Money Bansho olmasaydı ne kullanırdınız?",
           "placeholder": "İsteğe bağlı"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "World Monitor'ı beğeniyor musunuz?",
+      "title": "Money Bansho'ı beğeniyor musunuz?",
       "body": "GitHub'da bir yıldız, başkalarının onu bulmasına yardımcı olur.",
       "star": "GitHub'da Yıldız Ver",
       "dismiss": "Kapat ve bir daha sorma"
@@ -3495,7 +3500,7 @@
         "copied": "Kopyalandı.",
         "copyFailed": "Kopyalama başarısız oldu. Kopyalamak için metni seçin."
       },
-      "firstSeenNote": "Bu, akışlar veya World Monitor gözlemleri arasında kullanılabilir en erken gösterge tarihi olup; listelenmiş kaynağın tarihinden farklı olabilir."
+      "firstSeenNote": "Bu, akışlar veya Money Bansho gözlemleri arasında kullanılabilir en erken gösterge tarihi olup; listelenmiş kaynağın tarihinden farklı olabilir."
     },
     "nuclear": {
       "types": {
@@ -4617,10 +4622,10 @@
     "imageryEvidenceHere": "Buradaki uydu görüntü kanıtı"
   },
   "shell": {
-    "documentTitle": "World Monitor — Gerçek Zamanlı Küresel İstihbarat Paneli",
-    "metaDescription": "Gerçek zamanlı küresel istihbarat platformu. WIRED'da yer aldı. 190 ülkede 2 milyon+ kişi tarafından kullanılıyor. Çatışmalar, piyasalar, askeri, açık kaynak istihbaratı tek görünümde.",
+    "documentTitle": "Money Bansho — Gerçek Zamanlı Küresel İstihbarat Paneli",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Çevrimdışısınız",
-    "offlineMessage": "World Monitor, gerçek zamanlı istihbarat verileri için internet bağlantısı gerektirir.",
+    "offlineMessage": "Money Bansho, gerçek zamanlı istihbarat verileri için internet bağlantısı gerektirir.",
     "offlineRetry": "Yeniden Dene"
   },
   "widgets": {
@@ -4658,12 +4663,12 @@
     "phaseError": "Hata",
     "previewCheckingHeading": "Widget oluşturucu bağlanıyor",
     "previewReadyHeading": "İstediğiniz widget'ı açıklayın",
-    "previewFetchingHeading": "Canlı WorldMonitor verileri getiriliyor",
+    "previewFetchingHeading": "Canlı Money Bansho verileri getiriliyor",
     "previewComposingHeading": "Widget düzeni oluşturuluyor",
     "previewErrorHeading": "Önizleme dikkat gerektiriyor",
     "previewCheckingCopy": "Oluşturmayı etkinleştirmeden önce widget anahtarınızı ve arka uç kullanılabilirliğini doğruluyoruz.",
     "previewReadyCopy": "Bir istem örneği kullanın veya istediğiniz tam canlı görünümü açıklayın. Önizleme, kaydetmeden önce burada güncellenecektir.",
-    "previewFetchingCopy": "Ajan onaylı WorldMonitor uç noktalarını çağırıyor ve veri setini widget için şekillendiriyor.",
+    "previewFetchingCopy": "Ajan onaylı Money Bansho uç noktalarını çağırıyor ve veri setini widget için şekillendiriyor.",
     "previewComposingCopy": "Önizleme, en son canlı veriler ve pano stillemesiyle işleniyor.",
     "previewErrorCopy": "Sorunu düzeltin, ardından yeniden deneyin. Mevcut widget'larınız etkilenmez.",
     "createInteractive": "Etkileşimli Widget Oluştur",
@@ -4692,7 +4697,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "World Monitor lisans anahtarı gereklidir",
+    "lockedDesc": "Money Bansho lisans anahtarı gereklidir",
     "signInToUnlock": "Premium özelliklerin kilidini açmak için oturum açın",
     "signIn": "Kilidini Açmak İçin Oturum Aç",
     "upgradeDesc": "Premium analitiğe tam erişim için Pro'ya yükseltin",
@@ -4831,7 +4836,7 @@
       "hotspots": {
         "category": "Haberler / Sıcak noktalar",
         "purpose": "İzlenen jeopolitik sıcak noktaları öne çıkarır ve ilgili haberler ile tırmanma sinyalleri bir araya geldiğinde düzeylerini yükseltir.",
-        "source": "WorldMonitor sıcak nokta kaydı, RSS/GDELT haber istihbaratı, sıcak nokta tırmanma puanı, askeri faaliyet ve ülke istikrarsızlığı bağlamı.",
+        "source": "Money Bansho sıcak nokta kaydı, RSS/GDELT haber istihbaratı, sıcak nokta tırmanma puanı, askeri faaliyet ve ülke istikrarsızlığı bağlamı.",
         "freshness": "Sıcak nokta konumları küratör tarafından belirlenir ve değişmez. Haber akışlarının güncelliği ayrı izlenir. Sıcak nokta düzeyleri, pano haber akışları yenilendiğinde, yaklaşık 10 dakikada bir yeniden hesaplanır. GDELT istihbaratının yükleme ve önbellek bütçeleri daha uzundur.",
         "confidence": "İlk eleme için bir işarettir. Alttaki haberler ve ülke bağlamı açılmadan alıntıya uygun bir iddia değildir.",
         "limitations": {
@@ -4878,7 +4883,7 @@
       "conflicts": {
         "category": "Çatışma",
         "purpose": "Canlı sinyallerin bilinen sahalarla karşılaştırılabilmesi için seçilmiş çatışma bölgelerini ve jeopolitik sınır katmanlarını gösterir.",
-        "source": "WorldMonitor çatışma bölgesi kaydı, UCDP/ACLED çatışma bağlamı ve Kore DMZ gibi belgelenmiş sınır verileri.",
+        "source": "Money Bansho çatışma bölgesi kaydı, UCDP/ACLED çatışma bağlamı ve Kore DMZ gibi belgelenmiş sınır verileri.",
         "freshness": "Taban bölgeler küratör tarafından belirlenir ve değişmez. Dinamik çatışma olayı girdileri ACLED/UCDP akışları ve durum sinyalleri üzerinden ayrı izlenir.",
         "confidence": "Coğrafi yön bulmak için iyidir. Tek başına gerçek zamanlı bir olay doğrulaması değildir.",
         "limitations": {
@@ -4911,7 +4916,7 @@
       "ais": {
         "category": "Denizcilik",
         "purpose": "Stratejik sular ve darboğazlar çevresinde gemi yoğunluğunu ve AIS kesinti sinyallerini gösterir.",
-        "source": "AISStream aktarım anlık görüntüleri, WorldMonitor denizcilik hizmeti ve darboğaz kesinti sınıflandırıcıları.",
+        "source": "AISStream aktarım anlık görüntüleri, Money Bansho denizcilik hizmeti ve darboğaz kesinti sınıflandırıcıları.",
         "freshness": "AIS aktarım anlık görüntüleri varsayılan olarak her 5 saniyede bir yeniden kurulur. Sunucu taban yoğunluk anlık görüntüsünü 5 dakika önbellekte tutabilir. Aktarım kimlik bilgileri veya bağlantısı yoksa katman kapanır ya da eskir.",
         "confidence": "Deniz anomalilerini elemek için yararlıdır. AIS'i gemi kendisi bildirir ve gemi yayını kesebilir.",
         "limitations": {
@@ -4928,7 +4933,7 @@
       "tradeRoutes": {
         "category": "Denizcilik",
         "purpose": "Kesinti yolunu okumak için stratejik darboğazlardan geçen başlıca konteyner, enerji ve dökme yük rotalarını çizer.",
-        "source": "WorldMonitor ticaret rotası kaydı, tedarik zinciri darboğaz durumu ve geçiş özetleri.",
+        "source": "Money Bansho ticaret rotası kaydı, tedarik zinciri darboğaz durumu ve geçiş özetleri.",
         "freshness": "Rota geometrisi değişmez. Darboğaz durumu, önbellek sıcak kalsın diye her 6 dakikada bir sorgulanır. Geçiş özetleri tedarik zinciri önbellekleri ve aktarım yolları üzerinden her 10 dakikada bir yenilenir.",
         "confidence": "Rota düzeyinde maruziyet için iyidir. Gemi düzeyinde bir rota akışı değildir.",
         "limitations": {
@@ -4982,7 +4987,7 @@
       "weather": {
         "category": "Hava",
         "purpose": "Ulusal meteoroloji hizmetlerinin yürürlükteki resmî şiddetli hava uyarılarını, tek bir weather:alerts:v1 akışında birleşik olarak gösterir.",
-        "source": "ABD Ulusal Hava Servisi (NWS), Kanada Çevre ve İklim Değişikliği Bakanlığı (ECCC) ve WMO Şiddetli Hava Bilgi Merkezi (SWIC) CAP derlemesi, WorldMonitor aktarımı üzerinden yüklenir.",
+        "source": "ABD Ulusal Hava Servisi (NWS), Kanada Çevre ve İklim Değişikliği Bakanlığı (ECCC) ve WMO Şiddetli Hava Bilgi Merkezi (SWIC) CAP derlemesi, Money Bansho aktarımı üzerinden yüklenir.",
         "freshness": "NWS, ECCC ve SWIC uyarıları aktarım tarafından her 15 dakikada bir yüklenir ve 45 dakikalık güncellik bütçesine göre izlenir.",
         "confidence": "Katılan ulusal hizmetlerin yayımladığı uyarılar için yetkilidir. Kaynağın yayımlama zamanı geçerlidir. NWS ve ECCC poligon olarak çizilir. SWIC'in coğrafi kodlu uyarıları, yayımlayan hizmetin ülke merkez noktasında, açık bir kesinlik işaretiyle durur.",
         "limitations": {
@@ -4999,7 +5004,7 @@
       "canadaRoads": {
         "category": "Ulaşım",
         "purpose": "Desteklenen Kanada yetki alanlarındaki resmî yol olaylarını, uyarıları, koşulları, kapanışları, yapım işlerini ve tehlikeleri gösterir.",
-        "source": "Ontario 511, Alberta 511 ve Manitoba 511 il akışları, City of Toronto Road Restrictions ve DriveBC Open511, WorldMonitor üzerinden yüklenir.",
+        "source": "Ontario 511, Alberta 511 ve Manitoba 511 il akışları, City of Toronto Road Restrictions ve DriveBC Open511, Money Bansho üzerinden yüklenir.",
         "freshness": "Ontario 511, Alberta 511 ve Manitoba 511 her 15 dakikada bir yüklenir ve 45 dakikalık güncellik bütçesine göre izlenir. Toronto kısıtları her 2 saatte bir yüklenir. DriveBC Open511 her 30 dakikada bir yüklenir.",
         "confidence": "Desteklenen il ve belediye yayımcıları için yetkilidir. Kaynağın yayımlama zamanı ve haritaya işlenen geometri geçerlidir.",
         "limitations": {
@@ -5064,7 +5069,7 @@
       "waterways": {
         "category": "Denizcilik",
         "purpose": "Kesinti sinyallerinin sabit deniz coğrafyasına göre okunması için stratejik suyollarını ve darboğazları işaretler.",
-        "source": "WorldMonitor stratejik suyolu kaydı, AIS, NGA uyarıları ve PortWatch türevi akışlardan gelen tedarik zinciri darboğaz durumu katmanlarıyla.",
+        "source": "Money Bansho stratejik suyolu kaydı, AIS, NGA uyarıları ve PortWatch türevi akışlardan gelen tedarik zinciri darboğaz durumu katmanlarıyla.",
         "freshness": "Suyolu konumları değişmez. Aktarım ve PortWatch yolu sağlıklıysa canlı darboğaz durumu her 6 dakikada bir sıcak tutacak biçimde sorgulanır ve geçiş özetleri her 10 dakikada bir yenilenir.",
         "confidence": "Sabit coğrafya için yüksektir. Canlı kesintinin güvenilirliği, yanındaki AIS, NGA ve PortWatch akışlarına bağlıdır.",
         "limitations": {
@@ -5081,7 +5086,7 @@
       "ciiChoropleth": {
         "category": "Ülke riski",
         "purpose": "Geniş bir stratejik risk elemesi için ülkeleri güncel Ülke İstikrarsızlık Endeksi puanına göre boyar.",
-        "source": "WorldMonitor Ülke İstikrarsızlık Endeksi puanlama hizmeti, çatışma, huzursuzluk, uyarı, siber, gemi izleme, havacılık, doğal olay ve haber sinyallerini kullanır.",
+        "source": "Money Bansho Ülke İstikrarsızlık Endeksi puanlama hizmeti, çatışma, huzursuzluk, uyarı, siber, gemi izleme, havacılık, doğal olay ve haber sinyallerini kullanır.",
         "freshness": "Risk puanı önbelleği her 8 dakikada bir sıcak tutulur. seed-meta ve health.riskScores, 30 dakikalık güncellik bütçesine göre canlı, eskimiş, kısmi veya bozulmuş durumu gösterir.",
         "confidence": "Bileşik bir model sinyalidir. Resmî bir ülke notu ya da olasılık tahmini değildir.",
         "limitations": {
@@ -5125,7 +5130,7 @@
     "finance": {
       "map": "Küresel Piyasalar Haritası",
       "liveNews": "Piyasa Başlıkları",
-      "insights": "Yapay Zeka Piyasa İçgörüleri"
+      "insights": "Piyasa İçgörüleri"
     },
     "tech": {
       "map": "Küresel Teknoloji Haritası",
@@ -5134,12 +5139,12 @@
     "commodity": {
       "map": "Emtia Haritası",
       "liveNews": "Emtia Başlıkları",
-      "insights": "Yapay Zeka Emtia İçgörüleri"
+      "insights": "Emtia İçgörüleri"
     },
     "energy": {
       "map": "Enerji Atlas Haritası",
       "liveNews": "Enerji Başlıkları",
-      "insights": "Yapay Zeka Enerji İçgörüleri"
+      "insights": "Enerji İçgörüleri"
     },
     "happy": {
       "map": "İyi Haberler Haritası"
@@ -5149,9 +5154,9 @@
     "title": "Uygulamayı yükle",
     "share": "Safari'de Paylaş'a (yukarı oklu kare) dokunun. Önce Daha Fazla menüsünü açmanız gerekebilir.",
     "add": "Ana Ekrana Ekle'yi seçin.",
-    "confirm": "Ekle'ye dokunun, ardından World Monitor'ı ana ekranınızdan açın.",
+    "confirm": "Ekle'ye dokunun, ardından Money Bansho'ı ana ekranınızdan açın.",
     "close": "Kapat",
-    "alertsHint": "Bu iPhone veya iPad'de uyarı almak için World Monitor'ı ana ekranınıza yükleyin.",
+    "alertsHint": "Bu iPhone veya iPad'de uyarı almak için Money Bansho'ı ana ekranınıza yükleyin.",
     "how": "Nasıl yüklenir"
   },
   "teamDashboards": {
@@ -5402,7 +5407,7 @@
       "placeholder": "Yer veya 25.11, 55.14",
       "submit": "Ara",
       "locate": "Konumum",
-      "hint": "Yazılan koordinatlar ve konumunuz asla WorldMonitor'a gönderilmez. Yazılan yer adları WorldMonitor ve OpenStreetMap Nominatim'e gönderilir.",
+      "hint": "Yazılan koordinatlar ve konumunuz asla Money Bansho'a gönderilmez. Yazılan yer adları Money Bansho ve OpenStreetMap Nominatim'e gönderilir.",
       "results": "Yerler",
       "searching": "Aranıyor…",
       "tooShort": "En az iki karakter girin veya 25.11, 55.14 gibi koordinatlar girin.",
@@ -5596,7 +5601,7 @@
     "privacy": {
       "line": "Noktanız yalnızca görüntü arşivlerine gider.",
       "more": "Ayrıntılar",
-      "body": "Geçişler bu cihazda hesaplanır. Görüntüleri bulmak için tarayıcınız noktayı doğrudan Earth Search, Planetary Computer, NASA GIBS ve EUMETSAT'a gönderir; WorldMonitor bunu almaz. İzlenen bir alanda, WorldMonitor'dan o alanın günlük kaydı noktanızla değil alanın kimliğiyle istenir. Yazılan bir yer adı, bulunması için WorldMonitor ve OpenStreetMap Nominatim'e gider. Paylaşılan bağlantılar iki ondalık basamak içerir (0,01°)."
+      "body": "Geçişler bu cihazda hesaplanır. Görüntüleri bulmak için tarayıcınız noktayı doğrudan Earth Search, Planetary Computer, NASA GIBS ve EUMETSAT'a gönderir; Money Bansho bunu almaz. İzlenen bir alanda, Money Bansho'dan o alanın günlük kaydı noktanızla değil alanın kimliğiyle istenir. Yazılan bir yer adı, bulunması için Money Bansho ve OpenStreetMap Nominatim'e gider. Paylaşılan bağlantılar iki ondalık basamak içerir (0,01°)."
     },
     "sources": {
       "heading": "Kaynaklar ({{count}})",
@@ -5716,7 +5721,7 @@
       "map": "Sağlayıcı, tema ve küre",
       "ai": "Modeller, bellek ve çerçeveler",
       "video": "Kalite ve otomatik oynatma",
-      "apiKeys": "World Monitor API anahtarları",
+      "apiKeys": "Money Bansho API anahtarları",
       "embeds": "Kendi siteniz için widget'lar",
       "aiAgents": "Bağlı MCP istemcileri",
       "about": "Site bağlantıları, şartlar ve gizlilik"
@@ -5732,7 +5737,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Premium erişimi",
-        "desc": "Bu erişim WorldMonitor hesabınız üzerinden faturalandırılmaz. Burada ödeme yöntemi veya fatura bulunmamaktadır."
+        "desc": "Bu erişim Money Bansho hesabınız üzerinden faturalandırılmaz. Burada ödeme yöntemi veya fatura bulunmamaktadır."
       },
       "checking": {
         "heading": "Plan kontrol ediliyor…",
@@ -5753,7 +5758,7 @@
         "desc": "Geçerli planınız doğrulanamadı. Yeniden deneyin veya planları yeni bir sekmede görüntüleyin."
       },
       "free": {
-        "heading": "WorldMonitor Ücretsiz",
+        "heading": "Money Bansho Ücretsiz",
         "desc": "Geçerli planınız Ücretsiz'dir. Tüm paneller, AI analizi ve öncelikli veri yenilemesi için yükseltin."
       },
       "portal": {
@@ -5762,7 +5767,7 @@
       },
       "deletion": {
         "heading": "Hesabı sil",
-        "desc": "Bu World Monitor hesabını kalıcı olarak silin. Abonelikler hemen iptal edilir ve kalan ön ödemeli süre için iade yapılmaz. API anahtarları, gömme anahtarları ve MCP belirteçleri çalışmayı durdurur. Muhasebe, anlaşmazlıklar ve yasal talepler için gereken fatura kayıtları, içerdikleri müşteri iletişim bilgileriyle birlikte saklanır; bu kayıtlar artık giriş hesabınızı belirtmez, ancak silme işleminden önce yazılan ödeme sağlayıcısı webhook günlükleri teslim edildikleri tanımlayıcıları korur. Pano tercihleri ve masaüstü uygulamasının bu cihazdaki anahtar zincirinde saklanan gizli bilgileri uzaktan silinmez.",
+        "desc": "Bu Money Bansho hesabını kalıcı olarak silin. Abonelikler hemen iptal edilir ve kalan ön ödemeli süre için iade yapılmaz. API anahtarları, gömme anahtarları ve MCP belirteçleri çalışmayı durdurur. Muhasebe, anlaşmazlıklar ve yasal talepler için gereken fatura kayıtları, içerdikleri müşteri iletişim bilgileriyle birlikte saklanır; bu kayıtlar artık giriş hesabınızı belirtmez, ancak silme işleminden önce yazılan ödeme sağlayıcısı webhook günlükleri teslim edildikleri tanımlayıcıları korur. Pano tercihleri ve masaüstü uygulamasının bu cihazdaki anahtar zincirinde saklanan gizli bilgileri uzaktan silinmez.",
         "dialogTitle": "Bu hesap silinsin mi?",
         "dialogCopy": "Bu geri alınamaz. Abonelikler iptal olur, anahtarlar hemen çalışmayı durdurur ve fatura kayıtları muhasebe, anlaşmazlık ve yasal taleplere yönelik olarak tutulur — taşıdıkları iletişim bilgileri de dahil. Diğer cihazlarda oturumu kapatın ve sonrasında bu cihazın site verilerini temizleyin — bunlar sunucu erişiminin dışındadır.",
         "phraseLabel": "Onaylamak için {{phrase}} yazın",

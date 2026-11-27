@@ -1215,7 +1215,7 @@ export class UnifiedSettings {
         <li>
           <button type="button" class="us-row" data-settings-nav="${row.id}" id="us-nav-${row.id}">
             <span class="us-row-text">
-              <span class="us-row-title">${title}${row.badge ? ' <span class="panel-pro-badge">PRO</span>' : ''}</span>
+              <span class="us-row-title">${title}</span>
               ${row.descKey ? `<span class="us-row-desc">${escapeHtml(t(row.descKey))}</span>` : ''}
             </span>
             ${row.summary ? `<span class="us-row-value" data-settings-summary>${summary}</span>` : ''}
@@ -1833,7 +1833,6 @@ export class UnifiedSettings {
           <div class="upgrade-pro-title">${escapeHtml(t('settings.account.unavailable.heading'))}</div>
           <div class="upgrade-pro-desc">${escapeHtml(t('settings.account.unavailable.desc'))}</div>
           <button class="manage-billing-btn retry-plan-status-btn" style="margin-bottom:8px;">${escapeHtml(t('components.checkoutFailureBanner.retry'))}</button>
-          <a class="upgrade-pro-cta-link" href="${WEB_APP_ORIGIN}/pro" target="_blank" rel="noopener">${escapeHtml(t('modals.settingsWindow.worldMonitor.register.submitBtn'))} →</a>
         </div>
       `;
     }
@@ -1842,7 +1841,6 @@ export class UnifiedSettings {
       <div class="upgrade-pro-section" data-billing-state="free">
         <div class="upgrade-pro-title">${escapeHtml(t('settings.account.free.heading'))}</div>
         <div class="upgrade-pro-desc">${escapeHtml(t('settings.account.free.desc'))}</div>
-        <button class="upgrade-pro-cta">${escapeHtml(t('premium.upgradeToPro'))}</button>
       </div>
     `;
   }
@@ -2128,7 +2126,6 @@ export class UnifiedSettings {
         <div class="panel-settings-item${supportsPanelFontScale ? ' has-font-scale' : ''}">
           <button type="button" class="panel-toggle-item ${on ? 'active' : ''}${changed ? ' changed' : ''}${locked ? ' pro-locked' : ''}" data-panel="${escapeHtml(key)}" ${a11yState.ariaPressed === null ? '' : `aria-pressed="${a11yState.ariaPressed}"`} ${a11yState.ariaLabel === null ? '' : `aria-label="${escapeHtml(a11yState.ariaLabel)}"`} ${locked ? 'data-pro-locked="1"' : ''}>
             <span class="panel-toggle-label">${escapeHtml(displayName)}</span>
-            ${(locked || resolvedPanel.premium) ? '<span class="panel-toggle-pro-badge" aria-hidden="true">PRO</span>' : ''}
             <span class="panel-toggle-switch" aria-hidden="true"></span>
           </button>
           ${supportsPanelFontScale ? `<label class="panel-font-scale-control">
@@ -2873,7 +2870,7 @@ export class UnifiedSettings {
         <div class="panel-locked-state settings-access-gate">
           <div class="panel-locked-icon" aria-hidden="true">${lockIcon}</div>
           <h3>API and desktop keys</h3>
-          <p class="panel-locked-desc">Connect your own tools to World Monitor data, or activate Pro in the desktop app.</p>
+          <p class="panel-locked-desc">Connect your own tools to Money Bansho data, or activate Pro in the desktop app.</p>
           <p class="panel-locked-desc">Sign in to see the keys available with your plan.</p>
           <button class="panel-locked-cta api-keys-gate-btn" data-dashboard-interaction="signin">Sign In</button>
         </div>`;
@@ -2889,10 +2886,7 @@ export class UnifiedSettings {
           <div class="panel-locked-icon" aria-hidden="true">${upgradeIcon}</div>
           <h3>Choose the access you need</h3>
           <div class="panel-locked-desc">Desktop keys come with Pro. Use one to get your Pro data in your own desktop app.</div>
-          <button class="panel-locked-cta upgrade-pro-cta" data-dashboard-interaction="upgrade">Upgrade to Pro</button>
           <div class="panel-locked-desc">Need the REST API, SDKs or webhooks for your organization's internal tools? API Starter adds them to the full Pro dashboard. Customer-facing products need API Business.</div>
-          ${checkoutConsentHtml(WEB_APP_ORIGIN)}
-          <button class="panel-locked-cta api-keys-gate-btn" data-dashboard-interaction="upgrade">Upgrade to API Starter</button>
         </div>`;
     }
 
@@ -3143,14 +3137,14 @@ export class UnifiedSettings {
       return `
         <div class="panel-locked-state">
           <div class="panel-locked-icon">${upgradeIcon}</div>
-          <div class="panel-locked-desc">Put World Monitor panels on your own site with a scoped embed key.</div>
+          <div class="panel-locked-desc">Put Money Bansho panels on your own site with a scoped embed key.</div>
         </div>`;
     }
 
     return `
       <div class="embed-keys-section">
         <div class="embed-keys-header">
-          <p class="embed-keys-desc">Embed keys authorise World Monitor panels on your site and nothing else, and each one is shown once at creation. Paste it into the <code>data-key</code> attribute of the <a class="embed-keys-docs-link" ${LEGAL_LINK_ATTR} href="${escapeHtml(`${WEB_APP_ORIGIN}/docs/embed-live-map`)}" target="_blank" rel="noopener noreferrer">embed loader</a>.</p>
+          <p class="embed-keys-desc">Embed keys authorise Money Bansho panels on your site and nothing else, and each one is shown once at creation. Paste it into the <code>data-key</code> attribute of the <a class="embed-keys-docs-link" ${LEGAL_LINK_ATTR} href="${escapeHtml(`${WEB_APP_ORIGIN}/docs/embed-live-map`)}" target="_blank" rel="noopener noreferrer">embed loader</a>.</p>
         </div>
         <div class="embed-keys-note">
           <strong>These are meant to be public.</strong> An embed key sits in your page's HTML where anyone can read it — that is the point, and it is why it exists as its own credential. Never put an API key (<code>wm_…</code>) there instead: that one carries your whole REST allowance. New reads with a revoked key are denied within about a minute. Already rendered paid-only panels remain visible until reload. A live map already showing its paid tier holds a session grant for up to 30 more minutes, then drops to the free tier.
@@ -3356,16 +3350,15 @@ export class UnifiedSettings {
         <p class="mcp-agents-plan-note">
           ${signedIn
             ? 'Your free account includes source listings and a few cached datasets: up to 5 calls a day, in up to 3 sessions.'
-            : 'Your agent asks you to sign in with your World Monitor account. A free account includes a few cached datasets: up to 5 calls a day, in up to 3 sessions.'}
+            : 'Your agent asks you to sign in with your Money Bansho account. A free account includes a few cached datasets: up to 5 calls a day, in up to 3 sessions.'}
           Pro unlocks every tool.
-          <a ${LEGAL_LINK_ATTR} href="${escapeHtml(`${WEB_APP_ORIGIN}/pro`)}" target="_blank" rel="noopener noreferrer">Compare plans</a>
         </p>`;
 
     return `
       <div class="mcp-clients-section">
         <div class="mcp-clients-header">
-          <h3 class="mcp-agents-title">Connect World Monitor to your AI agent</h3>
-          <p class="mcp-clients-desc">Pick your assistant and sign in with your World Monitor account. No API key to copy. Each agent gets its own credential you can revoke any time.</p>
+          <h3 class="mcp-agents-title">Connect Money Bansho to your AI agent</h3>
+          <p class="mcp-clients-desc">Pick your assistant and sign in with your Money Bansho account. No API key to copy. Each agent gets its own credential you can revoke any time.</p>
         </div>
         <div class="mcp-agents-url">
           <span class="mcp-agents-url-label">Server URL</span>

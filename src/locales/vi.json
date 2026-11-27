@@ -421,8 +421,8 @@
     "map": "Tình hình Toàn cầu",
     "techHubs": "Trung tâm Công nghệ Nổi bật",
     "status": "Trạng thái Hệ thống",
-    "insights": "Phân tích AI",
-    "strategicPosture": "Thế trận Chiến lược AI",
+    "insights": "Phân tích",
+    "strategicPosture": "Thế trận Chiến lược",
     "cii": "Bất ổn Quốc gia",
     "strategicRisk": "Tổng quan Rủi ro Chiến lược",
     "intel": "Nguồn Tình báo",
@@ -491,7 +491,7 @@
     "gulfCurrencies": "Tiền tệ vùng Vịnh",
     "gulfOil": "Dầu vùng Vịnh",
     "bigmac": "Chỉ số Big Mac thực",
-    "marketImplications": "Ảnh hưởng thị trường AI",
+    "marketImplications": "Ảnh hưởng thị trường",
     "energyComplex": "Phức hợp Năng lượng",
     "oilInventories": "Tồn kho Dầu",
     "energyCrisis": "Theo dõi Khủng hoảng Năng lượng",
@@ -518,7 +518,7 @@
     "fuelPricesDiesel": "Dầu diesel",
     "fuelPricesSource": "Nguồn",
     "groceryBasketDesc": "So sánh giá rau quả trên 24 quốc gia trên thế giới",
-    "airlineIntel": "✈️ Thông tin Hàng không",
+    "airlineIntel": "Thông tin Hàng không",
     "consumerPrices": "Giá tiêu dùng",
     "fearGreed": "Sợ hãi & Tham lam",
     "marketBreadth": "Độ rộng Thị trường",
@@ -526,7 +526,12 @@
     "fx": "Tỷ giá ngoại hối",
     "ukmtoIncidents": "Sự cố UKMTO",
     "reservoirLevels": "Mực nước chiến lược",
-    "gridDisruptionClock": "Đồng hồ theo dõi mất điện tại các bang Hoa Kỳ"
+    "gridDisruptionClock": "Đồng hồ theo dõi mất điện tại các bang Hoa Kỳ",
+    "chinaMedia": "Truyền thông Trung Quốc",
+    "europeBusiness": "Kinh doanh châu Âu",
+    "israel": "Quốc gia Israel",
+    "northKorea": "Theo dõi Triều Tiên",
+    "corporateLeadership": "Tin lãnh đạo doanh nghiệp"
   },
   "commands": {
     "prefixes": {
@@ -749,7 +754,7 @@
         "configured": "Đã cấu hình cài đặt desktop",
         "needsKeys": "Cấu hình khóa API để mở khóa tính năng",
         "some": "Một số tính năng cần khóa API",
-        "pro": "World Monitor Pro đang hoạt động"
+        "pro": "Money Bansho Pro đang hoạt động"
       },
       "summary": {
         "desktop": "Chế độ desktop",
@@ -779,9 +784,9 @@
         "OLLAMA_API_URL": "Ví dụ: http://127.0.0.1:11434 (Ollama) hoặc http://127.0.0.1:1234/v1 (LM Studio) — endpoint tương thích OpenAI.",
         "OLLAMA_MODEL": "Ví dụ: llama3.1:8b — thẻ mô hình dùng để tóm tắt."
       },
-      "proCloud": "Các tính năng không có khóa API cục bộ sử dụng dữ liệu đám mây World Monitor.",
-      "skipSetupPro": "Bỏ qua thiết lập: đăng nhập bằng World Monitor Pro để sử dụng dữ liệu đám mây thay vì khóa API của riêng bạn.",
-      "getPro": "Nhận World Monitor Pro"
+      "proCloud": "Các tính năng không có khóa API cục bộ sử dụng dữ liệu đám mây Money Bansho.",
+      "skipSetupPro": "Bỏ qua thiết lập: đăng nhập bằng Money Bansho Pro để sử dụng dữ liệu đám mây thay vì khóa API của riêng bạn.",
+      "getPro": "Nhận Money Bansho Pro"
     },
     "settingsWindow": {
       "validating": "Đang xác thực khóa API...",
@@ -819,7 +824,7 @@
         "status": "Trạng thái",
         "duration": "Thời lượng"
       },
-      "shellTitle": "Cài đặt World Monitor",
+      "shellTitle": "Cài đặt Money Bansho",
       "shellSearchPlaceholder": "Tìm kiếm cài đặt...",
       "shellCancel": "Hủy",
       "shellSaveClose": "Lưu & Đóng",
@@ -1135,7 +1140,7 @@
       "storageUnavailable": "Phát lại không khả dụng vì trình duyệt này đang chặn lưu trữ trang web. Cho phép dữ liệu trang web cho trang này để bắt đầu lưu ảnh chụp nhanh."
     },
     "pizzint": {
-      "indexSource": "Chỉ số: World Monitor",
+      "indexSource": "Chỉ số: Money Bansho",
       "venueSource": "dữ liệu địa điểm:",
       "statusNormal": "BÌNH THƯỜNG",
       "statusNoData": "KHÔNG CÓ DỮ LIỆU",
@@ -1145,7 +1150,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "Cập nhật {{timeAgo}}",
       "tensionsTitle": "Căng thẳng Địa chính trị",
-      "tensionsSource": "Căng thẳng: World Monitor tính từ các sự kiện GDELT",
+      "tensionsSource": "Căng thẳng: Money Bansho tính từ các sự kiện GDELT",
       "insufficientData": "Không đủ dữ liệu",
       "evidenceStrikes": "Các cuộc tấn công được báo cáo trong 3 ngày ({{countries}}): {{value}}",
       "evidenceAirports": "Sân bay bị gián đoạn: {{value}}",
@@ -1861,7 +1866,7 @@
       "staleReport": "Báo cáo đã cũ",
       "reported": "Số lượng",
       "period": "Kỳ",
-      "movementNote": "Mỗi hàng giữ nguyên nguồn, ngày báo cáo và chỉ số. Số dân tại một thời điểm, số người đến và số sự kiện kiểm soát biên giới là các chỉ số khác nhau. Các nguồn có thể trùng lặp; không cộng số liệu của chúng. WorldMonitor tạo chế độ xem này từ các nguồn được liên kết; điều này không hàm ý sự chứng thực của nhà cung cấp.",
+      "movementNote": "Mỗi hàng giữ nguyên nguồn, ngày báo cáo và chỉ số. Số dân tại một thời điểm, số người đến và số sự kiện kiểm soát biên giới là các chỉ số khác nhau. Các nguồn có thể trùng lặp; không cộng số liệu của chúng. Money Bansho tạo chế độ xem này từ các nguồn được liên kết; điều này không hàm ý sự chứng thực của nhà cung cấp.",
       "recent": "Gần đây",
       "last30Days": "30 ngày qua",
       "newThisWeek": "Mới trong tuần này",
@@ -2265,7 +2270,7 @@
       "tripDays": "Ngày chuyến đi"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>Nhà phân tích WM</strong> Nhà phân tích AI với bối cảnh trực tiếp trên các lĩnh vực địa chính trị, thị trường, quân sự và kinh tế. Được hỗ trợ bởi Claude với dữ liệu thời gian thực từ các nguồn cấp WorldMonitor đang hoạt động."
+      "infoTooltip": "<strong>Nhà phân tích WM</strong> Nhà phân tích AI với bối cảnh trực tiếp trên các lĩnh vực địa chính trị, thị trường, quân sự và kinh tế. Được hỗ trợ bởi Claude với dữ liệu thời gian thực từ các nguồn cấp Money Bansho đang hoạt động."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures positioning</strong> Vị thế ròng hàng tuần cho các nhà giao dịch thương mại, nhà đầu cơ lớn và nhà đầu cơ nhỏ trên các hợp đồng tương lai hàng hóa và tài chính. Nguồn là báo cáo Commitments of Traders từ Ủy ban Thương mại Hợp đồng Tương lai, được công bố vào các ngày thứ Sáu."
@@ -2323,7 +2328,7 @@
       "infoTooltip": "<strong>Economic Calendar</strong> Phát hành kinh tế vĩ mô được lên lịch: chỉ số giá tiêu dùng, tính bảng lương ngoài nông nghiệp, tổng sản phẩm quốc nội, chỉ số quản lý mua hàng và quyết định ngân hàng trung ương. Hiển thị dự báo so với thực tế so với trước. Các sự kiện tác động cao được làm nổi bật. Nguồn: nhà cung cấp dữ liệu kinh tế."
     },
     "fsi": {
-      "infoTooltip": "<strong>Financial Stress Indicator</strong> Tỷ lệ World Monitor của tín dụng cao lợi nhuận so với Kho bạc dài hạn, được điều chỉnh theo biến động vốn chủ sở hữu và mức chênh lệch cao lợi nhuận: (HYG / TLT) / (VIX × Mức chênh lệch cao lợi nhuận / 100). Đây không phải là Chỉ số Căng thẳng Tài chính của Cục Dự trữ Kansas City. Giá trị 1,5 hoặc cao hơn là căng thẳng thấp; dưới 0,3 là căng thẳng cao.",
+      "infoTooltip": "<strong>Financial Stress Indicator</strong> Tỷ lệ Money Bansho của tín dụng cao lợi nhuận so với Kho bạc dài hạn, được điều chỉnh theo biến động vốn chủ sở hữu và mức chênh lệch cao lợi nhuận: (HYG / TLT) / (VIX × Mức chênh lệch cao lợi nhuận / 100). Đây không phải là Chỉ số Căng thẳng Tài chính của Cục Dự trữ Kansas City. Giá trị 1,5 hoặc cao hơn là căng thẳng thấp; dưới 0,3 là căng thẳng cao.",
       "title": "Chỉ Số Áp Lực Tài Chính",
       "usFsiValue": "Giá trị Chỉ số Căng thẳng Tài chính của Mỹ",
       "asOf": "Tính đến {{date}}",
@@ -2411,7 +2416,7 @@
       "infoTooltip": "<strong>Macro indicators</strong> Chỉ báo giá, hoạt động, chính sách và tiền tệ của Mỹ, khu vực euro và Trung Quốc. Trung Quốc yêu cầu tính bao quát hiện tại. Mỗi tile hiển thị nguồn và ngày quan sát của nó."
     },
     "monitors": {
-      "infoTooltip": "<strong>Giám sát từ khóa</strong> Thêm bất kỳ thuật ngữ nào để theo dõi đề cập tin tức thời gian thực từ tất cả nguồn WorldMonitor. Kết quả cập nhật theo thời gian thực khi các bài viết phù hợp được thu thập."
+      "infoTooltip": "<strong>Giám sát từ khóa</strong> Thêm bất kỳ thuật ngữ nào để theo dõi đề cập tin tức thời gian thực từ tất cả nguồn Money Bansho. Kết quả cập nhật theo thời gian thực khi các bài viết phù hợp được thu thập."
     },
     "renewable": {
       "infoTooltip": "<strong>Renewable Energy</strong> Tỷ lệ sinh điện từ năng lượng tái tạo theo khu vực và năm, cộng với công suất lắp đặt của Mỹ cho năng lượng mặt trời, gió và than (MW). Nguồn: World Bank (EG.ELC.RNEW.ZS) và Cơ quan Thông tin Năng lượng Mỹ."
@@ -2477,7 +2482,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>Hàm ý thị trường AI</strong> Tín hiệu giao dịch được tạo bởi LLM từ tình trạng địa chính trị, hàng hóa và vĩ mô trực tiếp sau mỗi chu kỳ dự báo.<ul><li><strong>Hướng</strong>: LONG / SHORT / HEDGE</li><li><strong>Khung thời gian</strong>: Horizon 1W, 2W, 1M, hoặc 3M</li><li><strong>Yếu tố thúc đẩy</strong>: Xúc tác chính đằng sau tín hiệu</li><li><strong>Rủi ro</strong>: Cảnh báo hoặc điều kiện làm mất hiệu lực</li></ul><em>Chỉ cho mục đích thông tin. Không phải lời khuyên đầu tư.</em>",
-      "title": "Ý Nghĩa Thị Trường AI",
+      "title": "Ý Nghĩa Thị Trường",
       "directions": {
         "long": "MUA",
         "short": "BÁN KHỐNG",
@@ -2736,7 +2741,7 @@
           }
         },
         "about": {
-          "heading": "Một điều cuối cùng: bạn sẽ dùng World Monitor để làm gì?",
+          "heading": "Một điều cuối cùng: bạn sẽ dùng Money Bansho để làm gì?",
           "body": "Ba câu trả lời nhanh giúp chúng tôi xây dựng những công cụ phù hợp cho bạn. Bỏ qua những câu nào bạn muốn.",
           "confirmCta": "Lưu câu trả lời của tôi",
           "confirming": "Đang lưu…",
@@ -3143,7 +3148,7 @@
       "global": "Chỉ số tháng toàn cầu của FAO"
     },
     "aboutYou": {
-      "title": "Giúp chúng tôi xây dựng World Monitor phù hợp với bạn",
+      "title": "Giúp chúng tôi xây dựng Money Bansho phù hợp với bạn",
       "ariaLabel": "Về bạn",
       "progress": "{{current}} trên {{total}}",
       "skip": "Bỏ qua",
@@ -3155,7 +3160,7 @@
       "thanks": "Cảm ơn. Điều này giúp chúng tôi quyết định tiếp theo sẽ xây dựng gì.",
       "questions": {
         "primaryUse": {
-          "label": "Bạn chủ yếu sử dụng World Monitor để làm gì?",
+          "label": "Bạn chủ yếu sử dụng Money Bansho để làm gì?",
           "options": {
             "news": "Tin tức và sự kiện thế giới",
             "markets": "Thị trường và giao dịch",
@@ -3197,13 +3202,13 @@
           }
         },
         "alternative": {
-          "label": "Bạn sẽ sử dụng gì nếu World Monitor không tồn tại?",
+          "label": "Bạn sẽ sử dụng gì nếu Money Bansho không tồn tại?",
           "placeholder": "Tùy chọn"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Bạn có thích World Monitor?",
+      "title": "Bạn có thích Money Bansho?",
       "body": "Một sao trên GitHub giúp những người khác tìm thấy nó.",
       "star": "Sao trên GitHub",
       "dismiss": "Bỏ qua và không hỏi lại"
@@ -3473,7 +3478,7 @@
         "copied": "Đã sao chép.",
         "copyFailed": "Sao chép không thành công. Chọn văn bản để sao chép nó."
       },
-      "firstSeenNote": "Đây là ngày chỉ báo sớm nhất có sẵn trên các feed hoặc quan sát World Monitor; nó có thể khác với ngày của nguồn được liệt kê."
+      "firstSeenNote": "Đây là ngày chỉ báo sớm nhất có sẵn trên các feed hoặc quan sát Money Bansho; nó có thể khác với ngày của nguồn được liệt kê."
     },
     "nuclear": {
       "types": {
@@ -4594,10 +4599,10 @@
     "imageryEvidenceHere": "Bằng chứng ảnh vệ tinh tại đây"
   },
   "shell": {
-    "documentTitle": "World Monitor — Bảng điều khiển tình báo toàn cầu theo thời gian thực",
-    "metaDescription": "Nền tảng tình báo toàn cầu thời gian thực. Được đăng trên WIRED. Được sử dụng bởi hơn 2 triệu người trên 190 quốc gia. Xung đột, thị trường, quân sự, tình báo nguồn mở trong một giao diện.",
+    "documentTitle": "Money Bansho — Bảng điều khiển tình báo toàn cầu theo thời gian thực",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Bạn Đang Ngoài Kết Nối",
-    "offlineMessage": "World Monitor cần kết nối internet để cập nhật dữ liệu tình báo real-time.",
+    "offlineMessage": "Money Bansho cần kết nối internet để cập nhật dữ liệu tình báo real-time.",
     "offlineRetry": "Thử Lại"
   },
   "widgets": {
@@ -4635,12 +4640,12 @@
     "phaseError": "Lỗi",
     "previewCheckingHeading": "Kết nối trình tạo tiện ích",
     "previewReadyHeading": "Mô tả tiện ích bạn muốn",
-    "previewFetchingHeading": "Đang tìm nạp dữ liệu WorldMonitor trực tiếp",
+    "previewFetchingHeading": "Đang tìm nạp dữ liệu Money Bansho trực tiếp",
     "previewComposingHeading": "Đang soạn bố cục tiện ích",
     "previewErrorHeading": "Bản xem trước cần chú ý",
     "previewCheckingCopy": "Chúng tôi đang xác thực khóa tiện ích của bạn và tính khả dụng của backend trước khi kích hoạt tạo.",
     "previewReadyCopy": "Sử dụng ví dụ nhắc nhở hoặc mô tả chính xác giao diện trực tiếp mà bạn muốn. Bản xem trước sẽ cập nhật tại đây trước khi bạn lưu.",
-    "previewFetchingCopy": "Đại lý đang gọi các endpoint WorldMonitor được phê duyệt và định hình tập dữ liệu cho tiện ích.",
+    "previewFetchingCopy": "Đại lý đang gọi các endpoint Money Bansho được phê duyệt và định hình tập dữ liệu cho tiện ích.",
     "previewComposingCopy": "Bản xem trước đang hiển thị với dữ liệu trực tiếp mới nhất và kiểu bảng điều khiển.",
     "previewErrorCopy": "Khắc phục sự cố, sau đó thử lại. Các tiện ích hiện tại của bạn không bị ảnh hưởng.",
     "createInteractive": "Tạo tiện ích tương tác",
@@ -4669,7 +4674,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "Yêu cầu khóa giấy phép World Monitor",
+    "lockedDesc": "Yêu cầu khóa giấy phép Money Bansho",
     "signInToUnlock": "Đăng nhập để mở khóa các tính năng cao cấp",
     "signIn": "Đăng nhập để mở khóa",
     "upgradeDesc": "Nâng cấp lên Pro để có quyền truy cập đầy đủ vào phân tích cao cấp",
@@ -4808,7 +4813,7 @@
       "hotspots": {
         "category": "Tin tức / Điểm nóng",
         "purpose": "Nêu các điểm nóng địa chính trị đang được theo dõi, và nâng mức của chúng khi tin liên quan cùng tín hiệu leo thang hội tụ.",
-        "source": "Sổ điểm nóng của WorldMonitor, tin tình báo RSS/GDELT, điểm leo thang của điểm nóng, hoạt động quân sự, và bối cảnh bất ổn quốc gia.",
+        "source": "Sổ điểm nóng của Money Bansho, tin tình báo RSS/GDELT, điểm leo thang của điểm nóng, hoạt động quân sự, và bối cảnh bất ổn quốc gia.",
         "freshness": "Vị trí điểm nóng được tuyển chọn và đứng yên. Độ mới của nguồn tin được theo dõi riêng. Mức điểm nóng được tính lại khi nguồn tin trên bảng điều khiển làm mới, cách nhau khoảng 10 phút. Hạn thời gian của bản nạp và bộ nhớ đệm cho tình báo GDELT dài hơn.",
         "confidence": "Dùng được như một tín hiệu để xếp ưu tiên. Nếu chưa mở tin gốc và bối cảnh quốc gia, đây không phải kết luận đủ để trích dẫn.",
         "limitations": {
@@ -4855,7 +4860,7 @@
       "conflicts": {
         "category": "Xung đột",
         "purpose": "Hiển thị vùng xung đột đã tuyển và lớp phủ ranh giới địa chính trị, để đặt tín hiệu trực tiếp vào các chiến trường đã biết.",
-        "source": "Sổ vùng xung đột của WorldMonitor, bối cảnh xung đột UCDP/ACLED, và siêu dữ liệu ranh giới đã được ghi nhận, chẳng hạn DMZ Triều Tiên.",
+        "source": "Sổ vùng xung đột của Money Bansho, bối cảnh xung đột UCDP/ACLED, và siêu dữ liệu ranh giới đã được ghi nhận, chẳng hạn DMZ Triều Tiên.",
         "freshness": "Vùng nền được tuyển chọn và đứng yên. Dữ liệu sự kiện xung đột động được theo dõi riêng qua nguồn ACLED/UCDP và tín hiệu tình trạng.",
         "confidence": "Phù hợp để định hướng địa lý. Bản thân lớp này không xác nhận một sự cố đang xảy ra theo thời gian thực.",
         "limitations": {
@@ -4888,7 +4893,7 @@
       "ais": {
         "category": "Hàng hải",
         "purpose": "Hiển thị mật độ tàu và tín hiệu gián đoạn AIS quanh vùng nước chiến lược và điểm nghẽn.",
-        "source": "Bản chụp chuyển tiếp của AISStream, dịch vụ hàng hải của WorldMonitor, và bộ phân loại gián đoạn điểm nghẽn.",
+        "source": "Bản chụp chuyển tiếp của AISStream, dịch vụ hàng hải của Money Bansho, và bộ phân loại gián đoạn điểm nghẽn.",
         "freshness": "Bản chụp chuyển tiếp AIS được dựng lại mỗi 5 giây theo mặc định. Máy chủ có thể giữ bản chụp mật độ nền trong bộ nhớ đệm 5 phút. Lớp bị tắt hoặc lỗi thời khi thiếu thông tin xác thực hoặc kết nối của đường chuyển tiếp.",
         "confidence": "Dùng được để sàng lọc bất thường hàng hải. AIS do tàu tự khai, và tàu có thể tắt tín hiệu.",
         "limitations": {
@@ -4905,7 +4910,7 @@
       "tradeRoutes": {
         "category": "Hàng hải",
         "purpose": "Vẽ các tuyến côngtenơ, năng lượng và hàng rời chính đi qua điểm nghẽn chiến lược, để suy ra đường mà gián đoạn sẽ đi.",
-        "source": "Sổ tuyến thương mại của WorldMonitor, cùng trạng thái điểm nghẽn chuỗi cung ứng và bản tóm tắt quá cảnh.",
+        "source": "Sổ tuyến thương mại của Money Bansho, cùng trạng thái điểm nghẽn chuỗi cung ứng và bản tóm tắt quá cảnh.",
         "freshness": "Hình học tuyến đứng yên. Trạng thái điểm nghẽn được gọi làm ấm mỗi 6 phút. Bản tóm tắt quá cảnh làm mới mỗi 10 phút qua bộ nhớ đệm chuỗi cung ứng và đường chuyển tiếp.",
         "confidence": "Phù hợp làm bối cảnh phơi nhiễm ở mức tuyến. Đây không phải nguồn định tuyến từng tàu.",
         "limitations": {
@@ -4959,7 +4964,7 @@
       "weather": {
         "category": "Thời tiết",
         "purpose": "Hiển thị cảnh báo thời tiết nguy hiểm chính thức còn hiệu lực từ các cơ quan khí tượng quốc gia, gộp vào một nguồn weather:alerts:v1.",
-        "source": "Cục Thời tiết Quốc gia Hoa Kỳ (NWS), Bộ Môi trường và Biến đổi Khí hậu Canada (ECCC), và phần gộp CAP của Trung tâm Thông tin Thời tiết Nguy hiểm của WMO (SWIC), được nạp qua đường chuyển tiếp của WorldMonitor.",
+        "source": "Cục Thời tiết Quốc gia Hoa Kỳ (NWS), Bộ Môi trường và Biến đổi Khí hậu Canada (ECCC), và phần gộp CAP của Trung tâm Thông tin Thời tiết Nguy hiểm của WMO (SWIC), được nạp qua đường chuyển tiếp của Money Bansho.",
         "freshness": "Cảnh báo của NWS, ECCC và SWIC được đường chuyển tiếp nạp mỗi 15 phút, và được giám sát theo hạn độ mới 45 phút.",
         "confidence": "Có thẩm quyền với cảnh báo do các cơ quan quốc gia tham gia ban hành, tùy thời điểm xuất bản ở thượng nguồn. NWS và ECCC được vẽ thành đa giác. Cảnh báo SWIC đã gán mã địa lý được vẽ tại trọng tâm quốc gia của cơ quan ban hành, kèm điểm đánh dấu độ chính xác rõ ràng.",
         "limitations": {
@@ -4976,7 +4981,7 @@
       "canadaRoads": {
         "category": "Giao thông",
         "purpose": "Hiển thị sự cố đường, cảnh báo, tình trạng mặt đường, phong tỏa, thi công và nguy hiểm chính thức tại các khu vực pháp lý Canada được hỗ trợ.",
-        "source": "Nguồn cấp tỉnh Ontario 511, Alberta 511 và Manitoba 511, Hạn chế đường bộ của Thành phố Toronto, và DriveBC Open511, được nạp qua WorldMonitor.",
+        "source": "Nguồn cấp tỉnh Ontario 511, Alberta 511 và Manitoba 511, Hạn chế đường bộ của Thành phố Toronto, và DriveBC Open511, được nạp qua Money Bansho.",
         "freshness": "Ontario, Alberta và Manitoba 511 được nạp mỗi 15 phút và được giám sát theo hạn độ mới 45 phút. Hạn chế của Toronto được nạp mỗi 2 giờ. DriveBC Open511 được nạp mỗi 30 phút.",
         "confidence": "Có thẩm quyền với cơ quan tỉnh và thành phố được hỗ trợ, tùy thời điểm xuất bản ở thượng nguồn và hình học đã đưa lên bản đồ.",
         "limitations": {
@@ -5041,7 +5046,7 @@
       "waterways": {
         "category": "Hàng hải",
         "purpose": "Đánh dấu đường thủy chiến lược và điểm nghẽn, để đọc tín hiệu gián đoạn trên nền địa lý hàng hải cố định.",
-        "source": "Sổ đường thủy chiến lược của WorldMonitor, với lớp phủ trạng thái điểm nghẽn chuỗi cung ứng từ AIS, cảnh báo NGA và các nguồn dẫn xuất từ PortWatch.",
+        "source": "Sổ đường thủy chiến lược của Money Bansho, với lớp phủ trạng thái điểm nghẽn chuỗi cung ứng từ AIS, cảnh báo NGA và các nguồn dẫn xuất từ PortWatch.",
         "freshness": "Vị trí đường thủy đứng yên. Trạng thái điểm nghẽn trực tiếp được gọi làm ấm mỗi 6 phút. Bản tóm tắt quá cảnh làm mới mỗi 10 phút khi đường chuyển tiếp và PortWatch đang bình thường.",
         "confidence": "Cao với địa lý cố định. Độ tin cậy của gián đoạn trực tiếp phụ thuộc các nguồn đi kèm là AIS, NGA và PortWatch.",
         "limitations": {
@@ -5058,7 +5063,7 @@
       "ciiChoropleth": {
         "category": "Rủi ro quốc gia",
         "purpose": "Tô màu quốc gia theo điểm hiện tại của Chỉ số Không ổn định Quốc gia, để phân loại sơ bộ rủi ro chiến lược.",
-        "source": "Dịch vụ chấm điểm Chỉ số Không ổn định Quốc gia của WorldMonitor, dùng tín hiệu xung đột, bất ổn dân sự, khuyến cáo, mạng, theo dõi tàu, hàng không, sự kiện tự nhiên và tin tức.",
+        "source": "Dịch vụ chấm điểm Chỉ số Không ổn định Quốc gia của Money Bansho, dùng tín hiệu xung đột, bất ổn dân sự, khuyến cáo, mạng, theo dõi tàu, hàng không, sự kiện tự nhiên và tin tức.",
         "freshness": "Bộ nhớ đệm điểm rủi ro được gọi làm ấm mỗi 8 phút. seed-meta và health.riskScores cho thấy trạng thái trực tiếp, lỗi thời, một phần hoặc xuống cấp, đối chiếu hạn độ mới 30 phút.",
         "confidence": "Đây là tín hiệu của mô hình tổng hợp, không phải xếp hạng quốc gia chính thức hay dự báo xác suất.",
         "limitations": {
@@ -5102,7 +5107,7 @@
     "finance": {
       "map": "Bản đồ Thị trường Toàn cầu",
       "liveNews": "Tin tức Thị trường",
-      "insights": "Thông tin Thị trường AI"
+      "insights": "Thông tin Thị trường"
     },
     "tech": {
       "map": "Bản đồ Công nghệ Toàn cầu",
@@ -5111,12 +5116,12 @@
     "commodity": {
       "map": "Bản đồ Hàng hóa",
       "liveNews": "Tin tức Hàng hóa",
-      "insights": "Thông tin Hàng hóa AI"
+      "insights": "Thông tin Hàng hóa"
     },
     "energy": {
       "map": "Bản đồ Năng lượng",
       "liveNews": "Tin tức Năng lượng",
-      "insights": "Thông tin Năng lượng AI"
+      "insights": "Thông tin Năng lượng"
     },
     "happy": {
       "map": "Bản đồ Tin tức Tích cực"
@@ -5126,9 +5131,9 @@
     "title": "Cài đặt ứng dụng",
     "share": "Trong Safari, chạm vào Chia sẻ (hình vuông có mũi tên hướng lên). Bạn có thể cần mở menu Thêm trước.",
     "add": "Chọn Thêm vào Màn hình chính.",
-    "confirm": "Chạm vào Thêm, rồi mở World Monitor từ Màn hình chính.",
+    "confirm": "Chạm vào Thêm, rồi mở Money Bansho từ Màn hình chính.",
     "close": "Đóng",
-    "alertsHint": "Cài đặt World Monitor vào Màn hình chính để nhận cảnh báo trên iPhone hoặc iPad này.",
+    "alertsHint": "Cài đặt Money Bansho vào Màn hình chính để nhận cảnh báo trên iPhone hoặc iPad này.",
     "how": "Cách cài đặt"
   },
   "teamDashboards": {
@@ -5373,7 +5378,7 @@
       "placeholder": "Địa điểm hoặc 25.11, 55.14",
       "submit": "Tìm",
       "locate": "Vị trí của tôi",
-      "hint": "Các tọa độ được nhập và vị trí của bạn không bao giờ được gửi đến WorldMonitor. Các tên địa điểm được nhập sẽ được gửi đến WorldMonitor và OpenStreetMap Nominatim.",
+      "hint": "Các tọa độ được nhập và vị trí của bạn không bao giờ được gửi đến Money Bansho. Các tên địa điểm được nhập sẽ được gửi đến Money Bansho và OpenStreetMap Nominatim.",
       "results": "Địa điểm",
       "searching": "Đang tìm…",
       "tooShort": "Nhập ít nhất hai ký tự hoặc tọa độ như 25.11, 55.14.",
@@ -5559,7 +5564,7 @@
     "privacy": {
       "line": "Điểm của bạn chỉ được gửi đến kho lưu trữ ảnh.",
       "more": "Chi tiết",
-      "body": "Các lượt bay qua được tính trên thiết bị này. Để tìm ảnh, trình duyệt của bạn gửi điểm trực tiếp đến Earth Search, Planetary Computer, NASA GIBS và EUMETSAT; WorldMonitor không nhận được điểm này. Tại một địa điểm được giám sát, WorldMonitor được yêu cầu bản ghi hằng ngày của địa điểm đó theo ID của địa điểm, không phải điểm của bạn. Tên địa điểm bạn nhập được gửi đến WorldMonitor và OpenStreetMap Nominatim để tìm kiếm. Liên kết chia sẻ giữ hai chữ số thập phân (0,01°)."
+      "body": "Các lượt bay qua được tính trên thiết bị này. Để tìm ảnh, trình duyệt của bạn gửi điểm trực tiếp đến Earth Search, Planetary Computer, NASA GIBS và EUMETSAT; Money Bansho không nhận được điểm này. Tại một địa điểm được giám sát, Money Bansho được yêu cầu bản ghi hằng ngày của địa điểm đó theo ID của địa điểm, không phải điểm của bạn. Tên địa điểm bạn nhập được gửi đến Money Bansho và OpenStreetMap Nominatim để tìm kiếm. Liên kết chia sẻ giữ hai chữ số thập phân (0,01°)."
     },
     "sources": {
       "heading": "Nguồn ({{count}})",
@@ -5679,7 +5684,7 @@
       "map": "Nhà cung cấp, chủ đề và quả cầu",
       "ai": "Mô hình, bộ nhớ và khung",
       "video": "Chất lượng và tự động phát",
-      "apiKeys": "Khóa cho API World Monitor",
+      "apiKeys": "Khóa cho API Money Bansho",
       "embeds": "Widget cho trang web của bạn",
       "aiAgents": "Máy khách MCP được kết nối",
       "about": "Liên kết trang web, điều khoản và quyền riêng tư"
@@ -5695,7 +5700,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Truy cập Premium",
-        "desc": "Truy cập này không được tính phí qua tài khoản WorldMonitor của bạn. Không có phương thức thanh toán hoặc hóa đơn nào có sẵn tại đây."
+        "desc": "Truy cập này không được tính phí qua tài khoản Money Bansho của bạn. Không có phương thức thanh toán hoặc hóa đơn nào có sẵn tại đây."
       },
       "checking": {
         "heading": "Đang kiểm tra gói của bạn…",
@@ -5716,7 +5721,7 @@
         "desc": "Chúng tôi không thể xác minh gói hiện tại của bạn. Thử lại hoặc xem các gói trong tab mới."
       },
       "free": {
-        "heading": "WorldMonitor Miễn phí",
+        "heading": "Money Bansho Miễn phí",
         "desc": "Gói hiện tại của bạn là Miễn phí. Nâng cấp để có tất cả các panel, phân tích AI và làm mới dữ liệu ưu tiên."
       },
       "portal": {
@@ -5725,7 +5730,7 @@
       },
       "deletion": {
         "heading": "Xóa tài khoản",
-        "desc": "Xóa vĩnh viễn tài khoản World Monitor này. Các gói đăng ký bị hủy ngay lập tức và không hoàn tiền cho thời gian còn lại đã trả trước. Khóa API, khóa nhúng và token MCP sẽ ngừng hoạt động. Hồ sơ thanh toán cần cho kế toán, tranh chấp và yêu cầu theo pháp luật được lưu giữ cùng thông tin liên hệ khách hàng có trong đó; các hồ sơ này không còn gắn với tài khoản đăng nhập của bạn, tuy nhiên nhật ký webhook của nhà cung cấp thanh toán được ghi trước khi xóa vẫn giữ các mã định danh đi kèm lúc được gửi. Tùy chọn dashboard và các bí mật lưu trong keychain của hệ điều hành máy tính trên thiết bị này sẽ không bị xóa từ xa.",
+        "desc": "Xóa vĩnh viễn tài khoản Money Bansho này. Các gói đăng ký bị hủy ngay lập tức và không hoàn tiền cho thời gian còn lại đã trả trước. Khóa API, khóa nhúng và token MCP sẽ ngừng hoạt động. Hồ sơ thanh toán cần cho kế toán, tranh chấp và yêu cầu theo pháp luật được lưu giữ cùng thông tin liên hệ khách hàng có trong đó; các hồ sơ này không còn gắn với tài khoản đăng nhập của bạn, tuy nhiên nhật ký webhook của nhà cung cấp thanh toán được ghi trước khi xóa vẫn giữ các mã định danh đi kèm lúc được gửi. Tùy chọn dashboard và các bí mật lưu trong keychain của hệ điều hành máy tính trên thiết bị này sẽ không bị xóa từ xa.",
         "dialogTitle": "Xóa tài khoản này?",
         "dialogCopy": "Không thể hoàn tác thao tác này. Các gói đăng ký bị hủy, khóa ngừng hoạt động ngay lập tức và hồ sơ thanh toán được lưu giữ cho kế toán, tranh chấp và yêu cầu theo pháp luật — bao gồm cả thông tin liên hệ có trong đó. Sau đó, hãy đăng xuất trên các thiết bị khác và xóa dữ liệu trang web trên thiết bị này — máy chủ không thể làm những việc đó.",
         "phraseLabel": "Nhập {{phrase}} để xác nhận",

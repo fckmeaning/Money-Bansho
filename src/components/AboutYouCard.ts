@@ -82,7 +82,7 @@ export function mountAboutYouCard(options: AboutYouCardOptions): HTMLElement | n
   declareOverlay(root, { reload: 'safe' });
 
   const header = el('div', 'about-you-card__header');
-  const title = el('h2', 'about-you-card__title', label('title', 'Help us build World Monitor for you'));
+  const title = el('h2', 'about-you-card__title', label('title', 'Help us build Money Bansho for you'));
   title.id = `${ABOUT_YOU_CARD_ID}-title`;
   const closeBtn = el('button', 'about-you-card__close', '×');
   closeBtn.type = 'button';
@@ -223,7 +223,7 @@ export function mountAboutYouCard(options: AboutYouCardOptions): HTMLElement | n
 
   const renderFreeText = (): void => {
     const textareaId = `${ABOUT_YOU_CARD_ID}-alternative`;
-    const prompt = el('label', 'about-you-card__question', label('questions.alternative.label', "What would you use if World Monitor didn't exist?"));
+    const prompt = el('label', 'about-you-card__question', label('questions.alternative.label', "What would you use if Money Bansho didn't exist?"));
     prompt.htmlFor = textareaId;
     const textarea = el('textarea', 'about-you-card__text');
     textarea.id = textareaId;

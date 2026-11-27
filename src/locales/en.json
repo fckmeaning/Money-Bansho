@@ -22,10 +22,10 @@
     "unlock365": "Unlock 365 days with an API plan"
   },
   "shell": {
-    "documentTitle": "World Monitor — Real-Time Global Intelligence Dashboard",
-    "metaDescription": "Real-time global intelligence platform. Featured in WIRED. Used by 2M+ people across 190 countries. Conflicts, markets, military, open-source intelligence in one view.",
+    "documentTitle": "Money Bansho — Real-Time Global Intelligence Dashboard",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "You're Offline",
-    "offlineMessage": "World Monitor requires an internet connection for real-time intelligence data.",
+    "offlineMessage": "Money Bansho requires an internet connection for real-time intelligence data.",
     "offlineRetry": "Retry"
   },
   "widgets": {
@@ -63,12 +63,12 @@
     "phaseError": "Error",
     "previewCheckingHeading": "Connecting the widget builder",
     "previewReadyHeading": "Describe the widget you want",
-    "previewFetchingHeading": "Fetching live WorldMonitor data",
+    "previewFetchingHeading": "Fetching live Money Bansho data",
     "previewComposingHeading": "Composing the widget layout",
     "previewErrorHeading": "The preview needs attention",
     "previewCheckingCopy": "We are validating your widget key and backend availability before enabling generation.",
     "previewReadyCopy": "Use a prompt example or describe the exact live view you want. The preview will update here before you save it.",
-    "previewFetchingCopy": "The agent is calling approved WorldMonitor endpoints and shaping the dataset for the widget.",
+    "previewFetchingCopy": "The agent is calling approved Money Bansho endpoints and shaping the dataset for the widget.",
     "previewComposingCopy": "The preview is rendering with the latest live data and dashboard styling.",
     "previewErrorCopy": "Fix the issue, then retry. Your existing widgets are unaffected.",
     "createInteractive": "Create Interactive Widget",
@@ -104,19 +104,19 @@
     "foodStocksHelp": "USDA Production, Supply and Distribution commodity stocks-to-use by marketing year, with the world ratio alongside for context. FAOSTAT Food Balances supplies production and domestic supply when Production, Supply and Distribution has no complete country balance.",
     "loadingFoodStocks": "Loading food stocks…",
     "foodStocksUnavailable": "Food stocks unavailable.",
-    "foodStocksProLocked": "Upgrade to PRO for commodity stocks-to-use",
+    "foodStocksProLocked": "Not available in this build: commodity stocks-to-use",
     "foodStocksCommodity": "Commodity",
     "foodStocksMarketingYear": "Marketing year",
     "foodStocksRatio": "Stocks-to-use",
     "foodStocksWorld": "World",
     "defenseIndustrialBase": {
-      "proLocked": "Upgrade to PRO for arms-supplier dependency and military capacity"
+      "proLocked": "Not available in this build: arms-supplier dependency and military capacity"
     },
     "intelMemory": {
       "title": "Historical Intelligence Memory",
       "help": "180-day archive of notable conflict, military, energy, unrest, cyber, maritime, natural hazard and aviation events, with on-demand semantic precedent matching.",
       "loading": "Loading historical intelligence memory…",
-      "proLocked": "Upgrade to PRO for 180-day historical intelligence memory and precedent search",
+      "proLocked": "Not available in this build: 180-day historical intelligence memory and precedent search",
       "unavailable": "Historical intelligence memory is temporarily unavailable.",
       "retry": "Retry",
       "empty": "No archived intelligence events match this country and domain in the 180-day window.",
@@ -151,7 +151,7 @@
       "help": "Age structure, education pipeline, and industrial workforce capacity from UN World Population Prospects, UNESCO Institute for Statistics and World Bank World Development Indicators, and ILOSTAT.",
       "loading": "Loading demographics and workforce data…",
       "unavailable": "Demographics and workforce data unavailable.",
-      "proLocked": "Upgrade to PRO for demographics and workforce data",
+      "proLocked": "Not available in this build: demographics and workforce data",
       "notAvailable": "Not available",
       "statusNotSupplied": "Estimate and imputation status not supplied",
       "ageStructure": "Age structure",
@@ -177,7 +177,7 @@
       "help": "Frozen v1 evidence scores for food, energy, demographics, technology, and defense. Expand a row to inspect inputs, source provenance, and missing-data reasons.",
       "loading": "Loading the five-factor scorecard…",
       "unavailable": "Five-factor scorecard unavailable.",
-      "proLocked": "Upgrade to PRO for the five-factor resilience scorecard",
+      "proLocked": "Not available in this build: the five-factor resilience scorecard",
       "insufficient": "Insufficient data",
       "notAvailable": "Not available",
       "noEvidence": "No evidence is available for this pillar.",
@@ -511,12 +511,12 @@
   "panels": {
     "liveNews": "Live News",
     "markets": "Markets",
-    "marketImplications": "AI Market Implications",
+    "marketImplications": "Market Implications",
     "map": "Global Situation",
     "techHubs": "Hot Tech Hubs",
     "status": "System Status",
-    "insights": "AI Insights",
-    "strategicPosture": "AI Strategic Posture",
+    "insights": "Insights",
+    "strategicPosture": "Strategic Posture",
     "cii": "Country Instability",
     "strategicRisk": "Strategic Risk Overview",
     "intel": "Intel Feed",
@@ -537,6 +537,11 @@
     "gov": "Government",
     "thinktanks": "Think Tanks",
     "science": "Science",
+    "chinaMedia": "China Media",
+    "europeBusiness": "Europe Business",
+    "israel": "Israel",
+    "northKorea": "North Korea Watch",
+    "corporateLeadership": "Corporate Leadership Wires",
     "polymarket": "Predictions",
     "commodities": "Metals & Materials",
     "economic": "Macro Stress",
@@ -611,7 +616,7 @@
     "gulfIndices": "Gulf Indices",
     "gulfCurrencies": "Gulf Currencies",
     "gulfOil": "Gulf Oil",
-    "airlineIntel": "✈️ Airline Intelligence",
+    "airlineIntel": "Airline Intelligence",
     "consumerPrices": "Consumer Prices",
     "fearGreed": "Fear & Greed",
     "marketBreadth": "Market Breadth",
@@ -625,7 +630,7 @@
     "finance": {
       "map": "Global Markets Map",
       "liveNews": "Market Headlines",
-      "insights": "AI Market Insights"
+      "insights": "Market Insights"
     },
     "tech": {
       "map": "Global Tech Map",
@@ -634,12 +639,12 @@
     "commodity": {
       "map": "Commodity Map",
       "liveNews": "Commodity Headlines",
-      "insights": "AI Commodity Insights"
+      "insights": "Commodity Insights"
     },
     "energy": {
       "map": "Energy Atlas Map",
       "liveNews": "Energy Headlines",
-      "insights": "AI Energy Insights"
+      "insights": "Energy Insights"
     },
     "happy": {
       "map": "Good News Map"
@@ -867,11 +872,11 @@
         "configured": "Desktop settings configured",
         "needsKeys": "Configure API keys to unlock features",
         "some": "Some features need API keys",
-        "pro": "World Monitor Pro is active"
+        "pro": "Money Bansho Pro is active"
       },
-      "proCloud": "Features without a local API key use World Monitor cloud data.",
-      "skipSetupPro": "Skip the setup: sign in with World Monitor Pro to use cloud data instead of your own API keys.",
-      "getPro": "Get World Monitor Pro",
+      "proCloud": "Features without a local API key use Money Bansho cloud data.",
+      "skipSetupPro": "Skip the setup: sign in with Money Bansho Pro to use cloud data instead of your own API keys.",
+      "getPro": "Get Money Bansho Pro",
       "summary": {
         "desktop": "Desktop mode",
         "web": "Web mode (read-only, server-managed credentials)",
@@ -902,12 +907,12 @@
       }
     },
     "settingsWindow": {
-      "shellTitle": "World Monitor Settings",
+      "shellTitle": "Money Bansho Settings",
       "shellSearchPlaceholder": "Search settings...",
       "shellCancel": "Cancel",
       "shellSaveClose": "Save & Close",
-      "freePanelLimit": "Free plan: max {{max}} panels. Upgrade to PRO for unlimited.",
-      "freeSourceLimit": "Free plan: max {{max}} sources. Upgrade to PRO for unlimited.",
+      "freePanelLimit": "Free plan: max {{max}} panels.",
+      "freeSourceLimit": "Free plan: max {{max}} sources.",
       "validating": "Validating API keys...",
       "saved": "Settings saved",
       "failed": "Save failed: {{error}}",
@@ -1248,7 +1253,7 @@
       "stageUnavailable": "No published figures for this stage",
       "withheldNote": "W withheld",
       "productionCaption": "Country shares of actual production. The map deposits layer shows where resources sit; this table shows who mines or refines them.",
-      "productionProLocked": "Upgrade to PRO for mine and refinery country shares with concentration (producer concentration index) by stage.",
+      "productionProLocked": "Not available in this build: mine and refinery country shares with concentration (producer concentration index) by stage.",
       "risk": "Risk",
       "infoTooltip": "<strong>Supply Chain Monitor</strong> Global logistics and resource tracking:<ul><li><strong>Chokepoints</strong>: Maritime transit status, disruption scores, and vessel counts</li><li><strong>Shipping</strong>: Baltic Dry Index and freight rate trends</li><li><strong>Minerals</strong>: Critical mineral concentration risk (producer concentration index) and top producers</li></ul>Click a chokepoint card to expand transit history chart."
     },
@@ -1356,7 +1361,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>AI Market Implications</strong> LLM-generated trade signals derived from live geopolitical, commodity, and macro state after each forecast cycle.<ul><li><strong>Direction</strong>: LONG / SHORT / HEDGE</li><li><strong>Timeframe</strong>: 1W, 2W, 1M, or 3M horizon</li><li><strong>Driver</strong>: Key catalyst behind the signal</li><li><strong>Risk</strong>: Caveat or invalidation condition</li></ul><em>For informational purposes only. Not investment advice.</em>",
-      "title": "AI Market Implications",
+      "title": "Market Implications",
       "directions": {
         "long": "LONG",
         "short": "SHORT",
@@ -1367,7 +1372,7 @@
       "appliesToNext": "Applies to next AI regeneration",
       "signals_one": "{{count}} signal",
       "signals_other": "{{count}} signals",
-      "disclaimer": "AI-generated trade signals for informational purposes only. Not investment advice. Always do your own research.",
+      "disclaimer": "Automated summary. Not investment advice.",
       "unscored": "Narrative scenarios, not graded for accuracy.",
       "unavailable": "AI market implications are generated after each forecast run. Check back shortly."
     },
@@ -1386,7 +1391,7 @@
       "storageUnavailable": "Playback is unavailable because this browser is blocking site storage. Allow site data for this site to start saving snapshots."
     },
     "pizzint": {
-      "indexSource": "Index: World Monitor",
+      "indexSource": "Index: Money Bansho",
       "venueSource": "venue data:",
       "statusNormal": "NORMAL",
       "statusNoData": "NO DATA",
@@ -1396,7 +1401,7 @@
       "defcon": "DEFCON {{level}}",
       "updated": "Updated {{timeAgo}}",
       "tensionsTitle": "Geopolitical Tensions",
-      "tensionsSource": "Tensions: World Monitor from GDELT events",
+      "tensionsSource": "Tensions: Money Bansho from GDELT events",
       "insufficientData": "Insufficient data",
       "evidenceStrikes": "Reported strikes on {{countries}} in 3 days: {{value}}",
       "evidenceAirports": "Airports disrupted: {{value}}",
@@ -2114,7 +2119,7 @@
       "reported": "Count",
       "period": "Period",
       "crossBorderNote": "UN Refugee Agency Operational Data Portal: people who crossed borders in each crisis, from the latest country reports. Situations overlap, so they are not added together.",
-      "movementNote": "Each row keeps its source, report date and measure. Stocks, arrivals and encounter events are different measures. Sources can overlap; do not add their counts. WorldMonitor derives this view from the linked sources; no provider endorsement is implied.",
+      "movementNote": "Each row keeps its source, report date and measure. Stocks, arrivals and encounter events are different measures. Sources can overlap; do not add their counts. Money Bansho derives this view from the linked sources; no provider endorsement is implied.",
       "recent": "Recent",
       "last30Days": "Last 30 days",
       "newThisWeek": "New this week",
@@ -2664,7 +2669,7 @@
       "translate": "Translate"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>WM Analyst</strong> AI analyst with live context across geopolitical, market, military, and economic domains. Powered by Claude with real-time data injected from active WorldMonitor feeds."
+      "infoTooltip": "<strong>WM Analyst</strong> AI analyst with live context across geopolitical, market, military, and economic domains. Powered by Claude with real-time data injected from active Money Bansho feeds."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures positioning</strong> Weekly net positions for commercial traders, large speculators and small traders across commodity and financial futures. Source is the Commodity Futures Trading Commission Commitments of Traders report, published on Fridays."
@@ -2752,7 +2757,7 @@
       "infoTooltip": "<strong>Economic Calendar</strong> Scheduled macroeconomic releases: consumer price index, nonfarm payrolls, gross domestic product, purchasing managers index, and central bank decisions. Shows forecast vs actual vs prior. High-impact events highlighted. Source: economic data providers."
     },
     "fsi": {
-      "infoTooltip": "<strong>Financial Stress Indicator</strong> WorldMonitor ratio of high-yield credit to long Treasuries, adjusted for equity volatility and the high-yield spread: (HYG / TLT) / (VIX × High-yield spread / 100). This is not the Kansas City Fed Financial Stress Index. A reading of 1.5 or higher is low stress; below 0.3 is high stress.",
+      "infoTooltip": "<strong>Financial Stress Indicator</strong> Money Bansho ratio of high-yield credit to long Treasuries, adjusted for equity volatility and the high-yield spread: (HYG / TLT) / (VIX × High-yield spread / 100). This is not the Kansas City Fed Financial Stress Index. A reading of 1.5 or higher is low stress; below 0.3 is high stress.",
       "title": "Financial Stress Indicator",
       "usFsiValue": "US Financial Stress Indicator value",
       "asOf": "As of {{date}}",
@@ -2812,7 +2817,7 @@
       "stateOk": "Current",
       "stateStale": "Stale input",
       "stateInsufficient": "Insufficient data",
-      "proLocked": "Upgrade to PRO for commodity vulnerability scoring"
+      "proLocked": "Not available in this build: commodity vulnerability scoring"
     },
     "hormuzTracker": {
       "infoTooltip": "<strong>Hormuz Trade Tracker</strong> WTO DataLab daily shipment indexes for the Strait of Hormuz: crude oil, LNG and fertilizer leaving the Gulf, farm goods arriving. By volume, Jan–Mar 2025 average = 100, AIS-visible vessels only. Charts are daily; status is from WTO commentary.",
@@ -2840,7 +2845,7 @@
       "infoTooltip": "<strong>Macro indicators</strong> US, euro area and China prices, activity, policy and currency indicators. China requires current coverage. Each tile shows its source and observation date."
     },
     "monitors": {
-      "infoTooltip": "<strong>Keyword Monitors</strong> Add any term to track live news mentions across all WorldMonitor sources. Results update in real time as matching articles are ingested."
+      "infoTooltip": "<strong>Keyword Monitors</strong> Add any term to track live news mentions across all Money Bansho sources. Results update in real time as matching articles are ingested."
     },
     "renewable": {
       "infoTooltip": "<strong>Renewable Energy</strong> Share of electricity generation from renewables by region and year, plus US installed capacity for solar, wind, and coal (MW). Sources: World Bank (EG.ELC.RNEW.ZS) and US Energy Information Administration."
@@ -2915,7 +2920,7 @@
       "dismiss": "Dismiss"
     },
     "aboutYou": {
-      "title": "Help us build World Monitor for you",
+      "title": "Help us build Money Bansho for you",
       "ariaLabel": "About you",
       "progress": "{{current}} of {{total}}",
       "skip": "Skip",
@@ -2927,7 +2932,7 @@
       "thanks": "Thanks. This helps us decide what to build next.",
       "questions": {
         "primaryUse": {
-          "label": "What do you mainly use World Monitor for?",
+          "label": "What do you mainly use Money Bansho for?",
           "options": {
             "news": "News and world events",
             "markets": "Markets and trading",
@@ -2969,7 +2974,7 @@
           }
         },
         "alternative": {
-          "label": "What would you use if World Monitor didn't exist?",
+          "label": "What would you use if Money Bansho didn't exist?",
           "placeholder": "Optional"
         }
       }
@@ -2982,7 +2987,7 @@
       "signedInAs": "Signed in as {{email}}",
       "steps": {
         "about": {
-          "heading": "One last thing: what will you use World Monitor for?",
+          "heading": "One last thing: what will you use Money Bansho for?",
           "body": "Three quick answers help us build the right tools for you. Skip any you like.",
           "confirmCta": "Save my answers",
           "confirming": "Saving…",
@@ -3329,7 +3334,7 @@
       "sourceCbr": "Source: Bank of Russia"
     },
     "githubStarPrompt": {
-      "title": "Enjoying World Monitor?",
+      "title": "Enjoying Money Bansho?",
       "body": "A star on GitHub helps other people find it.",
       "star": "Star on GitHub",
       "dismiss": "Dismiss and don't ask again"
@@ -3610,7 +3615,7 @@
         "copied": "Copied.",
         "copyFailed": "Copy failed. Select the text to copy it."
       },
-      "firstSeenNote": "This is the earliest available indicator date across feeds or World Monitor observations; it may differ from the listed source's date."
+      "firstSeenNote": "This is the earliest available indicator date across feeds or Money Bansho observations; it may differ from the listed source's date."
     },
     "nuclear": {
       "types": {
@@ -4758,10 +4763,10 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "Requires a World Monitor license key",
+    "lockedDesc": "Not available without an access key.",
     "signInToUnlock": "Sign in to unlock premium features",
     "signIn": "Sign In to Unlock",
-    "upgradeDesc": "Upgrade to Pro for full access to premium analytics",
+    "upgradeDesc": "Not available in this build.",
     "upgradeToPro": "Upgrade to Pro",
     "features": {
       "orefSirens1": "Real-time Israel missile & rocket alerts",
@@ -4895,7 +4900,7 @@
     "privacy": {
       "line": "Your point goes only to the image archives.",
       "more": "Details",
-      "body": "Passes are computed on this device. To find images, your browser sends the point straight to Earth Search, Planetary Computer, NASA GIBS and EUMETSAT; WorldMonitor does not receive it. On a monitored site, WorldMonitor is asked for that site's daily record by the site's ID, not your point. A typed place name goes to WorldMonitor and OpenStreetMap Nominatim to be found. Shared links keep two decimals (0.01°)."
+      "body": "Passes are computed on this device. To find images, your browser sends the point straight to Earth Search, Planetary Computer, NASA GIBS and EUMETSAT; Money Bansho does not receive it. On a monitored site, Money Bansho is asked for that site's daily record by the site's ID, not your point. A typed place name goes to Money Bansho and OpenStreetMap Nominatim to be found. Shared links keep two decimals (0.01°)."
     },
     "sources": {
       "heading": "Sources ({{count}})",
@@ -5002,7 +5007,7 @@
       "placeholder": "Place or 25.11, 55.14",
       "submit": "Search",
       "locate": "My location",
-      "hint": "Typed coordinates and your location are never sent to WorldMonitor. Typed place names go to WorldMonitor and OpenStreetMap Nominatim.",
+      "hint": "Typed coordinates and your location are never sent to Money Bansho. Typed place names go to Money Bansho and OpenStreetMap Nominatim.",
       "results": "Places",
       "searching": "Searching…",
       "tooShort": "Enter at least two characters, or coordinates like 25.11, 55.14.",
@@ -5069,7 +5074,7 @@
       "noPass": "No pass due within 72 hours",
       "openEvidence": "Open evidence",
       "compareEvent": "Before / after",
-      "compareEventLocked": "Before / after · Pro",
+      "compareEventLocked": "Before / after: not available",
       "compareSearching": "Searching scenes either side of {{date}}…",
       "compareNoAfter": "No clear scene since {{date}} yet.",
       "compareNoAfterWindow": "No clear scene in the {{days}} days after {{date}}.",
@@ -5361,7 +5366,7 @@
       "hotspots": {
         "category": "News / Hotspots",
         "purpose": "Highlights monitored geopolitical hotspots and raises their level when related news and escalation signals converge.",
-        "source": "WorldMonitor hotspot registry, RSS/GDELT news intelligence, hotspot escalation scoring, military activity, and country instability context.",
+        "source": "Money Bansho hotspot registry, RSS/GDELT news intelligence, hotspot escalation scoring, military activity, and country instability context.",
         "freshness": "Hotspot locations are curated/static. News feeds are freshness-tracked separately; hotspot levels are recomputed when the dashboard news feeds refresh, around 10 minutes apart, while GDELT intelligence has longer seeded/cache budgets.",
         "confidence": "Useful as a triage cue, not a citation-grade claim without opening the underlying news and country context.",
         "limitations": {
@@ -5408,7 +5413,7 @@
       "conflicts": {
         "category": "Conflict",
         "purpose": "Shows curated conflict zones and geopolitical boundary overlays so analysts can orient live signals against known theaters.",
-        "source": "WorldMonitor conflict-zone registry, UCDP/ACLED conflict context, and documented boundary metadata such as the Korean DMZ.",
+        "source": "Money Bansho conflict-zone registry, UCDP/ACLED conflict context, and documented boundary metadata such as the Korean DMZ.",
         "freshness": "Base zones are curated/static. Dynamic conflict-event inputs are tracked separately through ACLED/UCDP feeds and health signals.",
         "confidence": "Good for geographic orientation; not a real-time incident confirmation by itself.",
         "limitations": {
@@ -5441,7 +5446,7 @@
       "ais": {
         "category": "Maritime",
         "purpose": "Shows vessel density and AIS disruption signals around strategic waters and chokepoints.",
-        "source": "AISStream relay snapshots, WorldMonitor maritime service, and chokepoint disruption classifiers.",
+        "source": "AISStream relay snapshots, Money Bansho maritime service, and chokepoint disruption classifiers.",
         "freshness": "AIS relay snapshots are rebuilt every 5 seconds by default; the server may cache the base density snapshot for 5 minutes, and the layer is disabled or stale when relay credentials/connectivity are unavailable.",
         "confidence": "Useful for maritime anomaly screening, but AIS is self-reported and vessels can go dark.",
         "limitations": {
@@ -5458,7 +5463,7 @@
       "tradeRoutes": {
         "category": "Maritime",
         "purpose": "Draws major container, energy, and bulk routes through strategic chokepoints for disruption-path reasoning.",
-        "source": "WorldMonitor trade-route registry plus supply-chain chokepoint status and transit summaries.",
+        "source": "Money Bansho trade-route registry plus supply-chain chokepoint status and transit summaries.",
         "freshness": "Route geometry is static. Chokepoint status is warm-pinged every 6 minutes and transit summaries refresh every 10 minutes through supply-chain caches and relay paths.",
         "confidence": "Good for route-level exposure context; not a ship-level routing feed.",
         "limitations": {
@@ -5512,7 +5517,7 @@
       "weather": {
         "category": "Weather",
         "purpose": "Shows active official severe-weather alerts from national meteorological services, merged into one weather:alerts:v1 feed.",
-        "source": "United States National Weather Service (NWS), Environment and Climate Change Canada (ECCC), and WMO Severe Weather Information Centre (SWIC) CAP aggregation, seeded through the WorldMonitor relay.",
+        "source": "United States National Weather Service (NWS), Environment and Climate Change Canada (ECCC), and WMO Severe Weather Information Centre (SWIC) CAP aggregation, seeded through the Money Bansho relay.",
         "freshness": "NWS, ECCC, and SWIC alerts are seeded every 15 minutes by the relay and monitored against a 45-minute freshness budget.",
         "confidence": "Authoritative for alerts issued by the contributing national services, subject to upstream publication timing. NWS and ECCC render as polygons; SWIC geocoded alerts render at the issuing service country centroid with an explicit precision marker.",
         "limitations": {
@@ -5529,7 +5534,7 @@
       "canadaRoads": {
         "category": "Transport",
         "purpose": "Shows official road incidents, alerts, conditions, closures, construction, and hazards across supported Canadian jurisdictions.",
-        "source": "Ontario 511, Alberta 511, and Manitoba 511 provincial feeds, City of Toronto Road Restrictions, and DriveBC Open511, seeded through WorldMonitor.",
+        "source": "Ontario 511, Alberta 511, and Manitoba 511 provincial feeds, City of Toronto Road Restrictions, and DriveBC Open511, seeded through Money Bansho.",
         "freshness": "Ontario, Alberta, and Manitoba 511 are seeded every 15 minutes and monitored against a 45-minute freshness budget. Toronto restrictions are seeded every 2 hours; DriveBC Open511 every 30 minutes.",
         "confidence": "Authoritative for the supported provincial and municipal publishers, subject to upstream publication timing and mapped geometry.",
         "limitations": {
@@ -5594,7 +5599,7 @@
       "waterways": {
         "category": "Maritime",
         "purpose": "Marks strategic waterways and chokepoints so disruption signals can be interpreted against fixed maritime geography.",
-        "source": "WorldMonitor strategic-waterways registry with supply-chain chokepoint status overlays from AIS, NGA warnings, and PortWatch-derived feeds.",
+        "source": "Money Bansho strategic-waterways registry with supply-chain chokepoint status overlays from AIS, NGA warnings, and PortWatch-derived feeds.",
         "freshness": "Waterway locations are static; live chokepoint status is warm-pinged every 6 minutes and transit summaries refresh every 10 minutes when the relay/PortWatch path is healthy.",
         "confidence": "High for fixed geography; live disruption confidence depends on the companion AIS, NGA, and PortWatch feeds.",
         "limitations": {
@@ -5611,7 +5616,7 @@
       "ciiChoropleth": {
         "category": "Country Risk",
         "purpose": "Colors countries by the current Country Instability Index score for broad strategic-risk triage.",
-        "source": "WorldMonitor Country Instability Index scoring service using conflict, unrest, advisories, cyber, ship tracking, aviation, natural-event, and news signals.",
+        "source": "Money Bansho Country Instability Index scoring service using conflict, unrest, advisories, cyber, ship tracking, aviation, natural-event, and news signals.",
         "freshness": "Risk-score cache is warm-pinged every 8 minutes; seed-meta and health.riskScores expose live, stale, partial, or degraded state against a 30-minute freshness budget.",
         "confidence": "Composite model signal, not an official country rating or probability forecast.",
         "limitations": {
@@ -5655,9 +5660,9 @@
     "title": "Install app",
     "share": "In Safari, tap Share (the square with an upward arrow). You may need to open the More menu first.",
     "add": "Choose Add to Home Screen.",
-    "confirm": "Tap Add, then open World Monitor from your Home Screen.",
+    "confirm": "Tap Add, then open Money Bansho from your Home Screen.",
     "close": "Close",
-    "alertsHint": "Install World Monitor to your Home Screen to get alerts on this iPhone or iPad.",
+    "alertsHint": "Install Money Bansho to your Home Screen to get alerts on this iPhone or iPad.",
     "how": "How to install"
   },
   "settings": {
@@ -5697,7 +5702,7 @@
       "map": "Provider, theme and globe",
       "ai": "Models, memory and frameworks",
       "video": "Quality and autoplay",
-      "apiKeys": "Keys for the World Monitor API",
+      "apiKeys": "Keys for the Money Bansho API",
       "embeds": "Widgets for your own site",
       "aiAgents": "Connected MCP clients",
       "about": "Site links, terms and privacy"
@@ -5711,7 +5716,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Premium access",
-        "desc": "This access is not billed through your WorldMonitor account. No payment method or invoices are available here."
+        "desc": "This access is not billed through your Money Bansho account. No payment method or invoices are available here."
       },
       "checking": {
         "heading": "Checking your plan…",
@@ -5762,8 +5767,8 @@
         "desc": "We could not verify your current plan. Try again or view plans in a new tab."
       },
       "free": {
-        "heading": "WorldMonitor Free",
-        "desc": "Your current plan is Free. Upgrade for all panels, AI analysis, and priority data refresh."
+        "heading": "Money Bansho Free",
+        "desc": "Some panels are not available without an access key."
       },
       "portal": {
         "openFailed": "Could not open the billing portal. Please allow pop-ups and try again.",
@@ -5771,7 +5776,7 @@
       },
       "deletion": {
         "heading": "Delete account",
-        "desc": "Permanently delete this World Monitor account. Subscriptions cancel immediately with no refund of remaining prepaid time. API keys, embed keys, and MCP tokens stop working. Billing records needed for accounting, disputes, and lawful requests are kept with the customer contact details they carry; they stop naming your login account, though payment-provider webhook logs written before deletion keep the identifiers they were delivered with. Dashboard preferences and desktop keychain secrets on this device are not wiped remotely.",
+        "desc": "Permanently delete this Money Bansho account. Subscriptions cancel immediately with no refund of remaining prepaid time. API keys, embed keys, and MCP tokens stop working. Billing records needed for accounting, disputes, and lawful requests are kept with the customer contact details they carry; they stop naming your login account, though payment-provider webhook logs written before deletion keep the identifiers they were delivered with. Dashboard preferences and desktop keychain secrets on this device are not wiped remotely.",
         "dialogTitle": "Delete this account?",
         "dialogCopy": "This cannot be undone. Subscriptions cancel, keys stop working immediately, and billing records are kept for accounting, disputes, and lawful requests — including the contact details they carry. Sign out on other devices and clear this device's site data afterwards — those are out of server reach.",
         "phraseLabel": "Type {{phrase}} to confirm",

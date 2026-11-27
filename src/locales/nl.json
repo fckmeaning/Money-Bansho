@@ -7,7 +7,7 @@
     "strategicPosture": "Strategic Posture",
     "cii": "Country Instability Index",
     "status": "Systeemstatus",
-    "insights": "AI-inzichten",
+    "insights": "Inzichten",
     "map": "Interactive Map",
     "politics": "Wereldnieuws",
     "us": "Verenigde Staten",
@@ -75,7 +75,7 @@
     "gulfCurrencies": "Golfvaluta",
     "gulfOil": "Golfolie",
     "bigmac": "Echte Big Mac-index",
-    "marketImplications": "AI-marktimplicaties",
+    "marketImplications": "Marktimplicaties",
     "energyComplex": "Energiecomplex",
     "oilInventories": "Olievoorraden",
     "energyCrisis": "Energiecrisistracker",
@@ -102,7 +102,7 @@
     "fuelPricesDiesel": "Diesel",
     "fuelPricesSource": "Bron",
     "groceryBasketDesc": "Boodschappenmand-prijsvergelijking in 24 landen wereldwijd",
-    "airlineIntel": "✈️ Luchtvaartinformatie",
+    "airlineIntel": "Luchtvaartinformatie",
     "consumerPrices": "Consumentenprijzen",
     "fearGreed": "Angst & Hebzucht",
     "marketBreadth": "Marktbreedte",
@@ -110,7 +110,12 @@
     "fx": "Wisselkoersen",
     "ukmtoIncidents": "UKMTO-incidenten",
     "reservoirLevels": "Strategische waterstanden",
-    "gridDisruptionClock": "Klok voor stroomstoringen in Amerikaanse staten"
+    "gridDisruptionClock": "Klok voor stroomstoringen in Amerikaanse staten",
+    "chinaMedia": "Chinese media",
+    "europeBusiness": "Europees bedrijfsleven",
+    "israel": "Israël",
+    "northKorea": "Noord-Korea-monitor",
+    "corporateLeadership": "Nieuws over bedrijfsleiding"
   },
   "commands": {
     "prefixes": {
@@ -320,7 +325,7 @@
         "configured": "Bureaubladinstellingen geconfigureerd",
         "needsKeys": "Configureer API-sleutels om functies te ontgrendelen",
         "some": "Voor sommige functies zijn API-sleutels nodig",
-        "pro": "World Monitor Pro is actief"
+        "pro": "Money Bansho Pro is actief"
       },
       "summary": {
         "desktop": "Desktop-modus",
@@ -350,9 +355,9 @@
         "OLLAMA_API_URL": "bijv. http://127.0.0.1:11434 (Ollama) of http://127.0.0.1:1234/v1 (LM Studio) — OpenAI-compatibel endpoint.",
         "OLLAMA_MODEL": "bijv. llama3.1:8b — modeltag voor samenvattingen."
       },
-      "proCloud": "Functies zonder lokale API-sleutel gebruiken World Monitor cloudgegevens.",
-      "skipSetupPro": "Sla de setup over: meld je aan met World Monitor Pro om cloudgegevens te gebruiken in plaats van je eigen API-sleutels.",
-      "getPro": "World Monitor Pro ophalen"
+      "proCloud": "Functies zonder lokale API-sleutel gebruiken Money Bansho cloudgegevens.",
+      "skipSetupPro": "Sla de setup over: meld je aan met Money Bansho Pro om cloudgegevens te gebruiken in plaats van je eigen API-sleutels.",
+      "getPro": "Money Bansho Pro ophalen"
     },
     "countryIntel": {
       "identifying": "Land identificeren...",
@@ -474,7 +479,7 @@
           "description": "Pro werkt hier zodra je je aanmeldt vanuit het hoofdvenster. Geen sleutel nodig."
         }
       },
-      "shellTitle": "World Monitor-instellingen",
+      "shellTitle": "Money Bansho-instellingen",
       "shellSearchPlaceholder": "Instellingen doorzoeken...",
       "shellCancel": "Annuleren",
       "shellSaveClose": "Opslaan & Sluiten",
@@ -797,7 +802,7 @@
       "info": "INFO"
     },
     "pizzint": {
-      "indexSource": "Index: World Monitor",
+      "indexSource": "Index: Money Bansho",
       "venueSource": "locatiegegevens:",
       "statusNormal": "NORMAAL",
       "statusNoData": "GEEN GEGEVENS",
@@ -805,7 +810,7 @@
       "vsUsual": "ten opzichte van normaal",
       "title": "Pentagon Pizza-index",
       "tensionsTitle": "Geopolitieke spanningen",
-      "tensionsSource": "Spanningen: World Monitor op basis van GDELT-gebeurtenissen",
+      "tensionsSource": "Spanningen: Money Bansho op basis van GDELT-gebeurtenissen",
       "insufficientData": "Onvoldoende gegevens",
       "evidenceStrikes": "Gemelde aanvallen in 3 dagen ({{countries}}): {{value}}",
       "evidenceAirports": "Verstoorde luchthavens: {{value}}",
@@ -1149,7 +1154,7 @@
       "staleReport": "Verouderd rapport",
       "reported": "Aantal",
       "period": "Periode",
-      "movementNote": "Elke rij behoudt de bron, rapportdatum en meeteenheid. Populaties, aankomsten en grenscontrole-incidenten zijn verschillende metingen. Bronnen kunnen overlappen; tel hun aantallen niet op. WorldMonitor leidt deze weergave af van de gekoppelde bronnen; dit houdt geen goedkeuring door de aanbieders in.",
+      "movementNote": "Elke rij behoudt de bron, rapportdatum en meeteenheid. Populaties, aankomsten en grenscontrole-incidenten zijn verschillende metingen. Bronnen kunnen overlappen; tel hun aantallen niet op. Money Bansho leidt deze weergave af van de gekoppelde bronnen; dit houdt geen goedkeuring door de aanbieders in.",
       "recent": "Recent",
       "last30Days": "Laatste 30 dagen",
       "newThisWeek": "Nieuw deze week",
@@ -1853,7 +1858,7 @@
       "tripDays": "Reisdagen"
     },
     "chatAnalyst": {
-      "infoTooltip": "<strong>WM Analist</strong> AI-analist met live context over geopolitieke, markt-, militaire en economische domeinen. Aangedreven door Claude met realtime data uit actieve WorldMonitor-feeds."
+      "infoTooltip": "<strong>WM Analist</strong> AI-analist met live context over geopolitieke, markt-, militaire en economische domeinen. Aangedreven door Claude met realtime data uit actieve Money Bansho-feeds."
     },
     "cotPositioning": {
       "infoTooltip": "<strong>Futures positioning</strong> Wekelijkse nettoposities voor commerciële handelaren, grote speculanten en kleine handelaren in grondstof- en financiële futures. Bron: Commitments of Traders-rapport van de Commodity Futures Trading Commission, gepubliceerd op vrijdagen."
@@ -1916,7 +1921,7 @@
       "infoTooltip": "<strong>Economic Calendar</strong> Geplande macro-economische releases: consumentenprijsindex, loonlijsten buiten landbouw, bruto binnenlands product, inkoopmanagersindex en besluiten van centrale banken. Toont prognose versus werkelijk versus vorig. Belangrijke gebeurtenissen zijn gemarkeerd. Bron: economische gegevensleveranciers."
     },
     "fsi": {
-      "infoTooltip": "<strong>Financial Stress Indicator</strong> WorldMonitor-verhouding van high-yield-krediet tot lange Treasuries, gecorrigeerd voor aandelenvolatiliteit en de high-yield-spread: (HYG / TLT) / (VIX × High-yield-spread / 100). Dit is niet de Kansas City Fed Financial Stress Index. Een waarde van 1,5 of hoger duidt op lage stress; onder de 0,3 is hoge stress.",
+      "infoTooltip": "<strong>Financial Stress Indicator</strong> Money Bansho-verhouding van high-yield-krediet tot lange Treasuries, gecorrigeerd voor aandelenvolatiliteit en de high-yield-spread: (HYG / TLT) / (VIX × High-yield-spread / 100). Dit is niet de Kansas City Fed Financial Stress Index. Een waarde van 1,5 of hoger duidt op lage stress; onder de 0,3 is hoge stress.",
       "title": "Financiële stressindicator",
       "usFsiValue": "Waarde van de US Financial Stress Indicator",
       "asOf": "Per {{date}}",
@@ -2004,7 +2009,7 @@
       "infoTooltip": "<strong>Macro indicators</strong> VS, eurozone en China prijs-, activiteits-, beleid- en valuta-indicatoren. China vereist huidige berichtgeving. Elk vak toont zijn bron en observatiedatum."
     },
     "monitors": {
-      "infoTooltip": "<strong>Zoekwoordmonitoren</strong> Voeg een willekeurige term toe om live nieuwsvermeldingen over alle WorldMonitor-bronnen te volgen. Resultaten worden in realtime bijgewerkt naarmate overeenkomende artikelen worden opgenomen."
+      "infoTooltip": "<strong>Zoekwoordmonitoren</strong> Voeg een willekeurige term toe om live nieuwsvermeldingen over alle Money Bansho-bronnen te volgen. Resultaten worden in realtime bijgewerkt naarmate overeenkomende artikelen worden opgenomen."
     },
     "renewable": {
       "infoTooltip": "<strong>Renewable Energy</strong> Aandeel hernieuwbare energie in elektriciteitsproductie per regio en jaar, plus US-installaties voor zonne-, wind- en kolenenergie (MW). Bronnen: World Bank (EG.ELC.RNEW.ZS) en US Energy Information Administration."
@@ -2070,7 +2075,7 @@
     },
     "marketImplications": {
       "infoTooltip": "<strong>AI-marktimplicaties</strong> Door LLM gegenereerde handelssignalen afgeleid van live geopolitieke, grondstof- en macrothema's na elke voorspellingscyclus.<ul><li><strong>Richting</strong>: LONG / SHORT / HEDGE</li><li><strong>Periode</strong>: 1W, 2W, 1M of 3M horizon</li><li><strong>Driver</strong>: Belangrijkste katalysator achter het signaal</li><li><strong>Risico</strong>: Voorbehoud of ongeldigheidsvoorwaarde</li></ul><em>Uitsluitend voor informatiedoeleinden. Geen beleggingsadvies.</em>",
-      "title": "AI-marktimplicaties",
+      "title": "Marktimplicaties",
       "directions": {
         "long": "LONG",
         "short": "SHORT",
@@ -2330,7 +2335,7 @@
           }
         },
         "about": {
-          "heading": "Nog één ding: waar ga je World Monitor voor gebruiken?",
+          "heading": "Nog één ding: waar ga je Money Bansho voor gebruiken?",
           "body": "Drie snelle vragen helpen ons de juiste tools voor jou te bouwen. Sla er gerust over.",
           "confirmCta": "Mijn antwoorden opslaan",
           "confirming": "Opslaan…",
@@ -2747,7 +2752,7 @@
       "global": "Wereldwijde maandindex van FAO"
     },
     "aboutYou": {
-      "title": "Help ons World Monitor voor jou te bouwen",
+      "title": "Help ons Money Bansho voor jou te bouwen",
       "ariaLabel": "Over jou",
       "progress": "{{current}} van {{total}}",
       "skip": "Overslaan",
@@ -2759,7 +2764,7 @@
       "thanks": "Dank je wel. Dit helpt ons bepalen wat we volgende willen bouwen.",
       "questions": {
         "primaryUse": {
-          "label": "Waarvoor gebruik je World Monitor vooral?",
+          "label": "Waarvoor gebruik je Money Bansho vooral?",
           "options": {
             "news": "Nieuws en wereldgebeurtenissen",
             "markets": "Markten en handel",
@@ -2801,13 +2806,13 @@
           }
         },
         "alternative": {
-          "label": "Wat zou je gebruiken als World Monitor niet bestond?",
+          "label": "Wat zou je gebruiken als Money Bansho niet bestond?",
           "placeholder": "Optioneel"
         }
       }
     },
     "githubStarPrompt": {
-      "title": "Geniet je van World Monitor?",
+      "title": "Geniet je van Money Bansho?",
       "body": "Een ster op GitHub helpt anderen het te vinden.",
       "star": "Ster geven op GitHub",
       "dismiss": "Sluiten en niet meer vragen"
@@ -3068,7 +3073,7 @@
         "copied": "Gekopieerd.",
         "copyFailed": "Kopiëren mislukt. Selecteer de tekst om deze te kopiëren."
       },
-      "firstSeenNote": "Dit is de vroegst beschikbare indicatordatum uit feeds of World Monitor-waarnemingen; deze kan afwijken van de datum van de vermelde bron."
+      "firstSeenNote": "Dit is de vroegst beschikbare indicatordatum uit feeds of Money Bansho-waarnemingen; deze kan afwijken van de datum van de vermelde bron."
     },
     "nuclear": {
       "types": {
@@ -4617,10 +4622,10 @@
     "imageryEvidenceHere": "Bewijsmateriaal uit satellieten hier"
   },
   "shell": {
-    "documentTitle": "World Monitor — Realtime wereldwijd inlichtingendashboard",
-    "metaDescription": "Real-time wereldwijd intelligentieplatform. Gepubliceerd in WIRED. Gebruikt door meer dan 2 miljoen mensen in 190 landen. Conflicten, markten, militair, open-source intelligence in één overzicht.",
+    "documentTitle": "Money Bansho — Realtime wereldwijd inlichtingendashboard",
+    "metaDescription": "Markets, macro, company news and global events in one dashboard, built from free public data sources.",
     "offlineTitle": "Je bent offline",
-    "offlineMessage": "World Monitor heeft een internetverbinding nodig voor real-time inlichtingengegevens.",
+    "offlineMessage": "Money Bansho heeft een internetverbinding nodig voor real-time inlichtingengegevens.",
     "offlineRetry": "Opnieuw proberen"
   },
   "widgets": {
@@ -4658,12 +4663,12 @@
     "phaseError": "Fout",
     "previewCheckingHeading": "Widget builder wordt verbonden",
     "previewReadyHeading": "Beschrijf het gewenste widget",
-    "previewFetchingHeading": "Live WorldMonitor-gegevens ophalen",
+    "previewFetchingHeading": "Live Money Bansho-gegevens ophalen",
     "previewComposingHeading": "Widget-indeling wordt samengesteld",
     "previewErrorHeading": "Het voorbeeld vereist aandacht",
     "previewCheckingCopy": "We valideren je widget-sleutel en backend-beschikbaarheid voordat genereren wordt ingeschakeld.",
     "previewReadyCopy": "Gebruik een promptvoorbeeld of beschrijf de exacte live-weergave die je wilt. Het voorbeeld wordt hier bijgewerkt voordat je het opslaat.",
-    "previewFetchingCopy": "De agent roept goedgekeurde WorldMonitor-eindpunten aan en vorm de dataset voor het widget.",
+    "previewFetchingCopy": "De agent roept goedgekeurde Money Bansho-eindpunten aan en vorm de dataset voor het widget.",
     "previewComposingCopy": "Het voorbeeld wordt weergegeven met de nieuwste live-gegevens en dashboard-opmaak.",
     "previewErrorCopy": "Los het probleem op en probeer opnieuw. Je bestaande widgets worden niet beïnvloed.",
     "createInteractive": "Interactief Widget maken",
@@ -4692,7 +4697,7 @@
   },
   "premium": {
     "pro": "PRO",
-    "lockedDesc": "Vereist een World Monitor-licentiesleutel",
+    "lockedDesc": "Vereist een Money Bansho-licentiesleutel",
     "signInToUnlock": "Meld u aan om premium-functies te ontgrendelen",
     "signIn": "Aanmelden om te ontgrendelen",
     "upgradeDesc": "Upgrade naar Pro voor volledige toegang tot premium-analyses",
@@ -4831,7 +4836,7 @@
       "hotspots": {
         "category": "Nieuws / Hotspots",
         "purpose": "Licht bewaakte geopolitieke hotspots uit en verhoogt hun niveau wanneer gerelateerd nieuws en escalatiesignalen samenkomen.",
-        "source": "Hotspotregister van WorldMonitor, nieuwsinlichtingen via RSS/GDELT, escalatiescore van hotspots, militaire activiteit en context van landinestabiliteit.",
+        "source": "Hotspotregister van Money Bansho, nieuwsinlichtingen via RSS/GDELT, escalatiescore van hotspots, militaire activiteit en context van landinestabiliteit.",
         "freshness": "Hotspotlocaties zijn samengesteld en statisch. De actualiteit van nieuwsstromen wordt apart gevolgd. De niveaus worden opnieuw berekend wanneer de nieuwsstromen van het dashboard verversen, met ongeveer 10 minuten ertussen, terwijl GDELT-inlichtingen langere laad- en cachebudgetten heeft.",
         "confidence": "Bruikbaar als aanwijzing om te sorteren, niet als citeerbare bewering zonder het onderliggende nieuws en de landcontext te openen.",
         "limitations": {
@@ -4878,7 +4883,7 @@
       "conflicts": {
         "category": "Conflicten",
         "purpose": "Toont samengestelde conflictzones en geopolitieke grenslagen, zodat analisten actuele signalen kunnen plaatsen tegen bekende strijdtonelen.",
-        "source": "Conflictzoneregister van WorldMonitor, conflictcontext van UCDP/ACLED en gedocumenteerde grensmetadata, zoals de Koreaanse DMZ.",
+        "source": "Conflictzoneregister van Money Bansho, conflictcontext van UCDP/ACLED en gedocumenteerde grensmetadata, zoals de Koreaanse DMZ.",
         "freshness": "De basiszones zijn samengesteld en statisch. Dynamische conflictgebeurtenissen worden apart gevolgd via ACLED/UCDP-stromen en statussignalen.",
         "confidence": "Goed voor geografische oriëntatie. Op zichzelf bevestigt het geen incident op het moment zelf.",
         "limitations": {
@@ -4911,7 +4916,7 @@
       "ais": {
         "category": "Maritiem",
         "purpose": "Toont scheepsdichtheid en AIS-verstoringssignalen rond strategische wateren en knelpunten.",
-        "source": "Momentopnamen van de AISStream-doorgifte, de maritieme dienst van WorldMonitor en classificeerders van knelpuntverstoring.",
+        "source": "Momentopnamen van de AISStream-doorgifte, de maritieme dienst van Money Bansho en classificeerders van knelpuntverstoring.",
         "freshness": "Momentopnamen van de AIS-doorgifte worden standaard elke 5 seconden opnieuw opgebouwd. De server kan de basisdichtheid 5 minuten in de cache houden, en de laag is uitgeschakeld of verouderd wanneer de inloggegevens of de verbinding van de doorgifte ontbreken.",
         "confidence": "Bruikbaar om maritieme afwijkingen te screenen, maar AIS wordt door de schepen zelf gemeld en die kunnen van de uitzending verdwijnen.",
         "limitations": {
@@ -4928,7 +4933,7 @@
       "tradeRoutes": {
         "category": "Maritiem",
         "purpose": "Tekent de grote container-, energie- en massagoedroutes door strategische knelpunten, om over verstoringstrajecten te redeneren.",
-        "source": "Handelsrouteregister van WorldMonitor, plus de knelpuntstatus van de toeleveringsketen en de transitsamenvattingen.",
+        "source": "Handelsrouteregister van Money Bansho, plus de knelpuntstatus van de toeleveringsketen en de transitsamenvattingen.",
         "freshness": "De geometrie van de routes is statisch. De knelpuntstatus wordt elke 6 minuten licht ververst, en de transitsamenvattingen verversen elke 10 minuten via de caches van de toeleveringsketen en de paden van de doorgifte.",
         "confidence": "Goed voor blootstelling op routeniveau. Het is geen routeringsstroom per schip.",
         "limitations": {
@@ -4982,7 +4987,7 @@
       "weather": {
         "category": "Weer",
         "purpose": "Toont actieve officiële waarschuwingen voor zwaar weer van nationale meteorologische diensten, samengevoegd in één stroom weather:alerts:v1.",
-        "source": "National Weather Service van de Verenigde Staten (NWS), Environment and Climate Change Canada (ECCC) en de CAP-aggregatie van het WMO-informatiecentrum voor zwaar weer (SWIC), geladen via de doorgifte van WorldMonitor.",
+        "source": "National Weather Service van de Verenigde Staten (NWS), Environment and Climate Change Canada (ECCC) en de CAP-aggregatie van het WMO-informatiecentrum voor zwaar weer (SWIC), geladen via de doorgifte van Money Bansho.",
         "freshness": "NWS-, ECCC- en SWIC-waarschuwingen worden elke 15 minuten door de doorgifte geladen en bewaakt tegen een actualiteitsbudget van 45 minuten.",
         "confidence": "Gezaghebbend voor waarschuwingen die de bijdragende nationale diensten uitgeven, afhankelijk van het publicatiemoment bij de bron. NWS en ECCC worden als polygonen getekend. SWIC-waarschuwingen met een locatiecode worden getekend op de centroïde van het land van de uitgevende dienst, met een expliciete precisiemarkering.",
         "limitations": {
@@ -4999,7 +5004,7 @@
       "canadaRoads": {
         "category": "Vervoer",
         "purpose": "Toont officiële wegincidenten, waarschuwingen, condities, afsluitingen, werkzaamheden en gevaren in de ondersteunde Canadese rechtsgebieden.",
-        "source": "Provinciale stromen Ontario 511, Alberta 511 en Manitoba 511, City of Toronto Road Restrictions en DriveBC Open511, geladen via WorldMonitor.",
+        "source": "Provinciale stromen Ontario 511, Alberta 511 en Manitoba 511, City of Toronto Road Restrictions en DriveBC Open511, geladen via Money Bansho.",
         "freshness": "Ontario 511, Alberta 511 en Manitoba 511 worden elke 15 minuten geladen en bewaakt tegen een actualiteitsbudget van 45 minuten. De beperkingen van Toronto worden elke 2 uur geladen, en DriveBC Open511 elke 30 minuten.",
         "confidence": "Gezaghebbend voor de ondersteunde provinciale en gemeentelijke uitgevers, afhankelijk van het publicatiemoment bij de bron en van de gekarteerde geometrie.",
         "limitations": {
@@ -5064,7 +5069,7 @@
       "waterways": {
         "category": "Maritiem",
         "purpose": "Markeert strategische waterwegen en knelpunten, zodat verstoringssignalen tegen een vaste maritieme geografie kunnen worden gelezen.",
-        "source": "Register van strategische waterwegen van WorldMonitor, met statuslagen van knelpunten in de toeleveringsketen uit AIS, NGA-waarschuwingen en van PortWatch afgeleide stromen.",
+        "source": "Register van strategische waterwegen van Money Bansho, met statuslagen van knelpunten in de toeleveringsketen uit AIS, NGA-waarschuwingen en van PortWatch afgeleide stromen.",
         "freshness": "Waterweglocaties zijn statisch. De live knelpuntstatus wordt elke 6 minuten licht ververst, en de transitsamenvattingen verversen elke 10 minuten wanneer het pad van de doorgifte en PortWatch in orde is.",
         "confidence": "Hoog voor de vaste geografie. De betrouwbaarheid van een live verstoring hangt af van de bijbehorende stromen AIS, NGA en PortWatch.",
         "limitations": {
@@ -5081,7 +5086,7 @@
       "ciiChoropleth": {
         "category": "Landrisico",
         "purpose": "Kleurt landen volgens de huidige score van de Country Instability Index, voor een brede eerste sortering van strategisch risico.",
-        "source": "Scoredienst van de Country Instability Index van WorldMonitor, met signalen van conflict, onrust, reisadviezen, cyberdreiging, scheepsvolging, luchtvaart, natuurlijke gebeurtenissen en nieuws.",
+        "source": "Scoredienst van de Country Instability Index van Money Bansho, met signalen van conflict, onrust, reisadviezen, cyberdreiging, scheepsvolging, luchtvaart, natuurlijke gebeurtenissen en nieuws.",
         "freshness": "De cache van risicoscores wordt elke 8 minuten licht ververst. seed-meta en health.riskScores tonen de staat actueel, verouderd, gedeeltelijk of gedegradeerd, tegen een actualiteitsbudget van 30 minuten.",
         "confidence": "Signaal van een samengesteld model, geen officiële landbeoordeling en geen kansverwachting.",
         "limitations": {
@@ -5125,7 +5130,7 @@
     "finance": {
       "map": "Wereldwijde marktkaart",
       "liveNews": "Marktkoppen",
-      "insights": "AI-marktinzichten"
+      "insights": "Marktinzichten"
     },
     "tech": {
       "map": "Wereldwijde technologiekaart",
@@ -5134,12 +5139,12 @@
     "commodity": {
       "map": "Grondstoffenkaart",
       "liveNews": "Grondstoffenkoppen",
-      "insights": "AI-grondstoffeninzichten"
+      "insights": "Grondstoffeninzichten"
     },
     "energy": {
       "map": "Energieatlas-kaart",
       "liveNews": "Energiekoppen",
-      "insights": "AI-energieinzichten"
+      "insights": "Energieinzichten"
     },
     "happy": {
       "map": "Goed nieuws-kaart"
@@ -5149,9 +5154,9 @@
     "title": "App installeren",
     "share": "Tik in Safari op Delen (het vierkant met een pijl omhoog). Mogelijk moet je eerst het menu Meer openen.",
     "add": "Kies Zet op beginscherm.",
-    "confirm": "Tik op Voeg toe en open World Monitor vanaf je beginscherm.",
+    "confirm": "Tik op Voeg toe en open Money Bansho vanaf je beginscherm.",
     "close": "Sluiten",
-    "alertsHint": "Installeer World Monitor op je beginscherm om meldingen te ontvangen op deze iPhone of iPad.",
+    "alertsHint": "Installeer Money Bansho op je beginscherm om meldingen te ontvangen op deze iPhone of iPad.",
     "how": "Installatie-instructies"
   },
   "teamDashboards": {
@@ -5402,7 +5407,7 @@
       "placeholder": "Plaats of 25.11, 55.14",
       "submit": "Zoeken",
       "locate": "Mijn locatie",
-      "hint": "Getypte coördinaten en je locatie worden nooit naar WorldMonitor verzonden. Getypte plaatsnamen gaan naar WorldMonitor en OpenStreetMap Nominatim.",
+      "hint": "Getypte coördinaten en je locatie worden nooit naar Money Bansho verzonden. Getypte plaatsnamen gaan naar Money Bansho en OpenStreetMap Nominatim.",
       "results": "Plaatsen",
       "searching": "Zoeken…",
       "tooShort": "Voer minstens twee tekens in, of coördinaten zoals 25.11, 55.14.",
@@ -5596,7 +5601,7 @@
     "privacy": {
       "line": "Je punt gaat alleen naar de beeldarchieven.",
       "more": "Details",
-      "body": "Passages worden op dit apparaat berekend. Om beelden te vinden, stuurt je browser het punt rechtstreeks naar Earth Search, Planetary Computer, NASA GIBS en EUMETSAT; WorldMonitor ontvangt het niet. Op een gemonitorde locatie wordt WorldMonitor om het dagelijkse overzicht van die locatie gevraagd via de ID van de locatie, niet via uw punt. Een getypte plaatsnaam gaat naar WorldMonitor en OpenStreetMap Nominatim om te worden gevonden. Gedeelde links behouden twee decimalen (0,01°)."
+      "body": "Passages worden op dit apparaat berekend. Om beelden te vinden, stuurt je browser het punt rechtstreeks naar Earth Search, Planetary Computer, NASA GIBS en EUMETSAT; Money Bansho ontvangt het niet. Op een gemonitorde locatie wordt Money Bansho om het dagelijkse overzicht van die locatie gevraagd via de ID van de locatie, niet via uw punt. Een getypte plaatsnaam gaat naar Money Bansho en OpenStreetMap Nominatim om te worden gevonden. Gedeelde links behouden twee decimalen (0,01°)."
     },
     "sources": {
       "heading": "Bronnen ({{count}})",
@@ -5716,7 +5721,7 @@
       "map": "Provider, thema en globe",
       "ai": "Modellen, geheugen en frameworks",
       "video": "Kwaliteit en automatisch afspelen",
-      "apiKeys": "Sleutels voor de World Monitor API",
+      "apiKeys": "Sleutels voor de Money Bansho API",
       "embeds": "Widgets voor je eigen site",
       "aiAgents": "Verbonden MCP-clients",
       "about": "Sitelinks, voorwaarden en privacy"
@@ -5732,7 +5737,7 @@
       "planPremium": "Premium",
       "external": {
         "heading": "Premium-toegang",
-        "desc": "Deze toegang wordt niet via uw WorldMonitor-account gefactureerd. Er zijn hier geen betaalmethode of facturen beschikbaar."
+        "desc": "Deze toegang wordt niet via uw Money Bansho-account gefactureerd. Er zijn hier geen betaalmethode of facturen beschikbaar."
       },
       "checking": {
         "heading": "Plan controleren…",
@@ -5753,7 +5758,7 @@
         "desc": "We konden uw huidige plan niet verifiëren. Probeer opnieuw of bekijk plannen in een nieuw tabblad."
       },
       "free": {
-        "heading": "WorldMonitor Gratis",
+        "heading": "Money Bansho Gratis",
         "desc": "Uw huidige plan is Gratis. Upgrade voor alle panelen, AI-analyse en prioritaire gegevensverversing."
       },
       "portal": {
@@ -5762,7 +5767,7 @@
       },
       "deletion": {
         "heading": "Account verwijderen",
-        "desc": "Dit World Monitor-account permanent verwijderen. Abonnementen worden onmiddellijk opgezegd zonder terugbetaling van de resterende vooruitbetaalde periode. API-sleutels, insluitsleutels en MCP-tokens werken niet meer. Factureringsgegevens die nodig zijn voor de boekhouding, geschillen en wettelijke verzoeken worden bewaard met de klantcontactgegevens die ze bevatten; ze verwijzen niet langer naar uw inlogaccount, maar webhooklogboeken van de betaalprovider die vóór de verwijdering zijn geschreven, behouden de identificatoren waarmee ze zijn afgeleverd. Dashboardvoorkeuren en geheimen van de desktop-app in de sleutelhanger van dit apparaat worden niet op afstand gewist.",
+        "desc": "Dit Money Bansho-account permanent verwijderen. Abonnementen worden onmiddellijk opgezegd zonder terugbetaling van de resterende vooruitbetaalde periode. API-sleutels, insluitsleutels en MCP-tokens werken niet meer. Factureringsgegevens die nodig zijn voor de boekhouding, geschillen en wettelijke verzoeken worden bewaard met de klantcontactgegevens die ze bevatten; ze verwijzen niet langer naar uw inlogaccount, maar webhooklogboeken van de betaalprovider die vóór de verwijdering zijn geschreven, behouden de identificatoren waarmee ze zijn afgeleverd. Dashboardvoorkeuren en geheimen van de desktop-app in de sleutelhanger van dit apparaat worden niet op afstand gewist.",
         "dialogTitle": "Dit account verwijderen?",
         "dialogCopy": "Dit kan niet ongedaan gemaakt worden. Abonnementen worden geannuleerd, sleutels stoppen onmiddellijk met werken, en factureringsgegevens worden bewaard voor boekhoudkundige doeleinden, geschillen en wettelijke verzoeken -- inclusief de contactgegevens die ermee gepaard gaan. Meld u af op andere apparaten en wis daarna de sitegegevens op dit apparaat -- deze zijn buiten het bereik van de server.",
         "phraseLabel": "Typ {{phrase}} ter bevestiging",

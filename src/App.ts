@@ -142,6 +142,7 @@ import {
   computeLegacyDefaultDisabledSources,
   FEEDS,
   FREE_CAP_PROTECTED_SOURCES,
+  EXPANSION_OPT_IN_SOURCES,
   FRONTLINE_EUROPE_PROTECTED_SOURCES,
   getLocaleBoostedSources,
   getStrategicDefaultSources,
@@ -222,7 +223,6 @@ import { replaceRawI18nKeyPlaceholders } from '@/utils/i18n-raw-key-healer';
 import { startAccountAuthHandoff } from '@/app/account-auth-handoff';
 import { TierPreferenceHandoff } from '@/app/tier-preference-handoff';
 import { initialRegionFromCache, resolveUserRegion, resolvePreciseUserCoordinates, type PreciseCoordinates } from '@/utils/user-location';
-import { showProBanner } from '@/components/ProBanner';
 import { getAuthState, initAuthState, subscribeAuthState } from '@/services/auth-state';
 import { installSignUpResume } from '@/services/sign-up-resume';
 import { createSignUpResumeOverlay } from '@/components/SignUpResumeOverlay';
@@ -1518,6 +1518,15 @@ export class App {
           }
         }
         localStorage.setItem(canadaArcticKey, 'done');
+      }
+      // Regional press panels: keep their opt-in sources off for existing profiles.
+      const regionalPressKey = 'mb-regional-press-optin-v1';
+      if (!localStorage.getItem(regionalPressKey)) {
+        const current = loadFromStorage<string[]>(STORAGE_KEYS.disabledFeeds, []);
+        if (current.length > 0) {
+          saveToStorage(STORAGE_KEYS.disabledFeeds, [...new Set([...current, ...EXPANSION_OPT_IN_SOURCES])]);
+        }
+        localStorage.setItem(regionalPressKey, 'done');
       }
       // #6604/#6605 — Canada depth pack: new opt-in names need a NEW key.
       // Do not reuse worldmonitor-canada-arctic-optin-v1 (already fired).
@@ -3151,7 +3160,6 @@ export class App {
     await this.panelLayout.init();
     markLcpDebug('wm:layout:init-complete');
     this.eventHandlers.setupSearchControls();
-    showProBanner(this.state.container);
     this.updateConnectivityUi();
     window.addEventListener('online', this.handleConnectivityChange);
     window.addEventListener('offline', this.handleConnectivityChange);
@@ -4007,7 +4015,8 @@ export class App {
     action.type = 'button';
     action.className = 'update-toast-action';
     action.dataset.action = 'upgrade';
-    action.textContent = 'Upgrade';
+    action.textContent = 'OK';
+    action.hidden = true;
 
     const dismiss = document.createElement('button');
     dismiss.type = 'button';
