@@ -111,7 +111,7 @@ export async function buildWire(nowMs = Date.now()) {
   const all = [];
   for (const [company, items] of groupByCompany(results, nowMs)) {
     // Dedupe within one company, then stop a single story from flooding the wire.
-    const events = selectEvents(dedupeEvents(items.map(toEvent)), 8, 5);
+    const events = selectEvents(dedupeEvents(items.map((item) => toEvent(item, company))), 8, 5);
     for (const event of events) {
       all.push({ ...event, symbol: company.symbol, name: company.name, changePct: changes.get(company.symbol) ?? null });
     }

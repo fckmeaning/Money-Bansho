@@ -8,7 +8,10 @@ import { mean, round, stdev } from './stats.js';
 
 const HORIZONS = [1, 5, 20];
 const FAN_HORIZONS = [1, 2, 3, 5, 8, 12, 20];
-const PRIOR = 10; // pseudo-observations of "nothing special happens"
+// Pseudo-observations of "nothing special happens". Calibrated on real 8-K events (docs/math/backtest-real.md):
+// analogues' mean is no better than zero, so it is shrunk hard; their spread widens the corridor, so it is trusted sooner.
+const PRIOR_MEAN = 30;
+const PRIOR_VARIANCE = 5;
 const MIN_ANALOGUES = 5;
 const MIN_N_EFF = 3;
 const MAX_ANALOGUES = 80;
@@ -74,7 +77,8 @@ function analogues(target, candidates, closes, h, before) {
 /**
  * Mixture of the kernel-smoothed empirical distribution of outcomes and ordinary volatility:
  * F(x) = lambda * sum w_j Phi((x - x_j)/b) / sum w + (1 - lambda) * Phi(x / (sigma sqrt h)),
- * lambda = n_eff / (n_eff + PRIOR). Returns the CDF, quantile function and mean.
+ * lambda_s = n_eff / (n_eff + PRIOR_VARIANCE); the analogues are shifted so that the mixture mean is
+ * lambda_m * (weighted mean), lambda_m = n_eff / (n_eff + PRIOR_MEAN). Returns the CDF, quantile function, mean.
  */
 export function mixture(values, weights, sigma, h) {
   const base = sigma * Math.sqrt(h);
@@ -82,13 +86,15 @@ export function mixture(values, weights, sigma, h) {
   const squares = weights.reduce((a, b) => a + b * b, 0);
   const nEff = total > 0 ? (total * total) / squares : 0;
   const enough = values.length >= MIN_ANALOGUES && nEff >= MIN_N_EFF;
-  const lambda = enough ? nEff / (nEff + PRIOR) : 0;
+  const lambda = enough ? nEff / (nEff + PRIOR_VARIANCE) : 0;
+  const lambdaMean = enough ? nEff / (nEff + PRIOR_MEAN) : 0;
   const centre = enough ? values.reduce((a, x, i) => a + weights[i] * x, 0) / total : 0;
+  const shift = enough ? centre * (1 - lambdaMean / lambda) : 0;
   const spread = enough ? Math.sqrt(values.reduce((a, x, i) => a + weights[i] * (x - centre) ** 2, 0) / total) : 0;
   const bandwidth = enough ? Math.max(1.06 * spread * nEff ** -0.2, 0.15 * base) : base;
   const cdf = (x) => {
     let own = 0;
-    if (lambda > 0) for (let i = 0; i < values.length; i += 1) own += weights[i] * normalCdf((x - values[i]) / bandwidth);
+    if (lambda > 0) for (let i = 0; i < values.length; i += 1) own += weights[i] * normalCdf((x - (values[i] - shift)) / bandwidth);
     return (lambda > 0 ? lambda * (own / total) : 0) + (1 - lambda) * normalCdf(x / base);
   };
   const scale = Math.max(base, spread) * 8;
@@ -102,7 +108,7 @@ export function mixture(values, weights, sigma, h) {
     }
     return (lo + hi) / 2;
   };
-  return { cdf, quantile, mean: lambda * centre, lambda, nEff, enough };
+  return { cdf, quantile, mean: lambdaMean * centre, lambda, lambdaMean, nEff, enough };
 }
 
 /** Walk-forward over the picked analogues: weights and outcomes of earlier ones only. */
@@ -230,7 +236,8 @@ function horizonEstimate({ target, candidates, closes, rows, sigma, last, before
     rule: m.enough ? 'kernel' : 'baseline',
     n: used.length,
     nEff: round(m.enough ? m.nEff : 0, 1),
-    weight: round(m.lambda, 3),
+    weight: round(m.lambdaMean, 3),
+    spreadWeight: round(m.lambda, 3),
     expectedPct: pct(m.mean),
     low80Pct: pct(q10),
     high80Pct: pct(q90),
@@ -311,7 +318,7 @@ export function computeForecasts({ history, events, peers = [] }, nowMs = Date.n
     asOf: rows[rows.length - 1].closeAt,
     lastClose: last,
     dailySigmaPct: round(sigma * 100, 3),
-    model: { kernel: KERNEL, prior: PRIOR, minAnalogues: MIN_ANALOGUES, minNEff: MIN_N_EFF },
+    model: { kernel: KERNEL, priorMean: PRIOR_MEAN, priorVariance: PRIOR_VARIANCE, minAnalogues: MIN_ANALOGUES, minNEff: MIN_N_EFF },
     events: list,
   };
 }

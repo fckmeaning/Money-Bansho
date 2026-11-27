@@ -2,8 +2,10 @@
 // Formulas: docs/math/significance.md. Pure functions, no network.
 //
 //   eta_ex = logit(p0[type]) + b_c ln(c/0.5) + b_n ln(n_eff) + b_t (|s| - 0.3) + b_s (sal - 0.6) + b_v (nov - 0.7)
-//   p_cal  = p_ex + sum_j K_ij (y_j - p_j) / (M + sum_j K_ij)        kernel regression on analog events
-//   eta    = logit(p_cal) + b_z (-ln p_t - 1) + b_v2 log2(volume ratio)   realised price reaction
+//   p_cal  = p_ex + sum_j K_ij (r_j - rbar) / (M + sum_j K_ij),  r_j = y_j - p_j   kernel regression on analog events
+//   eta    = logit(p_cal) + b_z (u - ubar) + b_v log2(volume ratio),  u = -ln(Student-t tail p)   realised price reaction
+// rbar and ubar are the company's own background (shrunk means): a volatile stock moves on almost any headline,
+// so the score is relative to what is ordinary for this company.
 //   S      = 100 sigmoid(eta);  current = S * exp(-age^2 / (2 tau_type^2))
 import { sourceCredibility, shingles, jaccard } from '../sources.js';
 import { normalCdf, studentTTwoSided } from './special.js';
@@ -127,6 +129,11 @@ export function scoreEvents(events, nowMs = Date.now()) {
     .filter((e) => Number.isFinite(e.impact?.z))
     .map((e) => ({ event: e, y: materiality(e.impact.z), p: base.get(e).p }));
 
+  const ANCHOR = 5; // pseudo-observations at zero for the company background
+  const background = analogues.reduce((sum, a) => sum + (a.y - a.p), 0) / (analogues.length + ANCHOR);
+  const reactions = sorted.map((e) => surprise(e.impact)).filter(Boolean);
+  const meanSurprise = reactions.reduce((sum, r) => sum + r.value, 0) / (reactions.length + ANCHOR);
+
   const scored = new Map();
   for (const event of sorted) {
     const mine = base.get(event);
@@ -140,10 +147,11 @@ export function scoreEvents(events, nowMs = Date.now()) {
         * gauss(((Number(event.sentiment) || 0) - (Number(a.event.sentiment) || 0)) / BANDWIDTH.tone)
         * gauss(days / BANDWIDTH.timeDays);
       mass += k;
-      residual += k * (a.y - a.p);
+      residual += k * (a.y - a.p - background);
     }
     const calibrated = clamp(mine.p + residual / (CAL_PRIOR + mass), 0.01, 0.99);
-    const react = surprise(event.impact);
+    const raw = surprise(event.impact);
+    const react = raw ? { ...raw, value: raw.value - meanSurprise } : null;
     const volumeRatio = event.impact?.volumeRatio;
     const volume = volumeRatio > 0 ? BETA.vol * clamp(Math.log2(volumeRatio), -1, 3) : null;
     const shift = (react?.value ?? 0) + (volume ?? 0);
@@ -175,7 +183,9 @@ export function scoreEvents(events, nowMs = Date.now()) {
   }
 
   const out = list.map((e) => ({ ...e, significance: scored.get(e) }));
-  return { events: out, summary: summarize(out, nowMs) };
+  const summary = summarize(out, nowMs);
+  if (summary) summary.background = { residual: round(background, 3), surprise: round(meanSurprise, 3), analogues: analogues.length };
+  return { events: out, summary };
 }
 
 function summarize(events, nowMs) {

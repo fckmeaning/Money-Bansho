@@ -1338,6 +1338,13 @@
       "reason": "Money Bansho company dossier: a keyless read-only JSON endpoint and its helpers over Yahoo, Google News and SEC EDGAR, outside the generated RPC contract.",
       "owner": "@fckmeaning",
       "removal_issue": null
+    },
+    {
+      "path": "api/_dossier/world.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho world wire: a keyless read-only view (?view=world) over public RSS feeds, GDELT DOC 2.0 and Yahoo Finance charts, outside the generated RPC contract.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
     }
   ]
 }

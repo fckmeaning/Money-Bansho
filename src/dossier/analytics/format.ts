@@ -1,5 +1,6 @@
 // Locale-aware formatting for the analytics views. `lang` is passed explicitly so
 // a view stays in the language it was built with.
+import { exchangeDay } from '../zone';
 
 export type Lang = 'en' | 'ru';
 export type Unit = 'pct' | 'ratio' | 'num' | 'price' | 'days' | 'money';
@@ -75,15 +76,18 @@ function dated(lang: Lang, key: string, options: Intl.DateTimeFormatOptions, tim
   return Number.isNaN(date.getTime()) ? '—' : cached.format(date);
 }
 
-/** Daily bars are labelled by their UTC date so the session date does not shift with the viewer. */
+/**
+ * Daily bars are labelled by the exchange's calendar date, so it does not shift with the
+ * viewer. The formatter stays in UTC: `exchangeDay` moves the stamp onto the local date.
+ */
 export const dayLabel = (time: number, lang: Lang): string =>
-  dated(lang, 'day', { day: 'numeric', month: 'short', timeZone: 'UTC' }, time);
+  dated(lang, 'day', { day: 'numeric', month: 'short', timeZone: 'UTC' }, exchangeDay(time));
 
 export const monthYear = (time: number, lang: Lang): string =>
-  dated(lang, 'my', { month: 'short', year: '2-digit', timeZone: 'UTC' }, time);
+  dated(lang, 'my', { month: 'short', year: '2-digit', timeZone: 'UTC' }, exchangeDay(time));
 
 export const fullDate = (time: number, lang: Lang): string =>
-  dated(lang, 'full', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }, time);
+  dated(lang, 'full', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }, exchangeDay(time));
 
 export const dateTime = (time: number, lang: Lang): string =>
   dated(lang, 'dt', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }, time);

@@ -10,6 +10,7 @@ import { SYMBOL_RE, companies, createCompanyList } from './companies';
 import { h, tickAges } from './dom';
 import { eventsView, processView } from './events';
 import { forecastView } from './forecast';
+import { worldView } from './world';
 import { rangeName, setUiLang, t, uiLang } from './i18n';
 import {
   TIMELINE_PAGE,
@@ -28,6 +29,7 @@ import { signalPlate } from './plate';
 import { COMPANY_VIEWS, RANGES } from './types';
 import type { Board, CompanyView, Dossier, EventType, Range, Wire, WireEvent } from './types';
 import { moversPanel, radarPanel, wireFeed, wireKey } from './wire';
+import { setBarOffset } from './zone';
 
 const DOSSIER_MS = 20_000;
 const BOARD_MS = 30_000;
@@ -40,6 +42,8 @@ const state = {
   symbol: null as string | null,
   view: 'overview' as CompanyView,
   screener: false,
+  /** The «Мир» summary page (?view=world). */
+  world: false,
   range: '3mo' as Range,
   query: '',
   region: 'all',
@@ -116,8 +120,8 @@ const companyList = createCompanyList(
 
 function renderChrome(): void {
   document.documentElement.lang = uiLang();
-  document.title = `${state.symbol ?? t(state.screener ? 'screener' : 'liveWire')} · Money Bansho`;
-  const active = state.symbol ? 'dossier' : state.screener ? 'screener' : 'wire';
+  document.title = `${state.symbol ?? (state.world ? t('world') : t(state.screener ? 'screener' : 'liveWire'))} · Money Bansho`;
+  const active = state.symbol ? 'dossier' : state.screener ? 'screener' : state.world ? 'world' : 'wire';
   const menuKey = `${active}|${uiLang()}`;
   if (menuButton?.key !== menuKey) menuButton = { key: menuKey, node: mountBanshoMenu({ active, lang: uiLang() }) };
   header.replaceChildren(
@@ -142,13 +146,26 @@ function renderChrome(): void {
       {},
       h(
         'a',
-        { href: location.pathname, 'aria-current': state.symbol || state.screener ? null : 'page', onclick: internal(null) },
+        { href: location.pathname, 'aria-current': state.symbol || state.screener || state.world ? null : 'page', onclick: internal(null) },
         t('liveWire'),
       ),
       h(
         'a',
         { href: `${location.pathname}?view=screener`, 'aria-current': state.screener ? 'page' : null, onclick: internal(null, true) },
         t('screener'),
+      ),
+      h(
+        'a',
+        {
+          href: `${location.pathname}?view=world`,
+          'aria-current': state.world ? 'page' : null,
+          onclick: (event: MouseEvent) => {
+            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
+            event.preventDefault();
+            navigateWorld();
+          },
+        },
+        t('world'),
       ),
       h('a', { href: '/dashboard' }, t('dashboard')),
       h(
@@ -549,11 +566,28 @@ function renderScreener(): void {
   viewSlot.replaceChildren(view.el);
 }
 
+function renderWorld(): void {
+  chartPanel.hidden = true;
+  chartBody.replaceChildren();
+  chart = null;
+  swap(head);
+  swap(feed);
+  swap(rail);
+  if (shown?.key === 'world') return;
+  disposeScreener?.();
+  shown = { key: 'world', data: '' };
+  const view = worldView({ onSelect: (symbol) => navigate(symbol) });
+  disposeScreener = view.dispose;
+  viewSlot.replaceChildren(view.el);
+}
+
 function renderView(): void {
-  const wide = state.screener || (state.symbol !== null && state.view !== 'overview');
-  main.classList.toggle('wire', !state.symbol && !state.screener);
+  // Date the bars on screen by their own exchange, not by UTC.
+  setBarOffset(state.symbol ? state.dossier?.gmtoffset : null);
+  const wide = state.screener || state.world || (state.symbol !== null && state.view !== 'overview');
+  main.classList.toggle('wire', !state.symbol && !state.screener && !state.world);
   main.classList.toggle('full', wide);
-  if (!state.screener && disposeScreener) {
+  if (!state.screener && !state.world && disposeScreener) {
     disposeScreener();
     disposeScreener = null;
     shown = null;
@@ -563,6 +597,7 @@ function renderView(): void {
   renderStatus();
   if (state.symbol) renderCompany();
   else if (state.screener) renderScreener();
+  else if (state.world) renderWorld();
   else {
     shown = null;
     viewSlot.replaceChildren();
@@ -619,6 +654,11 @@ function findOpened(data: Dossier, opened: WireEvent) {
 function startPolling(): void {
   poller?.stop();
   const { symbol, range } = state;
+  if (!symbol && state.world) {
+    // The world page polls its own endpoint (at most once a minute).
+    poller = null;
+    return;
+  }
   if (!symbol) {
     poller = createPoller(
       fetchWire,
@@ -691,6 +731,7 @@ function readUrl(): void {
   const view = params.get('view') as CompanyView;
   state.view = COMPANY_VIEWS.includes(view) ? view : 'overview';
   state.screener = !state.symbol && params.get('view') === 'screener';
+  state.world = !state.symbol && params.get('view') === 'world';
 }
 
 function writeUrl(push: boolean): void {
@@ -701,6 +742,7 @@ function writeUrl(push: boolean): void {
   else params.delete('range');
   if (state.symbol && state.view !== 'overview') params.set('view', state.view);
   else if (state.screener) params.set('view', 'screener');
+  else if (state.world) params.set('view', 'world');
   else params.delete('view');
   const query = params.toString();
   const url = `${location.pathname}${query ? `?${query}` : ''}`;
@@ -727,14 +769,30 @@ function enterView(): void {
 function navigate(symbol: string | null, opened: WireEvent | null = null, screener = false): void {
   state.opened = opened;
   state.openedPending = opened !== null;
-  if (symbol === state.symbol && (symbol !== null || screener === state.screener)) {
+  if (symbol === state.symbol && (symbol !== null || (screener === state.screener && !state.world))) {
     state.menuOpen = false;
     renderChrome();
     return;
   }
   state.symbol = symbol;
   state.screener = screener && !symbol;
+  state.world = false;
   if (opened) state.view = 'overview';
+  writeUrl(true);
+  enterView();
+}
+
+function navigateWorld(): void {
+  state.opened = null;
+  state.openedPending = false;
+  if (state.world && !state.symbol) {
+    state.menuOpen = false;
+    renderChrome();
+    return;
+  }
+  state.symbol = null;
+  state.screener = false;
+  state.world = true;
   writeUrl(true);
   enterView();
 }

@@ -1,5 +1,6 @@
 import { classifyEvent, priceReaction } from './analyze.js';
 import { eventStudy } from './quant.js';
+import { sourceTier } from './sources.js';
 
 function hash(value) {
   let a = 0x811c9dc5;
@@ -12,9 +13,13 @@ function hash(value) {
   return (a >>> 0).toString(36) + (b >>> 0).toString(36);
 }
 
-/** Turn a raw news or filing item into a classified dossier event. */
-export function toEvent(item) {
-  const found = classifyEvent({ title: item.title, lang: item.lang });
+/**
+ * Turn a raw news or filing item into a classified dossier event. With the company the
+ * item was collected for, a headline about another firm's boss is not a leadership change.
+ */
+export function toEvent(item, company) {
+  // Array.prototype.map passes an index here; only a company object counts.
+  const found = classifyEvent({ title: item.title, lang: item.lang, company: typeof company === 'object' ? company : undefined });
   const filing = item.source === 'SEC EDGAR';
   return {
     id: hash(item.url),
@@ -24,10 +29,15 @@ export function toEvent(item) {
     source: item.source,
     lang: item.lang,
     region: item.region,
-    // An item 5.02 filing is a leadership matter by definition and carries no tone.
-    type: filing ? 'leadership' : found.type,
+    // A filing's type follows its 8-K item (5.02 is leadership by definition); it carries no tone.
+    type: filing ? item.type ?? 'leadership' : found.type,
     sentiment: filing ? 0 : found.sentiment,
     people: filing ? [] : found.people,
+    tier: item.tier ?? sourceTier(item.source),
+    ...(item.outlets > 1 ? { outlets: item.outlets } : {}),
+    ...(item.cluster ? { cluster: { ...item.cluster, sources: item.cluster.sources.slice(0, 5), credibility: item.cluster.credibility.slice(0, 5) } } : {}),
+    ...(item.mention ? { mention: item.mention } : {}),
+    via: item.via ?? (filing ? 'edgar' : 'gnews'),
     priceMovePct: null,
     abnormalMovePct: null,
     impact: null,

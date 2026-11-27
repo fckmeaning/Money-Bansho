@@ -2,6 +2,7 @@
 // nothing in the dossier parses HTML.
 import { locale, t, uiLang } from './i18n';
 import type { EventType } from './types';
+import { exchangeDay } from './zone';
 
 type Child = Node | string | null | undefined | false;
 type Props = Record<string, string | number | boolean | null | undefined | ((event: never) => void)>;
@@ -189,9 +190,9 @@ export function stamp(time: number): string {
   });
 }
 
-/** Daily bars are labelled by their UTC date so the session date does not shift with the viewer. */
+/** Daily bars are labelled by the exchange's calendar date, so it does not shift with the viewer. */
 export function barDate(time: number, withYear = false): string {
-  return format(time, {
+  return format(exchangeDay(time), {
     month: 'short',
     day: 'numeric',
     timeZone: 'UTC',

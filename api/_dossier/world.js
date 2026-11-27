@@ -12,7 +12,7 @@ import { parseChart } from './yahoo.js';
 
 const HOUR = 3600_000;
 export const WINDOW_HOURS = 72;
-export const CLUSTER_THRESHOLD = 0.34;
+export const CLUSTER_THRESHOLD = 0.26;
 const FEED_TTL_MS = 120_000;
 const WORLD_TTL_MS = 90_000;
 const GDELT_TTL_MS = 15 * 60_000;
@@ -20,7 +20,7 @@ const GDELT_GAP_MS = 5200;
 const BIN_HOURS = 3;
 
 /** Expert weights of the significance score. They are not fitted on history. */
-export const WEIGHTS = { src: 0.28, tier: 0.14, rec: 0.2, tone: 0.1, type: 0.18, mkt: 0.1 };
+export const WEIGHTS = { src: 0.34, tier: 0.12, rec: 0.18, tone: 0.1, type: 0.14, mkt: 0.12 };
 export const REC_SIGMA_HOURS = 24;
 const TIER_WEIGHT = { 1: 1, 2: 0.8, 3: 0.55, 4: 0.35 };
 
@@ -31,7 +31,7 @@ const GN = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q)}
 // tier: 1 wire or official body, 2 major outlet, 3 specialist or regional source.
 export const FEEDS = [
   { id: 'bbc-world', name: 'BBC World', url: 'https://feeds.bbci.co.uk/news/world/rss.xml', region: 'world', tier: 2 },
-  { id: 'guardian', name: 'Guardian World', url: 'https://www.theguardian.com/world/rss', region: 'world', tier: 2 },
+  { id: 'bbc-mideast', name: 'BBC Middle East', url: 'https://feeds.bbci.co.uk/news/world/middle_east/rss.xml', region: 'israel', tier: 2 },
   { id: 'aljazeera', name: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml', region: 'world', tier: 2 },
   { id: 'npr-world', name: 'NPR World', url: 'https://feeds.npr.org/1004/rss.xml', region: 'world', tier: 2 },
   { id: 'nyt-world', name: 'New York Times World', url: 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml', region: 'world', tier: 2 },
@@ -40,13 +40,13 @@ export const FEEDS = [
   { id: 'cnbc', name: 'CNBC', url: 'https://www.cnbc.com/id/100003114/device/rss/rss.html', region: 'finance', tier: 2 },
   { id: 'fed', name: 'Federal Reserve', url: 'https://www.federalreserve.gov/feeds/press_all.xml', region: 'finance', tier: 1 },
   { id: 'ft-markets', name: 'FT Markets', url: 'https://www.ft.com/markets?format=rss', region: 'finance', tier: 2 },
-  { id: 'yahoo-fin', name: 'Yahoo Finance', url: 'https://finance.yahoo.com/rss/topstories', region: 'finance', tier: 3 },
+  { id: 'bbc-europe', name: 'BBC Europe', url: 'https://feeds.bbci.co.uk/news/world/europe/rss.xml', region: 'europe', tier: 2 },
   { id: 'ft-europe', name: 'FT Europe', url: 'https://www.ft.com/world/europe?format=rss', region: 'europe', tier: 2 },
   { id: 'dw-business', name: 'DW Business', url: 'https://rss.dw.com/rdf/rss-en-bus', region: 'europe', tier: 2 },
   { id: 'france24-europe', name: 'France 24 Europe', url: 'https://www.france24.com/en/europe/rss', region: 'europe', tier: 2 },
   { id: 'france24-biz', name: 'France 24 Business', url: 'https://www.france24.com/en/business-tech/rss', region: 'europe', tier: 2 },
   { id: 'ansa-en', name: 'ANSA English', url: 'https://www.ansa.it/english/news/english_nr_rss.xml', region: 'europe', tier: 1 },
-  { id: 'yle-en', name: 'Yle News', url: 'https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_NEWS', region: 'europe', tier: 3 },
+  { id: 'euronews', name: 'Euronews', url: 'https://www.euronews.com/rss?format=mrss', region: 'europe', tier: 2 },
   { id: 'scmp-china', name: 'SCMP China', url: 'https://www.scmp.com/rss/4/feed', region: 'china', tier: 2 },
   { id: 'scmp-business', name: 'SCMP Business', url: 'https://www.scmp.com/rss/92/feed', region: 'china', tier: 2 },
   { id: 'cgtn-world', name: 'CGTN World', url: 'https://www.cgtn.com/subscribe/rss/section/world.xml', region: 'china', tier: 3 },
@@ -73,7 +73,7 @@ export const FEEDS = [
 
 const WIRE_RE = /\b(?:reuters|associated press|ap news|afp|bloomberg|xinhua|tass|kyodo|yonhap|ansa|dpa|efe|anadolu)\b/i;
 const OFFICIAL_RE = /\b(?:federal reserve|un news|united nations|imf|world bank|ecb|white house|state department|treasury|who|iaea)\b/i;
-const MAJOR_RE = /\b(?:bbc|guardian|new york times|nytimes|wall street journal|wsj|financial times|ft\.com|cnn|al jazeera|aljazeera|npr|washington post|economist|dw|deutsche welle|france 24|le monde|scmp|south china morning post|cnbc|haaretz|times of israel|jerusalem post|ynet|politico|nikkei|straits times|channel news asia|cna|rthk|euronews|handelsblatt|der spiegel|nzz)\b/i;
+const MAJOR_RE = /\b(?:cbs news|abc news|nbc news|pbs|axios|usa today|sky news|the national|arab news|kyiv independent|the telegraph|marketwatch|barron's|bbc|guardian|new york times|nytimes|wall street journal|wsj|financial times|ft\.com|cnn|al jazeera|aljazeera|npr|washington post|economist|dw|deutsche welle|france 24|le monde|scmp|south china morning post|cnbc|haaretz|times of israel|jerusalem post|ynet|politico|nikkei|straits times|channel news asia|cna|rthk|euronews|handelsblatt|der spiegel|nzz)\b/i;
 
 /** Tier of a publisher name or domain; a feed default applies when unknown. */
 export function sourceTier(name, fallback = 3) {
@@ -111,7 +111,7 @@ const type = (id, label, prior, latin, other) => ({
 // Order breaks ties. Latin keywords are English headlines; the rest covers zh/he/ko.
 export const EVENT_TYPES = [
   type('conflict', 'Конфликты и безопасность', 0.9,
-    'war|wars|attacks?|airstrikes?|strikes? on|missiles?|drones?|troops|invasion|ceasefire|truce|hostages?|bombing|shelling|offensive|militants?|terror\\w*|nuclear|warhead|military|clashes|rockets?|houthis?|hezbollah|hamas',
+    'war|wars|attacks?|airstrikes?|strikes? (?:on|in|near|against|kill\\w*)|killed|killing|death toll|casualt\\w+|wounded|missiles?|drones?|troops|soldiers?|army|invasion|ceasefire|truce|hostages?|bombing|blasts?|explosions?|shelling|offensive|militants?|terror\\w*|nuclear|warhead|military|clashes|rockets?|houthis?|hezbollah|hamas|nato',
     '战争|空袭|袭击|导弹|停火|冲突|מלחמה|תקיפה|טיל|הפסקת אש|전쟁|공습|미사일|휴전|도발'),
   type('sanctions', 'Санкции и торговля', 0.8,
     'sanctions?|sanctioned|embargo|tariffs?|export controls?|trade war|trade deal|trade talks|blacklist\\w*|retaliat\\w+',
@@ -475,7 +475,8 @@ const STOP = new Set(
   'the an and or of to in on for at by with from as is are was were be been its this that these those after over amid into says say said new will has have had not than more most about out off ahead why how what who where when their his her they she you our'.split(' '),
 );
 
-const stem = (word) => (word.length > 4 && /^\p{Script=Latin}+$/u.test(word) ? word.replace(/(?:ing|ed|es|s|e)$/, '') : word);
+const STEMS = { israeli: 'israel', chinese: 'china', russian: 'russia', ukrainian: 'ukraine', iranian: 'iran', german: 'germany', french: 'france', british: 'britain', japanese: 'japan', american: 'america', palestinian: 'palestine', indian: 'india' };
+const stem = (word) => STEMS[word] ?? (word.length > 4 && /^\p{Script=Latin}+$/u.test(word) ? word.replace(/(?:ing|ed|es|s|e)$/, '') : word);
 
 /** Content-word stems plus adjacent pairs of them. Han text uses character pairs. */
 export function shingles(title) {
@@ -542,17 +543,30 @@ export function clusterItems(items, threshold = CLUSTER_THRESHOLD) {
 
 /**
  * Significance 0..100 and its parts (each 0..1):
- *   src  = 1 - exp(-n/3), n distinct sources (diminishing returns)
+ *   src  = 1 - exp(-n/3), n independent sources (diminishing returns; copies of one headline count 1/4)
  *   tier = mean credibility weight of the three best sources
  *   rec  = exp(-(age/24h)^2 / 2), Gaussian kernel on the newest report
  *   tone = min(1, |headline tone| / 0.5)
  *   type = prior of the event type
  *   mkt  = tanh(max |z| / 2.5) of observed market moves; 0 when none is available
  */
-export function significance({ sources, ageHours, tone, prior, zAbs }) {
+/** Outlets that carry the very same headline are syndicated copies: the first counts 1, each further one 1/4 (at most three). */
+export function effectiveSources(members) {
+  const groups = new Map();
+  for (const m of members) {
+    const key = [...shingles(m.title)].sort().join('|');
+    if (!groups.has(key)) groups.set(key, new Set());
+    groups.get(key).add(m.source.toLowerCase());
+  }
+  let total = 0;
+  for (const outlets of groups.values()) total += 1 + 0.25 * Math.min(3, outlets.size - 1);
+  return total;
+}
+
+export function significance({ sources, effective = sources.length, ageHours, tone, prior, zAbs }) {
   const best = sources.map((tier) => TIER_WEIGHT[tier] ?? TIER_WEIGHT[4]).sort((a, b) => b - a).slice(0, 3);
   const parts = {
-    src: 1 - Math.exp(-sources.length / 3),
+    src: 1 - Math.exp(-effective / 3),
     tier: best.length ? best.reduce((a, b) => a + b, 0) / best.length : 0,
     rec: Math.exp(-0.5 * (Math.max(0, ageHours) / REC_SIGMA_HOURS) ** 2),
     tone: Math.min(1, Math.abs(tone) / 0.5),
@@ -604,6 +618,10 @@ function relatedCompanies(titles, text, typeId) {
     if (!out.has(company.symbol)) out.set(company.symbol, { symbol: company.symbol, name: company.name, country: company.country, basis });
   };
   for (const company of companies) if (titles.some((title) => mentionIndex(title, company) >= 0)) add(company, 'упомянута в заголовках');
+  if (typeId === 'conflict' && /\b(?:Israel|Israeli|IDF|Gaza|Hezbollah|Hamas|Lebanon|Iran|Houthis?)\b/.test(text)) {
+    const elbit = companies.find((c) => c.symbol === 'ESLT.TA');
+    if (elbit) add(elbit, 'сектор: оборона');
+  }
   for (const [country, re] of COUNTRY_MATCH) {
     if (!re.test(text)) continue;
     for (const company of companies.filter((c) => c.country === country).slice(0, 4)) add(company, `страна: ${country}`);
@@ -719,6 +737,7 @@ export function assembleWorld({ items, charts, gdelt, feedStatus, nowMs, errors 
     const zAbs = assets.reduce((max, a) => (a.observed ? Math.max(max ?? 0, Math.abs(a.observed.z)) : max), null);
     const { score, parts } = significance({
       sources: [...sourceTiers.values()],
+      effective: Math.min(effectiveSources(members), sourceTiers.size),
       ageHours: (nowMs - lastMs) / HOUR,
       tone,
       prior: cls.prior,
@@ -742,6 +761,7 @@ export function assembleWorld({ items, charts, gdelt, feedStatus, nowMs, errors 
       contrib: Object.fromEntries(Object.entries(parts).map(([k, v]) => [k, round(100 * WEIGHTS[k] * v, 1)])),
       articles: members.length,
       sourceCount: sourceTiers.size,
+      independent: round(Math.min(effectiveSources(members), sourceTiers.size), 2),
       firstAt: firstMs,
       lastAt: lastMs,
       sources: sources.slice(0, 6).map((m) => ({ name: m.source, tier: m.tier, url: m.url, time: m.time, title: m.title })),

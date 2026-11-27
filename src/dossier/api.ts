@@ -152,6 +152,7 @@ export function parseDossier(body: Obj, symbol: string): Dossier {
     name: str(body.name),
     exchange: str(body.exchange),
     currency: str(body.currency),
+    gmtoffset: num(body.gmtoffset),
     region: str(body.region),
     country: str(body.country),
     quote: quoteOf(body.quote),

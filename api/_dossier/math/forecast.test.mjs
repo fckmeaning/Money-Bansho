@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { computeForecasts, peerBeta, peerImpact } from './forecast.js';
+import { computeForecasts, kernelWeight, mixture, peerBeta, peerImpact } from './forecast.js';
+import { normalCdf } from './special.js';
 import { seededRandom, normalSample } from './stats.js';
 
 const DAY = 86_400_000;
@@ -50,15 +51,58 @@ test('without analogues the horizon falls back to plain volatility and says so',
   assert.equal(h5.peers, null);
 });
 
-test('thin same-type pool widens to the same-tone pool and labels it', () => {
+test('other event types still inform through the kernel, with less weight, and the pool says so', () => {
   const { history } = world();
   const events = [10, 40, 70, 100, 130, 160].map((i, k) => event(history, i, k % 2 ? 'lawsuit' : 'product', -0.5));
   events.push(event(history, 300, 'regulatory', -0.5));
   const out = computeForecasts({ history, events }, NOW(history));
   const item = out.events.find((e) => e.eventId === 'e300');
   const h1 = item.horizons.find((x) => x.h === 1);
-  assert.equal(h1.rule, 'tone');
+  assert.equal(h1.rule, 'kernel');
   assert.ok(h1.n >= 5);
+  assert.equal(h1.sameType, 0);
+  assert.ok(h1.nEff > 0 && h1.nEff <= h1.n, 'n_eff cannot exceed the number of analogues');
+});
+
+test('kernel weight falls with tone distance, type mismatch and age, and is 1 for a twin', () => {
+  const a = { type: 'deal', tone: 0.5, sig: 50, vol: 0, time: 1e12 };
+  assert.equal(kernelWeight(a, { ...a }), 1);
+  assert.ok(kernelWeight(a, { ...a, tone: -0.5 }) < kernelWeight(a, { ...a, tone: 0.3 }));
+  assert.ok(kernelWeight(a, { ...a, type: 'scandal' }) < 0.2);
+  assert.ok(kernelWeight(a, { ...a, time: a.time - 700 * DAY }) < kernelWeight(a, { ...a, time: a.time - 30 * DAY }));
+  assert.ok(kernelWeight(a, { ...a, sig: 95 }) < kernelWeight(a, { ...a, sig: 55 }));
+});
+
+test('mixture: no analogues is exactly the normal baseline; with analogues it stays a proper distribution', () => {
+  const sigma = 0.02;
+  const none = mixture([], [], sigma, 5);
+  const base = sigma * Math.sqrt(5);
+  assert.equal(none.enough, false);
+  for (const x of [-0.05, 0, 0.03]) assert.ok(Math.abs(none.cdf(x) - normalCdf(x / base)) < 1e-12);
+  assert.ok(Math.abs(none.quantile(0.9) - 1.2815515655 * base) < 1e-6);
+  const values = [0.05, 0.03, -0.01, 0.04, 0.06, 0.02, 0.05];
+  const m = mixture(values, values.map(() => 1), sigma, 5);
+  assert.equal(m.enough, true);
+  let previous = -1;
+  for (const p of [0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95]) {
+    const q = m.quantile(p);
+    assert.ok(q > previous);
+    assert.ok(Math.abs(m.cdf(q) - p) < 1e-6);
+    previous = q;
+  }
+  // The mean is shrunk towards zero: far below the raw analogue mean 0.0314.
+  assert.ok(m.mean > 0 && m.mean < 0.02);
+});
+
+test('fan: seven horizons, quantiles ordered, corridor widens with the horizon', () => {
+  const { history } = world();
+  const events = Array.from({ length: 9 }, (_, k) => event(history, 20 + k * 25, 'leadership', -0.6));
+  events.push(event(history, 300, 'leadership', -0.6));
+  const out = computeForecasts({ history, events }, NOW(history));
+  const { fan } = out.events.find((e) => e.eventId === 'e300');
+  assert.equal(fan.length, 7);
+  for (const row of fan) assert.ok(row.q10 < row.q25 && row.q25 < row.q50 && row.q50 < row.q75 && row.q75 < row.q90);
+  assert.ok(fan[6].q90 - fan[6].q10 > fan[0].q90 - fan[0].q10);
 });
 
 test('every horizon reports its sample size and a coherent corridor', () => {
@@ -128,5 +172,6 @@ test('the analogue mean is shrunk harder than the spread (calibrated on real 8-K
   const out = computeForecasts({ history, events }, NOW(history));
   const h1 = out.events.find((e) => e.eventId === 'e300').horizons.find((x) => x.h === 1);
   assert.ok(h1.n >= 5);
-  assert.equal(h1.weight, Number((h1.n / (h1.n + 30)).toFixed(3)));
+  assert.ok(Math.abs(h1.weight - h1.nEff / (h1.nEff + 30)) < 0.003, 'mean weight uses the effective sample size');
+  assert.ok(h1.spreadWeight > h1.weight, 'the spread is trusted sooner than the mean');
 });

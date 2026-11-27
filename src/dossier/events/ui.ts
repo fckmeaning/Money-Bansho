@@ -1,5 +1,6 @@
 // Formatting in the requested language and small shared DOM pieces.
 import { h } from '../dom';
+import { exchangeDay } from '../zone';
 import { translator } from './strings';
 import type { Lang, T } from './strings';
 
@@ -87,7 +88,7 @@ export function makeUi(lang: Lang): Ui {
         day: 'numeric',
         timeZone: 'UTC',
         ...(short ? {} : { year: 'numeric' }),
-      }).format(time),
+      }).format(exchangeDay(time)),
     shortDate: (time) => dtf('short', { month: 'short', day: 'numeric' }).format(time),
     month: (time) => dtf('month', { month: 'short', year: '2-digit' }).format(time),
     duration(ms) {

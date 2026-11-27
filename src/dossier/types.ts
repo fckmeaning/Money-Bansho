@@ -225,6 +225,8 @@ export interface Dossier {
   name: string;
   exchange: string;
   currency: string;
+  /** Exchange offset from UTC in seconds, to date the daily bars (stamped at the session open). */
+  gmtoffset: number | null;
   region: string;
   country: string;
   quote: Quote | null;

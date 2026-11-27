@@ -6,6 +6,7 @@ import companies from './_dossier/companies.js';
 import { buildDossier, RANGE_DAYS } from './_dossier/company.js';
 import { buildScreener } from './_dossier/math/market.js';
 import { buildWire } from './_dossier/wire.js';
+import { buildWorld } from './_dossier/world.js';
 import { loadBoard } from './_dossier/yahoo.js';
 
 export const config = { runtime: 'edge' };
@@ -48,6 +49,10 @@ export default async function handler(req) {
     if (view === 'screener') {
       const screener = await buildScreener();
       return respond(screener, screener.rows.length ? 60 : 0);
+    }
+    if (view === 'world') {
+      const world = await buildWorld();
+      return respond(world, world.events.length ? 60 : 0);
     }
     if (view) return fail('Unknown view', 400);
 

@@ -5,9 +5,11 @@ import { isShoppingNoise, selectEvents, toEvent, withReaction } from './events.j
 import { editionsFor, LEADERSHIP_TERMS, mentionIndex, primaryCompany, searchNews, searchTerm } from './news.js';
 import { computeForecasts } from './math/forecast.js';
 import { computeMetrics } from './math/metrics.js';
+import { scoreEvents } from './math/significance.js';
 import { quantReport, withSignificance } from './math/report.js';
 import { companySignals } from './quant.js';
 import { loadFilings } from './sec.js';
+import { clusterItems, gatherSources } from './sources.js';
 import { errorMessage } from './util.js';
 import { loadChart, loadSparkSeries, quoteFrom } from './yahoo.js';
 
@@ -69,9 +71,10 @@ function traceLine(trace, source, kind, startedAt, items, message = null) {
   });
 }
 
-async function collectNews(company, errors, trace) {
+async function collectNews(company, errors, trace, nowMs) {
   const raw = [];
   const tasks = [];
+  let sources = null;
   for (const edition of editionsFor(company)) {
     const term = searchTerm(company.searchName ? { ...company, name: company.searchName } : company, edition);
     const queries = [
@@ -84,7 +87,10 @@ async function collectNews(company, errors, trace) {
       tasks.push(searchNews(query, edition).then(({ value, staleError }) => {
         if (staleError) errors.push({ source, message: staleError });
         // Search results are loose; keep only titles that name the company.
-        const matched = value.filter((item) => mentionIndex(item.title, company) >= 0);
+        const matched = value.flatMap((item) => {
+          const index = mentionIndex(item.title, company);
+          return index >= 0 ? [{ ...item, via: 'gnews', mention: { inTitle: true, pos: index / Math.max(1, item.title.length) } }] : [];
+        });
         raw.push(...matched);
         traceLine(trace, source, kind, startedAt, matched.length, staleError || null);
       }).catch((error) => {
@@ -98,15 +104,32 @@ async function collectNews(company, errors, trace) {
     const startedAt = Date.now();
     tasks.push(loadFilings(cik, company.name).then(({ value, staleError }) => {
       if (staleError) errors.push({ source: 'sec-edgar', message: staleError });
-      raw.push(...value);
+      raw.push(...value.map((item) => ({ ...item, via: 'edgar', tier: 1, mention: { inTitle: true, pos: 0 } })));
       traceLine(trace, 'sec-edgar', 'filing', startedAt, value.length, staleError || null);
     }).catch((error) => {
       errors.push({ source: 'sec-edgar', message: errorMessage(error) });
       traceLine(trace, 'sec-edgar', 'filing', startedAt, null, errorMessage(error));
     }));
   }
+  // 100+ catalog feeds and keyless structured sources (GDELT, Yahoo Finance), polled in parallel.
+  tasks.push(gatherSources(company, { nowMs }).then(({ items, stats }) => {
+    raw.push(...items);
+    sources = stats;
+    for (const line of stats.feeds) {
+      trace.push({ source: line.name, kind: 'news', ok: line.ok, stale: line.stale, items: line.ok ? line.matched : null, ms: line.ms, message: line.error });
+    }
+    for (const line of stats.structured) {
+      trace.push({ source: line.id, kind: 'news', ok: line.ok, stale: false, items: line.ok ? line.matched : null, ms: line.ms, message: line.error });
+      if (!line.ok) errors.push({ source: line.id, message: line.error });
+    }
+  }).catch((error) => {
+    errors.push({ source: 'feeds', message: errorMessage(error) });
+  }));
   await Promise.all(tasks);
-  return [...new Map(raw.map((item) => [item.url, item])).values()];
+  const unique = new Set(raw.map((item) => item.url)).size;
+  // Repeats of one story become one cluster: its outlets count is the cross-source confirmation.
+  const clusters = clusterItems(raw);
+  return { items: clusters, unique, collectedRaw: raw.length, sources };
 }
 
 async function chartOrNull(symbol, ttlMs, errors, trace) {
@@ -161,21 +184,25 @@ export async function buildDossier(symbol, range, nowMs = Date.now()) {
     company = chart ? unlistedCompany(symbol, chart.meta) : null;
   }
 
-  const [chartResult, benchmarkResult, items, peers] = await Promise.all([
+  const [chartResult, benchmarkResult, news, peers] = await Promise.all([
     chartPromise,
     company ? chartOrNull(company.benchmark, 60_000, errors, trace) : null,
-    company ? collectNews(company, errors, trace) : [],
+    company ? collectNews(company, errors, trace, nowMs) : { items: [], unique: 0, collectedRaw: 0, sources: null },
     company ? loadPeers(company, symbol) : [],
   ]);
   const chart = chartResult === 'unknown' ? null : chartResult;
   const benchmark = benchmarkResult === 'unknown' ? null : benchmarkResult;
   const history = chart?.history ?? [];
 
-  const relevant = items.map(toEvent).filter((e) => !isShoppingNoise(e));
+  const items = news.items;
+  const relevant = items.map((item) => toEvent(item, company)).filter((e) => !isShoppingNoise(e));
   const priced = dedupeEvents(relevant)
     .map((event) => demoteForeignChange(event, symbol))
     .map((event) => withReaction(event, history, benchmark?.history));
-  const { events, summary: multipleTesting } = withSignificance(priced);
+  const { events: tested, summary: multipleTesting } = withSignificance(priced);
+  // Significance 0..100 with interval and factor breakdown (docs/math/significance.md).
+  const scored = scoreEvents(tested, nowMs);
+  const events = scored.events.length === tested.length ? scored.events : tested;
   const cutoff = nowMs - RANGE_DAYS[range] * 86400_000;
   const reputation = reputationScore(events, nowMs);
   // Every headline that moves the score must be visible, even past the list cap.
@@ -190,7 +217,7 @@ export async function buildDossier(symbol, range, nowMs = Date.now()) {
     durationMs: Date.now() - startedAt,
     stages: [
       ['collected', collected],
-      ['unique', items.length],
+      ['unique', news.unique],
       ['relevant', relevant.length],
       ['deduped', events.length],
       ['classified', events.filter((e) => e.type !== 'other').length],
@@ -218,12 +245,24 @@ export async function buildDossier(symbol, range, nowMs = Date.now()) {
   return {
     symbol,
     forecast,
+    significance: scored.summary,
+    sources: news.sources
+      ? {
+        ...Object.fromEntries(Object.entries(news.sources).filter(([key]) => key !== 'feeds')),
+        events: events.length,
+        clusters: items.length,
+        confirmed: items.filter((i) => i.outlets > 1).length,
+      }
+      : null,
     quant,
     metrics,
     pipeline,
     name: company?.name ?? symbol,
     exchange: chart?.meta.fullExchangeName ?? chart?.meta.exchangeName ?? null,
     currency: chart?.meta.currency ?? null,
+    // Daily bars are stamped with the session open; this offset gives their exchange-local date.
+    gmtoffset: Number.isFinite(chart?.meta.gmtoffset) ? chart.meta.gmtoffset : null,
+    timezone: chart?.meta.exchangeTimezoneName ?? null,
     region: company?.region ?? 'other',
     country: company?.country ?? '',
     quote: chart ? quoteFrom(chart.meta, history, nowMs) : null,

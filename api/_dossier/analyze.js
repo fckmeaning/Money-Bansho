@@ -7,6 +7,7 @@
  * result is empty/null instead of a guess.
  */
 
+import { mentionIndex } from './news.js';
 import { evidenceWeight, MAX_GAP, PRIOR_WEIGHT, scoreUncertainty, withCloseTimes } from './quant.js';
 
 const HOUR = 3_600_000;
@@ -50,10 +51,16 @@ const plain = (source) => new RegExp(source, 'u');
 
 const EN_ROLE = '(?<!(?:police|fire|army|defen[cs]e|military|spy|AI|design|marketing|product|sales|HR|policy|legal|research|security|cloud|hardware|software) (?=chief(?! (?:executive|financial))))(?:CEO|CFO|C\\.E\\.O\\.|chief executive(?: officer)?|chief financial officer|finance chief|finance director|managing director|executive chair(?:man|woman)?|chair(?:man|woman|person)?|co-?founders?|founders?|boss|chief(?! (?:of staff|economist|technology|marketing|operating|legal|product|information|people|scientist|strategy|strategist|investment|analyst|justice|designer|engineer|medical|revenue|commercial)))';
 
+// "to retire at year end" is a departure, "to retire old models" is not: after retire only a
+// boundary, a preposition, an adverb or a date may follow, never an object.
+const RETIRE_END = String.raw`(?=\s*(?:$|[,;:.!?)\-–—|]|(?:at|in|after|from|as|by|on|next|this|early|effective|following|amid|due|once|when|while|before|for|ahead|and|then|to|with|over|citing|soon|later|today|tomorrow|tonight|sooner|end|year|\p{L}+ly|jan\p{L}*|feb\p{L}*|mar\p{L}*|apr\p{L}*|may|jun\p{L}*|jul\p{L}*|aug\p{L}*|sep\p{L}*|oct\p{L}*|nov\p{L}*|dec\p{L}*|mon\p{L}*|tue\p{L}*|wed\p{L}*|thu\p{L}*|fri\p{L}*|sat\p{L}*|sun\p{L}*|q[1-4]|\d{4})(?![\p{L}\p{N}])))`;
+// "leave the company" is a departure; "leave the door open", "leave a legacy", "leave for Taipei" are not.
+const LEAVE_END = String.raw`(?!\s+(?:for|behind|open)\b|\s+(?:(?:the|a|an|its|their|his|her|some|no)\s+)?(?:doors?|rooms?|hospital|country|building|stage|table|meeting|city|island|airport|venue|summit|conference|legacy|mark|impression|investors|shareholders|customers|employees|staff|workers|fans|consumers|users|models?|products?|devices?|vehicles?|cars?|planes?|fleet|brands?)\b)`;
+
 // Verbs/nouns that may FOLLOW the role: "CEO resigns", "founder arrested".
 const EN_AFTER = alt(
   'resign(?:s|ed|ing|ation)?', 'steps? down', 'stepped down', 'stepping down', 'stands? down', 'stood down',
-  'quit(?:s|ting)?', 'retir(?:es|ed|ing|ement)', 'to retire', 'will retire', 'to leave(?! for\\b| behind)', 'to depart(?! for\\b)', 'leav(?:es|ing)(?! (?:the )?door| for\\b)', 'returns?(?= as\\b)',
+  'quit(?:s|ting)?', `retir(?:es|ed|ing)${RETIRE_END}`, 'retirement', `to retire${RETIRE_END}`, `will retire${RETIRE_END}`, `to leave${LEAVE_END}`, 'to depart(?! for\\b)', `leav(?:es|ing)${LEAVE_END}`, 'returns?(?= as\\b)',
   'departs?(?! for\\b)', 'departing(?! for\\b)', 'departure', 'exits?', 'exiting', 'ouste(?:d|r)', 'fired(?! up| back)', 'firing(?! back| up)', 'sacked', 'removed', 'forced out',
   'dismiss(?:ed|al)', 'replaced', 'arrest(?:ed)?', 'detain(?:ed)?', 'detention', 'indict(?:ed|ment)', 'jailed', 'charged', 'sentenced',
   'taken into custody', 'appoint(?:ed|ment)', 'named(?! in\\b)', 'elected', 'promoted', 'hired', 'succession',
@@ -65,7 +72,7 @@ const EN_BEFORE = alt(
   'appoint(?:s|ed|ing)?', 'appointment of', 'names?(?! (?:in|after)\\b)', 'named(?! (?:in|after)\\b)', 'poach(?:es|ed)', 'return(?:s|ed|ing)?(?= (?:[\\p{L}]+ ){0,2}as\\b)', 'naming', 'taps?(?! into)', 'tapped', 'hir(?:es|ed|ing)', 'picks?(?! up)', 'picked',
   'promot(?:es|ed)', 'elect(?:s|ed)', 'oust(?:s|ed|ing)?', 'ouster of', 'fir(?:es|ed|ing)(?! back| up)', 'sack(?:s|ed)', 'remov(?:es|ed)',
   'replac(?:es|ed|ing)', 'dismiss(?:es|ed)', 'arrest(?:s|ed)?', 'arrest of', 'detain(?:s|ed)?', 'indict(?:s|ed)', 'charges', 'jails',
-  'resign(?:s|ed|ing)?', 'resignation of', 'steps? down', 'stepped down', 'stepping down', 'stands? down', 'quits?', 'retir(?:es|ed|ing)', 'to retire',
+  'resign(?:s|ed|ing)?', 'resignation of', 'steps? down', 'stepped down', 'stepping down', 'stands? down', 'quits?', `retir(?:es|ed|ing)${RETIRE_END}`, `to retire${RETIRE_END}`,
   'takes? over', 'succeed(?:s|ed)?', 'joins?(?= [^;|]{0,30}\\bas\\b)', 'becomes?', 'to become', 'to be(?= (?:the )?(?:new |next )?(?:CEO|CFO|chair))',
   'out(?= as\\b)', 'sworn in as',
 );
@@ -93,10 +100,73 @@ const EN_NEGATION = new RegExp(
   'i',
 );
 
-function isLeadershipEn(text) {
+// ---- whose role is it? ----------------------------------------------------
+// A headline about another firm's boss is not a change at this company, even when it names
+// this company too ("Mazda CEO resigns, Toyota shares rise", "CEO of rival firm resigns").
+
+const NAME_WORD = /^[\p{Lu}\p{N}][\p{L}\p{N}&.'’-]*$/u;
+const NAME_CONNECTOR = new Set(['of', 'de', 'du', 'des', 'von', 'van', 'der', 'den', 'la', 'le', 'del', 'di', 'and', '&', 'the']);
+// Words that sit between a firm and its role without naming another firm.
+const ROLE_MODIFIER = new Set('new next former ex interim acting incoming outgoing longtime veteran embattled top group global deputy vice senior joint co founding current'.split(' '));
+const RIVAL_WORDS = 'rival|rivals|competing|competitor|competitors|another|other|unnamed|partner|supplier|peer';
+const RIVAL_BEFORE = new RegExp(String.raw`(?:^|[^\p{L}])(?:${RIVAL_WORDS})(?:'s)?\s+(?:[\p{L}\p{N}&.'’-]+\s+){0,2}$`, 'iu');
+const RIVAL_AFTER = new RegExp(String.raw`^(?:'s)?\s+(?:of|at)\s+(?:(?:a|an|the|another|one of|some)\s+)?(?:${RIVAL_WORDS})(?![\p{L}\p{N}])`, 'iu');
+const FORMER_BEFORE = /(?:^|[^\p{L}])(?:former|ex)[ -]+(?:[\p{L}\p{N}&.'’-]+ +){0,2}$/iu;
+const OWNER_AFTER = /^(?:'s)?\s+(?:of|at)\s+(?:the\s+)?([\p{Lu}\p{N}][\p{L}\p{N}&.'’-]*(?:\s+(?:[\p{Lu}\p{N}][\p{L}\p{N}&.'’-]*|&|and|of)){0,3})/u;
+
+const NAMING_VERB = new Set('names named appoints appointed hires hired taps tapped picks picked promotes promoted elects elected installs installed selects selected confirms confirmed announces announced nominates nominated'.split(' '));
+
+/** The run of capitalised words that ends at words[end]; modifiers are skipped while it is empty. */
+function nameRun(words, end) {
+  const run = [];
+  let i = end;
+  for (; i >= 0 && run.length < 6; i -= 1) {
+    const word = words[i] ?? '';
+    const low = word.toLowerCase();
+    if (!run.length && ROLE_MODIFIER.has(low)) continue;
+    if (NAME_WORD.test(word)) run.unshift(word);
+    else if (run.length && NAME_CONNECTOR.has(low) && i > 0 && NAME_WORD.test(words[i - 1] ?? '')) run.unshift(word);
+    else break;
+  }
+  return { run, stop: i };
+}
+
+/** The firm named right before a role: "Bank of America" in "Bank of America's new CEO". */
+function ownerBefore(text, start) {
+  const words = text.slice(0, start).replace(/'s(?=\s|$)/g, '').trimEnd().split(/\s+/);
+  const { run, stop } = nameRun(words, words.length - 1);
+  // "Intel names Lip-Bu Tan CEO": the name beside the role is the appointee, the firm is the subject.
+  if (NAMING_VERB.has((words[stop] ?? '').toLowerCase())) return nameRun(words, stop - 1).run.join(' ');
+  return run.join(' ');
+}
+
+/** True when the role starting at `start` is a former one: its holder has already left. */
+const isFormerRole = (text, start) => FORMER_BEFORE.test(text.slice(0, start));
+
+/**
+ * True when the role at [start, end) belongs to a rival, an unnamed other firm or, with the
+ * company known, to a firm that is not the company. Roles with no owner in the words around
+ * them are left to the company the headline was searched for.
+ */
+function otherFirmRole(text, start, end, company) {
+  const rest = text.slice(end);
+  if (RIVAL_BEFORE.test(text.slice(0, start)) || RIVAL_AFTER.test(rest)) return true;
+  if (!company) return false;
+  const owner = ownerBefore(text, start);
+  if (owner && mentionIndex(owner, company) < 0) return true;
+  const named = rest.match(OWNER_AFTER);
+  return Boolean(named && mentionIndex(named[1], company) < 0);
+}
+
+const EN_NOUN_RE = new RegExp(`(?<![\\p{L}\\p{N}])(?:${EN_NOUN})(?![\\p{L}\\p{N}])`, 'giu');
+
+function isLeadershipEn(text, company) {
   if (EN_NEGATION.test(text)) return false;
-  if (latin(EN_NOUN).test(text)) return true;
-  const roles = [...text.matchAll(new RegExp(`(?<![\\p{L}\\p{N}])(?:${EN_ROLE})(?![\\p{L}\\p{N}-])`, 'giu'))];
+  for (const noun of text.matchAll(EN_NOUN_RE)) {
+    const end = noun.index + noun[0].length;
+    if (!isFormerRole(text, noun.index) && !otherFirmRole(text, noun.index, end, company)) return true;
+  }
+  const roles =[...text.matchAll(new RegExp(`(?<![\\p{L}\\p{N}])(?:${EN_ROLE})(?![\\p{L}\\p{N}-])`, 'giu'))];
   if (!roles.length) return false;
   const verbs = (source) => [...text.matchAll(new RegExp(`(?<![\\p{L}\\p{N}-])(?:${source})(?![\\p{L}\\p{N}])`, 'giu'))];
   const after = verbs(EN_AFTER);
@@ -104,7 +174,9 @@ function isLeadershipEn(text) {
   return roles.some((role) => {
     const start = role.index;
     const end = start + role[0].length;
-    const followed = after.some((v) => {
+    if (otherFirmRole(text, start, end, company)) return false;
+    // A former holder has already left: only "to succeed the former CEO" still counts.
+    const followed = !isFormerRole(text, start) && after.some((v) => {
       if (v.index < end || v.index - end > 60) return false;
       const gap = text.slice(end, v.index);
       // "CEO's resignation" is fine, "CEO's plan to retire old jets" is not.
@@ -166,8 +238,8 @@ const OTHER_LEADERSHIP = {
   },
 };
 
-function isLeadership(text, lang) {
-  if (lang === 'en') return isLeadershipEn(text);
+function isLeadership(text, lang, company) {
+  if (lang === 'en') return isLeadershipEn(text, company);
   const lex = OTHER_LEADERSHIP[lang];
   if (lex.negation.test(text)) return false;
   if (lex.alone?.test(text)) return true;
@@ -472,14 +544,16 @@ function scoreSentiment(text, lang) {
 }
 
 /**
- * @param {{title: string, lang?: string}} input
+ * @param {{title: string, lang?: string, company?: {aliases: string[], exclude?: string[]}}} input
+ * `company`, when given, lets English headlines about another firm's boss be told apart.
  * @returns {{type: string, sentiment: number, people: string[]}}
  */
-export function classifyEvent({ title, lang } = {}) {
+export function classifyEvent({ title, lang, company } = {}) {
   const text = normalizeText(title);
   if (!text) return { type: 'other', sentiment: 0, people: [] };
   const code = detectLang(text, lang === 'iw' ? 'he' : lang);
-  const leadership = isLeadership(text, code);
+  const known = company && Array.isArray(company.aliases) && company.aliases.length ? company : undefined;
+  const leadership = isLeadership(text, code, known);
   const type = leadership ? 'leadership' : TYPE_ORDER.find((t) => TYPES[code][t].test(text)) ?? 'other';
   return {
     type,
@@ -567,7 +641,7 @@ export function dedupeEvents(events) {
   return kept
     .sort((a, b) => a.index - b.index)
     // `outlets` is present only when several sources carried the same story.
-    .map(({ event, outlets }) => (outlets.size > 1 ? { ...event, outlets: outlets.size } : event));
+    .map(({ event, outlets }) => (outlets.size > (event.outlets ?? 1) ? { ...event, outlets: outlets.size } : event));
 }
 
 // ---------------------------------------------------------------------------

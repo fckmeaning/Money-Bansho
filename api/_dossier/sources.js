@@ -2,21 +2,31 @@
 // catalog (api/_dossier/feeds.js, built by scripts/build-dossier-feeds.mjs), plus keyless
 // structured sources (GDELT DOC 2.0, Yahoo Finance). Region-aware: each request polls a
 // relevant subset of the whole catalog. Failures are counted and reported, never hidden.
+//
+// Reliability (all in process memory): every feed keeps its last good answer (stale-while-
+// revalidate, so repeated polls are instant), is retried once on a timeout, is tried with a plain
+// User-Agent when a browser one gets 403, and is quarantined after repeated failures.
 import { CREDIBILITY_HIGH_RISK_CAP, CREDIBILITY_TIER_SCORES } from '../../shared/news-credibility.js';
 import { FEEDS } from './feeds.js';
-import { mentionIndex } from './news.js';
+import { mentionIndex, searchNews } from './news.js';
 import { cached, errorMessage, fetchText, pool } from './util.js';
 
 const DAY = 86_400_000;
 
 export const FEED_LIMIT = 150; // feeds polled per request (out of the whole catalog)
-export const FEED_TIMEOUT_MS = 6000;
-export const FEED_BUDGET_MS = 11_000; // global wall-clock budget of the whole stage
+export const FEED_TIMEOUT_MS = 5000; // per attempt; a timeout is retried once
+export const FEED_BUDGET_MS = 22_000; // hard wall-clock budget of the stage (the edge limit is 25 s)
+export const FEED_SOFT_MS = 9000; // after this the tail is not awaited once ENOUGH feeds have answered
+export const FEED_ENOUGH = 100;
 const FEED_CONCURRENCY = 32;
 const FEED_HEAD_BYTES = 420_000; // the newest items come first, the rest of a large feed is not read
 const GOOGLE_NEWS_CAP = 24; // news.google.com answers 429 when asked for everything at once
 const MAX_ITEMS_PER_FEED = 80;
-const FEED_TTL_MS = 5 * 60_000;
+const FEED_FRESH_MS = 5 * 60_000; // younger than this: served from memory without a request
+const FEED_STALE_MS = 6 * 3600_000; // up to this: served at once and refreshed in the background
+const STORE_CAP = 1400;
+const PERMANENT_QUARANTINE_MS = 6 * 3600_000;
+const TRANSIENT_QUARANTINE_MS = 20 * 60_000;
 
 // ---------------------------------------------------------------------------
 // Source credibility (tiers come from shared/source-tiers.json via the feed list)
@@ -43,6 +53,66 @@ export const isStateMedia = (name) => STATE_MEDIA.test(String(name || ''));
 export function sourceCredibility(name, tier = sourceTier(name)) {
   const base = (CREDIBILITY_TIER_SCORES[tier] ?? CREDIBILITY_TIER_SCORES[4]) / 100;
   return isStateMedia(name) ? Math.min(base, CREDIBILITY_HIGH_RISK_CAP / 100) : base;
+}
+
+// ---------------------------------------------------------------------------
+// Per-feed health and the last good answer of every feed (in process memory)
+// ---------------------------------------------------------------------------
+
+const store = new Map(); // url -> {items, at}
+const inflight = new Map(); // url -> Promise<items>
+const health = new Map(); // url -> {name, group, fails, error, status, ms, ua, until, okAt}
+
+const healthOf = (feed) => {
+  let h = health.get(feed.u);
+  if (!h) {
+    h = { name: feed.n, group: feed.g, fails: 0, error: null, status: null, ms: feed.m ?? null, ua: feed.a ? 'curl' : 'browser', until: 0, okAt: 0 };
+    health.set(feed.u, h);
+  }
+  return h;
+};
+
+const isPermanent = (error) => error?.status === 404 || error?.status === 410 || /Not a feed/.test(error?.message ?? '');
+const isTransient = (error) => error?.name === 'TimeoutError' || error?.name === 'AbortError'
+  || [502, 503, 504].includes(error?.status)
+  || /fetch failed|ECONN|ENOTFOUND|EAI_AGAIN|socket|terminated|network/i.test(`${error?.message ?? ''} ${error?.cause?.code ?? ''}`);
+
+function noteFailure(feed, error) {
+  const h = healthOf(feed);
+  h.fails += 1;
+  h.error = errorMessage(error);
+  h.status = error?.status ?? null;
+  if (error?.status === 429) return; // the host's mood, not a dead feed
+  if (isPermanent(error) && h.fails >= 2) h.until = Date.now() + PERMANENT_QUARANTINE_MS;
+  else if (h.fails >= 3) h.until = Date.now() + TRANSIENT_QUARANTINE_MS;
+}
+
+function noteSuccess(feed, ms, ua) {
+  const h = healthOf(feed);
+  Object.assign(h, { fails: 0, error: null, status: null, ms, ua, until: 0, okAt: Date.now() });
+}
+
+function remember(feed, items) {
+  store.delete(feed.u);
+  store.set(feed.u, { items: items.map((i) => ({ title: i.title, url: i.url, time: i.time, text: i.text.slice(0, 320) })), at: Date.now() });
+  if (store.size > STORE_CAP) store.delete(store.keys().next().value);
+}
+
+/** Feeds that failed repeatedly (diagnostics); the quarantined ones are skipped when polling. */
+export function deadFeeds(limit = 40) {
+  const now = Date.now();
+  return [...health.entries()]
+    .filter(([, h]) => h.fails >= 2)
+    .map(([url, h]) => ({ name: h.name, group: h.group, url, fails: h.fails, error: h.error, quarantined: h.until > now, retryInMin: h.until > now ? Math.ceil((h.until - now) / 60_000) : 0 }))
+    .sort((a, b) => b.fails - a.fails || a.name.localeCompare(b.name))
+    .slice(0, limit);
+}
+
+/** Test hook: forget everything learnt about feeds. */
+export function resetFeedState() {
+  store.clear();
+  inflight.clear();
+  health.clear();
 }
 
 // ---------------------------------------------------------------------------
@@ -75,16 +145,22 @@ const hostOf = (url) => {
   }
 };
 
+const latencyOf = (feed) => health.get(feed.u)?.ms ?? feed.m ?? null;
+
 /**
- * Picks the feeds to poll for this company: highest group affinity first, then better
- * source tier, then home language. Caps: Google News searches, feeds per host.
+ * Picks the feeds to poll for this company: highest group affinity first, then better source
+ * tier, then home language; known-slow feeds sink. Dead (quarantined) feeds are skipped and
+ * replaced by the next candidates. Caps: Google News searches, feeds per host. The result is
+ * ordered fastest first, spread over hosts.
  */
 export function selectFeeds(company, { limit = FEED_LIMIT } = {}) {
   const affinity = AFFINITY[company.region] ?? AFFINITY.other;
   const langs = new Set(['en', ...(HOME_LANGS[company.country] ?? [])]);
+  const now = Date.now();
   const scored = FEEDS.map((feed, index) => {
     const lang = feed.l ? feed.l.slice(0, 2) : 'en';
-    const score = (affinity[feed.g] ?? 0) + 0.3 * ((4 - feed.t) / 3) + (langs.has(lang) ? 0.25 : -0.1);
+    const ms = latencyOf(feed);
+    const score = (affinity[feed.g] ?? 0) + 0.3 * ((4 - feed.t) / 3) + (langs.has(lang) ? 0.25 : -0.1) - (ms > 5000 ? 0.2 : 0);
     return { feed, index, score };
   }).sort((a, b) => b.score - a.score || a.index - b.index);
   const selected = [];
@@ -92,6 +168,7 @@ export function selectFeeds(company, { limit = FEED_LIMIT } = {}) {
   let googleNews = 0;
   for (const { feed } of scored) {
     if (selected.length >= limit) break;
+    if ((health.get(feed.u)?.until ?? 0) > now) continue;
     if (feed.gn) {
       if (googleNews >= GOOGLE_NEWS_CAP) continue;
       googleNews += 1;
@@ -103,7 +180,20 @@ export function selectFeeds(company, { limit = FEED_LIMIT } = {}) {
     }
     selected.push(feed);
   }
-  return spreadByHost(selected);
+  return orderFastFirst(selected);
+}
+
+/** Answers already in memory and quick feeds first; slow and Google News ones last. */
+function orderFastFirst(feeds) {
+  const bucket = (feed) => {
+    if (store.has(feed.u)) return 0;
+    const ms = latencyOf(feed);
+    if (feed.gn) return 2;
+    return ms === null ? 1 : ms < 1500 ? 0 : ms < 4000 ? 1 : 2;
+  };
+  const groups = [[], [], []];
+  for (const feed of feeds) groups[bucket(feed)].push(feed);
+  return groups.flatMap(spreadByHost);
 }
 
 /** Round-robin over hosts, so that no publisher gets a burst of simultaneous requests. */
@@ -183,12 +273,15 @@ export function parseFeed(xml, nowMs = Date.now()) {
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const ACCEPT = 'application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8';
-const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36';
+const USER_AGENT = {
+  browser: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
+  curl: 'curl/8.5.0', // some publishers answer 403 to a browser User-Agent and 200 to a plain one
+};
 
 /** Reads at most FEED_HEAD_BYTES of a feed: newest items come first, so a long archive costs nothing. */
-async function fetchHead(url, timeoutMs) {
+export async function fetchHead(url, timeoutMs, ua = 'browser') {
   const response = await fetch(url, {
-    headers: { 'User-Agent': BROWSER_UA, Accept: ACCEPT, 'Accept-Language': 'en-US,en;q=0.9' },
+    headers: { 'User-Agent': USER_AGENT[ua], Accept: ACCEPT, 'Accept-Language': 'en-US,en;q=0.9' },
     signal: AbortSignal.timeout(timeoutMs),
   });
   if (!response.ok) {
@@ -216,25 +309,107 @@ async function fetchHead(url, timeoutMs) {
   return new TextDecoder('utf-8').decode(bytes);
 }
 
-function loadFeed(feed, timeoutMs) {
-  return cached(`feed:${feed.u}`, FEED_TTL_MS, async () => parseFeed(await fetchHead(feed.u, timeoutMs)), 30 * 60_000);
+/** One live request with the plain-UA fallback and one retry on a timeout or network error. */
+async function fetchFeedLive(feed) {
+  const h = healthOf(feed);
+  let ua = h.ua;
+  const began = Date.now();
+  const once = async () => {
+    try {
+      return await fetchHead(feed.u, FEED_TIMEOUT_MS, ua);
+    } catch (error) {
+      if ([401, 403, 406].includes(error?.status) && ua === 'browser') {
+        ua = 'curl';
+        return fetchHead(feed.u, FEED_TIMEOUT_MS, ua);
+      }
+      throw error;
+    }
+  };
+  try {
+    let xml;
+    try {
+      xml = await once();
+    } catch (error) {
+      if (!isTransient(error)) throw error;
+      xml = await once();
+    }
+    const items = parseFeed(xml);
+    remember(feed, items);
+    noteSuccess(feed, Date.now() - began, ua);
+    return items;
+  } catch (error) {
+    noteFailure(feed, error);
+    throw error;
+  }
 }
 
-/** Company search names plus tickers, so that "NVDA" or "0700.HK" in a headline counts. */
+/**
+ * Stale-while-revalidate: an answer younger than FEED_FRESH_MS is returned from memory, an older
+ * one (up to FEED_STALE_MS) at once while a refresh runs in the background, otherwise the request
+ * is awaited. Resolves to {items, from: 'live' | 'cache' | 'stale', ageMs}.
+ */
+function loadFeed(feed) {
+  const entry = store.get(feed.u);
+  const age = entry ? Date.now() - entry.at : Number.POSITIVE_INFINITY;
+  if (age < FEED_FRESH_MS) return Promise.resolve({ items: entry.items, from: 'cache', ageMs: age });
+  let pending = inflight.get(feed.u);
+  if (!pending) {
+    pending = fetchFeedLive(feed).finally(() => inflight.delete(feed.u));
+    pending.catch(() => {}); // a background refresh nobody waits for must not crash anything
+    inflight.set(feed.u, pending);
+  }
+  if (age < FEED_STALE_MS) return Promise.resolve({ items: entry.items, from: 'stale', ageMs: age });
+  return pending.then((items) => ({ items, from: 'live', ageMs: 0 }));
+}
+
+// ---------------------------------------------------------------------------
+// Relevance: the company must be named, with word boundaries
+// ---------------------------------------------------------------------------
+
+// Short Hebrew names are ordinary words ("טבע" is also "nature"): they count only with a business word.
+const WEAK_ALIAS = /^[֐-׿"'׳״]{1,4}$/u;
+const BUSINESS_HEBREW = /מניי?ת|מניות|בורסה|דוחות|רבעון|רווח|הפסד|מנכ"?ל|יו"ר|תרופ|פארמ|הנפקה|דיבידנד|ת"א|תל אביב|גנרי/u;
+
+/** Company names plus tickers, so that "NVDA" or "0700.HK" in a headline counts. */
 export function matchTerms(company) {
   const base = String(company.symbol || '').split('.')[0];
   const extra = [];
   if (company.symbol && /^[A-Z]{3,5}$/.test(company.symbol)) extra.push(company.symbol);
   else if (company.symbol && /^\d{4}\.HK$/.test(company.symbol)) extra.push(company.symbol, `${Number(base)}.HK`, `HKEX: ${Number(base)}`);
   else if (company.symbol?.endsWith('.TA') && /^[A-Z]{3,5}$/.test(base)) extra.push(company.symbol, `TASE: ${base}`);
-  return { aliases: [...new Set([...(company.aliases ?? []), ...extra])], exclude: company.exclude };
+  const all = [...new Set([...(company.aliases ?? []), ...extra])];
+  return {
+    strong: { aliases: all.filter((a) => !WEAK_ALIAS.test(a)), exclude: company.exclude },
+    weak: { aliases: all.filter((a) => WEAK_ALIAS.test(a)), exclude: company.exclude },
+  };
 }
 
-/** Where the company is named: in the headline (position 0..1) or only in the summary. */
+/** How many times (up to `cap`) the strong names occur in a text. */
+function countMentions(text, terms, cap = 3) {
+  let count = 0;
+  let rest = text;
+  while (count < cap) {
+    const index = mentionIndex(rest, terms.strong);
+    if (index < 0) break;
+    count += 1;
+    rest = rest.slice(index + 1);
+  }
+  return count;
+}
+
+/**
+ * Where the company is named. In the headline: {inTitle: true, pos 0..1}. Only in the summary: it
+ * must be named at least twice, otherwise it is a passing mention and the item is dropped.
+ * Related-ticker tags of an aggregator are not evidence and are never used.
+ */
 export function mention(item, terms) {
-  const title = mentionIndex(item.title, terms);
-  if (title >= 0) return { inTitle: true, pos: item.title.length ? title / item.title.length : 0 };
-  if (item.text && mentionIndex(item.text, terms) >= 0) return { inTitle: false, pos: 1 };
+  let index = mentionIndex(item.title, terms.strong);
+  if (index < 0 && terms.weak.aliases.length && BUSINESS_HEBREW.test(item.title)) index = mentionIndex(item.title, terms.weak);
+  if (index >= 0) return { inTitle: true, pos: item.title.length ? index / item.title.length : 0 };
+  if (item.text) {
+    const count = countMentions(item.text, terms);
+    if (count >= 2) return { inTitle: false, pos: 1, count };
+  }
   return null;
 }
 
@@ -252,48 +427,90 @@ function gdeltDate(value) {
 async function gdeltJson(query, mode, extra, timeoutMs) {
   const url = `https://api.gdeltproject.org/api/v2/doc/doc?query=${encodeURIComponent(query)}&mode=${mode}&format=json${extra}`;
   const text = (await fetchText(url, { timeoutMs, maxBytes: 3_000_000 })).replace(/^﻿/, '').trim();
-  if (!text.startsWith('{')) throw new Error('GDELT: not JSON (rate limit)');
+  if (!text.startsWith('{')) {
+    const error = new Error('GDELT: лимит запросов (ответ не JSON)');
+    error.status = 429;
+    throw error;
+  }
   return JSON.parse(text);
 }
 
 const gdeltQuery = (company) => `"${String(company.searchName || company.name).replace(/"/g, '')}" sourcelang:english`;
 
-function gdeltArticles(company, nowMs, timeoutMs) {
-  return cached(`gdelt:art:${company.symbol}`, 10 * 60_000, async () => {
-    const data = await gdeltJson(gdeltQuery(company), 'artlist', '&maxrecords=100&sort=datedesc&timespan=14d', timeoutMs);
+/** One articles request per company: 10 s timeout, one retry 5 s after a rate limit, cached 15 minutes. */
+function gdeltArticles(company, nowMs) {
+  return cached(`gdelt:art:${company.symbol}`, 15 * 60_000, async () => {
+    const run = () => gdeltJson(gdeltQuery(company), 'artlist', '&maxrecords=100&sort=datedesc&timespan=14d', 10_000);
+    let data;
+    try {
+      data = await run();
+    } catch (error) {
+      if (error?.status !== 429) throw error;
+      await sleep(5200);
+      data = await run();
+    }
     return (data.articles ?? []).flatMap((a) => {
       const time = gdeltDate(a.seendate);
       if (!a.title || !String(a.url).startsWith('http') || !Number.isFinite(time) || time > nowMs + 3600_000) return [];
       return [{ title: a.title, url: a.url, time, text: '', source: a.domain || 'GDELT', lang: GDELT_LANG[a.language] ?? 'en' }];
     });
-  }, 30 * 60_000);
-}
-
-function gdeltTimeline(company, mode, timeoutMs) {
-  return cached(`gdelt:${mode}:${company.symbol}`, 15 * 60_000, async () => {
-    const data = await gdeltJson(gdeltQuery(company), mode, '&timespan=30d', timeoutMs);
-    const series = data.timeline?.[0]?.data ?? [];
-    return series.flatMap((p) => (Number.isFinite(gdeltDate(p.date)) && Number.isFinite(p.value) ? [{ t: gdeltDate(p.date), v: p.value }] : []));
   }, 60 * 60_000);
 }
 
-function yahooNews(company, timeoutMs) {
+const timelines = new Map(); // symbol -> {tone, volume, at, state, error}
+
+async function gdeltSeries(company, mode) {
+  const data = await gdeltJson(gdeltQuery(company), mode, '&timespan=30d', 10_000);
+  const series = data.timeline?.[0]?.data ?? [];
+  return series.flatMap((p) => (Number.isFinite(gdeltDate(p.date)) && Number.isFinite(p.value) ? [{ t: gdeltDate(p.date), v: p.value }] : []));
+}
+
+/**
+ * Tone and volume timelines of GDELT. GDELT allows one request per 5 seconds, so they load one
+ * after another in the background and show up in the next poll; this call never waits for them.
+ */
+function gdeltTimelines(company) {
+  const old = timelines.get(company.symbol);
+  if (old && Date.now() - old.at < 15 * 60_000) return old;
+  const entry = { tone: old?.tone ?? null, volume: old?.volume ?? null, at: Date.now(), state: 'loading', error: null };
+  timelines.set(company.symbol, entry);
+  (async () => {
+    try {
+      await sleep(5200);
+      entry.tone = await gdeltSeries(company, 'timelinetone');
+      await sleep(5200);
+      entry.volume = await gdeltSeries(company, 'timelinevolraw');
+      entry.state = 'ok';
+    } catch (error) {
+      entry.state = 'failed';
+      entry.error = errorMessage(error);
+    }
+  })();
+  return entry;
+}
+
+/** Google News search used when GDELT does not answer. */
+function gnewsFallback(company) {
+  const term = `"${String(company.searchName || company.name).replace(/"/g, '')}"`;
+  return searchNews(`${term} (stock OR shares OR earnings OR CEO OR results) when:14d`, 'en', 90_000, 8000);
+}
+
+function yahooNews(company) {
   return cached(`yahoo:news:${company.symbol}`, 5 * 60_000, async () => {
     const url = `https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(company.symbol)}&quotesCount=0&newsCount=30&listsCount=0`;
-    const data = JSON.parse(await fetchText(url, { timeoutMs, headers: { Accept: 'application/json' } }));
+    const data = JSON.parse(await fetchText(url, { timeoutMs: 6000, headers: { Accept: 'application/json' } }));
     return (data.news ?? []).flatMap((n) => {
       const time = Number(n.providerPublishTime) * 1000;
       if (!n.title || !String(n.link).startsWith('http') || !Number.isFinite(time)) return [];
-      const related = Array.isArray(n.relatedTickers) && n.relatedTickers.includes(company.symbol);
-      return [{ title: n.title, url: n.link, time, text: '', source: n.publisher || 'Yahoo Finance', lang: 'en', related }];
+      return [{ title: n.title, url: n.link, time, text: '', source: n.publisher || 'Yahoo Finance', lang: 'en' }];
     });
   }, 30 * 60_000);
 }
 
-function yahooRss(company, timeoutMs) {
+function yahooRss(company) {
   return cached(`yahoo:rss:${company.symbol}`, 5 * 60_000, async () => {
     const url = `https://feeds.finance.yahoo.com/rss/2.0/headline?s=${encodeURIComponent(company.symbol)}&region=US&lang=en-US`;
-    return parseFeed(await fetchText(url, { timeoutMs })).map((i) => ({ ...i, source: 'Yahoo Finance', lang: 'en', related: true }));
+    return parseFeed(await fetchText(url, { timeoutMs: 6000 })).map((i) => ({ ...i, source: 'Yahoo Finance', lang: 'en' }));
   }, 30 * 60_000);
 }
 
@@ -304,38 +521,49 @@ function yahooRss(company, timeoutMs) {
 /**
  * Polls the catalog subset and the structured sources for one company.
  * Returns {items, stats}: items that name the company, and what was asked and answered.
+ * Progressive: whatever has answered when the budget ends is returned; the rest keeps loading
+ * into the per-feed memory and is there for the next request.
  */
-export async function gatherSources(company, { nowMs = Date.now(), limit = FEED_LIMIT, budgetMs = FEED_BUDGET_MS } = {}) {
+export async function gatherSources(company, { nowMs = Date.now(), limit = FEED_LIMIT, budgetMs = FEED_BUDGET_MS, softMs = FEED_SOFT_MS, enough = FEED_ENOUGH, background = true } = {}) {
   const startedAt = Date.now();
-  const deadline = startedAt + budgetMs;
   const terms = matchTerms(company);
   const selected = selectFeeds(company, { limit });
   const items = [];
   const feedLines = [];
   const structured = [];
-  const gdelt = { tone: null, volume: null };
+  const quarantined = FEEDS.filter((f) => (health.get(f.u)?.until ?? 0) > startedAt).length;
+
+  let stopped = false;
+  let release;
+  const early = new Promise((resolve) => { release = resolve; });
+  const stop = () => {
+    stopped = true;
+    release();
+  };
+  const watcher = setInterval(() => {
+    const elapsed = Date.now() - startedAt;
+    if (elapsed >= budgetMs) return stop();
+    const settled = feedLines.filter((l) => l.settled).length;
+    const answered = feedLines.filter((l) => l.ok).length;
+    // Enough has answered and only a slow tail is left: do not wait for it.
+    if (elapsed >= softMs && answered >= enough && selected.length - settled <= selected.length * 0.15) stop();
+  }, 150);
 
   const feedTask = async (feed) => {
     const began = Date.now();
-    const remaining = deadline - began;
-    const line = { name: feed.n, group: feed.g, tier: feed.t, gn: Boolean(feed.gn), ok: false, stale: false, items: 0, matched: 0, ms: 0, error: null };
+    const line = { name: feed.n, group: feed.g, tier: feed.t, gn: Boolean(feed.gn), ok: false, from: null, stale: false, items: 0, matched: 0, ms: 0, error: null, settled: false };
     feedLines.push(line);
-    if (remaining < 400) {
-      line.error = 'Не успел за общий бюджет времени';
-      return;
-    }
-    let timer;
     try {
-      // A feed that is too slow for this request keeps loading and lands in the cache for the next one.
-      const loading = loadFeed(feed, FEED_TIMEOUT_MS);
+      if (stopped) throw new Error('Не опрошен: время вышло');
+      const loading = loadFeed(feed);
       loading.catch(() => {});
-      const waited = await Promise.race([loading, new Promise((resolve) => { timer = setTimeout(resolve, remaining); })]);
-      if (!waited) throw new Error('Не успел за общий бюджет времени');
-      const { value, staleError } = waited;
+      const result = await Promise.race([loading, early.then(() => null)]);
+      if (!result) throw new Error('Не успел за общий бюджет времени');
       line.ok = true;
-      line.stale = Boolean(staleError);
-      line.items = value.length;
-      for (const item of value) {
+      line.from = result.from;
+      line.stale = result.from === 'stale';
+      line.items = result.items.length;
+      for (const item of result.items) {
         const found = mention(item, terms);
         if (!found) continue;
         line.matched += 1;
@@ -343,47 +571,56 @@ export async function gatherSources(company, { nowMs = Date.now(), limit = FEED_
       }
     } catch (error) {
       line.error = errorMessage(error);
-    } finally {
-      clearTimeout(timer);
     }
     line.ms = Date.now() - began;
+    line.settled = true;
   };
 
-  const structuredTask = async (id, label, run) => {
+  const accept = (line, list, via) => {
+    for (const item of list ?? []) {
+      const found = mention(item, terms);
+      if (!found) continue;
+      line.matched += 1;
+      items.push({ title: item.title, url: item.url, time: item.time, source: item.source, lang: item.lang, region: company.region, tier: sourceTier(item.source), via, mention: found });
+    }
+  };
+
+  const structuredTask = async (id, label, run, via) => {
     const began = Date.now();
     const line = { id, label, ok: false, items: 0, matched: 0, ms: 0, error: null };
     structured.push(line);
     try {
-      const { value } = await run(8000);
+      const running = run();
+      running.catch(() => {});
+      const result = await Promise.race([running, early.then(() => null)]);
+      if (!result) throw new Error('Не успел за общий бюджет времени');
       line.ok = true;
-      line.items = Array.isArray(value) ? value.length : 0;
-      return value;
+      line.items = Array.isArray(result.value) ? result.value.length : 0;
+      accept(line, result.value, via);
+      return true;
     } catch (error) {
       line.error = errorMessage(error);
-      return null;
+      return false;
     } finally {
       line.ms = Date.now() - began;
     }
   };
 
-  const accept = (line, list, via, tier) => {
-    for (const item of list ?? []) {
-      const found = item.related ? { inTitle: mentionIndex(item.title, terms) >= 0, pos: 0 } : mention(item, terms);
-      if (!found) continue;
-      line.matched += 1;
-      items.push({ title: item.title, url: item.url, time: item.time, source: item.source, lang: item.lang, region: company.region, tier: tier(item.source), via, mention: found });
-    }
+  const gdeltJob = async () => {
+    const ok = await structuredTask('gdelt:articles', 'GDELT DOC 2.0: статьи', () => gdeltArticles(company, nowMs), 'gdelt');
+    if (!ok) await structuredTask('gnews:fallback', 'Google News (замена GDELT)', () => gnewsFallback(company), 'gnews');
   };
 
-  const structuredJobs = [
-    structuredTask('gdelt:articles', 'GDELT DOC 2.0: статьи', (t) => gdeltArticles(company, nowMs, t)).then((list) => accept(structured.find((s) => s.id === 'gdelt:articles'), list, 'gdelt', sourceTier)),
-    sleep(450).then(() => structuredTask('gdelt:tone', 'GDELT DOC 2.0: тон', (t) => gdeltTimeline(company, 'timelinetone', t))).then((list) => { gdelt.tone = list; }),
-    sleep(900).then(() => structuredTask('gdelt:volume', 'GDELT DOC 2.0: объём', (t) => gdeltTimeline(company, 'timelinevolraw', t))).then((list) => { gdelt.volume = list; }),
-    structuredTask('yahoo:news', 'Yahoo Finance: новости', (t) => yahooNews(company, t)).then((list) => accept(structured.find((s) => s.id === 'yahoo:news'), list, 'yahoo', sourceTier)),
-    structuredTask('yahoo:rss', 'Yahoo Finance: лента тикера', (t) => yahooRss(company, t)).then((list) => accept(structured.find((s) => s.id === 'yahoo:rss'), list, 'yahoo', sourceTier)),
-  ];
+  const timeline = background ? gdeltTimelines(company) : { tone: null, volume: null, state: 'off', error: null };
 
-  await Promise.all([pool(selected, FEED_CONCURRENCY, feedTask), ...structuredJobs]);
+  await Promise.all([
+    pool(selected, FEED_CONCURRENCY, feedTask),
+    gdeltJob(),
+    structuredTask('yahoo:news', 'Yahoo Finance: новости', () => yahooNews(company), 'yahoo'),
+    structuredTask('yahoo:rss', 'Yahoo Finance: лента тикера', () => yahooRss(company), 'yahoo'),
+  ]);
+  clearInterval(watcher);
+  structured.push({ id: 'gdelt:timeline', label: 'GDELT DOC 2.0: тон и объём (в фоне)', ok: timeline.state === 'ok', items: timeline.tone?.length ?? 0, matched: 0, ms: 0, error: timeline.state === 'failed' ? timeline.error : timeline.state === 'loading' ? 'Загружается в фоне, будет при следующем опросе' : null });
 
   const byGroup = {};
   for (const line of feedLines) {
@@ -392,23 +629,30 @@ export async function gatherSources(company, { nowMs = Date.now(), limit = FEED_
     if (line.ok) g.answered += 1;
     g.matched += line.matched;
   }
+  const reasons = {};
+  for (const line of feedLines) if (!line.ok) reasons[line.error ?? '?'] = (reasons[line.error ?? '?'] ?? 0) + 1;
   const answered = feedLines.filter((l) => l.ok).length;
   return {
     items,
     stats: {
       available: FEEDS.length,
       availableDirect: FEEDS.filter((f) => !f.gn).length,
+      quarantined,
       polled: selected.length,
       answered,
+      answeredLive: feedLines.filter((l) => l.from === 'live').length,
+      servedFromMemory: feedLines.filter((l) => l.from === 'cache' || l.from === 'stale').length,
       failed: selected.length - answered,
-      timedOut: feedLines.filter((l) => !l.ok && /Timed out|бюджет/.test(l.error ?? '')).length,
+      timedOut: feedLines.filter((l) => !l.ok && /Timed out|бюджет|время вышло/.test(l.error ?? '')).length,
       matched: feedLines.reduce((total, l) => total + l.matched, 0),
       budgetMs,
       durationMs: Date.now() - startedAt,
       byGroup: Object.values(byGroup).sort((a, b) => b.matched - a.matched || b.answered - a.answered),
+      failures: Object.entries(reasons).map(([reason, count]) => ({ reason, count })).sort((a, b) => b.count - a.count).slice(0, 8),
+      dead: deadFeeds(),
       structured,
-      gdelt,
-      feeds: feedLines.map((l) => ({ ...l })),
+      gdelt: { tone: timeline.tone, volume: timeline.volume, state: timeline.state },
+      feeds: feedLines.map(({ settled, ...rest }) => rest),
     },
   };
 }

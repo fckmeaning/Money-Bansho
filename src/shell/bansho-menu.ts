@@ -4,7 +4,7 @@
 // recent companies are always current.
 import './bansho-menu.css';
 
-export type BanshoPage = 'dossier' | 'wire' | 'dashboard' | 'screener';
+export type BanshoPage = 'dossier' | 'wire' | 'dashboard' | 'screener' | 'world';
 export type BanshoLang = 'en' | 'ru';
 
 export interface BanshoMenuOptions {
@@ -71,6 +71,7 @@ const EN = {
   metrics: 'Metrics',
   model: 'Model',
   screener: 'Screener',
+  world: 'World events',
   markets: 'Markets',
   marketsPanel: 'Market quotes',
   news: 'World news',
@@ -113,6 +114,7 @@ const RU: Strings = {
   metrics: 'Метрики',
   model: 'Модель',
   screener: 'Скринер',
+  world: 'Мир: главные события',
   markets: 'Рынки',
   marketsPanel: 'Котировки',
   news: 'Мировые новости',
@@ -151,6 +153,7 @@ const ICONS = {
   metrics: 'M4 20h16M7 20v-8M12 20V5M17 20v-12',
   model: 'M4 7h9M17 7h3M15 5v4M4 17h3M11 17h9M9 15v4',
   screener: 'M4 5h16l-6 8v6l-4-2v-4z',
+  world: 'M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18',
   markets: 'M3 17l6-6 4 4 8-9M15 6h6v6',
   news: 'M4 5h13v14H4zM17 9h3v10h-3M7 9h7M7 13h7M7 16h4',
   corporate: 'M4 21V4h10v17M14 10h6v11M3 21h18M7 8h4M7 12h4M7 16h4',
@@ -284,6 +287,7 @@ function currentPage(active: BanshoPage): string {
   const params = new URLSearchParams(window.location.search);
   const view = params.get('view');
   if (view === 'screener') return 'screener';
+  if (view === 'world') return 'world';
   if (!urlSymbol()) return 'wire';
   return view === 'metrics' || view === 'model' ? view : 'dossier';
 }
@@ -433,6 +437,7 @@ function openDrawer(options: BanshoMenuOptions): void {
     { class: 'bm-nav', 'aria-label': s.navigation },
     group(s.overview, [
       pageLink('wire', '/dossier.html', s.wire, 'wire'),
+      pageLink('world', '/dossier.html?view=world', s.world, 'world'),
       pageLink('dossier', dossierUrl(analyticsSymbol, 'overview'), s.dossier, 'dossier', analyticsSymbol),
     ]),
     group(s.analytics, [

@@ -30,6 +30,15 @@ function marketState(meta, nowMs) {
   return 'CLOSED';
 }
 
+/**
+ * Exchange-local calendar date (YYYY-MM-DD) of a timestamp, from Yahoo's gmtoffset in seconds.
+ * A daily bar is stamped with the session open, which in Sydney or Auckland falls on the
+ * previous UTC date, so the UTC date of a bar is not its trading day there.
+ */
+export function localDate(t, gmtoffsetSeconds) {
+  return new Date(t + (num(gmtoffsetSeconds) ?? 0) * 1000).toISOString().slice(0, 10);
+}
+
 export function quoteFrom(meta, history, nowMs = Date.now()) {
   const price = num(meta?.regularMarketPrice);
   if (price === null) return null;
@@ -37,8 +46,7 @@ export function quoteFrom(meta, history, nowMs = Date.now()) {
   let changePct = num(meta.regularMarketChangePercent);
   let change = null;
   // Previous close = last daily bar on an earlier exchange-local date.
-  const offset = (meta.gmtoffset || 0) * 1000;
-  const day = (t) => new Date(t + offset).toISOString().slice(0, 10);
+  const day = (t) => localDate(t, meta.gmtoffset);
   const previous = asOf === null ? null : history.findLast((bar) => day(bar.t) < day(asOf));
   const barPct = previous?.c ? ((price - previous.c) / previous.c) * 100 : null;
   if (changePct !== null && changePct > -100) {
@@ -61,7 +69,6 @@ export function parseChart(body) {
   const quote = result.indicators?.quote?.[0] ?? {};
   const closes = quote.close ?? [];
   const volumes = quote.volume ?? [];
-  const offset = (result.meta.gmtoffset || 0) * 1000;
   const price = (series, i) => {
     const value = num(series?.[i]);
     return value === null || value <= 0 ? null : round(value);
@@ -69,9 +76,10 @@ export function parseChart(body) {
   const byDay = new Map();
   (result.timestamp ?? []).forEach((seconds, i) => {
     const c = num(closes[i]);
-    if (c === null || c <= 0) return;
+    if (c === null || c <= 0 || num(seconds) === null) return;
     const t = seconds * 1000;
-    byDay.set(new Date(t + offset).toISOString().slice(0, 10), {
+    // One bar per exchange-local trading day: the live bar replaces the session's opening stamp.
+    byDay.set(localDate(t, result.meta.gmtoffset), {
       t,
       c: round(c),
       v: num(volumes[i]),
