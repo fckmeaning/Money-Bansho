@@ -14,7 +14,7 @@
  * value is ever invented or carried over past `STALE_MAX_MS`.
  */
 
-import { CHROME_UA } from '../../../_shared/constants';
+import { YAHOO_UA } from '../../../_shared/constants';
 
 export interface LiveQuote {
   price: number;
@@ -74,14 +74,37 @@ export function parseYahooChart(json: unknown): LiveQuote | null {
   return { price, change, sparkline: closes.slice(-SPARK_POINTS) };
 }
 
+const HOSTS = ['query1.finance.yahoo.com', 'query2.finance.yahoo.com'];
+/** Yahoo rate-limits bursts per IP; every handler shares these slots. */
+const MAX_ACTIVE = 6;
+let active = 0;
+const waiters: Array<() => void> = [];
+
+async function withSlot<T>(fn: () => Promise<T>): Promise<T> {
+  if (active >= MAX_ACTIVE) await new Promise<void>((resolve) => waiters.push(resolve));
+  active++;
+  try {
+    return await fn();
+  } finally {
+    active--;
+    waiters.shift()?.();
+  }
+}
+
 async function fetchOne(symbol: string): Promise<LiveQuote | null> {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=1mo&interval=1d`;
-  const resp = await fetch(url, {
-    headers: { 'User-Agent': CHROME_UA, Accept: 'application/json' },
-    signal: AbortSignal.timeout(SYMBOL_TIMEOUT_MS),
-  });
-  if (!resp.ok) throw new Error(`yahoo ${resp.status}`);
-  return parseYahooChart(await resp.json());
+  const path = `/v8/finance/chart/${encodeURIComponent(symbol)}?range=1mo&interval=1d`;
+  let lastError: Error | null = null;
+  for (const host of HOSTS) {
+    const resp = await withSlot(() => fetch(`https://${host}${path}`, {
+      headers: { 'User-Agent': YAHOO_UA, Accept: 'application/json' },
+      signal: AbortSignal.timeout(SYMBOL_TIMEOUT_MS),
+    }));
+    if (resp.status === 404) return null;
+    if (resp.ok) return parseYahooChart(await resp.json());
+    lastError = new Error(`yahoo ${resp.status}`);
+    await resp.body?.cancel();
+  }
+  throw lastError ?? new Error('yahoo unavailable');
 }
 
 async function liveQuote(symbol: string): Promise<LiveQuote | null> {

@@ -14,7 +14,7 @@ import commodityConfig from '../../../../shared/commodities.json';
 import stockConfig from '../../../../shared/stocks.json';
 import gulfConfig from '../../../../shared/gulf.json';
 import { UPSTREAM_TIMEOUT_MS, type YahooChartResponse } from './_shared';
-import { CHROME_UA, yahooGate } from '../../../_shared/constants';
+import { YAHOO_UA, yahooGate } from '../../../_shared/constants';
 import { cachedFetchJson } from '../../../_shared/redis';
 import { markNoStoreFallbackResponse } from '../../../_shared/response-headers';
 
@@ -35,7 +35,7 @@ function fetchSeries(symbol: string, name: string, range: string): Promise<Price
     await yahooGate();
     const res = await fetch(
       `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=${range}&interval=1d`,
-      { headers: { 'User-Agent': CHROME_UA }, signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS) },
+      { headers: { 'User-Agent': YAHOO_UA }, signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS) },
     );
     if (!res.ok) return null;
 

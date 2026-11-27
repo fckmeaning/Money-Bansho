@@ -127,7 +127,7 @@ async function fetchGdelt() {
   const file = fileOf('gdelt-daily.json');
   const store = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : { series: {} };
   const range = (from, to) => `startdatetime=${from}000000&enddatetime=${to}235959`;
-  const years = [['20211201', '20221231'], ['20230101', '20231231'], ['20240101', '20241231'], ['20250101', '20251231'], ['20260101', '20261126']];
+  const years = [['20211201', '20261126']]; // one request returns daily points for the whole span
   for (const [symbol, name] of Object.entries(GDELT_NAMES)) {
     for (const mode of ['timelinevolraw', 'timelinetone']) {
       const key = `${symbol}|${mode}`;
@@ -136,7 +136,7 @@ async function fetchGdelt() {
       let failed = false;
       for (const [from, to] of years) {
         try {
-          await sleep(7000); // GDELT: at most one request every 5 s
+          await sleep(6000); // GDELT: at most one request every 5 s
           const url = `https://api.gdeltproject.org/api/v2/doc/doc?query=${encodeURIComponent(`"${name}" sourcelang:english`)}&mode=${mode}&format=json&${range(from, to)}`;
           rows.push(...gdeltPoints(await getJson(url, { pause: 25_000, tries: 5 })));
         } catch (error) {
