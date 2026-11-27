@@ -24,6 +24,13 @@ const IRAN_ATTACKS_ENABLED = typeof window !== 'undefined' && import.meta.env.VI
 const FULL_PANELS: Record<string, PanelConfig> = {
   map: { name: 'Global Map', enabled: true, priority: 1 },
   'live-news': { name: 'Live News', enabled: true, priority: 1 },
+  // Money Bansho: finance panels come first.
+  markets: { name: 'Markets', enabled: true, priority: 1 },
+  finance: { name: 'Financial', enabled: true, priority: 1 },
+  commodities: { name: 'Metals & Materials', enabled: true, priority: 1 },
+  economic: { name: 'Macro Stress', enabled: true, priority: 1 },
+  heatmap: { name: 'Sector Heatmap', enabled: true, priority: 2 },
+  'macro-signals': { name: 'Market Regime', enabled: true, priority: 2 },
   'live-webcams': { name: 'Live Webcams', enabled: true, priority: 1 },
   'windy-webcams': { name: 'Windy Live Webcam', enabled: false, priority: 2 },
   insights: { name: 'Insights', enabled: true, priority: 1 },
@@ -55,24 +62,19 @@ const FULL_PANELS: Record<string, PanelConfig> = {
   gov: { name: 'Government', enabled: true, priority: 1 },
   thinktanks: { name: 'Think Tanks', enabled: true, priority: 1 },
   polymarket: { name: 'Predictions', enabled: true, priority: 1 },
-  commodities: { name: 'Metals & Materials', enabled: true, priority: 1 },
   'energy-complex': { name: 'Energy Complex', enabled: true, priority: 1 },
   'oil-inventories': { name: 'Oil Inventories', enabled: true, priority: 60 },
-  markets: { name: 'Markets', enabled: true, priority: 1 },
   'stock-analysis': { name: 'Stock Analysis', enabled: true, priority: 1, premium: 'locked' as const },
   'stock-backtest': { name: 'Backtesting', enabled: true, priority: 1, premium: 'locked' as const },
   'daily-market-brief': { name: 'Daily Market Brief', enabled: true, priority: 1, premium: 'locked' as const },
   'chat-analyst': { name: 'WM Analyst', enabled: true, priority: 1, premium: 'locked' as const },
-  economic: { name: 'Macro Stress', enabled: true, priority: 1 },
   'global-procurement': { name: 'Global Procurement', enabled: true, priority: 1, premium: 'locked' as const },
   'trade-policy': { name: 'Trade Policy', enabled: true, priority: 1, premium: 'locked' as const },
   'supply-chain': { name: 'Supply Chain', enabled: true, priority: 1, ...(_desktop && { premium: 'enhanced' as const }) },
   'china-corridors': { name: 'China Logistics Corridors', enabled: true, priority: 1 },
   'china-activity-nowcast': { name: 'China Activity Nowcast', enabled: true, priority: 1 },
-  finance: { name: 'Financial', enabled: true, priority: 1 },
   tech: { name: 'Technology', enabled: true, priority: 2 },
   crypto: { name: 'Crypto', enabled: true, priority: 2 },
-  heatmap: { name: 'Sector Heatmap', enabled: true, priority: 2 },
   ai: { name: 'AI/ML', enabled: true, priority: 2 },
   layoffs: { name: 'Layoffs Tracker', enabled: true, priority: 2 },
   // Opt-in news panel (2026-10-17 audit); its feeds also widen /verify claim search.
@@ -80,7 +82,6 @@ const FULL_PANELS: Record<string, PanelConfig> = {
   monitors: { name: 'My Monitors', enabled: true, priority: 2 },
   'latest-brief': { name: 'Latest Brief', enabled: true, priority: 1, premium: 'locked' as const },
   'satellite-fires': { name: 'Fires', enabled: true, priority: 2 },
-  'macro-signals': { name: 'Market Regime', enabled: true, priority: 2 },
   'fear-greed': { name: 'Fear & Greed', enabled: true, priority: 2 },
   'aaii-sentiment': { name: 'AAII Sentiment', enabled: false, priority: 2 },
   'market-breadth': { name: 'Market Breadth', enabled: true, priority: 2 },
@@ -1193,6 +1194,13 @@ function getVariantPanelConfigs(variant: string): Record<string, PanelConfig> | 
 export function isPanelNativeToVariant(panelId: string, variant: string): boolean {
   const configs = getVariantPanelConfigs(variant);
   return Boolean(configs && Object.prototype.hasOwnProperty.call(configs, panelId));
+}
+
+// Money Bansho is free and keyless: premium-locked panels start disabled.
+for (const panels of [FULL_PANELS, TECH_PANELS, FINANCE_PANELS, COMMODITY_PANELS, ENERGY_PANELS]) {
+  for (const config of Object.values(panels)) {
+    if (config.premium === 'locked') config.enabled = false;
+  }
 }
 
 /** All panels from all variants — canonical cross-variant registry. */

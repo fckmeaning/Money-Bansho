@@ -39,9 +39,9 @@ const EXPECTED_VARIANT_PANEL_SNAPSHOTS: Record<DashboardVariant, {
   enabledCount: number;
   enabledSha256: string;
 }> = {
-  full: { enabledCount: 87, enabledSha256: 'f88a8223a3b1ae42a80a9a4d55678b4e0dbaf942632408fe0987e3a956bd5372' },
+  full: { enabledCount: 83, enabledSha256: 'd5104e2621baafa829002499f3f4a13f3f3d7e6b83d76a5438af2619ddf553a9' },
   tech: { enabledCount: 38, enabledSha256: 'de9f78179aa2c75301883511ad0bab48fc67cba5cd4eb4445906abf17458a290' },
-  finance: { enabledCount: 60, enabledSha256: 'e9cbe30455e107add242019de29d44335abf9da2a8a44c9c204076ed279bcfe8' },
+  finance: { enabledCount: 58, enabledSha256: '6ab3ad99c34ebea1ce12312eadad8d61c4bfc3d4bafd8980a6396c07c53da3f7' },
   commodity: { enabledCount: 33, enabledSha256: 'b534510a2e814392e3966beb211e300e75a2b33f05c283613dd4f6cee50ddfe0' },
   happy: { enabledCount: 10, enabledSha256: 'f62bbf19c2f7ca75fefeb12a7ba32da991a72f494f91e6d310910d5b7a0468ad' },
   energy: { enabledCount: 27, enabledSha256: '9883327d2f1e0547b4111b469e21960954664f886aace434760d519e8bee3ed6' },
@@ -52,9 +52,9 @@ const EXPECTED_VARIANT_DEFAULT_SNAPSHOTS: Record<DashboardVariant, {
   enabled: number;
   sha256: string;
 }> = {
-  full: { total: 114, enabled: 87, sha256: 'c19e877ac9fe17e74d3d604760c6a8a073d2f4c01e4885141fcc6652165a780a' },
+  full: { total: 119, enabled: 83, sha256: '11478b8a6a7cc2742d687ad3eef241d61551fe0b70e7b84ccdea4b66fa2a9299' },
   tech: { total: 41, enabled: 38, sha256: '43d7c788ff599baae171f7f46532653370e03ca4d322a8e6614f9f0a1cee5045' },
-  finance: { total: 69, enabled: 60, sha256: 'bb4ad5038f29080ee1631ebce59596da8ef9ae6f88932f0a4e06b1087be141b7' },
+  finance: { total: 74, enabled: 58, sha256: 'ec624086672c647cbd792a1d4db70bc34a81b6c754b8b3b2c34517c2516b9261' },
   commodity: { total: 36, enabled: 33, sha256: 'cc9e0b178dec33dff354a1eea95b5b215302fc7ce685b3d92b82a356df6d6bee' },
   happy: { total: 10, enabled: 10, sha256: '197a73a578d8734d49e844e0a83b89204d5a6fc6b973b1ed698272d846a2c308' },
   energy: { total: 30, enabled: 27, sha256: '1a5271643c2a74fe662e011b23a170fe5458355da566bc061c25560216b45569' },

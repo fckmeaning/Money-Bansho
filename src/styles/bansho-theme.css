@@ -1401,3 +1401,7 @@ html.wm-pro-banner-reserved .pro-banner-slot { display: none; min-height: 0; }
 .widget-chat-skeleton-line,
 .widget-chat-skeleton-card { background-image: none; background-color: var(--surface-hover); }
 .panel-locked-cta { background-image: none; background-color: var(--accent); color: var(--bg); }
+
+/* ---------- Free build: no locked premium panels, no emoji layer icons ---------- */
+.panel:has(> .panel-content > .panel-locked-state) { display: none !important; }
+.deckgl-layer-toggles .toggle-icon { display: none; }
