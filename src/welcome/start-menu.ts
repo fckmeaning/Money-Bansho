@@ -1,6 +1,7 @@
 // Game-like main menu over the start page: a triangular play button that opens the map, settings and
 // a way to the project overview. Arrows move between buttons, Escape goes back.
 import { currentScale, currentTheme, setBanshoScale, setBanshoTheme } from '../shell/bansho-view';
+import { createGlobe } from './globe';
 import { playClick, playHover, playStart, saveSound, sound, stopMusic, syncMusic } from './sound';
 import './start-menu.css';
 
@@ -67,6 +68,24 @@ function triangle(): SVGSVGElement {
   return svg;
 }
 
+const ICONS = {
+  settings: 'M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6zM19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7h.1a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1.3z',
+  sound: 'M4 9v6h4l5 4V5L8 9zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12',
+  muted: 'M4 9v6h4l5 4V5L8 9zM16 9.5l5 5M21 9.5l-5 5',
+  forecast: 'M3 20h18M4 15l5-5l4 3l7-8M15 5h5v5',
+  overview: 'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z',
+} as const;
+
+function icon(name: keyof typeof ICONS): HTMLElement {
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  const path = document.createElementNS(SVG_NS, 'path');
+  path.setAttribute('d', ICONS[name]);
+  svg.append(path);
+  return el('i', {}, svg);
+}
+
 /** Opens the menu over the page; calling it again redraws it, for example in another language. */
 export function openStartMenu(options: StartMenuOptions, screen: 'main' | 'settings' = 'main', focus = 0): void {
   document.querySelector('.sm')?.remove();
@@ -114,22 +133,22 @@ export function openStartMenu(options: StartMenuOptions, screen: 'main' | 'setti
   volume.addEventListener('change', playClick);
 
   const muted = !sound.effects && !sound.music;
-  const soundButton = button(muted ? t.soundOff : t.soundOn, 'sm-item', () => {
+  const soundButton = button(muted ? t.soundOff : t.soundOn, 'sm-round', () => {
     saveSound({ effects: muted, music: muted });
     syncMusic();
     redraw(screen);
-  });
+  }, icon(muted ? 'muted' : 'sound'));
 
   const body = screen === 'main'
     ? [
-      button(t.play, 'sm-play', start, el('i', {}, triangle())),
+      el('div', { class: 'sm-stage' }, createGlobe(), button(t.play, 'sm-play', start, el('i', {}, triangle()))),
       el(
         'div',
-        { class: 'sm-items' },
-        button(t.settings, 'sm-item', () => redraw('settings')),
+        { class: 'sm-dock' },
+        button(t.settings, 'sm-round', () => redraw('settings'), icon('settings')),
         soundButton,
-        button(t.forecast, 'sm-item', () => window.location.assign('/forecast.html')),
-        button(t.overview, 'sm-item', close),
+        button(t.forecast, 'sm-round', () => window.location.assign('/forecast.html'), icon('forecast')),
+        button(t.overview, 'sm-round', close, icon('overview')),
       ),
     ]
     : [
@@ -155,7 +174,7 @@ export function openStartMenu(options: StartMenuOptions, screen: 'main' | 'setti
 
   const external = (href: string, text: string) => el('a', { href, target: '_blank', rel: 'noopener noreferrer' }, text);
   root.append(
-    el('div', { class: 'sm-title' }, el('p', {}, t.kicker), el('h1', {}, 'Money Bansho')),
+    el('div', { class: 'sm-title' }, el('h1', {}, 'Money Bansho'), el('p', {}, t.kicker)),
     ...body,
     el('p', { class: 'sm-hint' }, t.hint),
     el(
@@ -175,10 +194,10 @@ export function openStartMenu(options: StartMenuOptions, screen: 'main' | 'setti
 
   root.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && screen === 'settings') redraw('main');
-    if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+    if (!['ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight'].includes(event.key) || event.target instanceof HTMLInputElement) return;
     const items = [...root.querySelectorAll<HTMLElement>('button')];
     const at = items.indexOf(document.activeElement as HTMLElement);
-    const step = event.key === 'ArrowDown' ? 1 : -1;
+    const step = event.key === 'ArrowDown' || event.key === 'ArrowRight' ? 1 : -1;
     items[(at + step + items.length) % items.length]?.focus();
     playHover();
     event.preventDefault();
