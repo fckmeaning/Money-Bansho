@@ -69,6 +69,7 @@ function directionFigure(data: CompanyData, forecast: Forecast): HTMLElement | n
     h('b', { class: 'mono' }, `${call.side === 'up' ? `▲ ${w.up}` : `▼ ${w.down}`} ${signed(call.movePct, 2)}%`),
     h('small', { class: 'mono' }, `${money(call.price)} ${data.currency} · ${w.probUp} ${share(call.probUp, 0)}`),
     h('small', {}, record),
+    Math.abs(call.probUp - 0.5) < 0.02 ? h('small', {}, w.dirFlat) : null,
   );
 }
 
