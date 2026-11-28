@@ -150,6 +150,7 @@
   .fh-figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .fh-proofs { grid-template-columns: minmax(0, 1fr); }
   .fh-figure:last-child:nth-child(even) { grid-column: span 2; }
+  .fh-figures:has(.direction) .fh-figure:last-child { grid-column: span 2; }
   .fh-row { grid-template-columns: 74px minmax(0, 1fr) 108px; }
   .fh-row > .clamp1 { display: none; }
   .fh-bar-line { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; }
