@@ -1,7 +1,9 @@
 // Headline -> conditional corridor. Not a price promise: the width comes from a variance model checked
 // out of sample (volmodel.js), a headline type may widen it by a factor measured on past events, and the
-// centre stays at zero because analogue means did not predict the sign. See docs/math/forecast.md.
+// corridor stays centred on zero because analogue means did not predict the sign. The side (up or down)
+// is a separate, weaker estimate from closing prices (direction.js). See docs/math/forecast.md.
 import { reputationScore } from '../analyze.js';
+import { directionAt } from './direction.js';
 import { withCloseTimes } from '../quant.js';
 import { EVIDENCE } from './forecast-evidence.js';
 import {
@@ -412,6 +414,7 @@ export function computeForecasts({ history, benchmarkHistory, events, peers = []
     },
     horizons,
     fan: fan(),
+    direction: FAN_HORIZONS.map((h) => directionAt(closes, h, distribution(state.forecast(h)))).filter(Boolean),
     drivers: drivers(state),
     workings: workings(history, rows, state),
     record: records,

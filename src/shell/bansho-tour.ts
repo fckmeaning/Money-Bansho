@@ -26,8 +26,8 @@ const STEPS: readonly Step[] = [
   {
     url: '/forecast.html',
     seconds: 14,
-    en: ['Forecast: the main feature', 'How far a price can move over 1, 5 and 20 sessions, with accuracy on held-out history. Direction is not forecast.'],
-    ru: ['Прогноз — главное', 'Насколько далеко может уйти цена за 1, 5 и 20 сессий и точность на отложенной истории. Направление не прогнозируется.'],
+    en: ['Forecast: the main feature', 'How far a price can move over 1, 5 and 20 sessions, with accuracy on held-out history. The direction in violet is a weak signal.'],
+    ru: ['Прогноз — главное', 'Насколько далеко может уйти цена за 1, 5 и 20 сессий и точность на отложенной истории. Направление (фиолетовым) — слабый сигнал.'],
   },
   {
     url: '/forecast.html#/scenarios/NVDA',

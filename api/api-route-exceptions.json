@@ -1480,6 +1480,13 @@
       "removal_issue": null
     },
     {
+      "path": "api/_dossier/math/direction.js",
+      "category": "external-protocol",
+      "reason": "Money Bansho directional forecast mathematics. It exports no HTTP handler.",
+      "owner": "@fckmeaning",
+      "removal_issue": null
+    },
+    {
       "path": "api/_dossier/math/forecast-evidence.js",
       "category": "external-protocol",
       "reason": "Money Bansho forecast out-of-sample results, a generated constant. It exports no HTTP handler.",

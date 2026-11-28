@@ -10,6 +10,11 @@ export interface Corridor {
   exceed: { k: number; pct: number; prob: number }[]; annualPct: number; vsUsual: number; multiplier?: number;
 }
 export interface Fan { h: number; q025: number; q10: number; q25: number; q75: number; q90: number; q975: number }
+/** The side the price is expected to take, with how often that call was right on past windows. */
+export interface Direction {
+  h: number; side: 'up' | 'down'; movePct: number; price: number; probUp: number;
+  record: { n: number; hit: number; upShare: number } | null;
+}
 interface Realized { h: number; actualPct: number; low80Pct: number; high80Pct: number; inside: boolean }
 interface Analogue {
   h: number; n: number; sameType: number | null;
@@ -44,6 +49,8 @@ export interface Forecast {
     usualAnnualPct: number; recentAnnualPct: number; seasonQuarters: number[] | null;
   };
   horizons: Corridor[]; fan: Fan[];
+  /** Missing in answers saved before it was added. */
+  direction?: Direction[];
   drivers: { h: number; parts: { id: string; share: number; annualPct: number }[] }[] | null;
   record: {
     h: number; n: number; independent: number; cover80: number; cover95: number;
@@ -57,7 +64,7 @@ export interface Forecast {
 export const TEXT = {
   en: {
     title: 'Forecast: price corridor', none: 'No data: not enough price history.',
-    what: 'The range of the price change from the last close over 1, 5 and 20 sessions. About 8 outcomes in 10 should fall inside. Direction is not forecast: the corridor is centred on zero.',
+    what: 'The range of the price change from the last close over 1, 5 and 20 sessions. About 8 outcomes in 10 should fall inside. The corridor is centred on zero; the violet line is a separate and weak estimate of direction.',
     note: 'A statistical estimate, not a price promise and not investment advice.',
     extreme: 'Expected volatility is far above usual (×{x} or more). In the held-out test the 80% corridor in such states held {c1} / {c5} / {c20} of the time at 1 / 5 / 20 sessions.',
     last: 'Last close', asOf: 'as of', sessions: 'Sessions', range: '80% corridor', price: 'Price range',
@@ -110,7 +117,7 @@ export const TEXT = {
   },
   ru: {
     title: 'Прогноз: коридор цены', none: 'Нет данных: мало истории цен.',
-    what: 'Диапазон изменения цены от последнего закрытия за 1, 5 и 20 сессий. Внутрь должны попадать примерно 8 исходов из 10. Направление не прогнозируется: коридор центрирован на нуле.',
+    what: 'Диапазон изменения цены от последнего закрытия за 1, 5 и 20 сессий. Внутрь должны попадать примерно 8 исходов из 10. Коридор центрирован на нуле; фиолетовая линия — отдельная и слабая оценка направления.',
     note: 'Статистическая оценка, а не обещание цены и не инвестиционный совет.',
     extreme: 'Ожидаемая волатильность намного выше обычной (от ×{x}). На отложенной проверке в таких состояниях коридор 80% накрывал {c1} / {c5} / {c20} исходов на 1 / 5 / 20 сессий.',
     last: 'Последнее закрытие', asOf: 'на', sessions: 'Сессий', range: 'Коридор 80%', price: 'Коридор цены',
@@ -194,7 +201,7 @@ export function table(head: string[], rows: (string | Node)[][]): HTMLElement {
 const FAN_W = 640;
 const FAN_H = 230;
 
-export function fanChart(fan: Fan[], overlay: Fan[] | null, last: number): SVGElement {
+export function fanChart(fan: Fan[], overlay: Fan[] | null, last: number, direction: Direction[] = []): SVGElement {
   const rows: Fan[] = [{ h: 0, q025: 0, q10: 0, q25: 0, q75: 0, q90: 0, q975: 0 }, ...fan];
   const extra = overlay ?? [];
   const low = Math.min(...[...rows, ...extra].map((r) => Math.min(r.q025, r.q10)));
@@ -217,11 +224,23 @@ export function fanChart(fan: Fan[], overlay: Fan[] | null, last: number): SVGEl
     s('path', { class: 'fc-outer', d: path(rows, 'q025') }),
     s('line', { class: 'fc-mid', x1: x(0), x2: x(20), y1: y(0), y2: y(0) }),
     ...(outline ? [s('path', { class: 'fc-event', d: path(outline, 'q90') }), s('path', { class: 'fc-event', d: path(outline, 'q10') })] : []),
+    ...(direction.length ? directionMarks(direction, x, y) : []),
     mark(end.q90),
     mark(0),
     mark(end.q10),
     ...[0, 1, 5, 12, 20].map((d) => s('text', { x: x(d), y: FAN_H - 6, 'text-anchor': d ? 'middle' : 'start' }, String(d))),
   );
+}
+
+function directionMarks(direction: Direction[], x: (d: number) => number, y: (v: number) => number): SVGElement[] {
+  const end = direction[direction.length - 1] as Direction;
+  const d = `M${x(0)} ${y(0)}${direction.map((p) => `L${x(p.h)} ${y(p.movePct)}`).join('')}`;
+  return [
+    s('path', { class: 'fc-dir', d }),
+    s('circle', { class: 'fc-dir-dot', cx: x(end.h), cy: y(end.movePct), r: 4 }),
+    s('text', { class: 'fc-dir-text', x: x(end.h) - 6, y: y(end.movePct) + (end.side === 'up' ? -8 : 16), 'text-anchor': 'end' },
+      `${end.side === 'up' ? '▲' : '▼'} ${signedPct(end.movePct)}`),
+  ];
 }
 
 /** A warning when the expected volatility is far above usual: such corridors proved wider than stated. */
@@ -465,7 +484,7 @@ export function forecastView(
     'div',
     { class: 'fc' },
     corridorPanel(data, w, options.lang),
-    panelOf(w.fan, fanChart(data.fan, null, data.lastClose), note(w.fanNote)),
+    panelOf(w.fan, fanChart(data.fan, null, data.lastClose, data.direction), note(w.fanNote)),
     basisPanel(data, w),
     recordPanel(data, w),
     newsPanel(data, w, options),

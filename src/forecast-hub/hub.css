@@ -3,10 +3,12 @@
 :root {
   --bg: #0e1116; --panel: #171c23; --raise: #222934; --border: #2f3845;
   --text: #e6eaf0; --muted: #8a95a5; --gold: #3d8bfd; --up: #4caf7d; --down: #d9655b;
+  --violet: #a78bfa;
 }
 :root[data-theme='light'] {
   --bg: #eef1f5; --panel: #f9fafc; --raise: #e4e8ee; --border: #cbd3de;
   --text: #161b24; --muted: #566174; --gold: #1f5fbf; --up: #2f7349; --down: #a63d36;
+  --violet: #6d28d9;
 }
 
 .fh-top .brand:hover { text-decoration: none; }
@@ -55,6 +57,22 @@
 .fh-fan { display: block; max-width: 100%; }
 .fh-fan text { fill: var(--muted); font-size: 11px; font-family: var(--mono); }
 .fh-fan .fh-edge { fill: var(--text); font-size: 12px; font-weight: 700; }
+.fh-figure.direction { border-left: 3px solid var(--violet); }
+.fh-figure.direction b { color: var(--violet); }
+.fh-period { fill: color-mix(in srgb, var(--violet) 10%, transparent); }
+.fh-fan .fh-period-text { fill: var(--violet); font-size: 12px; font-weight: 700; }
+.fh-when { margin: 0; padding: 8px 12px; border-left: 3px solid var(--violet); font-size: 13px; font-weight: 600; }
+.fh-periods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.fh-periods button { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 8px 10px; min-width: 0; background: var(--raise); color: var(--text); border: 1px solid var(--border); text-align: left; cursor: pointer; }
+.fh-periods button[aria-pressed='true'] { border-color: var(--violet); box-shadow: inset 0 -3px 0 var(--violet); }
+.fh-periods span, .fh-periods small { font-size: 11px; color: var(--muted); }
+.fh-periods b { font-size: 16px; color: var(--violet); }
+/* Two wide figures and three narrow ones fill both rows. */
+@media (min-width: 761px) {
+  .fh-figures:has(.direction) { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .fh-figures:has(.direction) .fh-figure { grid-column: span 2; }
+  .fh-figures:has(.direction) .fh-figure.lead { grid-column: span 3; }
+}
 .fh-grid { stroke: var(--border); stroke-width: 1; }
 .fh-past { fill: none; stroke: var(--text); stroke-width: 1.5; }
 .fh-now { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 3; }

@@ -26,7 +26,7 @@ const LOW = 0.8;
 const TEXT = {
   en: {
     title: 'Market forecast: 80% corridor for every company', loading: 'Computing from one year of prices…', none: 'no data',
-    lead: 'The range of the price change from the last close: about 8 outcomes in 10 should fall inside. Direction is not forecast. "Usual" is the company\'s own volatility over the past year. Multipliers (×) describe the width of swings, not a change of the price.',
+    lead: 'The range of the price change from the last close: about 8 outcomes in 10 should fall inside. This table does not show direction (see a company page). "Usual" is the company\'s own volatility over the past year. Multipliers (×) describe the width of swings, not a change of the price.',
     companies: 'With a forecast', width: 'Median corridor width, 5 sessions', high: 'Expected volatility above usual (×1.2 and more)', low: 'Expected volatility below usual (×0.8 and less)', change: 'Expected volatility against a week ago, median',
     level: 'Expected volatility to usual, median', happened: 'actual over 22 sessions: ×{v}',
     standout: 'Standing out', widest: 'Widest', versus: 'Volatility to usual', moved: 'Volatility changed most', symbol: 'Ticker',
@@ -38,7 +38,7 @@ const TEXT = {
   },
   ru: {
     title: 'Прогноз по рынку: коридор 80% для каждой компании', loading: 'Расчёт по ценам за год…', none: 'нет данных',
-    lead: 'Диапазон изменения цены от последнего закрытия: внутрь должны попадать примерно 8 исходов из 10. Направление не прогнозируется. «Обычная» — волатильность самой компании за прошедший год. Множители (×) описывают размах колебаний, а не изменение цены.',
+    lead: 'Диапазон изменения цены от последнего закрытия: внутрь должны попадать примерно 8 исходов из 10. Направление в этой таблице не показано (оно на странице компании). «Обычная» — волатильность самой компании за прошедший год. Множители (×) описывают размах колебаний, а не изменение цены.',
     companies: 'С прогнозом', width: 'Медианная ширина коридора, 5 сессий', high: 'Ожидаемая волатильность выше обычной (от ×1,2)', low: 'Ожидаемая волатильность ниже обычной (до ×0,8)', change: 'Ожидаемая волатильность к неделе назад, медиана',
     level: 'Ожидаемая волатильность к обычной, медиана', happened: 'факт за 22 сессии: ×{v}',
     standout: 'Выделяются', widest: 'Самые широкие', versus: 'Волатильность к обычной', moved: 'Волатильность изменилась сильнее', symbol: 'Тикер',

@@ -10,7 +10,22 @@ const SESSIONS_AHEAD = 20;
 export const money = (x: number): string =>
   x.toLocaleString(locale(), { minimumFractionDigits: Math.abs(x) < 1 ? 4 : 2, maximumFractionDigits: Math.abs(x) < 1 ? 4 : 2 });
 
-export function bigFan(data: Forecast, bars: Bar[], horizon: number, labels: { today: string; ahead: string }, overlay: Fan[] | null = null): HTMLElement {
+/** The date `n` trading sessions after `from`: weekends are skipped, exchange holidays are not known. */
+export function sessionDate(from: number, n: number): number {
+  const day = new Date(from);
+  for (let left = n; left > 0;) {
+    day.setUTCDate(day.getUTCDate() + 1);
+    if (day.getUTCDay() % 6) left -= 1;
+  }
+  return day.getTime();
+}
+
+export const shortDate = (t: number): string =>
+  new Date(t).toLocaleDateString(locale(), { day: '2-digit', month: '2-digit', timeZone: 'UTC' });
+
+export interface ChartLabels { ahead: string; up: string; down: string; until: string }
+
+export function bigFan(data: Forecast, bars: Bar[], horizon: number, labels: ChartLabels, overlay: Fan[] | null = null): HTMLElement {
   const host = h('div', { class: 'fh-chart' });
   const draw = (width: number) => {
     const narrow = width < 560;
@@ -31,7 +46,9 @@ export function bigFan(data: Forecast, bars: Bar[], horizon: number, labels: { t
     const split = past.length > 1 ? plot * (narrow ? 0.45 : 0.55) : 0;
     const xPast = (i: number) => 6 + (i / Math.max(1, past.length - 1)) * split;
     const x = (d: number) => 6 + split + (d / SESSIONS_AHEAD) * (plot - split);
-    const y = (v: number) => 12 + (1 - (v - low) / (high - low || 1)) * (height - 38);
+    // The top strip holds the name of the forecast period.
+    const y = (v: number) => 30 + (1 - (v - low) / (high - low || 1)) * (height - 56);
+    const until = `${labels.until} ≈${shortDate(sessionDate(data.asOf, horizon))}`;
     const line = (rows: Fan[], key: Exclude<keyof Fan, 'h'>) => rows.map((r, i) => `${i ? 'L' : 'M'}${x(r.h)} ${y(price(r[key]))}`).join('');
     const band = (lo: Exclude<keyof Fan, 'h'>, hi: Exclude<keyof Fan, 'h'>) =>
       s('path', { class: 'fc-band', d: `${line(fan, hi)}${[...fan].reverse().map((r) => `L${x(r.h)} ${y(price(r[lo]))}`).join('')}Z` });
@@ -39,9 +56,22 @@ export function bigFan(data: Forecast, bars: Bar[], horizon: number, labels: { t
     // The labels use the server's prices, the same figures as in the panel above the chart.
     const exact = data.horizons.find((p) => p.h === horizon);
     const grid = [0, 1, 2, 3, 4].map((i) => low + ((high - low) * i) / 4);
+    const direction = data.direction ?? [];
+    const called = direction.find((r) => r.h === horizon);
+    // The violet line of the expected side; its label sits at the chosen horizon.
+    const callMarks = called
+      ? [
+        s('path', { class: 'fc-dir', d: `M${x(0)} ${y(data.lastClose)}${direction.map((r) => `L${x(r.h)} ${y(r.price)}`).join('')}` }),
+        ...direction.filter((r) => [1, 5, SESSIONS_AHEAD].includes(r.h)).map((r) => s('circle', { class: 'fc-dir-dot', cx: x(r.h), cy: y(r.price), r: 3 })),
+        s('circle', { class: 'fc-dir-dot', cx: x(horizon), cy: y(called.price), r: 5.5 }),
+        s('text', {
+          class: 'fc-dir-text', x: x(horizon) + (horizon > 8 ? -6 : 8), y: y(called.price) + (called.side === 'up' ? -10 : 20),
+          'text-anchor': horizon > 8 ? 'end' : 'start',
+        }, `${called.side === 'up' ? `▲ ${labels.up}` : `▼ ${labels.down}`} ${money(called.price)}`),
+      ]
+      : [];
     const tag = (value: number, cls: string, label = money(value)) =>
       s('text', { x: x(horizon) + (horizon > 14 ? -4 : 5), y: y(value) + (cls === 'up' ? -6 : 14), class: 'fh-edge', 'text-anchor': horizon > 14 ? 'end' : 'start' }, label);
-    const date = (t: number) => new Date(t).toLocaleDateString(locale(), { day: '2-digit', month: '2-digit', timeZone: 'UTC' });
     host.replaceChildren(
       s(
         'svg',
@@ -49,6 +79,8 @@ export function bigFan(data: Forecast, bars: Bar[], horizon: number, labels: { t
           class: 'fh-fan', width, height, viewBox: `0 0 ${width} ${height}`, role: 'img',
           'aria-label': at ? `${money(price(at.q10))} … ${money(price(at.q90))}` : '',
         },
+        s('rect', { class: 'fh-period', x: x(0), y: 8, width: Math.max(2, x(horizon) - x(0)), height: height - 34 }),
+        s('text', { class: 'fh-period-text', x: width - right, y: 20, 'text-anchor': 'end' }, `${labels.ahead.replace('{n}', String(horizon))} · ${until}`),
         ...grid.flatMap((v) => [
           s('line', { class: 'fh-grid', x1: 6, x2: width - right, y1: y(v), y2: y(v) }),
           s('text', { x: width - right + 6, y: y(v) + 4 }, money(v)),
@@ -72,9 +104,12 @@ export function bigFan(data: Forecast, bars: Bar[], horizon: number, labels: { t
             tag(price(at.q10), 'down', exact && money(exact.lowPrice)),
           ]
           : []),
-        past[0] ? s('text', { x: 6, y: height - 8 }, date(past[0].t)) : null,
-        s('text', { x: x(0), y: height - 8, 'text-anchor': 'middle' }, date(data.asOf)),
-        s('text', { x: x(SESSIONS_AHEAD), y: height - 8, 'text-anchor': 'end' }, narrow ? `+${SESSIONS_AHEAD}` : `+${SESSIONS_AHEAD} ${labels.ahead}`),
+        ...callMarks,
+        past[0] ? s('text', { x: 6, y: height - 8 }, shortDate(past[0].t)) : null,
+        s('text', { x: x(0), y: height - 8, 'text-anchor': 'middle' }, shortDate(data.asOf)),
+        ...(narrow ? [SESSIONS_AHEAD] : [5, 10, 15, SESSIONS_AHEAD]).map((d) => s(
+          'text', { x: x(d), y: height - 8, 'text-anchor': d === SESSIONS_AHEAD ? 'end' : 'middle' }, `≈${shortDate(sessionDate(data.asOf, d))}`,
+        )),
       ),
     );
   };

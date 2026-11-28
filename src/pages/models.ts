@@ -162,7 +162,7 @@ export const MODELS: Model[] = [
       [['Квантили', 'Quantiles'], 'q_p = k s_h \\sigma_h t_{\\nu}^{-1}(p)'],
     ],
     limits: [
-      ['Выигрыш против простых баз мал; направление не прогнозируется.', 'The gain over simple baselines is small; direction is not forecast.'],
+      ['Выигрыш против простых баз мал; направление коридор не задаёт (оно оценивается отдельно и слабо).', 'The gain over simple baselines is small; the corridor gives no direction (a separate, weak estimate does).'],
     ],
     code: ['api/_dossier/math/volmodel.js', 'api/_dossier/math/forecast.js'],
     used: [['/forecast.html#/', ['Раздел «Прогноз»', 'Forecast section']], dossier('forecast', ['Досье: вкладка «Прогноз»', 'Dossier: Forecast tab']), FORECAST],

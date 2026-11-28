@@ -4,6 +4,9 @@
 .panel .fc-body .fc-sub { padding: 8px 0 0; }
 .fc-news { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .fc-outer { fill: none; stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 3; }
+.fc-dir { fill: none; stroke: var(--violet, #8b5cf6); stroke-width: 2.5; stroke-dasharray: 7 4; }
+.fc-dir-dot { fill: var(--violet, #8b5cf6); }
+.fc-fan .fc-dir-text, .fh-fan .fc-dir-text { fill: var(--violet, #8b5cf6); font-size: 12px; font-weight: 700; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; }
 .fc-event { fill: none; stroke: var(--text); stroke-width: 1.25; }
 .fc-share { display: inline-flex; align-items: center; gap: 6px; }
 .fc-bar, .fb-bar { display: inline-block; width: 60px; height: 8px; background: var(--raise); vertical-align: middle; }

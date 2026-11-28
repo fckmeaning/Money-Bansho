@@ -7,10 +7,10 @@ import {
 import type { Corridor, Evidence, Forecast, Item } from '../dossier/forecast';
 import { regionName, typeName, uiLang } from '../dossier/i18n';
 import { REGIONS } from '../dossier/types';
-import { bigFan, money, rangeBar } from './chart';
+import { bigFan, money, rangeBar, sessionDate, shortDate } from './chart';
 import { HORIZONS, board, company, median } from './data';
 import type { BoardLine, CompanyData } from './data';
-import { companyHref, dec, go, horizonSwitch, later, local, missing, pctText, picker, share, signed, state, words } from './ui';
+import { app, companyHref, dec, go, horizonSwitch, later, local, missing, pctText, picker, share, signed, state, words } from './ui';
 
 const dossierHref = (symbol: string) => `/dossier.html?symbol=${encodeURIComponent(symbol)}&view=forecast`;
 const nameOf = (symbol: string) => companies.find((c) => c.symbol === symbol)?.name ?? symbol;
@@ -19,6 +19,58 @@ const figure = (label: string, value: string, sub = '') =>
   h('div', { class: 'fh-figure' }, h('span', {}, label), h('b', { class: 'mono' }, value), sub ? h('small', {}, sub) : null);
 const savedNote = (data: CompanyData) =>
   data.savedAt === null ? null : h('p', { class: 'muted fc-note' }, words().saved.replace('{t}', new Date(data.savedAt).toLocaleString(uiLang() === 'ru' ? 'ru-RU' : 'en-US')));
+
+const chartLabels = () => {
+  const w = words();
+  return { ahead: w.periodShort, up: w.up, down: w.down, until: w.until };
+};
+
+/** Which days the forecast covers: from the last close to the end of the chosen number of sessions. */
+function periodText(forecast: Forecast, horizon: number): string {
+  const w = words();
+  return w.period
+    .replace('{n}', w[`h${horizon as 1 | 5 | 20}`])
+    .replace('{from}', shortDate(forecast.asOf))
+    .replace('{to}', shortDate(sessionDate(forecast.asOf, horizon)));
+}
+
+/** The three periods side by side: end date, side and price. A press moves the chart to that period. */
+function periodStrip(forecast: Forecast): HTMLElement[] {
+  const w = words();
+  const calls = HORIZONS.flatMap((n) => forecast.direction?.find((x) => x.h === n) ?? []);
+  if (!calls.length) return [];
+  return [h('div', { class: 'fh-periods', role: 'group', 'aria-label': w.horizon }, ...calls.map((call) => h(
+    'button',
+    {
+      type: 'button', 'aria-pressed': String(state.horizon === call.h), 'data-key': `p${call.h}`,
+      onclick: () => {
+        state.horizon = call.h as 1 | 5 | 20;
+        app.redraw();
+      },
+    },
+    h('span', {}, `${w[`h${call.h as 1 | 5 | 20}`]} · ${w.until} ≈${shortDate(sessionDate(forecast.asOf, call.h))}`),
+    h('b', { class: 'mono' }, `${call.side === 'up' ? '▲' : '▼'} ${money(call.price)}`),
+    h('small', { class: 'mono' }, `${signed(call.movePct, 2)}%`),
+  )))];
+}
+
+/** The expected side of the chosen horizon, always shown together with its past hit rate. */
+function directionFigure(data: CompanyData, forecast: Forecast): HTMLElement | null {
+  const w = words();
+  const call = forecast.direction?.find((x) => x.h === state.horizon);
+  if (!call) return null;
+  const record = call.record
+    ? w.dirRecord.replace('{hit}', share(call.record.hit, 0)).replace('{n}', String(call.record.n)).replace('{up}', share(call.record.upShare, 0))
+    : w.dirNoRecord;
+  return h(
+    'div',
+    { class: 'fh-figure lead direction' },
+    h('span', {}, `${w.direction} · ${w[`h${state.horizon}`]}`),
+    h('b', { class: 'mono' }, `${call.side === 'up' ? `▲ ${w.up}` : `▼ ${w.down}`} ${signed(call.movePct, 2)}%`),
+    h('small', { class: 'mono' }, `${money(call.price)} ${data.currency} · ${w.probUp} ${share(call.probUp, 0)}`),
+    h('small', {}, record),
+  );
+}
 
 /** Big figures of the chosen horizon and the chart. */
 function headline(data: CompanyData, forecast: Forecast): Node[] {
@@ -35,11 +87,14 @@ function headline(data: CompanyData, forecast: Forecast): Node[] {
         h('b', { class: 'mono' }, `${signed(p.low80Pct, 1)} … ${signed(p.high80Pct, 1)}%`),
         h('small', { class: 'mono' }, `${money(p.lowPrice)} … ${money(p.highPrice)} ${data.currency}`),
       ),
+      directionFigure(data, forecast),
       figure(w.lastClose, money(forecast.lastClose), new Date(forecast.asOf).toLocaleDateString(uiLang() === 'ru' ? 'ru-RU' : 'en-US', { timeZone: 'UTC' })),
       figure(w.annual, `${dec(p.annualPct, 1)}%`),
       figure(w.versus, `×${dec(p.vsUsual, 2)}`),
     ),
-    bigFan(forecast, data.bars, state.horizon, { today: w.today, ahead: w.ahead }),
+    h('p', { class: 'fh-when' }, periodText(forecast, state.horizon)),
+    bigFan(forecast, data.bars, state.horizon, chartLabels()),
+    ...periodStrip(forecast),
     note(w.chartNote),
   ].concat(unusual(forecast, FC[uiLang()]) ?? []);
 }
@@ -328,7 +383,9 @@ export function comparePage(symbols: string[]): Node[] {
         )),
         h('div', { class: 'fh-multi' }, ...rows.map((r) => panelOf(
           `${r.symbol} · ${nameOf(r.symbol)}`,
-          r.data && r.forecast ? bigFan(r.forecast, r.data.bars, state.horizon, { today: w.today, ahead: w.ahead }) : sentence(w.failed),
+          ...(r.data && r.forecast
+            ? [h('p', { class: 'fh-when' }, periodText(r.forecast, state.horizon)), bigFan(r.forecast, r.data.bars, state.horizon, chartLabels())]
+            : [sentence(w.failed)]),
         ))),
       ];
     }, w.loadingCompany),
