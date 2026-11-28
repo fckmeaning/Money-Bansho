@@ -4599,7 +4599,7 @@
     "selfHostKey": {
       "heading": "Cheie desktop",
       "description": "Deblochează Pro pe acest dashboard cu cheia desktop proprie. Creează una pe worldmonitor.app în Settings → API Keys → Create desktop key.",
-      "relay": "Cheia merge la serverul acestei instalări, care transmite cererile Pro către World Monitor. Utilizarea se numără în limita de cheie desktop a contului tău, la fel ca aplicația desktop.",
+      "relay": "Cheia merge la serverul acestei instalări, care transmite cererile Pro către upstream API. Utilizarea se numără în limita de cheie desktop a contului tău, la fel ca aplicația desktop.",
       "trust": "Dacă altcineva rulează această instalare, creează o cheie desktop separată pentru ea. O poți revocare pe worldmonitor.app oricând.",
       "inputLabel": "Cheie desktop",
       "placeholder": "wm_…",
@@ -4615,7 +4615,7 @@
       "insecure": "Această pagină nu folosește HTTPS, deci cheia va fi transmisă neencriptată prin rețea.",
       "insecureConfirm": "Această pagină nu folosește HTTPS, deci cheia va fi transmisă neencriptată prin rețea. Trimite-o doar într-o rețea în care ai încredere.",
       "insecureConfirmButton": "Trimite cheia",
-      "staleNote": "Ultima verificare nu a putut atinge World Monitor.",
+      "staleNote": "Ultima verificare nu a putut atinge upstream API.",
       "disabled": "Operatorul acestei instalări a dezactivat cheile desktop.",
       "state": {
         "none": "Fără cheie",
@@ -4634,7 +4634,7 @@
         "not_desktop_key": "Aceasta este o cheie API. Folosește o cheie desktop în schimb.",
         "over_cap": "Contul are mai multe chei desktop decât permite planul. Revocă una pe worldmonitor.app.",
         "lapsed": "Planul Pro al contului nu este activ.",
-        "unavailable": "Nu s-a putut atinge World Monitor pentru a verifica această cheie. Încearcă mai târziu."
+        "unavailable": "Nu s-a putut atinge upstream API pentru a verifica această cheie. Încearcă mai târziu."
       }
     }
   },

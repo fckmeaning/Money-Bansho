@@ -163,7 +163,7 @@ export function renderBriefEvidenceFooter(
   }).join('');
   return `
     <details class="${escapeHtml(options.className ?? 'brief-sources')}">
-      <summary>World Monitor data (${items.length})</summary>
+      <summary>Money Bansho data (${items.length})</summary>
       <ol>${rows}</ol>
     </details>`;
 }

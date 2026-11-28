@@ -4576,7 +4576,7 @@
     "selfHostKey": {
       "heading": "Skrivbordsnyckel",
       "description": "Lås upp Pro på denna dashboard med din egen skrivbordsnyckel. Skapa en på worldmonitor.app under Inställningar → API-nycklar → Skapa skrivbordsnyckel.",
-      "relay": "Nyckeln går till denna installations server, som vidarebefordrar dina Pro-förfrågningar till World Monitor. Användningen räknas mot ditt kontos skrivbordsnyckelgräns, precis som i skrivbordsappen.",
+      "relay": "Nyckeln går till denna installations server, som vidarebefordrar dina Pro-förfrågningar till upstream API. Användningen räknas mot ditt kontos skrivbordsnyckelgräns, precis som i skrivbordsappen.",
       "trust": "Om någon annan kör denna installation skapar du en separat skrivbordsnyckel för den. Du kan återkalla den på worldmonitor.app när som helst.",
       "inputLabel": "Skrivbordsnyckel",
       "placeholder": "wm_…",
@@ -4592,7 +4592,7 @@
       "insecure": "Den här sidan använder inte HTTPS, så din nyckel kommer att skickas okrypterad över nätverket.",
       "insecureConfirm": "Den här sidan använder inte HTTPS, så din nyckel kommer att skickas okrypterad över nätverket. Skicka den endast på ett nätverk du litar på.",
       "insecureConfirmButton": "Skicka nyckel",
-      "staleNote": "Den senaste kontrollen kunde inte nå World Monitor.",
+      "staleNote": "Den senaste kontrollen kunde inte nå upstream API.",
       "disabled": "Operatören av denna installation har inaktiverat skrivbordsnycklar.",
       "state": {
         "none": "Ingen nyckel",
@@ -4611,7 +4611,7 @@
         "not_desktop_key": "Detta är en API-nyckel. Använd en skrivbordsnyckel istället.",
         "over_cap": "Kontot har fler skrivbordsnycklar än vad planen tillåter. Återkalla en på worldmonitor.app.",
         "lapsed": "Kontots Pro-plan är inte aktiv.",
-        "unavailable": "Kunde inte nå World Monitor för att verifiera denna nyckel. Försök igen senare."
+        "unavailable": "Kunde inte nå upstream API för att verifiera denna nyckel. Försök igen senare."
       }
     }
   },

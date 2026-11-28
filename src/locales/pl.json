@@ -4622,7 +4622,7 @@
     "selfHostKey": {
       "heading": "Klucz desktopowy",
       "description": "Odblokuj Pro na tym dashboardzie za pomocą własnego klucza desktopowego. Utwórz go na worldmonitor.app w sekcji Ustawienia → Klucze API → Utwórz klucz desktopowy.",
-      "relay": "Klucz trafia na serwer tej instalacji, która przekazuje Twoje żądania Pro do World Monitor. Użycie wlicza się do limitu klucza desktopowego przypisanego do Twojego konta, tak samo jak w aplikacji desktopowej.",
+      "relay": "Klucz trafia na serwer tej instalacji, która przekazuje Twoje żądania Pro do upstream API. Użycie wlicza się do limitu klucza desktopowego przypisanego do Twojego konta, tak samo jak w aplikacji desktopowej.",
       "trust": "Jeśli tę instalację uruchamia ktoś inny, utwórz dla niej osobny klucz desktopowy. Możesz go cofnąć na worldmonitor.app w dowolnym momencie.",
       "inputLabel": "Klucz desktopowy",
       "placeholder": "wm_…",
@@ -4638,7 +4638,7 @@
       "insecure": "Ta strona nie używa HTTPS, więc Twój klucz będzie przesyłany przez sieć bez szyfrowania.",
       "insecureConfirm": "Ta strona nie używa HTTPS, więc Twój klucz będzie przesyłany przez sieć bez szyfrowania. Wyślij go tylko w sieci, której ufasz.",
       "insecureConfirmButton": "Wyślij klucz",
-      "staleNote": "Ostatnia weryfikacja nie mogła połączyć się z World Monitor.",
+      "staleNote": "Ostatnia weryfikacja nie mogła połączyć się z upstream API.",
       "disabled": "Operator tej instalacji wyłączył klucze desktopowe.",
       "state": {
         "none": "Brak klucza",
@@ -4657,7 +4657,7 @@
         "not_desktop_key": "To jest klucz API. Użyj zamiast tego klucza desktopowego.",
         "over_cap": "Konto posiada więcej kluczy desktopowych niż pozwala na to plan. Cofnij jeden na worldmonitor.app.",
         "lapsed": "Plan Pro konta nie jest aktywny.",
-        "unavailable": "Nie udało się połączyć z World Monitor, aby zweryfikować ten klucz. Spróbuj później."
+        "unavailable": "Nie udało się połączyć z upstream API, aby zweryfikować ten klucz. Spróbuj później."
       }
     }
   },

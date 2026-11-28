@@ -4599,7 +4599,7 @@
     "selfHostKey": {
       "heading": "Clave de escritorio",
       "description": "Desbloquea Pro en este dashboard con tu propia clave de escritorio. Crea una en worldmonitor.app en Configuración → API Keys → Crear clave de escritorio.",
-      "relay": "La clave va al servidor de esta instalación, que reenvía tus solicitudes Pro a World Monitor. El uso cuenta hacia tu asignación de clave de escritorio, igual que en la aplicación de escritorio.",
+      "relay": "La clave va al servidor de esta instalación, que reenvía tus solicitudes Pro a upstream API. El uso cuenta hacia tu asignación de clave de escritorio, igual que en la aplicación de escritorio.",
       "trust": "Si otra persona ejecuta esta instalación, crea una clave de escritorio separada para ella. Puedes revocarla en worldmonitor.app en cualquier momento.",
       "inputLabel": "Clave de escritorio",
       "placeholder": "wm_…",
@@ -4615,7 +4615,7 @@
       "insecure": "Esta página no usa HTTPS, por lo que tu clave viajará sin encriptar por la red.",
       "insecureConfirm": "Esta página no usa HTTPS, por lo que tu clave viajará sin encriptar por la red. Envíala solo en una red en la que confíes.",
       "insecureConfirmButton": "Enviar clave",
-      "staleNote": "La última verificación no pudo alcanzar a World Monitor.",
+      "staleNote": "La última verificación no pudo alcanzar a upstream API.",
       "disabled": "El operador de esta instalación ha desactivado las claves de escritorio.",
       "state": {
         "none": "Sin clave",
@@ -4634,7 +4634,7 @@
         "not_desktop_key": "Esta es una clave de API. Usa una clave de escritorio en su lugar.",
         "over_cap": "La cuenta tiene más claves de escritorio de las que su plan permite. Revoca una en worldmonitor.app.",
         "lapsed": "El plan Pro de la cuenta no está activo.",
-        "unavailable": "No se pudo alcanzar a World Monitor para verificar esta clave. Intenta más tarde."
+        "unavailable": "No se pudo alcanzar a upstream API para verificar esta clave. Intenta más tarde."
       }
     }
   },

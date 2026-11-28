@@ -4553,7 +4553,7 @@
     "selfHostKey": {
       "heading": "Khóa máy tính để bàn",
       "description": "Mở khóa Pro trên dashboard này bằng khóa máy tính để bàn của riêng bạn. Tạo một khóa tại worldmonitor.app trong Cài đặt → Khóa API → Tạo khóa máy tính để bàn.",
-      "relay": "Khóa được gửi đến máy chủ của cài đặt này, sau đó chuyển tiếp yêu cầu Pro của bạn đến World Monitor. Lượng sử dụng được tính vào hạn mức khóa máy tính để bàn của tài khoản bạn, giống như ứng dụng máy tính để bàn.",
+      "relay": "Khóa được gửi đến máy chủ của cài đặt này, sau đó chuyển tiếp yêu cầu Pro của bạn đến upstream API. Lượng sử dụng được tính vào hạn mức khóa máy tính để bàn của tài khoản bạn, giống như ứng dụng máy tính để bàn.",
       "trust": "Nếu người khác điều hành cài đặt này, hãy tạo một khóa máy tính để bàn riêng cho nó. Bạn có thể thu hồi nó tại worldmonitor.app bất kỳ lúc nào.",
       "inputLabel": "Khóa máy tính để bàn",
       "placeholder": "wm_…",
@@ -4569,7 +4569,7 @@
       "insecure": "Trang này không sử dụng HTTPS, vì vậy khóa của bạn sẽ được truyền qua mạng mà không mã hóa.",
       "insecureConfirm": "Trang này không sử dụng HTTPS, vì vậy khóa của bạn sẽ được truyền qua mạng mà không mã hóa. Chỉ gửi nó trên mạng mà bạn tin tưởng.",
       "insecureConfirmButton": "Gửi khóa",
-      "staleNote": "Lần kiểm tra cuối cùng không thể kết nối đến World Monitor.",
+      "staleNote": "Lần kiểm tra cuối cùng không thể kết nối đến upstream API.",
       "disabled": "Người điều hành cài đặt này đã tắt khóa máy tính để bàn.",
       "state": {
         "none": "Không có khóa",
@@ -4588,7 +4588,7 @@
         "not_desktop_key": "Đây là khóa API. Hãy sử dụng khóa máy tính để bàn thay thế.",
         "over_cap": "Tài khoản có nhiều khóa máy tính để bàn hơn gói dịch vụ cho phép. Thu hồi một khóa tại worldmonitor.app.",
         "lapsed": "Gói Pro của tài khoản không hoạt động.",
-        "unavailable": "Không thể kết nối đến World Monitor để kiểm tra khóa này. Vui lòng thử lại sau."
+        "unavailable": "Không thể kết nối đến upstream API để kiểm tra khóa này. Vui lòng thử lại sau."
       }
     }
   },

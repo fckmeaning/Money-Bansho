@@ -28,7 +28,7 @@
   var CACHE_TTL_MS = 60 * 1000;
   var FETCH_TIMEOUT_MS = 3_000;
   var URL_DIGEST_PREFIX = 'sha256:';
-  var FALLBACK_BODY = 'This link was blocked by WorldMonitor after delivery. Open the dashboard for the latest safe update.';
+  var FALLBACK_BODY = 'This link was blocked by Money Bansho after delivery. Open the dashboard for the latest safe update.';
 
   // The relay tags an alert's article link with a referrer at delivery
   // (withAlertReferrer in scripts/shared/notify-fields.cjs), so the URL a push
@@ -206,7 +206,7 @@
 
   function showBlockedNotice(tag) {
     try {
-      return self.registration.showNotification('Link blocked by WorldMonitor', {
+      return self.registration.showNotification('Link blocked by Money Bansho', {
         body: FALLBACK_BODY,
         tag: typeof tag === 'string' && tag.length > 0 ? 'suppressed:' + tag : 'suppressed:link',
         data: { url: '/' },

@@ -36,7 +36,7 @@ export interface BrowserSignInDeps {
 
 export type BrowserSignInResult = 'signed_in' | 'fallback' | 'cancelled' | 'failed';
 
-const TRY_AGAIN_SOON = 'Could not reach World Monitor. Try again in a moment.';
+const TRY_AGAIN_SOON = 'Could not reach Money Bansho. Try again in a moment.';
 const FAILURE_MESSAGES: Record<string, string> = {
   timed_out: 'Sign-in timed out. Click Sign in to try again.',
   invalid_grant: 'Sign-in link expired. Click Sign in to try again.',

@@ -101,7 +101,7 @@ export function sourceClock(value: unknown): string | null {
   return Number.isFinite(millis) && millis > 0 && millis <= 8.64e15 ? new Date(millis).toISOString() : null;
 }
 
-const IMAGERY_ATTRIBUTION = 'Copernicus Sentinel-1 via Microsoft Planetary Computer; World Monitor change scoring';
+const IMAGERY_ATTRIBUTION = 'Copernicus Sentinel-1 via Microsoft Planetary Computer; Money Bansho change scoring';
 const IMAGERY_UNAVAILABLE = {
   missing: 'No current watched-site evidence for this country.',
   malformed: 'Watched-site evidence is unreadable.',
@@ -134,7 +134,7 @@ export function projectImagerySignalFamily(countryCode: string, body: unknown, n
   });
 }
 
-const WATER_ATTRIBUTION = 'NASA ICESat-2 ATL13 / ATL06 (NSIDC), processed with SlideRule Earth; World Monitor seasonal baseline';
+const WATER_ATTRIBUTION = 'NASA ICESat-2 ATL13 / ATL06 (NSIDC), processed with SlideRule Earth; Money Bansho seasonal baseline';
 const waterReservoirSchema = z.object({
   id: z.string().min(1).max(200), name: z.string().max(200).default(''), country: z.string().default(''),
   status: z.string().default(''), seasonalZ: z.number().finite().nullish(), seasonalAnomalyM: z.number().finite().nullish(),

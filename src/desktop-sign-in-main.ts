@@ -93,11 +93,11 @@ el('continueButton').addEventListener('click', async () => {
     } else {
       error.textContent = outcome.kind === 'failed' && outcome.status === 429
         ? 'Too many attempts. Wait a few minutes, then try again.'
-        : 'Could not reach World Monitor. Try again in a moment.';
+        : 'Could not reach Money Bansho. Try again in a moment.';
       error.hidden = false;
     }
   } catch {
-    error.textContent = 'Could not reach World Monitor. Try again in a moment.';
+    error.textContent = 'Could not reach Money Bansho. Try again in a moment.';
     error.hidden = false;
   }
   button.disabled = false;

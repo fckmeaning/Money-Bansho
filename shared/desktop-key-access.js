@@ -70,7 +70,7 @@ export const DESKTOP_KEY_LIMIT_ERROR = 'Desktop key limit reached for this accou
 export const DESKTOP_KEY_API_ONLY_ERROR = 'This endpoint requires an API plan';
 /** 403 body for a desktop key sent by something other than the desktop app or a self-hosted relay. */
 export const DESKTOP_KEY_CLIENT_ERROR =
-  'Desktop keys work only in the World Monitor desktop app and self-hosted dashboards. Scripts and integrations need an API Starter or API Business key: see worldmonitor.app/pricing';
+  'Desktop keys work only in the Money Bansho desktop app and self-hosted dashboards. Scripts and integrations need an API Starter or API Business key: see worldmonitor.app/pricing';
 
 /**
  * User-Agent prefixes of the clients a desktop key is issued for: the desktop

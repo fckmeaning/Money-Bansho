@@ -412,7 +412,7 @@ async function mountPlugin(): Promise<void> {
         send({ method: 'notifications/cancelled', params: { requestId: id, reason: 'Country view changed' } });
         finish(signal?.reason);
       };
-      const timeout = setTimeout(() => finish(method === 'ui/download-file' ? new CountryDownloadRequestError('timeout') : method === 'ui/update-model-context' ? new CountryModelContextError('timeout') : new Error('WorldMonitor host request timed out.')), 30_000);
+      const timeout = setTimeout(() => finish(method === 'ui/download-file' ? new CountryDownloadRequestError('timeout') : method === 'ui/update-model-context' ? new CountryModelContextError('timeout') : new Error('Money Bansho host request timed out.')), 30_000);
       const cleanup = () => { clearTimeout(timeout); signal?.removeEventListener('abort', abort); };
       pending.set(id, { method, resolve, reject, cleanup });
       signal?.addEventListener('abort', abort, { once: true });
@@ -806,7 +806,7 @@ async function mountPlugin(): Promise<void> {
       if (result?.isError) {
         hostResultSeen = true;
         hostInput = undefined;
-        status.textContent = result.content?.find((item: { type: string; text?: string }) => item.type === 'text')?.text ?? 'WorldMonitor could not open this country brief.';
+        status.textContent = result.content?.find((item: { type: string; text?: string }) => item.type === 'text')?.text ?? 'Money Bansho could not open this country brief.';
         return;
       }
       const data = result?.structuredContent;
@@ -901,7 +901,7 @@ async function mountPlugin(): Promise<void> {
   async function start(): Promise<void> {
     form.appendChild(expandButton);
     // Handshake before translations and section data: Claude drops views that report initialized late.
-    const initialized = await (channel?.initialized ?? request('ui/initialize', { appInfo: { name: 'WorldMonitor country brief', version: '1.0.0' }, appCapabilities: { tools: {}, availableDisplayModes: ['inline', 'fullscreen'] }, protocolVersion: '2026-01-26' })) as { hostCapabilities?: { serverTools?: object; openLinks?: object; updateModelContext?: object } };
+    const initialized = await (channel?.initialized ?? request('ui/initialize', { appInfo: { name: 'Money Bansho country brief', version: '1.0.0' }, appCapabilities: { tools: {}, availableDisplayModes: ['inline', 'fullscreen'] }, protocolVersion: '2026-01-26' })) as { hostCapabilities?: { serverTools?: object; openLinks?: object; updateModelContext?: object } };
     if (!channel) send({ method: 'ui/notifications/initialized' });
     host = hostContextFromInitialize(initialized);
     relayout();

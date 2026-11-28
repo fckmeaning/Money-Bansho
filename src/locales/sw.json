@@ -4650,7 +4650,7 @@
     "selfHostKey": {
       "heading": "Funguo ya Kompyuta",
       "description": "Fungua Pro kwenye dashboard hii kwa kutumia funguo yako ya kompyuta. Tengeneza funguo moja kwenye worldmonitor.app chini ya Settings → API Keys → Create desktop key.",
-      "relay": "Funguo inakwenda kwa seva ya uongozaji huu, ambayo inakamatia maombi yako ya Pro kwa World Monitor. Matumizi yanakokotwa kwa ujinga wa funguo ya kompyuta ya akaunti yako, sawa na programu ya kompyuta.",
+      "relay": "Funguo inakwenda kwa seva ya uongozaji huu, ambayo inakamatia maombi yako ya Pro kwa upstream API. Matumizi yanakokotwa kwa ujinga wa funguo ya kompyuta ya akaunti yako, sawa na programu ya kompyuta.",
       "trust": "Ikiwa mtu mwingine anatumia uongozaji huu, tengeneza funguo tofauti ya kompyuta kwake. Unaweza kuikataa kwenye worldmonitor.app wakati wowote.",
       "inputLabel": "Funguo ya Kompyuta",
       "placeholder": "wm_…",
@@ -4666,7 +4666,7 @@
       "insecure": "Ukurasa huu hautumii HTTPS, kwa hivyo funguo yako itakutembea mtandaoni bila simbuzishi.",
       "insecureConfirm": "Ukurasa huu hautumii HTTPS, kwa hivyo funguo yako itakutembea mtandaoni bila simbuzishi. Itume tu kwenye mtandao unayoamini.",
       "insecureConfirmButton": "Tuma funguo",
-      "staleNote": "Ukagundua uliotangulia hauwezi kufikia World Monitor.",
+      "staleNote": "Ukagundua uliotangulia hauwezi kufikia upstream API.",
       "disabled": "Mwendeshaji wa uongozaji huu amekamatia funguo za kompyuta.",
       "state": {
         "none": "Hakuna funguo",
@@ -4685,7 +4685,7 @@
         "not_desktop_key": "Hii ni funguo ya API. Tumia funguo ya kompyuta badala yake.",
         "over_cap": "Akaunti ina funguo za kompyuta zaidi kuliko mpango wake unavyoruhusu. Kataa moja kwenye worldmonitor.app.",
         "lapsed": "Mpango wa Pro wa akaunti sio kamili.",
-        "unavailable": "Haiwezi kufikia World Monitor ili kugundua funguo hii. Jaribu tena baadaye."
+        "unavailable": "Haiwezi kufikia upstream API ili kugundua funguo hii. Jaribu tena baadaye."
       }
     }
   },

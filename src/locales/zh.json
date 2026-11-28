@@ -4553,7 +4553,7 @@
     "selfHostKey": {
       "heading": "桌面密钥",
       "description": "使用您自己的桌面密钥在此 dashboard 上解锁 Pro。在 worldmonitor.app 的设置 → API 密钥 → 创建桌面密钥中创建一个。",
-      "relay": "该密钥发送到此部署的服务器，服务器将您的 Pro 请求转发到 World Monitor。使用情况计入您账户的桌面密钥额度，与桌面应用相同。",
+      "relay": "该密钥发送到此部署的服务器，服务器将您的 Pro 请求转发到 upstream API。使用情况计入您账户的桌面密钥额度，与桌面应用相同。",
       "trust": "如果其他人运行此部署，请为其创建单独的桌面密钥。您可以随时在 worldmonitor.app 撤销它。",
       "inputLabel": "桌面密钥",
       "placeholder": "wm_…",
@@ -4569,7 +4569,7 @@
       "insecure": "此页面未使用 HTTPS，您的密钥将以未加密方式通过网络传输。",
       "insecureConfirm": "此页面未使用 HTTPS，您的密钥将以未加密方式通过网络传输。仅在您信任的网络上发送。",
       "insecureConfirmButton": "发送密钥",
-      "staleNote": "最后一次检查无法连接到 World Monitor。",
+      "staleNote": "最后一次检查无法连接到 upstream API。",
       "disabled": "此部署的运营者已禁用桌面密钥。",
       "state": {
         "none": "无密钥",
@@ -4588,7 +4588,7 @@
         "not_desktop_key": "这是 API 密钥。请改用桌面密钥。",
         "over_cap": "账户的桌面密钥数量超过了其计划允许的数量。在 worldmonitor.app 上撤销一个。",
         "lapsed": "账户的 Pro 计划未激活。",
-        "unavailable": "无法连接到 World Monitor 来检查此密钥。请稍后重试。"
+        "unavailable": "无法连接到 upstream API 来检查此密钥。请稍后重试。"
       }
     }
   },

@@ -4599,7 +4599,7 @@
     "selfHostKey": {
       "heading": "Clé desktop",
       "description": "Déverrouillez Pro sur ce dashboard avec votre propre clé desktop. Créez-en une sur worldmonitor.app dans Paramètres → Clés API → Créer clé desktop.",
-      "relay": "La clé est envoyée au serveur de cette installation, qui transfère vos demandes Pro à World Monitor. L'utilisation compte pour votre quota de clés desktop, comme dans l'application desktop.",
+      "relay": "La clé est envoyée au serveur de cette installation, qui transfère vos demandes Pro à upstream API. L'utilisation compte pour votre quota de clés desktop, comme dans l'application desktop.",
       "trust": "Si quelqu'un d'autre exécute cette installation, créez une clé desktop distincte. Vous pouvez la révoquer sur worldmonitor.app à tout moment.",
       "inputLabel": "Clé desktop",
       "placeholder": "wm_…",
@@ -4615,7 +4615,7 @@
       "insecure": "Cette page n'utilise pas HTTPS, votre clé sera transmise en clair sur le réseau.",
       "insecureConfirm": "Cette page n'utilise pas HTTPS, votre clé sera transmise en clair sur le réseau. Envoyez-la uniquement sur un réseau de confiance.",
       "insecureConfirmButton": "Envoyer la clé",
-      "staleNote": "La dernière vérification n'a pas pu atteindre World Monitor.",
+      "staleNote": "La dernière vérification n'a pas pu atteindre upstream API.",
       "disabled": "L'opérateur de cette installation a désactivé les clés desktop.",
       "state": {
         "none": "Aucune clé",
@@ -4634,7 +4634,7 @@
         "not_desktop_key": "Ceci est une clé API. Utilisez une clé desktop à la place.",
         "over_cap": "Le compte a plus de clés desktop que son plan ne le permet. Révoquez-en une sur worldmonitor.app.",
         "lapsed": "Le plan Pro du compte n'est pas actif.",
-        "unavailable": "Impossible d'atteindre World Monitor pour vérifier cette clé. Réessayez plus tard."
+        "unavailable": "Impossible d'atteindre upstream API pour vérifier cette clé. Réessayez plus tard."
       }
     }
   },

@@ -8,6 +8,12 @@ This program is free software: you can redistribute it and/or modify it under th
 
 The World Monitor name and logo are not used as branding for Money Bansho. This project is not affiliated with or endorsed by the upstream project.
 
+## Changes from World Monitor (2026-11-28)
+
+- Removed the upstream blog, `/pro` marketing site, demos, documentation site content, SDKs, command-line client, agent plugins and skills, integrations, issue and pull-request templates, plugin manifests and the upstream project documents in the repository root.
+- Removed the package scripts and Docker build steps that depended on those files.
+- Replaced the upstream product name with Money Bansho in dashboard, embed, plugin, brief and email text; text about the upstream hosted service now says "upstream". Code identifiers and working service addresses are unchanged.
+
 ## Changes from World Monitor (2026-11-27)
 
 - Renamed the user-visible product to Money Bansho; replaced the logo, favicons, app icons and page metadata. Code identifiers, protocol packages, paths, headers, environment variables and package names are unchanged.

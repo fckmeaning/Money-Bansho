@@ -4576,7 +4576,7 @@
     "selfHostKey": {
       "heading": "Masaüstü anahtarı",
       "description": "Bu panelde Pro'yu kendi masaüstü anahtarınızla açın. worldmonitor.app'te Ayarlar → API Anahtarları → Masaüstü anahtarı oluştur kısmından bir tane oluşturun.",
-      "relay": "Anahtar bu kurulumun sunucusuna gider ve sunucu Pro isteklerinizi World Monitor'a iletir. Kullanım, masaüstü uygulamasıyla aynı şekilde hesabınızın masaüstü anahtarı kotasına sayılır.",
+      "relay": "Anahtar bu kurulumun sunucusuna gider ve sunucu Pro isteklerinizi upstream API'a iletir. Kullanım, masaüstü uygulamasıyla aynı şekilde hesabınızın masaüstü anahtarı kotasına sayılır.",
       "trust": "Bu kurulumu başka biri çalıştırıyorsa, bunun için ayrı bir masaüstü anahtarı oluşturun. worldmonitor.app'te istediğiniz zaman iptal edebilirsiniz.",
       "inputLabel": "Masaüstü anahtarı",
       "placeholder": "wm_…",
@@ -4592,7 +4592,7 @@
       "insecure": "Bu sayfa HTTPS kullanmadığından anahtarınız ağ üzerinden şifrelenmemiş şekilde iletilecektir.",
       "insecureConfirm": "Bu sayfa HTTPS kullanmadığından anahtarınız ağ üzerinden şifrelenmemiş şekilde iletilecektir. Bunu yalnızca güvendiğiniz bir ağda gönderin.",
       "insecureConfirmButton": "Anahtarı gönder",
-      "staleNote": "Son kontrol World Monitor'a ulaşamadı.",
+      "staleNote": "Son kontrol upstream API'a ulaşamadı.",
       "disabled": "Bu kurulumun operatörü masaüstü anahtarlarını kapatmıştır.",
       "state": {
         "none": "Anahtar yok",
@@ -4611,7 +4611,7 @@
         "not_desktop_key": "Bu bir API anahtarıdır. Bunun yerine masaüstü anahtarı kullanın.",
         "over_cap": "Hesap, planının izin verdiğinden daha fazla masaüstü anahtarına sahiptir. worldmonitor.app'te birini iptal edin.",
         "lapsed": "Hesabın Pro planı etkin değildir.",
-        "unavailable": "Bu anahtarı kontrol etmek için World Monitor'a ulaşılamadı. Daha sonra yeniden deneyin."
+        "unavailable": "Bu anahtarı kontrol etmek için upstream API'a ulaşılamadı. Daha sonra yeniden deneyin."
       }
     }
   },

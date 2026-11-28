@@ -41,7 +41,7 @@ export interface McpAboutYouSection {
 const QUESTIONS: ReadonlyArray<{ id: AboutYouChoiceQuestionId; label: string; options: Record<string, string> }> = [
   {
     id: 'primaryUse',
-    label: 'What will you mainly use World Monitor for?',
+    label: 'What will you mainly use Money Bansho for?',
     options: {
       news: 'News and world events',
       markets: 'Markets and trading',
@@ -100,7 +100,7 @@ export async function mountMcpAboutYou(
   section.id = SECTION_ID;
   section.className = 'about-you';
   const summary = document.createElement('summary');
-  summary.textContent = 'Optional: how will you use World Monitor?';
+  summary.textContent = 'Optional: how will you use Money Bansho?';
   section.append(summary);
 
   for (const question of QUESTIONS) {

@@ -14,7 +14,7 @@ export const EMAIL_ACCENT = "#4ade80";
 export const EMAIL_RED = "#ef4444";
 export const EMAIL_AMBER = "#f59e0b";
 
-const LOGO_URL = "https://www.worldmonitor.app/favico/android-chrome-192x192.png";
+const LOGO_URL = "https://money-bansho.vercel.app/favico/android-chrome-192x192.png";
 const FONT_STACK = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
 
 export function escapeEmailHtml(value: string): string {
@@ -88,7 +88,7 @@ export function emailFrame(args: {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="supported-color-schemes" content="dark">
-<title>WorldMonitor</title>
+<title>Money Bansho</title>
 </head>
 <body style="margin: 0; padding: 0; background: #111;">
 <div style="display: none; max-height: 0; overflow: hidden; opacity: 0; color: #111;">${escapeEmailHtml(args.preheader)}</div>
@@ -102,7 +102,7 @@ export function emailFrame(args: {
             <table cellpadding="0" cellspacing="0" border="0" role="presentation">
               <tr>
                 <td style="width: 36px; height: 36px; vertical-align: middle;">
-                  <img src="${LOGO_URL}" width="36" height="36" alt="WorldMonitor" style="border-radius: 50%; display: block;" />
+                  <img src="${LOGO_URL}" width="36" height="36" alt="Money Bansho" style="border-radius: 50%; display: block;" />
                 </td>
                 <td style="padding-left: 10px;">
                   <div style="font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.3px;">WORLD MONITOR</div>

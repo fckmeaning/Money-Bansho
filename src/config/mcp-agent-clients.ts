@@ -16,7 +16,7 @@
 
 export const MCP_SERVER_URL = 'https://worldmonitor.app/mcp';
 export const MCP_SERVER_NAME = 'worldmonitor';
-const DISPLAY_NAME = 'World Monitor';
+const DISPLAY_NAME = 'Money Bansho';
 
 export type McpAgentClientId =
   | 'claude'
@@ -61,19 +61,19 @@ export const MCP_AGENT_CLIENTS: readonly McpAgentClient[] = [
   {
     id: 'claude',
     name: 'Claude',
-    hint: 'Opens Claude with World Monitor filled in. Click Continue, then Add, and sign in. Works in the desktop, web and mobile apps.',
+    hint: 'Opens Claude with Money Bansho filled in. Click Continue, then Add, and sign in. Works in the desktop, web and mobile apps.',
     action: { kind: 'link', label: 'Add to Claude', href: CLAUDE_CONNECTOR_URL },
   },
   {
     id: 'chatgpt',
     name: 'ChatGPT',
-    hint: 'Opens World Monitor in ChatGPT. Add it and sign in. Without the plugin, open Plugins, click +, choose Add custom MCP server, paste the server URL and pick OAuth.',
+    hint: 'Opens Money Bansho in ChatGPT. Add it and sign in. Without the plugin, open Plugins, click +, choose Add custom MCP server, paste the server URL and pick OAuth.',
     action: { kind: 'link', label: 'Add to ChatGPT', href: CHATGPT_PLUGIN_URL },
   },
   {
     id: 'cursor',
     name: 'Cursor',
-    hint: 'Opens Cursor to install. Click Needs login next to World Monitor to sign in.',
+    hint: 'Opens Cursor to install. Click Needs login next to Money Bansho to sign in.',
     action: { kind: 'link', label: 'Add to Cursor', href: CURSOR_INSTALL_URL },
   },
   {

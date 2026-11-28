@@ -61,7 +61,7 @@ export function renderBootFailureScreen(error: unknown): void {
   const brand = styled(
     'p',
     'display:flex;align-items:center;gap:8px;margin:0 0 36px;font-size:15px;font-weight:700;',
-    'World Monitor',
+    'Money Bansho',
   );
   brand.prepend(
     styled('span', 'width:10px;height:10px;border-radius:2px;background:#3d8bfd;flex:none;'),
@@ -83,7 +83,7 @@ export function renderBootFailureScreen(error: unknown): void {
   const lede = styled(
     'p',
     'margin:0;color:#8a877e;font-size:17px;',
-    'Something went wrong while World Monitor was loading. This is usually temporary — reloading fixes most cases.',
+    'Something went wrong while Money Bansho was loading. This is usually temporary — reloading fixes most cases.',
   );
 
   const detail = styled(
@@ -115,7 +115,7 @@ export function renderBootFailureScreen(error: unknown): void {
   const home = styled(
     'a',
     'display:inline-flex;align-items:center;min-height:44px;color:#3d8bfd;font-size:15px;text-decoration:none;outline-offset:3px;',
-    'World Monitor homepage',
+    'Money Bansho homepage',
   );
   home.href = '/';
 

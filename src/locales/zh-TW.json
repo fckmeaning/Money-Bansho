@@ -4553,7 +4553,7 @@
     "selfHostKey": {
       "heading": "桌面金鑰",
       "description": "使用您自己的桌面金鑰在此 dashboard 上解鎖 Pro。在 worldmonitor.app 的設定 → API 金鑰 → 建立桌面金鑰中建立一個。",
-      "relay": "該金鑰傳送到此部署的伺服器，伺服器將您的 Pro 請求轉發到 World Monitor。使用情況計入您帳戶的桌面金鑰額度，與桌面應用相同。",
+      "relay": "該金鑰傳送到此部署的伺服器，伺服器將您的 Pro 請求轉發到 upstream API。使用情況計入您帳戶的桌面金鑰額度，與桌面應用相同。",
       "trust": "如果其他人執行此部署，請為其建立單獨的桌面金鑰。您可以隨時在 worldmonitor.app 撤銷它。",
       "inputLabel": "桌面金鑰",
       "placeholder": "wm_…",
@@ -4569,7 +4569,7 @@
       "insecure": "此頁面未使用 HTTPS，您的金鑰將以未加密方式透過網路傳輸。",
       "insecureConfirm": "此頁面未使用 HTTPS，您的金鑰將以未加密方式透過網路傳輸。僅在您信任的網路上傳送。",
       "insecureConfirmButton": "傳送金鑰",
-      "staleNote": "最後一次檢查無法連線到 World Monitor。",
+      "staleNote": "最後一次檢查無法連線到 upstream API。",
       "disabled": "此部署的運營者已禁用桌面金鑰。",
       "state": {
         "none": "無金鑰",
@@ -4588,7 +4588,7 @@
         "not_desktop_key": "這是 API 金鑰。請改用桌面金鑰。",
         "over_cap": "帳戶的桌面金鑰數量超過了其計劃允許的數量。在 worldmonitor.app 上撤銷一個。",
         "lapsed": "帳戶的 Pro 計劃未啟用。",
-        "unavailable": "無法連線到 World Monitor 來檢查此金鑰。請稍後重試。"
+        "unavailable": "無法連線到 upstream API 來檢查此金鑰。請稍後重試。"
       }
     }
   },

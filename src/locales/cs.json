@@ -4622,7 +4622,7 @@
     "selfHostKey": {
       "heading": "Klíč pro desktop",
       "description": "Odemkněte Pro na tomto dashboard vlastním klíčem pro desktop. Vytvořte jej na worldmonitor.app v sekci Nastavení → API klíče → Vytvořit klíč pro desktop.",
-      "relay": "Klíč jde na server této instalace, která předává vaše Pro požadavky do World Monitor. Používání se počítá do limitu vašeho účtu pro klíč pro desktop, stejně jako v desktopové aplikaci.",
+      "relay": "Klíč jde na server této instalace, která předává vaše Pro požadavky do upstream API. Používání se počítá do limitu vašeho účtu pro klíč pro desktop, stejně jako v desktopové aplikaci.",
       "trust": "Pokud tuto instalaci spouští někdo jiný, vytvořte pro ni samostatný klíč pro desktop. Kdykoliv jej můžete zrušit na worldmonitor.app.",
       "inputLabel": "Klíč pro desktop",
       "placeholder": "wm_…",
@@ -4638,7 +4638,7 @@
       "insecure": "Tato stránka nepoužívá HTTPS, takže váš klíč bude v síti přenášen nešifrovaně.",
       "insecureConfirm": "Tato stránka nepoužívá HTTPS, takže váš klíč bude v síti přenášen nešifrovaně. Pošlete jej pouze v síti, které důvěřujete.",
       "insecureConfirmButton": "Poslat klíč",
-      "staleNote": "Poslední ověření se nemohlo připojit k World Monitor.",
+      "staleNote": "Poslední ověření se nemohlo připojit k upstream API.",
       "disabled": "Operátor této instalace vypnul klíče pro desktop.",
       "state": {
         "none": "Žádný klíč",
@@ -4657,7 +4657,7 @@
         "not_desktop_key": "Toto je API klíč. Místo toho použijte klíč pro desktop.",
         "over_cap": "Účet má více klíčů pro desktop, než jeho plán umožňuje. Zrušte jeden na worldmonitor.app.",
         "lapsed": "Plán Pro pro tento účet není aktivní.",
-        "unavailable": "Nepodařilo se připojit k World Monitor pro ověření tohoto klíče. Zkuste později."
+        "unavailable": "Nepodařilo se připojit k upstream API pro ověření tohoto klíče. Zkuste později."
       }
     }
   },

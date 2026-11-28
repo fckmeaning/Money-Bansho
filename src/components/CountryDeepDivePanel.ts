@@ -3816,7 +3816,7 @@ export class CountryDeepDivePanel implements CountryBriefPanel {
     followHost.dataset.country = code;
     const notifyHost = this.el('span', 'cdp-notify-link-host');
     if (this.source?.mode === 'host') {
-      const link = this.el('a', 'cdp-action-btn', 'Follow / notifications on WorldMonitor') as HTMLAnchorElement;
+      const link = this.el('a', 'cdp-action-btn', 'Follow / notifications on Money Bansho') as HTMLAnchorElement;
       link.href = `https://www.worldmonitor.app/dashboard?c=${encodeURIComponent(code)}`;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';

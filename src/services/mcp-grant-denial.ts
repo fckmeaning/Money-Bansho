@@ -60,7 +60,7 @@ const MESSAGES: Record<string, string> = {
   INVALID_NONCE: 'This authorization request expired or is invalid. Start over from your MCP client.',
   UNKNOWN_CLIENT: 'The OAuth client is no longer registered. Start over from your MCP client.',
   INVALID_REDIRECT_URI: 'The redirect destination is not allowed. Start over from your MCP client.',
-  INSUFFICIENT_TIER: 'A WorldMonitor Pro subscription is required to authorize MCP clients.',
+  INSUFFICIENT_TIER: 'An upstream Pro subscription is required to authorize MCP clients.',
   NONCE_CLAIMED_BY_OTHER_USER:
     'This authorization request has already been claimed by another account. Start over from your MCP client.',
   BROWSER_MISMATCH:
