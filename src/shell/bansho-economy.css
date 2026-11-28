@@ -1,0 +1,136 @@
+/* Dashboard layout: one scrolling column. Map, then the economy figures, the
+   panels, and live video last. Overrides the split map/panels layout. The base
+   sheet's layered !important heights win over ours, so min/max-height size the map. */
+.main-content#main { display: flex; flex-direction: column; overflow-x: hidden; overflow-y: auto; gap: 12px; }
+/* The map takes the whole first screen, so the world is visible top to bottom. */
+.main-content#main > .map-section { order: -3; flex: 0 0 auto; width: 100%; min-height: clamp(520px, calc(100dvh - 105px), 1100px); max-height: clamp(520px, calc(100dvh - 105px), 1100px); grid-column: auto; }
+.main-content#main > .bansho-economy { order: -2; flex: 0 0 auto; }
+/* The map always fills its section. A drag height saved by the split layout stays
+   inline on #mapContainer and left only a strip of map with an empty area below. */
+@media (min-width: 768px) {
+  .main-content#main > .map-section:not(.collapsed) > .map-container { flex: 1 1 0% !important; height: auto !important; min-height: 0 !important; max-height: none !important; }
+}
+.main-content#main > .map-section.collapsed { min-height: 0; max-height: none; }
+.main-content#main > .map-section.hidden { display: none; }
+.main-content#main > .map-section.live-news-fullscreen { min-height: 100dvh; max-height: none; }
+.main-content#main > .map-width-resize-handle, .main-content#main .map-resize-handle, .main-content#main .map-side-btn { display: none !important; }
+.main-content#main > .panels-grid { flex: 0 0 auto; width: 100%; height: auto; min-height: 0; overflow: visible; grid-column: auto; }
+/* Sparse flow and a full-width "add panel" row keep both video panels together at the end. */
+.main-content#main > .panels-grid { grid-auto-flow: row; }
+.main-content#main > .panels-grid > .add-panel-block { order: 998; grid-column: 1 / -1; }
+.main-content#main > .panels-grid > [data-panel='live-news'] { order: 999; }
+.main-content#main > .panels-grid > [data-panel='live-webcams'] { order: 1000; }
+.main-content#main > .panels-grid > :is([data-panel='live-news'], [data-panel='live-webcams']):not(.live-news-fullscreen):not(.panel-collapsed) { grid-column: 1 / -1 !important; grid-row: auto / span 2 !important; height: min(70vh, 560px) !important; min-height: 360px !important; }
+/* Wide screens: live news and webcams side by side at the bottom. */
+@media (min-width: 1200px) {
+  .main-content#main > .panels-grid > [data-panel='live-news']:not(.live-news-fullscreen):not(.panel-collapsed) { grid-column: 1 / span 2 !important; }
+  .main-content#main > .panels-grid > [data-panel='live-webcams']:not(.live-news-fullscreen):not(.panel-collapsed) { grid-column: 3 / -1 !important; }
+}
+@media (min-width: 1900px) {
+  .main-content#main > .panels-grid > [data-panel='live-news']:not(.live-news-fullscreen):not(.panel-collapsed) { grid-column: 1 / span 3 !important; }
+  .main-content#main > .panels-grid > [data-panel='live-webcams']:not(.live-news-fullscreen):not(.panel-collapsed) { grid-column: 4 / -1 !important; }
+}
+
+.bansho-economy { --be-line: var(--border, #2f3845); --be-card: var(--surface, #171c23); --be-raise: #222934; --be-text: var(--text, #e6eaf0); --be-dim: var(--text-dim, #8a95a5); --be-up: #4caf7d; --be-down: #d9655b; --be-accent: var(--accent, #3d8bfd); padding: 0 12px; color: var(--be-text); font-size: 12px; line-height: 1.45; }
+.bansho-economy h2 { margin: 0; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; }
+.bansho-economy h3 { margin: 0 -12px 10px; padding: 9px 12px; border-bottom: 1px solid var(--be-line); background: var(--be-raise); box-shadow: inset 3px 0 0 var(--be-accent); font-size: 11px; font-weight: 600; color: var(--be-text); text-transform: uppercase; letter-spacing: 0.16em; }
+.bansho-economy p { margin: 4px 0 10px; }
+.be-head, .be-world > h2 { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 12px; min-height: 36px; padding: 6px 12px; border: 1px solid var(--be-line); background: var(--be-raise); box-shadow: inset 3px 0 0 var(--be-accent); }
+.be-head { margin-bottom: 1px; }
+.bansho-economy .be-note { margin: 8px 0 0; font-size: 11px; }
+.be-kpis { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--be-line); background: var(--be-line); margin-bottom: 12px; }
+.bansho-economy .be-kpi { display: flex; flex-direction: column; gap: 1px; min-width: 0; padding: 8px 12px; background: var(--be-card); }
+.bansho-economy .be-kpi:hover { background: var(--be-raise); }
+.bansho-economy .be-kpi.be-selected { box-shadow: inset 0 -3px 0 var(--be-accent); }
+.be-kpi-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--be-dim); }
+.be-kpi b { font: 600 20px/1.2 var(--be-mono, monospace); font-variant-numeric: tabular-nums; }
+.be-kpi-spark { display: block; width: 100%; height: 32px; margin-top: 4px; }
+.be-kpi-spark polyline { stroke: #9aa5b1; stroke-width: 1.2; }
+.be-num, .be-price, .be-z, .be-up, .be-down, .be-flat, .be-axis, .be-dates { font-family: var(--be-mono, monospace); font-variant-numeric: tabular-nums; }
+.be-muted { color: var(--be-dim); }
+.be-up { color: var(--be-up); }
+.be-down { color: var(--be-down); }
+.be-flat { color: var(--be-text); }
+.be-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bansho-economy button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+.bansho-economy button:focus-visible, .bansho-economy a:focus-visible { outline: 1px solid var(--be-accent); outline-offset: 1px; }
+
+.be-movers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 12px; }
+.be-card, .be-box { background: var(--be-card); border: 1px solid var(--be-line); padding: 0 12px 10px; min-width: 0; }
+.be-card { padding-top: 10px; border-top: 3px solid var(--be-accent); }
+.bansho-economy .be-card-top { display: block; width: 100%; }
+.bansho-economy .be-card-top.be-selected strong { color: var(--be-accent); }
+.be-card-title, .be-card-quote { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; font-variant-numeric: tabular-nums; }
+.be-card-title strong { font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.be-z { color: var(--be-accent); white-space: nowrap; }
+.be-price { font-size: 18px; }
+.be-spark { display: block; width: 100%; height: 54px; margin: 6px 0; }
+.be-spark polyline, .be-mini polyline, .be-history-line polyline { stroke: #9aa5b1; stroke-width: 1.2; }
+.be-news { list-style: none; margin: 0; padding: 0; }
+.be-news li { padding: 5px 0; border-top: 1px solid var(--be-line); min-width: 0; }
+.be-news a { display: block; color: var(--be-text); text-decoration: none; overflow-wrap: anywhere; }
+.be-news a:hover { text-decoration: underline; }
+.be-news span { font-size: 11px; }
+
+.be-charts { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin-bottom: 12px; }
+.be-history-frame { display: flex; gap: 6px; }
+.be-history-line { flex: 1; min-width: 0; height: clamp(240px, 30svh, 320px); border-bottom: 1px solid var(--be-line); }
+.be-axis { display: flex; flex-direction: column; justify-content: space-between; color: var(--be-dim); font-size: 10px; text-align: right; }
+.be-dates { display: flex; justify-content: space-between; color: var(--be-dim); font-size: 10px; margin-top: 4px; }
+.bansho-economy .be-bar { display: grid; grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr) 3.2rem; align-items: center; gap: 6px; width: 100%; padding: 2px 0; }
+.be-bar-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bansho-economy .be-bar.be-selected .be-bar-name { color: var(--be-accent); }
+.be-track { position: relative; display: block; height: 8px; background: #1a1e24; }
+.be-fill { position: absolute; top: 0; bottom: 0; }
+.be-fill-up { background: var(--be-up); }
+.be-fill-down { background: var(--be-down); }
+.be-fill-flat { background: #7d8794; }
+.be-curve-chart { display: block; width: 100%; height: clamp(160px, 20svh, 220px); margin-bottom: 6px; }
+.be-curve-chart polyline { stroke-width: 1.5; }
+.be-curve-chart .be-c0 { stroke: var(--be-accent); }
+.be-curve-chart .be-c1 { stroke: #9aa5b1; }
+.be-curve-chart .be-c2 { stroke: #5b6570; stroke-dasharray: 4 3; }
+.be-key::before { content: ''; display: inline-block; width: 10px; height: 2px; margin-right: 5px; vertical-align: middle; background: var(--be-accent); }
+.be-key.be-c1::before { background: #9aa5b1; }
+.be-key.be-c2::before { background: #5b6570; }
+
+.be-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.be-table { width: 100%; border-collapse: collapse; }
+.be-table th { color: var(--be-dim); font-weight: 400; font-size: 11px; text-align: left; }
+.be-table th.be-num { text-align: right; }
+.be-table th, .be-table td { padding: 3px 4px; border-bottom: 1px solid var(--be-line); }
+.be-table tr[data-symbol] { cursor: pointer; }
+.be-table tr[data-symbol]:hover, .be-table tr.be-selected { background: #191d23; }
+.be-mini { display: block; width: 90px; height: 22px; margin-left: auto; }
+
+.be-world { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin-top: 12px; margin-bottom: 4px; }
+.be-world > h2, .be-world > p, .be-world > .be-events { grid-column: 1 / -1; }
+.be-columns { display: flex; align-items: flex-end; gap: 2px; height: clamp(144px, 18svh, 200px); border-bottom: 1px solid var(--be-line); }
+.be-columns span { flex: 1; min-width: 0; background: #7d8794; }
+
+@media (min-width: 1600px) {
+  .be-kpis { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1100px) {
+  .be-kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .be-movers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .be-charts { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .be-charts > .be-history { grid-column: 1 / -1; }
+  .be-groups { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .main-content#main > .map-section:not(.live-news-fullscreen):not(.collapsed) { min-height: 42vh; max-height: 42vh; }
+  .bansho-economy { padding: 0 8px; }
+  .be-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .be-movers, .be-charts, .be-world { grid-template-columns: minmax(0, 1fr); }
+  .be-wide { display: none; }
+}
+
+.main-content#main, .main-content#main * { scrollbar-color: #2c313a transparent; }
+
+/* ==== Stocks look ==== */
+.bansho-economy [class*='be-card'], .bansho-economy [class*='be-kpi']:not(.be-kpis), .bansho-economy section, .bansho-economy article { border-radius: 12px; }
+.bansho-economy button { border-radius: 8px; }
+.bansho-economy h2, .bansho-economy h3 { text-transform: none; letter-spacing: -0.01em; font-size: 15px; font-weight: 700; }

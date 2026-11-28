@@ -1,0 +1,48 @@
+/* Dashboard skin in the dossier's visual language: near-black ground, flat
+   square panels, a raised header with a gold bar, monospace figures. */
+html:root:not([data-variant='happy']):not([data-theme='light']) {
+  --bg: #0e1116; --bg-secondary: #0e1116;
+  --surface: #171c23; --panel-bg: #171c23; --surface-hover: #222934; --surface-active: #222934;
+  --border: #2f3845; --panel-border: #2f3845; --border-strong: #3d4858; --border-subtle: #2f3845;
+  --text: #e6eaf0; --text-secondary: #b9c2cf; --text-dim: #8a95a5; --text-muted: #8a95a5; --text-faint: #8a95a5;
+  --accent: #3d8bfd; --yellow: #3d8bfd;
+  --input-bg: #0e1116; --panel-radius: 0px;
+  --map-bg: #0e1116; --map-country: #171c23; --map-stroke: #3d4858; --map-grid: #222934;
+  --scrollbar-thumb: #2f3845; --scrollbar-thumb-hover: #3d4858;
+}
+html:not([data-variant='happy']) { --be-mono: ui-monospace, 'Cascadia Mono', 'SF Mono', Consolas, 'Liberation Mono', monospace; }
+
+html:not([data-variant='happy']) :is(.panel, .map-section, .panel button, .map-section button, .header button, .header select, .dashboard-navigation-row button) { border-radius: 0; }
+html:not([data-variant='happy']) .header { background: var(--surface); border-bottom: 1px solid var(--border); }
+html:not([data-variant='happy']) .header :is(.logo, .logo-mobile) { color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+html:not([data-variant='happy']) .dashboard-navigation-row { background: var(--bg); border-bottom: 1px solid var(--border); }
+
+html:not([data-variant='happy']) :is(.panels-grid > .panel, .map-section) { background: var(--surface); border: 1px solid var(--border); }
+html:not([data-variant='happy']) :is(.panels-grid > .panel, .map-section) > .panel-header { min-height: 36px; padding-left: 13px; background: #222934; border-bottom: 1px solid var(--border); box-shadow: inset 3px 0 0 var(--accent); }
+html:not([data-variant='happy']) :is(.panels-grid > .panel, .map-section) > .panel-header .panel-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text); }
+html:not([data-variant='happy']) .panels-grid { gap: 12px; padding: 0 12px 12px; }
+html:not([data-variant='happy']) .panels-grid :is(.market-price, .market-change, .commodity-price, .commodity-change, .market-symbol, .item-time, td) { font-family: var(--be-mono); font-variant-numeric: tabular-nums; }
+html:not([data-variant='happy']) .panels-grid .commodity-item { background: #222934; border-radius: 0; }
+html[data-theme='light']:not([data-variant='happy']) .panels-grid .commodity-item { background: #eef1f5; }
+/* Per-story trust chips add noise to every headline; the story keeps its source. */
+html.bansho-keyless .panels-grid :is(.credibility-score-badge, .propaganda-badge, .corroboration-flag, .tier-badge) { display: none; }
+
+/* ==== Stocks look ==== */
+html:root:not([data-variant='happy']):not([data-theme='light']) { --panel-radius: 14px; }
+html:not([data-variant='happy']) { --be-mono: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Segoe UI Variable Text', 'Segoe UI', Roboto, sans-serif; }
+html:not([data-variant='happy']) body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Segoe UI Variable Text', 'Segoe UI', Roboto, sans-serif; }
+html:not([data-variant='happy']) :is(.panels-grid > .panel, .map-section) { border-color: transparent; border-radius: 14px; overflow: clip; }
+html:not([data-variant='happy']) :is(.panels-grid > .panel, .map-section) > .panel-header { min-height: 44px; background: transparent; box-shadow: none; }
+html:not([data-variant='happy']) :is(.panels-grid > .panel, .map-section) > .panel-header .panel-title { font-size: 15px; font-weight: 700; text-transform: none; letter-spacing: -0.01em; }
+html:not([data-variant='happy']) .header :is(.logo, .logo-mobile) { color: var(--text); text-transform: none; letter-spacing: -0.01em; font-weight: 800; }
+html:not([data-variant='happy']) :is(.header button, .header select, .map-section button, .panel button) { border-radius: 8px; }
+html:not([data-variant='happy']) .panels-grid .commodity-item { border-radius: 10px; }
+
+html:not([data-variant='happy']) :is(.header, .map-header-actions)
+  :is(.fullscreen-btn, .unified-settings-btn, .mobile-settings-btn, .mobile-search-btn, .map-pin-btn) > svg {
+  width: 18px;
+  height: 18px;
+}
+html:not([data-variant='happy']) .intel-findings-badge .findings-icon {
+  font-size: calc(15px * var(--wm-panel-effective-scale, 1));
+}

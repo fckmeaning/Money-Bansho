@@ -1,0 +1,71 @@
+/* Geopolitical score: panel under the map, popup block and tooltip line. */
+.main-content#main > .bansho-geoscore-host { order: -1; flex: 0 0 auto; width: 100%; min-width: 0; min-height: 200px; }
+
+.bansho-geoscore {
+  --bg-bg: #171c23;
+  --bg-raised: #222934;
+  --bg-border: #2f3845;
+  --bg-text: #e6eaf0;
+  --bg-muted: #8a95a5;
+  --bg-gold: #3d8bfd;
+
+  box-sizing: border-box;
+  container-type: inline-size;
+  padding: 8px;
+  background: var(--bg-bg);
+  color: var(--bg-text);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.bansho-geoscore * { box-sizing: border-box; border-radius: 0; }
+.bansho-geoscore p { margin: 4px 0; }
+.bansho-geoscore h3 { margin: 0; font-size: 16px; }
+.bansho-geoscore h4 { margin: 10px 0 4px; font-size: 12px; color: var(--bg-muted); }
+.bansho-geoscore small { display: block; color: var(--bg-muted); font-size: 11px; }
+.bansho-geoscore table { width: 100%; border-collapse: collapse; }
+.bansho-geoscore th { padding: 3px 6px; border-bottom: 1px solid var(--bg-border); color: var(--bg-muted); font-weight: 400; text-align: left; }
+.bansho-geoscore td { padding: 3px 6px; border-bottom: 1px solid var(--bg-border); vertical-align: top; overflow-wrap: anywhere; }
+.bansho-geoscore .bg-num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.bansho-geoscore .bg-muted { color: var(--bg-muted); }
+
+.bg-columns { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.bg-list { max-height: 460px; overflow: auto; background: var(--bg-raised); border: 1px solid var(--bg-border); }
+.bg-item { border-bottom: 1px solid var(--bg-border); }
+.bansho-geoscore .bg-row { display: flex; gap: 8px; justify-content: space-between; width: 100%; padding: 5px 8px; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.bansho-geoscore .bg-row:hover, .bansho-geoscore .bg-row[aria-expanded='true'] { background: var(--bg-bg); }
+.bansho-geoscore .bg-row[aria-expanded='true'] { box-shadow: inset 2px 0 0 var(--bg-gold); }
+.bg-name { min-width: 0; overflow-wrap: anywhere; }
+.bansho-geoscore .bg-row strong, .bg-headline strong { color: var(--bg-gold); font-variant-numeric: tabular-nums; }
+
+.bg-filters { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 4px; }
+.bansho-geoscore .bg-filters button { padding: 3px 8px; border: 1px solid var(--bg-border); background: var(--bg-raised); color: var(--bg-muted); font: inherit; cursor: pointer; }
+.bansho-geoscore .bg-filters button.bg-on { border-color: var(--bg-gold); color: var(--bg-text); }
+
+.bg-breakdown { padding: 4px 8px 8px; background: var(--bg-bg); }
+.bg-track { display: block; height: 3px; margin-top: 2px; background: var(--bg-border); }
+.bg-track b { display: block; height: 100%; background: var(--bg-gold); }
+.bansho-geoscore .bg-link { display: inline-block; margin: 4px 8px 8px; color: var(--bg-gold); }
+
+.bansho-geoscore.bg-popup { margin: 0; border-top: 1px solid #2f3845; border-bottom: 1px solid #2f3845; }
+.bansho-geoscore.bg-popup h4 { margin-top: 0; }
+.bg-popup .bg-breakdown { padding: 0; }
+.bg-popup summary { cursor: pointer; color: var(--bg-muted); }
+.bg-headline { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; }
+.bg-headline strong { font-size: 18px; }
+.bg-headline span { color: var(--bg-muted); }
+
+.bg-hover { margin-top: 3px; color: #3d8bfd; font-variant-numeric: tabular-nums; }
+.bg-hover span { color: #8a95a5; }
+
+@container (min-width: 1000px) {
+  .bg-columns { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  .bg-list { max-height: 620px; }
+}
+
+.map-popup:has(.bg-popup) { scrollbar-color: #2f3845 #171c23; }
+
+/* ==== Stocks look ==== */
+.bansho-geoscore { border-radius: 12px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI Variable Text", "Segoe UI", Roboto, sans-serif; }
+.bansho-geoscore button { border-radius: 8px; }

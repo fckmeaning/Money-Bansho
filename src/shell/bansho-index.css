@@ -1,0 +1,47 @@
+/* One country of the instability index: card and proof block. Theme variables only. */
+.bansho-index, .bx-detail { min-width: 0; color: var(--text); font-size: 12px; line-height: 1.5; }
+.bansho-index { container-type: inline-size; }
+.bx-detail p, .bansho-index p { margin: 4px 0; }
+.bansho-index .bx-title { margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--text-dim); text-transform: none; letter-spacing: 0; }
+.bx-head { display: flex; align-items: baseline; gap: 8px; }
+.bx-value { font-size: 34px; font-weight: 600; line-height: 1.15; font-variant-numeric: tabular-nums; color: var(--text); }
+.bx-note, .bx-table td.bx-missing, .bx-axis { color: var(--text-dim); }
+.bx-value.bx-none, .bx-table td.bx-none { color: var(--text-dim); }
+.bx-value.bx-mid, .bx-table td.bx-mid { color: var(--accent); }
+.bx-value.bx-high, .bx-table td.bx-high { color: var(--red); }
+
+.bx-facts { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 6px 0; }
+.bx-facts dt { color: var(--text-dim); font-size: 11px; }
+.bx-facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+.bx-sum, .bx-result { padding: 6px 8px; border-inline-start: 2px solid var(--accent); background: var(--bg); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+
+.bx-scroll { max-width: 100%; margin: 8px 0; overflow-x: auto; }
+.bx-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.bx-table th, .bx-table td { padding: 4px 6px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.bx-table th { color: var(--text-dim); font-weight: 400; }
+.bx-table td:nth-child(n + 3):not(.bx-missing) { white-space: nowrap; }
+
+.bx-proof { margin: 10px 0; border: 1px solid var(--border); background: var(--surface); }
+.bx-proof > summary { padding: 8px 10px; color: var(--accent); cursor: pointer; }
+.bx-proof > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.bx-proof-body { padding: 0 10px 10px; min-width: 0; }
+.bx-proof-body h4 { margin: 18px 0 6px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text); }
+.bx-proof-body h5 { margin: 0 0 4px; font-size: 12px; color: var(--text); }
+.bx-proof-body .bx-input { margin-top: 10px; }
+.bansho-index .equation, .bx-detail .equation { max-width: 100%; margin: 4px 0; padding: 2px 0; overflow-x: auto; overflow-y: hidden; }
+.bx-detail .equation:focus-visible { outline: 2px solid var(--accent); }
+.bx-detail math { font-size: 14px; }
+.bx-theorem { margin: 10px 0; padding: 8px 10px; border: 1px solid var(--border); background: var(--bg); min-width: 0; }
+.bx-limits { margin: 4px 0; padding-inline-start: 18px; color: var(--text-dim); }
+
+.bx-chart { margin: 8px 0; }
+.bx-chart svg { display: block; width: 100%; height: auto; background: var(--bg); border: 1px solid var(--border); }
+.bx-readout { color: var(--text); font-variant-numeric: tabular-nums; }
+.bx-grid { stroke: var(--border); stroke-width: 1; }
+.bx-midline { stroke: var(--text-dim); stroke-width: 1; stroke-dasharray: 4 4; }
+.bx-chart line.bx-cursor { stroke: var(--text-dim); stroke-width: 1; }
+.bx-line { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.bx-axis { fill: var(--text-dim); font-size: 10px; }
+
+.bx-button { padding: 6px 12px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); font: inherit; cursor: pointer; }
+.bx-button:hover { border-color: var(--accent); }

@@ -1,0 +1,63 @@
+.bansho-instability {
+  box-sizing: border-box;
+  container-type: inline-size;
+  height: 100%;
+  overflow: auto;
+  padding: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.bansho-instability * { box-sizing: border-box; border-radius: 0; }
+.bansho-instability p { margin: 4px 0; }
+.bansho-instability .bi-detail > h3 { margin: 0 0 4px; font-size: 16px; }
+.bansho-instability .bi-detail > h4 { margin: 12px 0 4px; font-size: 12px; color: var(--text-dim); }
+.bansho-instability .bi-list table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.bansho-instability .bi-list th { padding: 4px 6px; border-bottom: 1px solid var(--border); color: var(--text-dim); font-weight: 400; text-align: left; }
+.bansho-instability .bi-list td { padding: 3px 6px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+
+.bi-status, .bi-note, .bansho-instability .bi-rank, .bansho-instability .bi-range { color: var(--text-dim); }
+
+.bi-regions { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.bi-regions > span { padding: 3px 8px; background: var(--surface); border: 1px solid var(--border); }
+
+.bi-columns { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.bi-list { max-height: 420px; overflow: auto; background: var(--surface); border: 1px solid var(--border); }
+.bi-list th { position: sticky; top: 0; background: var(--surface); }
+.bi-list tr:not(:first-child) { cursor: pointer; }
+.bi-list tr:not(:first-child):hover, .bi-list tr.bi-selected { background: var(--bg); }
+.bi-list tr.bi-selected td:first-child { box-shadow: inset 2px 0 0 var(--accent); }
+.bi-list button { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+
+@container (min-width: 1100px) {
+  .bi-columns { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  .bi-list { max-height: 900px; }
+}
+
+@container (max-width: 520px) {
+  .bi-list th:nth-child(4), .bi-list td:nth-child(4), .bi-list th:nth-child(6), .bi-list td:nth-child(6) { display: none; }
+}
+
+.bi-bars { display: inline-flex; gap: 2px; height: 20px; align-items: stretch; }
+.bi-bar { display: flex; align-items: flex-end; width: 7px; background: var(--border); }
+.bi-bar i { display: block; width: 100%; background: var(--text-dim); }
+.bi-bar.bx-mid i { background: var(--accent); }
+.bi-bar.bx-high i { background: var(--red); }
+.bi-bar.bx-none { background: none; border: 1px dashed var(--border); }
+
+.bansho-instability .bi-value { font-size: 14px; font-weight: 600; white-space: nowrap; }
+.bansho-instability .bi-range { white-space: nowrap; }
+.bansho-instability td.bx-mid, .bansho-instability b.bx-mid { color: var(--accent); }
+.bansho-instability td.bx-high, .bansho-instability b.bx-high { color: var(--red); }
+.bansho-instability td.bx-none, .bansho-instability b.bx-none { color: var(--text-dim); }
+
+.bi-detail { padding: 10px; background: var(--surface); border: 1px solid var(--border); min-width: 0; }
+.bi-headline { color: var(--text); text-decoration: none; }
+.bi-headline:hover { color: var(--accent); text-decoration: underline; }
+
+/* ==== Stocks look ==== */
+.bansho-instability, .bansho-instability .bi-list, .bi-regions > span { border-radius: 12px; }
+.bansho-instability button, .bi-regions > span { border-radius: 8px; }
+.bansho-instability { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI Variable Text", "Segoe UI", Roboto, sans-serif; }

@@ -1,0 +1,397 @@
+import { describe, it, mock } from 'node:test';
+import assert from 'node:assert/strict';
+
+import middleware from '../middleware';
+import {
+  DOCS_UPSTREAM_TIMEOUT_MS,
+  ROUTING_MIDDLEWARE_RESPONSE_DEADLINE_MS,
+} from '../src/config/docs-locale-seo.ts';
+
+function docsHtmlRequest(): Request {
+  return new Request('https://www.worldmonitor.app/docs/zh/about', {
+    headers: {
+      accept: 'text/html',
+      'user-agent': 'Mozilla/5.0 (compatible; Googlebot/2.1)',
+    },
+  });
+}
+
+describe('middleware docs locale SEO proxy', () => {
+  it('replaces canonical Organization bodies with references throughout upstream JSON-LD (#7861)', async () => {
+    const id = 'https://www.worldmonitor.app/#organization';
+    const organization = {
+      '@id': id,
+      '@type': ['Organization'],
+      name: 'World Monitor',
+      logo: { '@type': 'ImageObject', url: 'https://www.worldmonitor.app/logo.png' },
+      sameAs: ['https://github.com/koala73/worldmonitor'],
+    };
+    const otherOrganization = { '@type': 'Organization', '@id': 'https://example.org/#organization', name: 'Source' };
+    const upstream = `<html><head><script TYPE = 'application/ld+json'>${JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [organization, { '@type': 'Article', publisher: organization, author: { '@id': id }, provider: otherOrganization }],
+    })}</script></head><body>Docs</body></html>`;
+    const originalFetch = globalThis.fetch;
+    mock.method(globalThis, 'fetch', async () => new Response(upstream, { headers: { 'content-type': 'text/html' } }));
+    try {
+      for (const path of ['/docs/about', '/docs/zh/about']) {
+        const response = await middleware(new Request(`https://www.worldmonitor.app${path}`, { headers: { accept: 'text/html' } }));
+        assert.ok(response instanceof Response);
+        const html = await response.text();
+        const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1])['@graph'];
+        assert.deepEqual(graph[0], { '@id': id });
+        assert.deepEqual(graph[1].publisher, { '@id': id });
+        assert.deepEqual(graph[1].author, {
+          '@id': id,
+          '@type': 'Organization',
+          name: 'World Monitor',
+          url: 'https://www.worldmonitor.app/',
+        });
+        assert.deepEqual(graph[1].provider, otherOrganization);
+      }
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it('keeps the official canonical and excludes copied deployments from indexing', async () => {
+    const originalFetch = globalThis.fetch;
+    mock.method(globalThis, 'fetch', async () => new Response(
+      '<html><head><link rel="canonical" href="https://copy.example/docs/zh/about"></head><body>关于</body></html>',
+      { headers: { 'content-type': 'text/html', 'x-robots-tag': 'bingbot: noarchive', vary: 'Accept-Encoding' } },
+    ));
+    try {
+      for (const [host, noindex] of [
+        ['www.worldmonitor.app', false],
+        ['WWW.WORLDMONITOR.APP:443', false],
+        ['copy.example', true],
+        ['worldmonitor-preview.vercel.app', true],
+        ['www.worldmonitor.app.copy.example', true],
+      ] as const) {
+        const request = new Request('https://copy.example/docs/zh/about?ref=test', {
+          headers: { accept: 'text/html', host, 'x-forwarded-host': 'www.worldmonitor.app' },
+        });
+        const response = await middleware(request);
+        assert.ok(response instanceof Response);
+        assert.equal(response.headers.get('x-robots-tag'), noindex ? 'noindex, bingbot: noarchive' : 'bingbot: noarchive');
+        assert.match(response.headers.get('vary') ?? '', /host/);
+        assert.match(response.headers.get('vary') ?? '', /accept-encoding/);
+        const body = await response.text();
+        assert.match(body, /rel="canonical" href="https:\/\/www\.worldmonitor\.app\/docs\/zh\/about"/);
+        assert.doesNotMatch(body, /copy\.example/);
+      }
+      assert.equal(globalThis.fetch.mock.calls.length, 5, 'one upstream fetch per document');
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it('applies the same indexing policy to HEAD and conditional 304 responses without reading a body', async () => {
+    const originalFetch = globalThis.fetch;
+    try {
+      for (const status of [200, 304]) {
+        for (const host of ['www.worldmonitor.app', 'copy.example']) {
+          const upstream = new Response(null, {
+            status,
+            headers: { ...(status === 200 ? { 'content-type': 'text/html' } : {}), etag: '"docs"' },
+          });
+          mock.method(upstream, 'text', () => { throw new Error('must not read body'); });
+          mock.method(globalThis, 'fetch', async (_url: string, init: RequestInit) => {
+            assert.equal(new Headers(init.headers).get('if-none-match'), '"docs"');
+            return upstream;
+          });
+          const response = await middleware(new Request(`https://${host}/docs/zh/about`, {
+            method: status === 200 ? 'HEAD' : 'GET',
+            headers: { accept: 'text/html', 'if-none-match': '"docs"' },
+          }));
+          assert.ok(response instanceof Response);
+          assert.equal(response.status, status);
+          assert.equal(response.headers.get('x-robots-tag'), host === 'copy.example' ? 'noindex' : null);
+          assert.equal(response.headers.get('etag'), '"docs"');
+          assert.match(response.headers.get('vary') ?? '', /host/);
+          assert.equal(upstream.text.mock.calls.length, 0);
+          assert.equal(await response.text(), '');
+        }
+      }
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it('preserves redirects, errors and non-HTML responses on copied deployments', async () => {
+    const originalFetch = globalThis.fetch;
+    try {
+      for (const [status, contentType] of [[308, 'text/html'], [404, 'text/html'], [500, 'text/html'], [200, 'text/plain']] as const) {
+        const upstream = new Response('<html><head></head><body>unchanged</body></html>', {
+          status, headers: { 'content-type': contentType, location: '/docs/about' },
+        });
+        mock.method(globalThis, 'fetch', async () => upstream);
+        const response = await middleware(new Request('https://copy.example/docs/zh/about', { headers: { accept: 'text/html' } }));
+        assert.ok(response instanceof Response);
+        assert.equal(response.status, status);
+        assert.equal(response.headers.get('location'), '/docs/about');
+        assert.equal(response.headers.get('content-type'), contentType);
+        assert.equal(await response.text(), '<html><head></head><body>unchanged</body></html>');
+      }
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it('rewrites Chinese docs HTML lang and injects reciprocal hreflang', async () => {
+    const upstreamHtml = `<!DOCTYPE html><html lang="en"><head>
+<meta name="og:locale" content="en_US"/>
+<link rel="canonical" href="https://www.worldmonitor.app/docs/zh/about"/>
+<title>关于</title>
+</head><body>ok</body></html>`;
+
+    const originalFetch = globalThis.fetch;
+    mock.method(globalThis, 'fetch', async () =>
+      new Response(upstreamHtml, {
+        status: 200,
+        headers: { 'content-type': 'text/html; charset=utf-8' },
+      }),
+    );
+
+    try {
+      const res = await middleware(docsHtmlRequest());
+      assert.ok(res instanceof Response, 'docs HTML requests must be handled by middleware');
+      assert.equal(res.status, 200);
+      assert.equal(res.headers.get('x-wm-docs-locale-seo'), '1');
+      const body = await res.text();
+      assert.match(body, /<html[^>]*\blang="zh-Hans"/);
+      assert.match(body, /hreflang="zh-Hans" href="https:\/\/www\.worldmonitor\.app\/docs\/zh\/about"/);
+      assert.match(body, /hreflang="en" href="https:\/\/www\.worldmonitor\.app\/docs\/about"/);
+      assert.match(body, /hreflang="x-default" href="https:\/\/www\.worldmonitor\.app\/docs\/about"/);
+      assert.match(
+        String(globalThis.fetch.mock.calls[0].arguments[0]),
+        /^https:\/\/worldmonitor\.mintlify\.dev\/docs\/zh\/about$/,
+      );
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it('strips hop-by-hop framing after decoding a Brotli HTML body', async () => {
+    const upstreamHtml = `<!DOCTYPE html><html lang="en"><head>
+<meta name="og:locale" content="en_US"/>
+<link rel="canonical" href="https://www.worldmonitor.app/docs/zh/about"/>
+<title>关于</title>
+</head><body>ok</body></html>`;
+
+    const originalFetch = globalThis.fetch;
+    mock.method(globalThis, 'fetch', async () =>
+      new Response(upstreamHtml, {
+        status: 200,
+        headers: {
+          'content-type': 'text/html; charset=utf-8',
+          'content-encoding': 'br',
+          'content-length': '64',
+          'transfer-encoding': 'chunked',
+          connection: 'keep-alive',
+        },
+      }),
+    );
+
+    try {
+      const req = new Request('https://www.worldmonitor.app/docs/zh/about', {
+        headers: {
+          accept: 'text/html',
+          'user-agent': 'Mozilla/5.0 (compatible; Googlebot/2.1)',
+        },
+      });
+      const res = await middleware(req);
+      assert.ok(res instanceof Response, 'docs HTML requests must be handled by middleware');
+      assert.equal(res.status, 200);
+      assert.equal(res.headers.get('x-wm-docs-locale-seo'), '1');
+      assert.equal(res.headers.get('content-encoding'), null);
+      assert.equal(res.headers.get('content-length'), null);
+      assert.equal(res.headers.get('transfer-encoding'), null);
+      assert.equal(res.headers.get('connection'), null);
+      const body = await res.text();
+      assert.match(body, /<html[^>]*\blang="zh-Hans"/);
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it('preserves docs flights, assets, Markdown and POST bodies while stripping upstream cookies', async () => {
+    const originalFetch = globalThis.fetch;
+    const cases = [
+      { path: '/docs/zh/about?_rsc=xyz', header: 'rsc', value: '1', type: 'text/x-component' },
+      { path: '/docs/_next/static/file.js', header: 'range', value: 'bytes=0-6', type: 'text/javascript' },
+      { path: '/docs/auth.md', header: 'accept', value: 'text/markdown', type: 'text/markdown' },
+      { path: '/docs/_mintlify/api/request', header: 'content-type', value: 'application/json', type: 'application/json', body: '{"test":true}' },
+    ];
+    try {
+      for (const { path, header, value, type, body } of cases) {
+        const method = body ? 'POST' : 'GET';
+        mock.method(globalThis, 'fetch', async (url: string, init: RequestInit) => {
+          assert.equal(url, `https://worldmonitor.mintlify.dev${path}`);
+          assert.equal(init.method, method);
+          assert.equal(new Headers(init.headers).get(header), value);
+          assert.equal(new Headers(init.headers).has('cookie'), false);
+          assert.equal(new Headers(init.headers).has('authorization'), false);
+          if (body) assert.equal(await new Response(init.body).text(), body);
+          return new Response('docs upstream body', {
+            headers: {
+              'content-type': type,
+              'set-cookie': 'upstream=value; Path=/',
+              'x-middleware-next': '1',
+            },
+          });
+        });
+        const response = await middleware(new Request(`https://www.worldmonitor.app${path}`, {
+          method,
+          body,
+          headers: { [header]: value, cookie: 'app-cookie=value', authorization: 'Bearer app-token' },
+        }));
+        assert.ok(response instanceof Response);
+        assert.equal(response.headers.get('set-cookie'), null);
+        assert.equal(response.headers.get('x-middleware-next'), null);
+        assert.equal(response.headers.get('x-wm-docs-locale-seo'), null);
+        assert.equal(response.headers.get('content-type'), type);
+        assert.equal(await response.text(), 'docs upstream body');
+      }
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it('leaves the two first-party MCP routes to Vercel', () => {
+    for (const path of ['/docs/mcp', '/docs/mcp/server-card']) {
+      assert.equal(middleware(new Request(`https://www.worldmonitor.app${path}`)), undefined);
+    }
+  });
+
+  it('arms the upstream deadline below the routing-middleware deadline', async () => {
+    const originalFetch = globalThis.fetch;
+    const armed = mock.method(globalThis, 'setTimeout');
+    let fetchSignal: AbortSignal | undefined;
+    mock.method(globalThis, 'fetch', async (_url: string, init?: RequestInit) => {
+      fetchSignal = init?.signal ?? undefined;
+      return new Response('<!DOCTYPE html><html lang="en"><head></head><body>ok</body></html>', {
+        status: 200,
+        headers: { 'content-type': 'text/html; charset=utf-8' },
+      });
+    });
+
+    try {
+      const res = await middleware(docsHtmlRequest());
+      assert.ok(res instanceof Response);
+      assert.ok(
+        armed.mock.calls.some((call) => call.arguments[1] === DOCS_UPSTREAM_TIMEOUT_MS),
+        'the docs fetch must arm its upstream deadline',
+      );
+      assert.ok(
+        DOCS_UPSTREAM_TIMEOUT_MS < ROUTING_MIDDLEWARE_RESPONSE_DEADLINE_MS,
+        'docs upstream timeout must stay below the routing-middleware response deadline',
+      );
+      assert.ok(fetchSignal, 'fetch must receive the deadline signal');
+      assert.equal(fetchSignal.aborted, false);
+    } finally {
+      armed.mock.restore();
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it('maps a rejected transformed-body read to 502', async () => {
+    const originalFetch = globalThis.fetch;
+    mock.method(globalThis, 'fetch', async () => {
+      const body = new ReadableStream({
+        start(controller) {
+          controller.error(new Error('upstream body reset'));
+        },
+      });
+      return new Response(body, {
+        status: 200,
+        headers: { 'content-type': 'text/html; charset=utf-8' },
+      });
+    });
+
+    try {
+      const res = await middleware(docsHtmlRequest());
+      assert.ok(res instanceof Response);
+      assert.equal(res.status, 502);
+      assert.equal(await res.text(), 'Docs upstream unavailable');
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  describe('upstream deadline', () => {
+    // Drive both AbortSignal.timeout and setTimeout from mock time, so the test
+    // judges when the fetch is aborted rather than which timer API aborts it.
+    async function withMockDeadline(run: (tick: (ms: number) => Promise<void>) => Promise<void>) {
+      const originalTimeout = AbortSignal.timeout;
+      const originalFetch = globalThis.fetch;
+      mock.timers.enable({ apis: ['setTimeout'] });
+      AbortSignal.timeout = (ms: number) => {
+        const controller = new AbortController();
+        setTimeout(() => controller.abort(new DOMException('timed out', 'TimeoutError')), ms);
+        return controller.signal;
+      };
+      const settle = () => new Promise<void>((resolve) => setImmediate(resolve));
+      try {
+        await run(async (ms) => {
+          await settle();
+          mock.timers.tick(ms);
+          await settle();
+        });
+      } finally {
+        mock.timers.reset();
+        AbortSignal.timeout = originalTimeout;
+        globalThis.fetch = originalFetch;
+      }
+    }
+
+    // A body that fetch() would error when its signal aborts.
+    function signalBoundStream(signal: AbortSignal | undefined) {
+      let push!: ReadableStreamDefaultController<Uint8Array>;
+      const stream = new ReadableStream<Uint8Array>({ start(c) { push = c; } });
+      signal?.addEventListener('abort', () => push.error(signal.reason));
+      return { stream, push };
+    }
+
+    it('keeps streaming a pass-through asset after the header deadline', async () => {
+      await withMockDeadline(async (tick) => {
+        let fetchSignal: AbortSignal | undefined;
+        let push!: ReadableStreamDefaultController<Uint8Array>;
+        mock.method(globalThis, 'fetch', async (_url: string, init?: RequestInit) => {
+          fetchSignal = init?.signal ?? undefined;
+          const bound = signalBoundStream(fetchSignal);
+          push = bound.push;
+          return new Response(bound.stream, { headers: { 'content-type': 'application/javascript' } });
+        });
+        const res = await middleware(new Request('https://www.worldmonitor.app/docs/_mintlify/assets/app.js'));
+        assert.ok(res instanceof Response);
+        assert.equal(res.status, 200);
+        await tick(DOCS_UPSTREAM_TIMEOUT_MS + 1);
+        assert.equal(fetchSignal?.aborted, false, 'a slow asset body must not be cut off at the header deadline');
+        push.enqueue(new TextEncoder().encode('console.log(1)'));
+        push.close();
+        assert.equal(await res.text(), 'console.log(1)');
+      });
+    });
+
+    it('still aborts a hung upstream and a stalled rewritten HTML body', async () => {
+      await withMockDeadline(async (tick) => {
+        mock.method(globalThis, 'fetch', (_url: string, init?: RequestInit) => new Promise((_resolve, reject) => {
+          init?.signal?.addEventListener('abort', () => reject(init.signal!.reason));
+        }));
+        const hung = middleware(docsHtmlRequest());
+        await tick(DOCS_UPSTREAM_TIMEOUT_MS + 1);
+        assert.equal((await hung as Response).status, 502);
+      });
+      await withMockDeadline(async (tick) => {
+        mock.method(globalThis, 'fetch', async (_url: string, init?: RequestInit) => new Response(
+          signalBoundStream(init?.signal ?? undefined).stream,
+          { headers: { 'content-type': 'text/html; charset=utf-8' } },
+        ));
+        const stalled = middleware(docsHtmlRequest());
+        await tick(DOCS_UPSTREAM_TIMEOUT_MS + 1);
+        assert.equal((await stalled as Response).status, 502);
+      });
+    });
+  });
+});

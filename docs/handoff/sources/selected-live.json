@@ -1,0 +1,1246 @@
+[
+ {
+  "name": "UK Competition and Markets Authority",
+  "url": "https://www.gov.uk/government/organisations/competition-and-markets-authority.atom",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.gov.uk/government/organisations/competition-and-markets-authority.atom",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.gov.uk"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Apple Newsroom",
+  "url": "https://www.apple.com/newsroom/rss-feed.rss",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://www.apple.com/newsroom/rss-feed.rss",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-19",
+  "linkHosts": [
+   "www.apple.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "GlobeNewswire Directors",
+  "url": "https://www.globenewswire.com/RssFeed/subjectcode/22-Directors%20And%20Officers/feedTitle/GlobeNewswire%20-%20Directors%20And%20Officers",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://www.globenewswire.com/RssFeed/subjectcode/22-Directors%20And%20Officers/feedTitle/GlobeNewswire%20-%20Directors%20And%20Officers",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.globenewswire.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "UK Sanctions OFSI",
+  "url": "https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation.atom",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.gov.uk/government/organisations/office-of-financial-sanctions-implementation.atom",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-24",
+  "linkHosts": [
+   "www.gov.uk"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "GlobeNewswire Mergers",
+  "url": "https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20And%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20And%20Acquisitions",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://www.globenewswire.com/RssFeed/subjectcode/27-Mergers%20And%20Acquisitions/feedTitle/GlobeNewswire%20-%20Mergers%20And%20Acquisitions",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.globenewswire.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Microsoft Official Blog",
+  "url": "https://blogs.microsoft.com/feed/",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://blogs.microsoft.com/feed/",
+  "isFeed": true,
+  "items": 11,
+  "dated": 10,
+  "newest": "2026-11-17",
+  "linkHosts": [
+   "blogs.microsoft.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "AMD Press Releases",
+  "url": "https://ir.amd.com/news-events/press-releases/rss",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.amd.com/news-events/press-releases/rss",
+  "isFeed": true,
+  "items": 11,
+  "dated": 10,
+  "newest": "2026-11-16",
+  "linkHosts": [
+   "ir.amd.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Samsung Newsroom",
+  "url": "https://news.samsung.com/global/feed",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://news.samsung.com/global/feed",
+  "isFeed": true,
+  "items": 51,
+  "dated": 50,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "news.samsung.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "IBM Newsroom",
+  "url": "https://newsroom.ibm.com/announcements?pagetemplate=rss",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://newsroom.ibm.com/announcements?pagetemplate=rss",
+  "isFeed": true,
+  "items": 5,
+  "dated": 5,
+  "newest": "2026-11-17",
+  "linkHosts": [
+   "newsroom.ibm.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Google Company Blog",
+  "url": "https://blog.google/rss/",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://blog.google/rss/",
+  "isFeed": true,
+  "items": 21,
+  "dated": 20,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "blog.google"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "SAP News",
+  "url": "https://news.sap.com/feed/",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://news.sap.com/feed/",
+  "isFeed": true,
+  "items": 30,
+  "dated": 30,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "news.sap.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Baidu IR",
+  "url": "https://ir.baidu.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.baidu.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-16",
+  "linkHosts": [
+   "ir.baidu.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "JD.com IR",
+  "url": "https://ir.jd.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.jd.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-17",
+  "linkHosts": [
+   "ir.jd.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Salesforce News",
+  "url": "https://www.salesforce.com/news/feed/",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://www.salesforce.com/news/feed/",
+  "isFeed": true,
+  "items": 11,
+  "dated": 10,
+  "newest": "2026-11-19",
+  "linkHosts": [
+   "www.salesforce.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Oracle News",
+  "url": "https://www.oracle.com/corporate/press/rss/rss-pr.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://www.oracle.com/corporate/press/rss/rss-pr.xml",
+  "isFeed": true,
+  "items": 21,
+  "dated": 20,
+  "newest": "2026-11-20",
+  "linkHosts": [
+   "www.oracle.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Cisco Newsroom",
+  "url": "https://newsroom.cisco.com/c/services/i/servlets/newsroom/rssfeed.json?feed=press-releases",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://newsroom.cisco.com/c/services/i/servlets/newsroom/rssfeed.json?feed=press-releases",
+  "isFeed": true,
+  "items": 21,
+  "dated": 20,
+  "newest": "2026-11-24",
+  "linkHosts": [
+   "newsroom.cisco.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "FTC Press",
+  "url": "https://www.ftc.gov/feeds/press-release.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://www.ftc.gov/feeds/press-release.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-25",
+  "linkHosts": [
+   "www.ftc.gov"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Broadcom IR",
+  "url": "https://investors.broadcom.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://investors.broadcom.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-09",
+  "linkHosts": [
+   "investors.broadcom.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Toyota Newsroom",
+  "url": "https://global.toyota/export/en/allnews_rss.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://global.toyota/export/en/allnews_rss.xml",
+  "isFeed": true,
+  "items": 51,
+  "dated": 50,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "global.toyota",
+   "toyotatimes.jp",
+   "toyotagazooracing.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "CFTC Press",
+  "url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-23",
+  "linkHosts": [
+   "www.cftc.gov"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Meta IR",
+  "url": "https://investor.atmeta.com/rss/pressrelease.aspx",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://investor.atmeta.com/rss/pressrelease.aspx",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-10-27",
+  "linkHosts": [
+   "investor.atmeta.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "NVIDIA IR",
+  "url": "https://investor.nvidia.com/rss/pressrelease.aspx",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://investor.nvidia.com/rss/pressrelease.aspx",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-23",
+  "linkHosts": [
+   "investor.nvidia.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Mobileye IR",
+  "url": "https://ir.mobileye.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.mobileye.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-11",
+  "linkHosts": [
+   "ir.mobileye.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Arm Newsroom",
+  "url": "https://newsroom.arm.com/feed",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://newsroom.arm.com/feed",
+  "isFeed": true,
+  "items": 7,
+  "dated": 6,
+  "newest": "2026-11-25",
+  "linkHosts": [
+   "newsroom.arm.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "NIO IR",
+  "url": "https://ir.nio.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.nio.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-17",
+  "linkHosts": [
+   "ir.nio.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Tower Semiconductor IR",
+  "url": "https://ir.towersemi.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.towersemi.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-03",
+  "linkHosts": [
+   "ir.towersemi.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "XPeng IR",
+  "url": "https://ir.xiaopeng.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.xiaopeng.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-16",
+  "linkHosts": [
+   "ir.xiaopeng.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "NetEase IR",
+  "url": "https://ir.netease.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.netease.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-25",
+  "linkHosts": [
+   "ir.netease.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Li Auto IR",
+  "url": "https://ir.lixiang.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.lixiang.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-25",
+  "linkHosts": [
+   "ir.lixiang.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "HKEX News Releases",
+  "url": "https://www.hkex.com.hk/Services/RSS-Feeds/News-Releases?sc_lang=en",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://www.hkex.com.hk/Services/RSS-Feeds/News-Releases?sc_lang=en",
+  "isFeed": true,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "www.hkex.com.hk"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "PayPal Newsroom",
+  "url": "https://newsroom.paypal-corp.com/news?pagetemplate=rss",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://newsroom.paypal-corp.com/news?pagetemplate=rss",
+  "isFeed": true,
+  "items": 5,
+  "dated": 5,
+  "newest": "2026-11-20",
+  "linkHosts": [
+   "newsroom.paypal-corp.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Boeing News",
+  "url": "https://boeing.mediaroom.com/news-releases-statements?pagetemplate=rss",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://boeing.mediaroom.com/news-releases-statements?pagetemplate=rss",
+  "isFeed": true,
+  "items": 5,
+  "dated": 5,
+  "newest": "2026-11-25",
+  "linkHosts": [
+   "boeing.mediaroom.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "PDD IR",
+  "url": "https://investor.pddholdings.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://investor.pddholdings.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-19",
+  "linkHosts": [
+   "investor.pddholdings.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "BioNTech IR",
+  "url": "https://investors.biontech.de/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://investors.biontech.de/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-03",
+  "linkHosts": [
+   "investors.biontech.de"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Trip.com IR",
+  "url": "https://investors.trip.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://investors.trip.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-20",
+  "linkHosts": [
+   "investors.trip.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Lockheed Martin News",
+  "url": "https://news.lockheedmartin.com/news-releases?pagetemplate=rss",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://news.lockheedmartin.com/news-releases?pagetemplate=rss",
+  "isFeed": true,
+  "items": 5,
+  "dated": 5,
+  "newest": "2026-11-24",
+  "linkHosts": [
+   "news.lockheedmartin.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Eli Lilly IR",
+  "url": "https://investor.lilly.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://investor.lilly.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-23",
+  "linkHosts": [
+   "investor.lilly.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "SK hynix Newsroom",
+  "url": "https://news.skhynix.com/en/feed/",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://news.skhynix.com/en/feed/",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-20",
+  "linkHosts": [
+   "news.skhynix.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "CrowdStrike IR",
+  "url": "https://ir.crowdstrike.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://ir.crowdstrike.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-25",
+  "linkHosts": [
+   "ir.crowdstrike.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Global Times",
+  "url": "https://www.globaltimes.cn/rss/outbrain.xml",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://www.globaltimes.cn/rss/outbrain.xml",
+  "isFeed": true,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-10-09",
+  "linkHosts": [
+   "www.globaltimes.cn"
+  ],
+  "status": "STALE"
+ },
+ {
+  "name": "Palo Alto Networks IR",
+  "url": "https://investors.paloaltonetworks.com/rss/news-releases.xml",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://investors.paloaltonetworks.com/rss/news-releases.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-20",
+  "linkHosts": [
+   "investors.paloaltonetworks.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "UDN Money",
+  "url": "https://money.udn.com/rssfeed/news/1001/5591",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://money.udn.com/rssfeed/news/1001/5591",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "money.udn.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "ChinaTalk",
+  "url": "https://www.chinatalk.media/feed",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://www.chinatalk.media/feed",
+  "isFeed": true,
+  "items": 21,
+  "dated": 20,
+  "newest": "2026-11-24",
+  "linkHosts": [
+   "www.chinatalk.media"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Sinocism",
+  "url": "https://sinocism.com/feed",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://sinocism.com/feed",
+  "isFeed": true,
+  "items": 21,
+  "dated": 20,
+  "newest": "2026-11-25",
+  "linkHosts": [
+   "sinocism.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "NYT Chinese",
+  "url": "https://cn.nytimes.com/rss/",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://cn.nytimes.com/rss/",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "cn.nytimes.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "China Banking News",
+  "url": "https://www.chinabankingnews.com/feed",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://www.chinabankingnews.com/feed",
+  "isFeed": true,
+  "items": 21,
+  "dated": 20,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.chinabankingnews.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "SFC Hong Kong",
+  "url": "https://www.sfc.hk/en/RSS-Feeds/Press-releases",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://www.sfc.hk/en/RSS-Feeds/Press-releases",
+  "isFeed": true,
+  "items": 8,
+  "dated": 7,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "apps.sfc.hk"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "EBA News",
+  "url": "https://www.eba.europa.eu/news-press/news/rss.xml",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.eba.europa.eu/news-press/news/rss.xml",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "www.eba.europa.eu"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "CarNewsChina",
+  "url": "https://carnewschina.com/feed/",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://carnewschina.com/feed/",
+  "isFeed": true,
+  "items": 11,
+  "dated": 10,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "carnewschina.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "RTX News",
+  "url": "https://www.rtx.com/rss-feeds/news",
+  "cats": [
+   "corporate-leadership"
+  ],
+  "http": 200,
+  "final": "https://www.rtx.com/rss-feeds/news",
+  "isFeed": true,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.rtx.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Sixth Tone RSS",
+  "url": "https://api.sixthtone.com/cont/output/rssApi",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://api.sixthtone.com/cont/output/rssApi",
+  "isFeed": true,
+  "items": 51,
+  "dated": 51,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "www.sixthtone.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "SNB Press",
+  "url": "https://www.snb.ch/public/rss/en/pressrel",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.snb.ch/public/rss/en/pressrel",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-24",
+  "linkHosts": [
+   "www.snb.ch"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Asia Financial",
+  "url": "https://www.asiafinancial.com/feed",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://www.asiafinancial.com/feed",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.asiafinancial.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "ECB Banking Supervision",
+  "url": "https://www.bankingsupervision.europa.eu/rss/press.html",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.bankingsupervision.europa.eu/rss/press.html",
+  "isFeed": true,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-20",
+  "linkHosts": [
+   "www.bankingsupervision.europa.eu"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "HKMA Press",
+  "url": "https://www.hkma.gov.hk/eng/other-information/rss/rss_press-release.xml",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://www.hkma.gov.hk/eng/other-information/rss/rss_press-release.xml",
+  "isFeed": true,
+  "items": 436,
+  "dated": 435,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "www.hkma.gov.hk"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Riksbank Press",
+  "url": "https://www.riksbank.se/en-gb/rss/press-releases/",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.riksbank.se/en-gb/rss/press-releases/",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-10",
+  "linkHosts": [
+   "www.riksbank.se"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Euronews Business",
+  "url": "https://www.euronews.com/rss?level=vertical&name=business",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.euronews.com/rss?level=vertical&name=business",
+  "isFeed": true,
+  "items": 51,
+  "dated": 50,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.euronews.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "European Parliament Press",
+  "url": "https://www.europarl.europa.eu/rss/doc/press-releases/en.xml",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.europarl.europa.eu/rss/doc/press-releases/en.xml",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.europarl.europa.eu"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "CEPR VoxEU",
+  "url": "https://cepr.org/rss/vox-content",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://cepr.org/rss/vox-content",
+  "isFeed": true,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "cepr.org"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Norges Bank Press",
+  "url": "https://www.norges-bank.no/en/rss-feeds/Press-releases---Norges-Bank/",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.norges-bank.no/en/rss-feeds/Press-releases---Norges-Bank/",
+  "isFeed": true,
+  "items": 5,
+  "dated": 5,
+  "newest": "2026-11-11",
+  "linkHosts": [
+   "www.norges-bank.no"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "ECB Blog",
+  "url": "https://www.ecb.europa.eu/rss/blog.html",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.ecb.europa.eu/rss/blog.html",
+  "isFeed": true,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.ecb.europa.eu"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "TMTPost",
+  "url": "https://www.tmtpost.com/rss.xml",
+  "cats": [
+   "china-media"
+  ],
+  "http": 200,
+  "final": "https://www.tmtpost.com/rss.xml",
+  "isFeed": true,
+  "items": 15,
+  "dated": 15,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.tmtpost.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "El Pais Economia",
+  "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/economia/portada",
+  "isFeed": true,
+  "items": 41,
+  "dated": 41,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "elpais.com",
+   "cincodias.elpais.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Bundesbank News",
+  "url": "https://www.bundesbank.de/service/rss/en/633312/feed.rss",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.bundesbank.de/service/rss/en/633312/feed.rss",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-25",
+  "linkHosts": [
+   "www.bundesbank.de"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Bank of England Speeches",
+  "url": "https://www.bankofengland.co.uk/rss/speeches",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.bankofengland.co.uk/rss/speeches",
+  "isFeed": true,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-18",
+  "linkHosts": [
+   "www.bankofengland.co.uk"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Globes Israel News EN",
+  "url": "https://en.globes.co.il/WebService/Rss/RssFeeder.asmx/FeederNode?iID=942",
+  "cats": [
+   "israel"
+  ],
+  "http": 200,
+  "final": "https://en.globes.co.il/WebService/Rss/RssFeeder.asmx/FeederNode?iID=942",
+  "isFeed": true,
+  "items": 11,
+  "dated": 10,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "en.globes.co.il"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "The Local Germany",
+  "url": "https://feeds.thelocal.com/rss/de",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://feeds.thelocal.com/rss/de",
+  "isFeed": true,
+  "items": 20,
+  "dated": 20,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.thelocal.de"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Techtime Israel",
+  "url": "https://techtime.news/feed/",
+  "cats": [
+   "israel"
+  ],
+  "http": 200,
+  "final": "https://techtime.news/feed/",
+  "isFeed": true,
+  "items": 10,
+  "dated": 10,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "techtime.news"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "The Diplomat North Korea",
+  "url": "https://thediplomat.com/tag/north-korea/feed/",
+  "cats": [
+   "north-korea"
+  ],
+  "http": 200,
+  "final": "https://thediplomat.com/tag/north-korea/feed/",
+  "isFeed": true,
+  "items": 96,
+  "dated": 96,
+  "newest": "2026-10-23",
+  "linkHosts": [
+   "thediplomat.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Israel Hayom Hebrew",
+  "url": "https://www.israelhayom.co.il/rss.xml",
+  "cats": [
+   "israel"
+  ],
+  "http": 200,
+  "final": "https://www.israelhayom.co.il/rss.xml",
+  "isFeed": true,
+  "items": 100,
+  "dated": 100,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.israelhayom.co.il"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Central Bank of Ireland",
+  "url": "https://www.centralbank.ie/feeds/news-media-feed",
+  "cats": [
+   "europe-business"
+  ],
+  "http": 200,
+  "final": "https://www.centralbank.ie/feeds/news-media-feed",
+  "isFeed": true,
+  "items": 25,
+  "dated": 25,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "www.centralbank.ie"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "Israel Hayom English",
+  "url": "https://www.israelhayom.com/feed/",
+  "cats": [
+   "israel"
+  ],
+  "http": 200,
+  "final": "https://www.israelhayom.com/feed/",
+  "isFeed": true,
+  "items": 11,
+  "dated": 10,
+  "newest": "2026-11-26",
+  "linkHosts": [
+   "www.israelhayom.com"
+  ],
+  "status": "OK"
+ },
+ {
+  "name": "NK Chosun",
+  "url": "https://nk.chosun.com/rss/allArticle.xml",
+  "cats": [
+   "north-korea"
+  ],
+  "http": 200,
+  "final": "https://nk.chosun.com/rss/allArticle.xml",
+  "isFeed": true,
+  "items": 50,
+  "dated": 50,
+  "newest": "2026-11-27",
+  "linkHosts": [
+   "nk.chosun.com"
+  ],
+  "status": "OK"
+ }
+]

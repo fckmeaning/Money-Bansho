@@ -1,0 +1,91 @@
+:root { --t-bg: #0e1116; --t-panel: #171c23; --t-raise: #222934; --t-line: #2f3845; --t-text: #e6eaf0; --t-dim: #8a95a5; --t-gold: #3d8bfd; --t-red: #c0645a; --t-blue: #6f93b8; --t-orange: #d9844a; --t-up: #6fa582; --t-down: #c27d70; --t-land: #323d4d; color-scheme: dark; }
+:root[data-theme='amber'] { --t-bg: #0d0a04; --t-panel: #131006; --t-raise: #1c1709; --t-line: #3a2f12; --t-text: #e8c777; --t-dim: #9c8447; --t-gold: #ffd36b; --t-land: #4a3c17; }
+:root[data-theme='light'] { --t-bg: #e9e6dc; --t-panel: #f5f3ec; --t-raise: #e2ded1; --t-line: #c3bdab; --t-text: #1d1f22; --t-dim: #5f5c54; --t-gold: #8a6718; --t-red: #a23b31; --t-blue: #2f5d86; --t-orange: #a4561c; --t-up: #2f6b45; --t-down: #9d3f31; --t-land: #a9a493; color-scheme: light; }
+
+* { box-sizing: border-box; border-radius: 0; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--t-bg); color: var(--t-text); font: 12px/1.45 ui-monospace, 'Cascadia Mono', Consolas, 'DejaVu Sans Mono', monospace; }
+h2, p, ol, ul, dl, dd { margin: 0; padding: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 1px solid var(--t-gold); outline-offset: -1px; }
+
+#terminal { display: flex; flex-direction: column; height: 100vh; height: 100dvh; padding: 0 8px; gap: 6px; overflow: hidden; }
+.t-top-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; padding: 6px 0; border-bottom: 1px solid var(--t-line); }
+.t-top-bar strong { color: var(--t-gold); letter-spacing: 0.18em; }
+.t-clock { margin-left: auto; font-variant-numeric: tabular-nums; }
+.t-button, .t-tab { background: var(--t-panel); border: 1px solid var(--t-line); padding: 2px 10px; }
+.t-tabs { display: flex; flex-wrap: wrap; gap: 4px; }
+.t-tab.active { background: var(--t-gold); border-color: var(--t-gold); color: var(--t-bg); }
+
+.t-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 6px; }
+.t-market-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+.t-news { grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); }
+.t-column { display: flex; flex-direction: column; gap: 6px; min-height: 0; min-width: 0; }
+.t-panel { display: flex; flex-direction: column; min-height: 0; min-width: 0; background: var(--t-panel); border: 1px solid var(--t-line); }
+.t-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 3px 8px; background: var(--t-raise); border-bottom: 1px solid var(--t-line); white-space: nowrap; }
+.t-head h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--t-gold); }
+.t-head span { overflow: hidden; text-overflow: ellipsis; font-size: 10px; }
+.t-body { flex: 1; min-height: 0; overflow: auto; padding: 4px 8px; scrollbar-width: thin; scrollbar-color: var(--t-line) transparent; }
+.t-map { flex: 1; }
+.t-map .t-body { display: flex; flex-direction: column; overflow: hidden; }
+.t-canvas { flex: 1; min-height: 0; position: relative; overflow: hidden; }
+.t-canvas canvas { position: absolute; inset: 0; margin: auto; }
+.t-legend { display: flex; flex-wrap: wrap; gap: 2px 16px; list-style: none; padding-top: 4px; border-top: 1px solid var(--t-line); }
+.t-posture { flex: 0 0 auto; }
+.t-brief { flex: 0 1 auto; max-height: 30%; }
+.t-news .t-brief { max-height: 100%; }
+.t-brief p { margin-bottom: 4px; }
+.t-top { flex: 1 1 0; }
+.t-markets { flex: 0 1 auto; max-height: 38%; }
+.t-market-grid .t-markets { max-height: none; }
+.t-market-location { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.t-market-location select { min-width: 0; flex: 1; background: var(--t-raise); color: var(--t-text); border: 1px solid var(--t-line); padding: 4px 6px; font: inherit; }
+.t-market-map a { color: var(--t-gold); }
+
+.t-list { list-style: none; }
+.t-row { display: grid; grid-template-columns: 3.6em minmax(0, 1fr) auto; gap: 8px; padding: 2px 4px; border-bottom: 1px solid var(--t-line); cursor: pointer; }
+.t-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t-rank { color: var(--t-dim); }
+.t-meta { white-space: nowrap; }
+.t-selected, .t-table tr.t-selected { background: var(--t-raise); box-shadow: inset 3px 0 0 var(--t-gold); }
+.t-selected .t-title { white-space: normal; }
+
+.t-table { width: 100%; border-collapse: collapse; }
+.t-table th { text-align: left; font-weight: 400; color: var(--t-dim); font-size: 10px; padding: 1px 6px 1px 0; }
+.t-table td { padding: 1px 6px 1px 0; border-top: 1px solid var(--t-line); white-space: nowrap; }
+.t-num { font-variant-numeric: tabular-nums; }
+.t-barcell { width: 34%; }
+.t-bar { display: block; height: 7px; background: var(--t-gold); }
+.t-spark { display: block; width: 100%; min-width: 80px; height: 18px; color: var(--t-dim); }
+.t-market-grid .t-spark { height: 26px; }
+.t-spark polygon { fill: currentColor; fill-opacity: 0.28; }
+.t-spark polyline { fill: none; stroke: currentColor; stroke-width: 1; vector-effect: non-scaling-stroke; }
+
+.t-dim { color: var(--t-dim); }
+.t-up { color: var(--t-up); }
+.t-down { color: var(--t-down); }
+.t-quake { color: var(--t-gold); }
+.t-conflict { color: var(--t-red); }
+.t-hazard { color: var(--t-blue); }
+.t-fire { color: var(--t-orange); }
+.t-exchange { color: var(--t-gold); }
+.t-financial-center { color: var(--t-text); }
+.t-central-bank { color: var(--t-blue); }
+.t-commodity-hub { color: var(--t-orange); }
+
+.t-ticker { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding: 3px 8px; background: var(--t-panel); border: 1px solid var(--t-line); }
+.t-ticker b { color: var(--t-gold); }
+.t-keys { padding-bottom: 5px; color: var(--t-dim); }
+
+.t-help { position: fixed; inset: 0; display: grid; place-items: center; background: color-mix(in srgb, var(--t-bg) 80%, transparent); }
+.t-help .t-panel { width: min(520px, 92vw); border-color: var(--t-gold); }
+.t-help dl { display: grid; grid-template-columns: 9em 1fr; gap: 4px 12px; padding: 6px 0; }
+.t-help dt { color: var(--t-gold); }
+
+@media (max-width: 900px) {
+  #terminal { height: auto; min-height: 100dvh; overflow: visible; }
+  .t-grid, .t-news { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .t-canvas { flex: none; height: 60vw; }
+  .t-top, .t-brief, .t-markets { flex: none; max-height: none; }
+  .t-posture .t-body { overflow-x: auto; }
+}

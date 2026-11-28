@@ -1,0 +1,82 @@
+/* Caption bar of the two-minute demo. Solid and static, theme variables only. */
+.bt-bar {
+  position: fixed;
+  z-index: 2147483000;
+  left: 50%;
+  bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 16px;
+  width: min(760px, calc(100vw - 24px));
+  padding: 0 14px 12px;
+  transform: translateX(-50%);
+  border: 1px solid var(--accent, var(--gold, #3d8bfd));
+  background: var(--surface, var(--panel, #171c23));
+  color: var(--text, #e6eaf0);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.bt-track {
+  grid-column: 1 / -1;
+  height: 3px;
+  margin: 0 -14px 8px;
+  background: var(--border, #2f3845);
+}
+
+.bt-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--accent, var(--gold, #3d8bfd));
+}
+
+.bt-head {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.bt-title { font-size: 16px; }
+
+.bt-count,
+.bt-clock {
+  color: var(--text-dim, var(--muted, #8a95a5));
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 12px;
+}
+
+.bt-clock { margin-left: auto; }
+
+.bt-text {
+  margin: 0;
+  color: var(--text-dim, var(--muted, #8a95a5));
+}
+
+.bt-controls {
+  display: flex;
+  align-self: end;
+  gap: 6px;
+}
+
+.bt-bar .bt-button {
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid var(--border, #2f3845);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text, #e6eaf0);
+  font: inherit;
+  cursor: pointer;
+}
+
+.bt-bar .bt-button:hover,
+.bt-bar .bt-button:focus-visible {
+  border-color: var(--accent, var(--gold, #3d8bfd));
+}
+
+@media (max-width: 600px) {
+  .bt-bar { grid-template-columns: 1fr; }
+  .bt-controls { flex-wrap: wrap; }
+}

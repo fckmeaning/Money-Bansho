@@ -1,0 +1,71 @@
+/* «Мир»: static terminal tables. Green only marks a price that rose (.up). */
+.world { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.world > * { min-width: 0; max-width: 100%; }
+.wd-top h1 { font-size: 15px; color: var(--gold); letter-spacing: .02em; }
+.wd-top p { margin-top: 2px; font-size: 12px; }
+.wd-top .chip { margin-left: 6px; }
+.wd-events { display: flex; flex-direction: column; }
+.wd-event { padding: 8px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.wd-event:last-child { border-bottom: 0; }
+.wd-event-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.wd-rank { color: var(--muted); }
+.wd-score { font-size: 14px; font-weight: 700; color: var(--gold); }
+.wd-bar { display: inline-block; width: 72px; height: 6px; background: var(--raise); border: 1px solid var(--border); vertical-align: middle; }
+.wd-bar > i { display: block; height: 100%; background: var(--gold); opacity: .75; }
+.panel .wd-title { font-size: 14px; font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; text-transform: none; letter-spacing: 0; color: var(--text); padding: 0; }
+.wd-title a { color: var(--text); }
+.wd-title a:hover { color: var(--gold); }
+.wd-meta { font-size: 12px; }
+.wd-companies { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 12px; }
+.wd-company { color: var(--text); max-width: 100%; overflow-wrap: anywhere; }
+.wd-details { margin-top: 2px; }
+.wd-details > summary { cursor: pointer; color: var(--muted); font-size: 12px; padding: 2px 0; }
+.wd-details > summary:hover { color: var(--text); }
+.wd-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; padding-top: 4px; }
+.wd-detail-grid > div { min-width: 0; }
+.wd-detail-grid h4, .wd-list + h4 { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 6px 0 3px; font-weight: 600; }
+.wd-list { display: flex; flex-direction: column; gap: 2px; font-size: 12px; overflow-wrap: anywhere; }
+.wd-note { font-size: 11px; padding: 4px 8px 6px; line-height: 1.45; }
+.wd-detail-grid .wd-note { padding: 4px 0 0; }
+.wd-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; align-items: start; }
+.wd-grid > * { min-width: 0; }
+.wd-table { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: auto; }
+.wd-table th, .wd-table td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: anywhere; }
+.wd-table th { color: var(--muted); font-weight: 400; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+.wd-table .num, .wd-table th.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--mono); }
+.wd-table .wd-total td { font-weight: 700; border-top: 1px solid var(--border); }
+.wd-table .wd-barcell { width: 20%; }
+.wd-table .wd-bar { width: 100%; }
+.wd-event-cell { max-width: 280px; }
+.wd-stale { margin-left: 6px; }
+.wd-chart-wrap { padding: 6px 8px 8px; }
+.wd-chart { display: block; width: 100%; height: auto; max-height: 240px; }
+.wd-vol { fill: var(--muted); opacity: .55; }
+.wd-tone { stroke: var(--gold); stroke-width: 1.4; }
+.wd-zero, .wd-axisline { stroke: var(--border); stroke-width: 1; }
+.wd-axis { fill: var(--muted); font-size: 10px; font-family: var(--mono); }
+.wd-legend { font-size: 11px; margin-top: 4px; line-height: 1.5; }
+.wd-key { display: inline-block; width: 10px; height: 8px; margin-right: 4px; vertical-align: baseline; }
+.wd-key-vol { background: var(--muted); opacity: .55; }
+.wd-key-tone { background: var(--gold); height: 2px; vertical-align: middle; margin-left: 10px; }
+.wd-coverage { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.wd-coverage-line { font-size: 12px; line-height: 1.5; }
+.wd-coverage .wd-note { padding: 0; }
+
+@media (max-width: 900px) {
+  .wd-grid, .wd-detail-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+  /* Tables become stacked rows so nothing scrolls sideways at 375 px. */
+  .wd-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .wd-table, .wd-table tbody { display: block; }
+  .wd-table tr { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 12px; padding: 4px 8px; border-bottom: 1px solid var(--border); }
+  .wd-table td { display: block; padding: 1px 0; border: 0; text-align: left !important; }
+  .wd-table td:first-child { flex: 1 1 100%; font-weight: 600; }
+  .wd-table td[data-label]::before { content: attr(data-label) ' '; color: var(--muted); font-size: 10px; font-family: system-ui, sans-serif; }
+  .wd-table .wd-barcell { display: none; }
+  .wd-event-cell { max-width: 100%; flex: 1 1 100%; order: -1; }
+  .wd-table tr.wd-total { border-top: 1px solid var(--border); }
+  .wd-bar { width: 56px; }
+}

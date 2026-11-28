@@ -1,0 +1,49 @@
+/* A keyless build can never unlock paid features: hide their locked shells. */
+html.bansho-keyless .panel:has(> .panel-content > .panel-locked-state),
+html.bansho-keyless .panel-locked-cta,
+html.bansho-keyless .upgrade-pro-section,
+html.bansho-keyless .upgrade-to-business-btn,
+html.bansho-keyless .pro-preview,
+html.bansho-keyless .panel-settings-item:has(> .pro-locked),
+html.bansho-keyless .re-content__upgrade,
+html.bansho-keyless .cdp-notify-link-host,
+html.bansho-keyless .us-group:has([data-settings-nav="api-keys"]),
+html.bansho-keyless .us-list > li:has(> [data-settings-nav="notifications"]),
+html.bansho-keyless .framework-settings-btn--locked,
+html.bansho-keyless .resilience-widget { display: none !important; }
+
+/* Upstream documentation pages are not part of this site: drop links to them. */
+a[href^="https://worldmonitor.app/"],
+a[href^="https://www.worldmonitor.app/"],
+a[href^="/docs/"] { display: none !important; }
+
+/* Header link to the dossier: neutral terminal colour, not the browser's blue. */
+.header .dossier-link,
+.header .dossier-link:visited { color: var(--text-dim, var(--text-secondary, #8a95a5)); text-decoration: none; font-size: 12px; padding: 4px 8px; border: 1px solid var(--border, #2f3845); border-radius: 2px; }
+.header .dossier-link:hover { color: var(--text, #e6eaf0); border-color: var(--text-dim, #8a95a5); text-decoration: none; }
+.header .dossier-link.terminal-link { color: #3d8bfd; border-color: #3d8bfd; white-space: nowrap; }
+.header a:focus-visible, .header button:focus-visible, .header select:focus-visible { outline: 1px solid #3d8bfd; outline-offset: 1px; }
+
+/* Map stays dark; nothing floats above the header. */
+.map-container, .map-container.map-renderer-shell { background: #0e1116; }
+.header { position: relative; z-index: 1000; }
+
+/* Country instability index: between the economy figures and the panels. */
+.main-content#main > .bansho-instability-host { order: -1; flex: 0 0 auto; width: 100%; min-width: 0; }
+.main-content#main > .bansho-instability-host { min-height: 240px; }
+
+/* Owner request: no version number and no "live" indicator in the header or footer. */
+.header .version, .header .status-indicator, .site-footer-version, .mobile-menu-version { display: none !important; }
+
+/* Owner request: no "live" badges, and no pizza index (it has no data). */
+.panel-data-badge.live, .live-badge, .pizzint-indicator { display: none !important; }
+
+/* Task picker: what a task does, in plain words and numbers. */
+.mission-preset-popover__hint { margin: 0; padding: 10px 2px 0; color: var(--text-dim, #8a95a5); font-size: 12px; line-height: 1.45; }
+.mission-preset-card__body .mission-preset-card__effect { color: #3d8bfd; font-variant-numeric: tabular-nums; }
+
+/* Narrow screens: the product name stays on one line. */
+@media (max-width: 600px) { .header .logo, .header .variant-label { white-space: nowrap; font-size: 13px; } }
+
+/* Search: text only, without pictographic icons. */
+.search-overlay :is(.search-result-icon, .search-empty-icon), .search-overlay .search-scope > span[aria-hidden="true"] { display: none !important; }

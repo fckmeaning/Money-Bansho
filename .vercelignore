@@ -1,0 +1,70 @@
+# Money Bansho: demo deployment on the Vercel Hobby (free) plan.
+
+# ---------------------------------------------------------------------------
+# 1. Serverless functions. Hobby allows 12 per deployment, and every file under
+#    api/ whose path has no leading underscore becomes one. Keep exactly these
+#    (10 endpoints + 1 helper module that two of them import).
+#    api/domain-gateway.ts serves the other dashboard data domains.
+# ---------------------------------------------------------------------------
+/api/*
+!/api/_*
+!/api/dossier.js
+!/api/wm-session.js
+!/api/bootstrap.js
+!/api/rss-proxy.js
+!/api/miit-news.js
+!/api/news
+!/api/market
+!/api/intelligence
+!/api/displacement
+!/api/domain-gateway.ts
+!/api/mcp
+/api/mcp/*
+!/api/mcp/bounded-body.ts
+api/**/*.test.mjs
+
+# Upstream routing middleware (worldmonitor.app hosts, docs proxy, bot gate).
+# Its allowlist of pages would 404 new routes such as /dossier.
+/middleware.ts
+
+# ---------------------------------------------------------------------------
+# 2. Folders the web build never reads. The CLI upload limit is 100 MB.
+# ---------------------------------------------------------------------------
+/tests/
+/e2e/
+/demos/
+/blog-site/
+/pro-test/
+/src-tauri/
+/cli/
+/sdk/
+/skills/
+/claude-plugin/
+/consumer-prices-core/
+/integrations/
+/docker/
+/.agents/
+/convex/__tests__/
+/server/__tests__/
+# src/config/docs-root-redirects.ts imports docs/docs.json.
+/docs/*
+!/docs/docs.json
+
+# ---------------------------------------------------------------------------
+# 3. Local artifacts and secrets.
+# ---------------------------------------------------------------------------
+/.claude/
+/.playwright-mcp/
+/test-results/
+/playwright-report/
+/coverage/
+*.log
+/node_modules/
+/dist/
+.env
+.env.*
+!.env.example
+**/*.dmg
+**/*.app
+target/
+.DS_Store
