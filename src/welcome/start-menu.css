@@ -1,0 +1,56 @@
+/* Game-like main menu: flat dark screen with a fine grid, one blue accent. */
+.sm-open, .sm-open body { overflow: hidden; }
+.sm {
+  position: fixed; inset: 0; z-index: 2000; display: flex; flex-direction: column; align-items: center; gap: 20px;
+  padding: 24px 16px; overflow-y: auto; color: var(--sm-text); background-color: var(--sm-bg);
+  --sm-bg: #0e1116; --sm-panel: #171c23; --sm-border: #2f3845; --sm-text: #e6eaf0; --sm-muted: #8a95a5; --sm-accent: #3d8bfd;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 47px, color-mix(in srgb, var(--sm-border) 45%, transparent) 47px 48px),
+    repeating-linear-gradient(90deg, transparent 0 47px, color-mix(in srgb, var(--sm-border) 45%, transparent) 47px 48px);
+}
+:root[data-theme='light'] .sm {
+  --sm-bg: #eef1f5; --sm-panel: #f9fafc; --sm-border: #cbd3de; --sm-text: #161b24; --sm-muted: #566174; --sm-accent: #1f5fbf;
+}
+.sm > :first-child { margin-top: auto; }
+.sm > :last-child { margin-bottom: auto; }
+.sm button { font: inherit; cursor: pointer; color: inherit; }
+.sm :focus-visible { outline: 3px solid var(--sm-accent); outline-offset: 3px; }
+
+.sm-title { text-align: center; }
+.sm-title h1 { margin: 0; font-size: clamp(34px, 8vw, 64px); letter-spacing: 0.08em; text-transform: uppercase; }
+.sm-title p { margin: 0 0 6px; color: var(--sm-muted); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; }
+
+.sm-play { display: flex; flex-direction: column; align-items: center; gap: 14px; background: none; border: 0; padding: 0; }
+.sm-play i { display: grid; place-items: center; width: 148px; height: 148px; border-radius: 50%; border: 3px solid var(--sm-accent); background: var(--sm-panel); transition: transform 0.15s, background 0.15s; }
+.sm-play svg { width: 70px; height: 70px; margin-left: 6px; fill: var(--sm-accent); }
+.sm-play:hover i, .sm-play:focus-visible i { transform: scale(1.07); background: var(--sm-accent); }
+.sm-play:hover svg, .sm-play:focus-visible svg { fill: #fff; }
+.sm-play span { font-size: 20px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+.sm-items { display: flex; flex-direction: column; gap: 8px; width: min(320px, 100%); }
+.sm .sm-item { width: 100%; padding: 13px 16px; background: var(--sm-panel); border: 1px solid var(--sm-border); border-left: 4px solid var(--sm-border); font-size: 15px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.sm .sm-item:hover, .sm .sm-item:focus-visible { border-color: var(--sm-accent); }
+
+.sm-panel { display: flex; flex-direction: column; gap: 10px; width: min(460px, 100%); padding: 18px; background: var(--sm-panel); border: 1px solid var(--sm-border); }
+.sm-panel h2 { margin: 0 0 4px; font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; }
+.sm-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; font-size: 14px; }
+.sm-row > div { display: flex; }
+.sm-row input { flex: 1; max-width: 220px; accent-color: var(--sm-accent); }
+.sm .sm-option { padding: 7px 12px; background: var(--sm-bg); border: 1px solid var(--sm-border); font-size: 13px; }
+.sm .sm-option[aria-pressed='true'] { background: var(--sm-accent); border-color: var(--sm-accent); color: #fff; }
+
+.sm-hint { margin: 0; color: var(--sm-muted); font-size: 12px; text-align: center; }
+.sm-about { max-width: 460px; color: var(--sm-muted); font-size: 12px; text-align: center; }
+.sm-about summary { cursor: pointer; }
+.sm-about a { color: var(--sm-accent); }
+
+.sm-starting { justify-content: center; }
+.sm-loading { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.sm-loading svg { width: 72px; height: 72px; fill: var(--sm-accent); }
+.sm-loading b { letter-spacing: 0.14em; text-transform: uppercase; }
+.sm-loading i { width: min(320px, 70vw); height: 6px; background: linear-gradient(var(--sm-accent), var(--sm-accent)) no-repeat var(--sm-panel); background-size: 0 100%; animation: sm-load 0.85s linear forwards; }
+@keyframes sm-load { to { background-size: 100% 100%; } }
+@media (prefers-reduced-motion: reduce) {
+  .sm-play i { transition: none; }
+  .sm-loading i { animation: none; background-size: 100% 100%; }
+}

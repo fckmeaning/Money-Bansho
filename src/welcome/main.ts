@@ -4,6 +4,7 @@ import companies from '../../shared/dossier-companies.json';
 import { mountBanshoMenu } from '../shell/bansho-menu';
 import { applyStoredView } from '../shell/bansho-view';
 import { safeStorageGet, safeStorageSet } from '../utils/safe-storage';
+import { openStartMenu } from './start-menu';
 import './welcome.css';
 
 type Lang = 'en' | 'ru';
@@ -330,3 +331,19 @@ function render(lang: Lang): void {
 
 applyStoredView();
 render(storedLang());
+
+// The main menu opens first. ?menu=0 and the guided demo go straight to the overview.
+const query = new URLSearchParams(window.location.search);
+if (query.get('menu') !== '0' && !query.has('tour')) {
+  openStartMenu({
+    lang: storedLang(),
+    upstreamUrl: UPSTREAM_URL,
+    sourceUrl: SOURCE_URL,
+    onLanguage: (lang) => {
+      safeStorageSet(LANG_KEY, lang);
+      // A ?lang= address would override the choice on the next load.
+      if (query.has('lang')) window.history.replaceState(null, '', window.location.pathname);
+      render(lang);
+    },
+  });
+}
