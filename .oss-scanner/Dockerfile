@@ -15,7 +15,7 @@
 # tests/ci-workflow-coverage.test.mts requires.
 # rust:1-bookworm (Rust 1.99.1) supplies the toolchain, so no installer script
 # is fetched and run unverified.
-FROM rust:1-bookworm@sha256:ade39a710ef85f3506cffcfec3e8a24ba090badef1dff2fb798f71d878833fea AS rust
+FROM rust:1-bookworm@sha256:75d26c23c24cc6ea1cdabf0714a6bff8fd7bf3248716043fd7ae86dac7f41b94 AS rust
 
 # node:24-bookworm
 FROM node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496
